@@ -100,7 +100,7 @@ function handleMediaAtRule(atRule, report, options) {
 
 const reNumberPercentage = /^(?:[0-9]+\.)?[0-9]+%$/;
 
-function handleKeyframesAtRule(atRule, report, options) {
+function handleKeyframesAtRule(atRule, report) {
 	const steps = [];
 
 	atRule.walkRules((rule) => {
@@ -183,7 +183,7 @@ export function handleAtRule(atRule, report, options) {
 	}
 
 	if (unprefixedAtRuleName === 'keyframes') {
-		handleKeyframesAtRule(atRule, report, options);
+		handleKeyframesAtRule(atRule, report);
 	}
 
 	atRule.walkDecls((decl) => {

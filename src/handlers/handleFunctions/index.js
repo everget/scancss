@@ -7,69 +7,87 @@ import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
 import { isValidCubicBezierArgs } from '../../predicates/isValidCubicBezierArgs';
 
+function countFunctions(decl, report) {
+	decl.value
+		.match(reCssFunction)
+		.map((func) => func.slice(0, func.indexOf('(')))
+		.forEach((func) => {
+			report.functions.total++;
+			countUsage(func, report.functions.usage);
+		});
+}
+
+function countDataUris(decl, report) {
+	decl.value
+		.match(reUrlFunctionWithArg)
+		/* eslint-disable-next-line arrow-body-style */
+		.map((func) => {
+			return removeExtraSpaces(func)
+				.replace(/^url\(['"]?/g, '')
+				.replace(/['"]?\)/g, '');
+		})
+		.forEach((urlArg) => {
+			if (urlArg.match(reImageDataUri) !== null) {
+				report.dataUris.total++;
+				report.dataUris.totalByteLength += Buffer.byteLength(urlArg, 'utf8');
+				countUsage(urlArg, report.dataUris.usage);
+			}
+		});
+}
+
+function countGradients(decl, report) {
+	decl.value
+		.match(reGradient)
+		.map((func) => removeExtraSpaces(func))
+		.forEach((func) => {
+			report.gradients.total++;
+			countUsage(func, report.gradients.usage);
+		});
+}
+
 function countCubicBeziers(decl, report, options) {
-	if (options.collectTransitionsAndAnimationsData) {
-		const reportSection = decl.prop.includes('animation')
-			? report.animations
-			: report.transitions;
+	const reportSection = decl.prop.includes('animation')
+		? report.animations
+		: report.transitions;
 
-		decl.value
-			.match(reCubicBezier)
-			.forEach((func) => {
-				const processedFunc = removeExtraSpaces(func);
-				countUsage(processedFunc, reportSection.timingFunctions);
+	decl.value
+		.match(reCubicBezier)
+		.forEach((func) => {
+			const processedFunc = removeExtraSpaces(func);
+			countUsage(processedFunc, reportSection.timingFunctions);
 
-				/**
-				 * Count invalid cubic beziers
-				 * https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Examples
-				 */
-				if (isValidCubicBezierArgs(processedFunc) === false) {
-					countUsage(processedFunc, reportSection.invalidTimingFunctions);
-				}
-			});
-	}
+			/**
+			 * Count invalid cubic beziers
+			 * https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Examples
+			 */
+			if (isValidCubicBezierArgs(processedFunc) === false) {
+				countUsage(processedFunc, reportSection.invalidTimingFunctions);
+			}
+		});
 }
 
 export function handleFunctions(decl, report, options) {
 	if (reCssFunction.test(decl.value)) {
-		decl.value
-			.match(reCssFunction)
-			.map((func) => func.slice(0, func.indexOf('(')))
-			.forEach((func) => {
-				report.functions.total++;
-				countUsage(func, report.functions.usage);
-			});
+		countFunctions(decl, report);
 
 		if (
 			options.collectDataUrisData &&
 			reUrlFunctionWithArg.test(decl.value)
 		) {
-			decl.value
-				.match(reUrlFunctionWithArg)
-				.map((func) => removeExtraSpaces(func).replace(/^url\(['"]?/g, '').replace(/['"]?\)/g, ''))
-				.forEach((urlArg) => {
-					if (urlArg.match(reImageDataUri) !== null) {
-						report.dataUris.total++;
-						report.dataUris.totalByteLength += Buffer.byteLength(urlArg, 'utf8');
-						countUsage(urlArg, report.dataUris.usage);
-					}
-				});
+			countDataUris(decl, report);
 		}
 
 		if (
 			options.collectGradientsData &&
 			reGradient.test(decl.value)
 		) {
-			decl.value
-				.match(reGradient)
-				.map((gradient) => removeExtraSpaces(gradient))
-				.forEach((gradient) => {
-					report.gradients.total++;
-					countUsage(gradient, report.gradients.usage);
-				});
+			countGradients(decl, report);
 		}
 
-		if (reCubicBezier.test(decl.value)) {
+		if (
+			options.collectTransitionsAndAnimationsData &&
+			reCubicBezier.test(decl.value)
+		) {
 			countCubicBeziers(decl, report, options);
 		}
 	}

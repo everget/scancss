@@ -16,17 +16,30 @@ import { handleVendorPrefix } from '../handleVendorPrefix';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
 
+const cssFontProperties = [
+	'font',
+	'font-size',
+	'line-height',
+	'font-family',
+];
+
 function isFontDeclarationInAtRule(decl) {
 	return decl.parent.type === 'atrule' &&
 		decl.parent.name === 'font-face' &&
 		decl.prop.startsWith('font-') === true;
 }
 
+const zIndexAllowedKeywords = [
+	'auto',
+	...cssExplicitDefaultingKeywords,
+];
+
 function countEngineTriggerProperties(prop, report) {
 	if (Object.keys(cssEngineTriggerProperties).includes(prop)) {
 		const engineTriggers = cssEngineTriggerProperties[prop];
 
-		Object.keys(engineTriggers)
+		Object
+			.keys(engineTriggers)
 			.forEach((engine) => {
 				if (engineTriggers[engine].layout === true) {
 					report.properties.engineTriggers.layout[engine]++;
@@ -147,7 +160,7 @@ export function handleDeclaration(decl, report, options) {
 		/** Count invalid z-indices */
 		if (
 			Number.isInteger(Number(propValue)) === false &&
-			['auto', ...cssExplicitDefaultingKeywords].includes(propValue) === false
+			zIndexAllowedKeywords.includes(propValue) === false
 		) {
 			countUsage(propValue, report.zIndices.invalid);
 		}
@@ -156,7 +169,7 @@ export function handleDeclaration(decl, report, options) {
 	if (
 		options.collectFontsData &&
 		isFontDeclarationInAtRule(decl) === false &&
-		['font', 'font-size', 'line-height', 'font-family'].includes(prop)
+		cssFontProperties.includes(prop)
 	) {
 		handleFontProperties(decl, report);
 	}
@@ -185,9 +198,11 @@ export function handleDeclaration(decl, report, options) {
 	}
 
 	if (reCssExplicitDefaultingKeyword.test(propValue)) {
-		propValue.match(reCssExplicitDefaultingKeyword).forEach((match) => {
-			report.properties.explicitDefaultingKeywords.total++;
-			countUsage(match, report.properties.explicitDefaultingKeywords);
-		});
+		propValue
+			.match(reCssExplicitDefaultingKeyword)
+			.forEach((match) => {
+				report.properties.explicitDefaultingKeywords.total++;
+				countUsage(match, report.properties.explicitDefaultingKeywords);
+			});
 	}
 }
