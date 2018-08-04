@@ -26,7 +26,7 @@ module.exports = function scan(dir) {
 		console.log(`Time Spent: ${timeSpent / 1000}s`);
 	}
 
-	walkDir(dir, fileHandler, (err, results) => {
+	walkDir(dir, fileHandler, (err) => {
 		if (err) {
 			throw err;
 		}

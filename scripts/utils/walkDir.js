@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = function walkDir(dir, handler, doneCallback) {
-
 	const list = fs.readdirSync(dir);
 	const jsonFilesList = list.filter((file) => path.extname(file) === '.json');
 
