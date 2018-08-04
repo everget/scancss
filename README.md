@@ -2,11 +2,41 @@
 
 A robust CSS stylesheet statistics collector and analyzer
 
-[![Build Status](https://travis-ci.org/everget/scancss.svg?branch=master)](https://travis-ci.org/everget/scancss)
+[![Build Status](https://travis-ci.org/everget/scancss.svg?branch=master)](https://travis-ci.org/everget/scancss) [![Build status](https://ci.appveyor.com/api/projects/status/dl88bnkepmy3blwr/branch/master?svg=true)](https://ci.appveyor.com/project/everget/scancss/branch/master) [![codecov](https://codecov.io/gh/everget/scancss/branch/master/graph/badge.svg)](https://codecov.io/gh/everget/scancss) [![Coverage Status](https://coveralls.io/repos/github/everget/scancss/badge.svg?branch=master)](https://coveralls.io/github/everget/scancss?branch=master) [![CodeFactor](https://www.codefactor.io/repository/github/everget/scancss/badge)](https://www.codefactor.io/repository/github/everget/scancss)
+
+[![npm version](https://img.shields.io/npm/v/scancss.svg?style=flat)](https://www.npmjs.com/package/scancss) [![npm](https://img.shields.io/npm/dm/scancss.svg?style=flat)](https://www.npmjs.com/package/scancss) [![install size](https://packagephobia.now.sh/badge?p=scancss@1.0.0)](https://packagephobia.now.sh/result?p=scancss@1.0.0) [![David](https://img.shields.io/david/dev/everget/scancss.svg)](https://david-dm.org/everget/scancss) [![Known Vulnerabilities](https://snyk.io/test/github/everget/scancss/badge.svg)](https://snyk.io/test/github/everget/scancss)
 
 ## Table of contents
+
 1. [Installation](#installation)
+
 1. [Usage](#usage)
+
+1. [Options](#options)
+	* [collectStylesheetSizeData](#collectstylesheetsizedata)
+	* [collectCommentsData](#collectcommentsdata)
+	* [collectAtRulesData](#collectatrulesdata)
+	* [collectRulesData](#collectrulesdata)
+	* [collectSelectorsData](#collectselectorsdata)
+	* [collectSelectorsUsage](#collectselectorsusage)
+	* [selectorComplexityThreshold](#selectorcomplexitythreshold)
+	* [collectSpecificityGraphData](#collectspecificitygraphdata)
+	* [collectDeclarationsData](#collectdeclarationsdata)
+	* [collectEngineTriggerProperties](#collectenginetriggerproperties)
+	* [collectDeclarationsList](#collectdeclarationslist)
+	* [collectFontsData](#collectfontsdata)
+	* [collectColorsData](#collectcolorsdata)
+	* [collectBackgroundColorsData](#collectbackgroundcolorsdata)
+	* [collectAllColorsData](#collectallcolorsdata)
+	* [collectTransitionsAndAnimationsData](#collecttransitionsandanimationsdata)
+	* [collectFunctionsData](#collectfunctionsdata)
+	* [collectGradientsData](#collectgradientsdata)
+	* [collectUnitsData](#collectunitsdata)
+	* [collectVariablesData](#collectvariablesdata)
+	* [collectDataUrisData](#collectdataurisdata)
+	* [collectBrowserHacksData](#collectbrowserhacksdata)
+	* [collectPerformanceHacksData](#collectperformancehacksdata)
+
 1. [Report Structure](#reportstructure)
 	* [styleSheetSize](#stylesheetsize)
 	* [comments](#comments)
@@ -83,6 +113,102 @@ const report = scancss(stylesheet, options);
 
 [Back to top](#table-of-contents)
 
+## Options
+
+#### collectStylesheetSizeData
+
+* Default: `true`
+
+#### collectCommentsData
+
+* Default: `true`
+
+#### collectAtRulesData
+
+* Default: `true`
+
+#### collectRulesData
+
+* Default: `true`
+
+#### collectSelectorsData
+
+* Default: `true`
+
+#### collectSelectorsUsage
+
+* Default: `true`
+
+#### selectorComplexityThreshold
+
+* Default: `4`
+
+#### collectSpecificityGraphData
+
+* Default: `true`
+
+#### collectDeclarationsData
+
+* Default: `true`
+
+#### collectEngineTriggerProperties
+
+* Default: `true`
+
+#### collectDeclarationsList
+
+* Default: `true`
+
+#### collectFontsData
+
+* Default: `true`
+
+#### collectColorsData
+
+* Default: `true`
+
+#### collectBackgroundColorsData
+
+* Default: `true`
+
+#### collectAllColorsData
+
+* Default: `true`
+
+#### collectTransitionsAndAnimationsData
+
+* Default: `true`
+
+#### collectFunctionsData
+
+* Default: `true`
+
+#### collectGradientsData
+
+* Default: `true`
+
+#### collectUnitsData
+
+* Default: `true`
+
+#### collectVariablesData
+
+* Default: `true`
+
+#### collectDataUrisData
+
+* Default: `true`
+
+#### collectBrowserHacksData
+
+* Default: `true`
+
+#### collectPerformanceHacksData
+
+* Default: `true`
+
+[Back to top](#table-of-contents)
+
 ## Report Structure
 
 #### styleSheetSize
@@ -100,6 +226,7 @@ const report = scancss(stylesheet, options);
 * **longestByteLength** - `number`
 
 * **shortestByteLength** - `number`
+_NOTE_: If there are no comments in a stylesheet 9007199254740991 will be returned
 
 * **averageByteLength** - `number`
 
@@ -146,6 +273,7 @@ const report = scancss(stylesheet, options);
 * **shortestStepsChain** - `string | null`
 
 * **shortestStepsChainLength** - `number`
+_NOTE_: If there are no @keyframes in a stylesheet 9007199254740991 will be returned
 
 * **vendorPrefixedFeatures** - `number`
 
@@ -384,10 +512,12 @@ const report = scancss(stylesheet, options);
 * **longestDuration** - `number`
 
 * **shortestDuration** - `number`
+_NOTE_: If there are no transition durations in a stylesheet 9007199254740991 will be returned
 
 * **longestDelay** - `number`
 
 * **shortestDelay** - `number`
+_NOTE_: If there are no transition delays in a stylesheet 9007199254740991 will be returned
 
 * **timingFunctions** - `Record<string, number>`
 
@@ -400,10 +530,12 @@ const report = scancss(stylesheet, options);
 * **longestDuration** - `number`
 
 * **shortestDuration** - `number`
+_NOTE_: If there are no animation durations in a stylesheet 9007199254740991 will be returned
 
 * **longestDelay** - `number`
 
 * **shortestDelay** - `number`
+_NOTE_: If there are no animation delays in a stylesheet 9007199254740991 will be returned
 
 * **timingFunctions** - `Record<string, number>`
 
