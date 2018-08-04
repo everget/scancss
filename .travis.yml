@@ -1,0 +1,57 @@
+sudo: false
+dist: trusty
+language: node_js
+
+branches:
+  only:
+    - master
+    - next
+
+cache:
+  yarn: true
+  directories:
+    - ".jest-cache"
+    - ".eslintcache"
+
+stages:
+  - lint
+  - test
+  - versions
+
+matrix:
+  include:
+    - os: linux
+      node_js: "10"
+      env: JOB_PART=lint
+      stage: lint
+    - os: linux
+      node_js: "10"
+      env: JEST="--maxWorkers=2 --cacheDirectory .jest-cache" JOB_PART=test
+      stage: test
+    - os: osx
+      node_js: "10"
+      env: JEST="--maxWorkers=2 --cacheDirectory .jest-cache" JOB_PART=test
+      stage: versions
+    - os: linux
+      node_js: "8"
+      env: JEST="--maxWorkers=2 --cacheDirectory .jest-cache" JOB_PART=test
+      stage: versions
+    - os: linux
+      node_js: "6"
+      env: JEST="--maxWorkers=2 --cacheDirectory .jest-cache" JOB_PART=test
+      stage: versions
+fast_finish: true
+allow_failures:
+  - os: osx
+
+install:
+  - yarn --frozen-lockfile
+  - yarn link --frozen-lockfile || true
+  - yarn link scancss --frozen-lockfile
+
+script: yarn travis:$JOB_PART
+
+after_success:
+  - cat ./coverage/lcov.info | node_modules/.bin/coveralls --verbose
+  - cat ./coverage/coverage-final.json | node_modules/codecov.io/bin/codecov.io.js
+  - rm -f .jest-cache/haste-map* .jest-cache/perf-cache*

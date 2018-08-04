@@ -1,0 +1,354 @@
+{
+  "styleSheetSize": {
+    "sourceByteLength": 6329,
+    "gzipByteLength": 1726
+  },
+  "comments": {
+    "total": 70,
+    "totalByteLength": 3853,
+    "longestByteLength": 248,
+    "shortestByteLength": 7,
+    "averageByteLength": 55.04,
+    "sizeRatio": 0.6087849581292464
+  },
+  "atRules": {
+    "total": 0,
+    "empty": 0,
+    "vendorPrefixed": 0,
+    "unknown": {},
+    "usage": {}
+  },
+  "mediaQueries": {
+    "total": 0,
+    "unique": 0,
+    "onlyKeywords": 0,
+    "types": {},
+    "vendorPrefixedFeatures": 0,
+    "features": {},
+    "usage": {}
+  },
+  "keyframes": {
+    "stepsChains": {},
+    "longestStepsChain": null,
+    "longestStepsChainLength": 0,
+    "shortestStepsChain": null,
+    "shortestStepsChainLength": 9007199254740991,
+    "animatableProperties": []
+  },
+  "rules": {
+    "total": 33,
+    "empty": 0
+  },
+  "selectors": {
+    "total": 54,
+    "unique": 0,
+    "baseUsage": {
+      "tag": 37,
+      "attribute": 17,
+      "pseudoElement": 8,
+      "pseudoClass": 4
+    },
+    "pseudoClassesUsage": {
+      ":-moz-focusring": 4
+    },
+    "pseudoElementsUsage": {
+      "::-moz-focus-inner": 4,
+      "::-webkit-inner-spin-button": 1,
+      "::-webkit-outer-spin-button": 1,
+      "::-webkit-search-decoration": 1,
+      "::-webkit-file-upload-button": 1
+    },
+    "combinators": {
+      "total": 0,
+      "adjacentSibling": 0,
+      "child": 0,
+      "descendant": 0,
+      "generalSibling": 0
+    },
+    "complex": 0,
+    "maxPerRule": 5,
+    "averagePerRule": 1.64,
+    "totalByteLength": 663,
+    "longestByteLength": 42,
+    "longestByteLengthSelector": "[type=\"number\"]::-webkit-inner-spin-button",
+    "averageByteLength": 12.28,
+    "totalSpecificity": [
+      0,
+      21,
+      45
+    ],
+    "averageSpecificity": [
+      0,
+      0,
+      1
+    ],
+    "highestSpecificity": [
+      0,
+      2,
+      0
+    ],
+    "highestSpecificitySelector": "[type=\"button\"]:-moz-focusring",
+    "sizeRatio": 0.1047558856059409,
+    "specificityGraphData": [],
+    "usage": {}
+  },
+  "declarations": {
+    "total": 56,
+    "unique": 44,
+    "important": 0,
+    "averagePerRule": 1.7,
+    "inAtRules": {},
+    "list": []
+  },
+  "properties": {
+    "total": 56,
+    "unique": 27,
+    "shorthands": 14,
+    "vendorPrefixed": 5,
+    "unitless": 42,
+    "resetsViaAll": 0,
+    "negativeMargins": 0,
+    "anonymousReplacedElements": 0,
+    "performanceHacks": {},
+    "explicitDefaultingKeywords": {
+      "total": 3,
+      "inherit": 3,
+      "initial": 0,
+      "revert": 0,
+      "unset": 0
+    },
+    "engineTriggers": {
+      "composite": {
+        "blink": 36,
+        "edgehtml": 36,
+        "gecko": 36,
+        "webkit": 36
+      },
+      "layout": {
+        "blink": 32,
+        "edgehtml": 31,
+        "gecko": 31,
+        "webkit": 36
+      },
+      "paint": {
+        "blink": 36,
+        "edgehtml": 36,
+        "gecko": 36,
+        "webkit": 36
+      }
+    },
+    "usage": {
+      "line-height": 3,
+      "-webkit-text-size-adjust": 1,
+      "margin": 3,
+      "font-size": 6,
+      "box-sizing": 3,
+      "height": 2,
+      "overflow": 3,
+      "font-family": 3,
+      "background-color": 1,
+      "border-bottom": 1,
+      "text-decoration": 2,
+      "font-weight": 1,
+      "position": 1,
+      "vertical-align": 2,
+      "bottom": 1,
+      "top": 1,
+      "border-style": 2,
+      "text-transform": 1,
+      "-webkit-appearance": 4,
+      "padding": 4,
+      "outline": 1,
+      "color": 1,
+      "display": 5,
+      "max-width": 1,
+      "white-space": 1,
+      "outline-offset": 1,
+      "font": 1
+    }
+  },
+  "displays": {
+    "total": 5,
+    "unique": 4,
+    "usage": {
+      "table": 1,
+      "block": 1,
+      "list-item": 1,
+      "none": 2
+    }
+  },
+  "positions": {
+    "total": 1,
+    "unique": 1,
+    "usage": {
+      "relative": 1
+    }
+  },
+  "zIndices": {
+    "total": 0,
+    "unique": 0,
+    "invalid": {},
+    "usage": {}
+  },
+  "floats": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "borderRadiuses": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "letterSpacings": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "fontSizes": {
+    "total": 7,
+    "unique": 6,
+    "usage": {
+      "2em": 1,
+      "1em": 2,
+      "80%": 1,
+      "75%": 1,
+      "100%": 1,
+      "inherit": 1
+    }
+  },
+  "lineHeights": {
+    "total": 4,
+    "unique": 3,
+    "hardCoded": 1,
+    "usage": {
+      "0": 1,
+      "1.15": 2,
+      "inherit": 1
+    }
+  },
+  "fontFamilies": {
+    "total": 6,
+    "unique": 2,
+    "generic": {
+      "monospace": 4
+    },
+    "system": {},
+    "withoutFallbackFonts": 2,
+    "imageReplacementHacks": 0,
+    "usage": {
+      "monospace": 4,
+      "inherit": 2
+    }
+  },
+  "colors": {
+    "total": 1,
+    "unique": 1,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {},
+    "named": {},
+    "system": {
+      "ButtonText": 1
+    },
+    "usage": {
+      "ButtonText": 1
+    }
+  },
+  "backgroundColors": {
+    "total": 1,
+    "unique": 1,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 1,
+    "models": {},
+    "named": {},
+    "system": {},
+    "usage": {
+      "transparent": 1
+    }
+  },
+  "allColors": {
+    "total": 2,
+    "unique": 2,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 1,
+    "models": {},
+    "named": {},
+    "system": {
+      "ButtonText": 1
+    },
+    "usage": {
+      "transparent": 1,
+      "ButtonText": 1
+    }
+  },
+  "transitions": {
+    "properties": {},
+    "longestDuration": 0,
+    "shortestDuration": 9007199254740991,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "animations": {
+    "infinite": 0,
+    "longestDuration": 0,
+    "shortestDuration": 9007199254740991,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "functions": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "gradients": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "dataUris": {
+    "total": 0,
+    "unique": 0,
+    "totalByteLength": 0,
+    "averageByteLength": 0,
+    "sizeRatio": 0,
+    "usage": {}
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
+    }
+  },
+  "units": {
+    "total": 16,
+    "unique": 3,
+    "usage": {
+      "%": 5,
+      "em": 9,
+      "px": 2
+    },
+    "excessive": 0,
+    "excessiveUsage": {}
+  },
+  "variables": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "valuesMap": {}
+  },
+  "vendorPrefixes": {
+    "total": 17,
+    "unique": 2,
+    "unknown": {},
+    "usage": {
+      "-webkit-": 9,
+      "-moz-": 8
+    }
+  }
+}

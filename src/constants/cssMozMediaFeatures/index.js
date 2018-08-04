@@ -1,0 +1,18 @@
+export const cssMozMediaFeatures = [
+	'-moz-mac-graphite-theme',
+	'-moz-maemo-classic',
+	'-moz-device-pixel-ratio',
+	'-moz-os-version',
+	'-moz-scrollbar-end-backward',
+	'-moz-scrollbar-end-forward',
+	'-moz-scrollbar-start-backward',
+	'-moz-scrollbar-start-forward',
+	'-moz-scrollbar-thumb-proportional',
+	'-moz-touch-enabled',
+	'-moz-windows-accent-color-in-titlebar',
+	'-moz-windows-classic',
+	'-moz-windows-compositor',
+	'-moz-windows-default-theme',
+	'-moz-windows-glass',
+	'-moz-windows-theme',
+];

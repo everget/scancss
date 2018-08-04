@@ -1,0 +1,790 @@
+{
+  "styleSheetSize": {
+    "sourceByteLength": 155708,
+    "gzipByteLength": 20586
+  },
+  "comments": {
+    "total": 93,
+    "totalByteLength": 5697,
+    "longestByteLength": 263,
+    "shortestByteLength": 7,
+    "averageByteLength": 61.26,
+    "sizeRatio": 0.036587715467413365
+  },
+  "atRules": {
+    "total": 109,
+    "empty": 0,
+    "vendorPrefixed": 0,
+    "unknown": {},
+    "usage": {
+      "charset": 1,
+      "media": 103,
+      "page": 1,
+      "keyframes": 4
+    }
+  },
+  "mediaQueries": {
+    "total": 103,
+    "unique": 14,
+    "onlyKeywords": 0,
+    "types": {
+      "print": 83,
+      "screen": 105
+    },
+    "vendorPrefixedFeatures": 0,
+    "features": {
+      "min-width": 88,
+      "max-width": 15,
+      "orientation": 4
+    },
+    "usage": {
+      "print,screen and (min-width:40em)": 51,
+      "print,screen and (min-width:64em)": 31,
+      "print": 1,
+      "screen and (min-width:0\\0)": 1,
+      "screen and (max-width:39.9375em)": 6,
+      "screen and (max-width:63.9375em)": 3,
+      "screen and (max-width:74.9375em)": 1,
+      "screen and (max-width:0em),screen and (min-width:40em)": 1,
+      "screen and (min-width:40em) and (max-width:63.9375em)": 1,
+      "screen and (max-width:39.9375em),screen and (min-width:64em)": 1,
+      "screen and (min-width:64em) and (max-width:74.9375em)": 1,
+      "screen and (max-width:63.9375em),screen and (min-width:75em)": 1,
+      "screen and (orientation:landscape)": 2,
+      "screen and (orientation:portrait)": 2
+    }
+  },
+  "keyframes": {
+    "stepsChains": {
+      "0% -> 5% -> 10% -> 15% -> 20% -> 25% -> 30% -> 35% -> 40% -> 45% -> 50% -> 55% -> 60% -> 65% -> 70% -> 75% -> 80% -> 85% -> 90% -> 95%": 1,
+      "0% -> 100%": 2,
+      "0% -> 30% -> 35% -> 40% -> 45% -> 50% -> 55% -> 60% -> 65% -> 70% -> 100%": 1
+    },
+    "longestStepsChain": "0% -> 5% -> 10% -> 15% -> 20% -> 25% -> 30% -> 35% -> 40% -> 45% -> 50% -> 55% -> 60% -> 65% -> 70% -> 75% -> 80% -> 85% -> 90% -> 95%",
+    "longestStepsChainLength": 20,
+    "shortestStepsChain": "0% -> 100%",
+    "shortestStepsChainLength": 2,
+    "animatableProperties": [
+      "transform"
+    ]
+  },
+  "rules": {
+    "total": 1518,
+    "empty": 0
+  },
+  "selectors": {
+    "total": 2002,
+    "unique": 0,
+    "baseUsage": {
+      "class": 3435,
+      "tag": 539,
+      "pseudoClass": 288,
+      "attribute": 165,
+      "pseudoElement": 112,
+      "universal": 5
+    },
+    "pseudoClassesUsage": {
+      ":active": 4,
+      ":hover": 106,
+      ":not": 17,
+      ":root": 1,
+      ":-moz-focusring": 4,
+      ":focus": 115,
+      ":visited": 1,
+      ":disabled": 3,
+      ":first-child": 7,
+      ":last-child": 20,
+      ":nth-child": 2,
+      ":checked": 7,
+      ":nth-of-type": 1
+    },
+    "pseudoElementsUsage": {
+      "::-moz-focus-inner": 4,
+      "::-webkit-inner-spin-button": 1,
+      "::-webkit-outer-spin-button": 1,
+      "::-webkit-search-cancel-button": 1,
+      "::-webkit-search-decoration": 1,
+      "::-webkit-file-upload-button": 1,
+      "::before": 25,
+      "::after": 65,
+      "::-webkit-input-placeholder": 3,
+      "::-moz-placeholder": 3,
+      "::-ms-input-placeholder": 3,
+      "::placeholder": 3,
+      "::-ms-expand": 1
+    },
+    "combinators": {
+      "total": 1054,
+      "adjacentSibling": 9,
+      "child": 679,
+      "descendant": 352,
+      "generalSibling": 14
+    },
+    "complex": 140,
+    "maxPerRule": 19,
+    "averagePerRule": 1.32,
+    "totalByteLength": 47386,
+    "longestByteLength": 80,
+    "longestByteLengthSelector": ".accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after",
+    "averageByteLength": 23.67,
+    "totalSpecificity": [
+      0,
+      3874,
+      648
+    ],
+    "averageSpecificity": [
+      0,
+      1,
+      1
+    ],
+    "highestSpecificity": [
+      0,
+      5,
+      1
+    ],
+    "highestSpecificitySelector": ".dropdown.menu.vertical > li.opens-left > .is-dropdown-submenu",
+    "sizeRatio": 0.3043260461890205,
+    "specificityGraphData": [],
+    "usage": {}
+  },
+  "declarations": {
+    "total": 3273,
+    "unique": 859,
+    "important": 63,
+    "averagePerRule": 2.16,
+    "inAtRules": {
+      "media": 888,
+      "page": 1,
+      "keyframes": 9
+    },
+    "list": []
+  },
+  "properties": {
+    "total": 3273,
+    "unique": 142,
+    "shorthands": 473,
+    "vendorPrefixed": 335,
+    "unitless": 2005,
+    "resetsViaAll": 0,
+    "negativeMargins": 36,
+    "anonymousReplacedElements": 40,
+    "performanceHacks": {
+      "translate3d(0,0,0)": 2
+    },
+    "explicitDefaultingKeywords": {
+      "total": 26,
+      "inherit": 26,
+      "initial": 0,
+      "revert": 0,
+      "unset": 0
+    },
+    "engineTriggers": {
+      "composite": {
+        "blink": 2320,
+        "edgehtml": 2320,
+        "gecko": 2320,
+        "webkit": 2286
+      },
+      "layout": {
+        "blink": 1801,
+        "edgehtml": 2005,
+        "gecko": 1801,
+        "webkit": 2286
+      },
+      "paint": {
+        "blink": 2170,
+        "edgehtml": 2320,
+        "gecko": 2066,
+        "webkit": 2286
+      }
+    },
+    "usage": {
+      "right": 46,
+      "left": 64,
+      "margin": 41,
+      "font-family": 13,
+      "line-height": 34,
+      "-ms-text-size-adjust": 1,
+      "-webkit-text-size-adjust": 1,
+      "display": 188,
+      "font-size": 54,
+      "box-sizing": 8,
+      "height": 246,
+      "overflow": 26,
+      "background-color": 80,
+      "-webkit-text-decoration-skip": 1,
+      "outline-width": 1,
+      "border-bottom": 11,
+      "text-decoration": 8,
+      "font-weight": 20,
+      "font-style": 4,
+      "color": 141,
+      "position": 74,
+      "vertical-align": 9,
+      "bottom": 13,
+      "top": 57,
+      "border-style": 2,
+      "text-transform": 2,
+      "-webkit-appearance": 9,
+      "padding": 56,
+      "outline": 16,
+      "outline-offset": 1,
+      "font": 1,
+      "border": 75,
+      "max-width": 29,
+      "white-space": 8,
+      "background": 51,
+      "-webkit-font-smoothing": 1,
+      "-moz-osx-font-smoothing": 1,
+      "-ms-interpolation-mode": 1,
+      "min-height": 8,
+      "border-radius": 31,
+      "width": 358,
+      "-moz-appearance": 4,
+      "appearance": 4,
+      "cursor": 28,
+      "padding-right": 17,
+      "padding-left": 13,
+      "-ms-flex-flow": 6,
+      "flex-flow": 6,
+      "-ms-flex": 43,
+      "flex": 43,
+      "min-width": 5,
+      "-ms-flex-preferred-size": 12,
+      "flex-basis": 12,
+      "margin-left": 119,
+      "margin-right": 44,
+      "margin-top": 35,
+      "margin-bottom": 56,
+      "padding-top": 6,
+      "padding-bottom": 9,
+      "-ms-flex-wrap": 25,
+      "flex-wrap": 25,
+      "-ms-flex-align": 17,
+      "align-items": 17,
+      "overflow-x": 7,
+      "-webkit-overflow-scrolling": 6,
+      "-ms-overflow-stype": 6,
+      "overflow-y": 7,
+      "max-height": 10,
+      "-ms-flex-direction": 22,
+      "flex-direction": 22,
+      "-ms-flex-pack": 17,
+      "justify-content": 17,
+      "-ms-flex-item-align": 7,
+      "align-self": 7,
+      "-ms-grid-row-align": 5,
+      "-ms-flex-line-pack": 1,
+      "align-content": 1,
+      "-ms-flex-order": 23,
+      "order": 23,
+      "text-rendering": 2,
+      "clear": 6,
+      "border-top": 3,
+      "border-right": 2,
+      "border-left": 4,
+      "list-style-position": 1,
+      "list-style-type": 3,
+      "content": 40,
+      "list-style": 4,
+      "text-align": 23,
+      "box-shadow": 20,
+      "text-shadow": 1,
+      "page-break-inside": 3,
+      "orphans": 1,
+      "widows": 1,
+      "page-break-after": 1,
+      "transition": 29,
+      "opacity": 55,
+      "border-color": 41,
+      "border-bottom-width": 7,
+      "border-top-style": 7,
+      "float": 8,
+      "border-top-color": 6,
+      "background-image": 3,
+      "background-origin": 1,
+      "background-position": 1,
+      "background-repeat": 1,
+      "background-size": 1,
+      "-ms-transform": 85,
+      "transform": 120,
+      "-ms-transform-origin": 14,
+      "transform-origin": 14,
+      "clip": 3,
+      "-webkit-clip-path": 3,
+      "clip-path": 3,
+      "-ms-flex-positive": 1,
+      "flex-grow": 1,
+      "z-index": 26,
+      "border-right-width": 7,
+      "border-left-style": 7,
+      "border-left-width": 9,
+      "border-right-style": 7,
+      "visibility": 17,
+      "-webkit-backface-visibility": 12,
+      "backface-visibility": 12,
+      "-webkit-user-select": 3,
+      "-moz-user-select": 3,
+      "-ms-user-select": 3,
+      "user-select": 3,
+      "-ms-touch-action": 2,
+      "touch-action": 2,
+      "border-collapse": 1,
+      "border-top-width": 1,
+      "border-bottom-style": 1,
+      "transition-duration": 32,
+      "transition-timing-function": 38,
+      "transition-property": 30,
+      "transition-delay": 2,
+      "animation-name": 4,
+      "animation-duration": 3,
+      "animation-iteration-count": 1,
+      "animation-timing-function": 8,
+      "animation-delay": 2
+    }
+  },
+  "displays": {
+    "total": 188,
+    "unique": 11,
+    "usage": {
+      "block": 60,
+      "inline-block": 23,
+      "none": 45,
+      "table": 7,
+      "list-item": 1,
+      "-ms-flexbox": 23,
+      "flex": 23,
+      "table-header-group": 2,
+      "table-row-group": 1,
+      "table-row": 1,
+      "table-cell": 2
+    }
+  },
+  "positions": {
+    "total": 74,
+    "unique": 4,
+    "usage": {
+      "relative": 36,
+      "absolute": 29,
+      "fixed": 6,
+      "static": 3
+    }
+  },
+  "zIndices": {
+    "total": 26,
+    "unique": 11,
+    "invalid": {},
+    "usage": {
+      "0": 1,
+      "1": 3,
+      "5": 1,
+      "10": 2,
+      "11": 1,
+      "12": 12,
+      "13": 2,
+      "1005": 1,
+      "1006": 1,
+      "1200": 1,
+      "-1": 1
+    }
+  },
+  "floats": {
+    "total": 8,
+    "unique": 3,
+    "usage": {
+      "right": 3,
+      "none": 2,
+      "left": 3
+    }
+  },
+  "borderRadiuses": {
+    "total": 31,
+    "unique": 3,
+    "usage": {
+      "0": 24,
+      "0 0 0 0": 5,
+      "50%": 2
+    }
+  },
+  "letterSpacings": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "fontSizes": {
+    "total": 55,
+    "unique": 26,
+    "usage": {
+      "2em": 2,
+      "1em": 2,
+      "80%": 3,
+      "75%": 1,
+      "100%": 2,
+      "inherit": 3,
+      "1.5rem": 1,
+      "1.25rem": 4,
+      "1.1875rem": 1,
+      "1.125rem": 1,
+      "1.0625rem": 1,
+      "1rem": 7,
+      "3rem": 1,
+      "2.5rem": 2,
+      "1.9375rem": 1,
+      "1.5625rem": 1,
+      "0.8125rem": 2,
+      "125%": 1,
+      "0.9rem": 2,
+      "0.6rem": 3,
+      "0.75rem": 7,
+      "0.875rem": 3,
+      "0.6875rem": 1,
+      "1.5em": 1,
+      "0.8rem": 1,
+      "0.625rem": 1
+    }
+  },
+  "lineHeights": {
+    "total": 35,
+    "unique": 8,
+    "hardCoded": 5,
+    "usage": {
+      "0": 3,
+      "1": 10,
+      "1.15": 2,
+      "inherit": 5,
+      "1.5": 3,
+      "1.6": 4,
+      "1.4": 7,
+      "1.8": 1
+    }
+  },
+  "fontFamilies": {
+    "total": 30,
+    "unique": 11,
+    "generic": {
+      "sans-serif": 4,
+      "monospace": 6
+    },
+    "system": {},
+    "withoutFallbackFonts": 8,
+    "imageReplacementHacks": 0,
+    "usage": {
+      "sans-serif": 4,
+      "monospace": 6,
+      "inherit": 5,
+      "small=0em&medium=40em&large=64em&xlarge=75em&xxlarge=90em": 1,
+      "Helvetica Neue": 2,
+      "Helvetica": 2,
+      "Roboto": 2,
+      "Arial": 2,
+      "Consolas": 2,
+      "Liberation Mono": 2,
+      "Courier": 2
+    }
+  },
+  "colors": {
+    "total": 315,
+    "unique": 27,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 65,
+    "models": {
+      "hex": 238,
+      "rgba": 10
+    },
+    "named": {
+      "black": 1
+    },
+    "system": {
+      "ButtonText": 1
+    },
+    "usage": {
+      "#000000": 1,
+      "ButtonText": 1,
+      "#c0c0c0": 1,
+      "#0a0a0a": 44,
+      "#cacaca": 22,
+      "#1779ba": 41,
+      "#1468a0": 2,
+      "#8a8a8a": 10,
+      "black": 1,
+      "transparent": 65,
+      "#fefefe": 40,
+      "#0c3d5d": 8,
+      "#767676": 9,
+      "#3b3b3b": 4,
+      "#3adb76": 9,
+      "#157539": 4,
+      "#ffae00": 9,
+      "#805700": 4,
+      "#cc4b37": 16,
+      "#67251a": 4,
+      "rgba(10,10,10,0.1)": 1,
+      "#e6e6e6": 8,
+      "rgba(10,10,10,0.25)": 5,
+      "rgba(10,10,10,0.7)": 2,
+      "#f1f1f1": 2,
+      "rgba(10,10,10,0.2)": 1,
+      "rgba(23,121,186,0.5)": 1
+    }
+  },
+  "backgroundColors": {
+    "total": 129,
+    "unique": 34,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 11,
+    "models": {
+      "hex": 113,
+      "rgba": 4
+    },
+    "named": {
+      "white": 1
+    },
+    "system": {},
+    "usage": {
+      "transparent": 11,
+      "#ffff00": 1,
+      "#fefefe": 21,
+      "#e6e6e6": 13,
+      "#1779ba": 17,
+      "#14679e": 2,
+      "#126195": 2,
+      "#767676": 6,
+      "#5e5e5e": 2,
+      "#3adb76": 6,
+      "#22bb5b": 2,
+      "#ffae00": 6,
+      "#cc8b00": 2,
+      "#cc4b37": 6,
+      "#a53b2a": 2,
+      "#f9ecea": 1,
+      "white": 1,
+      "#d7ecfa": 1,
+      "#eaeaea": 1,
+      "#e1faea": 1,
+      "#fff3d9": 1,
+      "#f7e4e1": 1,
+      "#cacaca": 5,
+      "#0a0a0a": 3,
+      "#8a8a8a": 3,
+      "rgba(254,254,254,0.25)": 1,
+      "rgba(10,10,10,0.5)": 2,
+      "rgba(10,10,10,0.45)": 1,
+      "#f8f8f8": 1,
+      "#f1f1f1": 2,
+      "#f3f3f3": 1,
+      "#ececec": 2,
+      "#f9f9f9": 1,
+      "#1673b1": 1
+    }
+  },
+  "allColors": {
+    "total": 444,
+    "unique": 49,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 76,
+    "models": {
+      "hex": 351,
+      "rgba": 14
+    },
+    "named": {
+      "black": 1,
+      "white": 1
+    },
+    "system": {
+      "ButtonText": 1
+    },
+    "usage": {
+      "transparent": 76,
+      "#ffff00": 1,
+      "#000000": 1,
+      "ButtonText": 1,
+      "#c0c0c0": 1,
+      "#fefefe": 61,
+      "#0a0a0a": 47,
+      "#cacaca": 27,
+      "#1779ba": 58,
+      "#1468a0": 2,
+      "#8a8a8a": 13,
+      "#e6e6e6": 21,
+      "black": 1,
+      "#14679e": 2,
+      "#126195": 2,
+      "#767676": 15,
+      "#5e5e5e": 2,
+      "#3adb76": 15,
+      "#22bb5b": 2,
+      "#ffae00": 15,
+      "#cc8b00": 2,
+      "#cc4b37": 22,
+      "#a53b2a": 2,
+      "#0c3d5d": 8,
+      "#3b3b3b": 4,
+      "#157539": 4,
+      "#805700": 4,
+      "#67251a": 4,
+      "rgba(10,10,10,0.1)": 1,
+      "#f9ecea": 1,
+      "rgba(10,10,10,0.25)": 5,
+      "white": 1,
+      "#d7ecfa": 1,
+      "#eaeaea": 1,
+      "#e1faea": 1,
+      "#fff3d9": 1,
+      "#f7e4e1": 1,
+      "rgba(254,254,254,0.25)": 1,
+      "rgba(10,10,10,0.7)": 2,
+      "rgba(10,10,10,0.5)": 2,
+      "rgba(10,10,10,0.45)": 1,
+      "#f1f1f1": 4,
+      "#f8f8f8": 1,
+      "#f3f3f3": 1,
+      "#ececec": 2,
+      "#f9f9f9": 1,
+      "#1673b1": 1,
+      "rgba(10,10,10,0.2)": 1,
+      "rgba(23,121,186,0.5)": 1
+    }
+  },
+  "transitions": {
+    "properties": {
+      "background-color": 1,
+      "color": 1,
+      "box-shadow": 5,
+      "border-color": 4,
+      "height": 1,
+      "transform": 32,
+      "opacity": 31,
+      "visibility": 1,
+      "inherit": 2,
+      "all": 7
+    },
+    "longestDuration": 0.75,
+    "shortestDuration": 0,
+    "longestDelay": 0.7,
+    "shortestDelay": 0.3,
+    "timingFunctions": {
+      "ease-out": 6,
+      "ease-in-out": 7,
+      "linear": 34,
+      "ease": 7,
+      "inherit": 2,
+      "ease-in": 1,
+      "cubic-bezier(0.485,0.155,0.24,1.245)": 1,
+      "cubic-bezier(0.485,0.155,0.515,0.845)": 1,
+      "cubic-bezier(0.76,-0.245,0.24,1.245)": 1
+    },
+    "invalidTimingFunctions": {
+      "cubic-bezier(0.485, 0.155, 0.24, 1.245)": 1,
+      "cubic-bezier(0.485, 0.155, 0.515, 0.845)": 1,
+      "cubic-bezier(0.76, -0.245, 0.24, 1.245)": 1
+    }
+  },
+  "animations": {
+    "infinite": 1,
+    "longestDuration": 0.75,
+    "shortestDuration": 0.25,
+    "longestDelay": 0.7,
+    "shortestDelay": 0.3,
+    "timingFunctions": {
+      "linear": 1,
+      "ease": 1,
+      "ease-in": 1,
+      "ease-out": 1,
+      "ease-in-out": 1,
+      "cubic-bezier(0.485,0.155,0.24,1.245)": 1,
+      "cubic-bezier(0.485,0.155,0.515,0.845)": 1,
+      "cubic-bezier(0.76,-0.245,0.24,1.245)": 1
+    },
+    "invalidTimingFunctions": {
+      "cubic-bezier(0.485, 0.155, 0.24, 1.245)": 1,
+      "cubic-bezier(0.485, 0.155, 0.515, 0.845)": 1,
+      "cubic-bezier(0.76, -0.245, 0.24, 1.245)": 1
+    }
+  },
+  "functions": {
+    "total": 445,
+    "unique": 17,
+    "usage": {
+      "calc": 224,
+      "attr": 2,
+      "rgba": 14,
+      "url": 2,
+      "rotate": 37,
+      "scaleY": 2,
+      "rect": 2,
+      "inset": 4,
+      "translateX": 40,
+      "translate": 18,
+      "translateY": 38,
+      "scale": 18,
+      "translate3d": 2,
+      "perspective": 24,
+      "rotateX": 6,
+      "rotateY": 6,
+      "cubic-bezier": 6
+    }
+  },
+  "gradients": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "dataUris": {
+    "total": 1,
+    "unique": 1,
+    "totalByteLength": 334,
+    "averageByteLength": 334,
+    "sizeRatio": 0.002145040717239962,
+    "usage": {
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==": 1
+    }
+  },
+  "browserHacks": {
+    "total": 1,
+    "usage": {
+      "supports": {},
+      "media": {
+        "screen and (min-width:0\\0)": 1
+      }
+    }
+  },
+  "units": {
+    "total": 1575,
+    "unique": 11,
+    "usage": {
+      "%": 649,
+      "em": 21,
+      "px": 252,
+      "rem": 535,
+      "vw": 3,
+      "vh": 12,
+      "cm": 1,
+      "s": 24,
+      "deg": 28,
+      "ms": 40,
+      "turn": 10
+    },
+    "excessive": 53,
+    "excessiveUsage": {
+      "0px": 34,
+      "0%": 7,
+      "0deg": 12
+    }
+  },
+  "variables": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "valuesMap": {}
+  },
+  "vendorPrefixes": {
+    "total": 358,
+    "unique": 3,
+    "unknown": {},
+    "usage": {
+      "-ms-": 295,
+      "-webkit-": 44,
+      "-moz-": 19
+    }
+  }
+}

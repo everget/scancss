@@ -1,0 +1,397 @@
+{
+  "styleSheetSize": {
+    "sourceByteLength": 56306,
+    "gzipByteLength": 10127
+  },
+  "comments": {
+    "total": 1,
+    "totalByteLength": 179,
+    "longestByteLength": 179,
+    "shortestByteLength": 179,
+    "averageByteLength": 179,
+    "sizeRatio": 0.0031790572940716797
+  },
+  "atRules": {
+    "total": 4,
+    "empty": 0,
+    "vendorPrefixed": 0,
+    "unknown": {},
+    "usage": {
+      "keyframes": 1,
+      "font-face": 3
+    }
+  },
+  "mediaQueries": {
+    "total": 0,
+    "unique": 0,
+    "onlyKeywords": 0,
+    "types": {},
+    "vendorPrefixedFeatures": 0,
+    "features": {},
+    "usage": {}
+  },
+  "keyframes": {
+    "stepsChains": {
+      "0% -> 100%": 1
+    },
+    "longestStepsChain": "0% -> 100%",
+    "longestStepsChainLength": 2,
+    "shortestStepsChain": "0% -> 100%",
+    "shortestStepsChainLength": 2,
+    "animatableProperties": [
+      "transform"
+    ]
+  },
+  "rules": {
+    "total": 1157,
+    "empty": 0
+  },
+  "selectors": {
+    "total": 1177,
+    "unique": 0,
+    "baseUsage": {
+      "class": 1189,
+      "tag": 1,
+      "pseudoClass": 7,
+      "pseudoElement": 1111
+    },
+    "pseudoClassesUsage": {
+      ":root": 5,
+      ":active": 1,
+      ":focus": 1
+    },
+    "pseudoElementsUsage": {
+      "::before": 1111
+    },
+    "combinators": {
+      "total": 6,
+      "adjacentSibling": 0,
+      "child": 1,
+      "descendant": 5,
+      "generalSibling": 0
+    },
+    "complex": 0,
+    "maxPerRule": 5,
+    "averagePerRule": 1.02,
+    "totalByteLength": 23465,
+    "longestByteLength": 46,
+    "longestByteLengthSelector": ".fa-american-sign-language-interpreting:before",
+    "averageByteLength": 19.94,
+    "totalSpecificity": [
+      0,
+      1196,
+      1112
+    ],
+    "averageSpecificity": [
+      0,
+      0,
+      1
+    ],
+    "highestSpecificity": [
+      0,
+      2,
+      0
+    ],
+    "highestSpecificitySelector": ".fa.fa-pull-left",
+    "sizeRatio": 0.41674066706922885,
+    "specificityGraphData": [],
+    "usage": {}
+  },
+  "declarations": {
+    "total": 1214,
+    "unique": 1197,
+    "important": 0,
+    "averagePerRule": 1.05,
+    "inAtRules": {
+      "keyframes": 2,
+      "font-face": 15
+    },
+    "list": []
+  },
+  "properties": {
+    "total": 1214,
+    "unique": 35,
+    "shorthands": 9,
+    "vendorPrefixed": 8,
+    "unitless": 1175,
+    "resetsViaAll": 0,
+    "negativeMargins": 1,
+    "anonymousReplacedElements": 1111,
+    "performanceHacks": {},
+    "explicitDefaultingKeywords": {
+      "total": 2,
+      "inherit": 2,
+      "initial": 0,
+      "revert": 0,
+      "unset": 0
+    },
+    "engineTriggers": {
+      "composite": {
+        "blink": 77,
+        "edgehtml": 77,
+        "gecko": 77,
+        "webkit": 72
+      },
+      "layout": {
+        "blink": 66,
+        "edgehtml": 75,
+        "gecko": 68,
+        "webkit": 72
+      },
+      "paint": {
+        "blink": 69,
+        "edgehtml": 77,
+        "gecko": 69,
+        "webkit": 72
+      }
+    },
+    "usage": {
+      "-moz-osx-font-smoothing": 1,
+      "-webkit-font-smoothing": 1,
+      "display": 2,
+      "font-style": 4,
+      "font-variant": 1,
+      "text-rendering": 1,
+      "line-height": 5,
+      "font-size": 14,
+      "vertical-align": 2,
+      "text-align": 3,
+      "width": 6,
+      "list-style-type": 1,
+      "margin-left": 2,
+      "padding-left": 1,
+      "position": 6,
+      "left": 2,
+      "border": 2,
+      "border-radius": 1,
+      "padding": 2,
+      "float": 2,
+      "margin-right": 1,
+      "animation": 2,
+      "transform": 8,
+      "-ms-filter": 5,
+      "-webkit-filter": 1,
+      "filter": 1,
+      "height": 3,
+      "color": 1,
+      "content": 1111,
+      "clip": 2,
+      "margin": 2,
+      "overflow": 2,
+      "font-family": 5,
+      "font-weight": 5,
+      "src": 6
+    }
+  },
+  "displays": {
+    "total": 2,
+    "unique": 1,
+    "usage": {
+      "inline-block": 2
+    }
+  },
+  "positions": {
+    "total": 6,
+    "unique": 3,
+    "usage": {
+      "relative": 2,
+      "absolute": 3,
+      "static": 1
+    }
+  },
+  "zIndices": {
+    "total": 0,
+    "unique": 0,
+    "invalid": {},
+    "usage": {}
+  },
+  "floats": {
+    "total": 2,
+    "unique": 2,
+    "usage": {
+      "left": 1,
+      "right": 1
+    }
+  },
+  "borderRadiuses": {
+    "total": 1,
+    "unique": 1,
+    "usage": {
+      ".1em": 1
+    }
+  },
+  "letterSpacings": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "fontSizes": {
+    "total": 14,
+    "unique": 13,
+    "usage": {
+      "1.33333em": 1,
+      ".75em": 1,
+      ".875em": 1,
+      "1em": 1,
+      "2em": 2,
+      "3em": 1,
+      "4em": 1,
+      "5em": 1,
+      "6em": 1,
+      "7em": 1,
+      "8em": 1,
+      "9em": 1,
+      "10em": 1
+    }
+  },
+  "lineHeights": {
+    "total": 5,
+    "unique": 4,
+    "hardCoded": 4,
+    "usage": {
+      "1": 1,
+      ".75em": 1,
+      "inherit": 2,
+      "2em": 1
+    }
+  },
+  "fontFamilies": {
+    "total": 2,
+    "unique": 2,
+    "generic": {},
+    "system": {},
+    "withoutFallbackFonts": 2,
+    "imageReplacementHacks": 0,
+    "usage": {
+      "Font Awesome 5 Brands": 1,
+      "Font Awesome 5 Free": 1
+    }
+  },
+  "colors": {
+    "total": 2,
+    "unique": 2,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {
+      "hex": 2
+    },
+    "named": {},
+    "system": {},
+    "usage": {
+      "#eeeeee": 1,
+      "#ffffff": 1
+    }
+  },
+  "backgroundColors": {
+    "total": 0,
+    "unique": 0,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {},
+    "named": {},
+    "system": {},
+    "usage": {}
+  },
+  "allColors": {
+    "total": 2,
+    "unique": 2,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {
+      "hex": 2
+    },
+    "named": {},
+    "system": {},
+    "usage": {
+      "#eeeeee": 1,
+      "#ffffff": 1
+    }
+  },
+  "transitions": {
+    "properties": {},
+    "longestDuration": 0,
+    "shortestDuration": 9007199254740991,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "animations": {
+    "infinite": 2,
+    "longestDuration": 2,
+    "shortestDuration": 1,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {
+      "linear": 1
+    },
+    "invalidTimingFunctions": {
+      "steps(8)": 1
+    }
+  },
+  "functions": {
+    "total": 28,
+    "unique": 7,
+    "usage": {
+      "steps": 1,
+      "rotate": 5,
+      "scaleX": 1,
+      "scaleY": 1,
+      "scale": 1,
+      "rect": 1,
+      "url": 18
+    }
+  },
+  "gradients": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "dataUris": {
+    "total": 0,
+    "unique": 0,
+    "totalByteLength": 0,
+    "averageByteLength": 0,
+    "sizeRatio": 0,
+    "usage": {}
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
+    }
+  },
+  "units": {
+    "total": 41,
+    "unique": 6,
+    "usage": {
+      "em": 30,
+      "s": 2,
+      "deg": 4,
+      "turn": 1,
+      "%": 1,
+      "px": 3
+    },
+    "excessive": 1,
+    "excessiveUsage": {
+      "0deg": 1
+    }
+  },
+  "variables": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "valuesMap": {}
+  },
+  "vendorPrefixes": {
+    "total": 8,
+    "unique": 3,
+    "unknown": {},
+    "usage": {
+      "-moz-": 1,
+      "-webkit-": 2,
+      "-ms-": 5
+    }
+  }
+}

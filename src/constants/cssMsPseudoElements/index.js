@@ -1,0 +1,18 @@
+export const cssMsPseudoElements = [
+	'-ms-backdrop',
+	'-ms-browse',
+	'-ms-check',
+	'-ms-clear',
+	'-ms-expand',
+	'-ms-fill-lower',
+	'-ms-fill-upper',
+	'-ms-fill',
+	'-ms-input-placeholder',
+	'-ms-reveal',
+	'-ms-thumb',
+	'-ms-ticks-after',
+	'-ms-ticks-before',
+	'-ms-tooltip',
+	'-ms-track',
+	'-ms-value',
+];

@@ -1,0 +1,369 @@
+{
+  "styleSheetSize": {
+    "sourceByteLength": 78546,
+    "gzipByteLength": 4439
+  },
+  "comments": {
+    "total": 5,
+    "totalByteLength": 494,
+    "longestByteLength": 182,
+    "shortestByteLength": 78,
+    "averageByteLength": 98.8,
+    "sizeRatio": 0.006289308176100629
+  },
+  "atRules": {
+    "total": 155,
+    "empty": 0,
+    "vendorPrefixed": 77,
+    "unknown": {},
+    "usage": {
+      "charset": 1,
+      "-webkit-keyframes": 77,
+      "keyframes": 77
+    }
+  },
+  "mediaQueries": {
+    "total": 0,
+    "unique": 0,
+    "onlyKeywords": 0,
+    "types": {},
+    "vendorPrefixedFeatures": 0,
+    "features": {},
+    "usage": {}
+  },
+  "keyframes": {
+    "stepsChains": {
+      "0% -> 20% -> 40% -> 43% -> 53% -> 70% -> 80% -> 90% -> 100%": 2,
+      "0% -> 25% -> 50% -> 75% -> 100%": 2,
+      "0% -> 50% -> 100%": 4,
+      "0% -> 30% -> 40% -> 50% -> 65% -> 75% -> 100%": 2,
+      "0% -> 10% -> 20% -> 30% -> 40% -> 50% -> 60% -> 70% -> 80% -> 90% -> 100%": 4,
+      "0% -> 6.5% -> 18.5% -> 31.5% -> 43.5% -> 50%": 2,
+      "20% -> 40% -> 60% -> 80% -> 100%": 2,
+      "0% -> 15% -> 30% -> 45% -> 60% -> 75% -> 100%": 2,
+      "0% -> 11.1% -> 22.2% -> 33.3% -> 44.4% -> 55.5% -> 66.6% -> 77.7% -> 88.8% -> 100%": 2,
+      "0% -> 20% -> 40% -> 60% -> 80% -> 100%": 4,
+      "0% -> 60% -> 75% -> 90% -> 100%": 8,
+      "20% -> 50% -> 55% -> 100%": 2,
+      "20% -> 40% -> 45% -> 100%": 4,
+      "20% -> 100%": 4,
+      "0% -> 100%": 78,
+      "0% -> 40% -> 50% -> 80% -> 100%": 2,
+      "0% -> 40% -> 60% -> 80% -> 100%": 4,
+      "0% -> 30% -> 100%": 4,
+      "0% -> 60% -> 80% -> 100%": 2,
+      "0% -> 50% -> 70% -> 100%": 2,
+      "0% -> 50%": 2,
+      "0% -> 60%": 8,
+      "40% -> 100%": 8
+    },
+    "longestStepsChain": "0% -> 10% -> 20% -> 30% -> 40% -> 50% -> 60% -> 70% -> 80% -> 90% -> 100%",
+    "longestStepsChainLength": 11,
+    "shortestStepsChain": "20% -> 100%",
+    "shortestStepsChainLength": 2,
+    "animatableProperties": [
+      "-webkit-animation-timing-function",
+      "animation-timing-function",
+      "-webkit-transform",
+      "transform",
+      "opacity",
+      "-webkit-transform-origin",
+      "transform-origin",
+      "visibility"
+    ]
+  },
+  "rules": {
+    "total": 531,
+    "empty": 0
+  },
+  "selectors": {
+    "total": 79,
+    "unique": 0,
+    "baseUsage": {
+      "class": 81
+    },
+    "pseudoClassesUsage": {},
+    "pseudoElementsUsage": {},
+    "combinators": {
+      "total": 0,
+      "adjacentSibling": 0,
+      "child": 0,
+      "descendant": 0,
+      "generalSibling": 0
+    },
+    "complex": 0,
+    "maxPerRule": 1,
+    "averagePerRule": 0.15,
+    "totalByteLength": 908,
+    "longestByteLength": 19,
+    "longestByteLengthSelector": ".rotateOutDownRight",
+    "averageByteLength": 11.49,
+    "totalSpecificity": [
+      0,
+      81,
+      0
+    ],
+    "averageSpecificity": [
+      0,
+      0,
+      0
+    ],
+    "highestSpecificity": [
+      0,
+      2,
+      0
+    ],
+    "highestSpecificitySelector": ".animated.infinite",
+    "sizeRatio": 0.011560104906678888,
+    "specificityGraphData": [],
+    "usage": {}
+  },
+  "declarations": {
+    "total": 1476,
+    "unique": 432,
+    "important": 8,
+    "averagePerRule": 2.78,
+    "inAtRules": {
+      "-webkit-keyframes": 642,
+      "keyframes": 642
+    },
+    "list": []
+  },
+  "properties": {
+    "total": 1476,
+    "unique": 18,
+    "shorthands": 0,
+    "vendorPrefixed": 608,
+    "unitless": 912,
+    "resetsViaAll": 0,
+    "negativeMargins": 0,
+    "anonymousReplacedElements": 0,
+    "performanceHacks": {
+      "translate3d(0,0,0)": 128
+    },
+    "explicitDefaultingKeywords": {
+      "total": 0,
+      "inherit": 0,
+      "initial": 0,
+      "revert": 0,
+      "unset": 0
+    },
+    "engineTriggers": {
+      "composite": {
+        "blink": 716,
+        "edgehtml": 716,
+        "gecko": 716,
+        "webkit": 716
+      },
+      "layout": {
+        "blink": 0,
+        "edgehtml": 716,
+        "gecko": 0,
+        "webkit": 716
+      },
+      "paint": {
+        "blink": 324,
+        "edgehtml": 716,
+        "gecko": 16,
+        "webkit": 716
+      }
+    },
+    "usage": {
+      "-webkit-animation-duration": 6,
+      "animation-duration": 6,
+      "-webkit-animation-fill-mode": 1,
+      "animation-fill-mode": 1,
+      "-webkit-animation-iteration-count": 1,
+      "animation-iteration-count": 1,
+      "-webkit-animation-timing-function": 67,
+      "animation-timing-function": 67,
+      "-webkit-transform": 392,
+      "transform": 392,
+      "-webkit-animation-name": 77,
+      "animation-name": 77,
+      "-webkit-transform-origin": 59,
+      "transform-origin": 59,
+      "opacity": 244,
+      "-webkit-backface-visibility": 5,
+      "backface-visibility": 5,
+      "visibility": 16
+    }
+  },
+  "displays": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "positions": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "zIndices": {
+    "total": 0,
+    "unique": 0,
+    "invalid": {},
+    "usage": {}
+  },
+  "floats": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "borderRadiuses": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "letterSpacings": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "fontSizes": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "lineHeights": {
+    "total": 0,
+    "unique": 0,
+    "hardCoded": 0,
+    "usage": {}
+  },
+  "fontFamilies": {
+    "total": 0,
+    "unique": 0,
+    "generic": {},
+    "system": {},
+    "withoutFallbackFonts": 0,
+    "imageReplacementHacks": 0,
+    "usage": {}
+  },
+  "colors": {
+    "total": 0,
+    "unique": 0,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {},
+    "named": {},
+    "system": {},
+    "usage": {}
+  },
+  "backgroundColors": {
+    "total": 0,
+    "unique": 0,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {},
+    "named": {},
+    "system": {},
+    "usage": {}
+  },
+  "allColors": {
+    "total": 0,
+    "unique": 0,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {},
+    "named": {},
+    "system": {},
+    "usage": {}
+  },
+  "transitions": {
+    "properties": {},
+    "longestDuration": 0,
+    "shortestDuration": 9007199254740991,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "animations": {
+    "infinite": 1,
+    "longestDuration": 2,
+    "shortestDuration": 0.75,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {
+      "cubic-bezier(0.215,0.61,0.355,1)": 24,
+      "cubic-bezier(0.755,0.05,0.855,0.06)": 8,
+      "ease-in-out": 7,
+      "ease-out": 5,
+      "ease-in": 15,
+      "cubic-bezier(0.55,0.055,0.675,0.19)": 24,
+      "cubic-bezier(0.175,0.885,0.32,1)": 24
+    },
+    "invalidTimingFunctions": {
+      "cubic-bezier(0.215, 0.61, 0.355, 1)": 12,
+      "cubic-bezier(0.755, 0.05, 0.855, 0.06)": 4,
+      "cubic-bezier(0.55, 0.055, 0.675, 0.19)": 12,
+      "cubic-bezier(0.175, 0.885, 0.32, 1)": 12
+    }
+  },
+  "functions": {
+    "total": 1096,
+    "unique": 11,
+    "usage": {
+      "cubic-bezier": 80,
+      "translate3d": 460,
+      "scale3d": 164,
+      "translateX": 24,
+      "rotateY": 16,
+      "rotate3d": 168,
+      "skewX": 44,
+      "skewY": 28,
+      "perspective": 84,
+      "scale": 16,
+      "rotate": 12
+    }
+  },
+  "gradients": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "dataUris": {
+    "total": 0,
+    "unique": 0,
+    "totalByteLength": 0,
+    "averageByteLength": 0,
+    "sizeRatio": 0,
+    "usage": {}
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
+    }
+  },
+  "units": {
+    "total": 712,
+    "unique": 4,
+    "usage": {
+      "s": 12,
+      "px": 332,
+      "deg": 268,
+      "%": 100
+    },
+    "excessive": 4,
+    "excessiveUsage": {
+      "0deg": 4
+    }
+  },
+  "variables": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "valuesMap": {}
+  },
+  "vendorPrefixes": {
+    "total": 685,
+    "unique": 1,
+    "unknown": {},
+    "usage": {
+      "-webkit-": 685
+    }
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "styleSheetSize": {
+    "sourceByteLength": 1137,
+    "gzipByteLength": 623
+  },
+  "comments": {
+    "total": 2,
+    "totalByteLength": 151,
+    "longestByteLength": 102,
+    "shortestByteLength": 49,
+    "averageByteLength": 75.5,
+    "sizeRatio": 0.13280562884784522
+  },
+  "atRules": {
+    "total": 0,
+    "empty": 0,
+    "vendorPrefixed": 0,
+    "unknown": {},
+    "usage": {}
+  },
+  "mediaQueries": {
+    "total": 0,
+    "unique": 0,
+    "onlyKeywords": 0,
+    "types": {},
+    "vendorPrefixedFeatures": 0,
+    "features": {},
+    "usage": {}
+  },
+  "keyframes": {
+    "stepsChains": {},
+    "longestStepsChain": null,
+    "longestStepsChainLength": 0,
+    "shortestStepsChain": null,
+    "shortestStepsChainLength": 9007199254740991,
+    "animatableProperties": []
+  },
+  "rules": {
+    "total": 7,
+    "empty": 0
+  },
+  "selectors": {
+    "total": 102,
+    "unique": 0,
+    "baseUsage": {
+      "tag": 102,
+      "pseudoElement": 4
+    },
+    "pseudoClassesUsage": {},
+    "pseudoElementsUsage": {
+      "::before": 2,
+      "::after": 2
+    },
+    "combinators": {
+      "total": 0,
+      "adjacentSibling": 0,
+      "child": 0,
+      "descendant": 0,
+      "generalSibling": 0
+    },
+    "complex": 0,
+    "maxPerRule": 81,
+    "averagePerRule": 14.57,
+    "totalByteLength": 469,
+    "longestByteLength": 17,
+    "longestByteLengthSelector": "blockquote:before",
+    "averageByteLength": 4.6,
+    "totalSpecificity": [
+      0,
+      0,
+      106
+    ],
+    "averageSpecificity": [
+      0,
+      0,
+      1
+    ],
+    "highestSpecificity": [
+      0,
+      0,
+      2
+    ],
+    "highestSpecificitySelector": "blockquote:before",
+    "sizeRatio": 0.4124890061565523,
+    "specificityGraphData": [],
+    "usage": {}
+  },
+  "declarations": {
+    "total": 14,
+    "unique": 14,
+    "important": 0,
+    "averagePerRule": 2,
+    "inAtRules": {},
+    "list": []
+  },
+  "properties": {
+    "total": 14,
+    "unique": 13,
+    "shorthands": 5,
+    "vendorPrefixed": 0,
+    "unitless": 13,
+    "resetsViaAll": 0,
+    "negativeMargins": 0,
+    "anonymousReplacedElements": 2,
+    "performanceHacks": {},
+    "explicitDefaultingKeywords": {
+      "total": 1,
+      "inherit": 1,
+      "initial": 0,
+      "revert": 0,
+      "unset": 0
+    },
+    "engineTriggers": {
+      "composite": {
+        "blink": 5,
+        "edgehtml": 5,
+        "gecko": 5,
+        "webkit": 5
+      },
+      "layout": {
+        "blink": 5,
+        "edgehtml": 5,
+        "gecko": 5,
+        "webkit": 5
+      },
+      "paint": {
+        "blink": 5,
+        "edgehtml": 5,
+        "gecko": 5,
+        "webkit": 5
+      }
+    },
+    "usage": {
+      "margin": 1,
+      "padding": 1,
+      "border": 1,
+      "font-size": 1,
+      "font": 1,
+      "vertical-align": 1,
+      "display": 1,
+      "line-height": 1,
+      "list-style": 1,
+      "quotes": 1,
+      "content": 2,
+      "border-collapse": 1,
+      "border-spacing": 1
+    }
+  },
+  "displays": {
+    "total": 1,
+    "unique": 1,
+    "usage": {
+      "block": 1
+    }
+  },
+  "positions": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "zIndices": {
+    "total": 0,
+    "unique": 0,
+    "invalid": {},
+    "usage": {}
+  },
+  "floats": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "borderRadiuses": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "letterSpacings": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "fontSizes": {
+    "total": 2,
+    "unique": 2,
+    "usage": {
+      "100%": 1,
+      "inherit": 1
+    }
+  },
+  "lineHeights": {
+    "total": 2,
+    "unique": 2,
+    "hardCoded": 1,
+    "usage": {
+      "1": 1,
+      "inherit": 1
+    }
+  },
+  "fontFamilies": {
+    "total": 1,
+    "unique": 1,
+    "generic": {},
+    "system": {},
+    "withoutFallbackFonts": 1,
+    "imageReplacementHacks": 0,
+    "usage": {
+      "inherit": 1
+    }
+  },
+  "colors": {
+    "total": 0,
+    "unique": 0,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {},
+    "named": {},
+    "system": {},
+    "usage": {}
+  },
+  "backgroundColors": {
+    "total": 0,
+    "unique": 0,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {},
+    "named": {},
+    "system": {},
+    "usage": {}
+  },
+  "allColors": {
+    "total": 0,
+    "unique": 0,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {},
+    "named": {},
+    "system": {},
+    "usage": {}
+  },
+  "transitions": {
+    "properties": {},
+    "longestDuration": 0,
+    "shortestDuration": 9007199254740991,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "animations": {
+    "infinite": 0,
+    "longestDuration": 0,
+    "shortestDuration": 9007199254740991,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "functions": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "gradients": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "dataUris": {
+    "total": 0,
+    "unique": 0,
+    "totalByteLength": 0,
+    "averageByteLength": 0,
+    "sizeRatio": 0,
+    "usage": {}
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
+    }
+  },
+  "units": {
+    "total": 1,
+    "unique": 1,
+    "usage": {
+      "%": 1
+    },
+    "excessive": 0,
+    "excessiveUsage": {}
+  },
+  "variables": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "valuesMap": {}
+  },
+  "vendorPrefixes": {
+    "total": 0,
+    "unique": 0,
+    "unknown": {},
+    "usage": {}
+  }
+}

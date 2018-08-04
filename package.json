@@ -1,0 +1,76 @@
+{
+  "name": "scancss",
+  "version": "1.0.0",
+  "description": "A robust CSS stylesheet statistics collector and analyzer",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf ./dist && babel ./src -d ./dist --ignore spec.js",
+    "scan:examples": "yarn build && node ./scripts/scanExamples.js",
+    "cover": "yarn cover:clean && yarn cover:all && yarn cover:report",
+    "cover:clean": "rimraf coverage",
+    "cover:all": "node --max-old-space-size=4096 ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/**/*.spec.js\" --coverage",
+    "cover:report": "istanbul report",
+    "lint": "eslint --cache \"./src/**/*.js\"",
+    "lint-staged": "lint-staged",
+    "test": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/**/*.spec.js\"",
+    "test:calculators": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/calculators/**/*.spec.js\"",
+    "test:constants": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/constants/**/*.spec.js\"",
+    "test:converters": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/converters/**/*.spec.js\"",
+    "test:handlers": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/handlers/**/*.spec.js\"",
+    "test:predicates": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/predicates/**/*.spec.js\"",
+    "travis:test": "yarn cover:clean && yarn cover:all && yarn cover:report --ci $JEST",
+    "travis:lint": "yarn lint",
+    "appveyor:test": "yarn cover:clean && yarn cover:all --ci %JEST%"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/everget/scancss.git"
+  },
+  "keywords": [
+    "css",
+    "scan",
+    "scanner",
+    "stats",
+    "cssstats",
+    "statistics",
+    "collector",
+    "analyzer",
+    "cssanalyzer"
+  ],
+  "author": "Alex Orekhov <alex.everget161@gmail.com> (https://github.com/everget)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/everget/scancss/issues"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --cache"
+    ]
+  },
+  "pre-commit": "lint-staged",
+  "dependencies": {
+    "css-property-parser": "^1.0.6",
+    "gzip-size": "^5.0.0",
+    "lodash.isplainobject": "^4.0.6",
+    "postcss": "^6.0.22",
+    "postcss-safe-parser": "^3.0.1",
+    "postcss-selector-parser": "^5.0.0-rc.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "codecov.io": "^0.1.6",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.0.1",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "istanbul": "^0.4.5",
+    "jest": "^23.1.0",
+    "jest-cli": "^23.1.0",
+    "lint-staged": "^7.2.0",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.6.2"
+  }
+}
