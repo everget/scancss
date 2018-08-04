@@ -1,6 +1,5 @@
 coverage/
 dev-docs/
-data/
 examples/
 scripts/
 src/
@@ -9,6 +8,8 @@ jest.config.js
 appveyor.yml
 codecov.yml
 .travis.yml
+.bettercodehub.yml
+.codebeatignore
 .npmrc
 .babelrc
 .eslintrc.js
