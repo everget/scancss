@@ -88,7 +88,7 @@ yarn add scancss --save
 
 ```js
 import scancss from 'scancss';
-// or const scancss = require('scancss');
+// or const scancss = require('scancss').default;
 
 const stylesheet = `
 	.selector {
@@ -110,7 +110,7 @@ const stylesheet = `
 	}
 `;
 
-const report = scancss(stylesheet, options);
+const report = scancss(stylesheet, {});
 ```
 
 [Back to top](#table-of-contents)
