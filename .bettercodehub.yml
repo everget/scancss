@@ -1,0 +1,3 @@
+exclude:
+  - /scripts/.*
+  - /src/constants/cssEngineTriggerProperties/index.js
