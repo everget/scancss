@@ -36,10 +36,6 @@ matrix:
       node_js: "8"
       env: JEST="--maxWorkers=2 --cacheDirectory .jest-cache" JOB_PART=test
       stage: versions
-    - os: linux
-      node_js: "6"
-      env: JEST="--maxWorkers=2 --cacheDirectory .jest-cache" JOB_PART=test
-      stage: versions
 fast_finish: true
 allow_failures:
   - os: osx
