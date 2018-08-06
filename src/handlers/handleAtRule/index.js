@@ -186,7 +186,12 @@ export function handleAtRule(atRule, report, options) {
 		handleKeyframesAtRule(atRule, report);
 	}
 
-	atRule.walkDecls((decl) => {
-		countUsage(atRule.name, report.declarations.inAtRules);
-	});
+	/**
+	 * @font-face descriptors are not declarations
+	 */
+	if (atRule.name !== 'font-face') {
+		atRule.walkDecls((decl) => {
+			countUsage(atRule.name, report.declarations.inAtRules);
+		});
+	}
 }

@@ -357,7 +357,14 @@ export default function scancss(src, options) {
 				}
 			}
 
-			if (node.type === 'decl' && scancssOptions.collectDeclarationsData) {
+			/**
+			 * @font-face descriptors are not declarations
+			 */
+			if (
+				node.type === 'decl' &&
+				node.parent.name !== 'font-face' &&
+				scancssOptions.collectDeclarationsData
+			) {
 				handleDeclaration(node, report, scancssOptions);
 			}
 		});

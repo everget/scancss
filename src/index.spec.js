@@ -225,25 +225,22 @@ describe('Module: scancss', () => {
 		describe('declarations', () => {
 			it('should be counted correctly', () => {
 				expect(report.declarations).toEqual({
-					total: 21,
-					unique: 19,
-					uniqueRatio: 1.105263157894737,
+					total: 19,
+					unique: 17,
+					uniqueRatio: 1.1176470588235294,
 					important: 0,
-					averagePerRule: 2.63,
-					totalByteLength: 446,
-					longestByteLength: 129,
-					longestByteLengthDeclaration: 'src:url(\'/fonts/OpenSans-Regular-webfont.woff2\') format(\'woff2\'),url(\'/fonts/OpenSans-Regular-webfont.woff\') format(\'woff\')',
-					averageByteLength: 21.24,
-					sizeRatio: 0.49064906490649063,
+					averagePerRule: 2.38,
+					totalByteLength: 293,
+					longestByteLength: 32,
+					longestByteLengthDeclaration: 'animation:infinite ease 1s fade',
+					averageByteLength: 15.42,
+					sizeRatio: 0.32233223322332233,
 					inAtRules: {
 						'-webkit-keyframes': 2,
-						'font-face': 2,
 						keyframes: 2,
 						media: 5,
 					},
 					list: [
-						'font-family:\'Open Sans\'',
-						'src:url(\'/fonts/OpenSans-Regular-webfont.woff2\') format(\'woff2\'),url(\'/fonts/OpenSans-Regular-webfont.woff\') format(\'woff\')',
 						'display:inline-block',
 						'position:fixed',
 						'z-index:\'\'',
@@ -269,11 +266,11 @@ describe('Module: scancss', () => {
 		describe('properties', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties).toEqual({
-					total: 21,
-					unique: 13,
+					total: 19,
+					unique: 11,
 					shorthands: 3,
 					vendorPrefixed: 0,
-					unitless: 15,
+					unitless: 13,
 					resetsViaAll: 0,
 					negativeMargins: 0,
 					anonymousReplacedElements: 0,
@@ -287,22 +284,22 @@ describe('Module: scancss', () => {
 					},
 					engineTriggers: {
 						composite: {
-							blink: 17,
-							edgehtml: 17,
-							gecko: 17,
-							webkit: 17,
+							blink: 16,
+							edgehtml: 16,
+							gecko: 16,
+							webkit: 16,
 						},
 						layout: {
-							blink: 7,
-							edgehtml: 11,
-							gecko: 7,
-							webkit: 17,
+							blink: 6,
+							edgehtml: 10,
+							gecko: 6,
+							webkit: 16,
 						},
 						paint: {
-							blink: 17,
-							edgehtml: 17,
-							gecko: 13,
-							webkit: 17,
+							blink: 16,
+							edgehtml: 16,
+							gecko: 12,
+							webkit: 16,
 						},
 					},
 					usage: {
@@ -312,11 +309,9 @@ describe('Module: scancss', () => {
 						color: 3,
 						display: 1,
 						font: 1,
-						'font-family': 1,
 						height: 2,
 						opacity: 4,
 						position: 1,
-						src: 1,
 						width: 2,
 						'z-index': 1,
 					},
@@ -533,11 +528,9 @@ describe('Module: scancss', () => {
 		describe('functions', () => {
 			it('should be counted correctly', () => {
 				expect(report.functions).toEqual({
-					total: 2,
-					unique: 1,
-					usage: {
-						url: 2,
-					},
+					total: 0,
+					unique: 0,
+					usage: {},
 				});
 			});
 		});
