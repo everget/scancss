@@ -25,7 +25,7 @@ A robust CSS stylesheet statistics collector and analyzer
 	* [collectSpecificityGraphData](#collectspecificitygraphdata)
 	* [collectDeclarationsData](#collectdeclarationsdata)
 	* [collectEngineTriggerProperties](#collectenginetriggerproperties)
-	* [collectDeclarationsList](#collectdeclarationslist)
+	* [collectUniqueDeclarationsList](#collectuniquedeclarationslist)
 	* [collectFontsData](#collectfontsdata)
 	* [collectColorsData](#collectcolorsdata)
 	* [collectBackgroundColorsData](#collectbackgroundcolorsdata)
@@ -147,7 +147,7 @@ const report = scancss(stylesheet, {});
 
 #### collectSpecificityGraphData
 
-* Default: `true`
+* Default: `false`
 
 #### collectDeclarationsData
 
@@ -157,9 +157,9 @@ const report = scancss(stylesheet, {});
 
 * Default: `true`
 
-#### collectDeclarationsList
+#### collectUniqueDeclarationsList
 
-* Default: `true`
+* Default: `false`
 
 #### collectFontsData
 

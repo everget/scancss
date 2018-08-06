@@ -29,10 +29,10 @@ export default function scancss(src, options) {
 				collectSelectorsData: true,
 				collectSelectorsUsage: true,
 				selectorComplexityThreshold: 4,
-				collectSpecificityGraphData: true,
+				collectSpecificityGraphData: false,
 				collectDeclarationsData: true,
 				collectEngineTriggerProperties: true,
-				collectDeclarationsList: true,
+				collectUniqueDeclarationsList: false,
 				collectFontsData: true,
 				collectColorsData: true,
 				collectBackgroundColorsData: true,
@@ -436,7 +436,7 @@ export default function scancss(src, options) {
 			);
 
 			report.declarations.unique = report.declarations.list.length;
-			if (scancssOptions.collectDeclarationsList === false) {
+			if (scancssOptions.collectUniqueDeclarationsList === false) {
 				report.declarations.list.length = 0;
 			}
 

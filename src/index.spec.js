@@ -4,7 +4,10 @@ import scancss from '.';
 describe('Module: scancss', () => {
 	let report;
 
-	const options = {};
+	const options = {
+		collectSpecificityGraphData: true,
+		collectUniqueDeclarationsList: true,
+	};
 
 	const src = `
 		/* Lorem ipsum dolor sit amet */
