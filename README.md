@@ -339,6 +339,18 @@ _NOTE_: If there are no @keyframes in a stylesheet 9007199254740991 will be retu
 
 * **averagePerRule** - `number`
 
+* **uniqueRatio** - `number`
+
+* **totalByteLength** - `number`
+
+* **longestByteLength** - `number`
+
+* **longestByteLengthDeclaration** - `string | null`
+
+* **averageByteLength** - `number`
+
+* **sizeRatio** - `number`
+
 * **inAtRules** - `Record<string, number>`
 
 * **list** - `Array<string>`

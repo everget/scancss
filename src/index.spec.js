@@ -227,8 +227,14 @@ describe('Module: scancss', () => {
 				expect(report.declarations).toEqual({
 					total: 21,
 					unique: 19,
+					uniqueRatio: 1.105263157894737,
 					important: 0,
 					averagePerRule: 2.63,
+					totalByteLength: 446,
+					longestByteLength: 129,
+					longestByteLengthDeclaration: 'src:url(\'/fonts/OpenSans-Regular-webfont.woff2\') format(\'woff2\'),url(\'/fonts/OpenSans-Regular-webfont.woff\') format(\'woff\')',
+					averageByteLength: 21.24,
+					sizeRatio: 0.49064906490649063,
 					inAtRules: {
 						'-webkit-keyframes': 2,
 						'font-face': 2,

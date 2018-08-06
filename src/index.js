@@ -123,8 +123,14 @@ export default function scancss(src, options) {
 			declarations: {
 				total: 0,
 				unique: 0,
+				uniqueRatio: 0,
 				important: 0,
 				averagePerRule: 0,
+				totalByteLength: 0,
+				longestByteLength: 0,
+				longestByteLengthDeclaration: null,
+				averageByteLength: 0,
+				sizeRatio: 0,
 				inAtRules: {},
 				list: [],
 			},
@@ -334,8 +340,8 @@ export default function scancss(src, options) {
 				}
 
 				/**
-				 * PostCSS `walkRules` goes throw @keyframes and
-				 * consider `to`, `from` and percent values as selectors of rules
+				 * PostCSS `walkRules` goes throw @keyframes and consider
+				 * `to`, `from` and percent values as selectors of the rules
 				 */
 				if (
 					scancssOptions.collectSelectorsData &&
@@ -423,6 +429,22 @@ export default function scancss(src, options) {
 			if (scancssOptions.collectDeclarationsList === false) {
 				report.declarations.list.length = 0;
 			}
+
+			report.declarations.uniqueRatio = roundDivision(
+				report.declarations.total,
+				report.declarations.unique
+			);
+
+			report.declarations.averageByteLength = roundDivision(
+				report.declarations.totalByteLength,
+				report.declarations.total,
+				2
+			);
+
+			report.declarations.sizeRatio = roundDivision(
+				report.declarations.totalByteLength,
+				report.styleSheetSize.sourceByteLength
+			);
 
 			report.properties.unique = Object.keys(report.properties.usage).length;
 
