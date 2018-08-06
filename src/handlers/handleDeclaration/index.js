@@ -23,12 +23,6 @@ const cssFontProperties = [
 	'font-family',
 ];
 
-function isFontDeclarationInAtRule(decl) {
-	return decl.parent.type === 'atrule' &&
-		decl.parent.name === 'font-face' &&
-		decl.prop.startsWith('font-') === true;
-}
-
 const zIndexAllowedKeywords = [
 	'auto',
 	...cssExplicitDefaultingKeywords,
@@ -174,11 +168,7 @@ export function handleDeclaration(decl, report, options) {
 		}
 	}
 
-	if (
-		options.collectFontsData &&
-		isFontDeclarationInAtRule(decl) === false &&
-		cssFontProperties.includes(prop)
-	) {
+	if (options.collectFontsData && cssFontProperties.includes(prop)) {
 		handleFontProperties(decl, report);
 	}
 
