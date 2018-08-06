@@ -82,11 +82,14 @@ describe('Module: handleTransitionsAndAnimations', () => {
 				invalidTimingFunctions: {},
 			},
 			animations: {
+				total: 0,
+				unique: 0,
 				infinite: 0,
 				longestDuration: 0,
 				shortestDuration: maxSafeInteger,
 				longestDelay: 0,
 				shortestDelay: maxSafeInteger,
+				usage: {},
 				timingFunctions: {},
 				invalidTimingFunctions: {},
 			},
@@ -163,6 +166,18 @@ describe('Module: handleTransitionsAndAnimations', () => {
 	});
 
 	describe('Handling animations', () => {
+		describe('animations.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.animations.total).toBe(4);
+			});
+		});
+
+		describe('animations.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.animations.unique).toBe(0);
+			});
+		});
+
 		describe('animations.infinite', () => {
 			it('should be counted correctly', () => {
 				expect(report.animations.infinite).toBe(2);
@@ -190,6 +205,17 @@ describe('Module: handleTransitionsAndAnimations', () => {
 		describe('animations.shortestDelay', () => {
 			it('should be counted correctly', () => {
 				expect(report.animations.shortestDelay).toBe(2);
+			});
+		});
+
+		describe('animations.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.animations.usage).toEqual({
+					none: 1,
+					'heart-bit': 1,
+					'fade-in': 1,
+					'slide-in': 1,
+				});
 			});
 		});
 

@@ -105,65 +105,78 @@ function countTransitionablePropeties(propValue, report) {
 		.forEach((prop) => countUsage(prop, report.transitions.properties));
 }
 
+function countAnimationNames(propValue, report) {
+	postcss.list
+		.comma(propValue)
+		.forEach((name) => {
+			report.animations.total++;
+			countUsage(name, report.animations.usage);
+		});
+}
+
 function handleAnimationLonghand(longhand, report) {
 	if (typeof longhand['animation-iteration-count'] === 'string') {
 		countInfiniteAnimations(longhand['animation-iteration-count'], report);
 	}
 
+	if (typeof longhand['animation-name'] === 'string') {
+		countAnimationNames(longhand['animation-name'], report);
+	}
+
 	if (typeof longhand['animation-timing-function'] === 'string') {
-		const newDecl = {
+		const decl = {
 			prop: 'animation-timing-function',
 			value: longhand['animation-timing-function'],
 		};
 
-		countNamedTimingFunctions(newDecl, report);
+		countNamedTimingFunctions(decl, report);
 	}
 
 	if (typeof longhand['animation-duration'] === 'string') {
-		const newDecl = {
+		const decl = {
 			prop: 'animation-duration',
 			value: longhand['animation-duration'],
 		};
 
-		countDurations(newDecl, report);
+		countDurations(decl, report);
 	}
 
 	if (typeof longhand['animation-delay'] === 'string') {
-		const newDecl = {
+		const decl = {
 			prop: 'animation-delay',
 			value: longhand['animation-delay'],
 		};
 
-		countDelays(newDecl, report);
+		countDelays(decl, report);
 	}
 }
 
 function handleTransitionLonghand(longhand, report) {
 	if (typeof longhand['transition-timing-function'] === 'string') {
-		const newDecl = {
+		const decl = {
 			prop: 'transition-timing-function',
 			value: longhand['transition-timing-function'],
 		};
 
-		countNamedTimingFunctions(newDecl, report);
+		countNamedTimingFunctions(decl, report);
 	}
 
 	if (typeof longhand['transition-duration'] === 'string') {
-		const newDecl = {
+		const decl = {
 			prop: 'transition-duration',
 			value: longhand['transition-duration'],
 		};
 
-		countDurations(newDecl, report);
+		countDurations(decl, report);
 	}
 
 	if (typeof longhand['transition-delay'] === 'string') {
-		const newDecl = {
+		const decl = {
 			prop: 'transition-delay',
 			value: longhand['transition-delay'],
 		};
 
-		countDelays(newDecl, report);
+		countDelays(decl, report);
 	}
 
 	if (typeof longhand['transition-property'] === 'string') {
@@ -208,6 +221,10 @@ export function handleTransitionsAndAnimations(decl, report) {
 
 	if (prop === 'animation-iteration-count') {
 		countInfiniteAnimations(propValue, report);
+	}
+
+	if (prop === 'animation-name') {
+		countAnimationNames(propValue, report);
 	}
 
 	if (prop === 'animation-timing-function' || prop === 'transition-timing-function') {

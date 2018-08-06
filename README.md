@@ -539,6 +539,12 @@ _NOTE_: If there are no transition delays in a stylesheet 9007199254740991 will 
 
 #### animations
 
+* **total** - `number`
+
+* **unique** - `number`
+
+* **usage** - `Record<string, number>`
+
 * **infinite** - `number`
 
 * **longestDuration** - `number`

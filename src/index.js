@@ -264,11 +264,14 @@ export default function scancss(src, options) {
 				invalidTimingFunctions: {},
 			},
 			animations: {
+				total: 0,
+				unique: 0,
 				infinite: 0,
 				longestDuration: 0,
 				shortestDuration: maxSafeInteger,
 				longestDelay: 0,
 				shortestDelay: maxSafeInteger,
+				usage: {},
 				timingFunctions: {},
 				invalidTimingFunctions: {},
 			},
@@ -485,6 +488,10 @@ export default function scancss(src, options) {
 			report.colors.unique = Object.keys(report.colors.usage).length;
 			report.backgroundColors.unique = Object.keys(report.backgroundColors.usage).length;
 			report.allColors.unique = Object.keys(report.allColors.usage).length;
+
+			if (scancssOptions.collectTransitionsAndAnimationsData) {
+				report.animations.unique = Object.keys(report.animations.usage).length;
+			}
 		}
 
 		return report;

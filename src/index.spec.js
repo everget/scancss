@@ -512,11 +512,16 @@ describe('Module: scancss', () => {
 		describe('animations', () => {
 			it('should be counted correctly', () => {
 				expect(report.animations).toEqual({
+					total: 1,
+					unique: 1,
 					infinite: 1,
 					longestDuration: 1,
 					shortestDuration: 1,
 					longestDelay: 0,
 					shortestDelay: maxSafeInteger,
+					usage: {
+						fade: 1,
+					},
 					timingFunctions: {
 						ease: 1,
 					},
