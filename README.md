@@ -119,33 +119,49 @@ const report = scancss(stylesheet, {});
 
 #### collectStylesheetSizeData
 
+Use this flag to fill `report.styleSheetSize` stats metric
+
 * Default: `true`
 
 #### collectCommentsData
+
+Use this flag to fill `report.comments` stats metric
 
 * Default: `true`
 
 #### collectAtRulesData
 
+Use this flag to fill `report.atRules`, `report.mediaQueries`, `report.keyframes` stats metrics and to enable handling rules, selectors, declarations in at-rule blocks
+
 * Default: `true`
 
 #### collectRulesData
+
+Use this flag to fill `report.rules` and `report.selectors` stats metrics
 
 * Default: `true`
 
 #### collectSelectorsData
 
+Use this flag to fill `report.selectors` stats metric
+
 * Default: `true`
 
 #### collectSelectorsUsage
+
+Use this flag to fill `report.selectors.usage` stats metric
 
 * Default: `true`
 
 #### selectorComplexityThreshold
 
+Use this value to set a threshold of the base parts of a selector to consider the selector as complex and to count in `report.selectors.complex` stats metric
+
 * Default: `4`
 
 #### collectSpecificityGraphData
+
+Use this flag to fill `report.selectors.specificityGraphData` stats metric
 
 * Default: `false`
 
@@ -155,57 +171,85 @@ const report = scancss(stylesheet, {});
 
 #### collectEngineTriggerProperties
 
+Use this flag to fill `report.properties.engineTriggers` stats metric
+
 * Default: `true`
 
 #### collectUniqueDeclarationsList
+
+Use this flag to fill `report.declarations.list` stats metric
 
 * Default: `false`
 
 #### collectFontsData
 
+Use this flag to fill `report.fontSizes`, `report.lineHeights`, `report.fontFamilies` stats metrics
+
 * Default: `true`
 
 #### collectColorsData
+
+Use this flag to fill `report.colors` stats metric
 
 * Default: `true`
 
 #### collectBackgroundColorsData
 
+Use this flag to fill `report.backgroundColors` stats metric
+
 * Default: `true`
 
 #### collectAllColorsData
+
+Use this flag to fill `report.allColors` stats metric
 
 * Default: `true`
 
 #### collectTransitionsAndAnimationsData
 
+Use this flag to fill `report.transitions` and `report.animations` stats metrics
+
 * Default: `true`
 
 #### collectFunctionsData
+
+Use this flag to fill `report.functions` stats metric
 
 * Default: `true`
 
 #### collectGradientsData
 
+Use this flag to fill `report.gradients` stats metric
+
 * Default: `true`
 
 #### collectUnitsData
+
+Use this flag to fill `report.units` stats metric
 
 * Default: `true`
 
 #### collectVariablesData
 
+Use this flag to fill `report.variables` stats metric
+
 * Default: `true`
 
 #### collectDataUrisData
+
+Use this flag to fill `report.dataUris` stats metric
 
 * Default: `true`
 
 #### collectBrowserHacksData
 
+Use this flag to fill `report.browserHacks` stats metric
+
 * Default: `true`
 
 #### collectPerformanceHacksData
+
+Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * Default: `true`
 
