@@ -48,6 +48,6 @@ install:
 script: yarn travis:$JOB_PART
 
 after_success:
-  - cat ./coverage/lcov.info | node_modules/.bin/coveralls --verbose
+  - test $JOB_PART = "test" && istanbul report && cat ./coverage/lcov.info | node_modules/.bin/coveralls --verbose
   - cat ./coverage/coverage-final.json | node_modules/codecov.io/bin/codecov.io.js
   - rm -f .jest-cache/haste-map* .jest-cache/perf-cache*
