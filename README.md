@@ -14,6 +14,8 @@ A robust CSS stylesheet statistics collector and analyzer
 
 1. [Usage](#usage)
 
+1. [Examples](#examples)
+
 1. [Options](#options)
 	* [collectStylesheetSizeData](#collectstylesheetsizedata)
 	* [collectCommentsData](#collectcommentsdata)
@@ -112,6 +114,12 @@ const stylesheet = `
 
 const report = scancss(stylesheet, {});
 ```
+
+[Back to top](#table-of-contents)
+
+## Examples
+
+See [examples](https://github.com/everget/scancss/tree/master/examples) folder with stylesheets and their corresponding reports.
 
 [Back to top](#table-of-contents)
 
