@@ -2,6 +2,7 @@ export const cssColorableProperties = [
 	'color',
 	'background',
 	'background-color',
+	'background-image',
 	'border',
 	'border-top',
 	'border-right',
