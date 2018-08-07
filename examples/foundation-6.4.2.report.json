@@ -150,8 +150,14 @@
   "declarations": {
     "total": 3273,
     "unique": 859,
+    "uniqueRatio": 3.810244470314319,
     "important": 63,
     "averagePerRule": 2.16,
+    "totalByteLength": 65643,
+    "longestByteLength": 359,
+    "longestByteLengthDeclaration": "background-image:url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==\")",
+    "averageByteLength": 20.06,
+    "sizeRatio": 0.4215775682688109,
     "inAtRules": {
       "media": 888,
       "page": 1,
@@ -680,11 +686,18 @@
     }
   },
   "animations": {
+    "total": 4,
+    "unique": 3,
     "infinite": 1,
     "longestDuration": 0.75,
     "shortestDuration": 0.25,
     "longestDelay": 0.7,
     "shortestDelay": 0.3,
+    "usage": {
+      "shake-7": 1,
+      "spin-cw-1turn": 2,
+      "wiggle-7deg": 1
+    },
     "timingFunctions": {
       "linear": 1,
       "ease": 1,
@@ -704,6 +717,7 @@
   "functions": {
     "total": 445,
     "unique": 17,
+    "vendorPrefixed": 0,
     "usage": {
       "calc": 224,
       "attr": 2,

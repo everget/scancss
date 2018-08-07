@@ -98,22 +98,27 @@
     "usage": {}
   },
   "declarations": {
-    "total": 1214,
-    "unique": 1197,
+    "total": 1199,
+    "unique": 1190,
+    "uniqueRatio": 1.007563025210084,
     "important": 0,
-    "averagePerRule": 1.05,
+    "averagePerRule": 1.04,
+    "totalByteLength": 19607,
+    "longestByteLength": 80,
+    "longestByteLengthDeclaration": "-ms-filter:\"progid:DXImageTransform.Microsoft.BasicImage(rotation=0,mirror=1)\"",
+    "averageByteLength": 16.35,
+    "sizeRatio": 0.3482222143288459,
     "inAtRules": {
-      "keyframes": 2,
-      "font-face": 15
+      "keyframes": 2
     },
     "list": []
   },
   "properties": {
-    "total": 1214,
-    "unique": 35,
+    "total": 1199,
+    "unique": 34,
     "shorthands": 9,
     "vendorPrefixed": 8,
-    "unitless": 1175,
+    "unitless": 1160,
     "resetsViaAll": 0,
     "negativeMargins": 1,
     "anonymousReplacedElements": 1111,
@@ -127,29 +132,29 @@
     },
     "engineTriggers": {
       "composite": {
-        "blink": 77,
-        "edgehtml": 77,
-        "gecko": 77,
-        "webkit": 72
+        "blink": 68,
+        "edgehtml": 68,
+        "gecko": 68,
+        "webkit": 66
       },
       "layout": {
-        "blink": 66,
-        "edgehtml": 75,
-        "gecko": 68,
-        "webkit": 72
+        "blink": 57,
+        "edgehtml": 66,
+        "gecko": 59,
+        "webkit": 66
       },
       "paint": {
-        "blink": 69,
-        "edgehtml": 77,
-        "gecko": 69,
-        "webkit": 72
+        "blink": 60,
+        "edgehtml": 68,
+        "gecko": 60,
+        "webkit": 66
       }
     },
     "usage": {
       "-moz-osx-font-smoothing": 1,
       "-webkit-font-smoothing": 1,
       "display": 2,
-      "font-style": 4,
+      "font-style": 1,
       "font-variant": 1,
       "text-rendering": 1,
       "line-height": 5,
@@ -178,9 +183,8 @@
       "clip": 2,
       "margin": 2,
       "overflow": 2,
-      "font-family": 5,
-      "font-weight": 5,
-      "src": 6
+      "font-family": 2,
+      "font-weight": 2
     }
   },
   "displays": {
@@ -317,11 +321,16 @@
     "invalidTimingFunctions": {}
   },
   "animations": {
+    "total": 2,
+    "unique": 1,
     "infinite": 2,
     "longestDuration": 2,
     "shortestDuration": 1,
     "longestDelay": 0,
     "shortestDelay": 9007199254740991,
+    "usage": {
+      "a": 2
+    },
     "timingFunctions": {
       "linear": 1
     },
@@ -330,16 +339,16 @@
     }
   },
   "functions": {
-    "total": 28,
-    "unique": 7,
+    "total": 10,
+    "unique": 6,
+    "vendorPrefixed": 0,
     "usage": {
       "steps": 1,
       "rotate": 5,
       "scaleX": 1,
       "scaleY": 1,
       "scale": 1,
-      "rect": 1,
-      "url": 18
+      "rect": 1
     }
   },
   "gradients": {

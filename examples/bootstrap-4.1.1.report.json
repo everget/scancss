@@ -161,8 +161,14 @@
   "declarations": {
     "total": 3643,
     "unique": 1127,
+    "uniqueRatio": 3.2324755989352263,
     "important": 889,
     "averagePerRule": 2.07,
+    "totalByteLength": 83279,
+    "longestByteLength": 267,
+    "longestByteLengthDeclaration": "background-image:url(\"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E\")",
+    "averageByteLength": 22.86,
+    "sizeRatio": 0.4801547491380404,
     "inAtRules": {
       "-ms-viewport": 1,
       "media": 1179,
@@ -637,19 +643,19 @@
     }
   },
   "backgroundColors": {
-    "total": 249,
-    "unique": 78,
+    "total": 258,
+    "unique": 80,
     "currentColorKeyword": 0,
-    "transparentKeyword": 32,
+    "transparentKeyword": 36,
     "models": {
       "hex": 202,
-      "rgba": 15
+      "rgba": 20
     },
     "named": {},
     "system": {},
     "usage": {
       "#ffffff": 21,
-      "transparent": 32,
+      "transparent": 36,
       "#fcf8e3": 1,
       "#212529": 3,
       "rgba(0,0,0,0.05)": 1,
@@ -706,6 +712,8 @@
       "#b3d7ff": 4,
       "#dee2e6": 5,
       "rgba(0,123,255,0.5)": 3,
+      "rgba(0,0,0,0.5)": 1,
+      "rgba(255,255,255,0.5)": 2,
       "rgba(0,0,0,0.03)": 2,
       "#cce5ff": 1,
       "#e2e3e5": 1,
@@ -715,6 +723,7 @@
       "#f8d7da": 1,
       "#fefefe": 1,
       "#d6d8d9": 1,
+      "rgba(255,255,255,0.15)": 3,
       "#004085": 1,
       "#383d41": 1,
       "#155724": 1,
@@ -724,23 +733,22 @@
       "#818182": 1,
       "#1b1e21": 1,
       "#000000": 2,
-      "#f7f7f7": 1,
-      "rgba(255,255,255,0.5)": 1
+      "#f7f7f7": 1
     }
   },
   "allColors": {
-    "total": 728,
-    "unique": 127,
+    "total": 737,
+    "unique": 128,
     "currentColorKeyword": 0,
-    "transparentKeyword": 58,
+    "transparentKeyword": 62,
     "models": {
       "hex": 573,
-      "rgba": 97
+      "rgba": 102
     },
     "named": {},
     "system": {},
     "usage": {
-      "transparent": 58,
+      "transparent": 62,
       "#212529": 28,
       "#ffffff": 112,
       "#007bff": 32,
@@ -827,10 +835,10 @@
       "#b3d7ff": 4,
       "rgba(128,189,255,0.5)": 1,
       "rgba(0,0,0,0.9)": 5,
-      "rgba(0,0,0,0.5)": 4,
+      "rgba(0,0,0,0.5)": 5,
       "rgba(0,0,0,0.7)": 1,
       "rgba(0,0,0,0.3)": 1,
-      "rgba(255,255,255,0.5)": 5,
+      "rgba(255,255,255,0.5)": 6,
       "rgba(255,255,255,0.75)": 1,
       "rgba(255,255,255,0.25)": 1,
       "rgba(255,255,255,0.1)": 1,
@@ -860,6 +868,7 @@
       "#1b1e21": 5,
       "#d6d8d9": 1,
       "#040505": 1,
+      "rgba(255,255,255,0.15)": 3,
       "#000000": 9,
       "rgba(0,0,0,0.2)": 2,
       "rgba(0,0,0,0.25)": 4,
@@ -893,11 +902,16 @@
     "invalidTimingFunctions": {}
   },
   "animations": {
+    "total": 1,
+    "unique": 1,
     "infinite": 1,
     "longestDuration": 1,
     "shortestDuration": 1,
     "longestDelay": 0,
     "shortestDelay": 9007199254740991,
+    "usage": {
+      "progress-bar-stripes": 1
+    },
     "timingFunctions": {
       "linear": 1
     },
@@ -906,6 +920,7 @@
   "functions": {
     "total": 166,
     "unique": 9,
+    "vendorPrefixed": 0,
     "usage": {
       "rgba": 102,
       "calc": 32,

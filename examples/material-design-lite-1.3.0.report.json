@@ -167,8 +167,14 @@
   "declarations": {
     "total": 3356,
     "unique": 1403,
+    "uniqueRatio": 2.392017106200998,
     "important": 578,
     "averagePerRule": 2.33,
+    "totalByteLength": 89002,
+    "longestByteLength": 1715,
+    "longestByteLengthDeclaration": "-webkit-mask:url(\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4xIgogICB2aWV3Qm94PSIwIDAgMSAxIgogICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0Ij4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iY2xpcCI+CiAgICAgIDxwYXRoCiAgICAgICAgIGQ9Ik0gMCwwIDAsMSAxLDEgMSwwIDAsMCB6IE0gMC44NTM0Mzc1LDAuMTY3MTg3NSAwLjk1OTY4NzUsMC4yNzMxMjUgMC40MjkzNzUsMC44MDM0Mzc1IDAuMzIzMTI1LDAuOTA5Njg3NSAwLjIxNzE4NzUsMC44MDM0Mzc1IDAuMDQwMzEyNSwwLjYyNjg3NSAwLjE0NjU2MjUsMC41MjA2MjUgMC4zMjMxMjUsMC42OTc1IDAuODUzNDM3NSwwLjE2NzE4NzUgeiIKICAgICAgICAgc3R5bGU9ImZpbGw6I2ZmZmZmZjtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZSIgLz4KICAgIDwvY2xpcFBhdGg+CiAgICA8bWFzayBpZD0ibWFzayIgbWFza1VuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgbWFza0NvbnRlbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giPgogICAgICA8cGF0aAogICAgICAgICBkPSJNIDAsMCAwLDEgMSwxIDEsMCAwLDAgeiBNIDAuODUzNDM3NSwwLjE2NzE4NzUgMC45NTk2ODc1LDAuMjczMTI1IDAuNDI5Mzc1LDAuODAzNDM3NSAwLjMyMzEyNSwwLjkwOTY4NzUgMC4yMTcxODc1LDAuODAzNDM3NSAwLjA0MDMxMjUsMC42MjY4NzUgMC4xNDY1NjI1LDAuNTIwNjI1IDAuMzIzMTI1LDAuNjk3NSAwLjg1MzQzNzUsMC4xNjcxODc1IHoiCiAgICAgICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmUiIC8+CiAgICA8L21hc2s+CiAgPC9kZWZzPgogIDxyZWN0CiAgICAgd2lkdGg9IjEiCiAgICAgaGVpZ2h0PSIxIgogICAgIHg9IjAiCiAgICAgeT0iMCIKICAgICBjbGlwLXBhdGg9InVybCgjY2xpcCkiCiAgICAgc3R5bGU9ImZpbGw6IzAwMDAwMDtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZSIgLz4KPC9zdmc+Cg==\")",
+    "averageByteLength": 26.52,
+    "sizeRatio": 0.2488452720460773,
     "inAtRules": {
       "media": 327,
       "supports": 10,
@@ -809,14 +815,14 @@
     }
   },
   "backgroundColors": {
-    "total": 448,
-    "unique": 275,
+    "total": 460,
+    "unique": 277,
     "currentColorKeyword": 0,
     "transparentKeyword": 44,
     "models": {
       "hex": 9,
-      "rgb": 343,
-      "rgba": 52
+      "rgb": 349,
+      "rgba": 58
     },
     "named": {},
     "system": {},
@@ -881,7 +887,7 @@
       "rgb(124,77,255)": 1,
       "rgb(101,31,255)": 1,
       "rgb(98,0,234)": 1,
-      "rgb(63,81,181)": 34,
+      "rgb(63,81,181)": 40,
       "rgb(232,234,246)": 1,
       "rgb(197,202,233)": 1,
       "rgb(159,168,218)": 1,
@@ -1092,6 +1098,8 @@
       "#d6d6d6": 1,
       "#e0e0e0": 1,
       "#eeeeee": 1,
+      "rgba(255,255,255,0.7)": 4,
+      "rgba(255,255,255,0.9)": 2,
       "rgba(0,0,0,0.5)": 2,
       "#323232": 1,
       "rgba(63,81,181,0.5)": 1,
@@ -1099,14 +1107,14 @@
     }
   },
   "allColors": {
-    "total": 909,
-    "unique": 289,
+    "total": 921,
+    "unique": 291,
     "currentColorKeyword": 0,
     "transparentKeyword": 50,
     "models": {
-      "rgba": 169,
+      "rgba": 175,
       "hex": 14,
-      "rgb": 672
+      "rgb": 678
     },
     "named": {
       "gray": 1,
@@ -1178,7 +1186,7 @@
       "rgb(124,77,255)": 2,
       "rgb(101,31,255)": 2,
       "rgb(98,0,234)": 2,
-      "rgb(63,81,181)": 48,
+      "rgb(63,81,181)": 54,
       "rgb(232,234,246)": 2,
       "rgb(197,202,233)": 2,
       "rgb(159,168,218)": 2,
@@ -1397,6 +1405,8 @@
       "#e0e0e0": 1,
       "#eeeeee": 1,
       "white": 3,
+      "rgba(255,255,255,0.7)": 4,
+      "rgba(255,255,255,0.9)": 2,
       "#757575": 1,
       "rgba(0,0,0,0.5)": 3,
       "rgba(255,255,255,0.6)": 1,
@@ -1439,11 +1449,27 @@
     }
   },
   "animations": {
+    "total": 16,
+    "unique": 12,
     "infinite": 13,
     "longestDuration": 5.332,
     "shortestDuration": 0.2,
     "longestDelay": 0.01,
     "shortestDelay": 0.01,
+    "usage": {
+      "indeterminate1": 1,
+      "indeterminate2": 1,
+      "border-expand": 2,
+      "mdl-spinner__container-rotate": 1,
+      "mdl-spinner__fill-unfill-rotate": 4,
+      "mdl-spinner__layer-1-fade-in-out": 1,
+      "mdl-spinner__layer-2-fade-in-out": 1,
+      "mdl-spinner__layer-3-fade-in-out": 1,
+      "mdl-spinner__layer-4-fade-in-out": 1,
+      "mdl-spinner__left-spin": 1,
+      "mdl-spinner__right-spin": 1,
+      "pulse": 1
+    },
     "timingFunctions": {
       "linear": 3,
       "cubic-bezier(0.4,0,0.4,1)": 4,
@@ -1454,7 +1480,8 @@
   },
   "functions": {
     "total": 1181,
-    "unique": 13,
+    "unique": 14,
+    "vendorPrefixed": 6,
     "usage": {
       "rgba": 175,
       "rect": 2,
@@ -1462,12 +1489,13 @@
       "rgb": 678,
       "translate": 18,
       "cubic-bezier": 100,
-      "radial-gradient": 11,
+      "-webkit-radial-gradient": 6,
       "url": 6,
       "scale": 41,
       "linear-gradient": 9,
       "translateX": 6,
       "calc": 68,
+      "radial-gradient": 5,
       "rotate": 64
     }
   },
@@ -1475,7 +1503,7 @@
     "total": 17,
     "unique": 11,
     "usage": {
-      "radial-gradient(circle,white,black)": 6,
+      "-webkit-radial-gradient(circle,white,black)": 6,
       "linear-gradient(to right,rgba(255,255,255,0.7),rgba(255,255,255,0.7)),linear-gradient(to right,rgb(63,81,181),rgb(63,81,181))": 2,
       "linear-gradient(to right,rgba(255,255,255,0.9),rgba(255,255,255,0.9)),linear-gradient(to right,rgb(63,81,181),rgb(63,81,181))": 1,
       "linear-gradient(to right,transparent,transparent 16px,rgb(63,81,181) 16px,rgb(63,81,181) 0)": 1,
@@ -1534,12 +1562,12 @@
     "valuesMap": {}
   },
   "vendorPrefixes": {
-    "total": 455,
+    "total": 461,
     "unique": 3,
     "unknown": {},
     "usage": {
       "-moz-": 34,
-      "-webkit-": 264,
+      "-webkit-": 270,
       "-ms-": 157
     }
   }

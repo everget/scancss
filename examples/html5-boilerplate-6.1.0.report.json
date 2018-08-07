@@ -111,8 +111,14 @@
   "declarations": {
     "total": 60,
     "unique": 51,
+    "uniqueRatio": 1.1764705882352942,
     "important": 7,
     "averagePerRule": 2.4,
+    "totalByteLength": 1029,
+    "longestByteLength": 35,
+    "longestByteLengthDeclaration": "-webkit-box-shadow:none !important",
+    "averageByteLength": 17.15,
+    "sizeRatio": 0.169773964692295,
     "inAtRules": {
       "media": 17
     },
@@ -311,17 +317,21 @@
     "invalidTimingFunctions": {}
   },
   "animations": {
+    "total": 0,
+    "unique": 0,
     "infinite": 0,
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
     "shortestDelay": 9007199254740991,
+    "usage": {},
     "timingFunctions": {},
     "invalidTimingFunctions": {}
   },
   "functions": {
     "total": 3,
     "unique": 2,
+    "vendorPrefixed": 0,
     "usage": {
       "rect": 1,
       "attr": 2
