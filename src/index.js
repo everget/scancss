@@ -278,6 +278,7 @@ export default function scancss(src, options) {
 			functions: {
 				total: 0,
 				unique: 0,
+				vendorPrefixed: 0,
 				usage: {},
 			},
 			gradients: {

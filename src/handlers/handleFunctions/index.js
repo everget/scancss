@@ -3,9 +3,11 @@ import { reGradient } from '../../constants/reGradient';
 import { reCubicBezier } from '../../constants/reCubicBezier';
 import { reUrlFunctionWithArg } from '../../constants/reUrlFunctionWithArg';
 import { reImageDataUri } from '../../constants/reImageDataUri';
+import { rePrefixedString } from '../../constants/rePrefixedString';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
 import { isValidCubicBezierArgs } from '../../predicates/isValidCubicBezierArgs';
+import { handleVendorPrefix } from '../handleVendorPrefix';
 
 function countFunctions(decl, report) {
 	decl.value
@@ -14,6 +16,11 @@ function countFunctions(decl, report) {
 		.forEach((func) => {
 			report.functions.total++;
 			countUsage(func, report.functions.usage);
+
+			if (rePrefixedString.test(func)) {
+				report.functions.vendorPrefixed++;
+				handleVendorPrefix(func, report);
+			}
 		});
 }
 

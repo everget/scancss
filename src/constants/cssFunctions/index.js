@@ -1,6 +1,4 @@
 export const cssFunctions = [
-	'-moz-element',
-	'-moz-image-rect',
 	'annotation',
 	'attr',
 	'blur',

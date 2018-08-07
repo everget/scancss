@@ -279,7 +279,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **longestByteLength** - `number`
 
-* **shortestByteLength** - `number` (`Number.MAX_SAFE_INTEGER` if there are no comments in a stylesheet) 
+* **shortestByteLength** - `number` (`Number.MAX_SAFE_INTEGER` if there are no comments in a stylesheet)
 
 * **averageByteLength** - `number`
 
@@ -325,7 +325,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **shortestStepsChain** - `string | null`
 
-* **shortestStepsChainLength** - `number` (`Number.MAX_SAFE_INTEGER` if there are no @keyframes in a stylesheet) 
+* **shortestStepsChainLength** - `number` (`Number.MAX_SAFE_INTEGER` if there are no @keyframes in a stylesheet)
 
 * **vendorPrefixedFeatures** - `number`
 
@@ -612,6 +612,8 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 * **total** - `number`
 
 * **unique** - `number`
+
+* **vendorPrefixed** - `number`
 
 * **usage** - `Record<string, number>`
 

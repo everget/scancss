@@ -538,6 +538,7 @@ describe('Module: scancss', () => {
 				expect(report.functions).toEqual({
 					total: 0,
 					unique: 0,
+					vendorPrefixed: 0,
 					usage: {},
 				});
 			});
