@@ -13,7 +13,7 @@
  * `-rim-`    - BlackBerry
  * `-ro-`     - Real Objects
  * `-tc-`     - TallComponents
- * `-wap-`    - The WAP Forum
+ * `-wap-`    - Wireless Application Protocol
  * `-webkit-` - Apple
  * `-xv-`     - Opera Software
  */
