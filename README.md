@@ -271,8 +271,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **longestByteLength** - `number`
 
-* **shortestByteLength** - `number`
-_NOTE_: If there are no comments in a stylesheet 9007199254740991 will be returned
+* **shortestByteLength** - `number` (`Number.MAX_SAFE_INTEGER` if there are no comments in a stylesheet) 
 
 * **averageByteLength** - `number`
 
@@ -318,8 +317,7 @@ _NOTE_: If there are no comments in a stylesheet 9007199254740991 will be return
 
 * **shortestStepsChain** - `string | null`
 
-* **shortestStepsChainLength** - `number`
-_NOTE_: If there are no @keyframes in a stylesheet 9007199254740991 will be returned
+* **shortestStepsChainLength** - `number` (`Number.MAX_SAFE_INTEGER` if there are no @keyframes in a stylesheet) 
 
 * **vendorPrefixedFeatures** - `number`
 
@@ -569,13 +567,11 @@ _NOTE_: If there are no @keyframes in a stylesheet 9007199254740991 will be retu
 
 * **longestDuration** - `number`
 
-* **shortestDuration** - `number`
-_NOTE_: If there are no transition durations in a stylesheet 9007199254740991 will be returned
+* **shortestDuration** - `number` (`Number.MAX_SAFE_INTEGER` if there are no transition durations in a stylesheet)
 
 * **longestDelay** - `number`
 
-* **shortestDelay** - `number`
-_NOTE_: If there are no transition delays in a stylesheet 9007199254740991 will be returned
+* **shortestDelay** - `number` (`Number.MAX_SAFE_INTEGER` if there are no transition delays in a stylesheet)
 
 * **timingFunctions** - `Record<string, number>`
 
@@ -593,13 +589,11 @@ _NOTE_: If there are no transition delays in a stylesheet 9007199254740991 will 
 
 * **longestDuration** - `number`
 
-* **shortestDuration** - `number`
-_NOTE_: If there are no animation durations in a stylesheet 9007199254740991 will be returned
+* **shortestDuration** - `number` (`Number.MAX_SAFE_INTEGER` if there are no animation durations in a stylesheet)
 
 * **longestDelay** - `number`
 
-* **shortestDelay** - `number`
-_NOTE_: If there are no animation delays in a stylesheet 9007199254740991 will be returned
+* **shortestDelay** - `number` (`Number.MAX_SAFE_INTEGER` if there are no animation delays in a stylesheet)
 
 * **timingFunctions** - `Record<string, number>`
 
