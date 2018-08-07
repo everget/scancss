@@ -1,4 +1,3 @@
-import { maxSafeInteger } from './constants/maxSafeInteger';
 import scancss from '.';
 
 describe('Module: scancss', () => {
@@ -503,9 +502,9 @@ describe('Module: scancss', () => {
 				expect(report.transitions).toEqual({
 					properties: {},
 					longestDuration: 0,
-					shortestDuration: maxSafeInteger,
+					shortestDuration: Number.MAX_SAFE_INTEGER,
 					longestDelay: 0,
-					shortestDelay: maxSafeInteger,
+					shortestDelay: Number.MAX_SAFE_INTEGER,
 					timingFunctions: {},
 					invalidTimingFunctions: {},
 				});
@@ -521,7 +520,7 @@ describe('Module: scancss', () => {
 					longestDuration: 1,
 					shortestDuration: 1,
 					longestDelay: 0,
-					shortestDelay: maxSafeInteger,
+					shortestDelay: Number.MAX_SAFE_INTEGER,
 					usage: {
 						fade: 1,
 					},

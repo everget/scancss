@@ -1,7 +1,6 @@
 import postcss from 'postcss';
 import { default as safeParser } from 'postcss-safe-parser';
 
-import { maxSafeInteger } from '../../constants/maxSafeInteger';
 import { handleComment } from '.';
 
 describe('Module: handleComment', () => {
@@ -45,7 +44,7 @@ describe('Module: handleComment', () => {
 				total: 0,
 				totalByteLength: 0,
 				longestByteLength: 0,
-				shortestByteLength: maxSafeInteger,
+				shortestByteLength: Number.MAX_SAFE_INTEGER,
 				averageByteLength: 0,
 			},
 		};

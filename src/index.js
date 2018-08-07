@@ -3,7 +3,6 @@ import { default as safeParser } from 'postcss-safe-parser';
 import { default as gzipSize } from 'gzip-size';
 import isPlainObject from 'lodash.isplainobject';
 
-import { maxSafeInteger } from './constants/maxSafeInteger';
 import { handleComment } from './handlers/handleComment';
 import { handleAtRule } from './handlers/handleAtRule';
 import { handleSelector } from './handlers/handleSelector';
@@ -60,7 +59,7 @@ export default function scancss(src, options) {
 				total: 0,
 				totalByteLength: 0,
 				longestByteLength: 0,
-				shortestByteLength: maxSafeInteger,
+				shortestByteLength: Number.MAX_SAFE_INTEGER,
 				averageByteLength: 0,
 				sizeRatio: 0,
 			},
@@ -85,7 +84,7 @@ export default function scancss(src, options) {
 				longestStepsChain: null,
 				longestStepsChainLength: 0,
 				shortestStepsChain: null,
-				shortestStepsChainLength: maxSafeInteger,
+				shortestStepsChainLength: Number.MAX_SAFE_INTEGER,
 				animatableProperties: [],
 			},
 			rules: {
@@ -257,9 +256,9 @@ export default function scancss(src, options) {
 			transitions: {
 				properties: {},
 				longestDuration: 0,
-				shortestDuration: maxSafeInteger,
+				shortestDuration: Number.MAX_SAFE_INTEGER,
 				longestDelay: 0,
-				shortestDelay: maxSafeInteger,
+				shortestDelay: Number.MAX_SAFE_INTEGER,
 				timingFunctions: {},
 				invalidTimingFunctions: {},
 			},
@@ -268,9 +267,9 @@ export default function scancss(src, options) {
 				unique: 0,
 				infinite: 0,
 				longestDuration: 0,
-				shortestDuration: maxSafeInteger,
+				shortestDuration: Number.MAX_SAFE_INTEGER,
 				longestDelay: 0,
-				shortestDelay: maxSafeInteger,
+				shortestDelay: Number.MAX_SAFE_INTEGER,
 				usage: {},
 				timingFunctions: {},
 				invalidTimingFunctions: {},

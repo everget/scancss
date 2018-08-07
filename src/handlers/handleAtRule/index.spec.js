@@ -1,7 +1,6 @@
 import postcss from 'postcss';
 import { default as safeParser } from 'postcss-safe-parser';
 
-import { maxSafeInteger } from '../../constants/maxSafeInteger';
 import { handleAtRule } from '.';
 
 describe('Module: handleAtRule', () => {
@@ -134,7 +133,7 @@ describe('Module: handleAtRule', () => {
 				longestStepsChain: 0,
 				longestStepsChainLength: 0,
 				shortestStepsChain: 0,
-				shortestStepsChainLength: maxSafeInteger,
+				shortestStepsChainLength: Number.MAX_SAFE_INTEGER,
 				animatableProperties: [],
 			},
 			declarations: {

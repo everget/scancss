@@ -1,7 +1,6 @@
 import postcss from 'postcss';
 import { default as safeParser } from 'postcss-safe-parser';
 
-import { maxSafeInteger } from '../../constants/maxSafeInteger';
 import { handleTransitionsAndAnimations } from '.';
 
 describe('Module: handleTransitionsAndAnimations', () => {
@@ -75,9 +74,9 @@ describe('Module: handleTransitionsAndAnimations', () => {
 			transitions: {
 				properties: {},
 				longestDuration: 0,
-				shortestDuration: maxSafeInteger,
+				shortestDuration: Number.MAX_SAFE_INTEGER,
 				longestDelay: 0,
-				shortestDelay: maxSafeInteger,
+				shortestDelay: Number.MAX_SAFE_INTEGER,
 				timingFunctions: {},
 				invalidTimingFunctions: {},
 			},
@@ -86,9 +85,9 @@ describe('Module: handleTransitionsAndAnimations', () => {
 				unique: 0,
 				infinite: 0,
 				longestDuration: 0,
-				shortestDuration: maxSafeInteger,
+				shortestDuration: Number.MAX_SAFE_INTEGER,
 				longestDelay: 0,
-				shortestDelay: maxSafeInteger,
+				shortestDelay: Number.MAX_SAFE_INTEGER,
 				usage: {},
 				timingFunctions: {},
 				invalidTimingFunctions: {},
