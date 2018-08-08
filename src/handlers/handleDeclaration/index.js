@@ -80,7 +80,7 @@ export function handleDeclaration(decl, report, options) {
 
 	/** Count properties with vendor prefixes */
 	if (rePrefixedString.test(prop)) {
-		report.properties.vendorPrefixed++;
+		report.properties.prefixed++;
 		handleVendorPrefix(prop, report);
 
 		/** Count property shorthands */

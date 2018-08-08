@@ -117,7 +117,7 @@ describe('Module: scancss', () => {
 				expect(report.atRules).toEqual({
 					total: 5,
 					empty: 1,
-					vendorPrefixed: 1,
+					prefixed: 1,
 					unknown: {
 						foobar: 1,
 					},
@@ -144,7 +144,7 @@ describe('Module: scancss', () => {
 					features: {
 						total: 1,
 						unique: 1,
-						vendorPrefixed: 0,
+						prefixed: 0,
 						usage: {
 							'max-width': 1,
 						},
@@ -275,7 +275,7 @@ describe('Module: scancss', () => {
 					total: 19,
 					unique: 11,
 					shorthands: 3,
-					vendorPrefixed: 0,
+					prefixed: 0,
 					unitless: 13,
 					resetsViaAll: 0,
 					negativeMargins: 0,
@@ -541,7 +541,7 @@ describe('Module: scancss', () => {
 				expect(report.functions).toEqual({
 					total: 0,
 					unique: 0,
-					vendorPrefixed: 0,
+					prefixed: 0,
 					usage: {},
 				});
 			});

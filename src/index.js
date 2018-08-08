@@ -66,7 +66,7 @@ export default function scancss(src, options) {
 			atRules: {
 				total: 0,
 				empty: 0,
-				vendorPrefixed: 0,
+				prefixed: 0,
 				unknown: {},
 				usage: {},
 			},
@@ -78,7 +78,7 @@ export default function scancss(src, options) {
 				features: {
 					total: 0,
 					unique: 0,
-					vendorPrefixed: 0,
+					prefixed: 0,
 					usage: {},
 				},
 				usage: {},
@@ -141,7 +141,7 @@ export default function scancss(src, options) {
 				total: 0,
 				unique: 0,
 				shorthands: 0,
-				vendorPrefixed: 0,
+				prefixed: 0,
 				unitless: 0,
 				resetsViaAll: 0,
 				negativeMargins: 0,
@@ -281,7 +281,7 @@ export default function scancss(src, options) {
 			functions: {
 				total: 0,
 				unique: 0,
-				vendorPrefixed: 0,
+				prefixed: 0,
 				usage: {},
 			},
 			gradients: {

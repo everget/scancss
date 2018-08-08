@@ -32,10 +32,10 @@ function handleMediaQueryParams(params, report, options) {
 			.match(reCssMediaQueryFeature)
 			.forEach((feature) => {
 				if (/^(min|max)--moz-/.test(feature)) {
-					report.mediaQueries.features.vendorPrefixed++;
+					report.mediaQueries.features.prefixed++;
 					handleVendorPrefix('-moz-', report);
 				} else if (rePrefixedString.test(feature)) {
-					report.mediaQueries.features.vendorPrefixed++;
+					report.mediaQueries.features.prefixed++;
 					handleVendorPrefix(feature, report);
 				}
 
@@ -161,7 +161,7 @@ export function handleAtRule(atRule, report, options) {
 
 	/** Count vendor prefixes in at-rules names */
 	if (rePrefixedString.test(atRule.name)) {
-		report.atRules.vendorPrefixed++;
+		report.atRules.prefixed++;
 		handleVendorPrefix(atRule.name, report);
 	}
 

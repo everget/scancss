@@ -115,7 +115,7 @@ describe('Module: handleAtRule', () => {
 			atRules: {
 				total: 0,
 				empty: 0,
-				vendorPrefixed: 0,
+				prefixed: 0,
 				unknown: {},
 				usage: {},
 			},
@@ -127,7 +127,7 @@ describe('Module: handleAtRule', () => {
 				features: {
 					total: 0,
 					unique: 0,
-					vendorPrefixed: 0,
+					prefixed: 0,
 					usage: {},
 				},
 				usage: {},
@@ -183,9 +183,9 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
-	describe('atRules.vendorPrefixed', () => {
+	describe('atRules.prefixed', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.vendorPrefixed).toBe(2);
+			expect(report.atRules.prefixed).toBe(2);
 		});
 	});
 
@@ -262,9 +262,9 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
-	describe('mediaQueries.features.vendorPrefixed', () => {
+	describe('mediaQueries.features.prefixed', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.features.vendorPrefixed).toBe(3);
+			expect(report.mediaQueries.features.prefixed).toBe(3);
 		});
 	});
 

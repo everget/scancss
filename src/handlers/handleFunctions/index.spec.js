@@ -71,7 +71,7 @@ describe('Module: handleFunctions', () => {
 			functions: {
 				total: 0,
 				unique: 0,
-				vendorPrefixed: 0,
+				prefixed: 0,
 				usage: {},
 			},
 			gradients: {
@@ -125,9 +125,9 @@ describe('Module: handleFunctions', () => {
 			});
 		});
 
-		describe('functions.vendorPrefixed', () => {
+		describe('functions.prefixed', () => {
 			it('should be counted correctly', () => {
-				expect(report.functions.vendorPrefixed).toBe(4);
+				expect(report.functions.prefixed).toBe(4);
 			});
 		});
 

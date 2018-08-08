@@ -18,7 +18,7 @@ function countFunctions(decl, report) {
 			countUsage(func, report.functions.usage);
 
 			if (rePrefixedString.test(func)) {
-				report.functions.vendorPrefixed++;
+				report.functions.prefixed++;
 				handleVendorPrefix(func, report);
 			}
 		});

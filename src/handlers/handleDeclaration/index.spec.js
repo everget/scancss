@@ -119,7 +119,7 @@ describe('Module: handleDeclaration', () => {
 				total: 0,
 				unique: 0,
 				shorthands: 0,
-				vendorPrefixed: 0,
+				prefixed: 0,
 				resetsViaAll: 0,
 				negativeMargins: 0,
 				anonymousReplacedElements: 0,
@@ -240,9 +240,9 @@ describe('Module: handleDeclaration', () => {
 			});
 		});
 
-		describe('properties.vendorPrefixed', () => {
+		describe('properties.prefixed', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.vendorPrefixed).toBe(4);
+				expect(report.properties.prefixed).toBe(4);
 			});
 		});
 

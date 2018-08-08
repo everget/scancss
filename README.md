@@ -295,7 +295,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **empty** - `number`
 
-* **vendorPrefixed** - `number`
+* **prefixed** - `number`
 
 * **unknown** - `Record<string, number>`
 
@@ -411,7 +411,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **shorthands** - `number`
 
-* **vendorPrefixed** - `number`
+* **prefixed** - `number`
 
 * **unitless** - `number`
 
@@ -609,7 +609,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **unique** - `number`
 
-* **vendorPrefixed** - `number`
+* **prefixed** - `number`
 
 * **usage** - `Record<string, number>`
 
