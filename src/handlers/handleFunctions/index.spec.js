@@ -6,8 +6,9 @@ import { handleFunctions } from '.';
 describe('Module: handleFunctions', () => {
 	const options = {
 		collectTransitionsAndAnimationsData: true,
-		collectDataUrisData: true,
+		collectFiltersData: true,
 		collectGradientsData: true,
+		collectDataUrisData: true,
 	};
 
 	const src = `
@@ -19,6 +20,7 @@ describe('Module: handleFunctions', () => {
 			color: rgb(255, 0, 215);
 			transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
 			transform: translateY(-150%) scale(.8);
+			filter: blur(5px);
 		}
 
 		.selector::after {
@@ -29,6 +31,7 @@ describe('Module: handleFunctions', () => {
 			transition-timing-function: cubic-bezier(0.0, 0.0, 1, 1);
 			transform: translateY(-150%) scale(.8) rotate(180deg);
 			background-image: -webkit-linear-gradient(top, #2F2727, #1a82f7);
+			filter: contrast(200%);
 		}
 
 		.selector: {
@@ -39,6 +42,7 @@ describe('Module: handleFunctions', () => {
 			transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 			transform: scale(.8);
 			background-image: -moz-linear-gradient(top, #2F2727, #1a82f7);
+			filter: grayscale(80%);
 		}
 
 		.selector: {
@@ -48,6 +52,7 @@ describe('Module: handleFunctions', () => {
 			transition-timing-function: cubic-bezier(0.1, red, 1.0, green),
 			transform: rotate(180deg);
 			background-image: -ms-linear-gradient(top, #2F2727, #1a82f7);
+			filter: hue-rotate(90deg);
 		}
 
 		.selector: {
@@ -57,6 +62,7 @@ describe('Module: handleFunctions', () => {
 			transition-timing-function: cubic-bezier(-1.9, 0.3, -0.2, 2.1);
 			transform: translateY(-150%);
 			background-image: -o-linear-gradient(top, #2F2727, #1a82f7);
+			filter: drop-shadow(16px 16px 20px red) invert(75%);
 		}
 	`;
 
@@ -72,6 +78,11 @@ describe('Module: handleFunctions', () => {
 				total: 0,
 				unique: 0,
 				prefixed: 0,
+				usage: {},
+			},
+			filters: {
+				total: 0,
+				unique: 0,
 				usage: {},
 			},
 			gradients: {
@@ -115,7 +126,7 @@ describe('Module: handleFunctions', () => {
 	describe('Handling all functions', () => {
 		describe('functions.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.functions.total).toBe(37);
+				expect(report.functions.total).toBe(43);
 			});
 		});
 
@@ -134,11 +145,21 @@ describe('Module: handleFunctions', () => {
 		describe('functions.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.functions.usage).toEqual({
+					'-moz-linear-gradient': 1,
+					'-ms-linear-gradient': 1,
+					'-o-linear-gradient': 1,
+					'-webkit-linear-gradient': 1,
 					attr: 1,
+					blur: 1,
 					calc: 4,
+					contrast: 1,
 					'cubic-bezier': 7,
+					'drop-shadow': 1,
+					grayscale: 1,
 					hsl: 2,
+					'hue-rotate': 1,
 					inset: 2,
+					invert: 1,
 					max: 1,
 					min: 1,
 					'radial-gradient': 1,
@@ -149,10 +170,33 @@ describe('Module: handleFunctions', () => {
 					translateY: 3,
 					url: 2,
 					var: 2,
-					'-webkit-linear-gradient': 1,
-					'-moz-linear-gradient': 1,
-					'-ms-linear-gradient': 1,
-					'-o-linear-gradient': 1,
+				});
+			});
+		});
+	});
+
+	describe('Handling filters', () => {
+		describe('filters.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.filters.total).toBe(6);
+			});
+		});
+
+		describe('filters.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.filters.unique).toBe(0);
+			});
+		});
+
+		describe('filters.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.filters.usage).toEqual({
+					blur: 1,
+					contrast: 1,
+					grayscale: 1,
+					'hue-rotate': 1,
+					'drop-shadow': 1,
+					invert: 1,
 				});
 			});
 		});

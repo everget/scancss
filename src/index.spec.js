@@ -547,6 +547,16 @@ describe('Module: scancss', () => {
 			});
 		});
 
+		describe('filters', () => {
+			it('should be counted correctly', () => {
+				expect(report.filters).toEqual({
+					total: 0,
+					unique: 0,
+					usage: {},
+				});
+			});
+		});
+
 		describe('gradients', () => {
 			it('should be counted correctly', () => {
 				expect(report.gradients).toEqual({

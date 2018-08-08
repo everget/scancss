@@ -34,6 +34,7 @@ A robust CSS stylesheet statistics collector and analyzer
 	* [collectAllColorsData](#collectallcolorsdata)
 	* [collectTransitionsAndAnimationsData](#collecttransitionsandanimationsdata)
 	* [collectFunctionsData](#collectfunctionsdata)
+	* [collectFiltersData](#collectfiltersdata)
 	* [collectGradientsData](#collectgradientsdata)
 	* [collectUnitsData](#collectunitsdata)
 	* [collectVariablesData](#collectvariablesdata)
@@ -66,6 +67,7 @@ A robust CSS stylesheet statistics collector and analyzer
 	* [transitions](#transitions)
 	* [animations](#animations)
 	* [functions](#functions)
+	* [filters](#filters)
 	* [gradients](#gradients)
 	* [dataUris](#datauris)
 	* [browserHacks](#browserhacks)
@@ -224,6 +226,10 @@ Use this flag to fill `report.transitions` and `report.animations` stats metrics
 Use this flag to fill `report.functions` stats metric
 
 * Default: `true`
+
+#### collectFiltersData
+
+Use this flag to fill `report.filters` stats metric
 
 #### collectGradientsData
 
@@ -614,6 +620,14 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 * **unique** - `number`
 
 * **prefixed** - `number`
+
+* **usage** - `Record<string, number>`
+
+#### filters
+
+* **total** - `number`
+
+* **unique** - `number`
 
 * **usage** - `Record<string, number>`
 

@@ -38,6 +38,7 @@ export default function scancss(src, options) {
 				collectAllColorsData: true,
 				collectTransitionsAndAnimationsData: true,
 				collectFunctionsData: true,
+				collectFiltersData: true,
 				collectGradientsData: true,
 				collectUnitsData: true,
 				collectVariablesData: true,
@@ -284,6 +285,11 @@ export default function scancss(src, options) {
 				prefixed: 0,
 				usage: {},
 			},
+			filters: {
+				total: 0,
+				unique: 0,
+				usage: {},
+			},
 			gradients: {
 				total: 0,
 				unique: 0,
@@ -476,6 +482,7 @@ export default function scancss(src, options) {
 			report.lineHeights.unique = Object.keys(report.lineHeights.usage).length;
 			report.fontFamilies.unique = Object.keys(report.fontFamilies.usage).length;
 			report.functions.unique = Object.keys(report.functions.usage).length;
+			report.filters.unique = Object.keys(report.filters.usage).length;
 			report.gradients.unique = Object.keys(report.gradients.usage).length;
 			report.units.unique = Object.keys(report.units.usage).length;
 			report.vendorPrefixes.unique = Object.keys(report.vendorPrefixes.usage).length;

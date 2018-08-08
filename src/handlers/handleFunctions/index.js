@@ -1,3 +1,4 @@
+import { cssFilterFunctions } from '../../constants/cssFilterFunctions';
 import { reCssFunction } from '../../constants/reCssFunction';
 import { reGradient } from '../../constants/reGradient';
 import { reCubicBezier } from '../../constants/reCubicBezier';
@@ -9,7 +10,7 @@ import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
 import { isValidCubicBezierArgs } from '../../predicates/isValidCubicBezierArgs';
 import { handleVendorPrefix } from '../handleVendorPrefix';
 
-function countFunctions(decl, report) {
+function countFunctions(decl, report, options) {
 	decl.value
 		.match(reCssFunction)
 		.map((func) => func.slice(0, func.indexOf('(')))
@@ -20,6 +21,11 @@ function countFunctions(decl, report) {
 			if (rePrefixedString.test(func)) {
 				report.functions.prefixed++;
 				handleVendorPrefix(func, report);
+			}
+
+			if (options.collectFiltersData && cssFilterFunctions.includes(func)) {
+				report.filters.total++;
+				countUsage(func, report.filters.usage);
 			}
 		});
 }
@@ -75,7 +81,7 @@ function countCubicBeziers(decl, report, options) {
 
 export function handleFunctions(decl, report, options) {
 	if (reCssFunction.test(decl.value)) {
-		countFunctions(decl, report);
+		countFunctions(decl, report, options);
 
 		if (
 			options.collectDataUrisData &&
