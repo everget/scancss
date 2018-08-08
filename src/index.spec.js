@@ -141,9 +141,13 @@ describe('Module: scancss', () => {
 					types: {
 						screen: 1,
 					},
-					vendorPrefixedFeatures: 0,
 					features: {
-						'max-width': 1,
+						total: 1,
+						unique: 1,
+						vendorPrefixed: 0,
+						usage: {
+							'max-width': 1,
+						},
 					},
 					usage: {
 						'screen and (max-width:480px)': 1,

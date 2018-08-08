@@ -309,11 +309,9 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **onlyKeyword** - `number`
 
-* **vendorPrefixedFeatures** - `number`
-
 * **types** - `Record<string, number>`
 
-* **features** - `Record<string, number>`
+* **features** - `Record<string, number | Record<string, number>>`
 
 #### keyframes
 

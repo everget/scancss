@@ -32,14 +32,15 @@ function handleMediaQueryParams(params, report, options) {
 			.match(reCssMediaQueryFeature)
 			.forEach((feature) => {
 				if (/^(min|max)--moz-/.test(feature)) {
-					report.mediaQueries.vendorPrefixedFeatures++;
+					report.mediaQueries.features.vendorPrefixed++;
 					handleVendorPrefix('-moz-', report);
 				} else if (rePrefixedString.test(feature)) {
-					report.mediaQueries.vendorPrefixedFeatures++;
+					report.mediaQueries.features.vendorPrefixed++;
 					handleVendorPrefix(feature, report);
 				}
 
-				countUsage(feature, report.mediaQueries.features);
+				report.mediaQueries.features.total++;
+				countUsage(feature, report.mediaQueries.features.usage);
 			});
 	}
 

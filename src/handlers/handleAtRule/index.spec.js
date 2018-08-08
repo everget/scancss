@@ -124,8 +124,12 @@ describe('Module: handleAtRule', () => {
 				unique: 0,
 				onlyKeyword: 0,
 				types: {},
-				vendorPrefixedFeatures: 0,
-				features: {},
+				features: {
+					total: 0,
+					unique: 0,
+					vendorPrefixed: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 			keyframes: {
@@ -246,15 +250,27 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
-	describe('mediaQueries.vendorPrefixedFeatures', () => {
+	describe('mediaQueries.features.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.vendorPrefixedFeatures).toBe(3);
+			expect(report.mediaQueries.features.total).toBe(13);
 		});
 	});
 
-	describe('mediaQueries.features', () => {
+	describe('mediaQueries.features.unique', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.features).toEqual({
+			expect(report.mediaQueries.features.unique).toBe(0);
+		});
+	});
+
+	describe('mediaQueries.features.vendorPrefixed', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.features.vendorPrefixed).toBe(3);
+		});
+	});
+
+	describe('mediaQueries.features.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.features.usage).toEqual({
 				'max-height': 1,
 				'max-width': 4,
 				'min-width': 2,

@@ -75,8 +75,12 @@ export default function scancss(src, options) {
 				unique: 0,
 				onlyKeyword: 0,
 				types: {},
-				vendorPrefixedFeatures: 0,
-				features: {},
+				features: {
+					total: 0,
+					unique: 0,
+					vendorPrefixed: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 			keyframes: {
@@ -387,6 +391,7 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.collectAtRulesData) {
 			report.mediaQueries.unique = Object.keys(report.mediaQueries.usage).length;
+			report.mediaQueries.features.unique = Object.keys(report.mediaQueries.features.usage).length;
 		}
 
 		if (scancssOptions.collectSelectorsData) {
