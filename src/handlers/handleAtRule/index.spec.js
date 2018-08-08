@@ -136,8 +136,10 @@ describe('Module: handleAtRule', () => {
 				stepsChains: {},
 				longestStepsChain: 0,
 				longestStepsChainLength: 0,
+				longestStepsChainAnimation: null,
 				shortestStepsChain: 0,
 				shortestStepsChainLength: Number.MAX_SAFE_INTEGER,
+				shortestStepsChainAnimation: null,
 				animatableProperties: [],
 			},
 			declarations: {
@@ -325,6 +327,12 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
+	describe('keyframes.longestStepsChainAnimation', () => {
+		it('should be counted correctly', () => {
+			expect(report.keyframes.longestStepsChainAnimation).toBe('fade');
+		});
+	});
+
 	describe('keyframes.shortestStepsChain', () => {
 		it('should be counted correctly', () => {
 			expect(report.keyframes.shortestStepsChain).toBe('0% -> 50% -> 70% -> 100%');
@@ -334,6 +342,12 @@ describe('Module: handleAtRule', () => {
 	describe('keyframes.shortestStepsChainLength', () => {
 		it('should be counted correctly', () => {
 			expect(report.keyframes.shortestStepsChainLength).toBe(4);
+		});
+	});
+
+	describe('keyframes.shortestStepsChainAnimation', () => {
+		it('should be counted correctly', () => {
+			expect(report.keyframes.shortestStepsChainAnimation).toBe('pulse');
 		});
 	});
 

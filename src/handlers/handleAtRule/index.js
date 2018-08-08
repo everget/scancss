@@ -142,11 +142,13 @@ function handleKeyframesAtRule(atRule, report) {
 	if (report.keyframes.longestStepsChainLength < stepsUnique.length) {
 		report.keyframes.longestStepsChainLength = stepsUnique.length;
 		report.keyframes.longestStepsChain = stepsChain;
+		report.keyframes.longestStepsChainAnimation = atRule.params;
 	}
 
 	if (report.keyframes.shortestStepsChainLength > stepsUnique.length) {
 		report.keyframes.shortestStepsChainLength = stepsUnique.length;
 		report.keyframes.shortestStepsChain = stepsChain;
+		report.keyframes.shortestStepsChainAnimation = atRule.params;
 	}
 }
 

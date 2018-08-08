@@ -321,9 +321,13 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **longestStepsChainLength** - `number`
 
+* **longestStepsChainAnimation** - `string | null`
+
 * **shortestStepsChain** - `string | null`
 
 * **shortestStepsChainLength** - `number` (`Number.MAX_SAFE_INTEGER` if there are no @keyframes in a stylesheet)
+
+* **shortestStepsChainAnimation** - `string | null`
 
 * **animatableProperties** - `Array<string>`
 

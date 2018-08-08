@@ -164,8 +164,10 @@ describe('Module: scancss', () => {
 					},
 					longestStepsChain: '0% -> 10% -> 88% -> 100%',
 					longestStepsChainLength: 4,
+					longestStepsChainAnimation: 'fade',
 					shortestStepsChain: '0% -> 10% -> 88% -> 100%',
 					shortestStepsChainLength: 4,
+					shortestStepsChainAnimation: 'fade',
 					animatableProperties: [
 						'opacity',
 					],

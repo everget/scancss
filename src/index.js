@@ -87,8 +87,10 @@ export default function scancss(src, options) {
 				stepsChains: {},
 				longestStepsChain: null,
 				longestStepsChainLength: 0,
+				longestStepsChainAnimation: null,
 				shortestStepsChain: null,
 				shortestStepsChainLength: Number.MAX_SAFE_INTEGER,
+				shortestStepsChainAnimation: null,
 				animatableProperties: [],
 			},
 			rules: {
