@@ -14,7 +14,7 @@
   "atRules": {
     "total": 129,
     "empty": 0,
-    "vendorPrefixed": 64,
+    "prefixed": 64,
     "unknown": {},
     "usage": {
       "-webkit-keyframes": 64,
@@ -25,13 +25,17 @@
   "mediaQueries": {
     "total": 1,
     "unique": 1,
-    "onlyKeywords": 0,
+    "onlyKeyword": 0,
     "types": {
       "screen": 1
     },
-    "vendorPrefixedFeatures": 1,
     "features": {
-      "-webkit-min-device-pixel-ratio": 1
+      "total": 1,
+      "unique": 1,
+      "prefixed": 1,
+      "usage": {
+        "-webkit-min-device-pixel-ratio": 1
+      }
     },
     "usage": {
       "screen and (-webkit-min-device-pixel-ratio:0)": 1
@@ -60,8 +64,10 @@
     },
     "longestStepsChain": "0% -> 10% -> 20% -> 30% -> 40% -> 50% -> 60% -> 70% -> 80% -> 90% -> 100%",
     "longestStepsChainLength": 11,
+    "longestStepsChainAnimation": "shake",
     "shortestStepsChain": "100%",
     "shortestStepsChainLength": 1,
+    "shortestStepsChainAnimation": "openSpace",
     "animatableProperties": [
       "max-height",
       "opacity",
@@ -136,7 +142,7 @@
   "declarations": {
     "total": 2760,
     "unique": 855,
-    "uniqueRatio": 3.2280701754385963,
+    "uniqueRatio": 0.30978260869565216,
     "important": 0,
     "averagePerRule": 3.23,
     "totalByteLength": 79450,
@@ -155,7 +161,7 @@
     "total": 2760,
     "unique": 82,
     "shorthands": 283,
-    "vendorPrefixed": 946,
+    "prefixed": 946,
     "unitless": 1208,
     "resetsViaAll": 0,
     "negativeMargins": 14,
@@ -166,10 +172,8 @@
     },
     "explicitDefaultingKeywords": {
       "total": 0,
-      "inherit": 0,
-      "initial": 0,
-      "revert": 0,
-      "unset": 0
+      "unique": 0,
+      "usage": {}
     },
     "engineTriggers": {
       "composite": {
@@ -458,9 +462,7 @@
       "cubic-bezier(0.09,0.68,0,0.99)": 2,
       "cubic-bezier(0.16,0.86,0.33,0.97)": 4
     },
-    "invalidTimingFunctions": {
-      "cubic-bezier(0.4, 0, 0, 1.5)": 1
-    }
+    "invalidTimingFunctions": {}
   },
   "animations": {
     "total": 81,
@@ -538,19 +540,17 @@
     },
     "timingFunctions": {
       "ease": 44,
-      "cubic-bezier(0.4,0,0,1.5)": 2,
+      "cubic-bezier(0.4,0,0,1.5)": 1,
       "ease-in": 5,
       "ease-out": 4,
       "ease-in-out": 20
     },
-    "invalidTimingFunctions": {
-      "cubic-bezier(0.4, 0, 0, 1.5)": 1
-    }
+    "invalidTimingFunctions": {}
   },
   "functions": {
     "total": 1540,
     "unique": 17,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "usage": {
       "url": 2,
       "cubic-bezier": 12,
@@ -569,6 +569,13 @@
       "blur": 4,
       "rgba": 2,
       "scale3d": 4
+    }
+  },
+  "filters": {
+    "total": 4,
+    "unique": 1,
+    "usage": {
+      "blur": 4
     }
   },
   "gradients": {

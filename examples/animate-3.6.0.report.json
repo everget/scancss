@@ -14,7 +14,7 @@
   "atRules": {
     "total": 155,
     "empty": 0,
-    "vendorPrefixed": 77,
+    "prefixed": 77,
     "unknown": {},
     "usage": {
       "charset": 1,
@@ -25,10 +25,14 @@
   "mediaQueries": {
     "total": 0,
     "unique": 0,
-    "onlyKeywords": 0,
+    "onlyKeyword": 0,
     "types": {},
-    "vendorPrefixedFeatures": 0,
-    "features": {},
+    "features": {
+      "total": 0,
+      "unique": 0,
+      "prefixed": 0,
+      "usage": {}
+    },
     "usage": {}
   },
   "keyframes": {
@@ -59,8 +63,10 @@
     },
     "longestStepsChain": "0% -> 10% -> 20% -> 30% -> 40% -> 50% -> 60% -> 70% -> 80% -> 90% -> 100%",
     "longestStepsChainLength": 11,
+    "longestStepsChainAnimation": "shake",
     "shortestStepsChain": "20% -> 100%",
     "shortestStepsChainLength": 2,
+    "shortestStepsChainAnimation": "bounceOutLeft",
     "animatableProperties": [
       "-webkit-animation-timing-function",
       "animation-timing-function",
@@ -121,7 +127,7 @@
   "declarations": {
     "total": 1476,
     "unique": 432,
-    "uniqueRatio": 3.4166666666666665,
+    "uniqueRatio": 0.2926829268292683,
     "important": 8,
     "averagePerRule": 2.78,
     "totalByteLength": 53418,
@@ -139,7 +145,7 @@
     "total": 1476,
     "unique": 18,
     "shorthands": 0,
-    "vendorPrefixed": 608,
+    "prefixed": 608,
     "unitless": 912,
     "resetsViaAll": 0,
     "negativeMargins": 0,
@@ -149,10 +155,8 @@
     },
     "explicitDefaultingKeywords": {
       "total": 0,
-      "inherit": 0,
-      "initial": 0,
-      "revert": 0,
-      "unset": 0
+      "unique": 0,
+      "usage": {}
     },
     "engineTriggers": {
       "composite": {
@@ -381,17 +385,12 @@
       "cubic-bezier(0.55,0.055,0.675,0.19)": 24,
       "cubic-bezier(0.175,0.885,0.32,1)": 24
     },
-    "invalidTimingFunctions": {
-      "cubic-bezier(0.215, 0.61, 0.355, 1)": 12,
-      "cubic-bezier(0.755, 0.05, 0.855, 0.06)": 4,
-      "cubic-bezier(0.55, 0.055, 0.675, 0.19)": 12,
-      "cubic-bezier(0.175, 0.885, 0.32, 1)": 12
-    }
+    "invalidTimingFunctions": {}
   },
   "functions": {
     "total": 1096,
     "unique": 11,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "usage": {
       "cubic-bezier": 80,
       "translate3d": 460,
@@ -405,6 +404,11 @@
       "scale": 16,
       "rotate": 12
     }
+  },
+  "filters": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
   },
   "gradients": {
     "total": 0,

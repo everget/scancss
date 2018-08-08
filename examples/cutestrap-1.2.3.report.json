@@ -1,0 +1,507 @@
+{
+  "styleSheetSize": {
+    "sourceByteLength": 14147,
+    "gzipByteLength": 3823
+  },
+  "comments": {
+    "total": 13,
+    "totalByteLength": 4570,
+    "longestByteLength": 951,
+    "shortestByteLength": 41,
+    "averageByteLength": 351.54,
+    "sizeRatio": 0.32303668622322756
+  },
+  "atRules": {
+    "total": 3,
+    "empty": 0,
+    "prefixed": 0,
+    "unknown": {},
+    "usage": {
+      "media": 3
+    }
+  },
+  "mediaQueries": {
+    "total": 3,
+    "unique": 3,
+    "onlyKeyword": 0,
+    "types": {
+      "screen": 1
+    },
+    "features": {
+      "total": 3,
+      "unique": 2,
+      "prefixed": 0,
+      "usage": {
+        "min-width": 1,
+        "max-width": 2
+      }
+    },
+    "usage": {
+      "screen and (min-width:960px)": 1,
+      "(max-width:599px)": 1,
+      "(max-width:959px)": 1
+    }
+  },
+  "keyframes": {
+    "stepsChains": {},
+    "longestStepsChain": null,
+    "longestStepsChainLength": 0,
+    "longestStepsChainAnimation": null,
+    "shortestStepsChain": null,
+    "shortestStepsChainLength": 9007199254740991,
+    "shortestStepsChainAnimation": null,
+    "animatableProperties": []
+  },
+  "rules": {
+    "total": 113,
+    "empty": 0
+  },
+  "selectors": {
+    "total": 187,
+    "unique": 0,
+    "baseUsage": {
+      "universal": 15,
+      "tag": 112,
+      "pseudoClass": 55,
+      "pseudoElement": 16,
+      "class": 87,
+      "attribute": 22
+    },
+    "pseudoClassesUsage": {
+      ":link": 7,
+      ":visited": 7,
+      ":hover": 7,
+      ":focus": 15,
+      ":active": 7,
+      ":last-child": 4,
+      ":-webkit-autofill": 3,
+      ":checked": 2,
+      ":first-child": 3
+    },
+    "pseudoElementsUsage": {
+      "::before": 7,
+      "::after": 9
+    },
+    "combinators": {
+      "total": 39,
+      "adjacentSibling": 4,
+      "child": 12,
+      "descendant": 23,
+      "generalSibling": 0
+    },
+    "complex": 4,
+    "maxPerRule": 8,
+    "averagePerRule": 1.65,
+    "totalByteLength": 2153,
+    "longestByteLength": 63,
+    "longestByteLengthSelector": ".checkbox input[type=checkbox]:checked + .checkbox__label:after",
+    "averageByteLength": 11.51,
+    "totalSpecificity": [
+      0,
+      164,
+      128
+    ],
+    "averageSpecificity": [
+      0,
+      1,
+      1
+    ],
+    "highestSpecificity": [
+      0,
+      4,
+      2
+    ],
+    "highestSpecificitySelector": ".radio input[type=radio]:focus + .radio__label:after",
+    "sizeRatio": 0.15218774298437832,
+    "specificityGraphData": [],
+    "usage": {}
+  },
+  "declarations": {
+    "total": 283,
+    "unique": 180,
+    "uniqueRatio": 0.6360424028268551,
+    "important": 1,
+    "averagePerRule": 2.5,
+    "totalByteLength": 5143,
+    "longestByteLength": 85,
+    "longestByteLengthDeclaration": "font-family:Avenir,\"Avenir Next\",\"Helvetica Neue\",\"Segoe UI\",Verdana,sans-serif",
+    "averageByteLength": 18.17,
+    "sizeRatio": 0.36353997313918146,
+    "inAtRules": {
+      "media": 11
+    },
+    "list": []
+  },
+  "properties": {
+    "total": 283,
+    "unique": 68,
+    "shorthands": 54,
+    "prefixed": 15,
+    "unitless": 176,
+    "resetsViaAll": 0,
+    "negativeMargins": 7,
+    "anonymousReplacedElements": 8,
+    "performanceHacks": {},
+    "explicitDefaultingKeywords": {
+      "total": 1,
+      "unique": 1,
+      "usage": {
+        "inherit": 1
+      }
+    },
+    "engineTriggers": {
+      "composite": {
+        "blink": 204,
+        "edgehtml": 204,
+        "gecko": 204,
+        "webkit": 195
+      },
+      "layout": {
+        "blink": 154,
+        "edgehtml": 153,
+        "gecko": 156,
+        "webkit": 195
+      },
+      "paint": {
+        "blink": 200,
+        "edgehtml": 202,
+        "gecko": 199,
+        "webkit": 195
+      }
+    },
+    "usage": {
+      "border": 6,
+      "font": 1,
+      "margin": 9,
+      "padding": 17,
+      "text-rendering": 1,
+      "-webkit-font-smoothing": 1,
+      "-moz-osx-font-smoothing": 1,
+      "box-sizing": 4,
+      "font-size": 18,
+      "height": 8,
+      "color": 23,
+      "font-family": 3,
+      "line-height": 9,
+      "min-height": 1,
+      "position": 12,
+      "font-weight": 7,
+      "padding-bottom": 5,
+      "background-color": 16,
+      "border-radius": 9,
+      "overflow-y": 2,
+      "overflow-x": 2,
+      "max-width": 5,
+      "display": 11,
+      "margin-bottom": 4,
+      "content": 8,
+      "top": 5,
+      "width": 8,
+      "margin-left": 4,
+      "list-style-type": 2,
+      "font-style": 4,
+      "text-indent": 1,
+      "border-left": 2,
+      "text-align": 7,
+      "border-bottom": 1,
+      "cursor": 3,
+      "border-collapse": 1,
+      "border-spacing": 1,
+      "resize": 1,
+      "-webkit-appearance": 1,
+      "-moz-appearance": 1,
+      "-webkit-text-fill-color": 1,
+      "-webkit-box-shadow": 1,
+      "opacity": 2,
+      "pointer-events": 1,
+      "float": 3,
+      "clear": 1,
+      "overflow": 1,
+      "transition-property": 1,
+      "transition-duration": 1,
+      "text-decoration": 2,
+      "outline": 2,
+      "left": 4,
+      "margin-top": 5,
+      "z-index": 2,
+      "border-color": 2,
+      "box-shadow": 2,
+      "right": 2,
+      "border-right": 1,
+      "border-top": 1,
+      "bottom": 1,
+      "flex": 1,
+      "-webkit-flex-grow": 3,
+      "-moz-flex-grow": 3,
+      "-ms-flex-grow": 3,
+      "flex-grow": 3,
+      "padding-left": 3,
+      "padding-right": 3,
+      "margin-right": 3
+    }
+  },
+  "displays": {
+    "total": 11,
+    "unique": 6,
+    "usage": {
+      "table": 2,
+      "block": 4,
+      "inline-block": 2,
+      "-ms-flexbox": 1,
+      "-webkit-flex": 1,
+      "flex": 1
+    }
+  },
+  "positions": {
+    "total": 12,
+    "unique": 2,
+    "usage": {
+      "relative": 5,
+      "absolute": 7
+    }
+  },
+  "zIndices": {
+    "total": 2,
+    "unique": 2,
+    "invalid": {},
+    "usage": {
+      "100": 1,
+      "-1": 1
+    }
+  },
+  "floats": {
+    "total": 3,
+    "unique": 3,
+    "usage": {
+      "none": 1,
+      "left": 1,
+      "right": 1
+    }
+  },
+  "borderRadiuses": {
+    "total": 9,
+    "unique": 4,
+    "usage": {
+      "0": 1,
+      "2px": 5,
+      ".2rem": 1,
+      "20px": 2
+    }
+  },
+  "letterSpacings": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "fontSizes": {
+    "total": 19,
+    "unique": 12,
+    "usage": {
+      "inherit": 1,
+      "62.5%": 1,
+      "78.125%": 1,
+      "1.6rem": 3,
+      "3.6rem": 1,
+      "3.2rem": 1,
+      "2.8rem": 1,
+      "2.0rem": 1,
+      "1.8rem": 1,
+      "1.2rem": 6,
+      "2rem": 1,
+      "14px": 1
+    }
+  },
+  "lineHeights": {
+    "total": 10,
+    "unique": 5,
+    "hardCoded": 6,
+    "usage": {
+      "1": 4,
+      "inherit": 1,
+      "2.4rem": 2,
+      "4.8rem": 2,
+      "18px": 1
+    }
+  },
+  "fontFamilies": {
+    "total": 17,
+    "unique": 11,
+    "generic": {
+      "sans-serif": 2,
+      "monospace": 1
+    },
+    "system": {},
+    "withoutFallbackFonts": 1,
+    "imageReplacementHacks": 0,
+    "usage": {
+      "inherit": 1,
+      "Avenir": 2,
+      "Avenir Next": 2,
+      "Helvetica Neue": 2,
+      "Segoe UI": 2,
+      "Verdana": 2,
+      "sans-serif": 2,
+      "Consolas": 1,
+      "Monaco": 1,
+      "Courier New": 1,
+      "monospace": 1
+    }
+  },
+  "colors": {
+    "total": 36,
+    "unique": 13,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 3,
+    "models": {
+      "hex": 33
+    },
+    "named": {},
+    "system": {},
+    "usage": {
+      "#3c3c3d": 5,
+      "#e528b0": 2,
+      "#4076d4": 3,
+      "#9140d4": 2,
+      "#2e68cc": 2,
+      "#d44076": 2,
+      "#cdcdce": 1,
+      "#5a5a5b": 2,
+      "#7d7d7e": 7,
+      "#ffffff": 3,
+      "transparent": 3,
+      "#e83fb8": 2,
+      "#dededf": 2
+    }
+  },
+  "backgroundColors": {
+    "total": 16,
+    "unique": 7,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 5,
+    "models": {
+      "hex": 11
+    },
+    "named": {},
+    "system": {},
+    "usage": {
+      "#efeff0": 3,
+      "transparent": 5,
+      "#cdcdce": 1,
+      "#e83fb8": 2,
+      "#e528b0": 2,
+      "#dededf": 1,
+      "#ffffff": 2
+    }
+  },
+  "allColors": {
+    "total": 52,
+    "unique": 14,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 8,
+    "models": {
+      "hex": 44
+    },
+    "named": {},
+    "system": {},
+    "usage": {
+      "#3c3c3d": 5,
+      "#efeff0": 3,
+      "#e528b0": 4,
+      "transparent": 8,
+      "#4076d4": 3,
+      "#9140d4": 2,
+      "#2e68cc": 2,
+      "#d44076": 2,
+      "#cdcdce": 2,
+      "#5a5a5b": 2,
+      "#7d7d7e": 7,
+      "#e83fb8": 4,
+      "#ffffff": 5,
+      "#dededf": 3
+    }
+  },
+  "transitions": {
+    "properties": {
+      "background-color": 1
+    },
+    "longestDuration": 0.2,
+    "shortestDuration": 0.2,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "animations": {
+    "total": 0,
+    "unique": 0,
+    "infinite": 0,
+    "longestDuration": 0,
+    "shortestDuration": 9007199254740991,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "usage": {},
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "functions": {
+    "total": 0,
+    "unique": 0,
+    "prefixed": 0,
+    "usage": {}
+  },
+  "filters": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "gradients": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "dataUris": {
+    "total": 0,
+    "unique": 0,
+    "totalByteLength": 0,
+    "averageByteLength": 0,
+    "sizeRatio": 0,
+    "usage": {}
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
+    }
+  },
+  "units": {
+    "total": 123,
+    "unique": 4,
+    "usage": {
+      "%": 13,
+      "rem": 72,
+      "px": 37,
+      "ms": 1
+    },
+    "excessive": 1,
+    "excessiveUsage": {
+      "0px": 1
+    }
+  },
+  "variables": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "valuesMap": {}
+  },
+  "vendorPrefixes": {
+    "total": 18,
+    "unique": 3,
+    "unknown": {},
+    "usage": {
+      "-webkit-": 10,
+      "-moz-": 5,
+      "-ms-": 3
+    }
+  }
+}

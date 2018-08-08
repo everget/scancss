@@ -14,7 +14,7 @@
   "atRules": {
     "total": 113,
     "empty": 0,
-    "vendorPrefixed": 1,
+    "prefixed": 1,
     "unknown": {},
     "usage": {
       "media": 89,
@@ -27,15 +27,19 @@
   "mediaQueries": {
     "total": 89,
     "unique": 10,
-    "onlyKeywords": 0,
+    "onlyKeyword": 0,
     "types": {
       "print": 1
     },
-    "vendorPrefixedFeatures": 0,
     "features": {
-      "min-width": 74,
-      "max-width": 11,
-      "pointer": 3
+      "total": 88,
+      "unique": 3,
+      "prefixed": 0,
+      "usage": {
+        "min-width": 74,
+        "max-width": 11,
+        "pointer": 3
+      }
     },
     "usage": {
       "(min-width:960px)": 28,
@@ -58,8 +62,10 @@
     },
     "longestStepsChain": "0% -> 10% -> 20% -> 30% -> 40% -> 50% -> 60% -> 70% -> 80% -> 90% -> 100%",
     "longestStepsChainLength": 11,
+    "longestStepsChainAnimation": "uk-shake",
     "shortestStepsChain": "0% -> 100%",
     "shortestStepsChainLength": 2,
+    "shortestStepsChainAnimation": "uk-spinner-rotate",
     "animatableProperties": [
       "transform",
       "stroke-dashoffset",
@@ -167,7 +173,7 @@
   "declarations": {
     "total": 2782,
     "unique": 868,
-    "uniqueRatio": 3.205069124423963,
+    "uniqueRatio": 0.3120057512580877,
     "important": 155,
     "averagePerRule": 1.74,
     "totalByteLength": 60888,
@@ -188,7 +194,7 @@
     "total": 2782,
     "unique": 130,
     "shorthands": 467,
-    "vendorPrefixed": 30,
+    "prefixed": 30,
     "unitless": 1807,
     "resetsViaAll": 0,
     "negativeMargins": 50,
@@ -200,10 +206,10 @@
     },
     "explicitDefaultingKeywords": {
       "total": 17,
-      "inherit": 17,
-      "initial": 0,
-      "revert": 0,
-      "unset": 0
+      "unique": 1,
+      "usage": {
+        "inherit": 17
+      }
     },
     "engineTriggers": {
       "composite": {
@@ -744,7 +750,7 @@
   "functions": {
     "total": 328,
     "unique": 13,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "usage": {
       "calc": 37,
       "url": 24,
@@ -759,6 +765,13 @@
       "translateZ": 1,
       "blur": 1,
       "scale3d": 4
+    }
+  },
+  "filters": {
+    "total": 1,
+    "unique": 1,
+    "usage": {
+      "blur": 1
     }
   },
   "gradients": {

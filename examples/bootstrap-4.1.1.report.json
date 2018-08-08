@@ -14,7 +14,7 @@
   "atRules": {
     "total": 65,
     "empty": 0,
-    "vendorPrefixed": 2,
+    "prefixed": 2,
     "unknown": {},
     "usage": {
       "-ms-viewport": 1,
@@ -28,16 +28,20 @@
   "mediaQueries": {
     "total": 56,
     "unique": 10,
-    "onlyKeywords": 0,
+    "onlyKeyword": 0,
     "types": {
       "screen": 7,
       "print": 2
     },
-    "vendorPrefixedFeatures": 0,
     "features": {
-      "min-width": 39,
-      "max-width": 8,
-      "prefers-reduced-motion": 7
+      "total": 54,
+      "unique": 3,
+      "prefixed": 0,
+      "usage": {
+        "min-width": 39,
+        "max-width": 8,
+        "prefers-reduced-motion": 7
+      }
     },
     "usage": {
       "(min-width:576px)": 14,
@@ -58,8 +62,10 @@
     },
     "longestStepsChain": "0% -> 100%",
     "longestStepsChainLength": 2,
+    "longestStepsChainAnimation": "progress-bar-stripes",
     "shortestStepsChain": "0% -> 100%",
     "shortestStepsChainLength": 2,
+    "shortestStepsChainAnimation": "progress-bar-stripes",
     "animatableProperties": [
       "background-position"
     ]
@@ -161,7 +167,7 @@
   "declarations": {
     "total": 3643,
     "unique": 1127,
-    "uniqueRatio": 3.2324755989352263,
+    "uniqueRatio": 0.3093604172385397,
     "important": 889,
     "averagePerRule": 2.07,
     "totalByteLength": 83279,
@@ -183,7 +189,7 @@
     "total": 3615,
     "unique": 147,
     "shorthands": 664,
-    "vendorPrefixed": 463,
+    "prefixed": 463,
     "unitless": 2495,
     "resetsViaAll": 0,
     "negativeMargins": 28,
@@ -193,10 +199,10 @@
     },
     "explicitDefaultingKeywords": {
       "total": 26,
-      "inherit": 26,
-      "initial": 0,
-      "revert": 0,
-      "unset": 0
+      "unique": 1,
+      "usage": {
+        "inherit": 26
+      }
     },
     "engineTriggers": {
       "composite": {
@@ -920,7 +926,7 @@
   "functions": {
     "total": 166,
     "unique": 9,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "usage": {
       "rgba": 102,
       "calc": 32,
@@ -932,6 +938,11 @@
       "translate3d": 8,
       "attr": 1
     }
+  },
+  "filters": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
   },
   "gradients": {
     "total": 1,

@@ -14,7 +14,7 @@
   "atRules": {
     "total": 89,
     "empty": 0,
-    "vendorPrefixed": 1,
+    "prefixed": 1,
     "unknown": {},
     "usage": {
       "-ms-viewport": 1,
@@ -27,14 +27,18 @@
   "mediaQueries": {
     "total": 68,
     "unique": 9,
-    "onlyKeywords": 0,
+    "onlyKeyword": 0,
     "types": {
       "print": 2
     },
-    "vendorPrefixedFeatures": 0,
     "features": {
-      "min-width": 52,
-      "max-width": 14
+      "total": 66,
+      "unique": 2,
+      "prefixed": 0,
+      "usage": {
+        "min-width": 52,
+        "max-width": 14
+      }
     },
     "usage": {
       "(min-width:576px)": 18,
@@ -56,8 +60,10 @@
     },
     "longestStepsChain": "0% -> 25% -> 50% -> 51% -> 100%",
     "longestStepsChainLength": 5,
+    "longestStepsChainAnimation": "checkbox-off",
     "shortestStepsChain": "0% -> 100%",
     "shortestStepsChainLength": 2,
+    "shortestStepsChainAnimation": "progress-bar-stripes",
     "animatableProperties": [
       "background-position",
       "box-shadow",
@@ -155,7 +161,7 @@
   "declarations": {
     "total": 5120,
     "unique": 1340,
-    "uniqueRatio": 3.8208955223880596,
+    "uniqueRatio": 0.26171875,
     "important": 668,
     "averagePerRule": 1.95,
     "totalByteLength": 131040,
@@ -176,7 +182,7 @@
     "total": 5092,
     "unique": 133,
     "shorthands": 1009,
-    "vendorPrefixed": 25,
+    "prefixed": 25,
     "unitless": 3649,
     "resetsViaAll": 0,
     "negativeMargins": 37,
@@ -188,10 +194,10 @@
     },
     "explicitDefaultingKeywords": {
       "total": 79,
-      "inherit": 79,
-      "initial": 0,
-      "revert": 0,
-      "unset": 0
+      "unique": 1,
+      "usage": {
+        "inherit": 79
+      }
     },
     "engineTriggers": {
       "composite": {
@@ -1045,14 +1051,12 @@
       "linear": 2,
       "ease": 7,
       "ease-out": 2,
-      "cubic-bezier(0.4,0,0.2,1)": 10,
+      "cubic-bezier(0.4,0,0.2,1)": 8,
       "cubic-bezier(0.4,0,1,1)": 1,
       "ease-in": 4,
       "cubic-bezier(0,0,0.2,1)": 2
     },
-    "invalidTimingFunctions": {
-      "cubic-bezier(0.4, 0, 0.2, 1)": 5
-    }
+    "invalidTimingFunctions": {}
   },
   "animations": {
     "total": 5,
@@ -1072,14 +1076,12 @@
       "linear": 1,
       "cubic-bezier(0.4,0,0.2,1)": 1
     },
-    "invalidTimingFunctions": {
-      "cubic-bezier(0.4, 0, 0.2, 1)": 1
-    }
+    "invalidTimingFunctions": {}
   },
   "functions": {
     "total": 818,
     "unique": 17,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "usage": {
       "rgba": 605,
       "calc": 51,
@@ -1099,6 +1101,11 @@
       "color": 2,
       "scale": 6
     }
+  },
+  "filters": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
   },
   "gradients": {
     "total": 44,

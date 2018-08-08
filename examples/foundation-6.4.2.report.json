@@ -14,7 +14,7 @@
   "atRules": {
     "total": 109,
     "empty": 0,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "unknown": {},
     "usage": {
       "charset": 1,
@@ -26,16 +26,20 @@
   "mediaQueries": {
     "total": 103,
     "unique": 14,
-    "onlyKeywords": 0,
+    "onlyKeyword": 0,
     "types": {
       "print": 83,
       "screen": 105
     },
-    "vendorPrefixedFeatures": 0,
     "features": {
-      "min-width": 88,
-      "max-width": 15,
-      "orientation": 4
+      "total": 107,
+      "unique": 3,
+      "prefixed": 0,
+      "usage": {
+        "min-width": 88,
+        "max-width": 15,
+        "orientation": 4
+      }
     },
     "usage": {
       "print,screen and (min-width:40em)": 51,
@@ -62,8 +66,10 @@
     },
     "longestStepsChain": "0% -> 5% -> 10% -> 15% -> 20% -> 25% -> 30% -> 35% -> 40% -> 45% -> 50% -> 55% -> 60% -> 65% -> 70% -> 75% -> 80% -> 85% -> 90% -> 95%",
     "longestStepsChainLength": 20,
+    "longestStepsChainAnimation": "shake-7",
     "shortestStepsChain": "0% -> 100%",
     "shortestStepsChainLength": 2,
+    "shortestStepsChainAnimation": "spin-cw-1turn",
     "animatableProperties": [
       "transform"
     ]
@@ -150,7 +156,7 @@
   "declarations": {
     "total": 3273,
     "unique": 859,
-    "uniqueRatio": 3.810244470314319,
+    "uniqueRatio": 0.2624503513596089,
     "important": 63,
     "averagePerRule": 2.16,
     "totalByteLength": 65643,
@@ -169,7 +175,7 @@
     "total": 3273,
     "unique": 142,
     "shorthands": 473,
-    "vendorPrefixed": 335,
+    "prefixed": 335,
     "unitless": 2005,
     "resetsViaAll": 0,
     "negativeMargins": 36,
@@ -179,10 +185,10 @@
     },
     "explicitDefaultingKeywords": {
       "total": 26,
-      "inherit": 26,
-      "initial": 0,
-      "revert": 0,
-      "unset": 0
+      "unique": 1,
+      "usage": {
+        "inherit": 26
+      }
     },
     "engineTriggers": {
       "composite": {
@@ -675,15 +681,9 @@
       "ease": 7,
       "inherit": 2,
       "ease-in": 1,
-      "cubic-bezier(0.485,0.155,0.24,1.245)": 1,
-      "cubic-bezier(0.485,0.155,0.515,0.845)": 1,
-      "cubic-bezier(0.76,-0.245,0.24,1.245)": 1
+      "cubic-bezier(0.485,0.155,0.24,1.245)": 1
     },
-    "invalidTimingFunctions": {
-      "cubic-bezier(0.485, 0.155, 0.24, 1.245)": 1,
-      "cubic-bezier(0.485, 0.155, 0.515, 0.845)": 1,
-      "cubic-bezier(0.76, -0.245, 0.24, 1.245)": 1
-    }
+    "invalidTimingFunctions": {}
   },
   "animations": {
     "total": 4,
@@ -704,20 +704,14 @@
       "ease-in": 1,
       "ease-out": 1,
       "ease-in-out": 1,
-      "cubic-bezier(0.485,0.155,0.24,1.245)": 1,
-      "cubic-bezier(0.485,0.155,0.515,0.845)": 1,
-      "cubic-bezier(0.76,-0.245,0.24,1.245)": 1
+      "cubic-bezier(0.485,0.155,0.24,1.245)": 1
     },
-    "invalidTimingFunctions": {
-      "cubic-bezier(0.485, 0.155, 0.24, 1.245)": 1,
-      "cubic-bezier(0.485, 0.155, 0.515, 0.845)": 1,
-      "cubic-bezier(0.76, -0.245, 0.24, 1.245)": 1
-    }
+    "invalidTimingFunctions": {}
   },
   "functions": {
     "total": 445,
     "unique": 17,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "usage": {
       "calc": 224,
       "attr": 2,
@@ -737,6 +731,11 @@
       "rotateY": 6,
       "cubic-bezier": 6
     }
+  },
+  "filters": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
   },
   "gradients": {
     "total": 0,

@@ -1,0 +1,456 @@
+{
+  "styleSheetSize": {
+    "sourceByteLength": 9073,
+    "gzipByteLength": 2171
+  },
+  "comments": {
+    "total": 15,
+    "totalByteLength": 1158,
+    "longestByteLength": 121,
+    "shortestByteLength": 71,
+    "averageByteLength": 77.2,
+    "sizeRatio": 0.12763143392483192
+  },
+  "atRules": {
+    "total": 2,
+    "empty": 0,
+    "prefixed": 0,
+    "unknown": {},
+    "usage": {
+      "media": 2
+    }
+  },
+  "mediaQueries": {
+    "total": 2,
+    "unique": 2,
+    "onlyKeyword": 0,
+    "types": {
+      "screen": 1
+    },
+    "features": {
+      "total": 2,
+      "unique": 1,
+      "prefixed": 0,
+      "usage": {
+        "max-width": 2
+      }
+    },
+    "usage": {
+      "screen and (max-width:768px)": 1,
+      "(max-width:768px)": 1
+    }
+  },
+  "keyframes": {
+    "stepsChains": {},
+    "longestStepsChain": null,
+    "longestStepsChainLength": 0,
+    "longestStepsChainAnimation": null,
+    "shortestStepsChain": null,
+    "shortestStepsChainLength": 9007199254740991,
+    "shortestStepsChainAnimation": null,
+    "animatableProperties": []
+  },
+  "rules": {
+    "total": 108,
+    "empty": 0
+  },
+  "selectors": {
+    "total": 177,
+    "unique": 0,
+    "baseUsage": {
+      "universal": 1,
+      "tag": 94,
+      "class": 112,
+      "pseudoClass": 43,
+      "attribute": 41
+    },
+    "pseudoClassesUsage": {
+      ":last-child": 7,
+      ":hover": 17,
+      ":focus": 16,
+      ":active": 3
+    },
+    "pseudoElementsUsage": {},
+    "combinators": {
+      "total": 35,
+      "adjacentSibling": 0,
+      "child": 0,
+      "descendant": 35,
+      "generalSibling": 0
+    },
+    "complex": 0,
+    "maxPerRule": 10,
+    "averagePerRule": 1.64,
+    "totalByteLength": 2155,
+    "longestByteLength": 32,
+    "longestByteLengthSelector": ".row [class*=\" col-\"]:last-child",
+    "averageByteLength": 12.18,
+    "totalSpecificity": [
+      0,
+      196,
+      94
+    ],
+    "averageSpecificity": [
+      0,
+      1,
+      0
+    ],
+    "highestSpecificity": [
+      0,
+      3,
+      0
+    ],
+    "highestSpecificitySelector": ".row .col:last-child",
+    "sizeRatio": 0.23751791028325803,
+    "specificityGraphData": [],
+    "usage": {}
+  },
+  "declarations": {
+    "total": 188,
+    "unique": 127,
+    "uniqueRatio": 0.675531914893617,
+    "important": 0,
+    "averagePerRule": 1.74,
+    "totalByteLength": 3702,
+    "longestByteLength": 181,
+    "longestByteLengthDeclaration": "font-family:-apple-system,BlinkMacSystemFont,Avenir,\"Avenir Next\",\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Fira Sans\",\"Droid Sans\",\"Helvetica Neue\",sans-serif",
+    "averageByteLength": 19.69,
+    "sizeRatio": 0.4080238068995922,
+    "inAtRules": {
+      "media": 8
+    },
+    "list": []
+  },
+  "properties": {
+    "total": 188,
+    "unique": 44,
+    "shorthands": 44,
+    "prefixed": 0,
+    "unitless": 101,
+    "resetsViaAll": 0,
+    "negativeMargins": 0,
+    "anonymousReplacedElements": 0,
+    "performanceHacks": {},
+    "explicitDefaultingKeywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
+    "engineTriggers": {
+      "composite": {
+        "blink": 145,
+        "edgehtml": 145,
+        "gecko": 145,
+        "webkit": 143
+      },
+      "layout": {
+        "blink": 119,
+        "edgehtml": 122,
+        "gecko": 119,
+        "webkit": 143
+      },
+      "paint": {
+        "blink": 143,
+        "edgehtml": 145,
+        "gecko": 134,
+        "webkit": 143
+      }
+    },
+    "usage": {
+      "box-sizing": 1,
+      "margin": 3,
+      "padding": 6,
+      "line-height": 7,
+      "color": 13,
+      "font-size": 16,
+      "font-weight": 2,
+      "font-family": 3,
+      "width": 18,
+      "max-width": 1,
+      "display": 7,
+      "flex-flow": 1,
+      "justify-content": 6,
+      "margin-bottom": 12,
+      "flex-grow": 2,
+      "flex-basis": 2,
+      "margin-right": 4,
+      "margin-top": 4,
+      "height": 3,
+      "background": 5,
+      "border": 12,
+      "border-radius": 7,
+      "transition": 3,
+      "border-color": 3,
+      "outline": 2,
+      "min-height": 3,
+      "text-decoration": 1,
+      "opacity": 3,
+      "cursor": 2,
+      "padding-left": 2,
+      "list-style-position": 1,
+      "margin-left": 1,
+      "padding-top": 2,
+      "padding-right": 1,
+      "position": 4,
+      "flex-wrap": 1,
+      "align-items": 5,
+      "padding-bottom": 1,
+      "flex-direction": 4,
+      "white-space": 2,
+      "word-wrap": 1,
+      "border-width": 1,
+      "text-align": 3,
+      "background-color": 7
+    }
+  },
+  "displays": {
+    "total": 7,
+    "unique": 3,
+    "usage": {
+      "flex": 4,
+      "block": 2,
+      "none": 1
+    }
+  },
+  "positions": {
+    "total": 4,
+    "unique": 3,
+    "usage": {
+      "relative": 2,
+      "absolute": 1,
+      "fixed": 1
+    }
+  },
+  "zIndices": {
+    "total": 0,
+    "unique": 0,
+    "invalid": {},
+    "usage": {}
+  },
+  "floats": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "borderRadiuses": {
+    "total": 7,
+    "unique": 1,
+    "usage": {
+      "2px": 7
+    }
+  },
+  "letterSpacings": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "fontSizes": {
+    "total": 16,
+    "unique": 13,
+    "usage": {
+      "16px": 4,
+      "37.009px": 1,
+      "32.182px": 1,
+      "27.984px": 1,
+      "24.334px": 1,
+      "21.16px": 1,
+      "18.4px": 1,
+      "33.311px": 1,
+      "29.479px": 1,
+      "26.088px": 1,
+      "23.086px": 1,
+      "20.43px": 1,
+      "18.08px": 1
+    }
+  },
+  "lineHeights": {
+    "total": 7,
+    "unique": 7,
+    "hardCoded": 0,
+    "usage": {
+      "1.6": 1,
+      "1.3": 1,
+      "1.35": 1,
+      "1.4": 1,
+      "1.45": 1,
+      "1.5": 1,
+      "1.55": 1
+    }
+  },
+  "fontFamilies": {
+    "total": 30,
+    "unique": 17,
+    "generic": {
+      "sans-serif": 2,
+      "monospace": 1
+    },
+    "system": {},
+    "withoutFallbackFonts": 0,
+    "imageReplacementHacks": 0,
+    "usage": {
+      "-apple-system": 2,
+      "BlinkMacSystemFont": 2,
+      "Avenir": 2,
+      "Avenir Next": 2,
+      "Segoe UI": 2,
+      "Roboto": 2,
+      "Oxygen": 2,
+      "Ubuntu": 2,
+      "Cantarell": 2,
+      "Fira Sans": 2,
+      "Droid Sans": 2,
+      "Helvetica Neue": 2,
+      "sans-serif": 2,
+      "Consolas": 1,
+      "Monaco": 1,
+      "Menlo": 1,
+      "monospace": 1
+    }
+  },
+  "colors": {
+    "total": 28,
+    "unique": 8,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {
+      "hex": 28
+    },
+    "named": {},
+    "system": {},
+    "usage": {
+      "#111111": 7,
+      "#a7a7a7": 6,
+      "#0062ff": 4,
+      "#f5f5f5": 4,
+      "#d7d7d7": 1,
+      "#ff1500": 2,
+      "#ffbf00": 2,
+      "#00b30f": 2
+    }
+  },
+  "backgroundColors": {
+    "total": 11,
+    "unique": 8,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {
+      "hex": 11
+    },
+    "named": {},
+    "system": {},
+    "usage": {
+      "#f5f5f5": 2,
+      "#111111": 3,
+      "#e7e7e7": 1,
+      "#a7a7a7": 1,
+      "#0062ff": 1,
+      "#ff1500": 1,
+      "#ffbf00": 1,
+      "#00b30f": 1
+    }
+  },
+  "allColors": {
+    "total": 39,
+    "unique": 9,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 0,
+    "models": {
+      "hex": 39
+    },
+    "named": {},
+    "system": {},
+    "usage": {
+      "#111111": 10,
+      "#f5f5f5": 6,
+      "#a7a7a7": 7,
+      "#0062ff": 5,
+      "#e7e7e7": 1,
+      "#d7d7d7": 1,
+      "#ff1500": 3,
+      "#ffbf00": 3,
+      "#00b30f": 3
+    }
+  },
+  "transitions": {
+    "properties": {
+      "all": 3
+    },
+    "longestDuration": 0.2,
+    "shortestDuration": 0.2,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {
+      "ease": 3
+    },
+    "invalidTimingFunctions": {}
+  },
+  "animations": {
+    "total": 0,
+    "unique": 0,
+    "infinite": 0,
+    "longestDuration": 0,
+    "shortestDuration": 9007199254740991,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "usage": {},
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "functions": {
+    "total": 0,
+    "unique": 0,
+    "prefixed": 0,
+    "usage": {}
+  },
+  "filters": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "gradients": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "dataUris": {
+    "total": 0,
+    "unique": 0,
+    "totalByteLength": 0,
+    "averageByteLength": 0,
+    "sizeRatio": 0,
+    "usage": {}
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
+    }
+  },
+  "units": {
+    "total": 88,
+    "unique": 4,
+    "usage": {
+      "px": 64,
+      "%": 19,
+      "s": 3,
+      "vh": 2
+    },
+    "excessive": 0,
+    "excessiveUsage": {}
+  },
+  "variables": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "valuesMap": {}
+  },
+  "vendorPrefixes": {
+    "total": 2,
+    "unique": 1,
+    "unknown": {},
+    "usage": {
+      "-apple-": 2
+    }
+  }
+}

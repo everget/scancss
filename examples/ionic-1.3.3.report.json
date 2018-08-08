@@ -14,7 +14,7 @@
   "atRules": {
     "total": 21,
     "empty": 0,
-    "vendorPrefixed": 6,
+    "prefixed": 6,
     "unknown": {},
     "usage": {
       "charset": 1,
@@ -28,17 +28,21 @@
   "mediaQueries": {
     "total": 8,
     "unique": 6,
-    "onlyKeywords": 0,
+    "onlyKeyword": 0,
     "types": {},
-    "vendorPrefixedFeatures": 4,
     "features": {
-      "min--moz-device-pixel-ratio": 2,
-      "-webkit-min-device-pixel-ratio": 2,
-      "min-device-pixel-ratio": 2,
-      "min-resolution": 4,
-      "min-width": 2,
-      "max-width": 3,
-      "orientation": 1
+      "total": 16,
+      "unique": 7,
+      "prefixed": 4,
+      "usage": {
+        "min--moz-device-pixel-ratio": 2,
+        "-webkit-min-device-pixel-ratio": 2,
+        "min-device-pixel-ratio": 2,
+        "min-resolution": 4,
+        "min-width": 2,
+        "max-width": 3,
+        "orientation": 1
+      }
     },
     "usage": {
       "(min--moz-device-pixel-ratio:1.5),(-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5),(min-resolution:144dpi),(min-resolution:1.5dppx)": 2,
@@ -56,8 +60,10 @@
     },
     "longestStepsChain": "0% -> 100%",
     "longestStepsChainLength": 2,
+    "longestStepsChainAnimation": "refresh-spin",
     "shortestStepsChain": "100%",
     "shortestStepsChainLength": 1,
+    "shortestStepsChainAnimation": "swiper-preloader-spin",
     "animatableProperties": [
       "-webkit-transform",
       "transform",
@@ -143,7 +149,7 @@
   "declarations": {
     "total": 4495,
     "unique": 1985,
-    "uniqueRatio": 2.2644836272040303,
+    "uniqueRatio": 0.44160177975528364,
     "important": 18,
     "averagePerRule": 2.18,
     "totalByteLength": 89459,
@@ -163,7 +169,7 @@
     "total": 4495,
     "unique": 212,
     "shorthands": 809,
-    "vendorPrefixed": 544,
+    "prefixed": 544,
     "unitless": 3456,
     "resetsViaAll": 0,
     "negativeMargins": 42,
@@ -173,10 +179,11 @@
     },
     "explicitDefaultingKeywords": {
       "total": 17,
-      "inherit": 15,
-      "initial": 2,
-      "revert": 0,
-      "unset": 0
+      "unique": 2,
+      "usage": {
+        "inherit": 15,
+        "initial": 2
+      }
     },
     "engineTriggers": {
       "composite": {
@@ -851,20 +858,16 @@
     "timingFunctions": {
       "linear": 7,
       "ease-in-out": 9,
-      "cubic-bezier(0.36,0.66,0.04,1)": 6,
+      "cubic-bezier(0.36,0.66,0.04,1)": 5,
       "ease": 3,
       "ease-in": 4,
       "cubic-bezier(0.25,0.81,0.24,1)": 2,
       "ease-out": 2,
       "cubic-bezier(0,1.1,1,1.1)": 2,
       "cubic-bezier(0.1,0.7,0.1,1)": 2,
-      "cubic-bezier(0.4,0.6,0.2,1)": 4
+      "cubic-bezier(0.4,0.6,0.2,1)": 2
     },
-    "invalidTimingFunctions": {
-      "cubic-bezier(0.25, 0.81, 0.24, 1)": 1,
-      "cubic-bezier(0.36, 0.66, 0.04, 1)": 2,
-      "cubic-bezier(0.4, 0.6, 0.2, 1)": 2
-    }
+    "invalidTimingFunctions": {}
   },
   "animations": {
     "total": 5,
@@ -892,7 +895,7 @@
   "functions": {
     "total": 281,
     "unique": 15,
-    "vendorPrefixed": 13,
+    "prefixed": 13,
     "usage": {
       "rgba": 77,
       "translate3d": 61,
@@ -909,6 +912,13 @@
       "blur": 2,
       "steps": 3,
       "scale": 12
+    }
+  },
+  "filters": {
+    "total": 2,
+    "unique": 1,
+    "usage": {
+      "blur": 2
     }
   },
   "gradients": {

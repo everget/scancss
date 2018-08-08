@@ -14,7 +14,7 @@
   "atRules": {
     "total": 3,
     "empty": 0,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "unknown": {},
     "usage": {
       "media": 3
@@ -23,16 +23,20 @@
   "mediaQueries": {
     "total": 3,
     "unique": 3,
-    "onlyKeywords": 1,
+    "onlyKeyword": 1,
     "types": {
       "screen": 1,
       "print": 2
     },
-    "vendorPrefixedFeatures": 1,
     "features": {
-      "min-width": 1,
-      "-webkit-min-device-pixel-ratio": 1,
-      "min-resolution": 2
+      "total": 4,
+      "unique": 3,
+      "prefixed": 1,
+      "usage": {
+        "min-width": 1,
+        "-webkit-min-device-pixel-ratio": 1,
+        "min-resolution": 2
+      }
     },
     "usage": {
       "only screen and (min-width:35em)": 1,
@@ -44,8 +48,10 @@
     "stepsChains": {},
     "longestStepsChain": null,
     "longestStepsChainLength": 0,
+    "longestStepsChainAnimation": null,
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
+    "shortestStepsChainAnimation": null,
     "animatableProperties": []
   },
   "rules": {
@@ -111,7 +117,7 @@
   "declarations": {
     "total": 60,
     "unique": 51,
-    "uniqueRatio": 1.1764705882352942,
+    "uniqueRatio": 0.85,
     "important": 7,
     "averagePerRule": 2.4,
     "totalByteLength": 1029,
@@ -128,7 +134,7 @@
     "total": 60,
     "unique": 28,
     "shorthands": 19,
-    "vendorPrefixed": 1,
+    "prefixed": 1,
     "unitless": 50,
     "resetsViaAll": 0,
     "negativeMargins": 1,
@@ -136,10 +142,10 @@
     "performanceHacks": {},
     "explicitDefaultingKeywords": {
       "total": 1,
-      "inherit": 1,
-      "initial": 0,
-      "revert": 0,
-      "unset": 0
+      "unique": 1,
+      "usage": {
+        "inherit": 1
+      }
     },
     "engineTriggers": {
       "composite": {
@@ -331,11 +337,16 @@
   "functions": {
     "total": 3,
     "unique": 2,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "usage": {
       "rect": 1,
       "attr": 2
     }
+  },
+  "filters": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
   },
   "gradients": {
     "total": 0,

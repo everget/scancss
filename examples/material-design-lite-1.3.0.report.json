@@ -14,7 +14,7 @@
   "atRules": {
     "total": 63,
     "empty": 0,
-    "vendorPrefixed": 12,
+    "prefixed": 12,
     "unknown": {},
     "usage": {
       "charset": 1,
@@ -27,17 +27,21 @@
   "mediaQueries": {
     "total": 36,
     "unique": 11,
-    "onlyKeywords": 1,
+    "onlyKeyword": 1,
     "types": {
       "screen": 28,
       "print": 2
     },
-    "vendorPrefixedFeatures": 1,
     "features": {
-      "min-width": 16,
-      "-webkit-min-device-pixel-ratio": 1,
-      "min-resolution": 2,
-      "max-width": 19
+      "total": 38,
+      "unique": 4,
+      "prefixed": 1,
+      "usage": {
+        "min-width": 16,
+        "-webkit-min-device-pixel-ratio": 1,
+        "min-resolution": 2,
+        "max-width": 19
+      }
     },
     "usage": {
       "only screen and (min-width:35em)": 1,
@@ -68,8 +72,10 @@
     },
     "longestStepsChain": "12.5% -> 25% -> 37.5% -> 50% -> 62.5% -> 75% -> 87.5% -> 100%",
     "longestStepsChainLength": 8,
+    "longestStepsChainAnimation": "mdl-spinner__fill-unfill-rotate",
     "shortestStepsChain": "100%",
     "shortestStepsChainLength": 1,
+    "shortestStepsChainAnimation": "mdl-spinner__container-rotate",
     "animatableProperties": [
       "left",
       "width",
@@ -167,7 +173,7 @@
   "declarations": {
     "total": 3356,
     "unique": 1403,
-    "uniqueRatio": 2.392017106200998,
+    "uniqueRatio": 0.418057210965435,
     "important": 578,
     "averagePerRule": 2.33,
     "totalByteLength": 89002,
@@ -187,7 +193,7 @@
     "total": 3356,
     "unique": 157,
     "shorthands": 418,
-    "vendorPrefixed": 385,
+    "prefixed": 385,
     "unitless": 2392,
     "resetsViaAll": 0,
     "negativeMargins": 3,
@@ -197,10 +203,10 @@
     },
     "explicitDefaultingKeywords": {
       "total": 10,
-      "inherit": 10,
-      "initial": 0,
-      "revert": 0,
-      "unset": 0
+      "unique": 1,
+      "usage": {
+        "inherit": 10
+      }
     },
     "engineTriggers": {
       "composite": {
@@ -1437,16 +1443,12 @@
     "longestDelay": 0,
     "shortestDelay": 9007199254740991,
     "timingFunctions": {
-      "cubic-bezier(0,0,0.2,1)": 18,
-      "cubic-bezier(0.4,0,0.2,1)": 48,
-      "cubic-bezier(0.4,0,1,1)": 8,
+      "cubic-bezier(0,0,0.2,1)": 17,
+      "cubic-bezier(0.4,0,0.2,1)": 47,
+      "cubic-bezier(0.4,0,1,1)": 7,
       "step-end": 1
     },
-    "invalidTimingFunctions": {
-      "cubic-bezier(0.4, 0, 0.2, 1)": 12,
-      "cubic-bezier(0, 0, 0.2, 1)": 1,
-      "cubic-bezier(0.4, 0, 1, 1)": 1
-    }
+    "invalidTimingFunctions": {}
   },
   "animations": {
     "total": 16,
@@ -1481,7 +1483,7 @@
   "functions": {
     "total": 1181,
     "unique": 14,
-    "vendorPrefixed": 6,
+    "prefixed": 6,
     "usage": {
       "rgba": 175,
       "rect": 2,
@@ -1498,6 +1500,11 @@
       "radial-gradient": 5,
       "rotate": 64
     }
+  },
+  "filters": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
   },
   "gradients": {
     "total": 17,

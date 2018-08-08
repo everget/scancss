@@ -1,0 +1,574 @@
+{
+  "styleSheetSize": {
+    "sourceByteLength": 17901,
+    "gzipByteLength": 4106
+  },
+  "comments": {
+    "total": 3,
+    "totalByteLength": 241,
+    "longestByteLength": 227,
+    "shortestByteLength": 7,
+    "averageByteLength": 80.33,
+    "sizeRatio": 0.013462935031562482
+  },
+  "atRules": {
+    "total": 7,
+    "empty": 0,
+    "prefixed": 0,
+    "unknown": {},
+    "usage": {
+      "charset": 1,
+      "media": 5,
+      "page": 1
+    }
+  },
+  "mediaQueries": {
+    "total": 5,
+    "unique": 2,
+    "onlyKeyword": 0,
+    "types": {
+      "print": 1
+    },
+    "features": {
+      "total": 4,
+      "unique": 1,
+      "prefixed": 0,
+      "usage": {
+        "min-width": 4
+      }
+    },
+    "usage": {
+      "(min-width:480px)": 4,
+      "print": 1
+    }
+  },
+  "keyframes": {
+    "stepsChains": {},
+    "longestStepsChain": null,
+    "longestStepsChainLength": 0,
+    "longestStepsChainAnimation": null,
+    "shortestStepsChain": null,
+    "shortestStepsChainLength": 9007199254740991,
+    "shortestStepsChainAnimation": null,
+    "animatableProperties": []
+  },
+  "rules": {
+    "total": 191,
+    "empty": 0
+  },
+  "selectors": {
+    "total": 335,
+    "unique": 0,
+    "baseUsage": {
+      "tag": 296,
+      "pseudoClass": 34,
+      "attribute": 115,
+      "universal": 7,
+      "pseudoElement": 35
+    },
+    "pseudoClassesUsage": {
+      ":not": 7,
+      ":root": 4,
+      ":hover": 7,
+      ":focus": 11,
+      ":-moz-focusring": 1,
+      ":active": 2,
+      ":visited": 2
+    },
+    "pseudoElementsUsage": {
+      "::before": 6,
+      "::after": 11,
+      "::-moz-selection": 1,
+      "::selection": 1,
+      "::-moz-focus-inner": 1,
+      "::-webkit-inner-spin-button": 1,
+      "::-webkit-outer-spin-button": 1,
+      "::-webkit-search-cancel-button": 1,
+      "::-webkit-search-decoration": 1,
+      "::-webkit-input-placeholder": 1,
+      "::-webkit-file-upload-button": 1,
+      "::-moz-range-track": 1,
+      "::-ms-track": 1,
+      "::-webkit-slider-runnable-track": 1,
+      "::-moz-range-thumb": 1,
+      "::-ms-thumb": 1,
+      "::-webkit-slider-thumb": 2,
+      "::-ms-expand": 1,
+      "::-ms-value": 1
+    },
+    "combinators": {
+      "total": 51,
+      "adjacentSibling": 9,
+      "child": 1,
+      "descendant": 41,
+      "generalSibling": 0
+    },
+    "complex": 1,
+    "maxPerRule": 14,
+    "averagePerRule": 1.75,
+    "totalByteLength": 3545,
+    "longestByteLength": 50,
+    "longestByteLengthSelector": "input[type=\"range\"]::-webkit-slider-runnable-track",
+    "averageByteLength": 10.58,
+    "totalSpecificity": [
+      0,
+      142,
+      331
+    ],
+    "averageSpecificity": [
+      0,
+      0,
+      1
+    ],
+    "highestSpecificity": [
+      0,
+      3,
+      0
+    ],
+    "highestSpecificitySelector": "[hidden][aria-hidden=\"false\"]:focus",
+    "sizeRatio": 0.1980336294061784,
+    "specificityGraphData": [],
+    "usage": {}
+  },
+  "declarations": {
+    "total": 438,
+    "unique": 306,
+    "uniqueRatio": 0.6986301369863014,
+    "important": 9,
+    "averagePerRule": 2.29,
+    "totalByteLength": 8984,
+    "longestByteLength": 119,
+    "longestByteLengthDeclaration": "-webkit-font-feature-settings:\"kern\" 1,\"liga\" 1,\"calt\" 1,\"pnum\" 1,\"tnum\" 0,\"onum\" 1,\"lnum\" 0,\"smcp\" 1,\"c2sc\" 1",
+    "averageByteLength": 20.51,
+    "sizeRatio": 0.5018714038321882,
+    "inAtRules": {
+      "media": 112,
+      "page": 1
+    },
+    "list": []
+  },
+  "properties": {
+    "total": 438,
+    "unique": 94,
+    "shorthands": 91,
+    "prefixed": 88,
+    "unitless": 290,
+    "resetsViaAll": 0,
+    "negativeMargins": 5,
+    "anonymousReplacedElements": 7,
+    "performanceHacks": {},
+    "explicitDefaultingKeywords": {
+      "total": 10,
+      "unique": 1,
+      "usage": {
+        "inherit": 10
+      }
+    },
+    "engineTriggers": {
+      "composite": {
+        "blink": 250,
+        "edgehtml": 250,
+        "gecko": 250,
+        "webkit": 238
+      },
+      "layout": {
+        "blink": 188,
+        "edgehtml": 189,
+        "gecko": 189,
+        "webkit": 238
+      },
+      "paint": {
+        "blink": 241,
+        "edgehtml": 249,
+        "gecko": 234,
+        "webkit": 238
+      }
+    },
+    "usage": {
+      "display": 15,
+      "height": 13,
+      "background-repeat": 1,
+      "box-sizing": 2,
+      "text-decoration": 6,
+      "vertical-align": 7,
+      "font-family": 4,
+      "line-height": 9,
+      "-ms-text-size-adjust": 1,
+      "-webkit-text-size-adjust": 1,
+      "background-color": 24,
+      "color": 17,
+      "font-size": 23,
+      "text-rendering": 1,
+      "padding": 17,
+      "white-space": 3,
+      "outline": 4,
+      "overflow": 6,
+      "border": 15,
+      "padding-left": 11,
+      "list-style": 3,
+      "font-weight": 3,
+      "margin-top": 7,
+      "content": 7,
+      "-webkit-font-feature-settings": 3,
+      "font-feature-settings": 3,
+      "text-transform": 2,
+      "border-bottom": 1,
+      "cursor": 7,
+      "font-style": 2,
+      "position": 2,
+      "bottom": 1,
+      "top": 1,
+      "text-shadow": 3,
+      "border-style": 3,
+      "fill": 1,
+      "-webkit-text-decoration-skip": 1,
+      "-webkit-transition-duration": 2,
+      "transition-duration": 2,
+      "outline-width": 1,
+      "border-collapse": 1,
+      "border-spacing": 1,
+      "-webkit-appearance": 6,
+      "max-width": 15,
+      "resize": 1,
+      "outline-offset": 1,
+      "opacity": 1,
+      "font": 2,
+      "width": 11,
+      "border-radius": 3,
+      "-webkit-transition": 1,
+      "transition": 1,
+      "-ms-touch-action": 1,
+      "touch-action": 1,
+      "clip": 2,
+      "margin": 5,
+      "counter-reset": 1,
+      "counter-increment": 1,
+      "margin-right": 4,
+      "min-height": 1,
+      "border-color": 1,
+      "min-width": 1,
+      "margin-left": 16,
+      "text-align": 2,
+      "padding-right": 3,
+      "-webkit-box-orient": 6,
+      "-webkit-box-direction": 6,
+      "-ms-flex-direction": 6,
+      "flex-direction": 6,
+      "-webkit-box-flex": 13,
+      "-ms-flex": 13,
+      "flex": 13,
+      "-ms-flex-flow": 1,
+      "flex-flow": 1,
+      "-ms-flex-wrap": 3,
+      "flex-wrap": 3,
+      "-webkit-box-pack": 4,
+      "-ms-flex-pack": 5,
+      "justify-content": 5,
+      "-webkit-box-align": 5,
+      "-ms-flex-align": 5,
+      "align-items": 5,
+      "-ms-flex-item-align": 3,
+      "align-self": 3,
+      "-ms-grid-row-align": 1,
+      "background": 1,
+      "-webkit-filter": 1,
+      "filter": 1,
+      "page-break-after": 2,
+      "page-break-inside": 4,
+      "visibility": 1,
+      "orphans": 1,
+      "widows": 1,
+      "word-wrap": 1
+    }
+  },
+  "displays": {
+    "total": 15,
+    "unique": 9,
+    "usage": {
+      "block": 2,
+      "inline-block": 3,
+      "none": 4,
+      "table": 1,
+      "inherit": 1,
+      "-webkit-box": 1,
+      "-ms-flexbox": 1,
+      "flex": 1,
+      "table-header-group": 1
+    }
+  },
+  "positions": {
+    "total": 2,
+    "unique": 2,
+    "usage": {
+      "relative": 1,
+      "absolute": 1
+    }
+  },
+  "zIndices": {
+    "total": 0,
+    "unique": 0,
+    "invalid": {},
+    "usage": {}
+  },
+  "floats": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "borderRadiuses": {
+    "total": 3,
+    "unique": 1,
+    "usage": {
+      "50%": 3
+    }
+  },
+  "letterSpacings": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "fontSizes": {
+    "total": 25,
+    "unique": 17,
+    "usage": {
+      "16px": 1,
+      "18px": 1,
+      "0.83333rem": 6,
+      "83.33333%": 4,
+      "inherit": 1,
+      "2.0736rem": 1,
+      "1.728rem": 1,
+      "1.44rem": 1,
+      "1.2rem": 1,
+      "1rem": 1,
+      "12pt": 1,
+      "19pt": 1,
+      "17pt": 1,
+      "15pt": 1,
+      "14pt": 1,
+      ".57em": 1,
+      "smaller": 1
+    }
+  },
+  "lineHeights": {
+    "total": 11,
+    "unique": 9,
+    "hardCoded": 7,
+    "usage": {
+      "0": 1,
+      "1.5": 1,
+      "inherit": 1,
+      "2.25rem": 3,
+      "1.3": 1,
+      "normal": 1,
+      "1.5rem": 1,
+      "3rem": 1,
+      "1.4": 1
+    }
+  },
+  "fontFamilies": {
+    "total": 17,
+    "unique": 10,
+    "generic": {
+      "sans-serif": 2,
+      "monospace": 1,
+      "serif": 2
+    },
+    "system": {},
+    "withoutFallbackFonts": 1,
+    "imageReplacementHacks": 0,
+    "usage": {
+      "Helvetica": 2,
+      "Arial": 2,
+      "sans-serif": 2,
+      "Consolas": 1,
+      "monospace": 1,
+      "inherit": 1,
+      "Georgia": 2,
+      "Times New Roman": 2,
+      "Times": 2,
+      "serif": 2
+    }
+  },
+  "colors": {
+    "total": 21,
+    "unique": 12,
+    "currentColorKeyword": 2,
+    "transparentKeyword": 0,
+    "models": {
+      "hex": 14
+    },
+    "named": {
+      "white": 1,
+      "black": 3
+    },
+    "system": {
+      "ButtonText": 1
+    },
+    "usage": {
+      "#444444": 1,
+      "#dcdcdc": 5,
+      "#777777": 2,
+      "#000000": 1,
+      "currentColor": 2,
+      "#c65146": 2,
+      "#7f2f27": 1,
+      "ButtonText": 1,
+      "white": 1,
+      "#222222": 1,
+      "#4eb1f9": 1,
+      "black": 3
+    }
+  },
+  "backgroundColors": {
+    "total": 25,
+    "unique": 10,
+    "currentColorKeyword": 0,
+    "transparentKeyword": 6,
+    "models": {
+      "hex": 17
+    },
+    "named": {
+      "white": 2
+    },
+    "system": {},
+    "usage": {
+      "white": 2,
+      "#f5f5f5": 2,
+      "transparent": 6,
+      "#dcdcdc": 4,
+      "#ffff00": 1,
+      "#ebe1d3": 2,
+      "#c65146": 4,
+      "#cc6359": 1,
+      "#d2766d": 1,
+      "#eeeeee": 2
+    }
+  },
+  "allColors": {
+    "total": 46,
+    "unique": 19,
+    "currentColorKeyword": 2,
+    "transparentKeyword": 6,
+    "models": {
+      "hex": 31
+    },
+    "named": {
+      "white": 3,
+      "black": 3
+    },
+    "system": {
+      "ButtonText": 1
+    },
+    "usage": {
+      "white": 3,
+      "#444444": 1,
+      "#f5f5f5": 2,
+      "transparent": 6,
+      "#dcdcdc": 9,
+      "#777777": 2,
+      "#ffff00": 1,
+      "#000000": 1,
+      "#ebe1d3": 2,
+      "currentColor": 2,
+      "#c65146": 6,
+      "#7f2f27": 1,
+      "ButtonText": 1,
+      "#cc6359": 1,
+      "#d2766d": 1,
+      "#eeeeee": 2,
+      "#222222": 1,
+      "#4eb1f9": 1,
+      "black": 3
+    }
+  },
+  "transitions": {
+    "properties": {
+      "background-color": 1
+    },
+    "longestDuration": 0.15,
+    "shortestDuration": 0.15,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "animations": {
+    "total": 0,
+    "unique": 0,
+    "infinite": 0,
+    "longestDuration": 0,
+    "shortestDuration": 9007199254740991,
+    "longestDelay": 0,
+    "shortestDelay": 9007199254740991,
+    "usage": {},
+    "timingFunctions": {},
+    "invalidTimingFunctions": {}
+  },
+  "functions": {
+    "total": 5,
+    "unique": 3,
+    "prefixed": 0,
+    "usage": {
+      "rect": 1,
+      "counters": 1,
+      "attr": 3
+    }
+  },
+  "filters": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "gradients": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "dataUris": {
+    "total": 0,
+    "unique": 0,
+    "totalByteLength": 0,
+    "averageByteLength": 0,
+    "sizeRatio": 0,
+    "usage": {}
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
+    }
+  },
+  "units": {
+    "total": 152,
+    "unique": 7,
+    "usage": {
+      "%": 64,
+      "px": 11,
+      "rem": 44,
+      "em": 21,
+      "ms": 6,
+      "cm": 1,
+      "pt": 5
+    },
+    "excessive": 0,
+    "excessiveUsage": {}
+  },
+  "variables": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "valuesMap": {}
+  },
+  "vendorPrefixes": {
+    "total": 106,
+    "unique": 3,
+    "unknown": {},
+    "usage": {
+      "-ms-": 43,
+      "-webkit-": 58,
+      "-moz-": 5
+    }
+  }
+}

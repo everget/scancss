@@ -14,7 +14,7 @@
   "atRules": {
     "total": 4,
     "empty": 0,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "unknown": {},
     "usage": {
       "keyframes": 1,
@@ -24,10 +24,14 @@
   "mediaQueries": {
     "total": 0,
     "unique": 0,
-    "onlyKeywords": 0,
+    "onlyKeyword": 0,
     "types": {},
-    "vendorPrefixedFeatures": 0,
-    "features": {},
+    "features": {
+      "total": 0,
+      "unique": 0,
+      "prefixed": 0,
+      "usage": {}
+    },
     "usage": {}
   },
   "keyframes": {
@@ -36,8 +40,10 @@
     },
     "longestStepsChain": "0% -> 100%",
     "longestStepsChainLength": 2,
+    "longestStepsChainAnimation": "a",
     "shortestStepsChain": "0% -> 100%",
     "shortestStepsChainLength": 2,
+    "shortestStepsChainAnimation": "a",
     "animatableProperties": [
       "transform"
     ]
@@ -100,7 +106,7 @@
   "declarations": {
     "total": 1199,
     "unique": 1190,
-    "uniqueRatio": 1.007563025210084,
+    "uniqueRatio": 0.9924937447873228,
     "important": 0,
     "averagePerRule": 1.04,
     "totalByteLength": 19607,
@@ -117,7 +123,7 @@
     "total": 1199,
     "unique": 34,
     "shorthands": 9,
-    "vendorPrefixed": 8,
+    "prefixed": 8,
     "unitless": 1160,
     "resetsViaAll": 0,
     "negativeMargins": 1,
@@ -125,10 +131,10 @@
     "performanceHacks": {},
     "explicitDefaultingKeywords": {
       "total": 2,
-      "inherit": 2,
-      "initial": 0,
-      "revert": 0,
-      "unset": 0
+      "unique": 1,
+      "usage": {
+        "inherit": 2
+      }
     },
     "engineTriggers": {
       "composite": {
@@ -341,7 +347,7 @@
   "functions": {
     "total": 10,
     "unique": 6,
-    "vendorPrefixed": 0,
+    "prefixed": 0,
     "usage": {
       "steps": 1,
       "rotate": 5,
@@ -350,6 +356,11 @@
       "scale": 1,
       "rect": 1
     }
+  },
+  "filters": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
   },
   "gradients": {
     "total": 0,
