@@ -235,7 +235,7 @@ describe('Module: scancss', () => {
 				expect(report.declarations).toEqual({
 					total: 19,
 					unique: 17,
-					uniqueRatio: 1.1176470588235294,
+					uniqueRatio: 0.8947368421052632,
 					important: 0,
 					averagePerRule: 2.38,
 					totalByteLength: 293,

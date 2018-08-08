@@ -391,11 +391,11 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **unique** - `number`
 
+* **uniqueRatio** - `number`
+
 * **important** - `number`
 
 * **averagePerRule** - `number`
-
-* **uniqueRatio** - `number`
 
 * **totalByteLength** - `number`
 

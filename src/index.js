@@ -452,8 +452,8 @@ export default function scancss(src, options) {
 			}
 
 			report.declarations.uniqueRatio = roundDivision(
-				report.declarations.total,
-				report.declarations.unique
+				report.declarations.unique,
+				report.declarations.total
 			);
 
 			report.declarations.averageByteLength = roundDivision(
