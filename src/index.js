@@ -149,10 +149,8 @@ export default function scancss(src, options) {
 				performanceHacks: {},
 				explicitDefaultingKeywords: {
 					total: 0,
-					inherit: 0,
-					initial: 0,
-					revert: 0,
-					unset: 0,
+					unique: 0,
+					usage: {},
 				},
 				engineTriggers: {
 					composite: {
@@ -462,6 +460,9 @@ export default function scancss(src, options) {
 			);
 
 			report.properties.unique = Object.keys(report.properties.usage).length;
+			report.properties.explicitDefaultingKeywords.unique = Object.keys(
+				report.properties.explicitDefaultingKeywords.usage
+			).length;
 
 			report.displays.unique = Object.keys(report.displays.usage).length;
 			report.positions.unique = Object.keys(report.positions.usage).length;

@@ -200,7 +200,7 @@ export function handleDeclaration(decl, report, options) {
 			.match(reCssExplicitDefaultingKeyword)
 			.forEach((match) => {
 				report.properties.explicitDefaultingKeywords.total++;
-				countUsage(match, report.properties.explicitDefaultingKeywords);
+				countUsage(match, report.properties.explicitDefaultingKeywords.usage);
 			});
 	}
 }

@@ -126,10 +126,8 @@ describe('Module: handleDeclaration', () => {
 				performanceHacks: {},
 				explicitDefaultingKeywords: {
 					total: 0,
-					inherit: 0,
-					initial: 0,
-					revert: 0,
-					unset: 0,
+					unique: 0,
+					usage: {},
 				},
 				engineTriggers: {
 					composite: {
@@ -307,13 +305,23 @@ describe('Module: handleDeclaration', () => {
 			});
 		});
 
-		describe('properties.explicitDefaultingKeywords', () => {
+		describe('properties.explicitDefaultingKeywords.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.explicitDefaultingKeywords).toEqual({
-					total: 10,
+				expect(report.properties.explicitDefaultingKeywords.total).toBe(10);
+			});
+		});
+
+		describe('properties.explicitDefaultingKeywords.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.properties.explicitDefaultingKeywords.unique).toBe(0);
+			});
+		});
+
+		describe('properties.explicitDefaultingKeywords.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.properties.explicitDefaultingKeywords.usage).toEqual({
 					inherit: 2,
 					initial: 7,
-					revert: 0,
 					unset: 1,
 				});
 			});

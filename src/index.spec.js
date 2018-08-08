@@ -283,10 +283,8 @@ describe('Module: scancss', () => {
 					performanceHacks: {},
 					explicitDefaultingKeywords: {
 						total: 0,
-						inherit: 0,
-						initial: 0,
-						revert: 0,
-						unset: 0,
+						unique: 0,
+						usage: {},
 					},
 					engineTriggers: {
 						composite: {

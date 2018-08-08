@@ -423,7 +423,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **performanceHacks** - `Record<string, number>`
 
-* **explicitDefaultingKeywords** - `Record<'total' | 'inherit' | 'initial' | 'revert' | 'unset', number>`
+* **explicitDefaultingKeywords** - `Record<string, number | Record<string, number>>`
 
 * **engineTriggers** - `Record<'composite' | 'layout' | 'paint', Record<'blink' | 'edgehtml' | 'gecko' | 'webkit', number>>`
 
