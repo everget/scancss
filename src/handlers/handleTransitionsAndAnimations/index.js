@@ -7,6 +7,7 @@ import {
 import { cssNamedTimingFunctions } from '../../constants/cssNamedTimingFunctions';
 import { cssExplicitDefaultingKeywords } from '../../constants/cssExplicitDefaultingKeywords';
 import { rePrefixedString } from '../../constants/rePrefixedString';
+import { reCubicBezier } from '../../constants/reCubicBezier';
 import { countUsage } from '../../calculators/countUsage';
 import { isNumber } from '../../predicates/isNumber';
 
@@ -26,13 +27,14 @@ function countNamedTimingFunctions(decl, report) {
 	postcss.list
 		.comma(decl.value)
 		.forEach((func) => {
-			if (
-				cssNamedTimingFunctions.includes(func) ||
-				cssExplicitDefaultingKeywords.includes(func)
-			) {
-				countUsage(func, reportSection.timingFunctions);
-			} else {
-				countUsage(func, reportSection.invalidTimingFunctions);
+			if (reCubicBezier.test(func) === false) {
+				if (cssNamedTimingFunctions.includes(func) ||
+					cssExplicitDefaultingKeywords.includes(func)
+				) {
+					countUsage(func, reportSection.timingFunctions);
+				} else {
+					countUsage(func, reportSection.invalidTimingFunctions);
+				}
 			}
 		});
 }
