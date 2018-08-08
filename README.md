@@ -325,8 +325,6 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **shortestStepsChainLength** - `number` (`Number.MAX_SAFE_INTEGER` if there are no @keyframes in a stylesheet)
 
-* **vendorPrefixedFeatures** - `number`
-
 * **animatableProperties** - `Array<string>`
 
 #### rules
