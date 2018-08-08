@@ -137,7 +137,7 @@ describe('Module: scancss', () => {
 				expect(report.mediaQueries).toEqual({
 					total: 1,
 					unique: 1,
-					onlyKeywords: 0,
+					onlyKeyword: 0,
 					types: {
 						screen: 1,
 					},

@@ -18,7 +18,7 @@ function handleMediaQueryParams(params, report, options) {
 	const cleanedParams = removeExtraSpaces(params);
 
 	if (reOnlyKeyword.test(cleanedParams)) {
-		report.mediaQueries.onlyKeywords += cleanedParams.match(reOnlyKeyword).length;
+		report.mediaQueries.onlyKeyword += cleanedParams.match(reOnlyKeyword).length;
 	}
 
 	if (reCssMediaQueryType.test(cleanedParams)) {

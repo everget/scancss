@@ -73,7 +73,7 @@ export default function scancss(src, options) {
 			mediaQueries: {
 				total: 0,
 				unique: 0,
-				onlyKeywords: 0,
+				onlyKeyword: 0,
 				types: {},
 				vendorPrefixedFeatures: 0,
 				features: {},

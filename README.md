@@ -307,7 +307,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **usage** - `Record<string, number>`
 
-* **onlyKeywords** - `number`
+* **onlyKeyword** - `number`
 
 * **vendorPrefixedFeatures** - `number`
 

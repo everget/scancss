@@ -122,7 +122,7 @@ describe('Module: handleAtRule', () => {
 			mediaQueries: {
 				total: 0,
 				unique: 0,
-				onlyKeywords: 0,
+				onlyKeyword: 0,
 				types: {},
 				vendorPrefixedFeatures: 0,
 				features: {},
@@ -229,9 +229,9 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
-	describe('mediaQueries.onlyKeywords', () => {
+	describe('mediaQueries.onlyKeyword', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.onlyKeywords).toBe(3);
+			expect(report.mediaQueries.onlyKeyword).toBe(3);
 		});
 	});
 
