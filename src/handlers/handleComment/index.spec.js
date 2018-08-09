@@ -49,10 +49,8 @@ describe('Module: handleComment', () => {
 			},
 		};
 
-		cssRoot.walk((node) => {
-			if (node.type === 'comment') {
-				handleComment(node, report);
-			}
+		cssRoot.walkComments((comment) => {
+			handleComment(comment, report);
 		});
 	});
 

@@ -162,10 +162,8 @@ describe('Module: handleAtRule', () => {
 			},
 		};
 
-		cssRoot.walk((node) => {
-			if (node.type === 'atrule') {
-				handleAtRule(node, report, options);
-			}
+		cssRoot.walkAtRules((atRule) => {
+			handleAtRule(atRule, report, options);
 		});
 	});
 
