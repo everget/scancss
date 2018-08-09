@@ -3,6 +3,7 @@ import { expandShorthandProperty } from 'css-property-parser';
 
 import { cssGenericFonts } from '../../constants/cssGenericFonts';
 import { cssSystemFonts } from '../../constants/cssSystemFonts';
+import { cssFontSizeKeywords } from '../../constants/cssFontSizeKeywords';
 import { reExistingVendorPrefix } from '../../constants/reExistingVendorPrefix';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
@@ -12,6 +13,11 @@ import { isNumber } from '../../predicates/isNumber';
 function countFontSizes(propValue, report) {
 	report.fontSizes.total++;
 	countUsage(propValue, report.fontSizes.usage);
+
+	if (cssFontSizeKeywords.includes(propValue)) {
+		report.fontSizes.keywords.total++;
+		countUsage(propValue, report.fontSizes.keywords.usage);
+	}
 }
 
 function countLineHeights(propValue, report) {

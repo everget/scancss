@@ -210,6 +210,11 @@ export default function scancss(src, options) {
 			fontSizes: {
 				total: 0,
 				unique: 0,
+				keywords: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 			lineHeights: {

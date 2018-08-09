@@ -493,6 +493,8 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **unique** - `number`
 
+* **keywords** - `Record<string, number | Record<string, number>>`
+
 * **usage** - `Record<string, number>`
 
 #### lineHeights

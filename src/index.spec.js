@@ -399,6 +399,11 @@ describe('Module: scancss', () => {
 				expect(report.fontSizes).toEqual({
 					total: 0,
 					unique: 0,
+					keywords: {
+						total: 0,
+						unique: 0,
+						usage: {},
+					},
 					usage: {},
 				});
 			});
