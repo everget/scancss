@@ -5,10 +5,9 @@ import isPlainObject from 'lodash.isplainobject';
 
 import { handleComment } from './handlers/handleComment';
 import { handleAtRule } from './handlers/handleAtRule';
-import { handleSelector } from './handlers/handleSelector';
+import { handleRule } from './handlers/handleRule';
 import { handleDeclaration } from './handlers/handleDeclaration';
 import { roundDivision } from './calculators/roundDivision';
-import { isKeyframeRuleSelector } from './predicates/isKeyframeRuleSelector';
 
 export default function scancss(src, options) {
 	if (typeof src !== 'string') {
@@ -346,28 +345,7 @@ export default function scancss(src, options) {
 			}
 
 			if (node.type === 'rule' && scancssOptions.collectRulesData) {
-				report.rules.total++;
-
-				if (node.nodes.length === 0) {
-					report.rules.empty++;
-				}
-
-				/**
-				 * PostCSS `walkRules` goes throw @keyframes and consider
-				 * `to`, `from` and percent values as selectors of the rules
-				 */
-				if (
-					scancssOptions.collectSelectorsData &&
-					isKeyframeRuleSelector(node.selector) === false
-				) {
-					if (report.selectors.maxPerRule < node.selectors.length) {
-						report.selectors.maxPerRule = node.selectors.length;
-					}
-
-					node.selectors.forEach((selector) => {
-						handleSelector(selector, report, scancssOptions);
-					});
-				}
+				handleRule(node, report, scancssOptions);
 			}
 
 			/**
