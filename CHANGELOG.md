@@ -5,6 +5,37 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0]
+
+### Added
+- Add `keyframes.longestStepsChainAnimation`
+- Add `keyframes.shortestStepsChainAnimation`
+- Add `filters` metrics and new flag `collectFiltersData`
+```
+filters: {
+	total: 0,
+	unique: 0,
+	usage: {},
+}
+```
+
+### Changed
+- Rename `mediaQueries.onlyKeywords` to `mediaQueries.onlyKeyword`
+- Rename `*.vendorPrefixed` to `*.prefixed`
+- Reorganize `mediaQueries.features` to:
+```
+features: {
+	total: 0,
+	unique: 0,
+	vendorPrefixed: 0,
+	usage: {},
+}
+```
+
+### Fixed
+- Fix bug with incorrect `transitions.invalidTimingFunctions` and `animations.invalidTimingFunctions` counting
+- Fix `declarations.uniqueRatio` calculation
+
 ## [1.1.0]
 
 ### Added
