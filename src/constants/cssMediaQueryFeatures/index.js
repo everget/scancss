@@ -1,4 +1,5 @@
 /**
+ * https://www.w3.org/TR/css3-mediaqueries/#mediafeatures
  * https://drafts.csswg.org/mediaqueries/#mq-features
  * https://developer.mozilla.org/ru/docs/Web/CSS/@media#Media_features
  * https://msdn.microsoft.com/en-us/windows/hh772370(v=vs.71)

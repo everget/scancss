@@ -1,4 +1,6 @@
 /**
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#Media_types
+ * https://drafts.csswg.org/mediaqueries-4/#media-types
  * https://drafts.csswg.org/mediaqueries/#media-types
  * https://www.w3schools.com/CSSref/css3_pr_mediaquery.asp
  *

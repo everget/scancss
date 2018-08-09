@@ -1,4 +1,5 @@
 /**
+ * https://www.w3.org/TR/2018/REC-css-color-3-20180619/#css2-system
  * https://www.quackit.com/css/color/values/css_system_colors.cfm
  * https://developer.mozilla.org/en-US/docs/Web/CSS/color_value
  *
