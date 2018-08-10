@@ -1,4 +1,4 @@
-import { parseCss } from '../../converters/parseCss';
+import { parseCss } from '../../../converters/parseCss';
 import { handleAtRule } from '.';
 
 describe('Module: handleAtRule', () => {

@@ -2,7 +2,7 @@ import { default as gzipSize } from 'gzip-size';
 import isPlainObject from 'lodash.isplainobject';
 
 import { handleComment } from './handlers/handleComment';
-import { handleAtRule } from './handlers/handleAtRule';
+import { handleAtRule } from './handlers/atrules/handleAtRule';
 import { handleRule } from './handlers/handleRule';
 import { handleDeclaration } from './handlers/handleDeclaration';
 import { roundDivision } from './calculators/roundDivision';
