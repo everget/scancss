@@ -1,6 +1,4 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handleBorderRadiusProperties } from '.';
 
 describe('Module: handleBorderRadiusProperties', () => {
@@ -36,9 +34,7 @@ describe('Module: handleBorderRadiusProperties', () => {
 		}
 	`;
 
-	const cssRoot = postcss.parse(
-		postcss().process(src, { parser: safeParser }).root
-	);
+	const cssRoot = parseCss(src);
 
 	let report;
 

@@ -1,6 +1,4 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handleUnits } from '.';
 
 describe('Module: handleUnits', () => {
@@ -28,7 +26,7 @@ describe('Module: handleUnits', () => {
 
 	describe('Counting units from declaration values', () => {
 		const src = `
-			.selector: {
+			.selector {
 				top: 50%;
 				margin-top: -0.4375em;
 				border: 3px solid transparent;
@@ -41,7 +39,7 @@ describe('Module: handleUnits', () => {
 				transition: max-height 0.4s ease-in-out;
 			}
 
-			.selector: {
+			.selector {
 				margin: -1px 0px 0px -6px;
 				padding: 0.35em 0.75em 0.625em;
 				width: 31.82752%;
@@ -52,7 +50,7 @@ describe('Module: handleUnits', () => {
 				transition: background-color .35ms ease;
 			}
 
-			.selector: {
+			.selector {
 				left: -3px;
 				top: 0em;
 				margin: 0px 5px 3px 0px;
@@ -68,13 +66,13 @@ describe('Module: handleUnits', () => {
 				transition-delay: 0.23333333s;
 			}
 
-			.selector: {
+			.selector {
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr 1fr;
 				grid-template-rows: 100px 200px 100px;
 			}
 
-			.selector: {
+			.selector {
 				margin-left: calc(50% - 50vw);
 				margin-right: calc(50% - 50vw);
 				padding: 20vmin 10vmax;
@@ -86,7 +84,7 @@ describe('Module: handleUnits', () => {
 				line-height: calc(1.1em + 0.5vw);
 			}
 
-			.selector: {
+			.selector {
 				width: 120pt;
 				height: 12pc;
 				font-size: 60ex;
@@ -102,9 +100,7 @@ describe('Module: handleUnits', () => {
 			}
 		`;
 
-		const cssRoot = postcss.parse(
-			postcss().process(src, { parser: safeParser }).root
-		);
+		const cssRoot = parseCss(src);
 
 		beforeEach(() => {
 			cssRoot.walkDecls((decl) => {
@@ -183,7 +179,7 @@ describe('Module: handleUnits', () => {
 
 	describe('Counting from unitless declaration values', () => {
 		const src = `
-			.selector: {
+			.selector {
 				margin: 0 0 0 0;
 				border-radius: 0;
 				border-right: 0;
@@ -195,9 +191,7 @@ describe('Module: handleUnits', () => {
 				transform: rotate(0);
 		`;
 
-		const cssRoot = postcss.parse(
-			postcss().process(src, { parser: safeParser }).root
-		);
+		const cssRoot = parseCss(src);
 
 		beforeEach(() => {
 			cssRoot.walkDecls((decl) => {
@@ -267,9 +261,7 @@ describe('Module: handleUnits', () => {
 			}
 		`;
 
-		const cssRoot = postcss.parse(
-			postcss().process(src, { parser: safeParser }).root
-		);
+		const cssRoot = parseCss(src);
 
 		beforeEach(() => {
 			cssRoot.walkDecls((decl) => {

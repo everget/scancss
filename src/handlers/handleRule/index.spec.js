@@ -1,6 +1,4 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handleRule } from '.';
 
 describe('Module: handleRule', () => {
@@ -47,9 +45,7 @@ describe('Module: handleRule', () => {
 		}
 	`;
 
-	const cssRoot = postcss.parse(
-		postcss().process(src, { parser: safeParser }).root
-	);
+	const cssRoot = parseCss(src);
 
 	let report;
 

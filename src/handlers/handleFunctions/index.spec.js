@@ -1,6 +1,4 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handleFunctions } from '.';
 
 describe('Module: handleFunctions', () => {
@@ -12,7 +10,7 @@ describe('Module: handleFunctions', () => {
 	};
 
 	const src = `
-		.selector: {
+		.selector {
 			right: calc(50% - 530px);
 			width: calc(100% - 80px);
 			height: calc(40% - 40px);
@@ -34,7 +32,7 @@ describe('Module: handleFunctions', () => {
 			filter: contrast(200%);
 		}
 
-		.selector: {
+		.selector {
 			width: min(1 * 10vw, 2 / 50vw);
 			height: max(1 * 10vw, 2 / 50vw);
 			clip-path: inset(50px round 15px);
@@ -45,7 +43,7 @@ describe('Module: handleFunctions', () => {
 			filter: grayscale(80%);
 		}
 
-		.selector: {
+		.selector {
 			content: url('data:image/png;base64,TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0');
 			background: radial-gradient(red, green, blue);
 			animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
@@ -55,7 +53,7 @@ describe('Module: handleFunctions', () => {
 			filter: hue-rotate(90deg);
 		}
 
-		.selector: {
+		.selector {
 			content: url(data:image/jpeg;base64,aGlzIHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1);
 			background: hsl(var(--hue), 90%, 52%);
 			animation-timing-function: cubic-bezier(0.3, 2.1);
@@ -66,9 +64,7 @@ describe('Module: handleFunctions', () => {
 		}
 	`;
 
-	const cssRoot = postcss.parse(
-		postcss().process(src, { parser: safeParser }).root
-	);
+	const cssRoot = parseCss(src);
 
 	let report;
 

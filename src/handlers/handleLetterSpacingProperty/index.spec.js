@@ -1,6 +1,4 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handleLetterSpacingProperty } from '.';
 
 describe('Module: handleLetterSpacingProperty', () => {
@@ -28,12 +26,9 @@ describe('Module: handleLetterSpacingProperty', () => {
 		.selector {
 			letter-spacing: inherit;
 		}
-
 	`;
 
-	const cssRoot = postcss.parse(
-		postcss().process(src, { parser: safeParser }).root
-	);
+	const cssRoot = parseCss(src);
 
 	let report;
 

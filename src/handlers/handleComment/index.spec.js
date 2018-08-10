@@ -1,6 +1,4 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handleComment } from '.';
 
 describe('Module: handleComment', () => {
@@ -32,9 +30,7 @@ describe('Module: handleComment', () => {
 		}
 	`;
 
-	const cssRoot = postcss.parse(
-		postcss().process(src, { parser: safeParser }).root
-	);
+	const cssRoot = parseCss(src);
 
 	let report;
 

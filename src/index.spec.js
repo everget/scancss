@@ -47,7 +47,6 @@ describe('Module: scancss', () => {
 			}
 		}
 
-
 		@keyframes fade {
 			from,
 			10% {

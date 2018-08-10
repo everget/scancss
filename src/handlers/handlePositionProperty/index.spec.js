@@ -1,6 +1,4 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handlePositionProperty } from '.';
 
 describe('Module: handlePositionProperty', () => {
@@ -42,9 +40,7 @@ describe('Module: handlePositionProperty', () => {
 		}
 	`;
 
-	const cssRoot = postcss.parse(
-		postcss().process(src, { parser: safeParser }).root
-	);
+	const cssRoot = parseCss(src);
 
 	let report;
 

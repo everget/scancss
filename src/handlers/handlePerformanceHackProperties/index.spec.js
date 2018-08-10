@@ -1,25 +1,23 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handlePerformanceHackProperties } from '.';
 
 describe('Module: handlePerformanceHackProperties', () => {
 	const src = `
-		.selector: {
+		.selector {
 			-webkit-transform: rotateZ(360deg);
 		}
 
-		.selector: {
+		.selector {
 			-webkit-backface-visibility: hidden;
 			-webkit-perspective: 1000;
 			-webkit-transform: translate3d(0,0,0);
 		}
 
-		.selector: {
+		.selector {
 			-webkit-transform: translateZ(0);
 		}
 
-		.selector: {
+		.selector {
 			will-change: transform;
 		}
 
@@ -33,9 +31,7 @@ describe('Module: handlePerformanceHackProperties', () => {
 		}
 	`;
 
-	const cssRoot = postcss.parse(
-		postcss().process(src, { parser: safeParser }).root
-	);
+	const cssRoot = parseCss(src);
 
 	let report;
 

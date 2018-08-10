@@ -1,6 +1,4 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handleDeclaration } from '.';
 
 describe('Module: handleDeclaration', () => {
@@ -18,7 +16,7 @@ describe('Module: handleDeclaration', () => {
 	};
 
 	const src = `
-		.selector: {
+		.selector {
 			content: '';
 			display: flex !important;
 			position: sticky;
@@ -29,17 +27,17 @@ describe('Module: handleDeclaration', () => {
 			all: initial;
 		}
 
-		.selector: {
+		.selector {
 			content: '';
 			all: inherit;
 		}
 
-		.selector: {
+		.selector {
 			content: '';
 			all: unset;
 		}
 
-		.selector: {
+		.selector {
 			content: '';
 			all: revert;
 		}
@@ -53,9 +51,7 @@ describe('Module: handleDeclaration', () => {
 		}
 	`;
 
-	const cssRoot = postcss.parse(
-		postcss().process(src, { parser: safeParser }).root
-	);
+	const cssRoot = parseCss(src);
 
 	let report;
 

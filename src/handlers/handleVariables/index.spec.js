@@ -1,6 +1,4 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handleVariables } from '.';
 
 describe('Module: handleVariables', () => {
@@ -115,9 +113,7 @@ describe('Module: handleVariables', () => {
 			}
 		`;
 
-		const cssRoot = postcss.parse(
-			postcss().process(src, { parser: safeParser }).root
-		);
+		const cssRoot = parseCss(src);
 
 		beforeEach(() => {
 			cssRoot.walkDecls((decl) => {
@@ -189,9 +185,7 @@ describe('Module: handleVariables', () => {
 			}
 		`;
 
-		const cssRoot = postcss.parse(
-			postcss().process(srcWithVariableLikeWords, { parser: safeParser }).root
-		);
+		const cssRoot = parseCss(srcWithVariableLikeWords);
 
 		beforeEach(() => {
 			cssRoot.walkDecls((decl) => {

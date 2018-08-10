@@ -1,44 +1,42 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handleTransitionsAndAnimations } from '.';
 
 describe('Module: handleTransitionsAndAnimations', () => {
 	const src = `
-		.selector: {
+		.selector {
 			transition-property: transform;
 			transition-duration: 1s;
 			transition-timing-function: ease;
 			transition-delay: 2s;
 		}
 
-		.selector: {
+		.selector {
 			transition-property: top, right;
 			transition-duration: 1s, 2s;
 			transition-timing-function: inherit, ease-in;
 			transition-delay: 3s, 4s;
 		}
 
-		.selector: {
+		.selector {
 			transition-property: -webkit-transform;
 			transition-duration: 1s;
 			transition-timing-function: ease-out-quad;
 			transition-delay: 2s;
 		}
 
-		.selector: {
+		.selector {
 			transition: all 500ms ease;
 		}
 
-		.selector: {
+		.selector {
 			transition: margin-right 1s ease 100ms, color 3s ease-out 4s;
 		}
 
-		.selector: {
+		.selector {
 			transition: margin-left 1s ease-in-out 2s;
 		}
 
-		.selector: {
+		.selector {
 			animation-name: none;
 			animation-duration: 1s;
 			animation-timing-function: ease;
@@ -46,7 +44,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 			animation-iteration-count: 3;
 		}
 
-		.selector: {
+		.selector {
 			animation-name: heart-bit;
 			animation-duration: 1s;
 			animation-timing-function: ease-out-back;
@@ -54,18 +52,16 @@ describe('Module: handleTransitionsAndAnimations', () => {
 			animation-iteration-count: infinite;
 		}
 
-		.selector: {
+		.selector {
 			animation: 1s ease-in 2s infinite reverse both paused fade-in;
 		}
 
-		.selector: {
+		.selector {
 			animation: 3s ease-in 4s 5 reverse both paused slide-in;
 		}
 	`;
 
-	const cssRoot = postcss.parse(
-		postcss().process(src, { parser: safeParser }).root
-	);
+	const cssRoot = parseCss(src);
 
 	let report;
 

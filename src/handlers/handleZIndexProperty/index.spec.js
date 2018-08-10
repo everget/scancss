@@ -1,39 +1,37 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
-
+import { parseCss } from '../../converters/parseCss';
 import { handleZIndexProperty } from '.';
 
 describe('Module: handleZIndexProperty', () => {
 	const src = `
-		.selector: {
+		.selector {
 			z-index: -1;
 		}
 
-		.selector: {
+		.selector {
 			z-index: 1;
 		}
 
-		.selector: {
+		.selector {
 			z-index: 100;
 		}
 
-		.selector: {
+		.selector {
 			z-index: 9999;
 		}
 
-		.selector: {
+		.selector {
 			z-index: inherit;
 		}
 
-		.selector: {
+		.selector {
 			z-index: initial;
 		}
 
-		.selector: {
+		.selector {
 			z-index: revert;
 		}
 
-		.selector: {
+		.selector {
 			z-index: unset;
 		}
 
@@ -45,14 +43,12 @@ describe('Module: handleZIndexProperty', () => {
 			z-index: --z-index-content-page;
 		}
 
-		.selector: {
+		.selector {
 			z-index: xxx;
 		}
 	`;
 
-	const cssRoot = postcss.parse(
-		postcss().process(src, { parser: safeParser }).root
-	);
+	const cssRoot = parseCss(src);
 
 	let report;
 

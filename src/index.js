@@ -1,5 +1,3 @@
-import postcss from 'postcss';
-import { default as safeParser } from 'postcss-safe-parser';
 import { default as gzipSize } from 'gzip-size';
 import isPlainObject from 'lodash.isplainobject';
 
@@ -8,14 +6,13 @@ import { handleAtRule } from './handlers/handleAtRule';
 import { handleRule } from './handlers/handleRule';
 import { handleDeclaration } from './handlers/handleDeclaration';
 import { roundDivision } from './calculators/roundDivision';
+import { parseCss } from './converters/parseCss';
 
 export default function scancss(src, options) {
 	if (typeof src !== 'string') {
 		throw new TypeError('`scancss` expects a string');
 	} else {
-		const cssRoot = postcss.parse(
-			postcss().process(src, { parser: safeParser }).root
-		);
+		const cssRoot = parseCss(src);
 
 		const scancssOptions = Object.assign(
 			{},
