@@ -3,11 +3,17 @@ const path = require('path');
 const scancss = require('../../dist/index').default;
 const walkDir = require('./walkDir');
 
+function timeNow() {
+	const hrtime = process.hrtime();
+	return ((hrtime[0] * 1e6 + hrtime[1] / 1e3) / 1e3);
+}
+
 module.exports = function scan(dir) {
 	function fileHandler(file) {
 		const stylesheetData = fs.readFileSync(file, 'utf8');
 		console.log(`\nScan ${path.basename(file)} ...\n`);
-		const startedAt = Date.now();
+
+		const startTime = timeNow();
 		const scanResult = scancss(
 			stylesheetData,
 			{
@@ -22,8 +28,7 @@ module.exports = function scan(dir) {
 			JSON.stringify(scanResult, null, 2),
 		);
 
-		const timeSpent = Date.now() - startedAt;
-		console.log(`Time Spent: ${timeSpent / 1000}s`);
+		console.log('Time Spent: ' + (timeNow() - startTime).toFixed(2) + 'ms');
 	}
 
 	walkDir(dir, fileHandler, (err) => {
