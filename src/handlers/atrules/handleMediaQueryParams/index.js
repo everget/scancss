@@ -21,7 +21,10 @@ export function handleMediaQueryParams(params, report, options) {
 	if (reCssMediaQueryType.test(cleanedParams)) {
 		cleanedParams
 			.match(reCssMediaQueryType)
-			.forEach((type) => countUsage(type, report.mediaQueries.types));
+			.forEach((type) => {
+				report.mediaQueries.types.total++;
+				countUsage(type, report.mediaQueries.types.usage);
+			});
 	}
 
 	if (reCssMediaQueryFeature.test(cleanedParams)) {

@@ -142,7 +142,11 @@ describe('Module: scancss', () => {
 					unique: 1,
 					onlyKeyword: 0,
 					types: {
-						screen: 1,
+						total: 1,
+						unique: 1,
+						usage: {
+							screen: 1,
+						},
 					},
 					features: {
 						total: 1,

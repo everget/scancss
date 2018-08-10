@@ -315,7 +315,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **onlyKeyword** - `number`
 
-* **types** - `Record<string, number>`
+* **types** - `Record<string, number | Record<string, number>>`
 
 * **features** - `Record<string, number | Record<string, number>>`
 

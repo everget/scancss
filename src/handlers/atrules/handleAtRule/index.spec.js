@@ -123,7 +123,11 @@ describe('Module: handleAtRule', () => {
 				total: 0,
 				unique: 0,
 				onlyKeyword: 0,
-				types: {},
+				types: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				features: {
 					total: 0,
 					unique: 0,
@@ -251,9 +255,21 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
-	describe('mediaQueries.types', () => {
-		it('should be counted mediaQueries.types correctly', () => {
-			expect(report.mediaQueries.types).toEqual({
+	describe('mediaQueries.types.total', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.types.total).toBe(16);
+		});
+	});
+
+	describe('mediaQueries.types.unique', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.types.unique).toBe(0);
+		});
+	});
+
+	describe('mediaQueries.types.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.types.usage).toEqual({
 				all: 1,
 				print: 2,
 				screen: 12,
