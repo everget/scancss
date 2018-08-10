@@ -20,7 +20,7 @@ describe('Module: handleDeclaration', () => {
 	const src = `
 		.selector: {
 			content: '';
-			display: block !important;
+			display: flex !important;
 			position: static;
 			z-index: -1;
 			float: left;
@@ -31,7 +31,6 @@ describe('Module: handleDeclaration', () => {
 
 		.selector: {
 			content: '';
-			display: inline-block !important;
 			position: relative;
 			float: left;
 			border-radius: 1px 2px;
@@ -41,7 +40,6 @@ describe('Module: handleDeclaration', () => {
 
 		.selector: {
 			content: '';
-			display: flex !important;
 			position: absolute;
 			float: right;
 			border-radius: 1px 2px 3px;
@@ -51,7 +49,6 @@ describe('Module: handleDeclaration', () => {
 
 		.selector: {
 			content: '';
-			display: inline-table !important;
 			position: fixed;
 			float: right;
 			border-radius: 1px 2px 3px 4px;
@@ -61,7 +58,6 @@ describe('Module: handleDeclaration', () => {
 
 		.selector: {
 			content: '';
-			display: grid !important;
 			position: sticky;
 			float: none;
 			border-top-left-radius: 1px;
@@ -74,7 +70,6 @@ describe('Module: handleDeclaration', () => {
 
 		.selector: {
 			content: '';
-			display: contents !important;
 			position: unset;
 			float: inherit;
 			border-top-left-radius: 5px;
@@ -197,7 +192,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling declarations', () => {
 		describe('declarations.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.declarations.total).toBe(54);
+				expect(report.declarations.total).toBe(49);
 			});
 		});
 
@@ -209,7 +204,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('declarations.important', () => {
 			it('should be counted correctly', () => {
-				expect(report.declarations.important).toBe(6);
+				expect(report.declarations.important).toBe(1);
 			});
 		});
 	});
@@ -217,7 +212,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling properties', () => {
 		describe('properties.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.total).toBe(54);
+				expect(report.properties.total).toBe(49);
 			});
 		});
 
@@ -249,22 +244,22 @@ describe('Module: handleDeclaration', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.engineTriggers).toEqual({
 					composite: {
-						blink: 33,
-						edgehtml: 33,
-						gecko: 33,
-						webkit: 33,
+						blink: 28,
+						edgehtml: 28,
+						gecko: 28,
+						webkit: 28,
 					},
 					layout: {
-						blink: 24,
-						edgehtml: 32,
-						gecko: 24,
-						webkit: 33,
+						blink: 19,
+						edgehtml: 27,
+						gecko: 19,
+						webkit: 28,
 					},
 					paint: {
-						blink: 33,
-						edgehtml: 33,
-						gecko: 33,
-						webkit: 33,
+						blink: 28,
+						edgehtml: 28,
+						gecko: 28,
+						webkit: 28,
 					},
 				});
 			});
@@ -280,7 +275,7 @@ describe('Module: handleDeclaration', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.usage).toEqual({
 					content: 6,
-					display: 6,
+					display: 1,
 					position: 6,
 					'z-index': 1,
 					float: 6,
@@ -326,7 +321,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling displays', () => {
 		describe('displays.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.displays.total).toBe(6);
+				expect(report.displays.total).toBe(1);
 			});
 		});
 
@@ -339,12 +334,7 @@ describe('Module: handleDeclaration', () => {
 		describe('displays.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.displays.usage).toEqual({
-					block: 1,
-					'inline-block': 1,
-					'inline-table': 1,
 					flex: 1,
-					grid: 1,
-					contents: 1,
 				});
 			});
 		});

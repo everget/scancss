@@ -12,6 +12,7 @@ import { handleUnits } from '../handleUnits';
 import { handleVariables } from '../handleVariables';
 import { handlePerformanceHackProperties } from '../handlePerformanceHackProperties';
 import { handleZIndexProperty } from '../handleZIndexProperty';
+import { handleDisplayProperty } from '../handleDisplayProperty';
 import { handleVendorPrefix } from '../handleVendorPrefix';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
@@ -117,8 +118,7 @@ export function handleDeclaration(decl, report, options) {
 
 	/** Count displays */
 	if (prop === 'display') {
-		report.displays.total++;
-		countUsage(propValue, report.displays.usage);
+		handleDisplayProperty(decl, report);
 	}
 
 	/** Count positions */
