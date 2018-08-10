@@ -15,6 +15,7 @@ import { handleZIndexProperty } from '../handleZIndexProperty';
 import { handleDisplayProperty } from '../handleDisplayProperty';
 import { handlePositionProperty } from '../handlePositionProperty';
 import { handleFloatProperty } from '../handleFloatProperty';
+import { handleLetterSpacingProperty } from '../handleLetterSpacingProperty';
 import { handleVendorPrefix } from '../handleVendorPrefix';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
@@ -145,8 +146,7 @@ export function handleDeclaration(decl, report, options) {
 
 	/** Count letter spacings */
 	if (prop === 'letter-spacing') {
-		report.letterSpacings.total++;
-		countUsage(propValue, report.letterSpacings.usage);
+		handleLetterSpacingProperty(decl, report);
 	}
 
 	/** Count z-indices */

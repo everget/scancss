@@ -25,28 +25,25 @@ describe('Module: handleDeclaration', () => {
 			z-index: -1;
 			float: none;
 			border-radius: 1px;
-			letter-spacing: normal;
-			all: initial;
-		}
-
-		.selector: {
-			content: '';
-			border-radius: 1px 2px;
-			letter-spacing: .3px;
-			all: initial;
-		}
-
-		.selector: {
-			content: '';
-			border-radius: 1px 2px 3px;
 			letter-spacing: 0.3em;
 			all: initial;
 		}
 
 		.selector: {
 			content: '';
+			border-radius: 1px 2px;
+			all: initial;
+		}
+
+		.selector: {
+			content: '';
+			border-radius: 1px 2px 3px;
+			all: initial;
+		}
+
+		.selector: {
+			content: '';
 			border-radius: 1px 2px 3px 4px;
-			letter-spacing: -1px;
 			all: initial;
 		}
 
@@ -56,7 +53,6 @@ describe('Module: handleDeclaration', () => {
 			border-top-right-radius: 2px;
 			border-bottom-left-radius: 3px;
 			border-bottom-right-radius: 4px;
-			letter-spacing: .2rem;
 			all: initial;
 		}
 
@@ -66,7 +62,6 @@ describe('Module: handleDeclaration', () => {
 			border-top-right-radius: 6px;
 			border-bottom-left-radius: 7px;
 			border-bottom-right-radius: 8px;
-			letter-spacing: inherit;
 			all: initial;
 		}
 
@@ -182,7 +177,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling declarations', () => {
 		describe('declarations.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.declarations.total).toBe(39);
+				expect(report.declarations.total).toBe(34);
 			});
 		});
 
@@ -202,7 +197,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling properties', () => {
 		describe('properties.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.total).toBe(39);
+				expect(report.properties.total).toBe(34);
 			});
 		});
 
@@ -234,22 +229,22 @@ describe('Module: handleDeclaration', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.engineTriggers).toEqual({
 					composite: {
-						blink: 18,
-						edgehtml: 18,
-						gecko: 18,
-						webkit: 18,
+						blink: 13,
+						edgehtml: 13,
+						gecko: 13,
+						webkit: 13,
 					},
 					layout: {
-						blink: 9,
-						edgehtml: 17,
-						gecko: 9,
-						webkit: 18,
+						blink: 4,
+						edgehtml: 12,
+						gecko: 4,
+						webkit: 13,
 					},
 					paint: {
-						blink: 18,
-						edgehtml: 18,
-						gecko: 18,
-						webkit: 18,
+						blink: 13,
+						edgehtml: 13,
+						gecko: 13,
+						webkit: 13,
 					},
 				});
 			});
@@ -274,7 +269,7 @@ describe('Module: handleDeclaration', () => {
 					'border-top-right-radius': 2,
 					'border-bottom-left-radius': 2,
 					'border-bottom-right-radius': 2,
-					'letter-spacing': 6,
+					'letter-spacing': 1,
 					all: 6,
 					'-moz-transition': 1,
 					'-ms-transition': 1,
@@ -287,7 +282,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('properties.explicitDefaultingKeywords.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.explicitDefaultingKeywords.total).toBe(7);
+				expect(report.properties.explicitDefaultingKeywords.total).toBe(6);
 			});
 		});
 
@@ -300,7 +295,6 @@ describe('Module: handleDeclaration', () => {
 		describe('properties.explicitDefaultingKeywords.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.explicitDefaultingKeywords.usage).toEqual({
-					inherit: 1,
 					initial: 6,
 				});
 			});
@@ -438,7 +432,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling letter-spacings', () => {
 		describe('letterSpacings.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.letterSpacings.total).toBe(6);
+				expect(report.letterSpacings.total).toBe(1);
 			});
 		});
 
@@ -451,12 +445,7 @@ describe('Module: handleDeclaration', () => {
 		describe('letterSpacings.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.letterSpacings.usage).toEqual({
-					normal: 1,
-					'.3px': 1,
 					'0.3em': 1,
-					'-1px': 1,
-					'.2rem': 1,
-					inherit: 1,
 				});
 			});
 		});
