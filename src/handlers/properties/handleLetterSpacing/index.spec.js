@@ -1,7 +1,7 @@
-import { parseCss } from '../../converters/parseCss';
-import { handleLetterSpacingProperty } from '.';
+import { parseCss } from '../../../converters/parseCss';
+import { handleLetterSpacing } from '.';
 
-describe('Module: handleLetterSpacingProperty', () => {
+describe('Module: handleLetterSpacing', () => {
 	const src = `
 		.selector {
 			letter-spacing: normal;
@@ -42,7 +42,7 @@ describe('Module: handleLetterSpacingProperty', () => {
 		};
 
 		cssRoot.walkDecls((decl) => {
-			handleLetterSpacingProperty(decl, report);
+			handleLetterSpacing(decl, report);
 		});
 	});
 

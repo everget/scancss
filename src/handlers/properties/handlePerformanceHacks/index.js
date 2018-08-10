@@ -1,8 +1,8 @@
-import { reCss3dPerformanceHack } from '../../constants/reCss3dPerformanceHack';
-import { countUsage } from '../../calculators/countUsage';
-import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
+import { reCss3dPerformanceHack } from '../../../constants/reCss3dPerformanceHack';
+import { countUsage } from '../../../calculators/countUsage';
+import { removeExtraSpaces } from '../../../converters/removeExtraSpaces';
 
-export function handlePerformanceHackProperties(decl, report) {
+export function handlePerformanceHacks(decl, report) {
 	if (
 		decl.prop.endsWith('transform') &&
 		reCss3dPerformanceHack.test(decl.value)

@@ -4,12 +4,12 @@ import {
 	isShorthandProperty,
 } from 'css-property-parser';
 
-import { cssNamedTimingFunctions } from '../../constants/cssNamedTimingFunctions';
-import { cssExplicitDefaultingKeywords } from '../../constants/cssExplicitDefaultingKeywords';
-import { rePrefixedString } from '../../constants/rePrefixedString';
-import { reCubicBezier } from '../../constants/reCubicBezier';
-import { countUsage } from '../../calculators/countUsage';
-import { isNumber } from '../../predicates/isNumber';
+import { cssNamedTimingFunctions } from '../../../constants/cssNamedTimingFunctions';
+import { cssExplicitDefaultingKeywords } from '../../../constants/cssExplicitDefaultingKeywords';
+import { rePrefixedString } from '../../../constants/rePrefixedString';
+import { reCubicBezier } from '../../../constants/reCubicBezier';
+import { countUsage } from '../../../calculators/countUsage';
+import { isNumber } from '../../../predicates/isNumber';
 
 const reInfiniteKeyword = /\binfinite\b/g;
 

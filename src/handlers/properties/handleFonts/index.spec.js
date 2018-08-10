@@ -1,7 +1,7 @@
-import { parseCss } from '../../converters/parseCss';
-import { handleFontProperties } from '.';
+import { parseCss } from '../../../converters/parseCss';
+import { handleFonts } from '.';
 
-describe('Module: handleFontProperties', () => {
+describe('Module: handleFonts', () => {
 	const src = `
 		.selector {
 			font: normal 13px/20px Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -139,7 +139,7 @@ describe('Module: handleFontProperties', () => {
 		};
 
 		cssRoot.walkDecls((decl) => {
-			handleFontProperties(decl, report);
+			handleFonts(decl, report);
 		});
 	});
 

@@ -4,19 +4,19 @@ import { cssEngineTriggerProperties } from '../../constants/cssEngineTriggerProp
 import { cssColorableProperties } from '../../constants/cssColorableProperties';
 import { reCssExplicitDefaultingKeyword } from '../../constants/reCssExplicitDefaultingKeyword';
 import { rePrefixedString } from '../../constants/rePrefixedString';
-import { handleColorableProperty } from '../handleColorableProperty';
-import { handleFontProperties } from '../handleFontProperties';
-import { handleTransitionsAndAnimations } from '../handleTransitionsAndAnimations';
+import { handleColorable } from '../properties/handleColorable';
+import { handleFonts } from '../properties/handleFonts';
+import { handleTransitionsAndAnimations } from '../properties/handleTransitionsAndAnimations';
+import { handleDisplay } from '../properties/handleDisplay';
+import { handlePosition } from '../properties/handlePosition';
+import { handleZIndex } from '../properties/handleZIndex';
+import { handleFloat } from '../properties/handleFloat';
+import { handleBorderRadiuses } from '../properties/handleBorderRadiuses';
+import { handleLetterSpacing } from '../properties/handleLetterSpacing';
+import { handlePerformanceHacks } from '../properties/handlePerformanceHacks';
 import { handleFunctions } from '../handleFunctions';
 import { handleUnits } from '../handleUnits';
 import { handleVariables } from '../handleVariables';
-import { handlePerformanceHackProperties } from '../handlePerformanceHackProperties';
-import { handleDisplayProperty } from '../handleDisplayProperty';
-import { handlePositionProperty } from '../handlePositionProperty';
-import { handleZIndexProperty } from '../handleZIndexProperty';
-import { handleFloatProperty } from '../handleFloatProperty';
-import { handleBorderRadiusProperties } from '../handleBorderRadiusProperties';
-import { handleLetterSpacingProperty } from '../handleLetterSpacingProperty';
 import { handleVendorPrefix } from '../handleVendorPrefix';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
@@ -97,7 +97,7 @@ export function handleDeclaration(decl, report, options) {
 		options.collectAllColorsData;
 
 	if (shouldHandleAnyColors && cssColorableProperties.includes(prop)) {
-		handleColorableProperty(decl, report, options);
+		handleColorable(decl, report, options);
 	}
 
 	if (options.collectEngineTriggerProperties) {
@@ -121,19 +121,19 @@ export function handleDeclaration(decl, report, options) {
 	}
 
 	if (prop === 'display') {
-		handleDisplayProperty(decl, report);
+		handleDisplay(decl, report);
 	}
 
 	if (prop === 'position') {
-		handlePositionProperty(decl, report);
+		handlePosition(decl, report);
 	}
 
 	if (prop === 'z-index') {
-		handleZIndexProperty(decl, report);
+		handleZIndex(decl, report);
 	}
 
 	if (prop === 'float') {
-		handleFloatProperty(decl, report);
+		handleFloat(decl, report);
 	}
 
 	if (
@@ -141,15 +141,15 @@ export function handleDeclaration(decl, report, options) {
 		prop.includes('border-') &&
 		prop.endsWith('-radius')
 	) {
-		handleBorderRadiusProperties(decl, report);
+		handleBorderRadiuses(decl, report);
 	}
 
 	if (prop === 'letter-spacing') {
-		handleLetterSpacingProperty(decl, report);
+		handleLetterSpacing(decl, report);
 	}
 
 	if (options.collectFontsData && cssFontProperties.includes(prop)) {
-		handleFontProperties(decl, report);
+		handleFonts(decl, report);
 	}
 
 	if (options.collectFunctionsData) {
@@ -172,7 +172,7 @@ export function handleDeclaration(decl, report, options) {
 	}
 
 	if (options.collectPerformanceHacksData) {
-		handlePerformanceHackProperties(decl, report);
+		handlePerformanceHacks(decl, report);
 	}
 
 	if (reCssExplicitDefaultingKeyword.test(decl.value)) {

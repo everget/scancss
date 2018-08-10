@@ -1,15 +1,15 @@
-import { reCssNamedColor } from '../../constants/reCssNamedColor';
-import { reCssSystemColor } from '../../constants/reCssSystemColor';
-import { reHexColor } from '../../constants/reHexColor';
-import { reHexaColor } from '../../constants/reHexaColor';
-import { reRgbColor } from '../../constants/reRgbColor';
-import { reRgbaColor } from '../../constants/reRgbaColor';
-import { reHslColor } from '../../constants/reHslColor';
-import { reHslaColor } from '../../constants/reHslaColor';
-import { reHwbColor } from '../../constants/reHwbColor';
-import { restoreFullHex } from '../../converters/restoreFullHex';
-import { countUsage } from '../../calculators/countUsage';
-import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
+import { reCssNamedColor } from '../../../constants/reCssNamedColor';
+import { reCssSystemColor } from '../../../constants/reCssSystemColor';
+import { reHexColor } from '../../../constants/reHexColor';
+import { reHexaColor } from '../../../constants/reHexaColor';
+import { reRgbColor } from '../../../constants/reRgbColor';
+import { reRgbaColor } from '../../../constants/reRgbaColor';
+import { reHslColor } from '../../../constants/reHslColor';
+import { reHslaColor } from '../../../constants/reHslaColor';
+import { reHwbColor } from '../../../constants/reHwbColor';
+import { countUsage } from '../../../calculators/countUsage';
+import { restoreFullHex } from '../../../converters/restoreFullHex';
+import { removeExtraSpaces } from '../../../converters/removeExtraSpaces';
 
 /**
  * https://www.w3.org/TR/css-color-3/#currentcolor
@@ -122,7 +122,7 @@ function countSystemColors(prop, match, report, options) {
 	});
 }
 
-export function handleColorableProperty(decl, report, options) {
+export function handleColorable(decl, report, options) {
 	const prop = decl.prop;
 	const propValue = decl.value;
 

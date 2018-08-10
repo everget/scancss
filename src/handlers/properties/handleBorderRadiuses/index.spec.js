@@ -1,7 +1,7 @@
-import { parseCss } from '../../converters/parseCss';
-import { handleBorderRadiusProperties } from '.';
+import { parseCss } from '../../../converters/parseCss';
+import { handleBorderRadiuses } from '.';
 
-describe('Module: handleBorderRadiusProperties', () => {
+describe('Module: handleBorderRadiuses', () => {
 	const src = `
 		.selector {
 			border-radius: 1px;
@@ -48,7 +48,7 @@ describe('Module: handleBorderRadiusProperties', () => {
 		};
 
 		cssRoot.walkDecls((decl) => {
-			handleBorderRadiusProperties(decl, report);
+			handleBorderRadiuses(decl, report);
 		});
 	});
 

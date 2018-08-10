@@ -1,7 +1,7 @@
-import { parseCss } from '../../converters/parseCss';
-import { handlePositionProperty } from '.';
+import { parseCss } from '../../../converters/parseCss';
+import { handlePosition } from '.';
 
-describe('Module: handlePositionProperty', () => {
+describe('Module: handlePosition', () => {
 	const src = `
 		.selector {
 			position: static;
@@ -54,7 +54,7 @@ describe('Module: handlePositionProperty', () => {
 		};
 
 		cssRoot.walkDecls((decl) => {
-			handlePositionProperty(decl, report);
+			handlePosition(decl, report);
 		});
 	});
 

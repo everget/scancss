@@ -1,7 +1,7 @@
-import { parseCss } from '../../converters/parseCss';
-import { handlePerformanceHackProperties } from '.';
+import { parseCss } from '../../../converters/parseCss';
+import { handlePerformanceHacks } from '.';
 
-describe('Module: handlePerformanceHackProperties', () => {
+describe('Module: handlePerformanceHacks', () => {
 	const src = `
 		.selector {
 			-webkit-transform: rotateZ(360deg);
@@ -43,7 +43,7 @@ describe('Module: handlePerformanceHackProperties', () => {
 		};
 
 		cssRoot.walkDecls((decl) => {
-			handlePerformanceHackProperties(decl, report);
+			handlePerformanceHacks(decl, report);
 		});
 	});
 

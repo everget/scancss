@@ -1,13 +1,13 @@
-import { cssExplicitDefaultingKeywords } from '../../constants/cssExplicitDefaultingKeywords';
-import { reCssVariable } from '../../constants/reCssVariable';
-import { countUsage } from '../../calculators/countUsage';
+import { cssExplicitDefaultingKeywords } from '../../../constants/cssExplicitDefaultingKeywords';
+import { reCssVariable } from '../../../constants/reCssVariable';
+import { countUsage } from '../../../calculators/countUsage';
 
 const zIndexAllowedKeywords = [
 	'auto',
 	...cssExplicitDefaultingKeywords,
 ];
 
-export function handleZIndexProperty(decl, report) {
+export function handleZIndex(decl, report) {
 	const propValue = decl.value;
 
 	report.zIndices.total++;

@@ -1,4 +1,4 @@
-import { parseCss } from '../../converters/parseCss';
+import { parseCss } from '../../../converters/parseCss';
 import { handleTransitionsAndAnimations } from '.';
 
 describe('Module: handleTransitionsAndAnimations', () => {

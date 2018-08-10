@@ -1,7 +1,7 @@
-import { parseCss } from '../../converters/parseCss';
-import { handleDisplayProperty } from '.';
+import { parseCss } from '../../../converters/parseCss';
+import { handleDisplay } from '.';
 
-describe('Module: handleDisplayProperty', () => {
+describe('Module: handleDisplay', () => {
 	const src = `
 		/* <display-outside> */
 		.selector {
@@ -194,7 +194,7 @@ describe('Module: handleDisplayProperty', () => {
 		};
 
 		cssRoot.walkDecls((decl) => {
-			handleDisplayProperty(decl, report);
+			handleDisplay(decl, report);
 		});
 	});
 

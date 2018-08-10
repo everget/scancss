@@ -1,7 +1,7 @@
-import { parseCss } from '../../converters/parseCss';
-import { handleColorableProperty } from '.';
+import { parseCss } from '../../../converters/parseCss';
+import { handleColorable } from '.';
 
-describe('Module: handleColorableProperty', () => {
+describe('Module: handleColorable', () => {
 	const options = {
 		collectAllColorsData: true,
 	};
@@ -281,7 +281,7 @@ describe('Module: handleColorableProperty', () => {
 		};
 
 		cssRoot.walkDecls((decl) => {
-			handleColorableProperty(decl, report, options);
+			handleColorable(decl, report, options);
 		});
 	});
 

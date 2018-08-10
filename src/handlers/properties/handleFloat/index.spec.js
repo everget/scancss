@@ -1,7 +1,7 @@
-import { parseCss } from '../../converters/parseCss';
-import { handleFloatProperty } from '.';
+import { parseCss } from '../../../converters/parseCss';
+import { handleFloat } from '.';
 
-describe('Module: handleFloatProperty', () => {
+describe('Module: handleFloat', () => {
 	const src = `
 		.selector {
 			float: left;
@@ -34,7 +34,7 @@ describe('Module: handleFloatProperty', () => {
 		};
 
 		cssRoot.walkDecls((decl) => {
-			handleFloatProperty(decl, report);
+			handleFloat(decl, report);
 		});
 	});
 

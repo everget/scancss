@@ -1,14 +1,14 @@
 import postcss from 'postcss';
 import { expandShorthandProperty } from 'css-property-parser';
 
-import { cssGenericFonts } from '../../constants/cssGenericFonts';
-import { cssSystemFonts } from '../../constants/cssSystemFonts';
-import { cssFontSizeKeywords } from '../../constants/cssFontSizeKeywords';
-import { reExistingVendorPrefix } from '../../constants/reExistingVendorPrefix';
-import { countUsage } from '../../calculators/countUsage';
-import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
-import { handleVendorPrefix } from '../handleVendorPrefix';
-import { isNumber } from '../../predicates/isNumber';
+import { cssGenericFonts } from '../../../constants/cssGenericFonts';
+import { cssSystemFonts } from '../../../constants/cssSystemFonts';
+import { cssFontSizeKeywords } from '../../../constants/cssFontSizeKeywords';
+import { reExistingVendorPrefix } from '../../../constants/reExistingVendorPrefix';
+import { countUsage } from '../../../calculators/countUsage';
+import { removeExtraSpaces } from '../../../converters/removeExtraSpaces';
+import { handleVendorPrefix } from '../../handleVendorPrefix';
+import { isNumber } from '../../../predicates/isNumber';
 
 function countFontSizes(propValue, report) {
 	report.fontSizes.total++;
@@ -54,7 +54,7 @@ function countFontFamilies(propValue, report) {
 	}
 }
 
-export function handleFontProperties(decl, report) {
+export function handleFonts(decl, report) {
 	const cleanedValue = removeExtraSpaces(decl.value);
 
 	if (decl.prop === 'font') {

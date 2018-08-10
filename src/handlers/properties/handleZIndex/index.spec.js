@@ -1,7 +1,7 @@
-import { parseCss } from '../../converters/parseCss';
-import { handleZIndexProperty } from '.';
+import { parseCss } from '../../../converters/parseCss';
+import { handleZIndex } from '.';
 
-describe('Module: handleZIndexProperty', () => {
+describe('Module: handleZIndex', () => {
 	const src = `
 		.selector {
 			z-index: -1;
@@ -63,7 +63,7 @@ describe('Module: handleZIndexProperty', () => {
 		};
 
 		cssRoot.walkDecls((decl) => {
-			handleZIndexProperty(decl, report);
+			handleZIndex(decl, report);
 		});
 	});
 
