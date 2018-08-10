@@ -25,7 +25,8 @@ export function handleAtRule(atRule, report, options) {
 	/** Count unknown at-rules */
 	const unprefixedAtRuleName = atRule.name.replace(rePrefixedString, '');
 	if (cssAtRules.includes(unprefixedAtRuleName) === false) {
-		countUsage(atRule.name, report.atRules.unknown);
+		report.atRules.unknown.total++;
+		countUsage(atRule.name, report.atRules.unknown.usage);
 	}
 
 	if (atRule.name === 'import') {

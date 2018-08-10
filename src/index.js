@@ -64,7 +64,11 @@ export default function scancss(src, options) {
 				total: 0,
 				empty: 0,
 				prefixed: 0,
-				unknown: {},
+				unknown: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 			mediaQueries: {
@@ -376,6 +380,7 @@ export default function scancss(src, options) {
 		}
 
 		if (scancssOptions.collectAtRulesData) {
+			report.atRules.unknown.unique = Object.keys(report.atRules.unknown.usage).length;
 			report.mediaQueries.unique = Object.keys(report.mediaQueries.usage).length;
 			report.mediaQueries.features.unique = Object.keys(report.mediaQueries.features.usage).length;
 		}

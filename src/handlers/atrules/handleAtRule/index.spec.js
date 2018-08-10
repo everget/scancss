@@ -112,7 +112,11 @@ describe('Module: handleAtRule', () => {
 				total: 0,
 				empty: 0,
 				prefixed: 0,
-				unknown: {},
+				unknown: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 			mediaQueries: {
@@ -185,9 +189,21 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
-	describe('atRules.unknown', () => {
+	describe('atRules.unknown.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.unknown).toEqual({
+			expect(report.atRules.unknown.total).toBe(1);
+		});
+	});
+
+	describe('atRules.unknown.unique', () => {
+		it('should be counted correctly', () => {
+			expect(report.atRules.unknown.unique).toBe(0);
+		});
+	});
+
+	describe('atRules.unknown.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.atRules.unknown.usage).toEqual({
 				unknown: 1,
 			});
 		});

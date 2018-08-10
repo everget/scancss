@@ -118,7 +118,11 @@ describe('Module: scancss', () => {
 					empty: 1,
 					prefixed: 1,
 					unknown: {
-						foobar: 1,
+						total: 1,
+						unique: 1,
+						usage: {
+							foobar: 1,
+						},
 					},
 					usage: {
 						'-webkit-keyframes': 1,
