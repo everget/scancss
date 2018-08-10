@@ -13,6 +13,7 @@ import { handleVariables } from '../handleVariables';
 import { handlePerformanceHackProperties } from '../handlePerformanceHackProperties';
 import { handleZIndexProperty } from '../handleZIndexProperty';
 import { handleDisplayProperty } from '../handleDisplayProperty';
+import { handlePositionProperty } from '../handlePositionProperty';
 import { handleVendorPrefix } from '../handleVendorPrefix';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
@@ -123,8 +124,7 @@ export function handleDeclaration(decl, report, options) {
 
 	/** Count positions */
 	if (prop === 'position') {
-		report.positions.total++;
-		countUsage(propValue, report.positions.usage);
+		handlePositionProperty(decl, report);
 	}
 
 	/** Count floats */
