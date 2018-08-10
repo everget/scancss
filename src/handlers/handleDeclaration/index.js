@@ -14,6 +14,7 @@ import { handlePerformanceHackProperties } from '../handlePerformanceHackPropert
 import { handleZIndexProperty } from '../handleZIndexProperty';
 import { handleDisplayProperty } from '../handleDisplayProperty';
 import { handlePositionProperty } from '../handlePositionProperty';
+import { handleFloatProperty } from '../handleFloatProperty';
 import { handleVendorPrefix } from '../handleVendorPrefix';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
@@ -129,8 +130,7 @@ export function handleDeclaration(decl, report, options) {
 
 	/** Count floats */
 	if (prop === 'float') {
-		report.floats.total++;
-		countUsage(propValue, report.floats.usage);
+		handleFloatProperty(decl, report);
 	}
 
 	/** Count border radiuses */
