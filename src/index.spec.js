@@ -92,8 +92,8 @@ describe('Module: scancss', () => {
 		describe('styleSheetSize', () => {
 			it('should be counted correctly', () => {
 				expect(report.styleSheetSize).toEqual({
-					sourceByteLength: 909,
-					gzipByteLength: 439,
+					sourceByteLength: 908,
+					gzipByteLength: 436,
 				});
 			});
 		});
@@ -106,7 +106,7 @@ describe('Module: scancss', () => {
 					longestByteLength: 32,
 					shortestByteLength: 32,
 					averageByteLength: 32,
-					sizeRatio: 0.0352035203520352,
+					sizeRatio: 0.03524229074889868,
 				});
 			});
 		});
@@ -214,7 +214,7 @@ describe('Module: scancss', () => {
 					averageSpecificity: [0, 0, 0],
 					highestSpecificity: [0, 1, 0],
 					highestSpecificitySelector: '.selector',
-					sizeRatio: 0.04950495049504951,
+					sizeRatio: 0.04955947136563876,
 					specificityGraphData: [
 						[0, 1, 0],
 						[0, 1, 0],
@@ -241,7 +241,7 @@ describe('Module: scancss', () => {
 					longestByteLength: 32,
 					longestByteLengthDeclaration: 'animation:infinite ease 1s fade',
 					averageByteLength: 15.42,
-					sizeRatio: 0.32233223322332233,
+					sizeRatio: 0.32268722466960353,
 					inAtRules: {
 						'-webkit-keyframes': 2,
 						keyframes: 2,
