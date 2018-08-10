@@ -24,44 +24,33 @@ describe('Module: handleDeclaration', () => {
 			position: sticky;
 			z-index: -1;
 			float: none;
-			border-radius: 1px;
+			border-radius: 1px 2px 3px 4px;
 			letter-spacing: 0.3em;
 			all: initial;
 		}
 
 		.selector: {
 			content: '';
-			border-radius: 1px 2px;
 			all: initial;
 		}
 
 		.selector: {
 			content: '';
-			border-radius: 1px 2px 3px;
 			all: initial;
 		}
 
 		.selector: {
 			content: '';
-			border-radius: 1px 2px 3px 4px;
 			all: initial;
 		}
 
 		.selector: {
 			content: '';
-			border-top-left-radius: 1px;
-			border-top-right-radius: 2px;
-			border-bottom-left-radius: 3px;
-			border-bottom-right-radius: 4px;
 			all: initial;
 		}
 
 		.selector: {
 			content: '';
-			border-top-left-radius: 5px;
-			border-top-right-radius: 6px;
-			border-bottom-left-radius: 7px;
-			border-bottom-right-radius: 8px;
 			all: initial;
 		}
 
@@ -177,7 +166,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling declarations', () => {
 		describe('declarations.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.declarations.total).toBe(34);
+				expect(report.declarations.total).toBe(23);
 			});
 		});
 
@@ -197,7 +186,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling properties', () => {
 		describe('properties.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.total).toBe(34);
+				expect(report.properties.total).toBe(23);
 			});
 		});
 
@@ -209,7 +198,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('properties.shorthands', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.shorthands).toBe(9);
+				expect(report.properties.shorthands).toBe(6);
 			});
 		});
 
@@ -229,22 +218,22 @@ describe('Module: handleDeclaration', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.engineTriggers).toEqual({
 					composite: {
-						blink: 13,
-						edgehtml: 13,
-						gecko: 13,
-						webkit: 13,
+						blink: 5,
+						edgehtml: 5,
+						gecko: 5,
+						webkit: 5,
 					},
 					layout: {
 						blink: 4,
-						edgehtml: 12,
+						edgehtml: 4,
 						gecko: 4,
-						webkit: 13,
+						webkit: 5,
 					},
 					paint: {
-						blink: 13,
-						edgehtml: 13,
-						gecko: 13,
-						webkit: 13,
+						blink: 5,
+						edgehtml: 5,
+						gecko: 5,
+						webkit: 5,
 					},
 				});
 			});
@@ -264,11 +253,7 @@ describe('Module: handleDeclaration', () => {
 					position: 1,
 					'z-index': 1,
 					float: 1,
-					'border-radius': 4,
-					'border-top-left-radius': 2,
-					'border-top-right-radius': 2,
-					'border-bottom-left-radius': 2,
-					'border-bottom-right-radius': 2,
+					'border-radius': 1,
 					'letter-spacing': 1,
 					all: 6,
 					'-moz-transition': 1,
@@ -400,7 +385,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling border-radiuses', () => {
 		describe('borderRadiuses.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.borderRadiuses.total).toBe(12);
+				expect(report.borderRadiuses.total).toBe(1);
 			});
 		});
 
@@ -413,16 +398,6 @@ describe('Module: handleDeclaration', () => {
 		describe('borderRadiuses.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.borderRadiuses.usage).toEqual({
-					'1px': 2,
-					'2px': 1,
-					'3px': 1,
-					'4px': 1,
-					'5px': 1,
-					'6px': 1,
-					'7px': 1,
-					'8px': 1,
-					'1px 2px': 1,
-					'1px 2px 3px': 1,
 					'1px 2px 3px 4px': 1,
 				});
 			});

@@ -16,6 +16,7 @@ import { handleDisplayProperty } from '../handleDisplayProperty';
 import { handlePositionProperty } from '../handlePositionProperty';
 import { handleFloatProperty } from '../handleFloatProperty';
 import { handleLetterSpacingProperty } from '../handleLetterSpacingProperty';
+import { handleBorderRadiusProperties } from '../handleBorderRadiusProperties';
 import { handleVendorPrefix } from '../handleVendorPrefix';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
@@ -140,8 +141,7 @@ export function handleDeclaration(decl, report, options) {
 		prop.includes('border-') &&
 		prop.endsWith('-radius')
 	) {
-		report.borderRadiuses.total++;
-		countUsage(propValue, report.borderRadiuses.usage);
+		handleBorderRadiusProperties(decl, report);
 	}
 
 	/** Count letter spacings */
