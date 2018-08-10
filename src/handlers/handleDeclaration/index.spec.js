@@ -31,27 +31,17 @@ describe('Module: handleDeclaration', () => {
 
 		.selector: {
 			content: '';
-			all: initial;
+			all: inherit;
 		}
 
 		.selector: {
 			content: '';
-			all: initial;
+			all: unset;
 		}
 
 		.selector: {
 			content: '';
-			all: initial;
-		}
-
-		.selector: {
-			content: '';
-			all: initial;
-		}
-
-		.selector: {
-			content: '';
-			all: initial;
+			all: revert;
 		}
 
 		.selector {
@@ -166,7 +156,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling declarations', () => {
 		describe('declarations.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.declarations.total).toBe(23);
+				expect(report.declarations.total).toBe(19);
 			});
 		});
 
@@ -186,7 +176,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling properties', () => {
 		describe('properties.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.total).toBe(23);
+				expect(report.properties.total).toBe(19);
 			});
 		});
 
@@ -210,7 +200,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('properties.resetsViaAll', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.resetsViaAll).toBe(6);
+				expect(report.properties.resetsViaAll).toBe(4);
 			});
 		});
 
@@ -241,21 +231,21 @@ describe('Module: handleDeclaration', () => {
 
 		describe('properties.anonymousReplacedElements', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.anonymousReplacedElements).toBe(6);
+				expect(report.properties.anonymousReplacedElements).toBe(4);
 			});
 		});
 
 		describe('properties.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.usage).toEqual({
-					content: 6,
+					content: 4,
 					display: 1,
 					position: 1,
 					'z-index': 1,
 					float: 1,
 					'border-radius': 1,
 					'letter-spacing': 1,
-					all: 6,
+					all: 4,
 					'-moz-transition': 1,
 					'-ms-transition': 1,
 					'-o-transition': 1,
@@ -267,7 +257,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('properties.explicitDefaultingKeywords.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.explicitDefaultingKeywords.total).toBe(6);
+				expect(report.properties.explicitDefaultingKeywords.total).toBe(4);
 			});
 		});
 
@@ -280,7 +270,10 @@ describe('Module: handleDeclaration', () => {
 		describe('properties.explicitDefaultingKeywords.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.explicitDefaultingKeywords.usage).toEqual({
-					initial: 6,
+					inherit: 1,
+					initial: 1,
+					revert: 1,
+					unset: 1,
 				});
 			});
 		});

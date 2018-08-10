@@ -11,12 +11,12 @@ import { handleFunctions } from '../handleFunctions';
 import { handleUnits } from '../handleUnits';
 import { handleVariables } from '../handleVariables';
 import { handlePerformanceHackProperties } from '../handlePerformanceHackProperties';
-import { handleZIndexProperty } from '../handleZIndexProperty';
 import { handleDisplayProperty } from '../handleDisplayProperty';
 import { handlePositionProperty } from '../handlePositionProperty';
+import { handleZIndexProperty } from '../handleZIndexProperty';
 import { handleFloatProperty } from '../handleFloatProperty';
-import { handleLetterSpacingProperty } from '../handleLetterSpacingProperty';
 import { handleBorderRadiusProperties } from '../handleBorderRadiusProperties';
+import { handleLetterSpacingProperty } from '../handleLetterSpacingProperty';
 import { handleVendorPrefix } from '../handleVendorPrefix';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
@@ -70,7 +70,6 @@ export function handleDeclaration(decl, report, options) {
 	}
 
 	const prop = decl.prop;
-	const propValue = decl.value;
 
 	/** Count properties excluding variables */
 	if (prop.startsWith('--') === false) {
@@ -93,10 +92,11 @@ export function handleDeclaration(decl, report, options) {
 		report.properties.shorthands++;
 	}
 
-	if (
-		(options.collectColorsData || options.collectBackgroundColorsData || options.collectAllColorsData) &&
-		cssColorableProperties.includes(prop)
-	) {
+	const shouldHandleAnyColors = options.collectColorsData ||
+		options.collectBackgroundColorsData ||
+		options.collectAllColorsData;
+
+	if (shouldHandleAnyColors && cssColorableProperties.includes(prop)) {
 		handleColorableProperty(decl, report, options);
 	}
 
@@ -120,22 +120,22 @@ export function handleDeclaration(decl, report, options) {
 		report.properties.anonymousReplacedElements++;
 	}
 
-	/** Count displays */
 	if (prop === 'display') {
 		handleDisplayProperty(decl, report);
 	}
 
-	/** Count positions */
 	if (prop === 'position') {
 		handlePositionProperty(decl, report);
 	}
 
-	/** Count floats */
+	if (prop === 'z-index') {
+		handleZIndexProperty(decl, report);
+	}
+
 	if (prop === 'float') {
 		handleFloatProperty(decl, report);
 	}
 
-	/** Count border radiuses */
 	if (
 		prop.startsWith('--') === false &&
 		prop.includes('border-') &&
@@ -144,14 +144,8 @@ export function handleDeclaration(decl, report, options) {
 		handleBorderRadiusProperties(decl, report);
 	}
 
-	/** Count letter spacings */
 	if (prop === 'letter-spacing') {
 		handleLetterSpacingProperty(decl, report);
-	}
-
-	/** Count z-indices */
-	if (prop === 'z-index') {
-		handleZIndexProperty(decl, report);
 	}
 
 	if (options.collectFontsData && cssFontProperties.includes(prop)) {
@@ -181,8 +175,8 @@ export function handleDeclaration(decl, report, options) {
 		handlePerformanceHackProperties(decl, report);
 	}
 
-	if (reCssExplicitDefaultingKeyword.test(propValue)) {
-		propValue
+	if (reCssExplicitDefaultingKeyword.test(decl.value)) {
+		decl.value
 			.match(reCssExplicitDefaultingKeyword)
 			.forEach((match) => {
 				report.properties.explicitDefaultingKeywords.total++;
