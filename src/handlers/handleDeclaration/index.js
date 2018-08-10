@@ -2,10 +2,8 @@ import { isShorthandProperty } from 'css-property-parser';
 
 import { cssEngineTriggerProperties } from '../../constants/cssEngineTriggerProperties';
 import { cssColorableProperties } from '../../constants/cssColorableProperties';
-import { cssExplicitDefaultingKeywords } from '../../constants/cssExplicitDefaultingKeywords';
 import { reCssExplicitDefaultingKeyword } from '../../constants/reCssExplicitDefaultingKeyword';
 import { rePrefixedString } from '../../constants/rePrefixedString';
-import { reCssVariable } from '../../constants/reCssVariable';
 import { handleColorableProperty } from '../handleColorableProperty';
 import { handleFontProperties } from '../handleFontProperties';
 import { handleTransitionsAndAnimations } from '../handleTransitionsAndAnimations';
@@ -13,6 +11,7 @@ import { handleFunctions } from '../handleFunctions';
 import { handleUnits } from '../handleUnits';
 import { handleVariables } from '../handleVariables';
 import { handlePerformanceHackProperties } from '../handlePerformanceHackProperties';
+import { handleZIndexProperty } from '../handleZIndexProperty';
 import { handleVendorPrefix } from '../handleVendorPrefix';
 import { countUsage } from '../../calculators/countUsage';
 import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
@@ -22,11 +21,6 @@ const cssFontProperties = [
 	'font-size',
 	'line-height',
 	'font-family',
-];
-
-const zIndexAllowedKeywords = [
-	'auto',
-	...cssExplicitDefaultingKeywords,
 ];
 
 function countEngineTriggerProperties(prop, report) {
@@ -157,18 +151,7 @@ export function handleDeclaration(decl, report, options) {
 
 	/** Count z-indices */
 	if (prop === 'z-index') {
-		report.zIndices.total++;
-		countUsage(propValue, report.zIndices.usage);
-
-		/** Count invalid z-indices */
-		if (
-			Number.isInteger(Number(propValue)) === false &&
-			zIndexAllowedKeywords.includes(propValue) === false &&
-			propValue.startsWith('calc(') === false &&
-			reCssVariable.test(propValue) === false
-		) {
-			countUsage(propValue, report.zIndices.invalid);
-		}
+		handleZIndexProperty(decl, report);
 	}
 
 	if (options.collectFontsData && cssFontProperties.includes(prop)) {

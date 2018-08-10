@@ -33,7 +33,6 @@ describe('Module: handleDeclaration', () => {
 			content: '';
 			display: inline-block !important;
 			position: relative;
-			z-index: 1;
 			float: left;
 			border-radius: 1px 2px;
 			letter-spacing: .3px;
@@ -44,7 +43,6 @@ describe('Module: handleDeclaration', () => {
 			content: '';
 			display: flex !important;
 			position: absolute;
-			z-index: 100;
 			float: right;
 			border-radius: 1px 2px 3px;
 			letter-spacing: 0.3em;
@@ -55,7 +53,6 @@ describe('Module: handleDeclaration', () => {
 			content: '';
 			display: inline-table !important;
 			position: fixed;
-			z-index: 9999;
 			float: right;
 			border-radius: 1px 2px 3px 4px;
 			letter-spacing: -1px;
@@ -66,7 +63,6 @@ describe('Module: handleDeclaration', () => {
 			content: '';
 			display: grid !important;
 			position: sticky;
-			z-index: xxx;
 			float: none;
 			border-top-left-radius: 1px;
 			border-top-right-radius: 2px;
@@ -80,7 +76,6 @@ describe('Module: handleDeclaration', () => {
 			content: '';
 			display: contents !important;
 			position: unset;
-			z-index: initial;
 			float: inherit;
 			border-top-left-radius: 5px;
 			border-top-right-radius: 6px;
@@ -88,14 +83,6 @@ describe('Module: handleDeclaration', () => {
 			border-bottom-right-radius: 8px;
 			letter-spacing: inherit;
 			all: initial;
-		}
-
-		.selector {
-			z-index: calc(24 - 10);
-		}
-
-		.selector {
-			z-index: --z-index-content-page;
 		}
 
 		.selector {
@@ -210,7 +197,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling declarations', () => {
 		describe('declarations.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.declarations.total).toBe(61);
+				expect(report.declarations.total).toBe(54);
 			});
 		});
 
@@ -230,7 +217,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling properties', () => {
 		describe('properties.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.total).toBe(61);
+				expect(report.properties.total).toBe(54);
 			});
 		});
 
@@ -262,22 +249,22 @@ describe('Module: handleDeclaration', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.engineTriggers).toEqual({
 					composite: {
-						blink: 40,
-						edgehtml: 40,
-						gecko: 40,
-						webkit: 40,
+						blink: 33,
+						edgehtml: 33,
+						gecko: 33,
+						webkit: 33,
 					},
 					layout: {
 						blink: 24,
 						edgehtml: 32,
 						gecko: 24,
-						webkit: 40,
+						webkit: 33,
 					},
 					paint: {
-						blink: 40,
-						edgehtml: 40,
-						gecko: 40,
-						webkit: 40,
+						blink: 33,
+						edgehtml: 33,
+						gecko: 33,
+						webkit: 33,
 					},
 				});
 			});
@@ -295,7 +282,7 @@ describe('Module: handleDeclaration', () => {
 					content: 6,
 					display: 6,
 					position: 6,
-					'z-index': 8,
+					'z-index': 1,
 					float: 6,
 					'border-radius': 4,
 					'border-top-left-radius': 2,
@@ -315,7 +302,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('properties.explicitDefaultingKeywords.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.explicitDefaultingKeywords.total).toBe(10);
+				expect(report.properties.explicitDefaultingKeywords.total).toBe(9);
 			});
 		});
 
@@ -329,7 +316,7 @@ describe('Module: handleDeclaration', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.explicitDefaultingKeywords.usage).toEqual({
 					inherit: 2,
-					initial: 7,
+					initial: 6,
 					unset: 1,
 				});
 			});
@@ -393,7 +380,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling z-indices', () => {
 		describe('zIndices.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.zIndices.total).toBe(8);
+				expect(report.zIndices.total).toBe(1);
 			});
 		});
 
@@ -405,9 +392,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('zIndices.invalid', () => {
 			it('should be counted correctly', () => {
-				expect(report.zIndices.invalid).toEqual({
-					xxx: 1,
-				});
+				expect(report.zIndices.invalid).toEqual({});
 			});
 		});
 
@@ -416,13 +401,6 @@ describe('Module: handleDeclaration', () => {
 				/* eslint-disable quote-props */
 				expect(report.zIndices.usage).toEqual({
 					'-1': 1,
-					'1': 1,
-					'100': 1,
-					'9999': 1,
-					xxx: 1,
-					initial: 1,
-					'calc(24 - 10)': 1,
-					'--z-index-content-page': 1,
 				});
 				/* eslint-enable quote-props */
 			});
