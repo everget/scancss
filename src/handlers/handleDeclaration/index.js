@@ -5,6 +5,7 @@ import { cssColorableProperties } from '../../constants/cssColorableProperties';
 import { cssExplicitDefaultingKeywords } from '../../constants/cssExplicitDefaultingKeywords';
 import { reCssExplicitDefaultingKeyword } from '../../constants/reCssExplicitDefaultingKeyword';
 import { rePrefixedString } from '../../constants/rePrefixedString';
+import { reCssVariable } from '../../constants/reCssVariable';
 import { handleColorableProperty } from '../handleColorableProperty';
 import { handleFontProperties } from '../handleFontProperties';
 import { handleTransitionsAndAnimations } from '../handleTransitionsAndAnimations';
@@ -162,7 +163,9 @@ export function handleDeclaration(decl, report, options) {
 		/** Count invalid z-indices */
 		if (
 			Number.isInteger(Number(propValue)) === false &&
-			zIndexAllowedKeywords.includes(propValue) === false
+			zIndexAllowedKeywords.includes(propValue) === false &&
+			propValue.startsWith('calc(') === false &&
+			reCssVariable.test(propValue) === false
 		) {
 			countUsage(propValue, report.zIndices.invalid);
 		}

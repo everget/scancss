@@ -91,6 +91,14 @@ describe('Module: handleDeclaration', () => {
 		}
 
 		.selector {
+			z-index: calc(24 - 10);
+		}
+
+		.selector {
+			z-index: --z-index-content-page;
+		}
+
+		.selector {
 			-moz-transition: background-color 5s ease-in-out 2s;
 			-ms-transition: background-color 5s ease-in-out 2s;
 			-o-transition: background-color 5s ease-in-out 2s;
@@ -202,7 +210,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling declarations', () => {
 		describe('declarations.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.declarations.total).toBe(59);
+				expect(report.declarations.total).toBe(61);
 			});
 		});
 
@@ -222,7 +230,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling properties', () => {
 		describe('properties.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.total).toBe(59);
+				expect(report.properties.total).toBe(61);
 			});
 		});
 
@@ -254,22 +262,22 @@ describe('Module: handleDeclaration', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.engineTriggers).toEqual({
 					composite: {
-						blink: 38,
-						edgehtml: 38,
-						gecko: 38,
-						webkit: 38,
+						blink: 40,
+						edgehtml: 40,
+						gecko: 40,
+						webkit: 40,
 					},
 					layout: {
 						blink: 24,
 						edgehtml: 32,
 						gecko: 24,
-						webkit: 38,
+						webkit: 40,
 					},
 					paint: {
-						blink: 38,
-						edgehtml: 38,
-						gecko: 38,
-						webkit: 38,
+						blink: 40,
+						edgehtml: 40,
+						gecko: 40,
+						webkit: 40,
 					},
 				});
 			});
@@ -287,7 +295,7 @@ describe('Module: handleDeclaration', () => {
 					content: 6,
 					display: 6,
 					position: 6,
-					'z-index': 6,
+					'z-index': 8,
 					float: 6,
 					'border-radius': 4,
 					'border-top-left-radius': 2,
@@ -385,7 +393,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling z-indices', () => {
 		describe('zIndices.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.zIndices.total).toBe(6);
+				expect(report.zIndices.total).toBe(8);
 			});
 		});
 
@@ -413,6 +421,8 @@ describe('Module: handleDeclaration', () => {
 					'9999': 1,
 					xxx: 1,
 					initial: 1,
+					'calc(24 - 10)': 1,
+					'--z-index-content-page': 1,
 				});
 				/* eslint-enable quote-props */
 			});
