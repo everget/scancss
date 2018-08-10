@@ -1,9 +1,9 @@
 import { isShorthandProperty } from 'css-property-parser';
 
-import { cssEngineTriggerProperties } from '../../constants/cssEngineTriggerProperties';
 import { cssColorableProperties } from '../../constants/cssColorableProperties';
 import { reCssExplicitDefaultingKeyword } from '../../constants/reCssExplicitDefaultingKeyword';
 import { rePrefixedString } from '../../constants/rePrefixedString';
+import { handleEngineTriggers } from '../properties/handleEngineTriggers';
 import { handleColorable } from '../properties/handleColorable';
 import { handleFonts } from '../properties/handleFonts';
 import { handleTransitionsAndAnimations } from '../properties/handleTransitionsAndAnimations';
@@ -27,26 +27,6 @@ const cssFontProperties = [
 	'line-height',
 	'font-family',
 ];
-
-function countEngineTriggerProperties(prop, report) {
-	if (Object.keys(cssEngineTriggerProperties).includes(prop)) {
-		const engineTriggers = cssEngineTriggerProperties[prop];
-
-		Object
-			.keys(engineTriggers)
-			.forEach((engine) => {
-				if (engineTriggers[engine].layout === true) {
-					report.properties.engineTriggers.layout[engine]++;
-				}
-				if (engineTriggers[engine].paint === true) {
-					report.properties.engineTriggers.paint[engine]++;
-				}
-				if (engineTriggers[engine].composite === true) {
-					report.properties.engineTriggers.composite[engine]++;
-				}
-			});
-	}
-}
 
 export function handleDeclaration(decl, report, options) {
 	report.declarations.total++;
@@ -101,7 +81,7 @@ export function handleDeclaration(decl, report, options) {
 	}
 
 	if (options.collectEngineTriggerProperties) {
-		countEngineTriggerProperties(prop, report);
+		handleEngineTriggers(prop, report);
 	}
 
 	/**
