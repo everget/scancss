@@ -613,8 +613,11 @@ describe('Module: scancss', () => {
 						px: 5,
 						s: 1,
 					},
-					excessive: 0,
-					excessiveUsage: {},
+					excessive: {
+						total: 0,
+						unique: 0,
+						usage: {},
+					},
 				});
 			});
 		});

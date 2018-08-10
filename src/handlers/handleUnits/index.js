@@ -50,8 +50,8 @@ export function handleUnits(decl, report) {
 					parseFloat(match) === 0 &&
 					cssUnitsThatAllowZeroWithoutUnit.some((unit) => match.endsWith(unit))
 				) {
-					report.units.excessive++;
-					countUsage(match, report.units.excessiveUsage);
+					report.units.excessive.total++;
+					countUsage(match, report.units.excessive.usage);
 				}
 
 				const unit = match.replace(/[-.0-9]+/g, '');

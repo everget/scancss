@@ -669,9 +669,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **usage** - `Record<string, number>`
 
-* **excessive** - `number`
-
-* **excessiveUsage** - `Record<string, number>`
+* **excessive** - `Record<string, number | Record<string, number>>`
 
 #### variables
 

@@ -10,8 +10,11 @@ describe('Module: handleUnits', () => {
 				total: 0,
 				unique: 0,
 				usage: {},
-				excessive: 0,
-				excessiveUsage: {},
+				excessive: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 			},
 			properties: {
 				negativeMargins: 0,
@@ -148,15 +151,21 @@ describe('Module: handleUnits', () => {
 			});
 		});
 
-		describe('units.excessive', () => {
+		describe('units.excessive.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.excessive).toEqual(8);
+				expect(report.units.excessive.total).toBe(8);
 			});
 		});
 
-		describe('units.excessiveUsage', () => {
+		describe('units.excessive.unique', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.excessiveUsage).toEqual({
+				expect(report.units.excessive.unique).toBe(0);
+			});
+		});
+
+		describe('units.excessive.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.excessive.usage).toEqual({
 					'0px': 6,
 					'0em': 1,
 					'0%': 1,
@@ -211,15 +220,21 @@ describe('Module: handleUnits', () => {
 			});
 		});
 
-		describe('units.excessive', () => {
+		describe('units.excessive.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.excessive).toEqual(0);
+				expect(report.units.excessive.total).toBe(0);
 			});
 		});
 
-		describe('units.excessiveUsage', () => {
+		describe('units.excessive.unique', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.excessiveUsage).toEqual({});
+				expect(report.units.excessive.unique).toBe(0);
+			});
+		});
+
+		describe('units.excessive.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.excessive.usage).toEqual({});
 			});
 		});
 
@@ -281,15 +296,21 @@ describe('Module: handleUnits', () => {
 			});
 		});
 
-		describe('units.excessive', () => {
+		describe('units.excessive.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.excessive).toEqual(0);
+				expect(report.units.excessive.total).toBe(0);
 			});
 		});
 
-		describe('units.excessiveUsage', () => {
+		describe('units.excessive.unique', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.excessiveUsage).toEqual({});
+				expect(report.units.excessive.unique).toBe(0);
+			});
+		});
+
+		describe('units.excessive.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.excessive.usage).toEqual({});
 			});
 		});
 

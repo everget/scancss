@@ -323,8 +323,11 @@ export default function scancss(src, options) {
 				total: 0,
 				unique: 0,
 				usage: {},
-				excessive: 0,
-				excessiveUsage: {},
+				excessive: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 			},
 			variables: {
 				total: 0,
@@ -474,7 +477,12 @@ export default function scancss(src, options) {
 			report.functions.unique = Object.keys(report.functions.usage).length;
 			report.filters.unique = Object.keys(report.filters.usage).length;
 			report.gradients.unique = Object.keys(report.gradients.usage).length;
-			report.units.unique = Object.keys(report.units.usage).length;
+
+			if (scancssOptions.collectUnitsData) {
+				report.units.unique = Object.keys(report.units.usage).length;
+				report.units.excessive.unique = Object.keys(report.units.excessive.usage).length;
+			}
+
 			report.vendorPrefixes.unique = Object.keys(report.vendorPrefixes.usage).length;
 			report.variables.unique = Object.keys(report.variables.usage).length;
 
