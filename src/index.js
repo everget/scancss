@@ -494,22 +494,33 @@ export default function scancss(src, options) {
 			report.zIndices.unique = Object.keys(report.zIndices.usage).length;
 			report.borderRadiuses.unique = Object.keys(report.borderRadiuses.usage).length;
 			report.letterSpacings.unique = Object.keys(report.letterSpacings.usage).length;
-			report.fontSizes.unique = Object.keys(report.fontSizes.usage).length;
-			report.lineHeights.unique = Object.keys(report.lineHeights.usage).length;
-			report.fontFamilies.unique = Object.keys(report.fontFamilies.usage).length;
-			report.functions.unique = Object.keys(report.functions.usage).length;
-			report.filters.unique = Object.keys(report.filters.usage).length;
-			report.gradients.unique = Object.keys(report.gradients.usage).length;
+
+			if (scancssOptions.collectFontsData) {
+				report.fontSizes.unique = Object.keys(report.fontSizes.usage).length;
+				report.lineHeights.unique = Object.keys(report.lineHeights.usage).length;
+				report.fontFamilies.unique = Object.keys(report.fontFamilies.usage).length;
+			}
+
+			if (scancssOptions.collectFunctionsData) {
+				report.functions.unique = Object.keys(report.functions.usage).length;
+			}
+
+			if (scancssOptions.collectFiltersData) {
+				report.filters.unique = Object.keys(report.filters.usage).length;
+			}
+
+			if (scancssOptions.collectGradientsData) {
+				report.gradients.unique = Object.keys(report.gradients.usage).length;
+			}
 
 			if (scancssOptions.collectUnitsData) {
 				report.units.unique = Object.keys(report.units.usage).length;
 				report.units.excessive.unique = Object.keys(report.units.excessive.usage).length;
 			}
 
-			report.vendorPrefixes.unique = Object.keys(report.vendorPrefixes.usage).length;
-			report.vendorPrefixes.unknown.unique = Object.keys(report.vendorPrefixes.unknown.usage).length;
-
-			report.variables.unique = Object.keys(report.variables.usage).length;
+			if (scancssOptions.collectVariablesData) {
+				report.variables.unique = Object.keys(report.variables.usage).length;
+			}
 
 			if (scancssOptions.collectDataUrisData) {
 				report.dataUris.unique = Object.keys(report.dataUris.usage).length;
@@ -526,14 +537,25 @@ export default function scancss(src, options) {
 				);
 			}
 
-			report.colors.unique = Object.keys(report.colors.usage).length;
-			report.backgroundColors.unique = Object.keys(report.backgroundColors.usage).length;
-			report.allColors.unique = Object.keys(report.allColors.usage).length;
+			if (scancssOptions.collectColorsData) {
+				report.colors.unique = Object.keys(report.colors.usage).length;
+			}
+
+			if (scancssOptions.collectBackgroundColorsData) {
+				report.backgroundColors.unique = Object.keys(report.backgroundColors.usage).length;
+			}
+
+			if (scancssOptions.collectAllColorsData) {
+				report.allColors.unique = Object.keys(report.allColors.usage).length;
+			}
 
 			if (scancssOptions.collectTransitionsAndAnimationsData) {
 				report.animations.unique = Object.keys(report.animations.usage).length;
 			}
 		}
+
+		report.vendorPrefixes.unique = Object.keys(report.vendorPrefixes.usage).length;
+		report.vendorPrefixes.unknown.unique = Object.keys(report.vendorPrefixes.unknown.usage).length;
 
 		return report;
 	}
