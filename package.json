@@ -18,6 +18,7 @@
     "test:converters": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/converters/**/*.spec.js\"",
     "test:handlers": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/handlers/**/*.spec.js\"",
     "test:predicates": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/predicates/**/*.spec.js\"",
+    "test:index": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/index.spec.js\"",
     "travis:test": "yarn cover:clean && yarn cover:all --ci $JEST",
     "travis:lint": "yarn lint",
     "appveyor:test": "yarn cover:clean && yarn cover:all --ci %JEST%"

@@ -50,7 +50,7 @@ describe('Module: calculateSpecificity', () => {
 	});
 
 	describe('PseudoClass selector', () => {
-		describe('sample', () => {
+		describe(':hover', () => {
 			const selector = {
 				type: 'pseudo',
 				value: ':hover',
@@ -88,14 +88,28 @@ describe('Module: calculateSpecificity', () => {
 	});
 
 	describe('PseudoElement selector', () => {
-		const selector = {
-			type: 'pseudo',
-			value: '::before',
-		};
+		describe('::before', () => {
+			const selector = {
+				type: 'pseudo',
+				value: '::before',
+			};
 
-		const expectedReturn = [0, 0, 1];
-		it(`should return ${expectedReturn}`, () => {
-			expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+			const expectedReturn = [0, 0, 1];
+			it(`should return ${expectedReturn}`, () => {
+				expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+			});
+		});
+
+		describe('::-moz-placeholder', () => {
+			const selector = {
+				type: 'pseudo',
+				value: '::-moz-placeholder',
+			};
+
+			const expectedReturn = [0, 0, 1];
+			it(`should return ${expectedReturn}`, () => {
+				expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+			});
 		});
 	});
 

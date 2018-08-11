@@ -425,12 +425,19 @@ export default function scancss(src, options) {
 				),
 				roundDivision(
 					report.selectors.specificity.total[1],
-					(report.selectors.baseUsage.attribute + report.selectors.baseUsage.class + report.selectors.baseUsage.pseudoClass) || 0,
+					(
+						(report.selectors.baseUsage.attribute || 0) +
+						(report.selectors.baseUsage.class || 0) +
+						(report.selectors.baseUsage.pseudoClass || 0)
+					),
 					2
 				),
 				roundDivision(
 					report.selectors.specificity.total[2],
-					(report.selectors.baseUsage.tag + report.selectors.baseUsage.pseudoElement) || 0,
+					(
+						(report.selectors.baseUsage.tag || 0) +
+						(report.selectors.baseUsage.pseudoElement || 0)
+					),
 					2
 				),
 			];

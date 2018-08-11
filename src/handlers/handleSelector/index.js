@@ -3,6 +3,7 @@ import parser from 'postcss-selector-parser';
 import { cssPseudoClasses } from '../../constants/cssPseudoClasses';
 import { cssPseudoElements } from '../../constants/cssPseudoElements';
 import { rePrefixedString } from '../../constants/rePrefixedString';
+import { reLeadingColons } from '../../constants/reLeadingColons';
 import { calculateSpecificity } from '../../calculators/calculateSpecificity';
 import { compareSpecificities } from '../../calculators/compareSpecificities';
 import { countUsage } from '../../calculators/countUsage';
@@ -33,8 +34,6 @@ function isAllowedSelectorType(type) {
 		'universal'
 	].includes(type);
 }
-
-const reLeadingColons = /^:{1,2}/;
 
 function countSelectors(selectors, report, options) {
 	let tmpSpecificity = [0, 0, 0];

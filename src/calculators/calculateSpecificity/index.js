@@ -1,9 +1,11 @@
 import { cssPseudoClasses } from '../../constants/cssPseudoClasses';
 import { cssPseudoElements } from '../../constants/cssPseudoElements';
+import { reLeadingColons } from '../../constants/reLeadingColons';
 
 /**
  * https://www.w3.org/TR/selectors-3/#specificity
  */
+
 export function calculateSpecificity(selector) {
 	if (selector.type === 'id') {
 		return [1, 0, 0];
@@ -18,7 +20,7 @@ export function calculateSpecificity(selector) {
 	}
 
 	if (selector.type === 'pseudo') {
-		const pseudoName = selector.value.split(/::?/)[1];
+		const pseudoName = selector.value.replace(reLeadingColons, '');
 
 		if (cssPseudoClasses.includes(pseudoName)) {
 			/**

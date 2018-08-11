@@ -219,14 +219,14 @@ describe('Module: scancss', () => {
 					longestByteLengthSelector: '::-moz-placeholder',
 					averageByteLength: 11.25,
 					specificity: {
-						total: [0, 4, 0],
+						total: [0, 3, 1],
 						highest: [0, 1, 0],
 						highestSelector: '.selector',
-						average: [0, 0, 0],
+						average: [0, 1, 1],
 						graphData: [
 							[0, 1, 0],
 							[0, 1, 0],
-							[0, 1, 0],
+							[0, 0, 1],
 							[0, 1, 0],
 						],
 					},

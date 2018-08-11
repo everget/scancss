@@ -21,7 +21,6 @@ export const cssMozPseudoClasses = [
 	'-moz-lwtheme',
 	'-moz-native-anonymous',
 	'-moz-only-whitespace',
-	'-moz-placeholder',
 	'-moz-read-only',
 	'-moz-read-write',
 	'-moz-submit-invalid',
