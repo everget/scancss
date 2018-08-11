@@ -42,7 +42,15 @@ function countDataUris(decl, report) {
 		.forEach((urlArg) => {
 			if (urlArg.match(reImageDataUri) !== null) {
 				report.dataUris.total++;
-				report.dataUris.totalByteLength += Buffer.byteLength(urlArg, 'utf8');
+
+				const dataUriByteLength = Buffer.byteLength(urlArg, 'utf8');
+				report.dataUris.length.total += dataUriByteLength;
+
+				if (report.dataUris.length.longest < dataUriByteLength) {
+					report.dataUris.length.longest = dataUriByteLength;
+					report.dataUris.length.longestDataUri = urlArg;
+				}
+
 				countUsage(urlArg, report.dataUris.usage);
 			}
 		});

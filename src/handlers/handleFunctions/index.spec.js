@@ -100,8 +100,12 @@ describe('Module: handleFunctions', () => {
 			dataUris: {
 				total: 0,
 				unique: 0,
-				totalByteLength: 0,
-				averageByteLength: 0,
+				length: {
+					total: 0,
+					longest: 0,
+					longestDataUri: null,
+					average: 0,
+				},
 				sizeRatio: 0,
 				usage: {},
 			},
@@ -279,9 +283,27 @@ describe('Module: handleFunctions', () => {
 			});
 		});
 
-		describe('dataUris.totalByteLength', () => {
+		describe('dataUris.length.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.dataUris.totalByteLength).toBe(189);
+				expect(report.dataUris.length.total).toBe(189);
+			});
+		});
+
+		describe('dataUris.length.average', () => {
+			it('should be counted correctly', () => {
+				expect(report.dataUris.length.average).toBe(0);
+			});
+		});
+
+		describe('dataUris.length.longest', () => {
+			it('should be counted correctly', () => {
+				expect(report.dataUris.length.longest).toBe(95);
+			});
+		});
+
+		describe('dataUris.length.longestDataUri', () => {
+			it('should be counted correctly', () => {
+				expect(report.dataUris.length.longestDataUri).toBe('data:image/jpeg;base64,aGlzIHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1');
 			});
 		});
 

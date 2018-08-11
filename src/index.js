@@ -313,8 +313,12 @@ export default function scancss(src, options) {
 			dataUris: {
 				total: 0,
 				unique: 0,
-				totalByteLength: 0,
-				averageByteLength: 0,
+				length: {
+					total: 0,
+					longest: 0,
+					longestDataUri: null,
+					average: 0,
+				},
 				sizeRatio: 0,
 				usage: {},
 			},
@@ -505,17 +509,20 @@ export default function scancss(src, options) {
 
 			report.variables.unique = Object.keys(report.variables.usage).length;
 
-			report.dataUris.unique = Object.keys(report.dataUris.usage).length;
-			report.dataUris.sizeRatio = roundDivision(
-				report.dataUris.totalByteLength,
-				report.styleSheetSize.sourceByteLength
-			);
+			if (scancssOptions.collectDataUrisData) {
+				report.dataUris.unique = Object.keys(report.dataUris.usage).length;
 
-			report.dataUris.averageByteLength = roundDivision(
-				report.dataUris.totalByteLength,
-				report.dataUris.total,
-				2
-			);
+				report.dataUris.length.average = roundDivision(
+					report.dataUris.length.total,
+					report.dataUris.total,
+					2
+				);
+
+				report.dataUris.sizeRatio = roundDivision(
+					report.dataUris.length.total,
+					report.styleSheetSize.sourceByteLength
+				);
+			}
 
 			report.colors.unique = Object.keys(report.colors.usage).length;
 			report.backgroundColors.unique = Object.keys(report.backgroundColors.usage).length;

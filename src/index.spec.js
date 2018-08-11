@@ -590,8 +590,12 @@ describe('Module: scancss', () => {
 				expect(report.dataUris).toEqual({
 					total: 0,
 					unique: 0,
-					totalByteLength: 0,
-					averageByteLength: 0,
+					length: {
+						total: 0,
+						longest: 0,
+						longestDataUri: null,
+						average: 0,
+					},
 					sizeRatio: 0,
 					usage: {},
 				});
