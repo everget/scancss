@@ -38,10 +38,13 @@ describe('Module: handleComment', () => {
 		report = {
 			comments: {
 				total: 0,
-				totalByteLength: 0,
-				longestByteLength: 0,
-				shortestByteLength: Number.MAX_SAFE_INTEGER,
-				averageByteLength: 0,
+				length: {
+					total: 0,
+					longest: 0,
+					shortest: Number.MAX_SAFE_INTEGER,
+					average: 0,
+				},
+				sizeRatio: 0,
 			},
 		};
 
@@ -61,27 +64,33 @@ describe('Module: handleComment', () => {
 		});
 	});
 
-	describe('comments.totalByteLength', () => {
+	describe('comments.length.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.comments.totalByteLength).toBe(879);
+			expect(report.comments.length.total).toBe(879);
 		});
 	});
 
-	describe('comments.longestByteLength', () => {
+	describe('comments.length.longest', () => {
 		it('should be counted correctly', () => {
-			expect(report.comments.longestByteLength).toBe(490);
+			expect(report.comments.length.longest).toBe(490);
 		});
 	});
 
-	describe('comments.shortestByteLength', () => {
+	describe('comments.length.shortest', () => {
 		it('should be counted correctly', () => {
-			expect(report.comments.shortestByteLength).toBe(12);
+			expect(report.comments.length.shortest).toBe(12);
 		});
 	});
 
-	describe('comments.averageByteLength', () => {
+	describe('comments.length.average', () => {
 		it('should be counted correctly', () => {
-			expect(report.comments.averageByteLength).toBe(0);
+			expect(report.comments.length.average).toBe(0);
+		});
+	});
+
+	describe('comments.sizeRatio', () => {
+		it('should be counted correctly', () => {
+			expect(report.comments.sizeRatio).toBe(0);
 		});
 	});
 });

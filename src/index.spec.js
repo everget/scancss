@@ -102,10 +102,12 @@ describe('Module: scancss', () => {
 			it('should be counted correctly', () => {
 				expect(report.comments).toEqual({
 					total: 1,
-					totalByteLength: 32,
-					longestByteLength: 32,
-					shortestByteLength: 32,
-					averageByteLength: 32,
+					length: {
+						total: 32,
+						longest: 32,
+						shortest: 32,
+						average: 32,
+					},
 					sizeRatio: 0.03524229074889868,
 				});
 			});

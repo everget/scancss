@@ -54,10 +54,12 @@ export default function scancss(src, options) {
 			},
 			comments: {
 				total: 0,
-				totalByteLength: 0,
-				longestByteLength: 0,
-				shortestByteLength: Number.MAX_SAFE_INTEGER,
-				averageByteLength: 0,
+				length: {
+					total: 0,
+					longest: 0,
+					shortest: Number.MAX_SAFE_INTEGER,
+					average: 0,
+				},
 				sizeRatio: 0,
 			},
 			atRules: {
@@ -389,12 +391,12 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.collectCommentsData) {
 			report.comments.sizeRatio = roundDivision(
-				report.comments.totalByteLength,
+				report.comments.length.total,
 				report.styleSheetSize.sourceByteLength
 			);
 
-			report.comments.averageByteLength = roundDivision(
-				report.comments.totalByteLength,
+			report.comments.length.average = roundDivision(
+				report.comments.length.total,
 				report.comments.total,
 				2
 			);

@@ -3,13 +3,13 @@ export function handleComment(comment, report) {
 
 	const commentLength = Buffer.byteLength(comment.toString(), 'utf8');
 
-	report.comments.totalByteLength += commentLength;
+	report.comments.length.total += commentLength;
 
-	if (report.comments.longestByteLength < commentLength) {
-		report.comments.longestByteLength = commentLength;
+	if (report.comments.length.longest < commentLength) {
+		report.comments.length.longest = commentLength;
 	}
 
-	if (report.comments.shortestByteLength > commentLength) {
-		report.comments.shortestByteLength = commentLength;
+	if (report.comments.length.shortest > commentLength) {
+		report.comments.length.shortest = commentLength;
 	}
 }
