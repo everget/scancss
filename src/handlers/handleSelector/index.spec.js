@@ -78,12 +78,14 @@ describe('Module: handleSelector', () => {
 				longestByteLength: 0,
 				longestByteLengthSelector: null,
 				averageByteLength: 0,
-				totalSpecificity: [0, 0, 0],
-				averageSpecificity: [0, 0, 0],
-				highestSpecificity: [0, 0, 0],
-				highestSpecificitySelector: null,
+				specificity: {
+					total: [0, 0, 0],
+					highest: [0, 0, 0],
+					highestSelector: null,
+					average: [0, 0, 0],
+					graphData: [],
+				},
 				sizeRatio: 0,
-				specificityGraphData: [],
 				usage: {},
 			},
 			vendorPrefixes: {
@@ -212,39 +214,9 @@ describe('Module: handleSelector', () => {
 		});
 	});
 
-	describe('selectors.totalSpecificity', () => {
-		it('should be counted correctly', () => {
-			expect(report.selectors.totalSpecificity).toEqual([4, 19, 30]);
-		});
-	});
-
-	describe('selectors.averageSpecificity', () => {
-		it('should be counted correctly', () => {
-			expect(report.selectors.averageSpecificity).toEqual([0, 0, 0]);
-		});
-	});
-
-	describe('selectors.highestSpecificity', () => {
-		it('should be counted correctly', () => {
-			expect(report.selectors.highestSpecificity).toEqual([2, 1, 3]);
-		});
-	});
-
-	describe('selectors.highestSpecificitySelector', () => {
-		it('should be counted correctly', () => {
-			expect(report.selectors.highestSpecificitySelector).toBe('* body #home div #warning p .message');
-		});
-	});
-
 	describe('selectors.sizeRatio', () => {
 		it('should be counted correctly', () => {
 			expect(report.selectors.sizeRatio).toBe(0);
-		});
-	});
-
-	describe('selectors.specificityGraphData', () => {
-		it('should be counted correctly', () => {
-			expect(report.selectors.specificityGraphData).toEqual([]);
 		});
 	});
 
@@ -273,6 +245,38 @@ describe('Module: handleSelector', () => {
 				'ul #nav li .active a': 1,
 				'ul li': 1,
 				'ul ol li .red': 1,
+			});
+		});
+	});
+
+	describe('Handling specificity', () => {
+		describe('selectors.specificity.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.specificity.total).toEqual([4, 19, 30]);
+			});
+		});
+
+		describe('selectors.specificity.average', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.specificity.average).toEqual([0, 0, 0]);
+			});
+		});
+
+		describe('selectors.specificity.highest', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.specificity.highest).toEqual([2, 1, 3]);
+			});
+		});
+
+		describe('selectors.specificity.highestSelector', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.specificity.highestSelector).toBe('* body #home div #warning p .message');
+			});
+		});
+
+		describe('selectors.specificity.graphData', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.specificity.graphData).toEqual([]);
 			});
 		});
 	});

@@ -373,17 +373,14 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **averageByteLength** - `number`
 
-* **totalSpecificity** - `[number, number, number]`
-
-* **averageSpecificity** - `[number, number, number]`
-
-* **highestSpecificity** - `[number, number, number]`
-
-* **highestSpecificitySelector** - `string | null`
+* **specificity** - `Record<string, [number, number, number] | string | null |Array<[number, number, number]>>`
+	* **total** - `[number, number, number]`
+	* **average** - `[number, number, number]`
+	* **highest** - `[number, number, number]`
+	* **highestSelector** - `string | null`
+	* **graphData** - `Array<[number, number, number]>`
 
 * **sizeRatio** - `number`
-
-* **specificityGraphData** - `Array<[number, number, number]>`
 
 #### declarations
 

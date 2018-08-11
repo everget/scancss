@@ -76,20 +76,20 @@ function countSelectors(selectors, report, options) {
 			const specificity = calculateSpecificity(selector);
 
 			tmpSpecificity = mergeSpecificities(tmpSpecificity, specificity);
-			report.selectors.totalSpecificity = mergeSpecificities(
-				report.selectors.totalSpecificity,
+			report.selectors.specificity.total = mergeSpecificities(
+				report.selectors.specificity.total,
 				specificity
 			);
 
 			if (options.collectSpecificityGraphData) {
-				report.selectors.specificityGraphData.push(specificity);
+				report.selectors.specificity.graphData.push(specificity);
 			}
 		}
 	});
 
-	if (compareSpecificities(report.selectors.highestSpecificity, tmpSpecificity) === 1) {
-		report.selectors.highestSpecificity = tmpSpecificity;
-		report.selectors.highestSpecificitySelector = String(selectors);
+	if (compareSpecificities(report.selectors.specificity.highest, tmpSpecificity) === 1) {
+		report.selectors.specificity.highest = tmpSpecificity;
+		report.selectors.specificity.highestSelector = String(selectors);
 	}
 
 	if (baseSelectorsWithoutCombinators > options.selectorComplexityThreshold) {

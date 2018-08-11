@@ -122,12 +122,14 @@ export default function scancss(src, options) {
 				longestByteLength: 0,
 				longestByteLengthSelector: null,
 				averageByteLength: 0,
-				totalSpecificity: [0, 0, 0],
-				averageSpecificity: [0, 0, 0],
-				highestSpecificity: [0, 0, 0],
-				highestSpecificitySelector: null,
+				specificity: {
+					total: [0, 0, 0],
+					highest: [0, 0, 0],
+					highestSelector: null,
+					average: [0, 0, 0],
+					graphData: [],
+				},
 				sizeRatio: 0,
-				specificityGraphData: [],
 				usage: {},
 			},
 			declarations: {
@@ -415,19 +417,19 @@ export default function scancss(src, options) {
 				2
 			);
 
-			report.selectors.averageSpecificity = [
+			report.selectors.specificity.average = [
 				roundDivision(
-					report.selectors.totalSpecificity[0],
+					report.selectors.specificity.total[0],
 					report.selectors.baseUsage.id || 0,
 					2
 				),
 				roundDivision(
-					report.selectors.totalSpecificity[1],
+					report.selectors.specificity.total[1],
 					(report.selectors.baseUsage.attribute + report.selectors.baseUsage.class + report.selectors.baseUsage.pseudoClass) || 0,
 					2
 				),
 				roundDivision(
-					report.selectors.totalSpecificity[2],
+					report.selectors.specificity.total[2],
 					(report.selectors.baseUsage.tag + report.selectors.baseUsage.pseudoElement) || 0,
 					2
 				),
