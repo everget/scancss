@@ -23,7 +23,7 @@ function countFunctions(decl, report, options) {
 				handleVendorPrefix(func, report);
 			}
 
-			if (options.collectFiltersData && cssFilterFunctions.includes(func)) {
+			if (cssFilterFunctions.includes(func) && options.filters) {
 				report.filters.total++;
 				countUsage(func, report.filters.usage);
 			}
@@ -92,22 +92,22 @@ export function handleFunctions(decl, report, options) {
 		countFunctions(decl, report, options);
 
 		if (
-			options.collectDataUrisData &&
-			reUrlFunctionWithArg.test(decl.value)
+			reUrlFunctionWithArg.test(decl.value) &&
+			options.dataUris
 		) {
 			countDataUris(decl, report);
 		}
 
 		if (
-			options.collectGradientsData &&
-			reGradient.test(decl.value)
+			reGradient.test(decl.value) &&
+			options.gradients
 		) {
 			countGradients(decl, report);
 		}
 
 		if (
-			options.collectTransitionsAndAnimationsData &&
-			reCubicBezier.test(decl.value)
+			reCubicBezier.test(decl.value) &&
+			options.transitionsAndAnimations
 		) {
 			countCubicBeziers(decl, report, options);
 		}

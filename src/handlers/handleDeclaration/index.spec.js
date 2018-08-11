@@ -3,16 +3,23 @@ import { handleDeclaration } from '.';
 
 describe('Module: handleDeclaration', () => {
 	const options = {
-		collectEngineTriggerProperties: true,
-		collectColorsData: false,
-		collectBackgroundColorsData: false,
-		collectAllColorsData: false,
-		collectFontsData: false,
-		collectFunctionsData: false,
-		collectVariablesData: false,
-		collectUnitsData: false,
-		collectTransitionsAndAnimationsData: false,
-		collectPerformanceHacksData: false,
+		properties: true,
+		engineTriggerProperties: true,
+		displays: true,
+		positions: true,
+		zIndices: true,
+		floats: true,
+		borderRadiuses: true,
+		letterSpacings: true,
+		colors: false,
+		backgroundColors: false,
+		allColors: false,
+		fonts: false,
+		functions: false,
+		variables: false,
+		units: false,
+		transitionsAndAnimations: false,
+		performanceHacks: false,
 	};
 
 	const src = `

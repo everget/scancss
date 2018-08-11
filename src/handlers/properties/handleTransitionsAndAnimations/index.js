@@ -28,7 +28,8 @@ function countNamedTimingFunctions(decl, report) {
 		.comma(decl.value)
 		.forEach((func) => {
 			if (reCubicBezier.test(func) === false) {
-				if (cssNamedTimingFunctions.includes(func) ||
+				if (
+					cssNamedTimingFunctions.includes(func) ||
 					cssExplicitDefaultingKeywords.includes(func)
 				) {
 					countUsage(func, reportSection.timingFunctions);

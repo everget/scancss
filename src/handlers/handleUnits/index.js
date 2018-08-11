@@ -16,8 +16,8 @@ const excludedUnitlessProps = [
 	'font-family',
 ];
 
-export function handleUnits(decl, report) {
-	if (excludedUnitlessProps.includes(decl.prop)) {
+export function handleUnits(decl, report, options) {
+	if (excludedUnitlessProps.includes(decl.prop) && options.properties) {
 		report.properties.unitless++;
 		return;
 	}
@@ -41,7 +41,11 @@ export function handleUnits(decl, report) {
 				report.units.total++;
 
 				/** Count negative margins */
-				if (decl.prop.startsWith('margin') && match.startsWith('-')) {
+				if (
+					decl.prop.startsWith('margin') &&
+					match.startsWith('-') &&
+					options.properties
+				) {
 					report.properties.negativeMargins++;
 				}
 
@@ -57,7 +61,7 @@ export function handleUnits(decl, report) {
 				const unit = match.replace(/[-.0-9]+/g, '');
 				countUsage(unit, report.units.usage);
 			});
-	} else {
+	} else if (options.properties) {
 		report.properties.unitless++;
 	}
 }

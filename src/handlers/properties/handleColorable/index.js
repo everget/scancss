@@ -11,115 +11,129 @@ import { countUsage } from '../../../calculators/countUsage';
 import { restoreFullHex } from '../../../converters/restoreFullHex';
 import { removeExtraSpaces } from '../../../converters/removeExtraSpaces';
 
+function countColorInSection(color, reportSection) {
+	reportSection.total++;
+	countUsage(color, reportSection.usage);
+}
+
 /**
  * https://www.w3.org/TR/css-color-3/#currentcolor
  * https://www.w3.org/TR/css-color-4/#currentcolor-color
  */
 const reCurrentColor = /\bcurrent[cC]olor\b/g;
-
-function countCurrentColors(prop, match, report, options) {
-	const reportSection = prop.startsWith('background')
-		? report.backgroundColors
-		: report.colors;
-
-	match.forEach((keyword) => {
-		reportSection.total++;
-		reportSection.currentColorKeyword++;
-		countUsage(keyword, reportSection.usage);
-
-		if (options.collectAllColorsData) {
-			report.allColors.total++;
-			report.allColors.currentColorKeyword++;
-			countUsage(keyword, report.allColors.usage);
-		}
-	});
-}
-
 const reTransparentColor = /\btransparent\b/g;
 
-function countTransparentColors(prop, match, report, options) {
-	const reportSection = prop.startsWith('background')
-		? report.backgroundColors
-		: report.colors;
+function countKeywordColors(prop, match, report, keyword, options) {
+	const reportSectionName = keyword + 'Keyword';
 
-	match.forEach((keyword) => {
-		reportSection.total++;
-		reportSection.transparentKeyword++;
-		countUsage(keyword, reportSection.usage);
+	if (prop.startsWith('background') && options.backgroundColors) {
+		match.forEach((matchedKeyword) => {
+			countColorInSection(keyword, report.backgroundColors);
+			report.backgroundColors[reportSectionName]++;
+		});
+	} else if (prop.startsWith('background') === false && options.colors) {
+		match.forEach((matchedKeyword) => {
+			countColorInSection(keyword, report.colors);
+			report.colors[reportSectionName]++;
+		});
+	}
 
-		if (options.collectAllColorsData) {
-			report.allColors.total++;
-			report.allColors.transparentKeyword++;
-			countUsage(keyword, report.allColors.usage);
-		}
-	});
+	if (options.allColors) {
+		match.forEach((matchedKeyword) => {
+			if (options.allColors) {
+				countColorInSection(keyword, report.allColors);
+				report.allColors[reportSectionName]++;
+			}
+		});
+	}
 }
 
 function countNamedColors(prop, match, report, options) {
-	const reportSection = prop.startsWith('background')
-		? report.backgroundColors
-		: report.colors;
+	if (prop.startsWith('background') && options.backgroundColors) {
+		match.forEach((color) => {
+			/** CSS named color declarations are not case sensitive */
+			const lowerCasedColor = color.toLowerCase();
 
-	match.forEach((color) => {
-		reportSection.total++;
+			countColorInSection(lowerCasedColor, report.backgroundColors);
+			countUsage(lowerCasedColor, report.backgroundColors.named);
+		});
+	} else if (prop.startsWith('background') === false && options.colors) {
+		match.forEach((color) => {
+			/** CSS named color declarations are not case sensitive */
+			const lowerCasedColor = color.toLowerCase();
 
-		/** Color name declaration is not case sensitive */
-		const lowerCasedColor = color.toLowerCase();
-		countUsage(lowerCasedColor, reportSection.usage);
-		countUsage(lowerCasedColor, reportSection.named);
+			countColorInSection(lowerCasedColor, report.colors);
+			countUsage(lowerCasedColor, report.colors.named);
+		});
+	}
 
-		if (options.collectAllColorsData) {
-			report.allColors.total++;
-			countUsage(lowerCasedColor, report.allColors.usage);
+	if (options.allColors) {
+		match.forEach((color) => {
+			/** CSS named color declarations are not case sensitive */
+			const lowerCasedColor = color.toLowerCase();
+
+			countColorInSection(lowerCasedColor, report.allColors);
 			countUsage(lowerCasedColor, report.allColors.named);
-		}
-	});
+		});
+	}
+}
+
+function normalizeModelColor(color) {
+	if (color.startsWith('#')) {
+		return color.length === 4 || color.length === 5
+			? restoreFullHex(color).toLowerCase()
+			: color.toLowerCase();
+	}
+
+	return removeExtraSpaces(color);
 }
 
 function countColorModels(prop, match, report, model, options) {
-	const reportSection = prop.startsWith('background')
-		? report.backgroundColors
-		: report.colors;
+	if (prop.startsWith('background') && options.backgroundColors) {
+		match.forEach((color) => {
+			const normalizedColor = normalizeModelColor(color);
 
-	match.forEach((color) => {
-		let normalizedColor;
+			countColorInSection(normalizedColor, report.backgroundColors);
+			countUsage(model, report.backgroundColors.models);
+		});
+	} else if (prop.startsWith('background') === false && options.colors) {
+		match.forEach((color) => {
+			const normalizedColor = normalizeModelColor(color);
 
-		if (color.startsWith('#')) {
-			normalizedColor = color.length === 4 || color.length === 5
-				? restoreFullHex(color).toLowerCase()
-				: color.toLowerCase();
-		} else {
-			normalizedColor = removeExtraSpaces(color);
-		}
+			countColorInSection(normalizedColor, report.colors);
+			countUsage(model, report.colors.models);
+		});
+	}
 
-		reportSection.total++;
-		countUsage(normalizedColor, reportSection.usage);
-		countUsage(model, reportSection.models);
+	if (options.allColors) {
+		match.forEach((color) => {
+			const normalizedColor = normalizeModelColor(color);
 
-		if (options.collectAllColorsData) {
-			report.allColors.total++;
-			countUsage(normalizedColor, report.allColors.usage);
+			countColorInSection(normalizedColor, report.allColors);
 			countUsage(model, report.allColors.models);
-		}
-	});
+		});
+	}
 }
 
 function countSystemColors(prop, match, report, options) {
-	const reportSection = prop.startsWith('background')
-		? report.backgroundColors
-		: report.colors;
+	if (prop.startsWith('background') && options.backgroundColors) {
+		match.forEach((color) => {
+			countColorInSection(color, report.backgroundColors);
+			countUsage(color, report.backgroundColors.system);
+		});
+	} else if (prop.startsWith('background') === false && options.colors) {
+		match.forEach((color) => {
+			countColorInSection(color, report.colors);
+			countUsage(color, report.colors.system);
+		});
+	}
 
-	match.forEach((color) => {
-		reportSection.total++;
-		countUsage(color, reportSection.usage);
-		countUsage(color, reportSection.system);
-
-		if (options.collectAllColorsData) {
-			report.allColors.total++;
-			countUsage(color, report.allColors.usage);
+	if (options.allColors) {
+		match.forEach((color) => {
+			countColorInSection(color, report.allColors);
 			countUsage(color, report.allColors.system);
-		}
-	});
+		});
+	}
 }
 
 export function handleColorable(decl, report, options) {
@@ -127,19 +141,21 @@ export function handleColorable(decl, report, options) {
 	const propValue = decl.value;
 
 	if (reCurrentColor.test(propValue)) {
-		countCurrentColors(
+		countKeywordColors(
 			prop,
 			propValue.match(reCurrentColor),
 			report,
+			'currentColor',
 			options
 		);
 	}
 
 	if (reTransparentColor.test(propValue)) {
-		countTransparentColors(
+		countKeywordColors(
 			prop,
 			propValue.match(reTransparentColor),
 			report,
+			'transparent',
 			options
 		);
 	}

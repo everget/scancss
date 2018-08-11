@@ -2,6 +2,10 @@ import { parseCss } from '../../converters/parseCss';
 import { handleUnits } from '.';
 
 describe('Module: handleUnits', () => {
+	const options = {
+		properties: true,
+	};
+
 	let report;
 
 	beforeEach(() => {
@@ -107,7 +111,7 @@ describe('Module: handleUnits', () => {
 
 		beforeEach(() => {
 			cssRoot.walkDecls((decl) => {
-				handleUnits(decl, report);
+				handleUnits(decl, report, options);
 			});
 		});
 
@@ -204,7 +208,7 @@ describe('Module: handleUnits', () => {
 
 		beforeEach(() => {
 			cssRoot.walkDecls((decl) => {
-				handleUnits(decl, report);
+				handleUnits(decl, report, options);
 			});
 		});
 
@@ -280,7 +284,7 @@ describe('Module: handleUnits', () => {
 
 		beforeEach(() => {
 			cssRoot.walkDecls((decl) => {
-				handleUnits(decl, report);
+				handleUnits(decl, report, options);
 			});
 		});
 

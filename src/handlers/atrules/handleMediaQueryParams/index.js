@@ -46,7 +46,7 @@ export function handleMediaQueryParams(params, report, options) {
 
 	countUsage(cleanedParams, report.mediaQueries.usage);
 
-	if (options.collectBrowserHacksData) {
+	if (options.browserHacks) {
 		cssMediaBrowserHacks.forEach((hack) => {
 			if (hack.regex.test(cleanedParams)) {
 				cleanedParams

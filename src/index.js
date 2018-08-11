@@ -17,30 +17,37 @@ export default function scancss(src, options) {
 		const scancssOptions = Object.assign(
 			{},
 			{
-				collectStylesheetSizeData: true,
-				collectCommentsData: true,
-				collectAtRulesData: true,
-				collectRulesData: true,
-				collectSelectorsData: true,
-				collectSelectorsUsage: true,
+				stylesheetSize: true,
+				comments: true,
+				atRules: true,
+				rules: true,
+				selectors: true,
+				selectorsUsage: true,
 				selectorComplexityThreshold: 4,
-				collectSpecificityGraphData: false,
-				collectDeclarationsData: true,
-				collectEngineTriggerProperties: true,
-				collectUniqueDeclarationsList: false,
-				collectFontsData: true,
-				collectColorsData: true,
-				collectBackgroundColorsData: true,
-				collectAllColorsData: true,
-				collectTransitionsAndAnimationsData: true,
-				collectFunctionsData: true,
-				collectFiltersData: true,
-				collectGradientsData: true,
-				collectUnitsData: true,
-				collectVariablesData: true,
-				collectDataUrisData: true,
-				collectBrowserHacksData: true,
-				collectPerformanceHacksData: true,
+				specificityGraph: false,
+				declarations: true,
+				properties: true,
+				engineTriggerProperties: true,
+				uniqueDeclarationsList: false,
+				displays: true,
+				positions: true,
+				zIndices: true,
+				floats: true,
+				borderRadiuses: true,
+				letterSpacings: true,
+				fonts: true,
+				colors: true,
+				backgroundColors: true,
+				allColors: true,
+				transitionsAndAnimations: true,
+				functions: true,
+				filters: true,
+				gradients: true,
+				units: true,
+				variables: true,
+				dataUris: true,
+				browserHacks: true,
+				performanceHacks: true,
 			},
 			isPlainObject(options) && Object.keys(options).length > 0
 				? options
@@ -324,13 +331,6 @@ export default function scancss(src, options) {
 				sizeRatio: 0,
 				usage: {},
 			},
-			browserHacks: {
-				total: 0,
-				usage: {
-					supports: {},
-					media: {},
-				},
-			},
 			units: {
 				total: 0,
 				unique: 0,
@@ -357,23 +357,30 @@ export default function scancss(src, options) {
 				},
 				usage: {},
 			},
+			browserHacks: {
+				total: 0,
+				usage: {
+					supports: {},
+					media: {},
+				},
+			},
 		};
 
-		if (scancssOptions.collectStylesheetSizeData) {
+		if (scancssOptions.stylesheetSize) {
 			report.styleSheetSize.source = Buffer.byteLength(src, 'utf8');
 			report.styleSheetSize.gzipSource = gzipSize.sync(src);
 		}
 
 		cssRoot.walk((node) => {
-			if (node.type === 'comment' && scancssOptions.collectCommentsData) {
+			if (node.type === 'comment' && scancssOptions.comments) {
 				handleComment(node, report);
 			}
 
-			if (node.type === 'atrule' && scancssOptions.collectAtRulesData) {
+			if (node.type === 'atrule' && scancssOptions.atRules) {
 				handleAtRule(node, report, scancssOptions);
 			}
 
-			if (node.type === 'rule' && scancssOptions.collectRulesData) {
+			if (node.type === 'rule' && scancssOptions.rules) {
 				handleRule(node, report, scancssOptions);
 			}
 
@@ -383,13 +390,13 @@ export default function scancss(src, options) {
 			if (
 				node.type === 'decl' &&
 				node.parent.name !== 'font-face' &&
-				scancssOptions.collectDeclarationsData
+				scancssOptions.declarations
 			) {
 				handleDeclaration(node, report, scancssOptions);
 			}
 		});
 
-		if (scancssOptions.collectCommentsData) {
+		if (scancssOptions.comments) {
 			report.comments.sizeRatio = roundDivision(
 				report.comments.length.total,
 				report.styleSheetSize.source
@@ -402,14 +409,14 @@ export default function scancss(src, options) {
 			);
 		}
 
-		if (scancssOptions.collectAtRulesData) {
+		if (scancssOptions.atRules) {
 			report.atRules.unknown.unique = Object.keys(report.atRules.unknown.usage).length;
 			report.mediaQueries.unique = Object.keys(report.mediaQueries.usage).length;
 			report.mediaQueries.types.unique = Object.keys(report.mediaQueries.types.usage).length;
 			report.mediaQueries.features.unique = Object.keys(report.mediaQueries.features.usage).length;
 		}
 
-		if (scancssOptions.collectSelectorsData) {
+		if (scancssOptions.selectors) {
 			report.selectors.sizeRatio = roundDivision(
 				report.selectors.length.total,
 				report.styleSheetSize.source
@@ -455,7 +462,7 @@ export default function scancss(src, options) {
 			report.selectors.unique = Object.keys(report.selectors.usage).length;
 		}
 
-		if (scancssOptions.collectDeclarationsData) {
+		if (scancssOptions.declarations) {
 			report.declarations.averagePerRule = roundDivision(
 				report.declarations.total,
 				report.rules.total,
@@ -463,7 +470,7 @@ export default function scancss(src, options) {
 			);
 
 			report.declarations.unique = report.declarations.list.length;
-			if (scancssOptions.collectUniqueDeclarationsList === false) {
+			if (scancssOptions.uniqueDeclarationsList === false) {
 				report.declarations.list.length = 0;
 			}
 
@@ -482,76 +489,95 @@ export default function scancss(src, options) {
 				report.declarations.length.total,
 				report.styleSheetSize.source
 			);
+		}
 
+		if (scancssOptions.properties) {
 			report.properties.unique = Object.keys(report.properties.usage).length;
 			report.properties.explicitDefaultingKeywords.unique = Object.keys(
 				report.properties.explicitDefaultingKeywords.usage
 			).length;
+		}
 
+		if (scancssOptions.displays) {
 			report.displays.unique = Object.keys(report.displays.usage).length;
+		}
+
+		if (scancssOptions.positions) {
 			report.positions.unique = Object.keys(report.positions.usage).length;
-			report.floats.unique = Object.keys(report.floats.usage).length;
+		}
+
+		if (scancssOptions.zIndices) {
 			report.zIndices.unique = Object.keys(report.zIndices.usage).length;
+		}
+
+		if (scancssOptions.floats) {
+			report.floats.unique = Object.keys(report.floats.usage).length;
+		}
+
+		if (scancssOptions.borderRadiuses) {
 			report.borderRadiuses.unique = Object.keys(report.borderRadiuses.usage).length;
+		}
+
+		if (scancssOptions.letterSpacings) {
 			report.letterSpacings.unique = Object.keys(report.letterSpacings.usage).length;
+		}
 
-			if (scancssOptions.collectFontsData) {
-				report.fontSizes.unique = Object.keys(report.fontSizes.usage).length;
-				report.lineHeights.unique = Object.keys(report.lineHeights.usage).length;
-				report.fontFamilies.unique = Object.keys(report.fontFamilies.usage).length;
-			}
+		if (scancssOptions.fonts) {
+			report.fontSizes.unique = Object.keys(report.fontSizes.usage).length;
+			report.lineHeights.unique = Object.keys(report.lineHeights.usage).length;
+			report.fontFamilies.unique = Object.keys(report.fontFamilies.usage).length;
+		}
 
-			if (scancssOptions.collectFunctionsData) {
-				report.functions.unique = Object.keys(report.functions.usage).length;
-			}
+		if (scancssOptions.functions) {
+			report.functions.unique = Object.keys(report.functions.usage).length;
+		}
 
-			if (scancssOptions.collectFiltersData) {
-				report.filters.unique = Object.keys(report.filters.usage).length;
-			}
+		if (scancssOptions.filters) {
+			report.filters.unique = Object.keys(report.filters.usage).length;
+		}
 
-			if (scancssOptions.collectGradientsData) {
-				report.gradients.unique = Object.keys(report.gradients.usage).length;
-			}
+		if (scancssOptions.gradients) {
+			report.gradients.unique = Object.keys(report.gradients.usage).length;
+		}
 
-			if (scancssOptions.collectUnitsData) {
-				report.units.unique = Object.keys(report.units.usage).length;
-				report.units.excessive.unique = Object.keys(report.units.excessive.usage).length;
-			}
+		if (scancssOptions.units) {
+			report.units.unique = Object.keys(report.units.usage).length;
+			report.units.excessive.unique = Object.keys(report.units.excessive.usage).length;
+		}
 
-			if (scancssOptions.collectVariablesData) {
-				report.variables.unique = Object.keys(report.variables.usage).length;
-			}
+		if (scancssOptions.variables) {
+			report.variables.unique = Object.keys(report.variables.usage).length;
+		}
 
-			if (scancssOptions.collectDataUrisData) {
-				report.dataUris.unique = Object.keys(report.dataUris.usage).length;
+		if (scancssOptions.dataUris) {
+			report.dataUris.unique = Object.keys(report.dataUris.usage).length;
 
-				report.dataUris.length.average = roundDivision(
-					report.dataUris.length.total,
-					report.dataUris.total,
-					2
-				);
+			report.dataUris.length.average = roundDivision(
+				report.dataUris.length.total,
+				report.dataUris.total,
+				2
+			);
 
-				report.dataUris.sizeRatio = roundDivision(
-					report.dataUris.length.total,
-					report.styleSheetSize.source
-				);
-			}
+			report.dataUris.sizeRatio = roundDivision(
+				report.dataUris.length.total,
+				report.styleSheetSize.source
+			);
+		}
 
-			if (scancssOptions.collectColorsData) {
-				report.colors.unique = Object.keys(report.colors.usage).length;
-			}
+		if (scancssOptions.colors) {
+			report.colors.unique = Object.keys(report.colors.usage).length;
+		}
 
-			if (scancssOptions.collectBackgroundColorsData) {
-				report.backgroundColors.unique = Object.keys(report.backgroundColors.usage).length;
-			}
+		if (scancssOptions.backgroundColors) {
+			report.backgroundColors.unique = Object.keys(report.backgroundColors.usage).length;
+		}
 
-			if (scancssOptions.collectAllColorsData) {
-				report.allColors.unique = Object.keys(report.allColors.usage).length;
-			}
+		if (scancssOptions.allColors) {
+			report.allColors.unique = Object.keys(report.allColors.usage).length;
+		}
 
-			if (scancssOptions.collectTransitionsAndAnimationsData) {
-				report.animations.unique = Object.keys(report.animations.usage).length;
-			}
+		if (scancssOptions.transitionsAndAnimations) {
+			report.animations.unique = Object.keys(report.animations.usage).length;
 		}
 
 		report.vendorPrefixes.unique = Object.keys(report.vendorPrefixes.usage).length;

@@ -3,8 +3,8 @@ import { handleSelector } from '.';
 
 describe('Module: handleSelector', () => {
 	const options = {
-		collectSpecificityGraphData: false,
-		collectSelectorsUsage: true,
+		specificityGraph: false,
+		selectorsUsage: true,
 		selectorComplexityThreshold: 4,
 	};
 

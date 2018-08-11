@@ -3,7 +3,7 @@ import { handleAtRule } from '.';
 
 describe('Module: handleAtRule', () => {
 	const options = {
-		collectBrowserHacksData: true,
+		browserHacks: true,
 	};
 
 	const src = `

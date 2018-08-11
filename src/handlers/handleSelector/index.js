@@ -31,7 +31,7 @@ function isAllowedSelectorType(type) {
 		'id',
 		'pseudo',
 		'tag',
-		'universal'
+		'universal',
 	].includes(type);
 }
 
@@ -80,7 +80,7 @@ function countSelectors(selectors, report, options) {
 				specificity
 			);
 
-			if (options.collectSpecificityGraphData) {
+			if (options.specificityGraph) {
 				report.selectors.specificity.graphData.push(specificity);
 			}
 		}
@@ -99,7 +99,7 @@ function countSelectors(selectors, report, options) {
 export function handleSelector(selector, report, options) {
 	report.selectors.total++;
 
-	if (options.collectSelectorsUsage) {
+	if (options.selectorsUsage) {
 		countUsage(selector, report.selectors.usage);
 	}
 

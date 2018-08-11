@@ -3,7 +3,7 @@ import { handleRule } from '.';
 
 describe('Module: handleRule', () => {
 	const options = {
-		collectSelectorsData: false,
+		selectors: false,
 	};
 
 	const src = `

@@ -13,7 +13,7 @@ export function handleRule(rule, report, options) {
 	 * `to`, `from` and percent values as selectors of the rules
 	 */
 	if (
-		options.collectSelectorsData &&
+		options.selectors &&
 		isKeyframeRuleSelector(rule.selector) === false
 	) {
 		if (report.selectors.maxPerRule < rule.selectors.length) {

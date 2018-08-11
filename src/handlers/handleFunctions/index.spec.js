@@ -3,10 +3,10 @@ import { handleFunctions } from '.';
 
 describe('Module: handleFunctions', () => {
 	const options = {
-		collectTransitionsAndAnimationsData: true,
-		collectFiltersData: true,
-		collectGradientsData: true,
-		collectDataUrisData: true,
+		transitionsAndAnimations: true,
+		filters: true,
+		gradients: true,
+		dataUris: true,
 	};
 
 	const src = `

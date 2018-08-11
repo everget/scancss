@@ -3,7 +3,9 @@ import { handleColorable } from '.';
 
 describe('Module: handleColorable', () => {
 	const options = {
-		collectAllColorsData: true,
+		colors: true,
+		backgroundColors: true,
+		allColors: true,
 	};
 
 	const src = `

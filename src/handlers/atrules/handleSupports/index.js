@@ -4,7 +4,7 @@ import { countUsage } from '../../../calculators/countUsage';
 const cssSupportsBrowserHacks = cssBrowserHacks.filter((hack) => hack.type === 'supports');
 
 export function handleSupports(atRule, report, options) {
-	if (options.collectBrowserHacksData) {
+	if (options.browserHacks) {
 		cssSupportsBrowserHacks.forEach((hack) => {
 			if (hack.regex.test(atRule.params)) {
 				atRule.params

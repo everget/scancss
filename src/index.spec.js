@@ -4,8 +4,8 @@ describe('Module: scancss', () => {
 	let report;
 
 	const options = {
-		collectSpecificityGraphData: true,
-		collectUniqueDeclarationsList: true,
+		specificityGraph: true,
+		uniqueDeclarationsList: true,
 	};
 
 	const src = `
@@ -89,7 +89,7 @@ describe('Module: scancss', () => {
 	});
 
 	describe('Report', () => {
-		describe('styleSheetSize', () => {
+		describe('.styleSheetSize', () => {
 			it('should be counted correctly', () => {
 				expect(report.styleSheetSize).toEqual({
 					source: 908,
@@ -98,7 +98,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('comments', () => {
+		describe('.comments', () => {
 			it('should be counted correctly', () => {
 				expect(report.comments).toEqual({
 					total: 1,
@@ -113,7 +113,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('atRules', () => {
+		describe('.atRules', () => {
 			it('should be counted correctly', () => {
 				expect(report.atRules).toEqual({
 					total: 5,
@@ -137,7 +137,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('mediaQueries', () => {
+		describe('.mediaQueries', () => {
 			it('should be counted correctly', () => {
 				expect(report.mediaQueries).toEqual({
 					total: 1,
@@ -165,7 +165,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('keyframes', () => {
+		describe('.keyframes', () => {
 			it('should be counted correctly', () => {
 				expect(report.keyframes).toEqual({
 					stepsChains: {
@@ -184,7 +184,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('rules', () => {
+		describe('.rules', () => {
 			it('should be counted correctly', () => {
 				expect(report.rules).toEqual({
 					total: 8,
@@ -193,7 +193,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('selectors', () => {
+		describe('.selectors', () => {
 			it('should be counted correctly', () => {
 				expect(report.selectors).toEqual({
 					total: 4,
@@ -243,7 +243,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('declarations', () => {
+		describe('.declarations', () => {
 			it('should be counted correctly', () => {
 				expect(report.declarations).toEqual({
 					total: 19,
@@ -286,7 +286,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('properties', () => {
+		describe('.properties', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties).toEqual({
 					total: 19,
@@ -340,7 +340,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('displays', () => {
+		describe('.displays', () => {
 			it('should be counted correctly', () => {
 				expect(report.displays).toEqual({
 					total: 1,
@@ -352,7 +352,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('positions', () => {
+		describe('.positions', () => {
 			it('should be counted correctly', () => {
 				expect(report.positions).toEqual({
 					total: 1,
@@ -364,7 +364,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('zIndices', () => {
+		describe('.zIndices', () => {
 			it('should be counted correctly', () => {
 				expect(report.zIndices).toEqual({
 					total: 1,
@@ -379,7 +379,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('floats', () => {
+		describe('.floats', () => {
 			it('should be counted correctly', () => {
 				expect(report.floats).toEqual({
 					total: 0,
@@ -389,7 +389,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('borderRadiuses', () => {
+		describe('.borderRadiuses', () => {
 			it('should be counted correctly', () => {
 				expect(report.borderRadiuses).toEqual({
 					total: 0,
@@ -399,7 +399,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('letterSpacings', () => {
+		describe('.letterSpacings', () => {
 			it('should be counted correctly', () => {
 				expect(report.letterSpacings).toEqual({
 					total: 0,
@@ -409,7 +409,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('fontSizes', () => {
+		describe('.fontSizes', () => {
 			it('should be counted correctly', () => {
 				expect(report.fontSizes).toEqual({
 					total: 0,
@@ -424,7 +424,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('lineHeights', () => {
+		describe('.lineHeights', () => {
 			it('should be counted correctly', () => {
 				expect(report.lineHeights).toEqual({
 					total: 0,
@@ -435,7 +435,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('fontFamilies', () => {
+		describe('.fontFamilies', () => {
 			it('should be counted correctly', () => {
 				expect(report.fontFamilies).toEqual({
 					total: 0,
@@ -451,7 +451,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('colors', () => {
+		describe('.colors', () => {
 			it('should be counted correctly', () => {
 				expect(report.colors).toEqual({
 					total: 4,
@@ -475,7 +475,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('backgroundColors', () => {
+		describe('.backgroundColors', () => {
 			it('should be counted correctly', () => {
 				expect(report.backgroundColors).toEqual({
 					total: 2,
@@ -495,7 +495,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('allColors', () => {
+		describe('.allColors', () => {
 			it('should be counted correctly', () => {
 				expect(report.allColors).toEqual({
 					total: 6,
@@ -521,7 +521,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('transitions', () => {
+		describe('.transitions', () => {
 			it('should be counted correctly', () => {
 				expect(report.transitions).toEqual({
 					properties: {},
@@ -535,7 +535,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('animations', () => {
+		describe('.animations', () => {
 			it('should be counted correctly', () => {
 				expect(report.animations).toEqual({
 					total: 1,
@@ -556,7 +556,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('functions', () => {
+		describe('.functions', () => {
 			it('should be counted correctly', () => {
 				expect(report.functions).toEqual({
 					total: 0,
@@ -567,7 +567,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('filters', () => {
+		describe('.filters', () => {
 			it('should be counted correctly', () => {
 				expect(report.filters).toEqual({
 					total: 0,
@@ -577,7 +577,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('gradients', () => {
+		describe('.gradients', () => {
 			it('should be counted correctly', () => {
 				expect(report.gradients).toEqual({
 					total: 0,
@@ -587,7 +587,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('dataUris', () => {
+		describe('.dataUris', () => {
 			it('should be counted correctly', () => {
 				expect(report.dataUris).toEqual({
 					total: 0,
@@ -604,7 +604,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('browserHacks', () => {
+		describe('.browserHacks', () => {
 			it('should be counted correctly', () => {
 				expect(report.browserHacks).toEqual({
 					total: 0,
@@ -616,7 +616,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('units', () => {
+		describe('.units', () => {
 			it('should be counted correctly', () => {
 				expect(report.units).toEqual({
 					total: 6,
@@ -634,7 +634,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('variables', () => {
+		describe('.variables', () => {
 			it('should be counted correctly', () => {
 				expect(report.variables).toEqual({
 					total: 0,
@@ -645,7 +645,7 @@ describe('Module: scancss', () => {
 			});
 		});
 
-		describe('vendorPrefixes', () => {
+		describe('.vendorPrefixes', () => {
 			it('should be counted correctly', () => {
 				expect(report.vendorPrefixes).toEqual({
 					total: 2,

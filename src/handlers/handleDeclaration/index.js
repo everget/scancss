@@ -51,116 +51,119 @@ export function handleDeclaration(decl, report, options) {
 
 	const prop = decl.prop;
 
-	/** Count properties excluding variables */
-	if (prop.startsWith('--') === false) {
-		report.properties.total++;
-		countUsage(prop, report.properties.usage);
-	}
+	if (options.properties) {
+		/** Count properties excluding variables */
+		if (prop.startsWith('--') === false) {
+			report.properties.total++;
+			countUsage(prop, report.properties.usage);
+		}
 
-	/** Count properties with vendor prefixes */
-	if (rePrefixedString.test(prop)) {
-		report.properties.prefixed++;
-		handleVendorPrefix(prop, report);
+		/** Count properties with vendor prefixes */
+		if (rePrefixedString.test(prop)) {
+			report.properties.prefixed++;
+			handleVendorPrefix(prop, report);
 
-		/** Count property shorthands */
-		// https://github.com/mahirshah/css-property-parser/issues/31
-		const unprefixedProp = prop.replace(rePrefixedString, '');
-		if (isShorthandProperty(unprefixedProp)) {
+			/** Count property shorthands */
+			// https://github.com/mahirshah/css-property-parser/issues/31
+			const unprefixedProp = prop.replace(rePrefixedString, '');
+			if (isShorthandProperty(unprefixedProp)) {
+				report.properties.shorthands++;
+			}
+		} else if (isShorthandProperty(prop)) {
 			report.properties.shorthands++;
 		}
-	} else if (isShorthandProperty(prop)) {
-		report.properties.shorthands++;
+
+		if (reCssExplicitDefaultingKeyword.test(decl.value)) {
+			decl.value
+				.match(reCssExplicitDefaultingKeyword)
+				.forEach((match) => {
+					report.properties.explicitDefaultingKeywords.total++;
+					countUsage(match, report.properties.explicitDefaultingKeywords.usage);
+				});
+		}
+
+		if (options.engineTriggerProperties) {
+			handleEngineTriggers(prop, report);
+		}
+
+		/**
+		 * Count property values resets via `all` property
+		 * https://drafts.csswg.org/css-cascade-4/#all-shorthand
+		 */
+		if (prop === 'all') {
+			report.properties.resetsViaAll++;
+		}
+
+		/**
+		 * Count anonymous replaced elements
+		 * https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element
+		 */
+		if (prop === 'content') {
+			report.properties.anonymousReplacedElements++;
+		}
+
+		if (options.performanceHacks) {
+			handlePerformanceHacks(decl, report);
+		}
 	}
 
-	const shouldHandleAnyColors = options.collectColorsData ||
-		options.collectBackgroundColorsData ||
-		options.collectAllColorsData;
+	const shouldHandleAnyColors = options.colors ||
+		options.backgroundColors ||
+		options.allColors;
 
 	if (shouldHandleAnyColors && cssColorableProperties.includes(prop)) {
 		handleColorable(decl, report, options);
 	}
 
-	if (options.collectEngineTriggerProperties) {
-		handleEngineTriggers(prop, report);
-	}
-
-	/**
-	 * Count property values resets via `all` property
-	 * https://drafts.csswg.org/css-cascade-4/#all-shorthand
-	 */
-	if (prop === 'all') {
-		report.properties.resetsViaAll++;
-	}
-
-	/**
-	 * Count anonymous replaced elements
-	 * https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element
-	 */
-	if (prop === 'content') {
-		report.properties.anonymousReplacedElements++;
-	}
-
-	if (prop === 'display') {
+	if (prop === 'display' && options.displays) {
 		handleDisplay(decl, report);
 	}
 
-	if (prop === 'position') {
+	if (prop === 'position' && options.positions) {
 		handlePosition(decl, report);
 	}
 
-	if (prop === 'z-index') {
+	if (prop === 'z-index' && options.zIndices) {
 		handleZIndex(decl, report);
 	}
 
-	if (prop === 'float') {
+	if (prop === 'float' && options.floats) {
 		handleFloat(decl, report);
 	}
 
 	if (
 		prop.startsWith('--') === false &&
 		prop.includes('border-') &&
-		prop.endsWith('-radius')
+		prop.endsWith('-radius') &&
+		options.borderRadiuses
 	) {
 		handleBorderRadiuses(decl, report);
 	}
 
-	if (prop === 'letter-spacing') {
+	if (prop === 'letter-spacing' && options.letterSpacings) {
 		handleLetterSpacing(decl, report);
 	}
 
-	if (options.collectFontsData && cssFontProperties.includes(prop)) {
+	if (cssFontProperties.includes(prop) && options.fonts) {
 		handleFonts(decl, report);
 	}
 
-	if (options.collectFunctionsData) {
+	if (options.functions) {
 		handleFunctions(decl, report, options);
 	}
 
 	if (
-		options.collectTransitionsAndAnimationsData &&
-		(prop.includes('transition') || prop.includes('animation'))
+		(prop.includes('transition') || prop.includes('animation')) &&
+		options.transitionsAndAnimations
 	) {
 		handleTransitionsAndAnimations(decl, report);
 	}
 
-	if (options.collectVariablesData) {
+	if (options.variables) {
 		handleVariables(decl, report);
 	}
 
-	if (options.collectUnitsData) {
-		handleUnits(decl, report);
-	}
-
-	if (options.collectPerformanceHacksData) {
-		handlePerformanceHacks(decl, report);
-	}
-
-	if (reCssExplicitDefaultingKeyword.test(decl.value)) {
-		decl.value
-			.match(reCssExplicitDefaultingKeyword)
-			.forEach((match) => {
-				report.properties.explicitDefaultingKeywords.total++;
-				countUsage(match, report.properties.explicitDefaultingKeywords.usage);
-			});
+	if (options.units) {
+		handleUnits(decl, report, options);
 	}
 }
