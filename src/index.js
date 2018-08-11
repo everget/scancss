@@ -49,8 +49,8 @@ export default function scancss(src, options) {
 
 		const report = {
 			styleSheetSize: {
-				sourceByteLength: 0,
-				gzipByteLength: 0,
+				source: 0,
+				gzipSource: 0,
 			},
 			comments: {
 				total: 0,
@@ -360,8 +360,8 @@ export default function scancss(src, options) {
 		};
 
 		if (scancssOptions.collectStylesheetSizeData) {
-			report.styleSheetSize.sourceByteLength = Buffer.byteLength(src, 'utf8');
-			report.styleSheetSize.gzipByteLength = gzipSize.sync(src);
+			report.styleSheetSize.source = Buffer.byteLength(src, 'utf8');
+			report.styleSheetSize.gzipSource = gzipSize.sync(src);
 		}
 
 		cssRoot.walk((node) => {
@@ -392,7 +392,7 @@ export default function scancss(src, options) {
 		if (scancssOptions.collectCommentsData) {
 			report.comments.sizeRatio = roundDivision(
 				report.comments.length.total,
-				report.styleSheetSize.sourceByteLength
+				report.styleSheetSize.source
 			);
 
 			report.comments.length.average = roundDivision(
@@ -412,7 +412,7 @@ export default function scancss(src, options) {
 		if (scancssOptions.collectSelectorsData) {
 			report.selectors.sizeRatio = roundDivision(
 				report.selectors.length.total,
-				report.styleSheetSize.sourceByteLength
+				report.styleSheetSize.source
 			);
 
 			report.selectors.length.average = roundDivision(
@@ -480,7 +480,7 @@ export default function scancss(src, options) {
 
 			report.declarations.sizeRatio = roundDivision(
 				report.declarations.length.total,
-				report.styleSheetSize.sourceByteLength
+				report.styleSheetSize.source
 			);
 
 			report.properties.unique = Object.keys(report.properties.usage).length;
@@ -522,7 +522,7 @@ export default function scancss(src, options) {
 
 				report.dataUris.sizeRatio = roundDivision(
 					report.dataUris.length.total,
-					report.styleSheetSize.sourceByteLength
+					report.styleSheetSize.source
 				);
 			}
 

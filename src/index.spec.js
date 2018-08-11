@@ -92,8 +92,8 @@ describe('Module: scancss', () => {
 		describe('styleSheetSize', () => {
 			it('should be counted correctly', () => {
 				expect(report.styleSheetSize).toEqual({
-					sourceByteLength: 908,
-					gzipByteLength: 436,
+					source: 908,
+					gzipSource: 436,
 				});
 			});
 		});
