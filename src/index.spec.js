@@ -249,10 +249,12 @@ describe('Module: scancss', () => {
 					uniqueRatio: 0.8947368421052632,
 					important: 0,
 					averagePerRule: 2.38,
-					totalByteLength: 293,
-					longestByteLength: 32,
-					longestByteLengthDeclaration: 'animation:infinite ease 1s fade',
-					averageByteLength: 15.42,
+					length: {
+						total: 293,
+						longest: 32,
+						longestDeclaration: 'animation:infinite ease 1s fade',
+						average: 15.42,
+					},
 					sizeRatio: 0.32268722466960353,
 					inAtRules: {
 						'-webkit-keyframes': 2,

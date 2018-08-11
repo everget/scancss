@@ -140,10 +140,12 @@ export default function scancss(src, options) {
 				uniqueRatio: 0,
 				important: 0,
 				averagePerRule: 0,
-				totalByteLength: 0,
-				longestByteLength: 0,
-				longestByteLengthDeclaration: null,
-				averageByteLength: 0,
+				length: {
+					total: 0,
+					longest: 0,
+					longestDeclaration: null,
+					average: 0,
+				},
 				sizeRatio: 0,
 				inAtRules: {},
 				list: [],
@@ -464,14 +466,14 @@ export default function scancss(src, options) {
 				report.declarations.total
 			);
 
-			report.declarations.averageByteLength = roundDivision(
-				report.declarations.totalByteLength,
+			report.declarations.length.average = roundDivision(
+				report.declarations.length.total,
 				report.declarations.total,
 				2
 			);
 
 			report.declarations.sizeRatio = roundDivision(
-				report.declarations.totalByteLength,
+				report.declarations.length.total,
 				report.styleSheetSize.sourceByteLength
 			);
 

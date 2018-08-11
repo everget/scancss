@@ -62,6 +62,12 @@ describe('Module: handleDeclaration', () => {
 				unique: 0,
 				important: 0,
 				averagePerRule: 0,
+				length: {
+					total: 0,
+					longest: 0,
+					longestDeclaration: null,
+					average: 0,
+				},
 				inAtRules: {},
 				list: [],
 			},
@@ -169,6 +175,30 @@ describe('Module: handleDeclaration', () => {
 		describe('declarations.important', () => {
 			it('should be counted correctly', () => {
 				expect(report.declarations.important).toBe(1);
+			});
+		});
+
+		describe('declarations.length.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.declarations.length.total).toBe(452);
+			});
+		});
+
+		describe('declarations.length.average', () => {
+			it('should be counted correctly', () => {
+				expect(report.declarations.length.average).toBe(0);
+			});
+		});
+
+		describe('declarations.length.longest', () => {
+			it('should be counted correctly', () => {
+				expect(report.declarations.length.longest).toBe(54);
+			});
+		});
+
+		describe('declarations.length.longestDeclaration', () => {
+			it('should be counted correctly', () => {
+				expect(report.declarations.length.longestDeclaration).toBe('-webkit-transition:background-color 5s ease-in-out 2s');
 			});
 		});
 	});

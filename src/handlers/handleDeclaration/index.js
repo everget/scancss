@@ -32,13 +32,13 @@ export function handleDeclaration(decl, report, options) {
 	report.declarations.total++;
 
 	const declarationByteLength = Buffer.byteLength(decl.toString(), 'utf8');
-	report.declarations.totalByteLength += declarationByteLength;
+	report.declarations.length.total += declarationByteLength;
 
 	const normalizedDecl = removeExtraSpaces(decl.toString());
 
-	if (report.declarations.longestByteLength < declarationByteLength) {
-		report.declarations.longestByteLength = declarationByteLength;
-		report.declarations.longestByteLengthDeclaration = normalizedDecl;
+	if (report.declarations.length.longest < declarationByteLength) {
+		report.declarations.length.longest = declarationByteLength;
+		report.declarations.length.longestDeclaration = normalizedDecl;
 	}
 
 	if (report.declarations.list.includes(normalizedDecl) === false) {
