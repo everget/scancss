@@ -11,8 +11,6 @@ export const cssMozPseudoClasses = [
 	'-moz-handler-crashed',
 	'-moz-handler-disabled',
 	'-moz-last-node',
-	'-moz-list-bullet',
-	'-moz-list-number',
 	'-moz-loading',
 	'-moz-locale-dir(ltr)',
 	'-moz-locale-dir(rtl)',
