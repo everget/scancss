@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 523409,
-    "gzipByteLength": 49280
+    "source": 523409,
+    "gzipSource": 49280
   },
   "comments": {
     "total": 1,
-    "totalByteLength": 214,
-    "longestByteLength": 214,
-    "shortestByteLength": 214,
-    "averageByteLength": 214,
+    "length": {
+      "total": 214,
+      "longest": 214,
+      "shortest": 214,
+      "average": 214
+    },
     "sizeRatio": 0.00040885808230274986
   },
   "atRules": {
     "total": 89,
     "empty": 0,
     "prefixed": 1,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-ms-viewport": 1,
       "media": 68,
@@ -29,7 +35,11 @@
     "unique": 9,
     "onlyKeyword": 0,
     "types": {
-      "print": 2
+      "total": 2,
+      "unique": 1,
+      "usage": {
+        "print": 2
+      }
     },
     "features": {
       "total": 66,
@@ -134,28 +144,32 @@
     "complex": 3154,
     "maxPerRule": 90,
     "averagePerRule": 2.85,
-    "totalByteLength": 323802,
-    "longestByteLength": 115,
-    "longestByteLengthSelector": ".input-group > .input-group-append:last-child > .custom-file-control:not(:last-child):not(.dropdown-toggle)::before",
-    "averageByteLength": 43.37,
-    "totalSpecificity": [
-      2,
-      25115,
-      2798
-    ],
-    "averageSpecificity": [
-      1,
-      0.99,
-      1
-    ],
-    "highestSpecificity": [
-      1,
-      0,
-      0
-    ],
-    "highestSpecificitySelector": "#snackbar-container",
+    "length": {
+      "total": 323802,
+      "longest": 115,
+      "longestSelector": ".input-group > .input-group-append:last-child > .custom-file-control:not(:last-child):not(.dropdown-toggle)::before",
+      "average": 43.37
+    },
+    "specificity": {
+      "total": [
+        2,
+        25115,
+        2798
+      ],
+      "highest": [
+        1,
+        0,
+        0
+      ],
+      "highestSelector": "#snackbar-container",
+      "average": [
+        1,
+        0.99,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.6186404895597898,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -164,10 +178,12 @@
     "uniqueRatio": 0.26171875,
     "important": 668,
     "averagePerRule": 1.95,
-    "totalByteLength": 131040,
-    "longestByteLength": 677,
-    "longestByteLengthDeclaration": "background-image:linear-gradient(to top,#009688 2px,rgba(0,150,136,0) 2px),linear-gradient(to top,rgba(0,0,0,0.26) 1px,transparent 1px),\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZDk1MzRmIiBkPSJNNDQ3IDU0NC40Yy0xNC40IDE0LjQtMzcuNiAxNC40LTUyIDBsLTg5LTkyLjctODkgOTIuN2MtMTQuNSAxNC40LTM3LjcgMTQuNC01MiAwLTE0LjQtMTQuNC0xNC40LTM3LjYgMC01Mmw5Mi40LTk2LjMtOTIuNC05Ni4zYy0xNC40LTE0LjQtMTQuNC0zNy42IDAtNTJzMzcuNi0xNC4zIDUyIDBsODkgOTIuOCA4OS4yLTkyLjdjMTQuNC0xNC40IDM3LjYtMTQuNCA1MiAwIDE0LjMgMTQuNCAxNC4zIDM3LjYgMCA1MkwzNTQuNiAzOTZsOTIuNCA5Ni40YzE0LjQgMTQuNCAxNC40IDM3LjYgMCA1MnoiLz48L3N2Zz4=\"",
-    "averageByteLength": 25.59,
+    "length": {
+      "total": 131040,
+      "longest": 677,
+      "longestDeclaration": "background-image:linear-gradient(to top,#009688 2px,rgba(0,150,136,0) 2px),linear-gradient(to top,rgba(0,0,0,0.26) 1px,transparent 1px),\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZDk1MzRmIiBkPSJNNDQ3IDU0NC40Yy0xNC40IDE0LjQtMzcuNiAxNC40LTUyIDBsLTg5LTkyLjctODkgOTIuN2MtMTQuNSAxNC40LTM3LjcgMTQuNC01MiAwLTE0LjQtMTQuNC0xNC40LTM3LjYgMC01Mmw5Mi40LTk2LjMtOTIuNC05Ni4zYy0xNC40LTE0LjQtMTQuNC0zNy42IDAtNTJzMzcuNi0xNC4zIDUyIDBsODkgOTIuOCA4OS4yLTkyLjdjMTQuNC0xNC40IDM3LjYtMTQuNCA1MiAwIDE0LjMgMTQuNCAxNC4zIDM3LjYgMCA1MkwzNTQuNiAzOTZsOTIuNCA5Ni40YzE0LjQgMTQuNCAxNC40IDM3LjYgMCA1MnoiLz48L3N2Zz4=\"",
+      "average": 25.59
+    },
     "sizeRatio": 0.2503587060979081,
     "inAtRules": {
       "-ms-viewport": 1,
@@ -451,6 +467,11 @@
   "fontSizes": {
     "total": 111,
     "unique": 31,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "0": 1,
       ".875rem": 11,
@@ -1126,17 +1147,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 1826,
@@ -1149,10 +1167,13 @@
       "s": 49,
       "deg": 5
     },
-    "excessive": 6,
-    "excessiveUsage": {
-      "0%": 4,
-      "0deg": 2
+    "excessive": {
+      "total": 6,
+      "unique": 2,
+      "usage": {
+        "0%": 4,
+        "0deg": 2
+      }
     }
   },
   "variables": {
@@ -1193,11 +1214,22 @@
   "vendorPrefixes": {
     "total": 41,
     "unique": 3,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-": 21,
       "-ms-": 15,
       "-moz-": 5
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

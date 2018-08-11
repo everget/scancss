@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 59826,
-    "gzipByteLength": 11120
+    "source": 59826,
+    "gzipSource": 11120
   },
   "comments": {
     "total": 88,
-    "totalByteLength": 4953,
-    "longestByteLength": 227,
-    "shortestByteLength": 7,
-    "averageByteLength": 56.28,
+    "length": {
+      "total": 4953,
+      "longest": 227,
+      "shortest": 7,
+      "average": 56.28
+    },
     "sizeRatio": 0.08279009126466753
   },
   "atRules": {
     "total": 7,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 5,
       "keyframes": 2
@@ -25,7 +31,11 @@
     "total": 5,
     "unique": 5,
     "onlyKeyword": 0,
-    "types": {},
+    "types": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "features": {
       "total": 5,
       "unique": 1,
@@ -116,28 +126,32 @@
     "complex": 58,
     "maxPerRule": 24,
     "averagePerRule": 1.47,
-    "totalByteLength": 16415,
-    "longestByteLength": 66,
-    "longestByteLengthSelector": ".input-group .input-group-addon:not(:first-child):not(:last-child)",
-    "averageByteLength": 17.8,
-    "totalSpecificity": [
-      0,
-      1496,
-      385
-    ],
-    "averageSpecificity": [
-      0,
-      0.97,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      5,
-      1
-    ],
-    "highestSpecificitySelector": ".tab.tab-block .tab-item .badge[data-badge]::after",
+    "length": {
+      "total": 16415,
+      "longest": 66,
+      "longestSelector": ".input-group .input-group-addon:not(:first-child):not(:last-child)",
+      "average": 17.8
+    },
+    "specificity": {
+      "total": [
+        0,
+        1496,
+        385
+      ],
+      "highest": [
+        0,
+        5,
+        1
+      ],
+      "highestSelector": ".tab.tab-block .tab-item .badge[data-badge]::after",
+      "average": [
+        0,
+        0.97,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.27437903252766355,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -146,10 +160,12 @@
     "uniqueRatio": 0.4021813224267212,
     "important": 72,
     "averagePerRule": 2.34,
-    "totalByteLength": 27385,
-    "longestByteLength": 247,
-    "longestByteLengthDeclaration": "background:#fff url(\"data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%23667189'%20d='M2%200L0%202h4zm0%205L0%203h4z'/%3E%3C/svg%3E\") no-repeat right .35rem center/.4rem .5rem",
-    "averageByteLength": 18.67,
+    "length": {
+      "total": 27385,
+      "longest": 247,
+      "longestDeclaration": "background:#fff url(\"data:image/svg+xml;charset=utf8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='%23667189'%20d='M2%200L0%202h4zm0%205L0%203h4z'/%3E%3C/svg%3E\") no-repeat right .35rem center/.4rem .5rem",
+      "average": 18.67
+    },
     "sizeRatio": 0.4577441246280881,
     "inAtRules": {
       "media": 80,
@@ -379,6 +395,11 @@
   "fontSizes": {
     "total": 47,
     "unique": 20,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "0": 1,
       "2em": 1,
@@ -694,17 +715,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 659,
@@ -719,9 +737,12 @@
       "vh": 3,
       "ms": 1
     },
-    "excessive": 1,
-    "excessiveUsage": {
-      "0deg": 1
+    "excessive": {
+      "total": 1,
+      "unique": 1,
+      "usage": {
+        "0deg": 1
+      }
     }
   },
   "variables": {
@@ -733,12 +754,23 @@
   "vendorPrefixes": {
     "total": 93,
     "unique": 4,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-": 21,
       "-ms-": 58,
       "-moz-": 9,
       "-apple-": 5
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

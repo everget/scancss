@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 9073,
-    "gzipByteLength": 2171
+    "source": 9073,
+    "gzipSource": 2171
   },
   "comments": {
     "total": 15,
-    "totalByteLength": 1158,
-    "longestByteLength": 121,
-    "shortestByteLength": 71,
-    "averageByteLength": 77.2,
+    "length": {
+      "total": 1158,
+      "longest": 121,
+      "shortest": 71,
+      "average": 77.2
+    },
     "sizeRatio": 0.12763143392483192
   },
   "atRules": {
     "total": 2,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 2
     }
@@ -25,7 +31,11 @@
     "unique": 2,
     "onlyKeyword": 0,
     "types": {
-      "screen": 1
+      "total": 1,
+      "unique": 1,
+      "usage": {
+        "screen": 1
+      }
     },
     "features": {
       "total": 2,
@@ -81,28 +91,32 @@
     "complex": 0,
     "maxPerRule": 10,
     "averagePerRule": 1.64,
-    "totalByteLength": 2155,
-    "longestByteLength": 32,
-    "longestByteLengthSelector": ".row [class*=\" col-\"]:last-child",
-    "averageByteLength": 12.18,
-    "totalSpecificity": [
-      0,
-      196,
-      94
-    ],
-    "averageSpecificity": [
-      0,
-      1,
-      0
-    ],
-    "highestSpecificity": [
-      0,
-      3,
-      0
-    ],
-    "highestSpecificitySelector": ".row .col:last-child",
+    "length": {
+      "total": 2155,
+      "longest": 32,
+      "longestSelector": ".row [class*=\" col-\"]:last-child",
+      "average": 12.18
+    },
+    "specificity": {
+      "total": [
+        0,
+        196,
+        94
+      ],
+      "highest": [
+        0,
+        3,
+        0
+      ],
+      "highestSelector": ".row .col:last-child",
+      "average": [
+        0,
+        1,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.23751791028325803,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -111,10 +125,12 @@
     "uniqueRatio": 0.675531914893617,
     "important": 0,
     "averagePerRule": 1.74,
-    "totalByteLength": 3702,
-    "longestByteLength": 181,
-    "longestByteLengthDeclaration": "font-family:-apple-system,BlinkMacSystemFont,Avenir,\"Avenir Next\",\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Fira Sans\",\"Droid Sans\",\"Helvetica Neue\",sans-serif",
-    "averageByteLength": 19.69,
+    "length": {
+      "total": 3702,
+      "longest": 181,
+      "longestDeclaration": "font-family:-apple-system,BlinkMacSystemFont,Avenir,\"Avenir Next\",\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Fira Sans\",\"Droid Sans\",\"Helvetica Neue\",sans-serif",
+      "average": 19.69
+    },
     "sizeRatio": 0.4080238068995922,
     "inAtRules": {
       "media": 8
@@ -247,6 +263,11 @@
   "fontSizes": {
     "total": 16,
     "unique": 13,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "16px": 4,
       "37.009px": 1,
@@ -415,17 +436,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 88,
@@ -436,8 +454,11 @@
       "s": 3,
       "vh": 2
     },
-    "excessive": 0,
-    "excessiveUsage": {}
+    "excessive": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    }
   },
   "variables": {
     "total": 0,
@@ -448,9 +469,20 @@
   "vendorPrefixes": {
     "total": 2,
     "unique": 1,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-apple-": 2
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

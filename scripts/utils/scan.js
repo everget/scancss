@@ -17,9 +17,9 @@ module.exports = function scan(dir) {
 		const scanResult = scancss(
 			stylesheetData,
 			{
-				collectSelectorsUsage: false,
-				collectSpecificityGraphData: false,
-				collectDeclarationsList: false,
+				selectorsUsage: false,
+				specificityGraph: false,
+				uniqueDeclarationsList: false,
 			}
 		);
 

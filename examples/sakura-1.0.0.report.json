@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 3518,
-    "gzipByteLength": 1160
+    "source": 3518,
+    "gzipSource": 1160
   },
   "comments": {
     "total": 6,
-    "totalByteLength": 248,
-    "longestByteLength": 116,
-    "shortestByteLength": 10,
-    "averageByteLength": 41.33,
+    "length": {
+      "total": 248,
+      "longest": 116,
+      "shortest": 10,
+      "average": 41.33
+    },
     "sizeRatio": 0.07049459920409323
   },
   "atRules": {
     "total": 2,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 2
     }
@@ -24,7 +30,11 @@
     "total": 2,
     "unique": 2,
     "onlyKeyword": 0,
-    "types": {},
+    "types": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "features": {
       "total": 2,
       "unique": 1,
@@ -76,28 +86,32 @@
     "complex": 0,
     "maxPerRule": 10,
     "averagePerRule": 1.97,
-    "totalByteLength": 663,
-    "longestByteLength": 30,
-    "longestByteLengthSelector": "input[type=\"submit\"][disabled]",
-    "averageByteLength": 9.9,
-    "totalSpecificity": [
-      0,
-      41,
-      64
-    ],
-    "averageSpecificity": [
-      0,
-      1,
-      0
-    ],
-    "highestSpecificity": [
-      0,
-      2,
-      1
-    ],
-    "highestSpecificitySelector": "input[type=\"submit\"][disabled]",
+    "length": {
+      "total": 663,
+      "longest": 30,
+      "longestSelector": "input[type=\"submit\"][disabled]",
+      "average": 9.9
+    },
+    "specificity": {
+      "total": [
+        0,
+        41,
+        64
+      ],
+      "highest": [
+        0,
+        2,
+        1
+      ],
+      "highestSelector": "input[type=\"submit\"][disabled]",
+      "average": [
+        0,
+        1,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.1884593519044912,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -106,10 +120,12 @@
     "uniqueRatio": 0.8791208791208791,
     "important": 0,
     "averagePerRule": 2.68,
-    "totalByteLength": 1710,
-    "longestByteLength": 40,
-    "longestByteLengthDeclaration": "font-family:Verdana,Geneva,sans-serif",
-    "averageByteLength": 18.79,
+    "length": {
+      "total": 1710,
+      "longest": 40,
+      "longestDeclaration": "font-family:Verdana,Geneva,sans-serif",
+      "average": 18.79
+    },
     "sizeRatio": 0.4860716316088687,
     "inAtRules": {
       "media": 2
@@ -232,6 +248,11 @@
   "fontSizes": {
     "total": 12,
     "unique": 12,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "62.5%": 1,
       "1.8rem": 1,
@@ -368,17 +389,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 41,
@@ -389,8 +407,11 @@
       "em": 15,
       "px": 17
     },
-    "excessive": 0,
-    "excessiveUsage": {}
+    "excessive": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    }
   },
   "variables": {
     "total": 0,
@@ -401,11 +422,22 @@
   "vendorPrefixes": {
     "total": 4,
     "unique": 3,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-ms-": 2,
       "-moz-": 1,
       "-webkit-": 1
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

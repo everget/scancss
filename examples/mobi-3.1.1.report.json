@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 13794,
-    "gzipByteLength": 2908
+    "source": 13794,
+    "gzipSource": 2908
   },
   "comments": {
     "total": 2,
-    "totalByteLength": 80,
-    "longestByteLength": 44,
-    "shortestByteLength": 36,
-    "averageByteLength": 40,
+    "length": {
+      "total": 80,
+      "longest": 44,
+      "shortest": 36,
+      "average": 40
+    },
     "sizeRatio": 0.005799623024503407
   },
   "atRules": {
     "total": 5,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 5
     }
@@ -24,7 +30,11 @@
     "total": 5,
     "unique": 2,
     "onlyKeyword": 0,
-    "types": {},
+    "types": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "features": {
       "total": 5,
       "unique": 2,
@@ -85,28 +95,32 @@
     "complex": 0,
     "maxPerRule": 12,
     "averagePerRule": 2.22,
-    "totalByteLength": 3401,
-    "longestByteLength": 34,
-    "longestByteLengthSelector": ".units-gap-big > .unit-1-on-mobile",
-    "averageByteLength": 12.55,
-    "totalSpecificity": [
-      0,
-      278,
-      121
-    ],
-    "averageSpecificity": [
-      0,
-      1,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      3,
-      0
-    ],
-    "highestSpecificitySelector": ".form [type=email]:focus",
+    "length": {
+      "total": 3401,
+      "longest": 34,
+      "longestSelector": ".units-gap-big > .unit-1-on-mobile",
+      "average": 12.55
+    },
+    "specificity": {
+      "total": [
+        0,
+        278,
+        121
+      ],
+      "highest": [
+        0,
+        3,
+        0
+      ],
+      "highestSelector": ".form [type=email]:focus",
+      "average": [
+        0,
+        1,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.2465564738292011,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -115,10 +129,12 @@
     "uniqueRatio": 0.6369426751592356,
     "important": 5,
     "averagePerRule": 2.57,
-    "totalByteLength": 7075,
-    "longestByteLength": 220,
-    "longestByteLengthDeclaration": "font-family:-apple-system,BlinkMacSystemFont,Hiragino Sans GB,Roboto,Segoe UI,Microsoft Yahei,微软雅黑,Oxygen-Sans,Ubuntu,Cantarell,Helvetica,Arial,STHeiti,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
-    "averageByteLength": 22.53,
+    "length": {
+      "total": 7075,
+      "longest": 220,
+      "longestDeclaration": "font-family:-apple-system,BlinkMacSystemFont,Hiragino Sans GB,Roboto,Segoe UI,Microsoft Yahei,微软雅黑,Oxygen-Sans,Ubuntu,Cantarell,Helvetica,Arial,STHeiti,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+      "average": 22.53
+    },
     "sizeRatio": 0.5129041612295201,
     "inAtRules": {
       "media": 23
@@ -295,6 +311,11 @@
   "fontSizes": {
     "total": 18,
     "unique": 10,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "1rem": 5,
       "2rem": 1,
@@ -462,17 +483,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 119,
@@ -483,8 +501,11 @@
       "em": 6,
       "px": 10
     },
-    "excessive": 0,
-    "excessiveUsage": {}
+    "excessive": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    }
   },
   "variables": {
     "total": 0,
@@ -495,12 +516,23 @@
   "vendorPrefixes": {
     "total": 77,
     "unique": 4,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-moz-": 5,
       "-webkit-": 46,
       "-apple-": 4,
       "-ms-": 22
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

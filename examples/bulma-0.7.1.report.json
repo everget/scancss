@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 190278,
-    "gzipByteLength": 23198
+    "source": 190278,
+    "gzipSource": 23198
   },
   "comments": {
     "total": 3,
-    "totalByteLength": 174,
-    "longestByteLength": 75,
-    "shortestByteLength": 37,
-    "averageByteLength": 58,
+    "length": {
+      "total": 174,
+      "longest": 75,
+      "shortest": 37,
+      "average": 58
+    },
     "sizeRatio": 0.0009144514867719863
   },
   "atRules": {
     "total": 172,
     "empty": 0,
     "prefixed": 1,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-keyframes": 1,
       "keyframes": 1,
@@ -27,8 +33,12 @@
     "unique": 11,
     "onlyKeyword": 0,
     "types": {
-      "screen": 170,
-      "print": 27
+      "total": 197,
+      "unique": 2,
+      "usage": {
+        "screen": 170,
+        "print": 27
+      }
     },
     "features": {
       "total": 203,
@@ -115,28 +125,32 @@
     "complex": 523,
     "maxPerRule": 40,
     "averagePerRule": 1.49,
-    "totalByteLength": 79972,
-    "longestByteLength": 80,
-    "longestByteLengthSelector": ".navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:hover .navbar-link",
-    "averageByteLength": 27.86,
-    "totalSpecificity": [
-      0,
-      7516,
-      1004
-    ],
-    "averageSpecificity": [
-      0,
-      0.98,
-      0.99
-    ],
-    "highestSpecificity": [
-      0,
-      7,
-      0
-    ],
-    "highestSpecificitySelector": ".navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:hover .navbar-link",
+    "length": {
+      "total": 79972,
+      "longest": 80,
+      "longestSelector": ".navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:hover .navbar-link",
+      "average": 27.86
+    },
+    "specificity": {
+      "total": [
+        0,
+        7504,
+        1016
+      ],
+      "highest": [
+        0,
+        7,
+        0
+      ],
+      "highestSelector": ".navbar.is-transparent .navbar-item.has-dropdown.is-hoverable:hover .navbar-link",
+      "average": [
+        0,
+        0.97,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.4202903120697085,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -145,10 +159,12 @@
     "uniqueRatio": 0.2395175186674325,
     "important": 251,
     "averagePerRule": 1.81,
-    "totalByteLength": 70534,
-    "longestByteLength": 180,
-    "longestByteLengthDeclaration": "font-family:BlinkMacSystemFont,-apple-system,\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Fira Sans\",\"Droid Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",sans-serif",
-    "averageByteLength": 20.26,
+    "length": {
+      "total": 70534,
+      "longest": 180,
+      "longestDeclaration": "font-family:BlinkMacSystemFont,-apple-system,\"Segoe UI\",\"Roboto\",\"Oxygen\",\"Ubuntu\",\"Cantarell\",\"Fira Sans\",\"Droid Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",sans-serif",
+      "average": 20.26
+    },
     "sizeRatio": 0.37068920211480044,
     "inAtRules": {
       "-webkit-keyframes": 4,
@@ -380,6 +396,11 @@
   "fontSizes": {
     "total": 165,
     "unique": 26,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "0": 1,
       "1rem": 20,
@@ -831,17 +852,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 1198,
@@ -856,10 +874,13 @@
       "vh": 6,
       "vw": 1
     },
-    "excessive": 5,
-    "excessiveUsage": {
-      "0deg": 4,
-      "0rem": 1
+    "excessive": {
+      "total": 5,
+      "unique": 2,
+      "usage": {
+        "0deg": 4,
+        "0rem": 1
+      }
     }
   },
   "variables": {
@@ -875,12 +896,23 @@
   "vendorPrefixes": {
     "total": 104,
     "unique": 4,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-": 53,
       "-moz-": 30,
       "-ms-": 20,
       "-apple-": 1
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

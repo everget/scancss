@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 433490,
-    "gzipByteLength": 55245
+    "source": 433490,
+    "gzipSource": 55245
   },
   "comments": {
     "total": 99,
-    "totalByteLength": 6773,
-    "longestByteLength": 711,
-    "shortestByteLength": 7,
-    "averageByteLength": 68.41,
+    "length": {
+      "total": 6773,
+      "longest": 711,
+      "shortest": 7,
+      "average": 68.41
+    },
     "sizeRatio": 0.015624351196106024
   },
   "atRules": {
     "total": 8,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 8
     }
@@ -24,7 +30,11 @@
     "total": 8,
     "unique": 4,
     "onlyKeyword": 0,
-    "types": {},
+    "types": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "features": {
       "total": 8,
       "unique": 1,
@@ -95,28 +105,32 @@
     "complex": 0,
     "maxPerRule": 12,
     "averagePerRule": 1.01,
-    "totalByteLength": 140098,
-    "longestByteLength": 45,
-    "longestByteLengthSelector": "[type=\"search\"]::-webkit-search-cancel-button",
-    "averageByteLength": 20.24,
-    "totalSpecificity": [
-      0,
-      9281,
-      121
-    ],
-    "averageSpecificity": [
-      0,
-      1,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      2,
-      0
-    ],
-    "highestSpecificitySelector": "[type=\"button\"]:-moz-focusring",
+    "length": {
+      "total": 140098,
+      "longest": 45,
+      "longestSelector": "[type=\"search\"]::-webkit-search-cancel-button",
+      "average": 20.24
+    },
+    "specificity": {
+      "total": [
+        0,
+        9281,
+        121
+      ],
+      "highest": [
+        0,
+        2,
+        0
+      ],
+      "highestSelector": "[type=\"button\"]:-moz-focusring",
+      "average": [
+        0,
+        1,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.3231862326697271,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -125,10 +139,12 @@
     "uniqueRatio": 0.10666842036038406,
     "important": 0,
     "averagePerRule": 1.11,
-    "totalByteLength": 152142,
-    "longestByteLength": 153,
-    "longestByteLengthDeclaration": "font-family:system-ui,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif",
-    "averageByteLength": 20.01,
+    "length": {
+      "total": 152142,
+      "longest": 153,
+      "longestDeclaration": "font-family:system-ui,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif",
+      "average": 20.01
+    },
     "sizeRatio": 0.3509700339108169,
     "inAtRules": {
       "media": 5996
@@ -350,6 +366,11 @@
   "fontSizes": {
     "total": 52,
     "unique": 15,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "2em": 1,
       "1em": 2,
@@ -752,17 +773,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 2827,
@@ -775,8 +793,11 @@
       "vh": 15,
       "vw": 5
     },
-    "excessive": 0,
-    "excessiveUsage": {}
+    "excessive": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    }
   },
   "variables": {
     "total": 0,
@@ -787,12 +808,23 @@
   "vendorPrefixes": {
     "total": 142,
     "unique": 4,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-ms-": 15,
       "-webkit-": 69,
       "-moz-": 53,
       "-apple-": 5
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

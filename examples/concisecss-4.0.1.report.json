@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 17901,
-    "gzipByteLength": 4106
+    "source": 17901,
+    "gzipSource": 4106
   },
   "comments": {
     "total": 3,
-    "totalByteLength": 241,
-    "longestByteLength": 227,
-    "shortestByteLength": 7,
-    "averageByteLength": 80.33,
+    "length": {
+      "total": 241,
+      "longest": 227,
+      "shortest": 7,
+      "average": 80.33
+    },
     "sizeRatio": 0.013462935031562482
   },
   "atRules": {
     "total": 7,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "charset": 1,
       "media": 5,
@@ -27,7 +33,11 @@
     "unique": 2,
     "onlyKeyword": 0,
     "types": {
-      "print": 1
+      "total": 1,
+      "unique": 1,
+      "usage": {
+        "print": 1
+      }
     },
     "features": {
       "total": 4,
@@ -106,28 +116,32 @@
     "complex": 1,
     "maxPerRule": 14,
     "averagePerRule": 1.75,
-    "totalByteLength": 3545,
-    "longestByteLength": 50,
-    "longestByteLengthSelector": "input[type=\"range\"]::-webkit-slider-runnable-track",
-    "averageByteLength": 10.58,
-    "totalSpecificity": [
-      0,
-      142,
-      331
-    ],
-    "averageSpecificity": [
-      0,
-      0,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      3,
-      0
-    ],
-    "highestSpecificitySelector": "[hidden][aria-hidden=\"false\"]:focus",
+    "length": {
+      "total": 3545,
+      "longest": 50,
+      "longestSelector": "input[type=\"range\"]::-webkit-slider-runnable-track",
+      "average": 10.58
+    },
+    "specificity": {
+      "total": [
+        0,
+        142,
+        331
+      ],
+      "highest": [
+        0,
+        3,
+        0
+      ],
+      "highestSelector": "[hidden][aria-hidden=\"false\"]:focus",
+      "average": [
+        0,
+        0.95,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.1980336294061784,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -136,10 +150,12 @@
     "uniqueRatio": 0.6986301369863014,
     "important": 9,
     "averagePerRule": 2.29,
-    "totalByteLength": 8984,
-    "longestByteLength": 119,
-    "longestByteLengthDeclaration": "-webkit-font-feature-settings:\"kern\" 1,\"liga\" 1,\"calt\" 1,\"pnum\" 1,\"tnum\" 0,\"onum\" 1,\"lnum\" 0,\"smcp\" 1,\"c2sc\" 1",
-    "averageByteLength": 20.51,
+    "length": {
+      "total": 8984,
+      "longest": 119,
+      "longestDeclaration": "-webkit-font-feature-settings:\"kern\" 1,\"liga\" 1,\"calt\" 1,\"pnum\" 1,\"tnum\" 0,\"onum\" 1,\"lnum\" 0,\"smcp\" 1,\"c2sc\" 1",
+      "average": 20.51
+    },
     "sizeRatio": 0.5018714038321882,
     "inAtRules": {
       "media": 112,
@@ -330,6 +346,13 @@
   "fontSizes": {
     "total": 25,
     "unique": 17,
+    "keywords": {
+      "total": 1,
+      "unique": 0,
+      "usage": {
+        "smaller": 1
+      }
+    },
     "usage": {
       "16px": 1,
       "18px": 1,
@@ -528,17 +551,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 152,
@@ -552,8 +572,11 @@
       "cm": 1,
       "pt": 5
     },
-    "excessive": 0,
-    "excessiveUsage": {}
+    "excessive": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    }
   },
   "variables": {
     "total": 0,
@@ -564,11 +587,22 @@
   "vendorPrefixes": {
     "total": 106,
     "unique": 3,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-ms-": 43,
       "-webkit-": 58,
       "-moz-": 5
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

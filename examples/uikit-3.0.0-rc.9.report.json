@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 354716,
-    "gzipByteLength": 42673
+    "source": 354716,
+    "gzipSource": 42673
   },
   "comments": {
     "total": 1368,
-    "totalByteLength": 74969,
-    "longestByteLength": 649,
-    "shortestByteLength": 7,
-    "averageByteLength": 54.8,
+    "length": {
+      "total": 74969,
+      "longest": 649,
+      "shortest": 7,
+      "average": 54.8
+    },
     "sizeRatio": 0.21134936117908412
   },
   "atRules": {
     "total": 113,
     "empty": 0,
     "prefixed": 1,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 89,
       "keyframes": 19,
@@ -29,7 +35,11 @@
     "unique": 10,
     "onlyKeyword": 0,
     "types": {
-      "print": 1
+      "total": 1,
+      "unique": 1,
+      "usage": {
+        "print": 1
+      }
     },
     "features": {
       "total": 88,
@@ -146,28 +156,32 @@
     "complex": 1416,
     "maxPerRule": 132,
     "averagePerRule": 2.67,
-    "totalByteLength": 186231,
-    "longestByteLength": 118,
-    "longestByteLengthSelector": ".uk-card-secondary > :not([class*='uk-card-media']) .uk-subnav-divider > :nth-child(n+2):not(.uk-first-column)::before",
-    "averageByteLength": 43.7,
-    "totalSpecificity": [
-      0,
-      10773,
-      2010
-    ],
-    "averageSpecificity": [
-      0,
-      0.87,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      5,
-      3
-    ],
-    "highestSpecificitySelector": ".uk-section-primary:not(.uk-preserve-color) .uk-subnav-divider > :nth-child(n+2):not(.uk-first-column)::before",
+    "length": {
+      "total": 186231,
+      "longest": 118,
+      "longestSelector": ".uk-card-secondary > :not([class*='uk-card-media']) .uk-subnav-divider > :nth-child(n+2):not(.uk-first-column)::before",
+      "average": 43.7
+    },
+    "specificity": {
+      "total": [
+        0,
+        10770,
+        2013
+      ],
+      "highest": [
+        0,
+        5,
+        3
+      ],
+      "highestSelector": ".uk-section-primary:not(.uk-preserve-color) .uk-subnav-divider > :nth-child(n+2):not(.uk-first-column)::before",
+      "average": [
+        0,
+        0.87,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.5250143776993426,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -176,10 +190,12 @@
     "uniqueRatio": 0.3120057512580877,
     "important": 155,
     "averagePerRule": 1.74,
-    "totalByteLength": 60888,
-    "longestByteLength": 502,
-    "longestByteLengthDeclaration": "background-image:url(\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22rgba%28255,%20255,%20255,%200.7%29%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%20%20%20%20%3Crect%20fill%3D%22rgba%28255,%20255,%20255,%200.7%29%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%20%2F%3E%0A%3C%2Fsvg%3E\")",
-    "averageByteLength": 21.89,
+    "length": {
+      "total": 60888,
+      "longest": 502,
+      "longestDeclaration": "background-image:url(\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22rgba%28255,%20255,%20255,%200.7%29%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%20%20%20%20%3Crect%20fill%3D%22rgba%28255,%20255,%20255,%200.7%29%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%20%2F%3E%0A%3C%2Fsvg%3E\")",
+      "average": 21.89
+    },
     "sizeRatio": 0.1716528152099144,
     "inAtRules": {
       "media": 368,
@@ -435,6 +451,11 @@
   "fontSizes": {
     "total": 75,
     "unique": 22,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "16px": 2,
       "0.875rem": 28,
@@ -525,7 +546,7 @@
       "#e5e5e5": 42,
       "#ffffff": 55,
       "#999999": 50,
-      "currentcolor": 5,
+      "currentColor": 5,
       "#595959": 1,
       "transparent": 20,
       "#cccccc": 4,
@@ -631,7 +652,7 @@
       "#3399ff": 2,
       "#999999": 50,
       "transparent": 47,
-      "currentcolor": 5,
+      "currentColor": 5,
       "#595959": 1,
       "#ebebeb": 4,
       "#dfdfdf": 1,
@@ -782,17 +803,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 1080,
@@ -808,10 +826,13 @@
       "vh": 2,
       "cm": 1
     },
-    "excessive": 2,
-    "excessiveUsage": {
-      "0deg": 1,
-      "0px": 1
+    "excessive": {
+      "total": 2,
+      "unique": 2,
+      "usage": {
+        "0deg": 1,
+        "0px": 1
+      }
     }
   },
   "variables": {
@@ -823,12 +844,23 @@
   "vendorPrefixes": {
     "total": 108,
     "unique": 4,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-apple-": 4,
       "-webkit-": 39,
       "-moz-": 18,
       "-ms-": 47
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

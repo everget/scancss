@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 155708,
-    "gzipByteLength": 20586
+    "source": 155708,
+    "gzipSource": 20586
   },
   "comments": {
     "total": 93,
-    "totalByteLength": 5697,
-    "longestByteLength": 263,
-    "shortestByteLength": 7,
-    "averageByteLength": 61.26,
+    "length": {
+      "total": 5697,
+      "longest": 263,
+      "shortest": 7,
+      "average": 61.26
+    },
     "sizeRatio": 0.036587715467413365
   },
   "atRules": {
     "total": 109,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "charset": 1,
       "media": 103,
@@ -28,8 +34,12 @@
     "unique": 14,
     "onlyKeyword": 0,
     "types": {
-      "print": 83,
-      "screen": 105
+      "total": 188,
+      "unique": 2,
+      "usage": {
+        "print": 83,
+        "screen": 105
+      }
     },
     "features": {
       "total": 107,
@@ -129,28 +139,32 @@
     "complex": 140,
     "maxPerRule": 19,
     "averagePerRule": 1.32,
-    "totalByteLength": 47386,
-    "longestByteLength": 80,
-    "longestByteLengthSelector": ".accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after",
-    "averageByteLength": 23.67,
-    "totalSpecificity": [
-      0,
-      3874,
-      648
-    ],
-    "averageSpecificity": [
-      0,
-      1,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      5,
-      1
-    ],
-    "highestSpecificitySelector": ".dropdown.menu.vertical > li.opens-left > .is-dropdown-submenu",
+    "length": {
+      "total": 47386,
+      "longest": 80,
+      "longestSelector": ".accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after",
+      "average": 23.67
+    },
+    "specificity": {
+      "total": [
+        0,
+        3871,
+        651
+      ],
+      "highest": [
+        0,
+        5,
+        1
+      ],
+      "highestSelector": ".dropdown.menu.vertical > li.opens-left > .is-dropdown-submenu",
+      "average": [
+        0,
+        1,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.3043260461890205,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -159,10 +173,12 @@
     "uniqueRatio": 0.2624503513596089,
     "important": 63,
     "averagePerRule": 2.16,
-    "totalByteLength": 65643,
-    "longestByteLength": 359,
-    "longestByteLengthDeclaration": "background-image:url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==\")",
-    "averageByteLength": 20.06,
+    "length": {
+      "total": 65643,
+      "longest": 359,
+      "longestDeclaration": "background-image:url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==\")",
+      "average": 20.06
+    },
     "sizeRatio": 0.4215775682688109,
     "inAtRules": {
       "media": 888,
@@ -426,6 +442,11 @@
   "fontSizes": {
     "total": 55,
     "unique": 26,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "2em": 2,
       "1em": 2,
@@ -745,20 +766,15 @@
   "dataUris": {
     "total": 1,
     "unique": 1,
-    "totalByteLength": 334,
-    "averageByteLength": 334,
+    "length": {
+      "total": 334,
+      "longest": 334,
+      "longestDataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==",
+      "average": 334
+    },
     "sizeRatio": 0.002145040717239962,
     "usage": {
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==": 1
-    }
-  },
-  "browserHacks": {
-    "total": 1,
-    "usage": {
-      "supports": {},
-      "media": {
-        "screen and (min-width:0\\0)": 1
-      }
     }
   },
   "units": {
@@ -777,11 +793,14 @@
       "ms": 40,
       "turn": 10
     },
-    "excessive": 53,
-    "excessiveUsage": {
-      "0px": 34,
-      "0%": 7,
-      "0deg": 12
+    "excessive": {
+      "total": 53,
+      "unique": 3,
+      "usage": {
+        "0px": 34,
+        "0%": 7,
+        "0deg": 12
+      }
     }
   },
   "variables": {
@@ -793,11 +812,24 @@
   "vendorPrefixes": {
     "total": 358,
     "unique": 3,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-ms-": 295,
       "-webkit-": 44,
       "-moz-": 19
+    }
+  },
+  "browserHacks": {
+    "total": 1,
+    "usage": {
+      "supports": {},
+      "media": {
+        "screen and (min-width:0\\0)": 1
+      }
     }
   }
 }

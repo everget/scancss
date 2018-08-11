@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 30481,
-    "gzipByteLength": 5293
+    "source": 30481,
+    "gzipSource": 5293
   },
   "comments": {
     "total": 2,
-    "totalByteLength": 109,
-    "longestByteLength": 63,
-    "shortestByteLength": 46,
-    "averageByteLength": 54.5,
+    "length": {
+      "total": 109,
+      "longest": 63,
+      "shortest": 46,
+      "average": 54.5
+    },
     "sizeRatio": 0.0035759981627899347
   },
   "atRules": {
     "total": 24,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 22,
       "keyframes": 2
@@ -25,7 +31,11 @@
     "total": 22,
     "unique": 14,
     "onlyKeyword": 0,
-    "types": {},
+    "types": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "features": {
       "total": 28,
       "unique": 2,
@@ -108,28 +118,32 @@
     "complex": 0,
     "maxPerRule": 6,
     "averagePerRule": 1.19,
-    "totalByteLength": 7442,
-    "longestByteLength": 49,
-    "longestByteLengthSelector": "input[type=\"password\"]::-webkit-input-placeholder",
-    "averageByteLength": 16.95,
-    "totalSpecificity": [
-      0,
-      613,
-      189
-    ],
-    "averageSpecificity": [
-      0,
-      1,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      4,
-      0
-    ],
-    "highestSpecificitySelector": ".pricing-table .package.featured .package-name",
+    "length": {
+      "total": 7442,
+      "longest": 49,
+      "longestSelector": "input[type=\"password\"]::-webkit-input-placeholder",
+      "average": 16.95
+    },
+    "specificity": {
+      "total": [
+        0,
+        613,
+        189
+      ],
+      "highest": [
+        0,
+        4,
+        0
+      ],
+      "highestSelector": ".pricing-table .package.featured .package-name",
+      "average": [
+        0,
+        1,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.24415209474754765,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -138,10 +152,12 @@
     "uniqueRatio": 0.38976857490864797,
     "important": 0,
     "averagePerRule": 2.22,
-    "totalByteLength": 15294,
-    "longestByteLength": 232,
-    "longestByteLengthDeclaration": "background:#fff url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" viewBox=\"0 0 29 14\" width=\"29\"><path fill=\"#bdbdbd\" d=\"M9.37727 3.625l5.08154 6.93523L19.54036 3.625\"/></svg>') center right no-repeat",
-    "averageByteLength": 18.63,
+    "length": {
+      "total": 15294,
+      "longest": 232,
+      "longestDeclaration": "background:#fff url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"14\" viewBox=\"0 0 29 14\" width=\"29\"><path fill=\"#bdbdbd\" d=\"M9.37727 3.625l5.08154 6.93523L19.54036 3.625\"/></svg>') center right no-repeat",
+      "average": 18.63
+    },
     "sizeRatio": 0.5017551917588006,
     "inAtRules": {
       "media": 164,
@@ -320,6 +336,11 @@
   "fontSizes": {
     "total": 35,
     "unique": 16,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "18px": 3,
       "14px": 7,
@@ -564,17 +585,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 455,
@@ -586,9 +604,12 @@
       "s": 8,
       "deg": 1
     },
-    "excessive": 1,
-    "excessiveUsage": {
-      "0px": 1
+    "excessive": {
+      "total": 1,
+      "unique": 1,
+      "usage": {
+        "0px": 1
+      }
     }
   },
   "variables": {
@@ -600,11 +621,22 @@
   "vendorPrefixes": {
     "total": 18,
     "unique": 3,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-": 7,
       "-moz-": 3,
       "-ms-": 8
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

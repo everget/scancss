@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 14147,
-    "gzipByteLength": 3823
+    "source": 14147,
+    "gzipSource": 3823
   },
   "comments": {
     "total": 13,
-    "totalByteLength": 4570,
-    "longestByteLength": 951,
-    "shortestByteLength": 41,
-    "averageByteLength": 351.54,
+    "length": {
+      "total": 4570,
+      "longest": 951,
+      "shortest": 41,
+      "average": 351.54
+    },
     "sizeRatio": 0.32303668622322756
   },
   "atRules": {
     "total": 3,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 3
     }
@@ -25,7 +31,11 @@
     "unique": 3,
     "onlyKeyword": 0,
     "types": {
-      "screen": 1
+      "total": 1,
+      "unique": 1,
+      "usage": {
+        "screen": 1
+      }
     },
     "features": {
       "total": 3,
@@ -92,28 +102,32 @@
     "complex": 4,
     "maxPerRule": 8,
     "averagePerRule": 1.65,
-    "totalByteLength": 2153,
-    "longestByteLength": 63,
-    "longestByteLengthSelector": ".checkbox input[type=checkbox]:checked + .checkbox__label:after",
-    "averageByteLength": 11.51,
-    "totalSpecificity": [
-      0,
-      164,
-      128
-    ],
-    "averageSpecificity": [
-      0,
-      1,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      4,
-      2
-    ],
-    "highestSpecificitySelector": ".radio input[type=radio]:focus + .radio__label:after",
+    "length": {
+      "total": 2153,
+      "longest": 63,
+      "longestSelector": ".checkbox input[type=checkbox]:checked + .checkbox__label:after",
+      "average": 11.51
+    },
+    "specificity": {
+      "total": [
+        0,
+        164,
+        128
+      ],
+      "highest": [
+        0,
+        4,
+        2
+      ],
+      "highestSelector": ".radio input[type=radio]:focus + .radio__label:after",
+      "average": [
+        0,
+        1,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.15218774298437832,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -122,10 +136,12 @@
     "uniqueRatio": 0.6360424028268551,
     "important": 1,
     "averagePerRule": 2.5,
-    "totalByteLength": 5143,
-    "longestByteLength": 85,
-    "longestByteLengthDeclaration": "font-family:Avenir,\"Avenir Next\",\"Helvetica Neue\",\"Segoe UI\",Verdana,sans-serif",
-    "averageByteLength": 18.17,
+    "length": {
+      "total": 5143,
+      "longest": 85,
+      "longestDeclaration": "font-family:Avenir,\"Avenir Next\",\"Helvetica Neue\",\"Segoe UI\",Verdana,sans-serif",
+      "average": 18.17
+    },
     "sizeRatio": 0.36353997313918146,
     "inAtRules": {
       "media": 11
@@ -296,6 +312,11 @@
   "fontSizes": {
     "total": 19,
     "unique": 12,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "inherit": 1,
       "62.5%": 1,
@@ -462,17 +483,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 123,
@@ -483,9 +501,12 @@
       "px": 37,
       "ms": 1
     },
-    "excessive": 1,
-    "excessiveUsage": {
-      "0px": 1
+    "excessive": {
+      "total": 1,
+      "unique": 1,
+      "usage": {
+        "0px": 1
+      }
     }
   },
   "variables": {
@@ -497,11 +518,22 @@
   "vendorPrefixes": {
     "total": 18,
     "unique": 3,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-": 10,
       "-moz-": 5,
       "-ms-": 3
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

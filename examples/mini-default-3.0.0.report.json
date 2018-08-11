@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 55306,
-    "gzipByteLength": 9067
+    "source": 55306,
+    "gzipSource": 9067
   },
   "comments": {
     "total": 22,
-    "totalByteLength": 1300,
-    "longestByteLength": 159,
-    "shortestByteLength": 42,
-    "averageByteLength": 59.09,
+    "length": {
+      "total": 1300,
+      "longest": 159,
+      "shortest": 42,
+      "average": 59.09
+    },
     "sizeRatio": 0.023505587097240807
   },
   "atRules": {
     "total": 25,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "charset": 1,
       "media": 23,
@@ -27,7 +33,11 @@
     "unique": 9,
     "onlyKeyword": 0,
     "types": {
-      "screen": 23
+      "total": 23,
+      "unique": 1,
+      "usage": {
+        "screen": 23
+      }
     },
     "features": {
       "total": 25,
@@ -118,28 +128,32 @@
     "complex": 35,
     "maxPerRule": 20,
     "averagePerRule": 1.77,
-    "totalByteLength": 11775,
-    "longestByteLength": 81,
-    "longestByteLengthSelector": "input:not([type=\"button\"]):not([type=\"submit\"]):not([type=\"reset\"]):focus:invalid",
-    "averageByteLength": 18.12,
-    "totalSpecificity": [
-      0,
-      885,
-      450
-    ],
-    "averageSpecificity": [
-      0,
-      0.96,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      5,
-      1
-    ],
-    "highestSpecificitySelector": "input:not([type=\"button\"]):not([type=\"submit\"]):not([type=\"reset\"]):focus:invalid",
+    "length": {
+      "total": 11775,
+      "longest": 81,
+      "longestSelector": "input:not([type=\"button\"]):not([type=\"submit\"]):not([type=\"reset\"]):focus:invalid",
+      "average": 18.12
+    },
+    "specificity": {
+      "total": [
+        0,
+        885,
+        450
+      ],
+      "highest": [
+        0,
+        5,
+        1
+      ],
+      "highestSelector": "input:not([type=\"button\"]):not([type=\"submit\"]):not([type=\"reset\"]):focus:invalid",
+      "average": [
+        0,
+        0.96,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.2129063754384696,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -148,10 +162,12 @@
     "uniqueRatio": 0.5506653019447287,
     "important": 56,
     "averagePerRule": 2.66,
-    "totalByteLength": 33761,
-    "longestByteLength": 1040,
-    "longestByteLengthDeclaration": "background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'%3E%3C/circle%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'%3E%3C/path%3E%3C/svg%3E\")",
-    "averageByteLength": 34.56,
+    "length": {
+      "total": 33761,
+      "longest": 1040,
+      "longestDeclaration": "background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'%3E%3C/circle%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'%3E%3C/path%3E%3C/svg%3E\")",
+      "average": 34.56
+    },
     "sizeRatio": 0.6104400969153437,
     "inAtRules": {
       "media": 175,
@@ -354,6 +370,11 @@
   "fontSizes": {
     "total": 22,
     "unique": 18,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "16px": 1,
       "1em": 2,
@@ -527,17 +548,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 330,
@@ -552,12 +570,15 @@
       "vw": 1,
       "deg": 2
     },
-    "excessive": 11,
-    "excessiveUsage": {
-      "0rem": 3,
-      "0px": 2,
-      "0%": 5,
-      "0deg": 1
+    "excessive": {
+      "total": 11,
+      "unique": 4,
+      "usage": {
+        "0rem": 3,
+        "0px": 2,
+        "0%": 5,
+        "0deg": 1
+      }
     }
   },
   "variables": {
@@ -727,13 +748,24 @@
   "vendorPrefixes": {
     "total": 38,
     "unique": 5,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-apple-": 1,
       "-webkit-": 27,
       "-o-": 1,
       "-moz-": 8,
       "-ms-": 1
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

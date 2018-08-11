@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 78546,
-    "gzipByteLength": 4439
+    "source": 78546,
+    "gzipSource": 4439
   },
   "comments": {
     "total": 5,
-    "totalByteLength": 494,
-    "longestByteLength": 182,
-    "shortestByteLength": 78,
-    "averageByteLength": 98.8,
+    "length": {
+      "total": 494,
+      "longest": 182,
+      "shortest": 78,
+      "average": 98.8
+    },
     "sizeRatio": 0.006289308176100629
   },
   "atRules": {
     "total": 155,
     "empty": 0,
     "prefixed": 77,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "charset": 1,
       "-webkit-keyframes": 77,
@@ -26,7 +32,11 @@
     "total": 0,
     "unique": 0,
     "onlyKeyword": 0,
-    "types": {},
+    "types": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "features": {
       "total": 0,
       "unique": 0,
@@ -100,28 +110,32 @@
     "complex": 0,
     "maxPerRule": 1,
     "averagePerRule": 0.15,
-    "totalByteLength": 908,
-    "longestByteLength": 19,
-    "longestByteLengthSelector": ".rotateOutDownRight",
-    "averageByteLength": 11.49,
-    "totalSpecificity": [
-      0,
-      81,
-      0
-    ],
-    "averageSpecificity": [
-      0,
-      0,
-      0
-    ],
-    "highestSpecificity": [
-      0,
-      2,
-      0
-    ],
-    "highestSpecificitySelector": ".animated.infinite",
+    "length": {
+      "total": 908,
+      "longest": 19,
+      "longestSelector": ".rotateOutDownRight",
+      "average": 11.49
+    },
+    "specificity": {
+      "total": [
+        0,
+        81,
+        0
+      ],
+      "highest": [
+        0,
+        2,
+        0
+      ],
+      "highestSelector": ".animated.infinite",
+      "average": [
+        0,
+        1,
+        0
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.011560104906678888,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -130,10 +144,12 @@
     "uniqueRatio": 0.2926829268292683,
     "important": 8,
     "averagePerRule": 2.78,
-    "totalByteLength": 53418,
-    "longestByteLength": 89,
-    "longestByteLengthDeclaration": "-webkit-transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-190deg)",
-    "averageByteLength": 36.19,
+    "length": {
+      "total": 53418,
+      "longest": 89,
+      "longestDeclaration": "-webkit-transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-190deg)",
+      "average": 36.19
+    },
     "sizeRatio": 0.6800855549614239,
     "inAtRules": {
       "-webkit-keyframes": 642,
@@ -233,6 +249,11 @@
   "fontSizes": {
     "total": 0,
     "unique": 0,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {}
   },
   "lineHeights": {
@@ -418,17 +439,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 712,
@@ -439,9 +457,12 @@
       "deg": 268,
       "%": 100
     },
-    "excessive": 4,
-    "excessiveUsage": {
-      "0deg": 4
+    "excessive": {
+      "total": 4,
+      "unique": 1,
+      "usage": {
+        "0deg": 4
+      }
     }
   },
   "variables": {
@@ -453,9 +474,20 @@
   "vendorPrefixes": {
     "total": 685,
     "unique": 1,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-": 685
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

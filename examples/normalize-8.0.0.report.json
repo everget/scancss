@@ -1,28 +1,38 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 6329,
-    "gzipByteLength": 1726
+    "source": 6329,
+    "gzipSource": 1726
   },
   "comments": {
     "total": 70,
-    "totalByteLength": 3853,
-    "longestByteLength": 248,
-    "shortestByteLength": 7,
-    "averageByteLength": 55.04,
+    "length": {
+      "total": 3853,
+      "longest": 248,
+      "shortest": 7,
+      "average": 55.04
+    },
     "sizeRatio": 0.6087849581292464
   },
   "atRules": {
     "total": 0,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {}
   },
   "mediaQueries": {
     "total": 0,
     "unique": 0,
     "onlyKeyword": 0,
-    "types": {},
+    "types": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "features": {
       "total": 0,
       "unique": 0,
@@ -74,28 +84,32 @@
     "complex": 0,
     "maxPerRule": 5,
     "averagePerRule": 1.64,
-    "totalByteLength": 663,
-    "longestByteLength": 42,
-    "longestByteLengthSelector": "[type=\"number\"]::-webkit-inner-spin-button",
-    "averageByteLength": 12.28,
-    "totalSpecificity": [
-      0,
-      21,
-      45
-    ],
-    "averageSpecificity": [
-      0,
-      0,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      2,
-      0
-    ],
-    "highestSpecificitySelector": "[type=\"button\"]:-moz-focusring",
+    "length": {
+      "total": 663,
+      "longest": 42,
+      "longestSelector": "[type=\"number\"]::-webkit-inner-spin-button",
+      "average": 12.28
+    },
+    "specificity": {
+      "total": [
+        0,
+        21,
+        45
+      ],
+      "highest": [
+        0,
+        2,
+        0
+      ],
+      "highestSelector": "[type=\"button\"]:-moz-focusring",
+      "average": [
+        0,
+        1,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.1047558856059409,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -104,10 +118,12 @@
     "uniqueRatio": 0.7857142857142857,
     "important": 0,
     "averagePerRule": 1.7,
-    "totalByteLength": 1041,
-    "longestByteLength": 33,
-    "longestByteLengthDeclaration": "font-family:monospace,monospace",
-    "averageByteLength": 18.59,
+    "length": {
+      "total": 1041,
+      "longest": 33,
+      "longestDeclaration": "font-family:monospace,monospace",
+      "average": 18.59
+    },
     "sizeRatio": 0.16448096065729184,
     "inAtRules": {},
     "list": []
@@ -220,6 +236,11 @@
   "fontSizes": {
     "total": 7,
     "unique": 6,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "2em": 1,
       "1em": 2,
@@ -334,17 +355,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 16,
@@ -354,8 +372,11 @@
       "em": 9,
       "px": 2
     },
-    "excessive": 0,
-    "excessiveUsage": {}
+    "excessive": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    }
   },
   "variables": {
     "total": 0,
@@ -366,10 +387,21 @@
   "vendorPrefixes": {
     "total": 17,
     "unique": 2,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-": 9,
       "-moz-": 8
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }

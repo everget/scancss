@@ -1,21 +1,27 @@
 {
   "styleSheetSize": {
-    "sourceByteLength": 251180,
-    "gzipByteLength": 16053
+    "source": 251180,
+    "gzipSource": 16053
   },
   "comments": {
     "total": 58,
-    "totalByteLength": 4611,
-    "longestByteLength": 286,
-    "shortestByteLength": 7,
-    "averageByteLength": 79.5,
+    "length": {
+      "total": 4611,
+      "longest": 286,
+      "shortest": 7,
+      "average": 79.5
+    },
     "sizeRatio": 0.01835735329245959
   },
   "atRules": {
     "total": 635,
     "empty": 0,
     "prefixed": 0,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 635
     }
@@ -25,7 +31,11 @@
     "unique": 5,
     "onlyKeyword": 635,
     "types": {
-      "screen": 635
+      "total": 635,
+      "unique": 1,
+      "usage": {
+        "screen": 635
+      }
     },
     "features": {
       "total": 1266,
@@ -96,28 +106,32 @@
     "complex": 22,
     "maxPerRule": 36,
     "averagePerRule": 1.04,
-    "totalByteLength": 82518,
-    "longestByteLength": 78,
-    "longestByteLengthSelector": ".flakes-frame .flakes-content .flakes-mobile-top-bar .navigation-expand-target",
-    "averageByteLength": 29.81,
-    "totalSpecificity": [
-      0,
-      8494,
-      414
-    ],
-    "averageSpecificity": [
-      0,
-      1,
-      1
-    ],
-    "highestSpecificity": [
-      0,
-      5,
-      4
-    ],
-    "highestSpecificitySelector": ".flakes-frame .flakes-navigation > ul > li.expandable:hover ul:hover a",
+    "length": {
+      "total": 82518,
+      "longest": 78,
+      "longestSelector": ".flakes-frame .flakes-content .flakes-mobile-top-bar .navigation-expand-target",
+      "average": 29.81
+    },
+    "specificity": {
+      "total": [
+        0,
+        8494,
+        414
+      ],
+      "highest": [
+        0,
+        5,
+        4
+      ],
+      "highestSelector": ".flakes-frame .flakes-navigation > ul > li.expandable:hover ul:hover a",
+      "average": [
+        0,
+        1,
+        1
+      ],
+      "graphData": []
+    },
     "sizeRatio": 0.32852137909069196,
-    "specificityGraphData": [],
     "usage": {}
   },
   "declarations": {
@@ -126,10 +140,12 @@
     "uniqueRatio": 0.10305869385505649,
     "important": 0,
     "averagePerRule": 1.37,
-    "totalByteLength": 67270,
-    "longestByteLength": 130,
-    "longestByteLengthDeclaration": "-webkit-box-shadow:inset 0 1px rgba(255,255,255,0.1),inset 0 0 0 1px rgba(255,255,255,0.08),0 1px 2px rgba(0,0,0,0.25)",
-    "averageByteLength": 18.54,
+    "length": {
+      "total": 67270,
+      "longest": 130,
+      "longestDeclaration": "-webkit-box-shadow:inset 0 1px rgba(255,255,255,0.1),inset 0 0 0 1px rgba(255,255,255,0.08),0 1px 2px rgba(0,0,0,0.25)",
+      "average": 18.54
+    },
     "sizeRatio": 0.26781590890994506,
     "inAtRules": {
       "media": 651
@@ -307,6 +323,11 @@
   "fontSizes": {
     "total": 70,
     "unique": 21,
+    "keywords": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "2em": 1,
       "1em": 1,
@@ -700,17 +721,14 @@
   "dataUris": {
     "total": 0,
     "unique": 0,
-    "totalByteLength": 0,
-    "averageByteLength": 0,
+    "length": {
+      "total": 0,
+      "longest": 0,
+      "longestDataUri": null,
+      "average": 0
+    },
     "sizeRatio": 0,
     "usage": {}
-  },
-  "browserHacks": {
-    "total": 0,
-    "usage": {
-      "supports": {},
-      "media": {}
-    }
   },
   "units": {
     "total": 1362,
@@ -723,8 +741,11 @@
       "ex": 2,
       "vh": 2
     },
-    "excessive": 0,
-    "excessiveUsage": {}
+    "excessive": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    }
   },
   "variables": {
     "total": 0,
@@ -735,12 +756,23 @@
   "vendorPrefixes": {
     "total": 140,
     "unique": 4,
-    "unknown": {},
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-": 66,
       "-ms-": 1,
       "-moz-": 40,
       "-o-": 33
+    }
+  },
+  "browserHacks": {
+    "total": 0,
+    "usage": {
+      "supports": {},
+      "media": {}
     }
   }
 }
