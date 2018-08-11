@@ -133,7 +133,11 @@ describe('Module: handleFonts', () => {
 			vendorPrefixes: {
 				total: 0,
 				unique: 0,
-				unknown: {},
+				unknown: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 		};

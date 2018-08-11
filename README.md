@@ -687,7 +687,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 * **unique** - `number`
 
-* **unknown** - `Record<string, number>`
+* **unknown** - `Record<string, number | Record<string, number>>`
 
 * **usage** - `Record<string, number>`
 

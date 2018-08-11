@@ -638,7 +638,11 @@ describe('Module: scancss', () => {
 				expect(report.vendorPrefixes).toEqual({
 					total: 2,
 					unique: 2,
-					unknown: {},
+					unknown: {
+						total: 0,
+						unique: 0,
+						usage: {},
+					},
 					usage: {
 						'-moz-': 1,
 						'-webkit-': 1,

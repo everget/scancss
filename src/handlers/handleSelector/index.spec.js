@@ -89,7 +89,11 @@ describe('Module: handleSelector', () => {
 			vendorPrefixes: {
 				total: 0,
 				unique: 0,
-				unknown: {},
+				unknown: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 		};
@@ -273,17 +277,43 @@ describe('Module: handleSelector', () => {
 		});
 	});
 
-	describe('vendorPrefixes.total', () => {
-		it('should be counted correctly', () => {
-			expect(report.vendorPrefixes.total).toBe(2);
+	describe('Handling vendor prefixes', () => {
+		describe('vendorPrefixes.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.total).toBe(2);
+			});
 		});
-	});
 
-	describe('vendorPrefixes.usage', () => {
-		it('should be counted correctly', () => {
-			expect(report.vendorPrefixes.usage).toEqual({
-				'-moz-': 1,
-				'-webkit-': 1,
+		describe('vendorPrefixes.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unique).toBe(0);
+			});
+		});
+
+		describe('vendorPrefixes.unknown.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unknown.total).toBe(0);
+			});
+		});
+
+		describe('vendorPrefixes.unknown.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unknown.unique).toBe(0);
+			});
+		});
+
+		describe('vendorPrefixes.unknown.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unknown.usage).toEqual({});
+			});
+		});
+
+		describe('vendorPrefixes.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.usage).toEqual({
+					'-moz-': 1,
+					'-webkit-': 1,
+				});
 			});
 		});
 	});

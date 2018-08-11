@@ -28,7 +28,6 @@ describe('Module: handleFunctions', () => {
 			background: hsl(140, 80%, 70%);
 			transition-timing-function: cubic-bezier(0.0, 0.0, 1, 1);
 			transform: translateY(-150%) scale(.8) rotate(180deg);
-			background-image: -webkit-linear-gradient(top, #2F2727, #1a82f7);
 			filter: contrast(200%);
 		}
 
@@ -39,7 +38,6 @@ describe('Module: handleFunctions', () => {
 			background: repeating-radial-gradient(red, yellow 10%, green 15%);
 			transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 			transform: scale(.8);
-			background-image: -moz-linear-gradient(top, #2F2727, #1a82f7);
 			filter: grayscale(80%);
 		}
 
@@ -49,7 +47,6 @@ describe('Module: handleFunctions', () => {
 			animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
 			transition-timing-function: cubic-bezier(0.1, red, 1.0, green),
 			transform: rotate(180deg);
-			background-image: -ms-linear-gradient(top, #2F2727, #1a82f7);
 			filter: hue-rotate(90deg);
 		}
 
@@ -59,8 +56,14 @@ describe('Module: handleFunctions', () => {
 			animation-timing-function: cubic-bezier(0.3, 2.1);
 			transition-timing-function: cubic-bezier(-1.9, 0.3, -0.2, 2.1);
 			transform: translateY(-150%);
-			background-image: -o-linear-gradient(top, #2F2727, #1a82f7);
 			filter: drop-shadow(16px 16px 20px red) invert(75%);
+		}
+
+		.selector {
+			background-image: -webkit-linear-gradient(top, #2F2727, #1a82f7);
+			background-image: -moz-linear-gradient(top, #2F2727, #1a82f7);
+			background-image: -ms-linear-gradient(top, #2F2727, #1a82f7);
+			background-image: -o-linear-gradient(top, #2F2727, #1a82f7);
 		}
 	`;
 
@@ -105,7 +108,11 @@ describe('Module: handleFunctions', () => {
 			vendorPrefixes: {
 				total: 0,
 				unique: 0,
-				unknown: {},
+				unknown: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 		};
@@ -292,6 +299,30 @@ describe('Module: handleFunctions', () => {
 		describe('vendorPrefixes.total', () => {
 			it('should be counted correctly', () => {
 				expect(report.vendorPrefixes.total).toBe(4);
+			});
+		});
+
+		describe('vendorPrefixes.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unique).toBe(0);
+			});
+		});
+
+		describe('vendorPrefixes.unknown.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unknown.total).toBe(0);
+			});
+		});
+
+		describe('vendorPrefixes.unknown.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unknown.unique).toBe(0);
+			});
+		});
+
+		describe('vendorPrefixes.unknown.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unknown.usage).toEqual({});
 			});
 		});
 

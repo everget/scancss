@@ -135,7 +135,11 @@ describe('Module: handleDeclaration', () => {
 			vendorPrefixes: {
 				total: 0,
 				unique: 0,
-				unknown: {},
+				unknown: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 		};
@@ -425,6 +429,24 @@ describe('Module: handleDeclaration', () => {
 		describe('vendorPrefixes.unique', () => {
 			it('should be counted correctly', () => {
 				expect(report.vendorPrefixes.unique).toBe(0);
+			});
+		});
+
+		describe('vendorPrefixes.unknown.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unknown.total).toBe(0);
+			});
+		});
+
+		describe('vendorPrefixes.unknown.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unknown.unique).toBe(0);
+			});
+		});
+
+		describe('vendorPrefixes.unknown.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.vendorPrefixes.unknown.usage).toEqual({});
 			});
 		});
 

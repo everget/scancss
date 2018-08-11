@@ -338,7 +338,11 @@ export default function scancss(src, options) {
 			vendorPrefixes: {
 				total: 0,
 				unique: 0,
-				unknown: {},
+				unknown: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 		};
@@ -484,6 +488,8 @@ export default function scancss(src, options) {
 			}
 
 			report.vendorPrefixes.unique = Object.keys(report.vendorPrefixes.usage).length;
+			report.vendorPrefixes.unknown.unique = Object.keys(report.vendorPrefixes.unknown.usage).length;
+
 			report.variables.unique = Object.keys(report.variables.usage).length;
 
 			report.dataUris.unique = Object.keys(report.dataUris.usage).length;

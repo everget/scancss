@@ -10,6 +10,7 @@ export function handleVendorPrefix(str, report) {
 		countUsage(prefix, report.vendorPrefixes.usage);
 	} else if (rePrefixedString.test(str)) {
 		const prefix = str.match(rePrefixedString)[0];
-		countUsage(prefix, report.vendorPrefixes.unknown);
+		report.vendorPrefixes.unknown.total++;
+		countUsage(prefix, report.vendorPrefixes.unknown.usage);
 	}
 }

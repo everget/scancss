@@ -29,6 +29,7 @@ describe('Module: handleVendorPrefix', () => {
 		'-epub-text-emphasis-color',
 		'-epub-text-emphasis-style',
 		'-epub-text-emphasis',
+
 		'-tada-font-smoothing',
 		'-foo-grid-columns',
 		'-bar-grid-rows',
@@ -43,7 +44,11 @@ describe('Module: handleVendorPrefix', () => {
 			vendorPrefixes: {
 				total: 0,
 				unique: 0,
-				unknown: {},
+				unknown: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 		};
@@ -69,9 +74,21 @@ describe('Module: handleVendorPrefix', () => {
 		});
 	});
 
-	describe('vendorPrefixes.unknown', () => {
+	describe('vendorPrefixes.unknown.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.vendorPrefixes.unknown).toEqual({
+			expect(report.vendorPrefixes.unknown.total).toBe(4);
+		});
+	});
+
+	describe('vendorPrefixes.unknown.unique', () => {
+		it('should be counted correctly', () => {
+			expect(report.vendorPrefixes.unknown.unique).toBe(0);
+		});
+	});
+
+	describe('vendorPrefixes.unknown.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.vendorPrefixes.unknown.usage).toEqual({
 				'-tada-': 1,
 				'-foo-': 1,
 				'-bar-': 1,
