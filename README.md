@@ -17,63 +17,39 @@ A robust CSS stylesheet statistics collector and analyzer
 1. [Examples](#examples)
 
 1. [Options](#options)
-	* [collectStylesheetSizeData](#collectstylesheetsizedata)
-	* [collectCommentsData](#collectcommentsdata)
-	* [collectAtRulesData](#collectatrulesdata)
-	* [collectRulesData](#collectrulesdata)
-	* [collectSelectorsData](#collectselectorsdata)
-	* [collectSelectorsUsage](#collectselectorsusage)
-	* [selectorComplexityThreshold](#selectorcomplexitythreshold)
-	* [collectSpecificityGraphData](#collectspecificitygraphdata)
-	* [collectDeclarationsData](#collectdeclarationsdata)
-	* [collectEngineTriggerProperties](#collectenginetriggerproperties)
-	* [collectUniqueDeclarationsList](#collectuniquedeclarationslist)
-	* [collectFontsData](#collectfontsdata)
-	* [collectColorsData](#collectcolorsdata)
-	* [collectBackgroundColorsData](#collectbackgroundcolorsdata)
-	* [collectAllColorsData](#collectallcolorsdata)
-	* [collectTransitionsAndAnimationsData](#collecttransitionsandanimationsdata)
-	* [collectFunctionsData](#collectfunctionsdata)
-	* [collectFiltersData](#collectfiltersdata)
-	* [collectGradientsData](#collectgradientsdata)
-	* [collectUnitsData](#collectunitsdata)
-	* [collectVariablesData](#collectvariablesdata)
-	* [collectDataUrisData](#collectdataurisdata)
-	* [collectBrowserHacksData](#collectbrowserhacksdata)
-	* [collectPerformanceHacksData](#collectperformancehacksdata)
-
-1. [Report Structure](#reportstructure)
-	* [styleSheetSize](#stylesheetsize)
+	* [stylesheetSize](#stylesheetsize)
 	* [comments](#comments)
 	* [atRules](#atrules)
-	* [mediaQueries](#mediaqueries)
-	* [keyframes](#keyframes)
 	* [rules](#rules)
 	* [selectors](#selectors)
+	* [selectorsUsage](#selectorsusage)
+	* [selectorComplexityThreshold](#selectorcomplexitythreshold)
+	* [specificityGraph](#specificitygraph)
 	* [declarations](#declarations)
+	* [uniqueDeclarationsList](#uniquedeclarationslist)
 	* [properties](#properties)
+	* [engineTriggerProperties](#enginetriggerproperties)
+	* [performanceHacks](#performancehacks)
 	* [displays](#displays)
 	* [positions](#positions)
 	* [zIndices](#zindices)
 	* [floats](#floats)
 	* [borderRadiuses](#borderradiuses)
 	* [letterSpacings](#letterspacings)
-	* [fontSizes](#fontsizes)
-	* [lineHeights](#lineheights)
-	* [fontFamilies](#fontfamilies)
+	* [fonts](#fonts)
 	* [colors](#colors)
 	* [backgroundColors](#backgroundcolors)
 	* [allColors](#allcolors)
-	* [transitions](#transitions)
-	* [animations](#animations)
+	* [transitionsAndAnimations](#transitionsandanimations)
 	* [functions](#functions)
 	* [filters](#filters)
 	* [gradients](#gradients)
-	* [dataUris](#datauris)
-	* [browserHacks](#browserhacks)
 	* [units](#units)
 	* [variables](#variables)
-	* [vendorPrefixes](#vendorprefixes)
+	* [dataUris](#datauris)
+	* [browserHacks](#browserhacks)
+
+1. [Report Structure](#report-structure)
 
 1. [License](#license)
 
@@ -127,143 +103,201 @@ See [examples](https://github.com/everget/scancss/tree/master/examples) folder w
 
 ## Options
 
-#### collectStylesheetSizeData
+#### stylesheetSize
 
-Use this flag to fill `report.styleSheetSize` stats metric
-
-* Default: `true`
-
-#### collectCommentsData
-
-Use this flag to fill `report.comments` stats metric
+Use this flag to fill `.styleSheetSize` metric
 
 * Default: `true`
 
-#### collectAtRulesData
+#### comments
 
-Use this flag to fill `report.atRules`, `report.mediaQueries`, `report.keyframes` stats metrics and to enable handling rules, selectors, declarations in at-rule blocks
-
-* Default: `true`
-
-#### collectRulesData
-
-Use this flag to fill `report.rules` and `report.selectors` stats metrics
+Use this flag to fill `.comments` metric
 
 * Default: `true`
 
-#### collectSelectorsData
+#### atRules
 
-Use this flag to fill `report.selectors` stats metric
+Use this flag to fill `.atRules`, `.mediaQueries`, `.keyframes` metrics
+
+* **_NOTE:_** Disabling this flag you will disable counting browser hacks in @supports and @media at-rules
 
 * Default: `true`
 
-#### collectSelectorsUsage
+#### rules
 
-Use this flag to fill `report.selectors.usage` stats metric
+Use this flag to fill `.rules` and `.selectors` metrics
+
+* **_NOTE:_** Disabling this flag you will disable counting all `.selectors` metrics
+
+* Default: `true`
+
+#### selectors
+
+Use this flag to fill `.selectors` metric
+
+* **_NOTE:_** Disabling this flag you will disable counting all `.selectors` metrics
+
+* Default: `true`
+
+#### selectorsUsage
+
+Use this flag to fill `.selectors.usage` metric
 
 * Default: `true`
 
 #### selectorComplexityThreshold
 
-Use this value to set a threshold of the base parts of a selector to consider the selector as complex and to count in `report.selectors.complex` stats metric
+Use this value to set a threshold of the base parts of a selector to consider the selector as complex and to count in `.selectors.complex` metric
 
 * Default: `4`
 
-#### collectSpecificityGraphData
+#### specificityGraph
 
-Use this flag to fill `report.selectors.specificityGraphData` stats metric
-
-* Default: `false`
-
-#### collectDeclarationsData
-
-* Default: `true`
-
-#### collectEngineTriggerProperties
-
-Use this flag to fill `report.properties.engineTriggers` stats metric
-
-* Default: `true`
-
-#### collectUniqueDeclarationsList
-
-Use this flag to fill `report.declarations.list` stats metric
+Use this flag to fill `.selectors.specificity.graphData` metric
 
 * Default: `false`
 
-#### collectFontsData
+#### declarations
 
-Use this flag to fill `report.fontSizes`, `report.lineHeights`, `report.fontFamilies` stats metrics
+Use this flag to fill `.declarations` metric
 
-* Default: `true`
-
-#### collectColorsData
-
-Use this flag to fill `report.colors` stats metric
+* **_NOTE:_** Disabling this flag you will disable counting all `.declarations` metrics
 
 * Default: `true`
 
-#### collectBackgroundColorsData
+#### uniqueDeclarationsList
 
-Use this flag to fill `report.backgroundColors` stats metric
+Use this flag to fill `.declarations.list` metric
 
-* Default: `true`
+* Default: `false`
 
-#### collectAllColorsData
+#### properties
 
-Use this flag to fill `report.allColors` stats metric
+Use this flag to fill `.properties` metric
 
-* Default: `true`
-
-#### collectTransitionsAndAnimationsData
-
-Use this flag to fill `report.transitions` and `report.animations` stats metrics
+* **_NOTE:_** Disabling this flag you will disable counting `.properties.engineTriggers` and `.properties.performanceHacks`
 
 * Default: `true`
 
-#### collectFunctionsData
+#### engineTriggerProperties
 
-Use this flag to fill `report.functions` stats metric
-
-* Default: `true`
-
-#### collectFiltersData
-
-Use this flag to fill `report.filters` stats metric
-
-#### collectGradientsData
-
-Use this flag to fill `report.gradients` stats metric
+Use this flag to fill `.properties.engineTriggers` metric
 
 * Default: `true`
 
-#### collectUnitsData
+#### performanceHacks
 
-Use this flag to fill `report.units` stats metric
-
-* Default: `true`
-
-#### collectVariablesData
-
-Use this flag to fill `report.variables` stats metric
+Use this flag to fill `.properties.performanceHacks` metric
 
 * Default: `true`
 
-#### collectDataUrisData
+#### displays
 
-Use this flag to fill `report.dataUris` stats metric
-
-* Default: `true`
-
-#### collectBrowserHacksData
-
-Use this flag to fill `report.browserHacks` stats metric
+Use this flag to fill `.displays` metric
 
 * Default: `true`
 
-#### collectPerformanceHacksData
+#### positions
 
-Use this flag to fill `report.properties.performanceHacks` stats metric
+Use this flag to fill `.positions` metric
+
+* Default: `true`
+
+#### zIndices
+
+Use this flag to fill `.zIndices` metric
+
+* Default: `true`
+
+#### floats
+
+Use this flag to fill `.floats` metric
+
+* Default: `true`
+
+#### borderRadiuses
+
+Use this flag to fill `.borderRadiuses` metric
+
+* Default: `true`
+
+#### letterSpacings
+
+Use this flag to fill `.letterSpacings` metric
+
+* Default: `true`
+
+#### fonts
+
+Use this flag to fill `.fontSizes`, `.lineHeights`, `.fontFamilies` metrics
+
+* Default: `true`
+
+#### colors
+
+Use this flag to fill `.colors` metric
+
+* Default: `true`
+
+#### backgroundColors
+
+Use this flag to fill `.backgroundColors` metric
+
+* Default: `true`
+
+#### allColors
+
+Use this flag to fill `.allColors` metric
+
+* Default: `true`
+
+#### transitionsAndAnimations
+
+Use this flag to fill `.transitions` and `.animations` metrics
+
+* Default: `true`
+
+#### functions
+
+Use this flag to fill `.functions` metric
+
+* **_NOTE:_** Disabling this flag you will disable counting `.gradients`, `.filters`, `.dataUris`, cubic-beziers for `.transitions` and `.animations` metrics
+
+* Default: `true`
+
+#### filters
+
+Use this flag to fill `.filters` metric
+
+#### gradients
+
+Use this flag to fill `.gradients` metric
+
+* Default: `true`
+
+#### units
+
+Use this flag to fill `.units` metric
+
+* **_NOTE:_** Disabling this flag you will disable counting `.properties.negativeMargins` metric
+
+* Default: `true`
+
+#### variables
+
+Use this flag to fill `.variables` metric
+
+* Default: `true`
+
+#### dataUris
+
+Use this flag to fill `.dataUris` metric
+
+* Default: `true`
+
+#### browserHacks
+
+Use this flag to fill `.browserHacks` metric
 
 * Default: `true`
 
@@ -271,422 +305,7 @@ Use this flag to fill `report.properties.performanceHacks` stats metric
 
 ## Report Structure
 
-#### styleSheetSize
-
-* **sourceByteLength** - `number`
-
-* **gzipByteLength** - `number`
-
-#### comments
-
-* **total** - `number`
-
-* **totalByteLength** - `number`
-
-* **longestByteLength** - `number`
-
-* **shortestByteLength** - `number` (`Number.MAX_SAFE_INTEGER` if there are no comments in a stylesheet)
-
-* **averageByteLength** - `number`
-
-* **sizeRatio** - `number`
-
-#### atRules
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **empty** - `number`
-
-* **prefixed** - `number`
-
-* **unknown** - `Record<string, number | Record<string, number>>`
-
-#### mediaQueries
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **onlyKeyword** - `number`
-
-* **types** - `Record<string, number | Record<string, number>>`
-
-* **features** - `Record<string, number | Record<string, number>>`
-
-#### keyframes
-
-* **stepsChains** - `Record<string, number>`
-
-* **longestStepsChain** - `string | null`
-
-* **longestStepsChainLength** - `number`
-
-* **longestStepsChainAnimation** - `string | null`
-
-* **shortestStepsChain** - `string | null`
-
-* **shortestStepsChainLength** - `number` (`Number.MAX_SAFE_INTEGER` if there are no @keyframes in a stylesheet)
-
-* **shortestStepsChainAnimation** - `string | null`
-
-* **animatableProperties** - `Array<string>`
-
-#### rules
-
-* **total** - `number`
-
-* **empty** - `number`
-
-#### selectors
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **baseUsage** - `Record<string, number>`
-
-* **pseudoClassesUsage** - `Record<string, number>`
-
-* **pseudoElementsUsage** - `Record<string, number>`
-
-* **combinators** - `Record<string, number>`
-
-* **complex** - `number`
-
-* **maxPerRule** - `number`
-
-* **averagePerRule** - `number`
-
-* **totalByteLength** - `number`
-
-* **longestByteLength** - `number`
-
-* **longestByteLengthSelector** - `string | null`
-
-* **averageByteLength** - `number`
-
-* **specificity** - `Record<string, [number, number, number] | string | null |Array<[number, number, number]>>`
-	* **total** - `[number, number, number]`
-	* **average** - `[number, number, number]`
-	* **highest** - `[number, number, number]`
-	* **highestSelector** - `string | null`
-	* **graphData** - `Array<[number, number, number]>`
-
-* **sizeRatio** - `number`
-
-#### declarations
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **uniqueRatio** - `number`
-
-* **important** - `number`
-
-* **averagePerRule** - `number`
-
-* **totalByteLength** - `number`
-
-* **longestByteLength** - `number`
-
-* **longestByteLengthDeclaration** - `string | null`
-
-* **averageByteLength** - `number`
-
-* **sizeRatio** - `number`
-
-* **inAtRules** - `Record<string, number>`
-
-* **list** - `Array<string>`
-
-#### properties
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **shorthands** - `number`
-
-* **prefixed** - `number`
-
-* **unitless** - `number`
-
-* **resetsViaAll** - `number`
-
-* **negativeMargins** - `number`
-
-* **anonymousReplacedElements** - `number`
-
-* **performanceHacks** - `Record<string, number>`
-
-* **explicitDefaultingKeywords** - `Record<string, number | Record<string, number>>`
-
-* **engineTriggers** - `Record<'composite' | 'layout' | 'paint', Record<'blink' | 'edgehtml' | 'gecko' | 'webkit', number>>`
-
-#### displays
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-#### positions
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-#### zIndices
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **invalid** - `Record<string, number>`
-
-#### borderRadiuses
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-#### floats
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-#### letterSpacings
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-#### fontSizes
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **keywords** - `Record<string, number | Record<string, number>>`
-
-* **usage** - `Record<string, number>`
-
-#### lineHeights
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **hardCoded** - `number`
-
-#### fontFamilies
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **generic** - `Record<string, number>`
-
-* **system** - `Record<string, number>`
-
-* **withoutFallbackFonts** - `number`
-
-* **imageReplacementHacks** - `number`
-
-#### colors
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **currentColorKeyword** - `number`
-
-* **transparentKeyword** - `number`
-
-* **models** - `Record<'hex' | 'hexa' | 'rgb' | 'rgba' | 'hsl' | 'hsla' | 'hwb', number>`
-
-* **named** - `Record<string, number>`
-
-* **system** - `Record<string, number>`
-
-#### backgroundColors
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **currentColorKeyword** - `number`
-
-* **transparentKeyword** - `number`
-
-* **models** - `Record<'hex' | 'hexa' | 'rgb' | 'rgba' | 'hsl' | 'hsla' | 'hwb', number>`
-
-* **named** - `Record<string, number>`
-
-* **system** - `Record<string, number>`
-
-#### allColors
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **currentColorKeyword** - `number`
-
-* **transparentKeyword** - `number`
-
-* **models** - `Record<'hex' | 'hexa' | 'rgb' | 'rgba' | 'hsl' | 'hsla' | 'hwb', number>`
-
-* **named** - `Record<string, number>`
-
-* **system** - `Record<string, number>`
-
-#### transitions
-
-* **properties** - `Record<string, number>`
-
-* **longestDuration** - `number`
-
-* **shortestDuration** - `number` (`Number.MAX_SAFE_INTEGER` if there are no transition durations in a stylesheet)
-
-* **longestDelay** - `number`
-
-* **shortestDelay** - `number` (`Number.MAX_SAFE_INTEGER` if there are no transition delays in a stylesheet)
-
-* **timingFunctions** - `Record<string, number>`
-
-* **invalidTimingFunctions** - `Record<string, number>`
-
-#### animations
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **infinite** - `number`
-
-* **longestDuration** - `number`
-
-* **shortestDuration** - `number` (`Number.MAX_SAFE_INTEGER` if there are no animation durations in a stylesheet)
-
-* **longestDelay** - `number`
-
-* **shortestDelay** - `number` (`Number.MAX_SAFE_INTEGER` if there are no animation delays in a stylesheet)
-
-* **timingFunctions** - `Record<string, number>`
-
-* **invalidTimingFunctions** - `Record<string, number>`
-
-#### functions
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **prefixed** - `number`
-
-* **usage** - `Record<string, number>`
-
-#### filters
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-#### gradients
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-#### dataUris
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **totalByteLength** - `number`
-
-* **averageByteLength** - `number`
-
-* **sizeRatio** - `number`
-
-#### browserHacks
-
-* **total** - `number`
-
-* **usage** - `Record<string, Record<string, number>>`
-
-#### units
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **excessive** - `Record<string, number | Record<string, number>>`
-
-#### variables
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **usage** - `Record<string, number>`
-
-* **valuesMap** - `Record<string, number>`
-
-#### vendorPrefixes
-
-* **total** - `number`
-
-* **unique** - `number`
-
-* **unknown** - `Record<string, number | Record<string, number>>`
-
-* **usage** - `Record<string, number>`
+See [Report Structure](https://github.com/everget/scancss/tree/master/REPORT_STRUCTURE.md) for more details.
 
 [Back to top](#table-of-contents)
 
