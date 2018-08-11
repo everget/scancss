@@ -104,11 +104,11 @@ export function handleSelector(selector, report, options) {
 	}
 
 	const selectorByteLength = Buffer.byteLength(selector, 'utf8');
-	report.selectors.totalByteLength += selectorByteLength;
+	report.selectors.length.total += selectorByteLength;
 
-	if (report.selectors.longestByteLength < selectorByteLength) {
-		report.selectors.longestByteLength = selectorByteLength;
-		report.selectors.longestByteLengthSelector = selector;
+	if (report.selectors.length.longest < selectorByteLength) {
+		report.selectors.length.longest = selectorByteLength;
+		report.selectors.length.longestSelector = selector;
 	}
 
 	selectorParser.processSync(selector);

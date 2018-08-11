@@ -118,10 +118,12 @@ export default function scancss(src, options) {
 				complex: 0,
 				maxPerRule: 0,
 				averagePerRule: 0,
-				totalByteLength: 0,
-				longestByteLength: 0,
-				longestByteLengthSelector: null,
-				averageByteLength: 0,
+				length: {
+					total: 0,
+					longest: 0,
+					longestSelector: null,
+					average: 0,
+				},
 				specificity: {
 					total: [0, 0, 0],
 					highest: [0, 0, 0],
@@ -401,12 +403,12 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.collectSelectorsData) {
 			report.selectors.sizeRatio = roundDivision(
-				report.selectors.totalByteLength,
+				report.selectors.length.total,
 				report.styleSheetSize.sourceByteLength
 			);
 
-			report.selectors.averageByteLength = roundDivision(
-				report.selectors.totalByteLength,
+			report.selectors.length.average = roundDivision(
+				report.selectors.length.total,
 				report.selectors.total,
 				2
 			);

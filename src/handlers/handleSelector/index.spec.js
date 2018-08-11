@@ -74,10 +74,12 @@ describe('Module: handleSelector', () => {
 				complex: 0,
 				maxPerRule: 0,
 				averagePerRule: 0,
-				totalByteLength: 0,
-				longestByteLength: 0,
-				longestByteLengthSelector: null,
-				averageByteLength: 0,
+				length: {
+					total: 0,
+					longest: 0,
+					longestSelector: null,
+					average: 0,
+				},
 				specificity: {
 					total: [0, 0, 0],
 					highest: [0, 0, 0],
@@ -190,30 +192,6 @@ describe('Module: handleSelector', () => {
 		});
 	});
 
-	describe('selectors.totalByteLength', () => {
-		it('should be counted correctly', () => {
-			expect(report.selectors.totalByteLength).toBe(270);
-		});
-	});
-
-	describe('selectors.longestByteLength', () => {
-		it('should be counted correctly', () => {
-			expect(report.selectors.longestByteLength).toBe(36);
-		});
-	});
-
-	describe('selectors.longestByteLengthSelector', () => {
-		it('should be counted correctly', () => {
-			expect(report.selectors.longestByteLengthSelector).toBe('* body #home div #warning p .message');
-		});
-	});
-
-	describe('selectors.averageByteLength', () => {
-		it('should be counted correctly', () => {
-			expect(report.selectors.averageByteLength).toBe(0);
-		});
-	});
-
 	describe('selectors.sizeRatio', () => {
 		it('should be counted correctly', () => {
 			expect(report.selectors.sizeRatio).toBe(0);
@@ -245,6 +223,32 @@ describe('Module: handleSelector', () => {
 				'ul #nav li .active a': 1,
 				'ul li': 1,
 				'ul ol li .red': 1,
+			});
+		});
+	});
+
+	describe('Handling lengths', () => {
+		describe('selectors.length.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.length.total).toBe(270);
+			});
+		});
+
+		describe('selectors.length.longest', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.length.longest).toBe(36);
+			});
+		});
+
+		describe('selectors.length.longestSelector', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.length.longestSelector).toBe('* body #home div #warning p .message');
+			});
+		});
+
+		describe('selectors.length.average', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.length.average).toBe(0);
 			});
 		});
 	});

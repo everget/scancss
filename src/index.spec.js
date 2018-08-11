@@ -214,10 +214,12 @@ describe('Module: scancss', () => {
 					complex: 0,
 					maxPerRule: 1,
 					averagePerRule: 0.5,
-					totalByteLength: 45,
-					longestByteLength: 18,
-					longestByteLengthSelector: '::-moz-placeholder',
-					averageByteLength: 11.25,
+					length: {
+						total: 45,
+						longest: 18,
+						longestSelector: '::-moz-placeholder',
+						average: 11.25,
+					},
 					specificity: {
 						total: [0, 3, 1],
 						highest: [0, 1, 0],
