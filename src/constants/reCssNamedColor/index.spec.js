@@ -4,15 +4,18 @@ import { reCssNamedColor } from '.';
 describe('Module: reCssNamedColor', () => {
 	describe('Positives', () => {
 		describe('Matching lowercase color names', () => {
-			Object.keys(cssColorNamesMap).forEach((color) => {
-				it(`should match ${color}`, () => {
-					expect(color.match(reCssNamedColor)[0]).toBe(color);
+			Object
+				.keys(cssColorNamesMap)
+				.forEach((color) => {
+					it(`should match ${color}`, () => {
+						expect(color.match(reCssNamedColor)[0]).toBe(color);
+					});
 				});
-			});
 		});
 
 		describe('Matching uppercase color names', () => {
-			Object.keys(cssColorNamesMap)
+			Object
+				.keys(cssColorNamesMap)
 				.map((color) => color.toUpperCase())
 				.forEach((color) => {
 					it(`should match ${color}`, () => {
@@ -22,7 +25,8 @@ describe('Module: reCssNamedColor', () => {
 		});
 
 		describe('Matching capitalized color names', () => {
-			Object.keys(cssColorNamesMap)
+			Object
+				.keys(cssColorNamesMap)
 				.map((color) => color.charAt(0).toUpperCase() + color.slice(1))
 				.forEach((color) => {
 					it(`should match ${color}`, () => {

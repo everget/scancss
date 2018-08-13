@@ -1,6 +1,6 @@
 import { cssBrowserHacks } from '../../../constants/cssBrowserHacks';
-import { reCssMediaQueryFeature } from '../../../constants/reCssMediaQueryFeature';
-import { reCssMediaQueryType } from '../../../constants/reCssMediaQueryType';
+import { reCssMediaFeature } from '../../../constants/reCssMediaFeature';
+import { reCssMediaType } from '../../../constants/reCssMediaType';
 import { rePrefixedString } from '../../../constants/rePrefixedString';
 import { countUsage } from '../../../calculators/countUsage';
 import { removeExtraSpaces } from '../../../converters/removeExtraSpaces';
@@ -18,18 +18,18 @@ export function handleMediaQueryParams(params, report, options) {
 		report.mediaQueries.onlyKeyword += cleanedParams.match(reOnlyKeyword).length;
 	}
 
-	if (reCssMediaQueryType.test(cleanedParams)) {
+	if (reCssMediaType.test(cleanedParams)) {
 		cleanedParams
-			.match(reCssMediaQueryType)
+			.match(reCssMediaType)
 			.forEach((type) => {
 				report.mediaQueries.types.total++;
 				countUsage(type, report.mediaQueries.types.usage);
 			});
 	}
 
-	if (reCssMediaQueryFeature.test(cleanedParams)) {
+	if (reCssMediaFeature.test(cleanedParams)) {
 		cleanedParams
-			.match(reCssMediaQueryFeature)
+			.match(reCssMediaFeature)
 			.forEach((feature) => {
 				if (/^(min|max)--moz-/.test(feature)) {
 					report.mediaQueries.features.prefixed++;

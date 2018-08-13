@@ -1,11 +1,11 @@
 import { cssUnitsThatAllowZeroWithoutUnit } from '../../constants/cssUnitsThatAllowZeroWithoutUnit';
-import { reCssValueWithUnit } from '../../constants/reCssValueWithUnit';
-import { reUrlFunctionWithArg } from '../../constants/reUrlFunctionWithArg';
+import { reNumberWithCssUnit } from '../../constants/reNumberWithCssUnit';
+import { reCssUrlFunctionWithArg } from '../../constants/reCssUrlFunctionWithArg';
 import { countUsage } from '../../calculators/countUsage';
 
 const reAllowedLeadingSymbols = /(^|[(,\s])\s*/g;
-const reCssValueWithUnitWithAllowedLeadingSymbols = new RegExp(
-	reAllowedLeadingSymbols.source + reCssValueWithUnit.source,
+const reNumberWithCssUnitWithAllowedLeadingSymbols = new RegExp(
+	reAllowedLeadingSymbols.source + reNumberWithCssUnit.source,
 	'g'
 );
 
@@ -23,13 +23,13 @@ export function handleUnits(decl, report, options) {
 	}
 
 	/** Need to prevent units matching from data URIs in `url` function */
-	const safedDeclValue = decl.prop === 'background' && reUrlFunctionWithArg.test(decl.value)
-		? decl.value.replace(reUrlFunctionWithArg, '')
+	const safedDeclValue = decl.prop === 'background' && reCssUrlFunctionWithArg.test(decl.value)
+		? decl.value.replace(reCssUrlFunctionWithArg, '')
 		: decl.value;
 
-	if (reCssValueWithUnitWithAllowedLeadingSymbols.test(safedDeclValue)) {
+	if (reNumberWithCssUnitWithAllowedLeadingSymbols.test(safedDeclValue)) {
 		safedDeclValue
-			.match(reCssValueWithUnitWithAllowedLeadingSymbols)
+			.match(reNumberWithCssUnitWithAllowedLeadingSymbols)
 			/* eslint-disable-next-line arrow-body-style */
 			.map((match) => {
 				return match

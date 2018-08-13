@@ -11,7 +11,7 @@ import { cssMozMediaFeatures } from '../cssMozMediaFeatures';
 import { cssMsMediaFeatures } from '../cssMsMediaFeatures';
 import { cssWebkitMediaFeatures } from '../cssWebkitMediaFeatures';
 
-export const cssMediaQueryFeatures = [
+export const cssMediaFeatures = [
 	...cssMozMediaFeatures,
 	...cssMsMediaFeatures,
 	...cssWebkitMediaFeatures,

@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1]
+
+### Fixed
+- Correct counting `rgb()`, `rgba()`, `hsl()`, `hsla()`, `hwb()` functions with whitespace syntax
+- Correct counting `rgb()`, `rgba()`, `hsl()`, `hsla()`, `hwb()` functions with decimal numbers and exponential notations
+- Fix unmatching data URIs with `<svg>` syntax
+- Add missed `-moz-border-top-colors` and `-moz-border-left-colors` for handling as colorable properties
+- Add missed `stop-color`, `flood-color` and `lighting-color` for handling as colorable properties
+
 ## [1.3.0]
 
 ### Added

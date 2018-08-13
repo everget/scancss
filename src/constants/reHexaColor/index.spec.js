@@ -8,8 +8,6 @@ describe('Module: reHexaColor', () => {
 				'#ABCD',
 				'#fc0c',
 				'#FC0C',
-				'#f09f',
-				'#F09F',
 			];
 
 			hexa4Colors.forEach((color) => {
@@ -29,8 +27,6 @@ describe('Module: reHexaColor', () => {
 				'#F06D06FF',
 				'#ffcc00cc',
 				'#FFCC00CC',
-				'#ff0099ff',
-				'#FF0099FF',
 			];
 
 			hexa8Colors.forEach((color) => {
@@ -48,22 +44,13 @@ describe('Module: reHexaColor', () => {
 	describe('Negatives', () => {
 		const notHexaColors = [
 			'ffff',
-			'fff',
-			'#4g1',
 			'4g1',
+			'#ff',
+			'#fff',
+			'#ffffff',
+			'#4g1',
 			'#zY1',
-			'zY1',
-			'#7f68ZY',
-			'7f68ZY',
-			'ffffff',
 			'rgb(12, 34, 56)',
-			'rgba(12, 34, 56, .8)',
-			'hsl(123, 45%, 67%)',
-			'hsla(123, 45%, 67%, .8)',
-			'hwb(123, 45%, 67%)',
-			'foo(123, 45%, 67%)',
-			'rgb(,,)',
-			'rgb()',
 		];
 
 		notHexaColors.forEach((value) => {

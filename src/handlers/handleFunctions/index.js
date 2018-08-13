@@ -1,8 +1,8 @@
 import { cssFilterFunctions } from '../../constants/cssFilterFunctions';
 import { reCssFunction } from '../../constants/reCssFunction';
-import { reGradient } from '../../constants/reGradient';
+import { reCssGradient } from '../../constants/reCssGradient';
 import { reCubicBezier } from '../../constants/reCubicBezier';
-import { reUrlFunctionWithArg } from '../../constants/reUrlFunctionWithArg';
+import { reCssUrlFunctionWithArg } from '../../constants/reCssUrlFunctionWithArg';
 import { reImageDataUri } from '../../constants/reImageDataUri';
 import { rePrefixedString } from '../../constants/rePrefixedString';
 import { countUsage } from '../../calculators/countUsage';
@@ -32,7 +32,7 @@ function countFunctions(decl, report, options) {
 
 function countDataUris(decl, report) {
 	decl.value
-		.match(reUrlFunctionWithArg)
+		.match(reCssUrlFunctionWithArg)
 		/* eslint-disable-next-line arrow-body-style */
 		.map((func) => {
 			return removeExtraSpaces(func)
@@ -58,7 +58,7 @@ function countDataUris(decl, report) {
 
 function countGradients(decl, report) {
 	decl.value
-		.match(reGradient)
+		.match(reCssGradient)
 		.map((func) => removeExtraSpaces(func))
 		.forEach((func) => {
 			report.gradients.total++;
@@ -92,14 +92,14 @@ export function handleFunctions(decl, report, options) {
 		countFunctions(decl, report, options);
 
 		if (
-			reUrlFunctionWithArg.test(decl.value) &&
+			reCssUrlFunctionWithArg.test(decl.value) &&
 			options.dataUris
 		) {
 			countDataUris(decl, report);
 		}
 
 		if (
-			reGradient.test(decl.value) &&
+			reCssGradient.test(decl.value) &&
 			options.gradients
 		) {
 			countGradients(decl, report);

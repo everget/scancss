@@ -6,6 +6,7 @@ export const cssAtRules = [
 	'annotation',
 	'character-variant',
 	'charset',
+	// 'color-profile',
 	'counter-style',
 	'document',
 	'font-face',

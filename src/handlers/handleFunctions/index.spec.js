@@ -21,7 +21,7 @@ describe('Module: handleFunctions', () => {
 			filter: blur(5px);
 		}
 
-		.selector::after {
+		.selector {
 			content: attr(data-tooltip);
 			line-height: calc(1.3em + (1.5 - 1.3) * ((100vw - 21em)/(35 - 21)));
 			shape-outside: inset(50px);
@@ -52,7 +52,12 @@ describe('Module: handleFunctions', () => {
 
 		.selector {
 			content: url(data:image/jpeg;base64,aGlzIHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1);
-			background: hsl(var(--hue), 90%, 52%);
+			background-color: hsl(var(--hue), 90%, 52%);
+			background-image: url('data:image/svg+xml,\
+				<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".25">\
+					<rect x="50" width="50" height="50"/> \
+					<rect y="50" width="50" height="50"/> \
+				</svg>');
 			animation-timing-function: cubic-bezier(0.3, 2.1);
 			transition-timing-function: cubic-bezier(-1.9, 0.3, -0.2, 2.1);
 			transform: translateY(-150%);
@@ -133,7 +138,7 @@ describe('Module: handleFunctions', () => {
 	describe('Handling all functions', () => {
 		describe('functions.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.functions.total).toBe(43);
+				expect(report.functions.total).toBe(44);
 			});
 		});
 
@@ -175,7 +180,7 @@ describe('Module: handleFunctions', () => {
 					rotate: 2,
 					scale: 3,
 					translateY: 3,
-					url: 2,
+					url: 3,
 					var: 2,
 				});
 			});
@@ -279,13 +284,13 @@ describe('Module: handleFunctions', () => {
 	describe('Handling data URIs', () => {
 		describe('dataUris.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.dataUris.total).toBe(2);
+				expect(report.dataUris.total).toBe(3);
 			});
 		});
 
 		describe('dataUris.length.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.dataUris.length.total).toBe(189);
+				expect(report.dataUris.length.total).toBe(372);
 			});
 		});
 
@@ -297,13 +302,13 @@ describe('Module: handleFunctions', () => {
 
 		describe('dataUris.length.longest', () => {
 			it('should be counted correctly', () => {
-				expect(report.dataUris.length.longest).toBe(95);
+				expect(report.dataUris.length.longest).toBe(183);
 			});
 		});
 
 		describe('dataUris.length.longestDataUri', () => {
 			it('should be counted correctly', () => {
-				expect(report.dataUris.length.longestDataUri).toBe('data:image/jpeg;base64,aGlzIHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1');
+				expect(report.dataUris.length.longestDataUri).toBe('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".25"><rect x="50" width="50" height="50"/><rect y="50" width="50" height="50"/></svg>');
 			});
 		});
 
@@ -312,6 +317,7 @@ describe('Module: handleFunctions', () => {
 				expect(report.dataUris.usage).toEqual({
 					'data:image/png;base64,TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0': 1,
 					'data:image/jpeg;base64,aGlzIHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1': 1,
+					'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".25"><rect x="50" width="50" height="50"/><rect y="50" width="50" height="50"/></svg>': 1,
 				});
 			});
 		});

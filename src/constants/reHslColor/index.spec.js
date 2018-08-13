@@ -1,59 +1,187 @@
+import { addSpacesNearCommas } from '../../converters/addSpacesNearCommas';
+import { addSpacesNearParentheses } from '../../converters/addSpacesNearParentheses';
+import { addUnitToFirstArgument } from '../../converters/addUnitToFirstArgument';
+import { removeSpacesAfterCommas } from '../../converters/removeSpacesAfterCommas';
 import { reHslColor } from '.';
 
 describe('Module: reHslColor', () => {
 	describe('Positives', () => {
-		const hslColors = [
-			'hsl(100, 38%, 50%)',
-			'hsl(216, 95%, 25%)',
-			'hsl(175, 94%, 48%)',
-			'hsl(55, 14%, 37%)',
-			'hsl(194, 36%, 55%)',
-			'hsl(178, 20%, 66%)',
-			'hsl(102, 48%, 16%)',
-			'hsl(82, 23%, 46%)',
-			'hsl(68, 12%, 16%)',
-			'hsl(51, 3%, 78%)',
-			'hsl(0, 88%, 18%)',
-			'hsl(83, 67%, 93%)',
-			'hsl(109, 41%, 82%)',
-			'hsl(152, 21%, 11%)',
-			'hsl(0, 63%, 26%)',
-		];
+		describe('Matching HSL color without angle units in hue', () => {
+			const hslColors = [
+				'hsl(0, 1%, 1%)',
+				'hsl(100, 38%, 50%)',
+				'hsl(216, 95%, 2%)',
+				'hsl(.75, 60%, 70%)',
+				'hsl(4.71239, 60%, 70%)',
+			];
 
-		hslColors
-			.reduce((acc, color) => {
-				acc.push(color);
-				acc.push(color.replace(/\(/g, '(  ').replace(/\)/g, '  )'));
-				acc.push(color.replace(/,\s/g, ','));
-				acc.push(color.replace(/,/g, '  ,  '));
-				acc.push(color.replace(/(hsl\([0-9]{1,3})/g, '$1deg'));
-				acc.push(color.replace(/(hsl\([0-9]{1,3})/g, '$1grad'));
-				acc.push(color.replace(/(hsl\([0-9]{1,3})/g, '$1rad'));
-				acc.push(color.replace(/(hsl\([0-9]{1,3})/g, '$1turn'));
-				return acc;
-			}, [])
-			.forEach((color) => {
-				it(`should match HSL color ${color}`, () => {
-					expect(color.match(reHslColor)[0]).toBe(color);
+			hslColors
+				.reduce((acc, color) => {
+					acc.push(
+						color,
+						addSpacesNearParentheses(color),
+						addSpacesNearCommas(color),
+						removeSpacesAfterCommas(color)
+					);
+
+					return acc;
+				}, [])
+				.forEach((color) => {
+					it(`should match ${color}`, () => {
+						expect(color.match(reHslColor)[0]).toBe(color);
+					});
 				});
-			});
+		});
+
+		describe('Matching HSL color with angle units in hue', () => {
+			const hslColors = [
+				'hsl(0, 1%, 1%)',
+				'hsl(100, 38%, 50%)',
+				'hsl(216, 95%, 2%)',
+				'hsl(.75, 60%, 70%)',
+				'hsl(4.71239, 60%, 70%)',
+			];
+
+			hslColors
+				.reduce((acc, color) => {
+					acc.push(
+						addUnitToFirstArgument(color, 'deg'),
+						addSpacesNearParentheses(addUnitToFirstArgument(color, 'deg')),
+						addSpacesNearCommas(addUnitToFirstArgument(color, 'deg')),
+						removeSpacesAfterCommas(addUnitToFirstArgument(color, 'deg')),
+
+						addUnitToFirstArgument(color, 'grad'),
+						addSpacesNearParentheses(addUnitToFirstArgument(color, 'grad')),
+						addSpacesNearCommas(addUnitToFirstArgument(color, 'grad')),
+						removeSpacesAfterCommas(addUnitToFirstArgument(color, 'grad')),
+
+						addUnitToFirstArgument(color, 'rad'),
+						addSpacesNearParentheses(addUnitToFirstArgument(color, 'rad')),
+						addSpacesNearCommas(addUnitToFirstArgument(color, 'rad')),
+						removeSpacesAfterCommas(addUnitToFirstArgument(color, 'rad')),
+
+						addUnitToFirstArgument(color, 'turn'),
+						addSpacesNearParentheses(addUnitToFirstArgument(color, 'turn')),
+						addSpacesNearCommas(addUnitToFirstArgument(color, 'turn')),
+						removeSpacesAfterCommas(addUnitToFirstArgument(color, 'turn'))
+					);
+
+					return acc;
+				}, [])
+				.forEach((color) => {
+					it(`should match ${color}`, () => {
+						expect(color.match(reHslColor)[0]).toBe(color);
+					});
+				});
+		});
+
+		describe('Matching HSL color with alpha', () => {
+			const hslColors = [
+				'hsl(240, 100%, 50%, .05)',
+				'hsl(270, 60%, 50%, .15)',
+				'hsl(240, 100%, 50%, 1)',
+				'hsl(270, 60%, 50%, 15%)',
+				'hsl(270, 60%, 50%, 0.0)',
+				'hsl(270, 60%, 50%, 0.5)',
+				'hsl(270, 60%, 50%, 1.0)',
+				'hsl(.75, 60%, 70%, .05)',
+				'hsl(4.71239, 60%, 70%, 15%)',
+			];
+
+			hslColors
+				.reduce((acc, color) => {
+					acc.push(
+						color,
+						addSpacesNearParentheses(color),
+						addSpacesNearCommas(color),
+						removeSpacesAfterCommas(color),
+						addUnitToFirstArgument(color, 'deg'),
+						addUnitToFirstArgument(color, 'grad'),
+						addUnitToFirstArgument(color, 'rad'),
+						addUnitToFirstArgument(color, 'turn')
+					);
+
+					return acc;
+				}, [])
+				.forEach((color) => {
+					it(`should match ${color}`, () => {
+						expect(color.match(reHslColor)[0]).toBe(color);
+					});
+				});
+		});
+
+		describe('Matching HSL color with whitespace syntax', () => {
+			const hslColors = [
+				'hsl(270 60% 70%)',
+				'hsl(.75 60% 70%)',
+				'hsl(4.71239 60% 70%)',
+			];
+
+			hslColors
+				.reduce((acc, color) => {
+					acc.push(
+						color,
+						addUnitToFirstArgument(color, 'deg'),
+						addUnitToFirstArgument(color, 'grad'),
+						addUnitToFirstArgument(color, 'rad'),
+						addUnitToFirstArgument(color, 'turn')
+					);
+
+					return acc;
+				}, [])
+				.forEach((color) => {
+					it(`should match ${color}`, () => {
+						expect(color.match(reHslColor)[0]).toBe(color);
+					});
+				});
+		});
+
+
+		describe('Matching HSL color with whitespace syntax and alpha', () => {
+			const hslColors = [
+				'hsl(80 40% 30% / .0)',
+				'hsl(270 60% 50% / .15)',
+				'hsl(270 60% 50% / 1)',
+				'hsl(270 60% 50% / 15%)',
+				'hsl(.75 60% 70% / .05)',
+				'hsl(4.71239 60% 70% / 15%)',
+			];
+
+			hslColors
+				.reduce((acc, color) => {
+					acc.push(
+						color,
+						addUnitToFirstArgument(color, 'deg'),
+						addUnitToFirstArgument(color, 'grad'),
+						addUnitToFirstArgument(color, 'rad'),
+						addUnitToFirstArgument(color, 'turn')
+					);
+
+					return acc;
+				}, [])
+				.forEach((color) => {
+					it(`should match ${color}`, () => {
+						expect(color.match(reHslColor)[0]).toBe(color);
+					});
+				});
+		});
 	});
 
 	describe('Negatives', () => {
 		const notHslColors = [
+			'hsl()',
+			'hsl(,,)',
+			'rgb(12, 34, 56)',
+			'rgba(12, 34, 56, .8)',
+			'hsla(123, 45%, 67%, .8)',
+			'hwb(123, 45%, 67%)',
+			'foo(123, 45%, 67%)',
 			'#fff',
 			'#ffffff',
 			'#abcd',
 			'#FC0C',
 			'#f06d06ff',
 			'#FFCC00CC',
-			'rgb(12, 34, 56)',
-			'rgba(12, 34, 56, .8)',
-			'hsla(123, 45%, 67%, .8)',
-			'hwb(123, 45%, 67%)',
-			'foo(123, 45%, 67%)',
-			'hsl(,,)',
-			'hsl()',
 		];
 
 		notHslColors.forEach((value) => {

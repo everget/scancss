@@ -5,10 +5,10 @@ describe('Module: reCssFunction', () => {
 	describe('Positives', () => {
 		describe('Matching CSS function', () => {
 			cssFunctions
-				.map((func) => func + '(...)')
+				.map((func) => func + '(')
 				.forEach((func) => {
 					it(`should match ${func}`, () => {
-						expect(func.match(reCssFunction)[0].slice(0, -1)).toBe(func.slice(0, func.indexOf('(')));
+						expect(func.match(reCssFunction)[0]).toBe(func);
 					});
 				});
 		});
@@ -18,22 +18,22 @@ describe('Module: reCssFunction', () => {
 				{
 					str: 'transform: translateY(-150%) scale(.8) rotate(180deg);',
 					expected: [
-						'translateY',
-						'scale',
-						'rotate',
+						'translateY(',
+						'scale(',
+						'rotate(',
 					],
 				},
 				{
 					str: 'background: hsl(var(--hue), 90%, 52%);',
 					expected: [
-						'hsl',
-						'var',
+						'hsl(',
+						'var(',
 					],
 				},
 			];
 
 			suites.forEach((suite) => {
-				expect(suite.str.match(reCssFunction).map((func) => func.slice(0, -1))).toEqual(suite.expected);
+				expect(suite.str.match(reCssFunction)).toEqual(suite.expected);
 			});
 		});
 	});

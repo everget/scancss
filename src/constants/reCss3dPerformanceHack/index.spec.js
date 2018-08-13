@@ -1,3 +1,5 @@
+import { addSpacesNearParentheses } from '../../converters/addSpacesNearParentheses';
+import { addSpacesNearCommas } from '../../converters/addSpacesNearCommas';
 import { reCss3dPerformanceHack } from '.';
 
 describe('Module: reCss3dPerformanceHack', () => {
@@ -10,10 +12,12 @@ describe('Module: reCss3dPerformanceHack', () => {
 
 		hacks
 			.reduce((acc, hack) => {
-				acc.push(hack);
-				acc.push(hack.replace(/\(/g, '(  ').replace(/\)/g, '  )'));
-				acc.push(hack.replace(/,/g, ' , '));
-				acc.push(hack.replace(/,/g, '  ,  '));
+				acc.push(
+					hack,
+					addSpacesNearParentheses(hack),
+					addSpacesNearCommas(hack)
+				);
+
 				return acc;
 			}, [])
 			.forEach((hack) => {
