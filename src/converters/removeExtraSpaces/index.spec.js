@@ -45,7 +45,7 @@ describe('Module: removeExtraSpaces', () => {
 	];
 
 	suites.forEach((suite) => {
-		it(`should return string ${suite.str} without extra spaces`, () => {
+		it(`should return string without extra spaces ${suite.str}`, () => {
 			expect(removeExtraSpaces(suite.str)).toBe(suite.expected);
 		});
 	});

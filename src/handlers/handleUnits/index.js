@@ -1,11 +1,11 @@
 import { cssUnitsThatAllowZeroWithoutUnit } from '../../constants/cssUnitsThatAllowZeroWithoutUnit';
-import { reCssValueWithUnit } from '../../constants/reCssValueWithUnit';
+import { reNumberWithCssUnit } from '../../constants/reNumberWithCssUnit';
 import { reUrlFunctionWithArg } from '../../constants/reUrlFunctionWithArg';
 import { countUsage } from '../../calculators/countUsage';
 
 const reAllowedLeadingSymbols = /(^|[(,\s])\s*/g;
-const reCssValueWithUnitWithAllowedLeadingSymbols = new RegExp(
-	reAllowedLeadingSymbols.source + reCssValueWithUnit.source,
+const reNumberWithCssUnitWithAllowedLeadingSymbols = new RegExp(
+	reAllowedLeadingSymbols.source + reNumberWithCssUnit.source,
 	'g'
 );
 
@@ -27,9 +27,9 @@ export function handleUnits(decl, report, options) {
 		? decl.value.replace(reUrlFunctionWithArg, '')
 		: decl.value;
 
-	if (reCssValueWithUnitWithAllowedLeadingSymbols.test(safedDeclValue)) {
+	if (reNumberWithCssUnitWithAllowedLeadingSymbols.test(safedDeclValue)) {
 		safedDeclValue
-			.match(reCssValueWithUnitWithAllowedLeadingSymbols)
+			.match(reNumberWithCssUnitWithAllowedLeadingSymbols)
 			/* eslint-disable-next-line arrow-body-style */
 			.map((match) => {
 				return match
