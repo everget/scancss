@@ -32,16 +32,23 @@ export const cssColorableProperties = [
 	'text-emphasis',
 	'text-emphasis-color',
 	'text-shadow',
-	/* SVG */
+
+	/** SVG */
 	'fill',
 	'stroke',
-	/* Vendor specific */
+	'stop-color',
+	'flood-color',
+	'lighting-color',
+
+	/** Vendor specific */
 	'-ms-scrollbar-3dlight-color',
 	'-ms-scrollbar-base-color',
 	'-ms-scrollbar-face-color',
 	'-ms-scrollbar-shadow-color',
-	'-moz-border-bottom-colors',
+	'-moz-border-top-colors',
 	'-moz-border-right-colors',
+	'-moz-border-bottom-colors',
+	'-moz-border-left-colors',
 	'-webkit-border-before',
 	'-webkit-tap-highlight-color',
 	'-webkit-text-stroke',
