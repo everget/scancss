@@ -1,1 +1,11 @@
-export const reHslaColor = /hsla\(\s*([0-9]+(?:\.[0-9]+)?)(?:deg|grad|rad|turn)?\s*,\s*([0-9]*(?:\.[0-9]+)?%)\s*,\s*([0-9]*(?:\.[0-9]+)?%)\s*,\s*([0-9]*(?:\.[0-9]+)?)%?\s*\)/g;
+import { reHslColor } from '../reHslColor';
+
+/**
+ * https://www.w3.org/TR/css-color-4/#the-hsl-notation
+ * https://drafts.csswg.org/css-color/#the-hsl-notation
+ *
+ * For legacy reasons, an hsla() function also exists, with an identical grammar
+ * and behavior to hsl().
+ */
+
+export const reHslaColor = new RegExp(reHslColor.source.replace(/^(hsl)/, '$1a'), 'g');
