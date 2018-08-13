@@ -1,4 +1,4 @@
-import { reUrlFunctionWithArg } from '../../../constants/reUrlFunctionWithArg';
+import { reCssUrlFunctionWithArg } from '../../../constants/reCssUrlFunctionWithArg';
 import { handleMediaQueryParams } from '../handleMediaQueryParams';
 
 const reCssFileString = /['"]?.+\.css['"]?/g;
@@ -6,8 +6,8 @@ const reCssFileString = /['"]?.+\.css['"]?/g;
 export function handleImport(atRule, report, options) {
 	let cleanedParams = atRule.params;
 
-	if (reUrlFunctionWithArg.test(cleanedParams)) {
-		cleanedParams = cleanedParams.replace(reUrlFunctionWithArg, '');
+	if (reCssUrlFunctionWithArg.test(cleanedParams)) {
+		cleanedParams = cleanedParams.replace(reCssUrlFunctionWithArg, '');
 	}
 
 	if (reCssFileString.test(cleanedParams)) {

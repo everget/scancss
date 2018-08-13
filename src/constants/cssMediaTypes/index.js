@@ -17,7 +17,7 @@
  * `tv`         - DEPRECATED: Used for television-type devices
  */
 
-export const cssMediaQueryTypes = [
+export const cssMediaTypes = [
 	'all',
 	'aural',
 	'braille',

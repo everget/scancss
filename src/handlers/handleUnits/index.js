@@ -1,6 +1,6 @@
 import { cssUnitsThatAllowZeroWithoutUnit } from '../../constants/cssUnitsThatAllowZeroWithoutUnit';
 import { reNumberWithCssUnit } from '../../constants/reNumberWithCssUnit';
-import { reUrlFunctionWithArg } from '../../constants/reUrlFunctionWithArg';
+import { reCssUrlFunctionWithArg } from '../../constants/reCssUrlFunctionWithArg';
 import { countUsage } from '../../calculators/countUsage';
 
 const reAllowedLeadingSymbols = /(^|[(,\s])\s*/g;
@@ -23,8 +23,8 @@ export function handleUnits(decl, report, options) {
 	}
 
 	/** Need to prevent units matching from data URIs in `url` function */
-	const safedDeclValue = decl.prop === 'background' && reUrlFunctionWithArg.test(decl.value)
-		? decl.value.replace(reUrlFunctionWithArg, '')
+	const safedDeclValue = decl.prop === 'background' && reCssUrlFunctionWithArg.test(decl.value)
+		? decl.value.replace(reCssUrlFunctionWithArg, '')
 		: decl.value;
 
 	if (reNumberWithCssUnitWithAllowedLeadingSymbols.test(safedDeclValue)) {

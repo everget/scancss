@@ -1,7 +1,7 @@
 import { addSpacesNearParentheses } from '../../converters/addSpacesNearParentheses';
-import { reUrlFunctionWithArg } from '.';
+import { reCssUrlFunctionWithArg } from '.';
 
-describe('Module: reUrlFunctionWithArg', () => {
+describe('Module: reCssUrlFunctionWithArg', () => {
 	describe('Positives', () => {
 		const urlFunctions = [
 			'url(tada)',
@@ -22,7 +22,7 @@ describe('Module: reUrlFunctionWithArg', () => {
 			}, [])
 			.forEach((func) => {
 				it(`should match ${func}`, () => {
-					expect(func.match(reUrlFunctionWithArg)[0]).toBe(func);
+					expect(func.match(reCssUrlFunctionWithArg)[0]).toBe(func);
 				});
 			});
 	});

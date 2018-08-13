@@ -1,8 +1,8 @@
 import { addSpacesNearParentheses } from '../../converters/addSpacesNearParentheses';
 import { addSpacesNearCommas } from '../../converters/addSpacesNearCommas';
-import { reGradient } from '.';
+import { reCssGradient } from '.';
 
-describe('Module: reGradient', () => {
+describe('Module: reCssGradient', () => {
 	describe('Positives', () => {
 		const gradientFunctions = [
 			'linear-gradient(90deg,#34aae0,#47c3e9)',
@@ -26,7 +26,7 @@ describe('Module: reGradient', () => {
 			}, [])
 			.forEach((func) => {
 				it(`should match ${func}`, () => {
-					expect(func.match(reGradient)[0]).toBe(func);
+					expect(func.match(reCssGradient)[0]).toBe(func);
 				});
 			});
 	});
