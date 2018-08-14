@@ -20,8 +20,8 @@ function countColorInSection(color, reportSection) {
  * https://www.w3.org/TR/css-color-3/#currentcolor
  * https://www.w3.org/TR/css-color-4/#currentcolor-color
  */
-const reCurrentColor = /\bcurrent[cC]olor\b/g;
-const reTransparentColor = /\btransparent\b/g;
+const reCurrentColor = /\bcurrentcolor\b/gi;
+const reTransparentColor = /\btransparent\b/gi;
 
 function countKeywordColors(prop, match, report, keyword, options) {
 	const reportSectionName = keyword + 'Keyword';
@@ -51,7 +51,6 @@ function countKeywordColors(prop, match, report, keyword, options) {
 function countNamedColors(prop, match, report, options) {
 	if (prop.startsWith('background') && options.backgroundColors) {
 		match.forEach((color) => {
-			/** CSS named color declarations are not case sensitive */
 			const lowerCasedColor = color.toLowerCase();
 
 			countColorInSection(lowerCasedColor, report.backgroundColors);
@@ -59,7 +58,6 @@ function countNamedColors(prop, match, report, options) {
 		});
 	} else if (prop.startsWith('background') === false && options.colors) {
 		match.forEach((color) => {
-			/** CSS named color declarations are not case sensitive */
 			const lowerCasedColor = color.toLowerCase();
 
 			countColorInSection(lowerCasedColor, report.colors);
@@ -69,7 +67,6 @@ function countNamedColors(prop, match, report, options) {
 
 	if (options.allColors) {
 		match.forEach((color) => {
-			/** CSS named color declarations are not case sensitive */
 			const lowerCasedColor = color.toLowerCase();
 
 			countColorInSection(lowerCasedColor, report.allColors);
@@ -118,20 +115,26 @@ function countColorModels(prop, match, report, model, options) {
 function countSystemColors(prop, match, report, options) {
 	if (prop.startsWith('background') && options.backgroundColors) {
 		match.forEach((color) => {
-			countColorInSection(color, report.backgroundColors);
-			countUsage(color, report.backgroundColors.system);
+			const lowerCasedColor = color.toLowerCase();
+
+			countColorInSection(lowerCasedColor, report.backgroundColors);
+			countUsage(lowerCasedColor, report.backgroundColors.system);
 		});
 	} else if (prop.startsWith('background') === false && options.colors) {
 		match.forEach((color) => {
-			countColorInSection(color, report.colors);
-			countUsage(color, report.colors.system);
+			const lowerCasedColor = color.toLowerCase();
+
+			countColorInSection(lowerCasedColor, report.colors);
+			countUsage(lowerCasedColor, report.colors.system);
 		});
 	}
 
 	if (options.allColors) {
 		match.forEach((color) => {
-			countColorInSection(color, report.allColors);
-			countUsage(color, report.allColors.system);
+			const lowerCasedColor = color.toLowerCase();
+
+			countColorInSection(lowerCasedColor, report.allColors);
+			countUsage(lowerCasedColor, report.allColors.system);
 		});
 	}
 }

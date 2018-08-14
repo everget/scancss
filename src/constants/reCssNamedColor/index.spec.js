@@ -1,9 +1,10 @@
 import { cssColorNamesMap } from '../cssColorNamesMap';
+import { cssSystemColors } from '../cssSystemColors';
 import { reCssNamedColor } from '.';
 
 describe('Module: reCssNamedColor', () => {
 	describe('Positives', () => {
-		describe('Matching lowercase color names', () => {
+		describe('Matching lowercased color names', () => {
 			Object
 				.keys(cssColorNamesMap)
 				.forEach((color) => {
@@ -13,7 +14,7 @@ describe('Module: reCssNamedColor', () => {
 				});
 		});
 
-		describe('Matching uppercase color names', () => {
+		describe('Matching uppercased color names', () => {
 			Object
 				.keys(cssColorNamesMap)
 				.map((color) => color.toUpperCase())
@@ -39,24 +40,11 @@ describe('Module: reCssNamedColor', () => {
 	describe('Negatives', () => {
 		const notCssNamedColors = [
 			'foobar',
-			'#ffff',
 			'ffff',
 			'fff',
-			'#4g1',
-			'4g1',
-			'#zY1',
-			'zY1',
-			'#7f68ZY',
 			'7f68ZY',
 			'ffffff',
-			'rgb(12, 34, 56)',
-			'rgba(12, 34, 56, .8)',
-			'hsl(123, 45%, 67%)',
-			'hsla(123, 45%, 67%, .8)',
-			'hwb(123, 45%, 67%)',
-			'foo(123, 45%, 67%)',
-			'rgb(,,)',
-			'rgb()',
+			...cssSystemColors,
 		];
 
 		notCssNamedColors.forEach((color) => {
