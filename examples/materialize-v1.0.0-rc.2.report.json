@@ -225,7 +225,7 @@
   "properties": {
     "total": 3516,
     "unique": 136,
-    "shorthands": 537,
+    "shorthands": 567,
     "prefixed": 339,
     "unitless": 2244,
     "resetsViaAll": 0,
@@ -628,7 +628,7 @@
       "white": 2
     },
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "#e51c23": 1,
@@ -898,7 +898,7 @@
       "#000000": 2,
       "#ffffff": 31,
       "transparent": 21,
-      "ButtonText": 1,
+      "buttontext": 1,
       "rgba(0,0,0,0.14)": 8,
       "rgba(0,0,0,0.12)": 11,
       "rgba(0,0,0,0.2)": 8,
@@ -1277,7 +1277,7 @@
       "white": 2
     },
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "#e51c23": 2,
@@ -1547,7 +1547,7 @@
       "#000000": 4,
       "#ffffff": 46,
       "transparent": 45,
-      "ButtonText": 1,
+      "buttontext": 1,
       "rgba(0,0,0,0.14)": 8,
       "rgba(0,0,0,0.12)": 12,
       "rgba(0,0,0,0.2)": 9,

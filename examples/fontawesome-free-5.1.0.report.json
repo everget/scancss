@@ -138,7 +138,7 @@
   "properties": {
     "total": 1199,
     "unique": 34,
-    "shorthands": 9,
+    "shorthands": 12,
     "prefixed": 8,
     "unitless": 1160,
     "resetsViaAll": 0,
@@ -359,11 +359,10 @@
       "a": 2
     },
     "timingFunctions": {
-      "linear": 1
-    },
-    "invalidTimingFunctions": {
+      "linear": 1,
       "steps(8)": 1
-    }
+    },
+    "invalidTimingFunctions": {}
   },
   "functions": {
     "total": 10,

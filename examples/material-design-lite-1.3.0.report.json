@@ -31,8 +31,8 @@
     }
   },
   "mediaQueries": {
-    "total": 36,
-    "unique": 11,
+    "total": 39,
+    "unique": 13,
     "onlyKeyword": 1,
     "types": {
       "total": 30,
@@ -55,8 +55,10 @@
     },
     "usage": {
       "only screen and (min-width:35em)": 1,
-      "print,(-webkit-min-device-pixel-ratio:1.25),(min-resolution:1.25dppx),(min-resolution:120dpi)": 1,
-      "print": 1,
+      "print": 2,
+      "(-webkit-min-device-pixel-ratio:1.25)": 1,
+      "(min-resolution:1.25dppx)": 1,
+      "(min-resolution:120dpi)": 1,
       "screen and (min-width:760px)": 5,
       "screen and (min-width:1024px)": 1,
       "screen and (max-width:1024px)": 16,
@@ -208,7 +210,7 @@
   "properties": {
     "total": 3356,
     "unique": 157,
-    "shorthands": 418,
+    "shorthands": 461,
     "prefixed": 385,
     "unitless": 2392,
     "resetsViaAll": 0,
@@ -1464,9 +1466,9 @@
     "longestDelay": 0,
     "shortestDelay": 9007199254740991,
     "timingFunctions": {
-      "cubic-bezier(0,0,0.2,1)": 17,
-      "cubic-bezier(0.4,0,0.2,1)": 47,
-      "cubic-bezier(0.4,0,1,1)": 7,
+      "cubic-bezier(0,0,0.2,1)": 18,
+      "cubic-bezier(0.4,0,0.2,1)": 48,
+      "cubic-bezier(0.4,0,1,1)": 8,
       "step-end": 1
     },
     "invalidTimingFunctions": {}

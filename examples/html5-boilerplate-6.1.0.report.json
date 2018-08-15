@@ -27,8 +27,8 @@
     }
   },
   "mediaQueries": {
-    "total": 3,
-    "unique": 3,
+    "total": 6,
+    "unique": 5,
     "onlyKeyword": 1,
     "types": {
       "total": 3,
@@ -50,8 +50,10 @@
     },
     "usage": {
       "only screen and (min-width:35em)": 1,
-      "print,(-webkit-min-device-pixel-ratio:1.25),(min-resolution:1.25dppx),(min-resolution:120dpi)": 1,
-      "print": 1
+      "print": 2,
+      "(-webkit-min-device-pixel-ratio:1.25)": 1,
+      "(min-resolution:1.25dppx)": 1,
+      "(min-resolution:120dpi)": 1
     }
   },
   "keyframes": {
@@ -149,7 +151,7 @@
   "properties": {
     "total": 60,
     "unique": 28,
-    "shorthands": 19,
+    "shorthands": 21,
     "prefixed": 1,
     "unitless": 50,
     "resetsViaAll": 0,

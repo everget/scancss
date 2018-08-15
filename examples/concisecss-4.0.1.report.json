@@ -166,7 +166,7 @@
   "properties": {
     "total": 438,
     "unique": 94,
-    "shorthands": 91,
+    "shorthands": 97,
     "prefixed": 88,
     "unitless": 290,
     "resetsViaAll": 0,
@@ -426,7 +426,7 @@
       "black": 3
     },
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "#444444": 1,
@@ -436,7 +436,7 @@
       "currentColor": 2,
       "#c65146": 2,
       "#7f2f27": 1,
-      "ButtonText": 1,
+      "buttontext": 1,
       "white": 1,
       "#222222": 1,
       "#4eb1f9": 1,
@@ -481,7 +481,7 @@
       "black": 3
     },
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "white": 3,
@@ -496,7 +496,7 @@
       "currentColor": 2,
       "#c65146": 6,
       "#7f2f27": 1,
-      "ButtonText": 1,
+      "buttontext": 1,
       "#cc6359": 1,
       "#d2766d": 1,
       "#eeeeee": 2,

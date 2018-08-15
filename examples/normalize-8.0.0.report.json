@@ -131,7 +131,7 @@
   "properties": {
     "total": 56,
     "unique": 27,
-    "shorthands": 14,
+    "shorthands": 17,
     "prefixed": 5,
     "unitless": 42,
     "resetsViaAll": 0,
@@ -282,10 +282,10 @@
     "models": {},
     "named": {},
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
-      "ButtonText": 1
+      "buttontext": 1
     }
   },
   "backgroundColors": {
@@ -308,11 +308,11 @@
     "models": {},
     "named": {},
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "transparent": 1,
-      "ButtonText": 1
+      "buttontext": 1
     }
   },
   "transitions": {

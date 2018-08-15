@@ -154,7 +154,7 @@
   "properties": {
     "total": 7603,
     "unique": 100,
-    "shorthands": 1501,
+    "shorthands": 1575,
     "prefixed": 118,
     "unitless": 4899,
     "resetsViaAll": 0,
@@ -458,11 +458,11 @@
     },
     "named": {},
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "#000000": 1,
-      "ButtonText": 1,
+      "buttontext": 1,
       "#dae1e7": 31,
       "transparent": 30,
       "#22292f": 30,
@@ -643,13 +643,13 @@
     },
     "named": {},
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "transparent": 47,
       "#ffff00": 1,
       "#000000": 1,
-      "ButtonText": 1,
+      "buttontext": 1,
       "#dae1e7": 46,
       "#22292f": 45,
       "#3d4852": 45,

@@ -29,8 +29,8 @@
     }
   },
   "mediaQueries": {
-    "total": 170,
-    "unique": 11,
+    "total": 197,
+    "unique": 12,
     "onlyKeyword": 0,
     "types": {
       "total": 197,
@@ -51,7 +51,8 @@
     },
     "usage": {
       "screen and (max-width:768px)": 29,
-      "screen and (min-width:769px),print": 27,
+      "screen and (min-width:769px)": 27,
+      "print": 27,
       "screen and (max-width:1087px)": 24,
       "screen and (min-width:1088px)": 27,
       "screen and (min-width:1280px)": 14,
@@ -176,7 +177,7 @@
   "properties": {
     "total": 3472,
     "unique": 111,
-    "shorthands": 645,
+    "shorthands": 659,
     "prefixed": 43,
     "unitless": 2392,
     "resetsViaAll": 0,

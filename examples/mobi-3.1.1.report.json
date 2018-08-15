@@ -144,7 +144,7 @@
   "properties": {
     "total": 314,
     "unique": 84,
-    "shorthands": 57,
+    "shorthands": 60,
     "prefixed": 71,
     "unitless": 199,
     "resetsViaAll": 0,

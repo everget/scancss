@@ -197,7 +197,7 @@
   "properties": {
     "total": 5092,
     "unique": 133,
-    "shorthands": 1009,
+    "shorthands": 1043,
     "prefixed": 25,
     "unitless": 3649,
     "resetsViaAll": 0,
@@ -1072,7 +1072,7 @@
       "linear": 2,
       "ease": 7,
       "ease-out": 2,
-      "cubic-bezier(0.4,0,0.2,1)": 8,
+      "cubic-bezier(0.4,0,0.2,1)": 10,
       "cubic-bezier(0.4,0,1,1)": 1,
       "ease-in": 4,
       "cubic-bezier(0,0,0.2,1)": 2

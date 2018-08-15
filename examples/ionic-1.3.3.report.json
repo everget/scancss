@@ -32,8 +32,8 @@
     }
   },
   "mediaQueries": {
-    "total": 8,
-    "unique": 6,
+    "total": 16,
+    "unique": 10,
     "onlyKeyword": 0,
     "types": {
       "total": 0,
@@ -55,7 +55,11 @@
       }
     },
     "usage": {
-      "(min--moz-device-pixel-ratio:1.5),(-webkit-min-device-pixel-ratio:1.5),(min-device-pixel-ratio:1.5),(min-resolution:144dpi),(min-resolution:1.5dppx)": 2,
+      "(min--moz-device-pixel-ratio:1.5)": 2,
+      "(-webkit-min-device-pixel-ratio:1.5)": 2,
+      "(min-device-pixel-ratio:1.5)": 2,
+      "(min-resolution:144dpi)": 2,
+      "(min-resolution:1.5dppx)": 2,
       "(min-width:680px)": 2,
       "(max-width:567px)": 1,
       "(max-width:767px)": 1,
@@ -184,7 +188,7 @@
   "properties": {
     "total": 4495,
     "unique": 212,
-    "shorthands": 809,
+    "shorthands": 849,
     "prefixed": 544,
     "unitless": 3456,
     "resetsViaAll": 0,
@@ -614,12 +618,12 @@
     }
   },
   "colors": {
-    "total": 620,
+    "total": 631,
     "unique": 58,
     "currentColorKeyword": 0,
     "transparentKeyword": 64,
     "models": {
-      "hex": 517,
+      "hex": 528,
       "rgba": 38
     },
     "named": {
@@ -632,15 +636,15 @@
       "#000000": 8,
       "#666666": 6,
       "gray": 1,
-      "#387ef5": 20,
+      "#387ef5": 21,
       "#888888": 1,
       "#d1d3d6": 2,
       "#007aff": 3,
       "#ff3b30": 2,
       "#8f8f8f": 1,
       "#dddddd": 20,
-      "#ffffff": 135,
-      "#444444": 64,
+      "#ffffff": 137,
+      "#444444": 66,
       "#b2b2b2": 15,
       "#0c60ee": 13,
       "#0a9dc7": 13,
@@ -651,12 +655,12 @@
       "#111111": 9,
       "#cccccc": 10,
       "#a2a2a2": 15,
-      "#f8f8f8": 14,
-      "#11c1f3": 18,
-      "#ef473a": 19,
-      "#33cd5f": 18,
-      "#ffc900": 18,
-      "#886aea": 18,
+      "#f8f8f8": 15,
+      "#11c1f3": 19,
+      "#ef473a": 20,
+      "#33cd5f": 19,
+      "#ffc900": 19,
+      "#886aea": 19,
       "rgba(68,68,68,0.4)": 4,
       "rgba(255,255,255,0.4)": 9,
       "rgba(248,248,248,0.4)": 2,
@@ -759,12 +763,12 @@
     }
   },
   "allColors": {
-    "total": 1101,
+    "total": 1112,
     "unique": 85,
     "currentColorKeyword": 0,
     "transparentKeyword": 150,
     "models": {
-      "hex": 869,
+      "hex": 880,
       "rgba": 77
     },
     "named": {
@@ -779,9 +783,9 @@
       "rgba(0,0,0,0.3)": 3,
       "#aaaaaa": 11,
       "#666666": 6,
-      "#ffffff": 170,
+      "#ffffff": 172,
       "gray": 1,
-      "#387ef5": 39,
+      "#387ef5": 40,
       "#888888": 1,
       "rgba(0,0,0,0.4)": 3,
       "#d1d3d6": 2,
@@ -795,20 +799,20 @@
       "#fafafa": 10,
       "#dddddd": 37,
       "white": 4,
-      "#444444": 87,
+      "#444444": 89,
       "#b2b2b2": 31,
-      "#f8f8f8": 29,
+      "#f8f8f8": 30,
       "#0c60ee": 27,
       "#0a9dc7": 27,
-      "#11c1f3": 36,
+      "#11c1f3": 37,
       "#e42112": 27,
-      "#ef473a": 37,
+      "#ef473a": 38,
       "#28a54c": 27,
-      "#33cd5f": 36,
+      "#33cd5f": 37,
       "#e6b500": 27,
-      "#ffc900": 36,
+      "#ffc900": 37,
       "#6b46e5": 27,
-      "#886aea": 36,
+      "#886aea": 37,
       "#111111": 17,
       "#cccccc": 14,
       "#a2a2a2": 15,
@@ -879,14 +883,14 @@
     "timingFunctions": {
       "linear": 7,
       "ease-in-out": 9,
-      "cubic-bezier(0.36,0.66,0.04,1)": 5,
+      "cubic-bezier(0.36,0.66,0.04,1)": 6,
       "ease": 3,
       "ease-in": 4,
       "cubic-bezier(0.25,0.81,0.24,1)": 2,
       "ease-out": 2,
       "cubic-bezier(0,1.1,1,1.1)": 2,
       "cubic-bezier(0.1,0.7,0.1,1)": 2,
-      "cubic-bezier(0.4,0.6,0.2,1)": 2
+      "cubic-bezier(0.4,0.6,0.2,1)": 4
     },
     "invalidTimingFunctions": {}
   },
@@ -907,11 +911,10 @@
     },
     "timingFunctions": {
       "ease-in-out": 2,
+      "steps(12,end)": 3,
       "linear": 1
     },
-    "invalidTimingFunctions": {
-      "steps(12,end)": 1
-    }
+    "invalidTimingFunctions": {}
   },
   "functions": {
     "total": 281,

@@ -30,8 +30,8 @@
     }
   },
   "mediaQueries": {
-    "total": 103,
-    "unique": 14,
+    "total": 188,
+    "unique": 13,
     "onlyKeyword": 0,
     "types": {
       "total": 188,
@@ -52,18 +52,17 @@
       }
     },
     "usage": {
-      "print,screen and (min-width:40em)": 51,
-      "print,screen and (min-width:64em)": 31,
-      "print": 1,
+      "print": 83,
+      "screen and (min-width:40em)": 52,
+      "screen and (min-width:64em)": 32,
       "screen and (min-width:0\\0)": 1,
-      "screen and (max-width:39.9375em)": 6,
-      "screen and (max-width:63.9375em)": 3,
+      "screen and (max-width:39.9375em)": 7,
+      "screen and (max-width:63.9375em)": 4,
       "screen and (max-width:74.9375em)": 1,
-      "screen and (max-width:0em),screen and (min-width:40em)": 1,
+      "screen and (max-width:0em)": 1,
       "screen and (min-width:40em) and (max-width:63.9375em)": 1,
-      "screen and (max-width:39.9375em),screen and (min-width:64em)": 1,
       "screen and (min-width:64em) and (max-width:74.9375em)": 1,
-      "screen and (max-width:63.9375em),screen and (min-width:75em)": 1,
+      "screen and (min-width:75em)": 1,
       "screen and (orientation:landscape)": 2,
       "screen and (orientation:portrait)": 2
     }
@@ -190,7 +189,7 @@
   "properties": {
     "total": 3273,
     "unique": 142,
-    "shorthands": 473,
+    "shorthands": 500,
     "prefixed": 335,
     "unitless": 2005,
     "resetsViaAll": 0,
@@ -528,11 +527,11 @@
       "black": 1
     },
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "#000000": 1,
-      "ButtonText": 1,
+      "buttontext": 1,
       "#c0c0c0": 1,
       "#0a0a0a": 44,
       "#cacaca": 22,
@@ -624,13 +623,13 @@
       "white": 1
     },
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "transparent": 76,
       "#ffff00": 1,
       "#000000": 1,
-      "ButtonText": 1,
+      "buttontext": 1,
       "#c0c0c0": 1,
       "#fefefe": 61,
       "#0a0a0a": 47,
@@ -702,7 +701,9 @@
       "ease": 7,
       "inherit": 2,
       "ease-in": 1,
-      "cubic-bezier(0.485,0.155,0.24,1.245)": 1
+      "cubic-bezier(0.485,0.155,0.24,1.245)": 1,
+      "cubic-bezier(0.485,0.155,0.515,0.845)": 1,
+      "cubic-bezier(0.76,-0.245,0.24,1.245)": 1
     },
     "invalidTimingFunctions": {}
   },
@@ -725,7 +726,9 @@
       "ease-in": 1,
       "ease-out": 1,
       "ease-in-out": 1,
-      "cubic-bezier(0.485,0.155,0.24,1.245)": 1
+      "cubic-bezier(0.485,0.155,0.24,1.245)": 1,
+      "cubic-bezier(0.485,0.155,0.515,0.845)": 1,
+      "cubic-bezier(0.76,-0.245,0.24,1.245)": 1
     },
     "invalidTimingFunctions": {}
   },

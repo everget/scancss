@@ -176,7 +176,7 @@
   "properties": {
     "total": 2760,
     "unique": 82,
-    "shorthands": 283,
+    "shorthands": 320,
     "prefixed": 946,
     "unitless": 1208,
     "resetsViaAll": 0,
@@ -561,7 +561,7 @@
     },
     "timingFunctions": {
       "ease": 44,
-      "cubic-bezier(0.4,0,0,1.5)": 1,
+      "cubic-bezier(0.4,0,0,1.5)": 2,
       "ease-in": 5,
       "ease-out": 4,
       "ease-in-out": 20
