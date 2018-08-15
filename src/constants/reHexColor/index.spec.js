@@ -74,7 +74,6 @@ describe('Module: reHexColor', () => {
 			'#ffffff00',
 			'#4g10',
 			'#zY10',
-			'rgb(12, 34, 56)',
 		];
 
 		notHexColors.forEach((value) => {

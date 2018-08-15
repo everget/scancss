@@ -1,6 +1,6 @@
 import { addSpacesNearParentheses } from '../../converters/addSpacesNearParentheses';
 import { addSpacesNearCommas } from '../../converters/addSpacesNearCommas';
-import { removeLeadingZero } from '../../converters/removeLeadingZero';
+import { trimLeadingZero } from '../../converters/trimLeadingZero';
 import { reCubicBezier } from '.';
 
 describe('Module: reCubicBezier', () => {
@@ -20,7 +20,7 @@ describe('Module: reCubicBezier', () => {
 			.reduce((acc, func) => {
 				acc.push(
 					func,
-					removeLeadingZero(func),
+					trimLeadingZero(func),
 					addSpacesNearParentheses(func),
 					addSpacesNearCommas(func)
 				);

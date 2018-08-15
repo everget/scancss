@@ -50,7 +50,6 @@ describe('Module: reHexaColor', () => {
 			'#ffffff',
 			'#4g1',
 			'#zY1',
-			'rgb(12, 34, 56)',
 		];
 
 		notHexaColors.forEach((value) => {

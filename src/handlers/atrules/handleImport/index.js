@@ -1,7 +1,6 @@
 import { reCssUrlFunctionWithArg } from '../../../constants/reCssUrlFunctionWithArg';
+import { reCssFileName } from '../../../constants/reCssFileName';
 import { handleMediaQueryParams } from '../handleMediaQueryParams';
-
-const reCssFileString = /['"]?.+\.css['"]?/g;
 
 export function handleImport(atRule, report, options) {
 	let cleanedParams = atRule.params;
@@ -10,8 +9,8 @@ export function handleImport(atRule, report, options) {
 		cleanedParams = cleanedParams.replace(reCssUrlFunctionWithArg, '');
 	}
 
-	if (reCssFileString.test(cleanedParams)) {
-		cleanedParams = cleanedParams.replace(reCssFileString, '');
+	if (reCssFileName.test(cleanedParams)) {
+		cleanedParams = cleanedParams.replace(reCssFileName, '');
 	}
 
 	if (cleanedParams.trim().length !== 0) {

@@ -25,7 +25,11 @@ function countNamedTimingFunctions(decl, report) {
 	postcss.list
 		.comma(decl.value)
 		.forEach((func) => {
-			if (reCubicBezier.test(func) === false) {
+			if (
+				func.startsWith('cubic-bezier(') === false &&
+				func.startsWith('frames(') === false &&
+				func.startsWith('steps(') === false
+			) {
 				if (
 					cssNamedTimingFunctions.includes(func) ||
 					cssExplicitDefaultingKeywords.includes(func)
@@ -185,8 +189,6 @@ function handleTransitionLonghand(longhand, report) {
 	}
 }
 
-const reCubicBezierInexact = /cubic-bezier\(.+?\)/g;
-
 export function handleTransitionsAndAnimations(decl, report) {
 	const prop = decl.prop;
 	const propValue = decl.value;
@@ -200,8 +202,8 @@ export function handleTransitionsAndAnimations(decl, report) {
 		}
 
 		// https://github.com/mahirshah/css-property-parser/issues/26
-		if (reCubicBezierInexact.test(safePropValue)) {
-			safePropValue = safePropValue.replace(reCubicBezierInexact, '');
+		if (reCubicBezier.test(safePropValue)) {
+			safePropValue = safePropValue.replace(reCubicBezier, '');
 		}
 
 		try {

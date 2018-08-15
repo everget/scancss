@@ -1,6 +1,6 @@
-import { removeExtraSpaces } from '.';
+import { trimExtraSpaces } from '.';
 
-describe('Module: removeExtraSpaces', () => {
+describe('Module: trimExtraSpaces', () => {
 	const suites = [
 		{
 			str: '',
@@ -46,7 +46,7 @@ describe('Module: removeExtraSpaces', () => {
 
 	suites.forEach((suite) => {
 		it(`should return string without extra spaces ${suite.str}`, () => {
-			expect(removeExtraSpaces(suite.str)).toBe(suite.expected);
+			expect(trimExtraSpaces(suite.str)).toBe(suite.expected);
 		});
 	});
 });

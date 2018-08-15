@@ -243,7 +243,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.total).toBe(15);
+			expect(report.mediaQueries.total).toBe(16);
 		});
 	});
 
@@ -320,7 +320,8 @@ describe('Module: handleAtRule', () => {
 		it('should be counted correctly', () => {
 			expect(report.mediaQueries.usage).toEqual({
 				'all and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm)': 1,
-				'only screen and (max-height:440px),only screen and (max-width:600px)': 1,
+				'only screen and (max-height:440px)': 1,
+				'only screen and (max-width:600px)': 1,
 				'only screen and (max-width:767px)': 1,
 				print: 2,
 				screen: 1,

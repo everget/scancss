@@ -1,9 +1,9 @@
 import { addSpacesNearCommas } from '../../converters/addSpacesNearCommas';
 import { addSpacesNearParentheses } from '../../converters/addSpacesNearParentheses';
 import { addUnitToNumbers } from '../../converters/addUnitToNumbers';
-import { removeSpacesAfterCommas } from '../../converters/removeSpacesAfterCommas';
-import { removeLeadingZero } from '../../converters/removeLeadingZero';
-import { removeIntegerPart } from '../../converters/removeIntegerPart';
+import { trimSpacesNearCommas } from '../../converters/trimSpacesNearCommas';
+import { trimLeadingZero } from '../../converters/trimLeadingZero';
+import { trimIntegerPart } from '../../converters/trimIntegerPart';
 import { reRgbaColor } from '.';
 
 describe('Module: reRgbaColor', () => {
@@ -22,10 +22,10 @@ describe('Module: reRgbaColor', () => {
 						color,
 						addSpacesNearParentheses(color),
 						addSpacesNearCommas(color),
-						removeSpacesAfterCommas(color),
-						removeLeadingZero(color),
-						removeIntegerPart(color).replace(/\)/g, '%)'),
-						addUnitToNumbers(removeIntegerPart(color), '%')
+						trimSpacesNearCommas(color),
+						trimLeadingZero(color),
+						trimIntegerPart(color).replace(/\)/g, '%)'),
+						addUnitToNumbers(trimIntegerPart(color), '%')
 					);
 
 					return acc;
@@ -51,10 +51,10 @@ describe('Module: reRgbaColor', () => {
 						color,
 						addSpacesNearParentheses(color),
 						addSpacesNearCommas(color),
-						removeSpacesAfterCommas(color),
-						removeLeadingZero(color),
-						removeIntegerPart(color).replace(/\)/g, '%)'),
-						addUnitToNumbers(removeIntegerPart(color), '%')
+						trimSpacesNearCommas(color),
+						trimLeadingZero(color),
+						trimIntegerPart(color).replace(/\)/g, '%)'),
+						addUnitToNumbers(trimIntegerPart(color), '%')
 					);
 
 					return acc;

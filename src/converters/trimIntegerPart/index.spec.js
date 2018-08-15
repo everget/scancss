@@ -1,6 +1,6 @@
-import { removeIntegerPart } from '.';
+import { trimIntegerPart } from '.';
 
-describe('Module: removeIntegerPart', () => {
+describe('Module: trimIntegerPart', () => {
 	const suites = [
 		{
 			str: '0.001 0.01 0.1',
@@ -14,7 +14,7 @@ describe('Module: removeIntegerPart', () => {
 
 	suites.forEach((suite) => {
 		it(`should remove integer part from decimals in string ${suite.str}`, () => {
-			expect(removeIntegerPart(suite.str)).toBe(suite.expected);
+			expect(trimIntegerPart(suite.str)).toBe(suite.expected);
 		});
 	});
 });

@@ -1,6 +1,6 @@
-import { removeLeadingZero } from '.';
+import { trimLeadingZero } from '.';
 
-describe('Module: removeLeadingZero', () => {
+describe('Module: trimLeadingZero', () => {
 	const suites = [
 		{
 			str: '0.001 0.01 0.1',
@@ -14,7 +14,7 @@ describe('Module: removeLeadingZero', () => {
 
 	suites.forEach((suite) => {
 		it(`should remove leading zeros from decimals in string ${suite.str}`, () => {
-			expect(removeLeadingZero(suite.str)).toBe(suite.expected);
+			expect(trimLeadingZero(suite.str)).toBe(suite.expected);
 		});
 	});
 });
