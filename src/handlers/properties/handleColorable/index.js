@@ -9,7 +9,7 @@ import { reHslaColor } from '../../../constants/reHslaColor';
 import { reHwbColor } from '../../../constants/reHwbColor';
 import { countUsage } from '../../../calculators/countUsage';
 import { restoreFullHex } from '../../../converters/restoreFullHex';
-import { removeExtraSpaces } from '../../../converters/removeExtraSpaces';
+import { trimExtraSpaces } from '../../../converters/trimExtraSpaces';
 
 function countColorInSection(color, reportSection) {
 	reportSection.total++;
@@ -82,7 +82,7 @@ function normalizeModelColor(color) {
 			: color.toLowerCase();
 	}
 
-	return removeExtraSpaces(color);
+	return trimExtraSpaces(color);
 }
 
 function countColorModels(prop, match, report, model, options) {

@@ -6,7 +6,7 @@ import { cssSystemFonts } from '../../../constants/cssSystemFonts';
 import { cssFontSizeKeywords } from '../../../constants/cssFontSizeKeywords';
 import { reExistingVendorPrefix } from '../../../constants/reExistingVendorPrefix';
 import { countUsage } from '../../../calculators/countUsage';
-import { removeExtraSpaces } from '../../../converters/removeExtraSpaces';
+import { trimExtraSpaces } from '../../../converters/trimExtraSpaces';
 import { handleVendorPrefix } from '../../handleVendorPrefix';
 import { isNumber } from '../../../predicates/isNumber';
 
@@ -55,7 +55,7 @@ function countFontFamilies(propValue, report) {
 }
 
 export function handleFonts(decl, report) {
-	const cleanedValue = removeExtraSpaces(decl.value);
+	const cleanedValue = trimExtraSpaces(decl.value);
 
 	if (decl.prop === 'font') {
 		// http://nicolasgallagher.com/another-css-image-replacement-technique/
@@ -72,21 +72,21 @@ export function handleFonts(decl, report) {
 
 		if (typeof fontLonghand['font-size'] === 'string') {
 			countFontSizes(
-				removeExtraSpaces(fontLonghand['font-size']),
+				trimExtraSpaces(fontLonghand['font-size']),
 				report
 			);
 		}
 
 		if (typeof fontLonghand['line-height'] === 'string') {
 			countLineHeights(
-				removeExtraSpaces(fontLonghand['line-height']),
+				trimExtraSpaces(fontLonghand['line-height']),
 				report
 			);
 		}
 
 		if (typeof fontLonghand['font-family'] === 'string') {
 			countFontFamilies(
-				removeExtraSpaces(fontLonghand['font-family']),
+				trimExtraSpaces(fontLonghand['font-family']),
 				report
 			);
 		}

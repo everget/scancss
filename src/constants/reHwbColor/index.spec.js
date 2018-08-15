@@ -1,9 +1,9 @@
 import { addSpacesNearParentheses } from '../../converters/addSpacesNearParentheses';
 import { addSpacesNearCommas } from '../../converters/addSpacesNearCommas';
-import { removeSpacesAfterCommas } from '../../converters/removeSpacesAfterCommas';
+import { trimSpacesNearCommas } from '../../converters/trimSpacesNearCommas';
 import { addUnitToFirstArgument } from '../../converters/addUnitToFirstArgument';
-import { removeLeadingZero } from '../../converters/removeLeadingZero';
-import { removeIntegerPart } from '../../converters/removeIntegerPart';
+import { trimLeadingZero } from '../../converters/trimLeadingZero';
+import { trimIntegerPart } from '../../converters/trimIntegerPart';
 import { reHwbColor } from '.';
 
 describe('Module: reHwbColor', () => {
@@ -24,7 +24,7 @@ describe('Module: reHwbColor', () => {
 						color,
 						addSpacesNearParentheses(color),
 						addSpacesNearCommas(color),
-						removeSpacesAfterCommas(color),
+						trimSpacesNearCommas(color),
 						addUnitToFirstArgument(color, 'deg'),
 						addUnitToFirstArgument(color, 'grad'),
 						addUnitToFirstArgument(color, 'rad'),
@@ -84,11 +84,11 @@ describe('Module: reHwbColor', () => {
 				.reduce((acc, color) => {
 					acc.push(
 						color,
-						removeLeadingZero(color),
-						removeIntegerPart(color).replace(/\)/g, '%)'),
+						trimLeadingZero(color),
+						trimIntegerPart(color).replace(/\)/g, '%)'),
 						addSpacesNearParentheses(color),
 						addSpacesNearCommas(color),
-						removeSpacesAfterCommas(color),
+						trimSpacesNearCommas(color),
 						addUnitToFirstArgument(color, 'deg'),
 						addUnitToFirstArgument(color, 'grad'),
 						addUnitToFirstArgument(color, 'rad'),
@@ -118,8 +118,8 @@ describe('Module: reHwbColor', () => {
 				.reduce((acc, color) => {
 					acc.push(
 						color,
-						removeLeadingZero(color),
-						removeIntegerPart(color).replace(/\)/g, '%)'),
+						trimLeadingZero(color),
+						trimIntegerPart(color).replace(/\)/g, '%)'),
 						addSpacesNearParentheses(color),
 						addUnitToFirstArgument(color, 'deg'),
 						addUnitToFirstArgument(color, 'grad'),

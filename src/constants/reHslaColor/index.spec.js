@@ -1,8 +1,8 @@
 import { addSpacesNearCommas } from '../../converters/addSpacesNearCommas';
 import { addSpacesNearParentheses } from '../../converters/addSpacesNearParentheses';
 import { addUnitToFirstArgument } from '../../converters/addUnitToFirstArgument';
-import { removeSpacesAfterCommas } from '../../converters/removeSpacesAfterCommas';
-import { removeLeadingZero } from '../../converters/removeLeadingZero';
+import { trimSpacesNearCommas } from '../../converters/trimSpacesNearCommas';
+import { trimLeadingZero } from '../../converters/trimLeadingZero';
 import { reHslaColor } from '.';
 
 describe('Module: reHslaColor', () => {
@@ -20,11 +20,11 @@ describe('Module: reHslaColor', () => {
 				.reduce((acc, color) => {
 					acc.push(
 						color,
-						removeLeadingZero(color),
+						trimLeadingZero(color),
 						color.replace(/0\.0+/g, '').replace(/\)/g, '%)'),
 						addSpacesNearParentheses(color),
 						addSpacesNearCommas(color),
-						removeSpacesAfterCommas(color)
+						trimSpacesNearCommas(color)
 					);
 
 					return acc;
@@ -52,22 +52,22 @@ describe('Module: reHslaColor', () => {
 						addUnitToFirstArgument(color, 'deg'),
 						addSpacesNearParentheses(addUnitToFirstArgument(color, 'deg')),
 						addSpacesNearCommas(addUnitToFirstArgument(color, 'deg')),
-						removeSpacesAfterCommas(addUnitToFirstArgument(color, 'deg')),
+						trimSpacesNearCommas(addUnitToFirstArgument(color, 'deg')),
 
 						addUnitToFirstArgument(color, 'grad'),
 						addSpacesNearParentheses(addUnitToFirstArgument(color, 'grad')),
 						addSpacesNearCommas(addUnitToFirstArgument(color, 'grad')),
-						removeSpacesAfterCommas(addUnitToFirstArgument(color, 'grad')),
+						trimSpacesNearCommas(addUnitToFirstArgument(color, 'grad')),
 
 						addUnitToFirstArgument(color, 'rad'),
 						addSpacesNearParentheses(addUnitToFirstArgument(color, 'rad')),
 						addSpacesNearCommas(addUnitToFirstArgument(color, 'rad')),
-						removeSpacesAfterCommas(addUnitToFirstArgument(color, 'rad')),
+						trimSpacesNearCommas(addUnitToFirstArgument(color, 'rad')),
 
 						addUnitToFirstArgument(color, 'turn'),
 						addSpacesNearParentheses(addUnitToFirstArgument(color, 'turn')),
 						addSpacesNearCommas(addUnitToFirstArgument(color, 'turn')),
-						removeSpacesAfterCommas(addUnitToFirstArgument(color, 'turn'))
+						trimSpacesNearCommas(addUnitToFirstArgument(color, 'turn'))
 					);
 
 					return acc;

@@ -3,7 +3,7 @@ import { reCssExplicitDefaultingKeyword } from '../../constants/reCssExplicitDef
 import { rePrefixedString } from '../../constants/rePrefixedString';
 import { isShorthandProperty } from '../../predicates/isShorthandProperty';
 import { countUsage } from '../../calculators/countUsage';
-import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
+import { trimExtraSpaces } from '../../converters/trimExtraSpaces';
 
 import { handleEngineTriggers } from '../properties/handleEngineTriggers';
 import { handleColorable } from '../properties/handleColorable';
@@ -34,7 +34,7 @@ export function handleDeclaration(decl, report, options) {
 	const declarationByteLength = Buffer.byteLength(decl.toString(), 'utf8');
 	report.declarations.length.total += declarationByteLength;
 
-	const normalizedDecl = removeExtraSpaces(decl.toString());
+	const normalizedDecl = trimExtraSpaces(decl.toString());
 
 	if (report.declarations.length.longest < declarationByteLength) {
 		report.declarations.length.longest = declarationByteLength;
