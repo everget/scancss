@@ -1,8 +1,10 @@
-import { isShorthandProperty } from 'css-property-parser';
-
 import { cssColorableProperties } from '../../constants/cssColorableProperties';
 import { reCssExplicitDefaultingKeyword } from '../../constants/reCssExplicitDefaultingKeyword';
 import { rePrefixedString } from '../../constants/rePrefixedString';
+import { isShorthandProperty } from '../../predicates/isShorthandProperty';
+import { countUsage } from '../../calculators/countUsage';
+import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
+
 import { handleEngineTriggers } from '../properties/handleEngineTriggers';
 import { handleColorable } from '../properties/handleColorable';
 import { handleFonts } from '../properties/handleFonts';
@@ -18,10 +20,8 @@ import { handleFunctions } from '../handleFunctions';
 import { handleUnits } from '../handleUnits';
 import { handleVariables } from '../handleVariables';
 import { handleVendorPrefix } from '../handleVendorPrefix';
-import { countUsage } from '../../calculators/countUsage';
-import { removeExtraSpaces } from '../../converters/removeExtraSpaces';
 
-const cssFontProperties = [
+const supportedCssFontProperties = [
 	'font',
 	'font-size',
 	'line-height',
@@ -62,14 +62,10 @@ export function handleDeclaration(decl, report, options) {
 		if (rePrefixedString.test(prop)) {
 			report.properties.prefixed++;
 			handleVendorPrefix(prop, report);
+		}
 
-			/** Count property shorthands */
-			// https://github.com/mahirshah/css-property-parser/issues/31
-			const unprefixedProp = prop.replace(rePrefixedString, '');
-			if (isShorthandProperty(unprefixedProp)) {
-				report.properties.shorthands++;
-			}
-		} else if (isShorthandProperty(prop)) {
+		/** Count property shorthands */
+		if (isShorthandProperty(prop)) {
 			report.properties.shorthands++;
 		}
 
@@ -144,7 +140,7 @@ export function handleDeclaration(decl, report, options) {
 		handleLetterSpacing(decl, report);
 	}
 
-	if (cssFontProperties.includes(prop) && options.fonts) {
+	if (supportedCssFontProperties.includes(prop) && options.fonts) {
 		handleFonts(decl, report);
 	}
 

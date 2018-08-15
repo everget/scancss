@@ -1,4 +1,5 @@
 import { cssUnitsThatAllowZeroWithoutUnit } from '../../constants/cssUnitsThatAllowZeroWithoutUnit';
+import { reNumberString } from '../../constants/reNumberString';
 import { reNumberWithCssUnit } from '../../constants/reNumberWithCssUnit';
 import { reCssUrlFunctionWithArg } from '../../constants/reCssUrlFunctionWithArg';
 import { countUsage } from '../../calculators/countUsage';
@@ -8,6 +9,9 @@ const reNumberWithCssUnitWithAllowedLeadingSymbols = new RegExp(
 	reAllowedLeadingSymbols.source + reNumberWithCssUnit.source,
 	'g'
 );
+
+const reNumberStringSource = reNumberString.source.slice(1, -1);
+const reNumberStringGlobal = new RegExp(reNumberStringSource, 'g');
 
 const excludedUnitlessProps = [
 	'animation-name',
@@ -58,7 +62,7 @@ export function handleUnits(decl, report, options) {
 					countUsage(match, report.units.excessive.usage);
 				}
 
-				const unit = match.replace(/[-.0-9]+/g, '');
+				const unit = match.replace(reNumberStringGlobal, '');
 				countUsage(unit, report.units.usage);
 			});
 	} else if (options.properties) {

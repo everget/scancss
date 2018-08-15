@@ -349,21 +349,21 @@ describe('Module: handleColorable', () => {
 		describe('allColors.system', () => {
 			it('should be counted correctly', () => {
 				expect(report.allColors.system).toEqual({
-					ActiveCaption: 1,
-					AppWorkspace: 1,
-					Background: 1,
-					ButtonFace: 1,
-					ButtonHighlight: 1,
-					ButtonShadow: 1,
-					ButtonText: 1,
-					CaptionText: 1,
-					GrayText: 1,
-					Highlight: 1,
-					HighlightText: 1,
-					InactiveBorder: 1,
-					InactiveCaption: 1,
-					InactiveCaptionText: 1,
-					InfoBackground: 1,
+					activecaption: 1,
+					appworkspace: 1,
+					background: 1,
+					buttonface: 1,
+					buttonhighlight: 1,
+					buttonshadow: 1,
+					buttontext: 1,
+					captiontext: 1,
+					graytext: 1,
+					highlight: 1,
+					highlighttext: 1,
+					inactiveborder: 1,
+					inactivecaption: 1,
+					inactivecaptiontext: 1,
+					infobackground: 1,
 				});
 			});
 		});
@@ -397,21 +397,21 @@ describe('Module: handleColorable', () => {
 					'hsl(1deg,2%,3%)': 15,
 					'hsla(1deg,2%,3%,0.4)': 15,
 					'hwb(1deg,2%,3%,0.4)': 15,
-					ActiveCaption: 1,
-					AppWorkspace: 1,
-					Background: 1,
-					ButtonFace: 1,
-					ButtonHighlight: 1,
-					ButtonShadow: 1,
-					ButtonText: 1,
-					CaptionText: 1,
-					GrayText: 1,
-					Highlight: 1,
-					HighlightText: 1,
-					InactiveBorder: 1,
-					InactiveCaption: 1,
-					InactiveCaptionText: 1,
-					InfoBackground: 1,
+					activecaption: 1,
+					appworkspace: 1,
+					background: 1,
+					buttonface: 1,
+					buttonhighlight: 1,
+					buttonshadow: 1,
+					buttontext: 1,
+					captiontext: 1,
+					graytext: 1,
+					highlight: 1,
+					highlighttext: 1,
+					inactiveborder: 1,
+					inactivecaption: 1,
+					inactivecaptiontext: 1,
+					infobackground: 1,
 				});
 			});
 		});
@@ -473,19 +473,19 @@ describe('Module: handleColorable', () => {
 		describe('colors.system', () => {
 			it('should be counted correctly', () => {
 				expect(report.colors.system).toEqual({
-					ActiveCaption: 1,
-					AppWorkspace: 1,
-					Background: 1,
-					ButtonFace: 1,
-					ButtonHighlight: 1,
-					ButtonShadow: 1,
-					ButtonText: 1,
-					CaptionText: 1,
-					GrayText: 1,
-					Highlight: 1,
-					HighlightText: 1,
-					InactiveBorder: 1,
-					InfoBackground: 1,
+					activecaption: 1,
+					appworkspace: 1,
+					background: 1,
+					buttonface: 1,
+					buttonhighlight: 1,
+					buttonshadow: 1,
+					buttontext: 1,
+					captiontext: 1,
+					graytext: 1,
+					highlight: 1,
+					highlighttext: 1,
+					inactiveborder: 1,
+					infobackground: 1,
 				});
 			});
 		});
@@ -517,19 +517,19 @@ describe('Module: handleColorable', () => {
 					'hsl(1deg,2%,3%)': 13,
 					'hsla(1deg,2%,3%,0.4)': 13,
 					'hwb(1deg,2%,3%,0.4)': 13,
-					ActiveCaption: 1,
-					AppWorkspace: 1,
-					Background: 1,
-					ButtonFace: 1,
-					ButtonHighlight: 1,
-					ButtonShadow: 1,
-					ButtonText: 1,
-					CaptionText: 1,
-					GrayText: 1,
-					Highlight: 1,
-					HighlightText: 1,
-					InactiveBorder: 1,
-					InfoBackground: 1,
+					activecaption: 1,
+					appworkspace: 1,
+					background: 1,
+					buttonface: 1,
+					buttonhighlight: 1,
+					buttonshadow: 1,
+					buttontext: 1,
+					captiontext: 1,
+					graytext: 1,
+					highlight: 1,
+					highlighttext: 1,
+					inactiveborder: 1,
+					infobackground: 1,
 				});
 			});
 		});
@@ -580,8 +580,8 @@ describe('Module: handleColorable', () => {
 		describe('backgroundColors.system', () => {
 			it('should be counted correctly', () => {
 				expect(report.backgroundColors.system).toEqual({
-					InactiveCaption: 1,
-					InactiveCaptionText: 1,
+					inactivecaption: 1,
+					inactivecaptiontext: 1,
 				});
 			});
 		});
@@ -602,8 +602,8 @@ describe('Module: handleColorable', () => {
 					'hsl(1deg,2%,3%)': 2,
 					'hsla(1deg,2%,3%,0.4)': 2,
 					'hwb(1deg,2%,3%,0.4)': 2,
-					InactiveCaption: 1,
-					InactiveCaptionText: 1,
+					inactivecaption: 1,
+					inactivecaptiontext: 1,
 				});
 			});
 		});
