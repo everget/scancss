@@ -1,4 +1,4 @@
-export function removeExtraSpaces(str) {
+export function trimExtraSpaces(str) {
 	return str.trim()
 		.replace(/\s{2,}/g, '')
 		.replace(/\s?,\s?/g, ',')
