@@ -17,6 +17,7 @@ describe('Module: handleFunctions', () => {
 			background-color: var(--main-bg-color);
 			color: rgb(255, 0, 215);
 			transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+			transition: steps(4, end);
 			transform: translateY(-150%) scale(.8);
 			filter: blur(5px);
 		}
@@ -27,6 +28,7 @@ describe('Module: handleFunctions', () => {
 			shape-outside: inset(50px);
 			background: hsl(140, 80%, 70%);
 			transition-timing-function: cubic-bezier(0.0, 0.0, 1, 1);
+			transition: frames(10);
 			transform: translateY(-150%) scale(.8) rotate(180deg);
 			filter: contrast(200%);
 		}
@@ -37,6 +39,7 @@ describe('Module: handleFunctions', () => {
 			clip-path: inset(50px round 15px);
 			background: repeating-radial-gradient(red, yellow 10%, green 15%);
 			transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+			transition: steps(2);
 			transform: scale(.8);
 			filter: grayscale(80%);
 		}
@@ -45,7 +48,8 @@ describe('Module: handleFunctions', () => {
 			content: url('data:image/png;base64,TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0');
 			background: radial-gradient(red, green, blue);
 			animation-timing-function: cubic-bezier(0.42, 0, 1, 1);
-			transition-timing-function: cubic-bezier(0.1, red, 1.0, green),
+			transition-timing-function: cubic-bezier(0.1, red, 1.0, green);
+			transition: steps(-3, start);
 			transform: rotate(180deg);
 			filter: hue-rotate(90deg);
 		}
@@ -60,6 +64,7 @@ describe('Module: handleFunctions', () => {
 				</svg>');
 			animation-timing-function: cubic-bezier(0.3, 2.1);
 			transition-timing-function: cubic-bezier(-1.9, 0.3, -0.2, 2.1);
+			transition: frames(2.0);
 			transform: translateY(-150%);
 			filter: drop-shadow(16px 16px 20px red) invert(75%);
 		}
@@ -138,7 +143,7 @@ describe('Module: handleFunctions', () => {
 	describe('Handling all functions', () => {
 		describe('functions.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.functions.total).toBe(44);
+				expect(report.functions.total).toBe(49);
 			});
 		});
 
@@ -182,6 +187,8 @@ describe('Module: handleFunctions', () => {
 					translateY: 3,
 					url: 3,
 					var: 2,
+					frames: 2,
+					steps: 3,
 				});
 			});
 		});
@@ -250,6 +257,11 @@ describe('Module: handleFunctions', () => {
 					'cubic-bezier(0.25,0.1,0.25,1)': 1,
 					'cubic-bezier(0.1,red,1.0,green)': 1,
 					'cubic-bezier(-1.9,0.3,-0.2,2.1)': 1,
+					'frames(10)': 1,
+					'frames(2.0)': 1,
+					'steps(4,end)': 1,
+					'steps(2)': 1,
+					'steps(-3,start)': 1,
 				});
 			});
 		});
@@ -259,6 +271,8 @@ describe('Module: handleFunctions', () => {
 				expect(report.transitions.invalidTimingFunctions).toEqual({
 					'cubic-bezier(0.1,red,1.0,green)': 1,
 					'cubic-bezier(-1.9,0.3,-0.2,2.1)': 1,
+					'frames(2.0)': 1,
+					'steps(-3,start)': 1,
 				});
 			});
 		});

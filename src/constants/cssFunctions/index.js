@@ -20,6 +20,7 @@ export const cssFunctions = [
 	'env',
 	'expression',
 	'fit-content',
+	'frames',
 	'grayscale',
 	'gray',
 	'hsla',
