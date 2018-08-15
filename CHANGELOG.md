@@ -5,26 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.2]
+
+### Fixed
+- Fixed counting of comma-separated media queries
+- Fixed counting of invalid named timing functions in `transitions.invalidTimingFunctions` and `animations.invalidTimingFunctions`
+- Fixed counting of `steps` and `frames` timing functions in `functions`, `transitions.timingFunctions`, `transitions.invalidTimingFunctions`, `animations.timingFunctions`, `animations.invalidTimingFunctions`
+- Fixed case-insensitive counting of system colors, `currentColor`s and `transparent` colors
+- Added missed `discrete` and `range` media features
+- Added missed `future`, `current`, `drop`, `focus-visible`, `local-link`, `nth-col`, `nth-last-col`, `past`, `playing`, `paused`, `something`, `target-within`, `user-invalid` pseudo classes
+
 ## [1.3.1]
 
 ### Fixed
-- Correct counting `rgb()`, `rgba()`, `hsl()`, `hsla()`, `hwb()` functions with whitespace syntax
-- Correct counting `rgb()`, `rgba()`, `hsl()`, `hsla()`, `hwb()` functions with decimal numbers and exponential notations
-- Fix unmatching data URIs with `<svg>` syntax
-- Add missed `-moz-border-top-colors` and `-moz-border-left-colors` for handling as colorable properties
-- Add missed `stop-color`, `flood-color` and `lighting-color` for handling as colorable properties
+- Fixed counting of `rgb()`, `rgba()`, `hsl()`, `hsla()`, `hwb()` functions with whitespace syntax
+- Fixed counting of `rgb()`, `rgba()`, `hsl()`, `hsla()`, `hwb()` functions with decimal numbers and exponential notations
+- Fixed counting of data URIs with `<svg>` syntax
+- Added missed `-moz-border-top-colors` and `-moz-border-left-colors` for handling as colorable properties
+- Added missed `stop-color`, `flood-color` and `lighting-color` for handling as colorable properties
 
 ## [1.3.0]
 
 ### Added
-- Add `properties` option
-- Add `displays` option
-- Add `positions` option
-- Add `zIndices` option
-- Add `floats` option
-- Add `borderRadiuses` option
-- Add `letterSpacings` option
-- Add `fontSizes.keywords` metric:
+- Added `properties` option
+- Added `displays` option
+- Added `positions` option
+- Added `zIndices` option
+- Added `floats` option
+- Added `borderRadiuses` option
+- Added `letterSpacings` option
+- Added `fontSizes.keywords` metric:
 ```
 keywords: {
 	total,
@@ -34,8 +44,8 @@ keywords: {
 ```
 
 ### Changed
-- Simplify all options flag names
-- Reorganize `atRules.unknown` to:
+- Simplified all options flag names
+- Reorganized `atRules.unknown` to:
 ```
 unknown: {
 	total,
@@ -43,7 +53,7 @@ unknown: {
 	usage,
 }
 ```
-- Reorganize `mediaQueries.types` to:
+- Reorganized `mediaQueries.types` to:
 ```
 types: {
 	total,
@@ -51,7 +61,7 @@ types: {
 	usage,
 }
 ```
-- Reorganize `vendorPrefixes.unknown` to:
+- Reorganized `vendorPrefixes.unknown` to:
 ```
 unknown: {
 	total,
@@ -59,7 +69,7 @@ unknown: {
 	usage,
 }
 ```
-- Reorganize `units` to:
+- Reorganized `units` to:
 ```
 units: {
 	total,
@@ -72,7 +82,7 @@ units: {
 	},
 },
 ```
-- Reorganize `selectors` specificity metrics to:
+- Reorganized `selectors` specificity metrics to:
 ```
 selectors: {
 	specificity: {
@@ -84,7 +94,7 @@ selectors: {
 	}
 }
 ```
-- Reorganize `selectors` length metrics to:
+- Reorganized `selectors` length metrics to:
 ```
 selectors: {
 	length: {
@@ -95,7 +105,7 @@ selectors: {
 	}
 }
 ```
-- Reorganize `declarations` length metrics to:
+- Reorganized `declarations` length metrics to:
 ```
 declarations: {
 	length: {
@@ -106,7 +116,7 @@ declarations: {
 	},
 }
 ```
-- Reorganize `dataUris` length metrics to:
+- Reorganized `dataUris` length metrics to:
 ```
 dataUris: {
 	length: {
@@ -117,7 +127,7 @@ dataUris: {
 	},
 }
 ```
-- Reorganize `comments` length metrics to:
+- Reorganized `comments` length metrics to:
 ```
 comments: {
 	length: {
@@ -128,7 +138,7 @@ comments: {
 	},
 }
 ```
-- Rename `styleSheetSize` metrics to:
+- Renamed `styleSheetSize` metrics to:
 ```
 styleSheetSize: {
 	source,
@@ -137,16 +147,16 @@ styleSheetSize: {
 ```
 
 ### Fixed
-- Fix bugs with incorrect selectors specificity calculations
-- Fix considering variables or `calc` functions in `z-index` values as invalid
-- Fix inconsistent flags location
+- Fixed bugs with incorrect selectors specificity calculations
+- Fixed considering variables or `calc` functions in `z-index` values as invalid
+- Fixed inconsistent flags location
 
 ## [1.2.0]
 
 ### Added
-- Add `keyframes.longestStepsChainAnimation`
-- Add `keyframes.shortestStepsChainAnimation`
-- Add `filters` metrics and new flag `collectFiltersData`
+- Added `keyframes.longestStepsChainAnimation`
+- Added `keyframes.shortestStepsChainAnimation`
+- Added `filters` metrics and new flag `collectFiltersData`
 ```
 filters: {
 	total,
@@ -156,9 +166,9 @@ filters: {
 ```
 
 ### Changed
-- Rename `mediaQueries.onlyKeywords` to `mediaQueries.onlyKeyword`
-- Rename `*.vendorPrefixed` to `*.prefixed`
-- Reorganize `mediaQueries.features` to:
+- Renamed `mediaQueries.onlyKeywords` to `mediaQueries.onlyKeyword`
+- Renamed `*.vendorPrefixed` to `*.prefixed`
+- Reorganized `mediaQueries.features` to:
 ```
 features: {
 	total,
@@ -169,31 +179,31 @@ features: {
 ```
 
 ### Fixed
-- Fix bug with incorrect `transitions.invalidTimingFunctions` and `animations.invalidTimingFunctions` counting
-- Fix `declarations.uniqueRatio` calculation
+- Fixed bug with incorrect `transitions.invalidTimingFunctions` and `animations.invalidTimingFunctions` counting
+- Fixed `declarations.uniqueRatio` calculation
 
 ## [1.1.0]
 
 ### Added
-- Add `declarations.uniqueRatio` metric
-- Add `declarations.totalByteLength` metric
-- Add `declarations.longestByteLength` metric
-- Add `declarations.longestByteLengthDeclaration` metric
-- Add `declarations.averageByteLength` metric
-- Add `declarations.sizeRatio` metric
-- Add `animations.total` metric
-- Add `animations.unique` metric
-- Add `animations.usage` metric
-- Add `functions.vendorPrefixed` metric
-- Add `background-image` to colorable properties
+- Added `declarations.uniqueRatio` metric
+- Added `declarations.totalByteLength` metric
+- Added `declarations.longestByteLength` metric
+- Added `declarations.longestByteLengthDeclaration` metric
+- Added `declarations.averageByteLength` metric
+- Added `declarations.sizeRatio` metric
+- Added `animations.total` metric
+- Added `animations.unique` metric
+- Added `animations.usage` metric
+- Added `functions.vendorPrefixed` metric
+- Added `background-image` to colorable properties
 
 ### Changed
-- Exclude @font-face descriptors from handling as declarations
-- Count vendor-prefixed functions
+- Excluded @font-face descriptors from handling as declarations
+- Corrected counting of vendor-prefixed functions
 - Set `collectSpecificityGraphData` flag to `false` by default
 - Set `collectUniqueDeclarationsList` flag to `false` by default
 
 ## [1.0.1]
 
-### Changed
-- Correct `isNumber` predicate function
+### Fixed
+- Fixed `isNumber` predicate function
