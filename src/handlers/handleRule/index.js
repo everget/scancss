@@ -8,6 +8,10 @@ export function handleRule(rule, report, options) {
 		report.rules.empty++;
 	}
 
+	if (rule.raws.semicolon === false) {
+		report.rules.withoutTrailingSemicolon++;
+	}
+
 	/**
 	 * PostCSS `walkRules` goes throw @keyframes and consider
 	 * `to`, `from` and percent values as selectors of the rules

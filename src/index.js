@@ -110,6 +110,7 @@ export default function scancss(src, options) {
 			rules: {
 				total: 0,
 				empty: 0,
+				withoutTrailingSemicolon: 0,
 			},
 			selectors: {
 				total: 0,

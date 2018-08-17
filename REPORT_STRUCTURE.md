@@ -122,6 +122,8 @@
 
 * **empty** - `number`
 
+* **withoutTrailingSemicolon** - `number`
+
 [Back to top](#report-structure)
 
 #### selectors

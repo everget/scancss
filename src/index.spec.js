@@ -26,7 +26,7 @@ describe('Module: scancss', () => {
 			height: 40px;
 			font: message-box;
 			background-color: transparent;
-			color: #fff;
+			color: #fff
 		}
 
 		.selector {}
@@ -43,7 +43,7 @@ describe('Module: scancss', () => {
 
 			88%,
 			to {
-				opacity: 0;
+				opacity: 0
 			}
 		}
 
@@ -55,7 +55,7 @@ describe('Module: scancss', () => {
 
 			88%,
 			to {
-				opacity: 0;
+				opacity: 0
 			}
 		}
 
@@ -65,7 +65,7 @@ describe('Module: scancss', () => {
 				height: 20px;
 				background-color: #456456;
 				color: #000;
-				animation: infinite ease 1s fade;
+				animation: infinite ease 1s fade
 			}
 		}
 
@@ -92,8 +92,8 @@ describe('Module: scancss', () => {
 		describe('.styleSheetSize', () => {
 			it('should be counted correctly', () => {
 				expect(report.styleSheetSize).toEqual({
-					source: 908,
-					gzipSource: 436,
+					source: 904,
+					gzipSource: 437,
 				});
 			});
 		});
@@ -108,7 +108,7 @@ describe('Module: scancss', () => {
 						shortest: 32,
 						average: 32,
 					},
-					sizeRatio: 0.03524229074889868,
+					sizeRatio: 0.035398230088495575,
 				});
 			});
 		});
@@ -189,6 +189,7 @@ describe('Module: scancss', () => {
 				expect(report.rules).toEqual({
 					total: 8,
 					empty: 1,
+					withoutTrailingSemicolon: 4,
 				});
 			});
 		});
@@ -234,7 +235,7 @@ describe('Module: scancss', () => {
 							[0, 1, 0],
 						],
 					},
-					sizeRatio: 0.04955947136563876,
+					sizeRatio: 0.049778761061946904,
 					usage: {
 						'.selector': 3,
 						'::-moz-placeholder': 1,
@@ -257,7 +258,7 @@ describe('Module: scancss', () => {
 						longestDeclaration: 'animation:infinite ease 1s fade',
 						average: 15.42,
 					},
-					sizeRatio: 0.32268722466960353,
+					sizeRatio: 0.3241150442477876,
 					inAtRules: {
 						'-webkit-keyframes': 2,
 						keyframes: 2,

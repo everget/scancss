@@ -30,7 +30,7 @@ describe('Module: handleRule', () => {
 			float: left;
 			border-radius: 1px 2px;
 			letter-spacing: .3px;
-			all: initial;
+			all: initial
 		}
 
 		.selector {
@@ -41,7 +41,7 @@ describe('Module: handleRule', () => {
 			float: right;
 			border-radius: 1px 2px 3px;
 			letter-spacing: 0.3em;
-			all: initial;
+			all: initial
 		}
 	`;
 
@@ -54,6 +54,7 @@ describe('Module: handleRule', () => {
 			rules: {
 				total: 0,
 				empty: 0,
+				withoutTrailingSemicolon: 0,
 			},
 		};
 
@@ -75,6 +76,12 @@ describe('Module: handleRule', () => {
 	describe('rules.empty', () => {
 		it('should be counted correctly', () => {
 			expect(report.rules.empty).toBe(1);
+		});
+	});
+
+	describe('rules.withoutTrailingSemicolon', () => {
+		it('should be counted correctly', () => {
+			expect(report.rules.withoutTrailingSemicolon).toBe(2);
 		});
 	});
 });
