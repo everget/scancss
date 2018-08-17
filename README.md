@@ -68,7 +68,7 @@ yarn add scancss --save
 
 ```js
 import scancss from 'scancss';
-// or const scancss = require('scancss').default;
+// or const scancss = require('scancss');
 
 const stylesheet = `
 	.selector {

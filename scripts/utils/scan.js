@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const scancss = require('../../dist/index').default;
+const scancss = require('../../dist/index');
 const walkDir = require('./walkDir');
 
 function timeNow() {
