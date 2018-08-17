@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handleFonts } from '.';
 
 describe('Module: handleFonts', () => {
@@ -104,43 +105,7 @@ describe('Module: handleFonts', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			fontSizes: {
-				total: 0,
-				unique: 0,
-				keywords: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				usage: {},
-			},
-			lineHeights: {
-				total: 0,
-				unique: 0,
-				hardCoded: 0,
-				usage: {},
-			},
-			fontFamilies: {
-				total: 0,
-				unique: 0,
-				generic: {},
-				system: {},
-				withoutFallbackFonts: 0,
-				imageReplacementHacks: 0,
-				usage: {},
-			},
-			vendorPrefixes: {
-				total: 0,
-				unique: 0,
-				unknown: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handleFonts(decl, report);

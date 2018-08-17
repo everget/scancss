@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handlePosition } from '.';
 
 describe('Module: handlePosition', () => {
@@ -45,13 +46,7 @@ describe('Module: handlePosition', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			positions: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handlePosition(decl, report);

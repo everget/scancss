@@ -1,4 +1,5 @@
-import { parseCss } from '../../converters/parseCss';
+import { getEmptyReport } from '../../common/getEmptyReport';
+import { parseCss } from '../../common/parseCss';
 import { handleSelector } from '.';
 
 describe('Module: handleSelector', () => {
@@ -57,50 +58,7 @@ describe('Module: handleSelector', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			selectors: {
-				total: 0,
-				unique: 0,
-				baseUsage: {},
-				pseudoClassesUsage: {},
-				pseudoElementsUsage: {},
-				combinators: {
-					total: 0,
-					adjacentSibling: 0,
-					child: 0,
-					descendant: 0,
-					generalSibling: 0,
-				},
-				complex: 0,
-				maxPerRule: 0,
-				averagePerRule: 0,
-				length: {
-					total: 0,
-					longest: 0,
-					longestSelector: null,
-					average: 0,
-				},
-				specificity: {
-					total: [0, 0, 0],
-					highest: [0, 0, 0],
-					highestSelector: null,
-					average: [0, 0, 0],
-					graphData: [],
-				},
-				sizeRatio: 0,
-				usage: {},
-			},
-			vendorPrefixes: {
-				total: 0,
-				unique: 0,
-				unknown: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkRules((rule) => {
 			rule.selectors.forEach((selector) => {

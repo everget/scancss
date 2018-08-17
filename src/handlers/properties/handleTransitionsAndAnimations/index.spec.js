@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handleTransitionsAndAnimations } from '.';
 
 describe('Module: handleTransitionsAndAnimations', () => {
@@ -66,29 +67,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			transitions: {
-				properties: {},
-				longestDuration: 0,
-				shortestDuration: Number.MAX_SAFE_INTEGER,
-				longestDelay: 0,
-				shortestDelay: Number.MAX_SAFE_INTEGER,
-				timingFunctions: {},
-				invalidTimingFunctions: {},
-			},
-			animations: {
-				total: 0,
-				unique: 0,
-				infinite: 0,
-				longestDuration: 0,
-				shortestDuration: Number.MAX_SAFE_INTEGER,
-				longestDelay: 0,
-				shortestDelay: Number.MAX_SAFE_INTEGER,
-				usage: {},
-				timingFunctions: {},
-				invalidTimingFunctions: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handleTransitionsAndAnimations(decl, report);

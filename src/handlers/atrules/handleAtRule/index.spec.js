@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handleAtRule } from '.';
 
 describe('Module: handleAtRule', () => {
@@ -107,68 +108,7 @@ describe('Module: handleAtRule', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			atRules: {
-				total: 0,
-				empty: 0,
-				prefixed: 0,
-				unknown: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				usage: {},
-			},
-			mediaQueries: {
-				total: 0,
-				unique: 0,
-				onlyKeyword: 0,
-				types: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				features: {
-					total: 0,
-					unique: 0,
-					prefixed: 0,
-					usage: {},
-				},
-				usage: {},
-			},
-			keyframes: {
-				stepsChains: {},
-				longestStepsChain: 0,
-				longestStepsChainLength: 0,
-				longestStepsChainAnimation: null,
-				shortestStepsChain: 0,
-				shortestStepsChainLength: Number.MAX_SAFE_INTEGER,
-				shortestStepsChainAnimation: null,
-				animatableProperties: [],
-			},
-			declarations: {
-				inAtRules: {},
-			},
-			vendorPrefixes: {
-				total: 0,
-				unique: 0,
-				unknown: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				usage: {},
-			},
-			browserHacks: {
-				total: 0,
-				usage: {
-					supports: {},
-					media: {},
-					selector: {},
-					property: {},
-				},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkAtRules((atRule) => {
 			handleAtRule(atRule, report, options);

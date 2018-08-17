@@ -1,4 +1,5 @@
-import { parseCss } from '../../converters/parseCss';
+import { getEmptyReport } from '../../common/getEmptyReport';
+import { parseCss } from '../../common/parseCss';
 import { handleRule } from '.';
 
 describe('Module: handleRule', () => {
@@ -50,13 +51,7 @@ describe('Module: handleRule', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			rules: {
-				total: 0,
-				empty: 0,
-				withoutTrailingSemicolon: 0,
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkRules((rule) => {
 			handleRule(rule, report, options);

@@ -1,4 +1,5 @@
-import { parseCss } from '../../converters/parseCss';
+import { parseCss } from '../../common/parseCss';
+import { getEmptyReport } from '../../common/getEmptyReport';
 import { handleComment } from '.';
 
 describe('Module: handleComment', () => {
@@ -35,18 +36,7 @@ describe('Module: handleComment', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			comments: {
-				total: 0,
-				length: {
-					total: 0,
-					longest: 0,
-					shortest: Number.MAX_SAFE_INTEGER,
-					average: 0,
-				},
-				sizeRatio: 0,
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkComments((comment) => {
 			handleComment(comment, report);

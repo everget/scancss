@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handleLetterSpacing } from '.';
 
 describe('Module: handleLetterSpacing', () => {
@@ -33,13 +34,7 @@ describe('Module: handleLetterSpacing', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			letterSpacings: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handleLetterSpacing(decl, report);

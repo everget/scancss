@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handleColorable } from '.';
 
 describe('Module: handleColorable', () => {
@@ -249,38 +250,7 @@ describe('Module: handleColorable', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			colors: {
-				total: 0,
-				unique: 0,
-				currentColorKeyword: 0,
-				transparentKeyword: 0,
-				models: {},
-				named: {},
-				system: {},
-				usage: {},
-			},
-			backgroundColors: {
-				total: 0,
-				unique: 0,
-				currentColorKeyword: 0,
-				transparentKeyword: 0,
-				models: {},
-				named: {},
-				system: {},
-				usage: {},
-			},
-			allColors: {
-				total: 0,
-				unique: 0,
-				currentColorKeyword: 0,
-				transparentKeyword: 0,
-				models: {},
-				named: {},
-				system: {},
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handleColorable(decl, report, options);

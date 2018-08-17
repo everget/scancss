@@ -1,4 +1,5 @@
-import { parseCss } from '../../converters/parseCss';
+import { getEmptyReport } from '../../common/getEmptyReport';
+import { parseCss } from '../../common/parseCss';
 import { handleFunctions } from '.';
 
 describe('Module: handleFunctions', () => {
@@ -82,54 +83,7 @@ describe('Module: handleFunctions', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			functions: {
-				total: 0,
-				unique: 0,
-				prefixed: 0,
-				usage: {},
-			},
-			filters: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-			gradients: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-			transitions: {
-				timingFunctions: {},
-				invalidTimingFunctions: {},
-			},
-			animations: {
-				timingFunctions: {},
-				invalidTimingFunctions: {},
-			},
-			dataUris: {
-				total: 0,
-				unique: 0,
-				length: {
-					total: 0,
-					longest: 0,
-					longestDataUri: null,
-					average: 0,
-				},
-				sizeRatio: 0,
-				usage: {},
-			},
-			vendorPrefixes: {
-				total: 0,
-				unique: 0,
-				unknown: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handleFunctions(decl, report, options);

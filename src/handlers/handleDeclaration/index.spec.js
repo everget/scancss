@@ -1,4 +1,5 @@
-import { parseCss } from '../../converters/parseCss';
+import { getEmptyReport } from '../../common/getEmptyReport';
+import { parseCss } from '../../common/parseCss';
 import { handleDeclaration } from '.';
 
 describe('Module: handleDeclaration', () => {
@@ -63,99 +64,7 @@ describe('Module: handleDeclaration', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			declarations: {
-				total: 0,
-				unique: 0,
-				important: 0,
-				averagePerRule: 0,
-				length: {
-					total: 0,
-					longest: 0,
-					longestDeclaration: null,
-					average: 0,
-				},
-				inAtRules: {},
-				list: [],
-			},
-			properties: {
-				total: 0,
-				unique: 0,
-				shorthands: 0,
-				prefixed: 0,
-				resetsViaAll: 0,
-				negativeMargins: 0,
-				anonymousReplacedElements: 0,
-				performanceHacks: {},
-				explicitDefaultingKeywords: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				engineTriggers: {
-					composite: {
-						blink: 0,
-						edgehtml: 0,
-						gecko: 0,
-						webkit: 0,
-					},
-					layout: {
-						blink: 0,
-						edgehtml: 0,
-						gecko: 0,
-						webkit: 0,
-					},
-					paint: {
-						blink: 0,
-						edgehtml: 0,
-						gecko: 0,
-						webkit: 0,
-					},
-				},
-				usage: {},
-			},
-			displays: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-			positions: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-			zIndices: {
-				total: 0,
-				unique: 0,
-				invalid: {},
-				usage: {},
-			},
-			floats: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-			borderRadiuses: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-			letterSpacings: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-			vendorPrefixes: {
-				total: 0,
-				unique: 0,
-				unknown: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handleDeclaration(decl, report, options);
