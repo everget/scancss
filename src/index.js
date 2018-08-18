@@ -140,24 +140,17 @@ export default function scancss(src, options) {
 			report.selectors.specificity.average = [
 				roundDivision(
 					report.selectors.specificity.total[0],
-					report.selectors.baseUsage.id || 0,
+					report.selectors.total || 0,
 					2
 				),
 				roundDivision(
 					report.selectors.specificity.total[1],
-					(
-						(report.selectors.baseUsage.attribute || 0) +
-						(report.selectors.baseUsage.class || 0) +
-						(report.selectors.baseUsage.pseudoClass || 0)
-					),
+					report.selectors.total || 0,
 					2
 				),
 				roundDivision(
 					report.selectors.specificity.total[2],
-					(
-						(report.selectors.baseUsage.tag || 0) +
-						(report.selectors.baseUsage.pseudoElement || 0)
-					),
+					report.selectors.total || 0,
 					2
 				),
 			];

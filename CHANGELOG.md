@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `selectors.attributesUsage` metric
 - Added `attributesUsage` flag
 
+### Fixed
+- Corrected `selectors.specificity.average` metric
+
 ### Changed
 
 ### Fixed

@@ -243,7 +243,7 @@ describe('Module: scancss', () => {
 						total: [0, 7, 3],
 						highest: [0, 2, 0],
 						highestSelector: '[tabindex="-1"]:focus',
-						average: [0, 1, 1],
+						average: [0, 1, 0.43],
 						graphData: [
 							[0, 1, 0],
 							[0, 1, 0],
