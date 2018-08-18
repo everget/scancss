@@ -70,6 +70,10 @@ function countSelectors(selectors, report, options) {
 				}
 			} else {
 				countUsage(selector.type, report.selectors.baseUsage);
+
+				if (selector.type === 'attribute' && options.attributesUsage) {
+					countUsage(String(selector), report.selectors.attributesUsage);
+				}
 			}
 
 			const specificity = calculateSpecificity(selector);
@@ -79,12 +83,12 @@ function countSelectors(selectors, report, options) {
 				report.selectors.specificity.total,
 				specificity
 			);
-
-			if (options.specificityGraph) {
-				report.selectors.specificity.graphData.push(specificity);
-			}
 		}
 	});
+
+	if (options.specificityGraph) {
+		report.selectors.specificity.graphData.push(tmpSpecificity);
+	}
 
 	if (compareSpecificities(report.selectors.specificity.highest, tmpSpecificity) === 1) {
 		report.selectors.specificity.highest = tmpSpecificity;

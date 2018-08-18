@@ -35,6 +35,11 @@ describe('Module: scancss', () => {
 			color: red;
 		}
 
+		[tabindex="-1"]:focus {}
+
+		abbr[title],
+		abbr[data-original-title] {}
+
 		@-webkit-keyframes fade {
 			from,
 			10% {
@@ -92,8 +97,8 @@ describe('Module: scancss', () => {
 		describe('.styleSheetSize', () => {
 			it('should be counted correctly', () => {
 				expect(report.styleSheetSize).toEqual({
-					source: 904,
-					gzipSource: 437,
+					source: 979,
+					gzipSource: 479,
 				});
 			});
 		});
@@ -108,8 +113,8 @@ describe('Module: scancss', () => {
 						shortest: 32,
 						average: 32,
 					},
-					sizeRatio: 0.035398230088495575,
-					sizeRatioPercent: '3.54%',
+					sizeRatio: 0.03268641470888662,
+					sizeRatioPercent: '3.27%',
 				});
 			});
 		});
@@ -188,8 +193,8 @@ describe('Module: scancss', () => {
 		describe('.rules', () => {
 			it('should be counted correctly', () => {
 				expect(report.rules).toEqual({
-					total: 8,
-					empty: 1,
+					total: 10,
+					empty: 3,
 					withoutTrailingSemicolon: 4,
 				});
 			});
@@ -198,15 +203,25 @@ describe('Module: scancss', () => {
 		describe('.selectors', () => {
 			it('should be counted correctly', () => {
 				expect(report.selectors).toEqual({
-					total: 4,
-					unique: 2,
+					total: 7,
+					unique: 5,
 					baseUsage: {
 						class: 3,
+						attribute: 3,
+						pseudoClass: 1,
 						pseudoElement: 1,
+						tag: 2,
 					},
-					pseudoClassesUsage: {},
+					pseudoClassesUsage: {
+						':focus': 1,
+					},
 					pseudoElementsUsage: {
 						'::-moz-placeholder': 1,
+					},
+					attributesUsage: {
+						'[tabindex="-1"]': 1,
+						'[title]': 1,
+						'[data-original-title]': 1,
 					},
 					combinators: {
 						total: 0,
@@ -216,31 +231,37 @@ describe('Module: scancss', () => {
 						generalSibling: 0,
 					},
 					complex: 0,
-					maxPerRule: 1,
-					averagePerRule: 0.5,
+					maxPerRule: 2,
+					averagePerRule: 0.7,
 					length: {
-						total: 45,
-						longest: 18,
-						longestSelector: '::-moz-placeholder',
-						average: 11.25,
+						total: 102,
+						longest: 25,
+						longestSelector: 'abbr[data-original-title]',
+						average: 14.57,
 					},
 					specificity: {
-						total: [0, 3, 1],
-						highest: [0, 1, 0],
-						highestSelector: '.selector',
+						total: [0, 7, 3],
+						highest: [0, 2, 0],
+						highestSelector: '[tabindex="-1"]:focus',
 						average: [0, 1, 1],
 						graphData: [
 							[0, 1, 0],
 							[0, 1, 0],
 							[0, 0, 1],
+							[0, 2, 0],
+							[0, 1, 1],
+							[0, 1, 1],
 							[0, 1, 0],
 						],
 					},
-					sizeRatio: 0.049778761061946904,
-					sizeRatioPercent: '4.98%',
+					sizeRatio: 0.1041879468845761,
+					sizeRatioPercent: '10.42%',
 					usage: {
 						'.selector': 3,
 						'::-moz-placeholder': 1,
+						'[tabindex="-1"]:focus': 1,
+						'abbr[title]': 1,
+						'abbr[data-original-title]': 1,
 					},
 				});
 			});
@@ -253,15 +274,15 @@ describe('Module: scancss', () => {
 					unique: 17,
 					uniqueRatio: 0.8947368421052632,
 					important: 0,
-					averagePerRule: 2.38,
+					averagePerRule: 1.9,
 					length: {
 						total: 293,
 						longest: 32,
 						longestDeclaration: 'animation:infinite ease 1s fade',
 						average: 15.42,
 					},
-					sizeRatio: 0.3241150442477876,
-					sizeRatioPercent: '32.41%',
+					sizeRatio: 0.2992849846782431,
+					sizeRatioPercent: '29.93%',
 					inAtRules: {
 						'-webkit-keyframes': 2,
 						keyframes: 2,

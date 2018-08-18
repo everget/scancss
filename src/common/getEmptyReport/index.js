@@ -64,6 +64,7 @@ export function getEmptyReport() {
 			baseUsage: {},
 			pseudoClassesUsage: {},
 			pseudoElementsUsage: {},
+			attributesUsage: {},
 			combinators: {
 				total: 0,
 				adjacentSibling: 0,

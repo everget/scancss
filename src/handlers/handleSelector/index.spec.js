@@ -6,6 +6,7 @@ describe('Module: handleSelector', () => {
 	const options = {
 		specificityGraph: false,
 		selectorsUsage: true,
+		attributesUsage: true,
 		selectorComplexityThreshold: 4,
 	};
 
@@ -24,12 +25,21 @@ describe('Module: handleSelector', () => {
 
 		li ~ li {}
 
-		p:first-line {}
-		p::first-line {}
-
 		*[rel=up] {}
 
 		a[src] {}
+
+		abbr[title],
+		abbr[data-original-title] {}
+
+		[bp~='vertical-center'] {}
+
+		[bp~='grid'][bp*='@'] {}
+
+		button::-moz-focus-inner,
+		[type="button"]::-moz-focus-inner,
+		[type="reset"]::-moz-focus-inner,
+		[type="submit"]::-moz-focus-inner {}
 
 		ul ol li .red {}
 
@@ -38,6 +48,9 @@ describe('Module: handleSelector', () => {
 		.foo {}
 
 		.foo .bar .baz {}
+
+		p:first-line {}
+		p::first-line {}
 
 		a:-webkit-any-link {}
 		a:-moz-any-link {}
@@ -73,7 +86,7 @@ describe('Module: handleSelector', () => {
 
 	describe('selectors.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.selectors.total).toBe(22);
+			expect(report.selectors.total).toBe(30);
 		});
 	});
 
@@ -86,12 +99,12 @@ describe('Module: handleSelector', () => {
 	describe('selectors.baseUsage', () => {
 		it('should be counted correctly', () => {
 			expect(report.selectors.baseUsage).toEqual({
-				attribute: 2,
+				attribute: 10,
 				class: 9,
 				id: 4,
 				pseudoClass: 10,
-				pseudoElement: 2,
-				tag: 28,
+				pseudoElement: 6,
+				tag: 31,
 				universal: 3,
 			});
 		});
@@ -116,6 +129,7 @@ describe('Module: handleSelector', () => {
 		it('should be counted correctly', () => {
 			expect(report.selectors.pseudoElementsUsage).toEqual({
 				'::first-line': 2,
+				'::-moz-focus-inner': 4,
 			});
 		});
 	});
@@ -181,6 +195,14 @@ describe('Module: handleSelector', () => {
 				'ul #nav li .active a': 1,
 				'ul li': 1,
 				'ul ol li .red': 1,
+				'abbr[title]': 1,
+				'abbr[data-original-title]': 1,
+				'[bp~=\'vertical-center\']': 1,
+				'[bp~=\'grid\'][bp*=\'@\']': 1,
+				'button::-moz-focus-inner': 1,
+				'[type="button"]::-moz-focus-inner': 1,
+				'[type="reset"]::-moz-focus-inner': 1,
+				'[type="submit"]::-moz-focus-inner': 1,
 			});
 		});
 	});
@@ -188,7 +210,7 @@ describe('Module: handleSelector', () => {
 	describe('Handling lengths', () => {
 		describe('selectors.length.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.length.total).toBe(270);
+				expect(report.selectors.length.total).toBe(472);
 			});
 		});
 
@@ -214,7 +236,7 @@ describe('Module: handleSelector', () => {
 	describe('Handling specificity', () => {
 		describe('selectors.specificity.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.total).toEqual([4, 19, 30]);
+				expect(report.selectors.specificity.total).toEqual([4, 27, 37]);
 			});
 		});
 
@@ -246,7 +268,7 @@ describe('Module: handleSelector', () => {
 	describe('Handling vendor prefixes', () => {
 		describe('vendorPrefixes.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes.total).toBe(2);
+				expect(report.vendorPrefixes.total).toBe(6);
 			});
 		});
 
@@ -277,7 +299,7 @@ describe('Module: handleSelector', () => {
 		describe('vendorPrefixes.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.vendorPrefixes.usage).toEqual({
-					'-moz-': 1,
+					'-moz-': 5,
 					'-webkit-': 1,
 				});
 			});

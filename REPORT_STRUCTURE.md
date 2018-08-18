@@ -149,6 +149,8 @@
 
 * **pseudoElementsUsage** - `Record<string, number>`
 
+* **attributesUsage** - `Record<string, number>`
+
 * **combinators** - `Record<string, number>`
 	* **total** - `number`
 	* **adjacentSibling** - `number`

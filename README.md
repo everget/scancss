@@ -145,6 +145,12 @@ Use this flag to fill `.selectors.usage` metric
 
 * Default: `true`
 
+#### attributesUsage
+
+Use this flag to fill `.selectors.attributesUsage` metric
+
+* Default: `true`
+
 #### selectorComplexityThreshold
 
 Use this value to set a threshold of the base parts of a selector to consider the selector as complex and to count in `.selectors.complex` metric

@@ -25,6 +25,7 @@ export default function scancss(src, options) {
 				rules: true,
 				selectors: true,
 				selectorsUsage: true,
+				attributesUsage: true,
 				selectorComplexityThreshold: 4,
 				specificityGraph: false,
 				declarations: true,
