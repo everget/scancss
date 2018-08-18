@@ -1,6 +1,9 @@
 /**
  * https://drafts.csswg.org/selectors-4/
  * https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-Classes
+ * https://github.com/w3c/csswg-drafts/issues/1329
+ *
+ * `:user-error` was renamed to `:user-invalid`
  */
 
 import { cssMozPseudoClasses } from '../cssMozPseudoClasses';
@@ -13,6 +16,7 @@ export const cssPseudoClasses = [
 	'any-link',
 	'blank',
 	'checked',
+	'contains',
 	'current',
 	'default',
 	'defined',
@@ -27,6 +31,7 @@ export const cssPseudoClasses = [
 	'fullscreen',
 	'future',
 	'focus',
+	'focus-ring',
 	'focus-visible',
 	'focus-within',
 	'has',
@@ -69,5 +74,6 @@ export const cssPseudoClasses = [
 	'target-within',
 	'user-invalid',
 	'valid',
+	'val',
 	'visited',
 ];
