@@ -156,6 +156,10 @@ export default function scancss(src, options) {
 			];
 
 			report.selectors.unique = Object.keys(report.selectors.usage).length;
+
+			if (options.selectorsUsage === false) {
+				report.selectors.usage = {};
+			}
 		}
 
 		if (scancssOptions.declarations) {

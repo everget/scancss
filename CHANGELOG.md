@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Corrected `selectors.specificity.average` metric
+- Corrected `selectors.unique` metric counting when `selectorsUsage` flag is `false`
 
 ### Changed
 

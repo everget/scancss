@@ -103,9 +103,7 @@ function countSelectors(selectors, report, options) {
 export function handleSelector(selector, report, options) {
 	report.selectors.total++;
 
-	if (options.selectorsUsage) {
-		countUsage(selector, report.selectors.usage);
-	}
+	countUsage(selector, report.selectors.usage);
 
 	const selectorByteLength = Buffer.byteLength(selector, 'utf8');
 	report.selectors.length.total += selectorByteLength;
