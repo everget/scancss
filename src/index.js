@@ -6,6 +6,7 @@ import { handleAtRule } from './handlers/atrules/handleAtRule';
 import { handleRule } from './handlers/handleRule';
 import { handleDeclaration } from './handlers/handleDeclaration';
 import { roundDivision } from './calculators/roundDivision';
+import { percentDifference } from './calculators/percentDifference';
 import { getEmptyReport } from './common/getEmptyReport';
 import { parseCss } from './common/parseCss';
 
@@ -93,6 +94,11 @@ export default function scancss(src, options) {
 				report.styleSheetSize.source
 			);
 
+			report.comments.sizeRatioPercent = percentDifference(
+				report.styleSheetSize.source,
+				report.comments.length.total
+			);
+
 			report.comments.length.average = roundDivision(
 				report.comments.length.total,
 				report.comments.total,
@@ -111,6 +117,11 @@ export default function scancss(src, options) {
 			report.selectors.sizeRatio = roundDivision(
 				report.selectors.length.total,
 				report.styleSheetSize.source
+			);
+
+			report.selectors.sizeRatioPercent = percentDifference(
+				report.styleSheetSize.source,
+				report.selectors.length.total
 			);
 
 			report.selectors.length.average = roundDivision(
@@ -179,6 +190,11 @@ export default function scancss(src, options) {
 			report.declarations.sizeRatio = roundDivision(
 				report.declarations.length.total,
 				report.styleSheetSize.source
+			);
+
+			report.declarations.sizeRatioPercent = percentDifference(
+				report.styleSheetSize.source,
+				report.declarations.length.total
 			);
 		}
 
@@ -252,6 +268,11 @@ export default function scancss(src, options) {
 			report.dataUris.sizeRatio = roundDivision(
 				report.dataUris.length.total,
 				report.styleSheetSize.source
+			);
+
+			report.dataUris.sizeRatioPercent = percentDifference(
+				report.styleSheetSize.source,
+				report.dataUris.length.total
 			);
 		}
 

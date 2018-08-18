@@ -13,6 +13,7 @@ export function getEmptyReport() {
 				average: 0,
 			},
 			sizeRatio: 0,
+			sizeRatioPercent: null,
 		},
 		atRules: {
 			total: 0,
@@ -87,6 +88,7 @@ export function getEmptyReport() {
 				graphData: [],
 			},
 			sizeRatio: 0,
+			sizeRatioPercent: null,
 			usage: {},
 		},
 		declarations: {
@@ -102,6 +104,7 @@ export function getEmptyReport() {
 				average: 0,
 			},
 			sizeRatio: 0,
+			sizeRatioPercent: null,
 			inAtRules: {},
 			list: [],
 		},
@@ -275,6 +278,7 @@ export function getEmptyReport() {
 				average: 0,
 			},
 			sizeRatio: 0,
+			sizeRatioPercent: null,
 			usage: {},
 		},
 		units: {

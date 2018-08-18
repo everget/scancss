@@ -52,6 +52,8 @@
 
 * **sizeRatio** - `number`
 
+* **sizeRatioPercent** - `string | null`
+
 [Back to top](#report-structure)
 
 #### atRules
@@ -175,6 +177,8 @@
 
 * **sizeRatio** - `number`
 
+* **sizeRatioPercent** - `string | null`
+
 [Back to top](#report-structure)
 
 #### declarations
@@ -196,6 +200,8 @@
 	* **average** - `number`
 
 * **sizeRatio** - `number`
+
+* **sizeRatioPercent** - `string | null`
 
 * **inAtRules** - `Record<string, number>`
 
@@ -505,6 +511,8 @@
 	* **average** - `number`
 
 * **sizeRatio** - `number`
+
+* **sizeRatioPercent** - `string | null`
 
 [Back to top](#report-structure)
 

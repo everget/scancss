@@ -109,6 +109,7 @@ describe('Module: scancss', () => {
 						average: 32,
 					},
 					sizeRatio: 0.035398230088495575,
+					sizeRatioPercent: '3.54%',
 				});
 			});
 		});
@@ -236,6 +237,7 @@ describe('Module: scancss', () => {
 						],
 					},
 					sizeRatio: 0.049778761061946904,
+					sizeRatioPercent: '4.98%',
 					usage: {
 						'.selector': 3,
 						'::-moz-placeholder': 1,
@@ -259,6 +261,7 @@ describe('Module: scancss', () => {
 						average: 15.42,
 					},
 					sizeRatio: 0.3241150442477876,
+					sizeRatioPercent: '32.41%',
 					inAtRules: {
 						'-webkit-keyframes': 2,
 						keyframes: 2,
@@ -600,6 +603,7 @@ describe('Module: scancss', () => {
 						average: 0,
 					},
 					sizeRatio: 0,
+					sizeRatioPercent: '0%',
 					usage: {},
 				});
 			});
