@@ -11,7 +11,8 @@
       "shortest": 49,
       "average": 75.5
     },
-    "sizeRatio": 0.13280562884784522
+    "sizeRatio": 0.13280562884784522,
+    "sizeRatioPercent": "13.28%"
   },
   "atRules": {
     "total": 0,
@@ -23,6 +24,12 @@
       "usage": {}
     },
     "usage": {}
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 0,
@@ -49,24 +56,32 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 7,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 102,
-    "unique": 0,
+    "unique": 85,
     "baseUsage": {
+      "attribute": 0,
+      "class": 0,
+      "id": 0,
+      "pseudoClass": 0,
+      "pseudoElement": 4,
       "tag": 102,
-      "pseudoElement": 4
+      "universal": 0
     },
     "pseudoClassesUsage": {},
     "pseudoElementsUsage": {
       "::before": 2,
       "::after": 2
     },
+    "attributesUsage": {},
     "combinators": {
       "total": 0,
       "adjacentSibling": 0,
@@ -76,6 +91,89 @@
     },
     "complex": 0,
     "maxPerRule": 81,
+    "maxPerRuleList": [
+      "html",
+      "body",
+      "div",
+      "span",
+      "applet",
+      "object",
+      "iframe",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "p",
+      "blockquote",
+      "pre",
+      "a",
+      "abbr",
+      "acronym",
+      "address",
+      "big",
+      "cite",
+      "code",
+      "del",
+      "dfn",
+      "em",
+      "img",
+      "ins",
+      "kbd",
+      "q",
+      "s",
+      "samp",
+      "small",
+      "strike",
+      "strong",
+      "sub",
+      "sup",
+      "tt",
+      "var",
+      "b",
+      "u",
+      "i",
+      "center",
+      "dl",
+      "dt",
+      "dd",
+      "ol",
+      "ul",
+      "li",
+      "fieldset",
+      "form",
+      "label",
+      "legend",
+      "table",
+      "caption",
+      "tbody",
+      "tfoot",
+      "thead",
+      "tr",
+      "th",
+      "td",
+      "article",
+      "aside",
+      "canvas",
+      "details",
+      "embed",
+      "figure",
+      "figcaption",
+      "footer",
+      "header",
+      "hgroup",
+      "menu",
+      "nav",
+      "output",
+      "ruby",
+      "section",
+      "summary",
+      "time",
+      "mark",
+      "audio",
+      "video"
+    ],
     "averagePerRule": 14.57,
     "length": {
       "total": 469,
@@ -95,14 +193,97 @@
         2
       ],
       "highestSelector": "blockquote:before",
+      "highest10": [
+        {
+          "selector": "blockquote:before",
+          "specificity": [
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "selector": "blockquote:after",
+          "specificity": [
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "selector": "q:before",
+          "specificity": [
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "selector": "q:after",
+          "specificity": [
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "selector": "applet",
+          "specificity": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "selector": "table",
+          "specificity": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "selector": "iframe",
+          "specificity": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "selector": "h1",
+          "specificity": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "selector": "h2",
+          "specificity": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "selector": "h3",
+          "specificity": [
+            0,
+            0,
+            1
+          ]
+        }
+      ],
       "average": [
         0,
         0,
-        1
+        1.04
       ],
       "graphData": []
     },
     "sizeRatio": 0.4124890061565523,
+    "sizeRatioPercent": "41.25%",
     "usage": {}
   },
   "declarations": {
@@ -118,6 +299,7 @@
       "average": 14.43
     },
     "sizeRatio": 0.17766051011433598,
+    "sizeRatioPercent": "17.77%",
     "inAtRules": {},
     "list": []
   },
@@ -198,6 +380,16 @@
     "usage": {}
   },
   "borderRadiuses": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "widths": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "heights": {
     "total": 0,
     "unique": 0,
     "usage": {}
@@ -283,6 +475,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -317,6 +510,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

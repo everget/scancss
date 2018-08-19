@@ -11,7 +11,8 @@
       "shortest": 10,
       "average": 41.33
     },
-    "sizeRatio": 0.07049459920409323
+    "sizeRatio": 0.07049459920409323,
+    "sizeRatioPercent": "7.05%"
   },
   "atRules": {
     "total": 2,
@@ -25,6 +26,12 @@
     "usage": {
       "media": 2
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 2,
@@ -56,26 +63,39 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 34,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 67,
-    "unique": 0,
+    "unique": 56,
     "baseUsage": {
-      "tag": 64,
-      "pseudoClass": 17,
+      "attribute": 20,
       "class": 4,
-      "attribute": 20
+      "id": 0,
+      "pseudoClass": 17,
+      "pseudoElement": 0,
+      "tag": 64,
+      "universal": 0
     },
     "pseudoClassesUsage": {
       ":hover": 6,
       ":focus": 11
     },
     "pseudoElementsUsage": {},
+    "attributesUsage": {
+      "[type=\"submit\"]": 4,
+      "[type=\"reset\"]": 4,
+      "[type=\"button\"]": 4,
+      "[disabled]": 5,
+      "[type]": 2,
+      "[type=\"checkbox\"]": 1
+    },
     "combinators": {
       "total": 1,
       "adjacentSibling": 0,
@@ -85,6 +105,18 @@
     },
     "complex": 0,
     "maxPerRule": 10,
+    "maxPerRuleList": [
+      ".button:focus",
+      ".button:hover",
+      "button:focus",
+      "button:hover",
+      "input[type=\"submit\"]:focus",
+      "input[type=\"submit\"]:hover",
+      "input[type=\"reset\"]:focus",
+      "input[type=\"reset\"]:hover",
+      "input[type=\"button\"]:focus",
+      "input[type=\"button\"]:hover"
+    ],
     "averagePerRule": 1.97,
     "length": {
       "total": 663,
@@ -103,15 +135,98 @@
         2,
         1
       ],
-      "highestSelector": "input[type=\"submit\"][disabled]",
+      "highestSelector": "input[type=\"submit\"]:hover",
+      "highest10": [
+        {
+          "selector": "input[type=\"submit\"]:hover",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"submit\"][disabled]",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"reset\"][disabled]",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"button\"][disabled]",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"submit\"]:focus",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"reset\"]:focus",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"reset\"]:hover",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"button\"]:focus",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"button\"]:hover",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type]:focus",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        }
+      ],
       "average": [
         0,
-        1,
-        1
+        0.61,
+        0.96
       ],
       "graphData": []
     },
     "sizeRatio": 0.1884593519044912,
+    "sizeRatioPercent": "18.85%",
     "usage": {}
   },
   "declarations": {
@@ -127,6 +242,7 @@
       "average": 18.79
     },
     "sizeRatio": 0.4860716316088687,
+    "sizeRatioPercent": "48.61%",
     "inAtRules": {
       "media": 2
     },
@@ -239,6 +355,18 @@
       "1px": 1,
       "4px": 1
     }
+  },
+  "widths": {
+    "total": 2,
+    "unique": 1,
+    "usage": {
+      "100%": 2
+    }
+  },
+  "heights": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
   },
   "letterSpacings": {
     "total": 0,
@@ -362,6 +490,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -396,6 +525,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

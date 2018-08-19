@@ -11,7 +11,8 @@
       "shortest": 7,
       "average": 68.41
     },
-    "sizeRatio": 0.015624351196106024
+    "sizeRatio": 0.015624351196106024,
+    "sizeRatioPercent": "1.56%"
   },
   "atRules": {
     "total": 8,
@@ -25,6 +26,12 @@
     "usage": {
       "media": 8
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 8,
@@ -58,22 +65,25 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 6863,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 6923,
-    "unique": 0,
+    "unique": 6887,
     "baseUsage": {
-      "tag": 95,
       "attribute": 23,
+      "class": 6801,
+      "id": 0,
       "pseudoClass": 2459,
       "pseudoElement": 26,
-      "universal": 6,
-      "class": 6801
+      "tag": 95,
+      "universal": 6
     },
     "pseudoClassesUsage": {
       ":not": 2,
@@ -95,6 +105,19 @@
       "::-ms-input-placeholder": 4,
       "::placeholder": 2
     },
+    "attributesUsage": {
+      "[title]": 1,
+      "[controls]": 1,
+      "[type=\"button\"]": 4,
+      "[type=\"reset\"]": 4,
+      "[type=\"submit\"]": 4,
+      "[type=\"checkbox\"]": 1,
+      "[type=\"radio\"]": 1,
+      "[type=\"number\"]": 2,
+      "[type=\"search\"]": 3,
+      "[hidden]": 1,
+      "[role=button]": 1
+    },
     "combinators": {
       "total": 1,
       "adjacentSibling": 0,
@@ -104,6 +127,20 @@
     },
     "complex": 0,
     "maxPerRule": 12,
+    "maxPerRuleList": [
+      "blockquote",
+      "dl",
+      "dd",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "figure",
+      "p",
+      "pre"
+    ],
     "averagePerRule": 1.01,
     "length": {
       "total": 140098,
@@ -122,15 +159,98 @@
         2,
         0
       ],
-      "highestSelector": "[type=\"button\"]:-moz-focusring",
+      "highestSelector": ".hover\\:bg-black:hover",
+      "highest10": [
+        {
+          "selector": ".hover\\:bg-black:hover",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[type=\"button\"]:-moz-focusring",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[type=\"reset\"]:-moz-focusring",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[type=\"submit\"]:-moz-focusring",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".hover\\:bg-transparent:hover",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".hover\\:bg-grey-darkest:hover",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".hover\\:bg-grey-darker:hover",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".hover\\:bg-grey-dark:hover",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".hover\\:bg-grey:hover",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".hover\\:bg-grey-light:hover",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        }
+      ],
       "average": [
         0,
-        1,
-        1
+        1.34,
+        0.02
       ],
       "graphData": []
     },
     "sizeRatio": 0.3231862326697271,
+    "sizeRatioPercent": "32.32%",
     "usage": {}
   },
   "declarations": {
@@ -146,6 +266,7 @@
       "average": 20.01
     },
     "sizeRatio": 0.3509700339108169,
+    "sizeRatioPercent": "35.1%",
     "inAtRules": {
       "media": 5996
     },
@@ -154,7 +275,7 @@
   "properties": {
     "total": 7603,
     "unique": 100,
-    "shorthands": 1501,
+    "shorthands": 1575,
     "prefixed": 118,
     "unitless": 4899,
     "resetsViaAll": 0,
@@ -354,6 +475,66 @@
       "9999px": 65
     }
   },
+  "widths": {
+    "total": 146,
+    "unique": 29,
+    "usage": {
+      "100%": 6,
+      ".25rem": 5,
+      ".5rem": 5,
+      ".75rem": 5,
+      "1rem": 5,
+      "1.25rem": 5,
+      "1.5rem": 5,
+      "2rem": 5,
+      "2.5rem": 5,
+      "3rem": 5,
+      "4rem": 5,
+      "6rem": 5,
+      "8rem": 5,
+      "12rem": 5,
+      "16rem": 5,
+      "auto": 5,
+      "1px": 5,
+      "50%": 5,
+      "33.33333%": 5,
+      "66.66667%": 5,
+      "25%": 5,
+      "75%": 5,
+      "20%": 5,
+      "40%": 5,
+      "60%": 5,
+      "80%": 5,
+      "16.66667%": 5,
+      "83.33333%": 5,
+      "100vw": 5
+    }
+  },
+  "heights": {
+    "total": 94,
+    "unique": 19,
+    "usage": {
+      "0": 2,
+      "auto": 7,
+      ".25rem": 5,
+      ".5rem": 5,
+      ".75rem": 5,
+      "1rem": 5,
+      "1.25rem": 5,
+      "1.5rem": 5,
+      "2rem": 5,
+      "2.5rem": 5,
+      "3rem": 5,
+      "4rem": 5,
+      "6rem": 5,
+      "8rem": 5,
+      "12rem": 5,
+      "16rem": 5,
+      "1px": 5,
+      "100%": 5,
+      "100vh": 5
+    }
+  },
   "letterSpacings": {
     "total": 15,
     "unique": 3,
@@ -458,11 +639,11 @@
     },
     "named": {},
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "#000000": 1,
-      "ButtonText": 1,
+      "buttontext": 1,
       "#dae1e7": 31,
       "transparent": 30,
       "#22292f": 30,
@@ -643,13 +824,13 @@
     },
     "named": {},
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "transparent": 47,
       "#ffff00": 1,
       "#000000": 1,
-      "ButtonText": 1,
+      "buttontext": 1,
       "#dae1e7": 46,
       "#22292f": 45,
       "#3d4852": 45,
@@ -744,6 +925,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -780,6 +962,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

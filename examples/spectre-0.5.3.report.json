@@ -11,7 +11,8 @@
       "shortest": 7,
       "average": 56.28
     },
-    "sizeRatio": 0.08279009126466753
+    "sizeRatio": 0.08279009126466753,
+    "sizeRatioPercent": "8.28%"
   },
   "atRules": {
     "total": 7,
@@ -26,6 +27,12 @@
       "media": 5,
       "keyframes": 2
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 5,
@@ -65,22 +72,28 @@
     "animatableProperties": [
       "transform",
       "opacity"
+    ],
+    "definedAnimations": [
+      "loading",
+      "slide-down"
     ]
   },
   "rules": {
     "total": 626,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 922,
-    "unique": 0,
+    "unique": 798,
     "baseUsage": {
-      "tag": 314,
-      "pseudoClass": 264,
       "attribute": 39,
+      "class": 1232,
+      "id": 0,
+      "pseudoClass": 264,
       "pseudoElement": 71,
-      "universal": 7,
-      "class": 1232
+      "tag": 314,
+      "universal": 7
     },
     "pseudoClassesUsage": {
       ":active": 15,
@@ -116,6 +129,27 @@
       "::-ms-expand": 1,
       "::-webkit-details-marker": 1
     },
+    "attributesUsage": {
+      "[controls]": 1,
+      "[type=\"button\"]": 2,
+      "[type=\"reset\"]": 2,
+      "[type=\"submit\"]": 2,
+      "[type=\"checkbox\"]": 1,
+      "[type=\"radio\"]": 1,
+      "[type=\"number\"]": 2,
+      "[type=\"search\"]": 3,
+      "[hidden]": 1,
+      "[title]": 1,
+      "[disabled]": 2,
+      "[type=\"file\"]": 1,
+      "[size]": 3,
+      "[multiple]": 3,
+      "[readonly]": 1,
+      "[open]": 2,
+      "[data-initial]": 1,
+      "[data-badge]": 6,
+      "[data-content]": 4
+    },
     "combinators": {
       "total": 424,
       "adjacentSibling": 65,
@@ -125,6 +159,32 @@
     },
     "complex": 58,
     "maxPerRule": 24,
+    "maxPerRuleList": [
+      ":lang(zh) del + del",
+      ":lang(zh) del + s",
+      ":lang(zh) ins + ins",
+      ":lang(zh) ins + u",
+      ":lang(zh) s + del",
+      ":lang(zh) s + s",
+      ":lang(zh) u + ins",
+      ":lang(zh) u + u",
+      ":lang(ja) del + del",
+      ":lang(ja) del + s",
+      ":lang(ja) ins + ins",
+      ":lang(ja) ins + u",
+      ":lang(ja) s + del",
+      ":lang(ja) s + s",
+      ":lang(ja) u + ins",
+      ":lang(ja) u + u",
+      ".cjk del + del",
+      ".cjk del + s",
+      ".cjk ins + ins",
+      ".cjk ins + u",
+      ".cjk s + del",
+      ".cjk s + s",
+      ".cjk u + ins",
+      ".cjk u + u"
+    ],
     "averagePerRule": 1.47,
     "length": {
       "total": 16415,
@@ -144,14 +204,97 @@
         1
       ],
       "highestSelector": ".tab.tab-block .tab-item .badge[data-badge]::after",
+      "highest10": [
+        {
+          "selector": ".tab.tab-block .tab-item .badge[data-badge]::after",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".step .step-item.active ~ .step-item a::before",
+          "specificity": [
+            0,
+            4,
+            2
+          ]
+        },
+        {
+          "selector": ".form-checkbox.is-error input:checked + .form-icon",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": ".has-error .form-radio input:checked + .form-icon",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": ".form-radio.is-error input:checked + .form-icon",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": ".form-switch.is-error input:checked + .form-icon",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": ".has-error .form-checkbox input:focus + .form-icon",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": ".form-checkbox.is-error input:focus + .form-icon",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": ".has-error .form-radio input:focus + .form-icon",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": ".form-radio.is-error input:focus + .form-icon",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        }
+      ],
       "average": [
         0,
-        0.97,
-        1
+        1.62,
+        0.42
       ],
       "graphData": []
     },
     "sizeRatio": 0.27437903252766355,
+    "sizeRatioPercent": "27.44%",
     "usage": {}
   },
   "declarations": {
@@ -167,6 +310,7 @@
       "average": 18.67
     },
     "sizeRatio": 0.4577441246280881,
+    "sizeRatioPercent": "45.77%",
     "inAtRules": {
       "media": 80,
       "keyframes": 6
@@ -176,7 +320,7 @@
   "properties": {
     "total": 1467,
     "unique": 115,
-    "shorthands": 380,
+    "shorthands": 394,
     "prefixed": 74,
     "unitless": 879,
     "resetsViaAll": 0,
@@ -385,6 +529,72 @@
       ".45rem": 1,
       "5rem": 2,
       ".5rem": 1
+    }
+  },
+  "widths": {
+    "total": 117,
+    "unique": 31,
+    "usage": {
+      "0": 1,
+      "100%": 20,
+      "1.8rem": 1,
+      "1.4rem": 1,
+      "2rem": 1,
+      ".8rem": 6,
+      "auto": 3,
+      "1px": 2,
+      "8px": 1,
+      "10px": 1,
+      "4px": 1,
+      "1.6rem": 3,
+      "1%": 1,
+      "91.66666667%": 6,
+      "83.33333333%": 6,
+      "75%": 6,
+      "66.66666667%": 6,
+      "58.33333333%": 6,
+      "50%": 7,
+      "41.66666667%": 6,
+      "33.33333333%": 6,
+      "25%": 6,
+      "16.66666667%": 6,
+      "8.33333333%": 6,
+      "1.2rem": 1,
+      "2.4rem": 1,
+      "3.2rem": 1,
+      ".5em": 1,
+      "6px": 1,
+      ".6rem": 2,
+      "320px": 1
+    }
+  },
+  "heights": {
+    "total": 49,
+    "unique": 23,
+    "usage": {
+      "0": 2,
+      "auto": 6,
+      "1.8rem": 3,
+      "1.4rem": 3,
+      "2rem": 3,
+      ".8rem": 7,
+      "1px": 2,
+      "12px": 1,
+      "2px": 2,
+      "4px": 1,
+      ".9rem": 2,
+      "100%": 3,
+      "1.6rem": 2,
+      "1.2rem": 2,
+      "2.4rem": 1,
+      "3.2rem": 1,
+      "50%": 1,
+      ".5em": 1,
+      "6px": 1,
+      ".2rem": 1,
+      ".1rem": 1,
+      ".6rem": 2,
+      ".05rem": 1
     }
   },
   "letterSpacings": {
@@ -672,6 +882,7 @@
     "total": 3,
     "unique": 2,
     "infinite": 1,
+    "withoutDefinitions": [],
     "longestDuration": 0.5,
     "shortestDuration": 0.15,
     "longestDelay": 0,
@@ -722,6 +933,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

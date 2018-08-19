@@ -11,7 +11,8 @@
       "shortest": 7,
       "average": 79.5
     },
-    "sizeRatio": 0.01835735329245959
+    "sizeRatio": 0.01835735329245959,
+    "sizeRatioPercent": "1.84%"
   },
   "atRules": {
     "total": 635,
@@ -25,6 +26,12 @@
     "usage": {
       "media": 635
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 635,
@@ -62,22 +69,25 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 2656,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 2768,
-    "unique": 0,
+    "unique": 2706,
     "baseUsage": {
-      "tag": 306,
-      "pseudoClass": 1172,
       "attribute": 31,
+      "class": 7293,
+      "id": 0,
+      "pseudoClass": 1172,
       "pseudoElement": 108,
-      "universal": 3,
-      "class": 7293
+      "tag": 306,
+      "universal": 3
     },
     "pseudoClassesUsage": {
       ":not": 2,
@@ -96,6 +106,35 @@
       "::before": 55,
       "::after": 49
     },
+    "attributesUsage": {
+      "[controls]": 1,
+      "[hidden]": 1,
+      "[title]": 1,
+      "[type=\"button\"]": 1,
+      "[type=\"reset\"]": 1,
+      "[type=\"submit\"]": 1,
+      "[disabled]": 2,
+      "[type=\"checkbox\"]": 1,
+      "[type=\"radio\"]": 1,
+      "[type=\"search\"]": 4,
+      "[type=\"color\"]": 1,
+      "[type=\"date\"]": 1,
+      "[type=\"datetime\"]": 1,
+      "[type=\"datetime-local\"]": 1,
+      "[type=\"email\"]": 1,
+      "[type=\"file\"]": 1,
+      "[type=\"hidden\"]": 1,
+      "[type=\"image\"]": 1,
+      "[type=\"month\"]": 1,
+      "[type=\"number\"]": 1,
+      "[type=\"password\"]": 1,
+      "[type=\"range\"]": 1,
+      "[type=\"tel\"]": 1,
+      "[type=\"text\"]": 1,
+      "[type=\"time\"]": 1,
+      "[type=\"url\"]": 1,
+      "[type=\"week\"]": 1
+    },
     "combinators": {
       "total": 2552,
       "adjacentSibling": 37,
@@ -105,6 +144,44 @@
     },
     "complex": 22,
     "maxPerRule": 36,
+    "maxPerRuleList": [
+      "h1 + p",
+      "h1 + code",
+      "h1 + pre",
+      "h1 + ul",
+      "h1 + ol",
+      "h1 + table",
+      "h2 + p",
+      "h2 + code",
+      "h2 + pre",
+      "h2 + ul",
+      "h2 + ol",
+      "h2 + table",
+      "h3 + p",
+      "h3 + code",
+      "h3 + pre",
+      "h3 + ul",
+      "h3 + ol",
+      "h3 + table",
+      "h4 + p",
+      "h4 + code",
+      "h4 + pre",
+      "h4 + ul",
+      "h4 + ol",
+      "h4 + table",
+      "h5 + p",
+      "h5 + code",
+      "h5 + pre",
+      "h5 + ul",
+      "h5 + ol",
+      "h5 + table",
+      "h6 + p",
+      "h6 + code",
+      "h6 + pre",
+      "h6 + ul",
+      "h6 + ol",
+      "h6 + table"
+    ],
     "averagePerRule": 1.04,
     "length": {
       "total": 82518,
@@ -124,14 +201,97 @@
         4
       ],
       "highestSelector": ".flakes-frame .flakes-navigation > ul > li.expandable:hover ul:hover a",
+      "highest10": [
+        {
+          "selector": ".flakes-frame .flakes-navigation > ul > li.expandable:hover ul:hover a",
+          "specificity": [
+            0,
+            5,
+            4
+          ]
+        },
+        {
+          "selector": ".flakes-frame .flakes-navigation > ul > li.expandable:hover ul:hover",
+          "specificity": [
+            0,
+            5,
+            3
+          ]
+        },
+        {
+          "selector": ".flakes-frame .flakes-navigation > ul > li.expandable:hover",
+          "specificity": [
+            0,
+            4,
+            2
+          ]
+        },
+        {
+          "selector": ".grid-1.gutter-20 > .span-1:last-child",
+          "specificity": [
+            0,
+            4,
+            0
+          ]
+        },
+        {
+          "selector": ".grid-1.gutter-10 > .span-1:last-child",
+          "specificity": [
+            0,
+            4,
+            0
+          ]
+        },
+        {
+          "selector": ".flakes-search .filters .filter-checkbox .checkbox",
+          "specificity": [
+            0,
+            4,
+            0
+          ]
+        },
+        {
+          "selector": ".grid-1.gutter-40 > .span-1:first-child",
+          "specificity": [
+            0,
+            4,
+            0
+          ]
+        },
+        {
+          "selector": ".grid-1.gutter-40 > .span-1:last-child",
+          "specificity": [
+            0,
+            4,
+            0
+          ]
+        },
+        {
+          "selector": ".grid-1.gutter-50 > .span-1:first-child",
+          "specificity": [
+            0,
+            4,
+            0
+          ]
+        },
+        {
+          "selector": ".grid-1.gutter-50 > .span-1:last-child",
+          "specificity": [
+            0,
+            4,
+            0
+          ]
+        }
+      ],
       "average": [
         0,
-        1,
-        1
+        3.07,
+        0.15
       ],
       "graphData": []
     },
     "sizeRatio": 0.32852137909069196,
+    "sizeRatioPercent": "32.85%",
     "usage": {}
   },
   "declarations": {
@@ -147,6 +307,7 @@
       "average": 18.54
     },
     "sizeRatio": 0.26781590890994506,
+    "sizeRatioPercent": "26.78%",
     "inAtRules": {
       "media": 651
     },
@@ -155,7 +316,7 @@
   "properties": {
     "total": 3629,
     "unique": 75,
-    "shorthands": 1355,
+    "shorthands": 1360,
     "prefixed": 37,
     "unitless": 2381,
     "resetsViaAll": 0,
@@ -310,6 +471,78 @@
       "0": 4,
       "2px": 29,
       "4px": 1
+    }
+  },
+  "widths": {
+    "total": 186,
+    "unique": 52,
+    "usage": {
+      "100%": 106,
+      "50%": 6,
+      "33.33333%": 5,
+      "66.66667%": 4,
+      "25%": 3,
+      "75%": 3,
+      "20%": 2,
+      "40%": 2,
+      "60%": 2,
+      "80%": 2,
+      "16.66667%": 4,
+      "83.33333%": 2,
+      "14.28571%": 1,
+      "28.57143%": 1,
+      "42.85714%": 1,
+      "57.14286%": 1,
+      "71.42857%": 1,
+      "85.71429%": 1,
+      "12.5%": 1,
+      "37.5%": 1,
+      "62.5%": 1,
+      "87.5%": 1,
+      "11.11111%": 1,
+      "22.22222%": 1,
+      "44.44444%": 1,
+      "55.55556%": 1,
+      "77.77778%": 1,
+      "88.88889%": 1,
+      "10%": 1,
+      "30%": 1,
+      "70%": 1,
+      "90%": 1,
+      "9.09091%": 1,
+      "18.18182%": 1,
+      "27.27273%": 1,
+      "36.36364%": 1,
+      "45.45455%": 1,
+      "54.54545%": 1,
+      "63.63636%": 1,
+      "72.72727%": 1,
+      "81.81818%": 1,
+      "90.90909%": 1,
+      "100.0%": 1,
+      "8.33333%": 1,
+      "41.66667%": 1,
+      "58.33333%": 1,
+      "91.66667%": 1,
+      "250px": 1,
+      "900px": 1,
+      "30px": 1,
+      "99.4%": 6,
+      "440px": 1
+    }
+  },
+  "heights": {
+    "total": 64,
+    "unique": 8,
+    "usage": {
+      "0": 1,
+      "2px": 6,
+      "36px": 11,
+      "54px": 11,
+      "43.2px": 11,
+      "28.8px": 11,
+      "18px": 11,
+      "53px": 2
     }
   },
   "letterSpacings": {
@@ -635,6 +868,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -728,6 +962,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

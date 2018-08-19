@@ -11,7 +11,8 @@
       "shortest": 7,
       "average": 140.62
     },
-    "sizeRatio": 0.6032007919485234
+    "sizeRatio": 0.6032007919485234,
+    "sizeRatioPercent": "60.32%"
   },
   "atRules": {
     "total": 3,
@@ -26,9 +27,15 @@
       "media": 3
     }
   },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
+  },
   "mediaQueries": {
-    "total": 3,
-    "unique": 3,
+    "total": 6,
+    "unique": 5,
     "onlyKeyword": 1,
     "types": {
       "total": 3,
@@ -50,8 +57,10 @@
     },
     "usage": {
       "only screen and (min-width:35em)": 1,
-      "print,(-webkit-min-device-pixel-ratio:1.25),(min-resolution:1.25dppx),(min-resolution:120dpi)": 1,
-      "print": 1
+      "print": 2,
+      "(-webkit-min-device-pixel-ratio:1.25)": 1,
+      "(min-resolution:1.25dppx)": 1,
+      "(min-resolution:120dpi)": 1
     }
   },
   "keyframes": {
@@ -62,22 +71,25 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 25,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 41,
-    "unique": 0,
+    "unique": 36,
     "baseUsage": {
-      "tag": 27,
-      "pseudoElement": 11,
+      "attribute": 4,
       "class": 11,
+      "id": 0,
       "pseudoClass": 3,
-      "universal": 3,
-      "attribute": 4
+      "pseudoElement": 11,
+      "tag": 27,
+      "universal": 3
     },
     "pseudoClassesUsage": {
       ":active": 1,
@@ -90,6 +102,12 @@
       "::before": 2,
       "::after": 7
     },
+    "attributesUsage": {
+      "[href]": 1,
+      "[title]": 1,
+      "[href^=\"#\"]": 1,
+      "[href^=\"javascript:\"]": 1
+    },
     "combinators": {
       "total": 0,
       "adjacentSibling": 0,
@@ -99,6 +117,14 @@
     },
     "complex": 0,
     "maxPerRule": 6,
+    "maxPerRuleList": [
+      "audio",
+      "canvas",
+      "iframe",
+      "img",
+      "svg",
+      "video"
+    ],
     "averagePerRule": 1.64,
     "length": {
       "total": 370,
@@ -118,14 +144,97 @@
         0
       ],
       "highestSelector": ".visuallyhidden.focusable:active",
+      "highest10": [
+        {
+          "selector": ".visuallyhidden.focusable:active",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".visuallyhidden.focusable:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": "a[href]:after",
+          "specificity": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "selector": "abbr[title]:after",
+          "specificity": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "selector": "a[href^=\"#\"]:after",
+          "specificity": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "selector": "a[href^=\"javascript:\"]:after",
+          "specificity": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "selector": "a:visited",
+          "specificity": [
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "selector": ".clearfix:before",
+          "specificity": [
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "selector": ".clearfix:after",
+          "specificity": [
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "selector": ".clearfix:after",
+          "specificity": [
+            0,
+            1,
+            1
+          ]
+        }
+      ],
       "average": [
         0,
-        1,
-        1
+        0.44,
+        0.93
       ],
       "graphData": []
     },
     "sizeRatio": 0.061046032007919485,
+    "sizeRatioPercent": "6.1%",
     "usage": {}
   },
   "declarations": {
@@ -141,6 +250,7 @@
       "average": 17.15
     },
     "sizeRatio": 0.169773964692295,
+    "sizeRatioPercent": "16.98%",
     "inAtRules": {
       "media": 17
     },
@@ -149,7 +259,7 @@
   "properties": {
     "total": 60,
     "unique": 28,
-    "shorthands": 19,
+    "shorthands": 21,
     "prefixed": 1,
     "unitless": 50,
     "resetsViaAll": 0,
@@ -247,6 +357,22 @@
     "total": 0,
     "unique": 0,
     "usage": {}
+  },
+  "widths": {
+    "total": 2,
+    "unique": 2,
+    "usage": {
+      "1px": 1,
+      "auto": 1
+    }
+  },
+  "heights": {
+    "total": 3,
+    "unique": 2,
+    "usage": {
+      "1px": 2,
+      "auto": 1
+    }
   },
   "letterSpacings": {
     "total": 0,
@@ -347,6 +473,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -384,6 +511,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

@@ -11,7 +11,8 @@
       "shortest": 90,
       "average": 90
     },
-    "sizeRatio": 0.004803586678052947
+    "sizeRatio": 0.004803586678052947,
+    "sizeRatioPercent": "0.48%"
   },
   "atRules": {
     "total": 8,
@@ -25,6 +26,12 @@
     "usage": {
       "media": 8
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 8,
@@ -63,25 +70,263 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 291,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 343,
-    "unique": 0,
+    "unique": 295,
     "baseUsage": {
-      "tag": 1,
-      "universal": 3,
+      "attribute": 404,
+      "class": 0,
+      "id": 0,
+      "pseudoClass": 0,
       "pseudoElement": 3,
-      "attribute": 404
+      "tag": 1,
+      "universal": 3
     },
     "pseudoClassesUsage": {},
     "pseudoElementsUsage": {
       "::before": 1,
       "::after": 2
+    },
+    "attributesUsage": {
+      "[bp~='container']": 1,
+      "[bp~='grid']": 66,
+      "[bp~='vertical-start']": 1,
+      "[bp~='vertical-center']": 1,
+      "[bp~='vertical-end']": 1,
+      "[bp~='between']": 1,
+      "[bp~='gap-none']": 1,
+      "[bp~='gap-column-none']": 1,
+      "[bp~='gap-row-none']": 1,
+      "[bp~='first']": 1,
+      "[bp~='last']": 1,
+      "[bp~='hide']": 1,
+      "[bp~='show']": 1,
+      "[bp*='@']": 1,
+      "[bp*='@sm']": 1,
+      "[bp*='@md']": 1,
+      "[bp*='@lg']": 1,
+      "[bp*='@xl']": 1,
+      "[bp~='1@sm']": 3,
+      "[bp~='1@md']": 3,
+      "[bp~='1@lg']": 3,
+      "[bp~='1@xl']": 3,
+      "[bp~='2@sm']": 3,
+      "[bp~='2@md']": 3,
+      "[bp~='2@lg']": 3,
+      "[bp~='2@xl']": 3,
+      "[bp~='3@sm']": 3,
+      "[bp~='3@md']": 3,
+      "[bp~='3@lg']": 3,
+      "[bp~='3@xl']": 3,
+      "[bp~='4@sm']": 3,
+      "[bp~='4@md']": 3,
+      "[bp~='4@lg']": 3,
+      "[bp~='4@xl']": 3,
+      "[bp~='5@sm']": 3,
+      "[bp~='5@md']": 3,
+      "[bp~='5@lg']": 3,
+      "[bp~='5@xl']": 3,
+      "[bp~='6@sm']": 3,
+      "[bp~='6@md']": 3,
+      "[bp~='6@lg']": 3,
+      "[bp~='6@xl']": 3,
+      "[bp~='7@sm']": 3,
+      "[bp~='7@md']": 3,
+      "[bp~='7@lg']": 3,
+      "[bp~='7@xl']": 3,
+      "[bp~='8@sm']": 3,
+      "[bp~='8@md']": 3,
+      "[bp~='8@lg']": 3,
+      "[bp~='8@xl']": 3,
+      "[bp~='9@sm']": 3,
+      "[bp~='9@md']": 3,
+      "[bp~='9@lg']": 3,
+      "[bp~='9@xl']": 3,
+      "[bp~='10@sm']": 3,
+      "[bp~='10@md']": 3,
+      "[bp~='10@lg']": 3,
+      "[bp~='10@xl']": 3,
+      "[bp~='11@sm']": 3,
+      "[bp~='11@md']": 3,
+      "[bp~='11@lg']": 3,
+      "[bp~='11@xl']": 3,
+      "[bp~='12@sm']": 3,
+      "[bp~='12@md']": 3,
+      "[bp~='12@lg']": 3,
+      "[bp~='12@xl']": 3,
+      "[bp~='1']": 2,
+      "[bp~='2']": 2,
+      "[bp~='3']": 2,
+      "[bp~='4']": 2,
+      "[bp~='5']": 2,
+      "[bp~='6']": 2,
+      "[bp~='7']": 2,
+      "[bp~='8']": 2,
+      "[bp~='9']": 2,
+      "[bp~='10']": 2,
+      "[bp~='11']": 2,
+      "[bp~='12']": 2,
+      "[bp~='offset-1']": 1,
+      "[bp~='offset-2']": 1,
+      "[bp~='offset-3']": 1,
+      "[bp~='offset-4']": 1,
+      "[bp~='offset-5']": 1,
+      "[bp~='offset-6']": 1,
+      "[bp~='offset-7']": 1,
+      "[bp~='offset-8']": 1,
+      "[bp~='offset-9']": 1,
+      "[bp~='offset-10']": 1,
+      "[bp~='offset-11']": 1,
+      "[bp~='offset-12']": 1,
+      "[bp~='offset-1@sm']": 1,
+      "[bp~='offset-2@sm']": 1,
+      "[bp~='offset-3@sm']": 1,
+      "[bp~='offset-4@sm']": 1,
+      "[bp~='offset-5@sm']": 1,
+      "[bp~='offset-6@sm']": 1,
+      "[bp~='offset-7@sm']": 1,
+      "[bp~='offset-8@sm']": 1,
+      "[bp~='offset-9@sm']": 1,
+      "[bp~='offset-10@sm']": 1,
+      "[bp~='offset-11@sm']": 1,
+      "[bp~='offset-12@sm']": 1,
+      "[bp~='hide@sm']": 1,
+      "[bp~='show@sm']": 1,
+      "[bp~='first@sm']": 1,
+      "[bp~='last@sm']": 1,
+      "[bp~='offset-1@md']": 1,
+      "[bp~='offset-2@md']": 1,
+      "[bp~='offset-3@md']": 1,
+      "[bp~='offset-4@md']": 1,
+      "[bp~='offset-5@md']": 1,
+      "[bp~='offset-6@md']": 1,
+      "[bp~='offset-7@md']": 1,
+      "[bp~='offset-8@md']": 1,
+      "[bp~='offset-9@md']": 1,
+      "[bp~='offset-10@md']": 1,
+      "[bp~='offset-11@md']": 1,
+      "[bp~='offset-12@md']": 1,
+      "[bp~='hide@md']": 1,
+      "[bp~='show@md']": 1,
+      "[bp~='first@md']": 1,
+      "[bp~='last@md']": 1,
+      "[bp~='offset-1@lg']": 1,
+      "[bp~='offset-2@lg']": 1,
+      "[bp~='offset-3@lg']": 1,
+      "[bp~='offset-4@lg']": 1,
+      "[bp~='offset-5@lg']": 1,
+      "[bp~='offset-6@lg']": 1,
+      "[bp~='offset-7@lg']": 1,
+      "[bp~='offset-8@lg']": 1,
+      "[bp~='offset-9@lg']": 1,
+      "[bp~='offset-10@lg']": 1,
+      "[bp~='offset-11@lg']": 1,
+      "[bp~='offset-12@lg']": 1,
+      "[bp~='hide@lg']": 1,
+      "[bp~='show@lg']": 1,
+      "[bp~='first@lg']": 1,
+      "[bp~='last@lg']": 1,
+      "[bp~='offset-1@xl']": 1,
+      "[bp~='offset-2@xl']": 1,
+      "[bp~='offset-3@xl']": 1,
+      "[bp~='offset-4@xl']": 1,
+      "[bp~='offset-5@xl']": 1,
+      "[bp~='offset-6@xl']": 1,
+      "[bp~='offset-7@xl']": 1,
+      "[bp~='offset-8@xl']": 1,
+      "[bp~='offset-9@xl']": 1,
+      "[bp~='offset-10@xl']": 1,
+      "[bp~='offset-11@xl']": 1,
+      "[bp~='offset-12@xl']": 1,
+      "[bp~='hide@xl']": 1,
+      "[bp~='show@xl']": 1,
+      "[bp~='first@xl']": 1,
+      "[bp~='last@xl']": 1,
+      "[bp~='flex']": 1,
+      "[bp~='fill']": 1,
+      "[bp~='fit']": 1,
+      "[bp~='float-center']": 1,
+      "[bp~='float-left']": 1,
+      "[bp~='float-right']": 1,
+      "[bp~='clear-fix']": 1,
+      "[bp~='text-left']": 1,
+      "[bp~='text-right']": 1,
+      "[bp~='text-center']": 1,
+      "[bp~='1--max']": 1,
+      "[bp~='2--max']": 1,
+      "[bp~='3--max']": 1,
+      "[bp~='4--max']": 1,
+      "[bp~='5--max']": 1,
+      "[bp~='6--max']": 1,
+      "[bp~='7--max']": 1,
+      "[bp~='8--max']": 1,
+      "[bp~='9--max']": 1,
+      "[bp~='10--max']": 1,
+      "[bp~='11--max']": 1,
+      "[bp~='12--max']": 1,
+      "[bp~='full-width']": 1,
+      "[bp~='full-width-until@sm']": 1,
+      "[bp~='full-width-until@md']": 1,
+      "[bp~='full-width-until@lg']": 1,
+      "[bp~='full-width-until@xl']": 1,
+      "[bp~='margin--xs']": 1,
+      "[bp~='margin-top--xs']": 1,
+      "[bp~='margin-bottom--xs']": 1,
+      "[bp~='margin-right--xs']": 1,
+      "[bp~='margin-left--xs']": 1,
+      "[bp~='padding--xs']": 1,
+      "[bp~='padding-top--xs']": 1,
+      "[bp~='padding-bottom--xs']": 1,
+      "[bp~='padding-right--xs']": 1,
+      "[bp~='padding-left--xs']": 1,
+      "[bp~='margin--sm']": 1,
+      "[bp~='margin-top--sm']": 1,
+      "[bp~='margin-bottom--sm']": 1,
+      "[bp~='margin-right--sm']": 1,
+      "[bp~='margin-left--sm']": 1,
+      "[bp~='padding--sm']": 1,
+      "[bp~='padding-top--sm']": 1,
+      "[bp~='padding-bottom--sm']": 1,
+      "[bp~='padding-right--sm']": 1,
+      "[bp~='padding-left--sm']": 1,
+      "[bp~='margin']": 1,
+      "[bp~='margin-top']": 1,
+      "[bp~='margin-bottom']": 1,
+      "[bp~='margin-right']": 1,
+      "[bp~='margin-left']": 1,
+      "[bp~='padding']": 1,
+      "[bp~='padding-top']": 1,
+      "[bp~='padding-bottom']": 1,
+      "[bp~='padding-right']": 1,
+      "[bp~='padding-left']": 1,
+      "[bp~='margin--lg']": 1,
+      "[bp~='margin-top--lg']": 1,
+      "[bp~='margin-bottom--lg']": 1,
+      "[bp~='margin-right--lg']": 1,
+      "[bp~='margin-left--lg']": 1,
+      "[bp~='padding--lg']": 1,
+      "[bp~='padding-top--lg']": 1,
+      "[bp~='padding-bottom--lg']": 1,
+      "[bp~='padding-right--lg']": 1,
+      "[bp~='padding-left--lg']": 1,
+      "[bp~='margin--none']": 1,
+      "[bp~='margin-top--none']": 1,
+      "[bp~='margin-bottom--none']": 1,
+      "[bp~='margin-right--none']": 1,
+      "[bp~='margin-left--none']": 1,
+      "[bp~='padding--none']": 1,
+      "[bp~='padding-top--none']": 1,
+      "[bp~='padding-bottom--none']": 1,
+      "[bp~='padding-right--none']": 1,
+      "[bp~='padding-left--none']": 1
     },
     "combinators": {
       "total": 0,
@@ -92,6 +337,56 @@
     },
     "complex": 0,
     "maxPerRule": 48,
+    "maxPerRuleList": [
+      "[bp~='1@sm']",
+      "[bp~='1@md']",
+      "[bp~='1@lg']",
+      "[bp~='1@xl']",
+      "[bp~='2@sm']",
+      "[bp~='2@md']",
+      "[bp~='2@lg']",
+      "[bp~='2@xl']",
+      "[bp~='3@sm']",
+      "[bp~='3@md']",
+      "[bp~='3@lg']",
+      "[bp~='3@xl']",
+      "[bp~='4@sm']",
+      "[bp~='4@md']",
+      "[bp~='4@lg']",
+      "[bp~='4@xl']",
+      "[bp~='5@sm']",
+      "[bp~='5@md']",
+      "[bp~='5@lg']",
+      "[bp~='5@xl']",
+      "[bp~='6@sm']",
+      "[bp~='6@md']",
+      "[bp~='6@lg']",
+      "[bp~='6@xl']",
+      "[bp~='7@sm']",
+      "[bp~='7@md']",
+      "[bp~='7@lg']",
+      "[bp~='7@xl']",
+      "[bp~='8@sm']",
+      "[bp~='8@md']",
+      "[bp~='8@lg']",
+      "[bp~='8@xl']",
+      "[bp~='9@sm']",
+      "[bp~='9@md']",
+      "[bp~='9@lg']",
+      "[bp~='9@xl']",
+      "[bp~='10@sm']",
+      "[bp~='10@md']",
+      "[bp~='10@lg']",
+      "[bp~='10@xl']",
+      "[bp~='11@sm']",
+      "[bp~='11@md']",
+      "[bp~='11@lg']",
+      "[bp~='11@xl']",
+      "[bp~='12@sm']",
+      "[bp~='12@md']",
+      "[bp~='12@lg']",
+      "[bp~='12@xl']"
+    ],
     "averagePerRule": 1.18,
     "length": {
       "total": 6013,
@@ -110,15 +405,98 @@
         2,
         0
       ],
-      "highestSelector": "[bp~='grid'][bp*='@']",
+      "highestSelector": "[bp~='grid'][bp~='1']",
+      "highest10": [
+        {
+          "selector": "[bp~='grid'][bp~='1']",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[bp~='grid'][bp*='@xl']",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[bp~='grid'][bp*='@sm']",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[bp~='grid'][bp*='@md']",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[bp~='grid'][bp*='@lg']",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[bp~='grid'][bp*='@']",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[bp~='grid'][bp~='2']",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[bp~='grid'][bp~='3']",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[bp~='grid'][bp~='4']",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[bp~='grid'][bp~='5']",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        }
+      ],
       "average": [
         0,
-        1,
-        1
+        1.18,
+        0.01
       ],
       "graphData": []
     },
     "sizeRatio": 0.32093296327924853,
+    "sizeRatioPercent": "32.09%",
     "usage": {}
   },
   "declarations": {
@@ -134,6 +512,7 @@
       "average": 26.06
     },
     "sizeRatio": 0.429867634500427,
+    "sizeRatioPercent": "42.99%",
     "inAtRules": {
       "media": 168
     },
@@ -247,6 +626,18 @@
     "unique": 0,
     "usage": {}
   },
+  "widths": {
+    "total": 6,
+    "unique": 1,
+    "usage": {
+      "100%": 6
+    }
+  },
+  "heights": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
   "letterSpacings": {
     "total": 0,
     "unique": 0,
@@ -320,6 +711,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -356,6 +748,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

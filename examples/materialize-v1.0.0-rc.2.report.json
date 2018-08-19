@@ -11,7 +11,8 @@
       "shortest": 7,
       "average": 56.25
     },
-    "sizeRatio": 0.05555462564651926
+    "sizeRatio": 0.05555462564651926,
+    "sizeRatioPercent": "5.56%"
   },
   "atRules": {
     "total": 84,
@@ -27,6 +28,12 @@
       "-webkit-keyframes": 12,
       "keyframes": 12
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 60,
@@ -107,23 +114,38 @@
       "-webkit-transform",
       "transform",
       "opacity"
+    ],
+    "definedAnimations": [
+      "indeterminate",
+      "indeterminate-short",
+      "container-rotate",
+      "fill-unfill-rotate",
+      "blue-fade-in-out",
+      "red-fade-in-out",
+      "yellow-fade-in-out",
+      "green-fade-in-out",
+      "left-spin",
+      "right-spin",
+      "fade-out",
+      "pulse-animation"
     ]
   },
   "rules": {
     "total": 1610,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 1
   },
   "selectors": {
     "total": 2105,
-    "unique": 0,
+    "unique": 1900,
     "baseUsage": {
-      "class": 3706,
-      "tag": 1102,
       "attribute": 547,
+      "class": 3706,
+      "id": 6,
       "pseudoClass": 740,
       "pseudoElement": 176,
-      "universal": 4,
-      "id": 6
+      "tag": 1102,
+      "universal": 4
     },
     "pseudoClassesUsage": {
       ":not": 385,
@@ -164,6 +186,43 @@
       "::-ms-fill-upper": 1,
       "::-ms-thumb": 2
     },
+    "attributesUsage": {
+      "[title]": 1,
+      "[controls]": 1,
+      "[type=\"button\"]": 4,
+      "[type=\"reset\"]": 4,
+      "[type=\"submit\"]": 4,
+      "[type=\"checkbox\"]": 28,
+      "[type=\"radio\"]": 32,
+      "[type=\"number\"]": 2,
+      "[type=\"search\"]": 3,
+      "[hidden]": 1,
+      "[class^=\"mdi-\"]": 4,
+      "[class*=\"mdi-\"]": 4,
+      "[type=range]": 25,
+      "[data-badge-caption]": 1,
+      "[class*=\"push-\"]": 1,
+      "[class*=\"pull-\"]": 1,
+      "[type=text]": 24,
+      "[type=password]": 24,
+      "[type=email]": 24,
+      "[type=url]": 24,
+      "[type=date]": 25,
+      "[disabled]": 18,
+      "[type]": 24,
+      "[type=time]": 24,
+      "[type=datetime]": 23,
+      "[type=datetime-local]": 23,
+      "[type=tel]": 23,
+      "[type=number]": 23,
+      "[type=search]": 32,
+      "[readonly=\"readonly\"]": 26,
+      "[readonly]": 26,
+      "[data-success]": 27,
+      "[data-error]": 27,
+      "[type=checkbox]": 12,
+      "[type=file]": 2
+    },
     "combinators": {
       "total": 1204,
       "adjacentSibling": 144,
@@ -173,6 +232,62 @@
     },
     "complex": 397,
     "maxPerRule": 54,
+    "maxPerRuleList": [
+      "input:not([type]).valid ~ .helper-text[data-success]",
+      "input:not([type]):focus.valid ~ .helper-text[data-success]",
+      "input:not([type]).invalid ~ .helper-text[data-error]",
+      "input:not([type]):focus.invalid ~ .helper-text[data-error]",
+      "input[type=text]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=text]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=text]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=text]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "input[type=password]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=password]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=password]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=password]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "input[type=email]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=email]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=email]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=email]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "input[type=url]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=url]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=url]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=url]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "input[type=time]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=time]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=time]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=time]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "input[type=date]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=date]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=date]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=date]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "input[type=datetime]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=datetime]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=datetime]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=datetime]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "input[type=datetime-local]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=datetime-local]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=datetime-local]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=datetime-local]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "input[type=tel]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=tel]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=tel]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=tel]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "input[type=number]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=number]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=number]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=number]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "input[type=search]:not(.browser-default).valid ~ .helper-text[data-success]",
+      "input[type=search]:not(.browser-default):focus.valid ~ .helper-text[data-success]",
+      "input[type=search]:not(.browser-default).invalid ~ .helper-text[data-error]",
+      "input[type=search]:not(.browser-default):focus.invalid ~ .helper-text[data-error]",
+      "textarea.materialize-textarea.valid ~ .helper-text[data-success]",
+      "textarea.materialize-textarea:focus.valid ~ .helper-text[data-success]",
+      "textarea.materialize-textarea.invalid ~ .helper-text[data-error]",
+      "textarea.materialize-textarea:focus.invalid ~ .helper-text[data-error]",
+      ".select-wrapper.valid .helper-text[data-success]",
+      ".select-wrapper.invalid ~ .helper-text[data-error]"
+    ],
     "averagePerRule": 1.31,
     "length": {
       "total": 58076,
@@ -192,14 +307,97 @@
         0
       ],
       "highestSelector": "#spinnerContainer.cooldown",
+      "highest10": [
+        {
+          "selector": "#spinnerContainer.cooldown",
+          "specificity": [
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "selector": "#toast-container",
+          "specificity": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "selector": "#materialbox-overlay",
+          "specificity": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "selector": "#toast-container",
+          "specificity": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "selector": "#toast-container",
+          "specificity": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "selector": "#toast-container",
+          "specificity": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "selector": ".card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating):hover",
+          "specificity": [
+            0,
+            8,
+            1
+          ]
+        },
+        {
+          "selector": ".card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating)",
+          "specificity": [
+            0,
+            7,
+            1
+          ]
+        },
+        {
+          "selector": "[type=\"checkbox\"].filled-in.tabbed:checked:focus + span:not(.lever):after",
+          "specificity": [
+            0,
+            6,
+            2
+          ]
+        },
+        {
+          "selector": "input[type=checkbox]:checked:not(:disabled).tabbed:focus ~ .lever::before",
+          "specificity": [
+            0,
+            6,
+            2
+          ]
+        }
+      ],
       "average": [
-        1,
-        0.92,
-        1
+        0,
+        2.19,
+        0.61
       ],
       "graphData": []
     },
     "sizeRatio": 0.32403238315228006,
+    "sizeRatioPercent": "32.4%",
     "usage": {}
   },
   "declarations": {
@@ -215,6 +413,7 @@
       "average": 22.29
     },
     "sizeRatio": 0.4373510983155628,
+    "sizeRatioPercent": "43.74%",
     "inAtRules": {
       "media": 397,
       "-webkit-keyframes": 59,
@@ -225,7 +424,7 @@
   "properties": {
     "total": 3516,
     "unique": 136,
-    "shorthands": 537,
+    "shorthands": 567,
     "prefixed": 339,
     "unitless": 2244,
     "resetsViaAll": 0,
@@ -478,6 +677,120 @@
       "inherit": 1
     }
   },
+  "widths": {
+    "total": 167,
+    "unique": 58,
+    "usage": {
+      "0": 3,
+      "100%": 43,
+      "10%": 2,
+      "80%": 3,
+      "auto": 3,
+      "42px": 1,
+      "90%": 1,
+      "85%": 1,
+      "70%": 2,
+      "8.3333333333%": 4,
+      "16.6666666667%": 4,
+      "25%": 4,
+      "33.3333333333%": 4,
+      "41.6666666667%": 4,
+      "50%": 5,
+      "58.3333333333%": 4,
+      "66.6666666667%": 4,
+      "75%": 4,
+      "83.3333333333%": 4,
+      "91.6666666667%": 4,
+      "14px": 4,
+      "40px": 5,
+      "56px": 1,
+      "32.4px": 1,
+      "inherit": 1,
+      "500px": 1,
+      "24px": 2,
+      "20px": 4,
+      "2.5em": 1,
+      "55%": 1,
+      "2rem": 1,
+      "32px": 1,
+      "120px": 1,
+      "92%": 3,
+      "calc(100% - 3rem)": 5,
+      "calc(100% - 3rem - 1.5rem)": 1,
+      "3rem": 1,
+      "86%": 1,
+      "calc(100% - 4rem)": 1,
+      "16px": 2,
+      "18px": 1,
+      "12px": 1,
+      "10px": 2,
+      "8px": 2,
+      "36px": 2,
+      "30px": 1,
+      "300px": 1,
+      "64px": 2,
+      "50px": 2,
+      "1000%": 1,
+      "200%": 1,
+      "200px": 1,
+      "800px": 1,
+      "600px": 1,
+      "280px": 3,
+      "70px": 1,
+      "320px": 1,
+      "270px": 1
+    }
+  },
+  "heights": {
+    "total": 128,
+    "unique": 44,
+    "usage": {
+      "0": 6,
+      "auto": 6,
+      "1px": 2,
+      "30px": 1,
+      "500px": 2,
+      "42px": 1,
+      "100%": 25,
+      "4px": 1,
+      "22px": 4,
+      "56px": 8,
+      "inherit": 5,
+      "64px": 4,
+      "300px": 1,
+      "400px": 4,
+      "48px": 4,
+      "2px": 1,
+      "7px": 1,
+      "36px": 2,
+      "40px": 5,
+      "32.4px": 2,
+      "54px": 1,
+      "18px": 3,
+      "20px": 4,
+      "2.5em": 1,
+      "125%": 1,
+      "70%": 1,
+      "calc(100% - 56px)": 1,
+      "32px": 2,
+      "3rem": 6,
+      "50px": 2,
+      "25px": 2,
+      "16px": 2,
+      "13px": 1,
+      "14px": 4,
+      "3px": 3,
+      "1.5rem": 1,
+      "calc(100% + 60px)": 1,
+      "-moz-calc(100%)": 1,
+      "120vh": 1,
+      "200px": 1,
+      "8px": 1,
+      "800px": 1,
+      "600px": 1,
+      "270px": 1
+    }
+  },
   "letterSpacings": {
     "total": 2,
     "unique": 2,
@@ -628,7 +941,7 @@
       "white": 2
     },
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "#e51c23": 1,
@@ -898,7 +1211,7 @@
       "#000000": 2,
       "#ffffff": 31,
       "transparent": 21,
-      "ButtonText": 1,
+      "buttontext": 1,
       "rgba(0,0,0,0.14)": 8,
       "rgba(0,0,0,0.12)": 11,
       "rgba(0,0,0,0.2)": 8,
@@ -1277,7 +1590,7 @@
       "white": 2
     },
     "system": {
-      "ButtonText": 1
+      "buttontext": 1
     },
     "usage": {
       "#e51c23": 2,
@@ -1547,7 +1860,7 @@
       "#000000": 4,
       "#ffffff": 46,
       "transparent": 45,
-      "ButtonText": 1,
+      "buttontext": 1,
       "rgba(0,0,0,0.14)": 8,
       "rgba(0,0,0,0.12)": 12,
       "rgba(0,0,0,0.2)": 9,
@@ -1627,62 +1940,63 @@
   },
   "transitions": {
     "properties": {
-      "box-shadow": 14,
-      "background-color": 11,
-      "width": 2,
-      "color": 7,
-      "transform": 16,
-      "all": 2,
-      "opacity": 12,
+      "box-shadow": 40,
+      "background-color": 22,
+      "width": 4,
+      "color": 16,
+      "transform": 57,
+      "all": 4,
+      "opacity": 33,
       "-webkit-transform": 2,
-      "margin": 1,
-      "border": 2,
-      "height": 1,
-      "top": 1,
-      "left": 2,
-      "background": 2,
-      "visibility": 4
+      "margin": 2,
+      "border": 6,
+      "height": 2,
+      "top": 2,
+      "left": 6,
+      "background": 6,
+      "visibility": 12
     },
     "longestDuration": 0.7,
     "shortestDuration": 0,
     "longestDelay": 1,
     "shortestDelay": 0.1,
     "timingFunctions": {
-      "ease": 11,
-      "linear": 1,
+      "ease": 32,
+      "linear": 2,
       "cubic-bezier(0.53,0.01,0.36,1.63)": 5,
-      "ease-out": 7,
+      "ease-out": 19,
       "cubic-bezier(0.25,0.46,0.45,0.94)": 2,
       "cubic-bezier(0.42,0,0.58,1)": 18
     },
     "invalidTimingFunctions": {}
   },
   "animations": {
-    "total": 18,
+    "total": 36,
     "unique": 12,
-    "infinite": 17,
+    "infinite": 34,
+    "withoutDefinitions": [],
     "longestDuration": 5.332,
     "shortestDuration": 0.4,
     "longestDelay": 1.15,
     "shortestDelay": 1.15,
     "usage": {
-      "indeterminate": 1,
-      "indeterminate-short": 1,
-      "container-rotate": 2,
-      "fill-unfill-rotate": 5,
-      "blue-fade-in-out": 1,
-      "red-fade-in-out": 1,
-      "yellow-fade-in-out": 1,
-      "green-fade-in-out": 1,
-      "left-spin": 1,
-      "right-spin": 1,
-      "fade-out": 1,
-      "pulse-animation": 2
+      "indeterminate": 2,
+      "indeterminate-short": 2,
+      "container-rotate": 4,
+      "fill-unfill-rotate": 10,
+      "blue-fade-in-out": 2,
+      "red-fade-in-out": 2,
+      "yellow-fade-in-out": 2,
+      "green-fade-in-out": 2,
+      "left-spin": 2,
+      "right-spin": 2,
+      "fade-out": 2,
+      "pulse-animation": 4
     },
     "timingFunctions": {
       "cubic-bezier(0.65,0.815,0.735,0.395)": 2,
       "cubic-bezier(0.165,0.84,0.44,1)": 2,
-      "linear": 2,
+      "linear": 4,
       "cubic-bezier(0.4,0,0.2,1)": 24,
       "cubic-bezier(0.24,0,0.38,1)": 4
     },
@@ -1731,6 +2045,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {
@@ -1762,7 +2077,7 @@
     "valuesMap": {}
   },
   "vendorPrefixes": {
-    "total": 387,
+    "total": 444,
     "unique": 4,
     "unknown": {
       "total": 0,
@@ -1771,7 +2086,7 @@
     },
     "usage": {
       "-ms-": 42,
-      "-webkit-": 316,
+      "-webkit-": 373,
       "-moz-": 27,
       "-apple-": 2
     }
