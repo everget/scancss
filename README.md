@@ -35,6 +35,7 @@ A robust CSS stylesheet statistics collector and analyzer
 	* [zIndices](#zindices)
 	* [floats](#floats)
 	* [borderRadiuses](#borderradiuses)
+	* [widths](#widths)
 	* [letterSpacings](#letterspacings)
 	* [fonts](#fonts)
 	* [colors](#colors)
@@ -224,6 +225,12 @@ Use this flag to fill `.floats` metric
 #### borderRadiuses
 
 Use this flag to fill `.borderRadiuses` metric
+
+* Default: `true`
+
+#### widths
+
+Use this flag to fill `.widths` metric
 
 * Default: `true`
 

@@ -15,6 +15,7 @@
 * [zIndices](#zindices)
 * [floats](#floats)
 * [borderRadiuses](#borderradiuses)
+* [widths](#widths)
 * [letterSpacings](#letterspacings)
 * [fontSizes](#fontsizes)
 * [lineHeights](#lineheights)
@@ -302,6 +303,16 @@
 
 [Back to top](#report-structure)
 
+#### floats
+
+* **total** - `number`
+
+* **unique** - `number`
+
+* **usage** - `Record<string, number>`
+
+[Back to top](#report-structure)
+
 #### borderRadiuses
 
 * **total** - `number`
@@ -312,7 +323,7 @@
 
 [Back to top](#report-structure)
 
-#### floats
+#### widths
 
 * **total** - `number`
 

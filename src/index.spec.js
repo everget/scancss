@@ -437,6 +437,19 @@ describe('Module: scancss', () => {
 			});
 		});
 
+		describe('.widths', () => {
+			it('should be counted correctly', () => {
+				expect(report.widths).toEqual({
+					total: 2,
+					unique: 2,
+					usage: {
+						'40px': 1,
+						'20px': 1,
+					},
+				});
+			});
+		});
+
 		describe('.letterSpacings', () => {
 			it('should be counted correctly', () => {
 				expect(report.letterSpacings).toEqual({

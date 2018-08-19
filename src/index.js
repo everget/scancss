@@ -37,6 +37,7 @@ export default function scancss(src, options) {
 				zIndices: true,
 				floats: true,
 				borderRadiuses: true,
+				widths: true,
 				letterSpacings: true,
 				fonts: true,
 				colors: true,
@@ -222,6 +223,10 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.borderRadiuses) {
 			report.borderRadiuses.unique = Object.keys(report.borderRadiuses.usage).length;
+		}
+
+		if (scancssOptions.widths) {
+			report.widths.unique = Object.keys(report.widths.usage).length;
 		}
 
 		if (scancssOptions.letterSpacings) {
