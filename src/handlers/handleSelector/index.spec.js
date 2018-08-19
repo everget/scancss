@@ -248,13 +248,60 @@ describe('Module: handleSelector', () => {
 
 		describe('selectors.specificity.highest', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.highest).toEqual([2, 1, 3]);
+				expect(report.selectors.specificity.highest).toEqual([0, 0, 0]);
 			});
 		});
 
 		describe('selectors.specificity.highestSelector', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.highestSelector).toBe('* body #home div #warning p .message');
+				expect(report.selectors.specificity.highestSelector).toBe(null);
+			});
+		});
+
+		describe('selectors.specificity.highest10', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.specificity.highest10).toEqual([
+					{
+						selector: '* body #home div #warning p .message',
+						specificity: [2, 1, 3],
+					},
+					{
+						selector: 'ul #nav li .active a',
+						specificity: [1, 1, 3],
+					},
+					{
+						selector: '#bar',
+						specificity: [1, 0, 0],
+					},
+					{
+						selector: 'h1:has(a:not(:has(:visited)))',
+						specificity: [0, 3, 2],
+					},
+					{
+						selector: 'a:not(:active):matches(:focus)',
+						specificity: [0, 3, 1],
+					},
+					{
+						selector: '.foo .bar .baz',
+						specificity: [0, 3, 0],
+					},
+					{
+						selector: 'li .red .level',
+						specificity: [0, 2, 1],
+					},
+					{
+						selector: '[bp~=\'grid\'][bp*=\'@\']',
+						specificity: [0, 2, 0],
+					},
+					{
+						selector: 'ul ol li .red',
+						specificity: [0, 1, 3],
+					},
+					{
+						selector: '[type=\"button\"]::-moz-focus-inner',
+						specificity: [0, 1, 1],
+					},
+				]);
 			});
 		});
 

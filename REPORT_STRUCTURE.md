@@ -190,6 +190,7 @@
 	* **average** - `[number, number, number]`
 	* **highest** - `[number, number, number]`
 	* **highestSelector** - `string | null`
+	* **highest10** - `Array<Record<'selector' | 'specificity', string | [number, number, number]>`
 	* **graphData** - `Array<[number, number, number]>`
 
 * **sizeRatio** - `number`

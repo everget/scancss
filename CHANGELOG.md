@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `widths` flag
 - Added `heights` metric
 - Added `heights` flag
+- Added `selectors.specificity.highest10` metric
 
 ### Changed
 

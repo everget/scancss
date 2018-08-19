@@ -140,6 +140,12 @@ export default function scancss(src, options) {
 				2
 			);
 
+			const highestSpecificitySelector = report.selectors.specificity.highest10[0];
+			if (isPlainObject(highestSpecificitySelector)) {
+				report.selectors.specificity.highest = highestSpecificitySelector.specificity;
+				report.selectors.specificity.highestSelector = highestSpecificitySelector.selector;
+			}
+
 			report.selectors.specificity.average = [
 				roundDivision(
 					report.selectors.specificity.total[0],

@@ -256,6 +256,36 @@ describe('Module: scancss', () => {
 						total: [0, 7, 3],
 						highest: [0, 2, 0],
 						highestSelector: '[tabindex="-1"]:focus',
+						highest10: [
+							{
+								selector: '[tabindex=\"-1\"]:focus',
+								specificity: [0, 2, 0],
+							},
+							{
+								selector: 'abbr[title]',
+								specificity: [0, 1, 1],
+							},
+							{
+								selector: 'abbr[data-original-title]',
+								specificity: [0, 1, 1],
+							},
+							{
+								selector: '.selector',
+								specificity: [0, 1, 0],
+							},
+							{
+								selector: '.selector',
+								specificity: [0, 1, 0],
+							},
+							{
+								selector: '.selector',
+								specificity: [0, 1, 0],
+							},
+							{
+								selector: '::-moz-placeholder',
+								specificity: [0, 0, 1],
+							},
+						],
 						average: [0, 1, 0.43],
 						graphData: [
 							[0, 1, 0],

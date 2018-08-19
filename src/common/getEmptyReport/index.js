@@ -99,6 +99,7 @@ export function getEmptyReport() {
 				total: [0, 0, 0],
 				highest: [0, 0, 0],
 				highestSelector: null,
+				highest10: [],
 				average: [0, 0, 0],
 				graphData: [],
 			},
