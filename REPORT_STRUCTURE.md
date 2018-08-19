@@ -16,6 +16,7 @@
 * [floats](#floats)
 * [borderRadiuses](#borderradiuses)
 * [widths](#widths)
+* [heights](#heights)
 * [letterSpacings](#letterspacings)
 * [fontSizes](#fontsizes)
 * [lineHeights](#lineheights)
@@ -324,6 +325,16 @@
 [Back to top](#report-structure)
 
 #### widths
+
+* **total** - `number`
+
+* **unique** - `number`
+
+* **usage** - `Record<string, number>`
+
+[Back to top](#report-structure)
+
+#### heights
 
 * **total** - `number`
 

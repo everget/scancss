@@ -450,6 +450,19 @@ describe('Module: scancss', () => {
 			});
 		});
 
+		describe('.heights', () => {
+			it('should be counted correctly', () => {
+				expect(report.heights).toEqual({
+					total: 2,
+					unique: 2,
+					usage: {
+						'40px': 1,
+						'20px': 1,
+					},
+				});
+			});
+		});
+
 		describe('.letterSpacings', () => {
 			it('should be counted correctly', () => {
 				expect(report.letterSpacings).toEqual({

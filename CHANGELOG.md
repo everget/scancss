@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `imports` metric
 - Added `widths` metric
 - Added `widths` flag
+- Added `heights` metric
+- Added `heights` flag
 
 ### Changed
 

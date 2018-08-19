@@ -191,6 +191,11 @@ export function getEmptyReport() {
 			unique: 0,
 			usage: {},
 		},
+		heights: {
+			total: 0,
+			unique: 0,
+			usage: {},
+		},
 		letterSpacings: {
 			total: 0,
 			unique: 0,

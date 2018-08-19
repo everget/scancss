@@ -38,6 +38,7 @@ export default function scancss(src, options) {
 				floats: true,
 				borderRadiuses: true,
 				widths: true,
+				heights: true,
 				letterSpacings: true,
 				fonts: true,
 				colors: true,
@@ -227,6 +228,10 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.widths) {
 			report.widths.unique = Object.keys(report.widths.usage).length;
+		}
+
+		if (scancssOptions.heights) {
+			report.heights.unique = Object.keys(report.heights.usage).length;
 		}
 
 		if (scancssOptions.letterSpacings) {
