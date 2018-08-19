@@ -5,6 +5,7 @@ import { handleAtRule } from '.';
 describe('Module: handleAtRule', () => {
 	const options = {
 		browserHacks: true,
+		declarations: true,
 	};
 
 	const src = `

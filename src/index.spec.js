@@ -1,13 +1,7 @@
+import { getEmptyReport } from './common/getEmptyReport';
 import scancss from '.';
 
 describe('Module: scancss', () => {
-	let report;
-
-	const options = {
-		specificityGraph: true,
-		uniqueDeclarationsList: true,
-	};
-
 	const src = `
 		/* Lorem ipsum dolor sit amet */
 
@@ -78,23 +72,28 @@ describe('Module: scancss', () => {
 		@foobar {}
 	`;
 
-	beforeEach(() => {
-		report = scancss(src, options);
-	});
-
-	afterEach(() => {
-		report = null;
-	});
-
 	describe('Throwing errors', () => {
 		it('should throw error if 1st argument does not have `string` type', () => {
-			expect(() => {
-				scancss(NaN);
-			}).toThrowError('`scancss` expects a string');
+			expect(() => scancss(NaN)).toThrowError('`scancss` expects a string');
 		});
 	});
 
 	describe('Report', () => {
+		let report;
+
+		const options = {
+			specificityGraph: true,
+			uniqueDeclarationsList: true,
+		};
+
+		beforeEach(() => {
+			report = scancss(src, options);
+		});
+
+		afterEach(() => {
+			report = null;
+		});
+
 		describe('.styleSheetSize', () => {
 			it('should be counted correctly', () => {
 				expect(report.styleSheetSize).toEqual({
@@ -768,6 +767,652 @@ describe('Module: scancss', () => {
 						'-webkit-': 1,
 					},
 				});
+			});
+		});
+	});
+
+	describe('Options', () => {
+		describe('stylesheetSize', () => {
+			let report;
+
+			const options = {
+				stylesheetSize: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.stylesheetSize` counting when is set to `false`', () => {
+				expect(report.stylesheetSize).toEqual(getEmptyReport().stylesheetSize);
+			});
+		});
+
+		describe('comments', () => {
+			let report;
+
+			const options = {
+				comments: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.comments` counting when is set to `false`', () => {
+				expect(report.comments).toEqual(getEmptyReport().comments);
+			});
+		});
+
+		describe('atRules', () => {
+			let report;
+
+			const options = {
+				atRules: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.atRules` counting when is set to `false`', () => {
+				expect(report.atRules).toEqual(getEmptyReport().atRules);
+			});
+
+			it('should switch off `report.imports` counting when is set to `false`', () => {
+				expect(report.imports).toEqual(getEmptyReport().imports);
+			});
+
+			it('should switch off `report.mediaQueries` counting when is set to `false`', () => {
+				expect(report.mediaQueries).toEqual(getEmptyReport().mediaQueries);
+			});
+
+			it('should switch off `report.keyframes` counting when is set to `false`', () => {
+				expect(report.keyframes).toEqual(getEmptyReport().keyframes);
+			});
+		});
+
+		describe('rules', () => {
+			let report;
+
+			const options = {
+				rules: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.rules` counting when is set to `false`', () => {
+				expect(report.rules).toEqual(getEmptyReport().rules);
+			});
+		});
+
+		describe('selectors', () => {
+			let report;
+
+			const options = {
+				selectors: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.selectors` counting when is set to `false`', () => {
+				expect(report.selectors).toEqual(getEmptyReport().selectors);
+			});
+		});
+
+		describe('selectorsUsage', () => {
+			let report;
+
+			const options = {
+				selectorsUsage: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.selectors.usage` counting when is set to `false`', () => {
+				expect(report.selectors.usage).toEqual(getEmptyReport().selectors.usage);
+			});
+		});
+
+		describe('attributesUsage', () => {
+			let report;
+
+			const options = {
+				attributesUsage: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.selectors.attributesUsage` counting when is set to `false`', () => {
+				expect(report.selectors.attributesUsage).toEqual(getEmptyReport().selectors.attributesUsage);
+			});
+		});
+
+		describe('declarations', () => {
+			let report;
+
+			const options = {
+				declarations: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.declarations` counting when is set to `false`', () => {
+				expect(report.declarations).toEqual(getEmptyReport().declarations);
+			});
+		});
+
+		describe('properties', () => {
+			let report;
+
+			const options = {
+				properties: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.properties` counting when is set to `false`', () => {
+				expect(report.properties).toEqual(getEmptyReport().properties);
+			});
+		});
+
+		describe('engineTriggerProperties', () => {
+			let report;
+
+			const options = {
+				engineTriggerProperties: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.properties.engineTriggerProperties` counting when is set to `false`', () => {
+				expect(report.properties.engineTriggerProperties).toEqual(getEmptyReport().properties.engineTriggerProperties);
+			});
+		});
+
+		describe('performanceHacks', () => {
+			let report;
+
+			const options = {
+				performanceHacks: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.properties.performanceHacks` counting when is set to `false`', () => {
+				expect(report.properties.performanceHacks).toEqual(getEmptyReport().properties.performanceHacks);
+			});
+		});
+
+		describe('displays', () => {
+			let report;
+
+			const options = {
+				displays: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.displays` counting when is set to `false`', () => {
+				expect(report.displays).toEqual(getEmptyReport().displays);
+			});
+		});
+
+		describe('positions', () => {
+			let report;
+
+			const options = {
+				positions: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.positions` counting when is set to `false`', () => {
+				expect(report.positions).toEqual(getEmptyReport().positions);
+			});
+		});
+
+		describe('zIndices', () => {
+			let report;
+
+			const options = {
+				zIndices: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.zIndices` counting when is set to `false`', () => {
+				expect(report.zIndices).toEqual(getEmptyReport().zIndices);
+			});
+		});
+
+		describe('floats', () => {
+			let report;
+
+			const options = {
+				floats: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.floats` counting when is set to `false`', () => {
+				expect(report.floats).toEqual(getEmptyReport().floats);
+			});
+		});
+
+		describe('borderRadiuses', () => {
+			let report;
+
+			const options = {
+				borderRadiuses: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.borderRadiuses` counting when is set to `false`', () => {
+				expect(report.borderRadiuses).toEqual(getEmptyReport().borderRadiuses);
+			});
+		});
+
+		describe('widths', () => {
+			let report;
+
+			const options = {
+				widths: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.widths` counting when is set to `false`', () => {
+				expect(report.widths).toEqual(getEmptyReport().widths);
+			});
+		});
+
+		describe('heights', () => {
+			let report;
+
+			const options = {
+				heights: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.heights` counting when is set to `false`', () => {
+				expect(report.heights).toEqual(getEmptyReport().heights);
+			});
+		});
+
+		describe('letterSpacings', () => {
+			let report;
+
+			const options = {
+				letterSpacings: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.letterSpacings` counting when is set to `false`', () => {
+				expect(report.letterSpacings).toEqual(getEmptyReport().letterSpacings);
+			});
+		});
+
+		describe('fonts', () => {
+			let report;
+
+			const options = {
+				fonts: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.fontSizes` counting when is set to `false`', () => {
+				expect(report.fontSizes).toEqual(getEmptyReport().fontSizes);
+			});
+
+			it('should switch off `report.lineHeights` counting when is set to `false`', () => {
+				expect(report.lineHeights).toEqual(getEmptyReport().lineHeights);
+			});
+
+			it('should switch off `report.fontFamilies` counting when is set to `false`', () => {
+				expect(report.fontFamilies).toEqual(getEmptyReport().fontFamilies);
+			});
+		});
+
+		describe('colors', () => {
+			let report;
+
+			const options = {
+				colors: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.colors` counting when is set to `false`', () => {
+				expect(report.colors).toEqual(getEmptyReport().colors);
+			});
+		});
+
+		describe('backgroundColors', () => {
+			let report;
+
+			const options = {
+				backgroundColors: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.backgroundColors` counting when is set to `false`', () => {
+				expect(report.backgroundColors).toEqual(getEmptyReport().backgroundColors);
+			});
+		});
+
+		describe('allColors', () => {
+			let report;
+
+			const options = {
+				allColors: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.allColors` counting when is set to `false`', () => {
+				expect(report.allColors).toEqual(getEmptyReport().allColors);
+			});
+		});
+
+		describe('transitionsAndAnimations', () => {
+			let report;
+
+			const options = {
+				transitionsAndAnimations: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.transitions` counting when is set to `false`', () => {
+				expect(report.transitions).toEqual(getEmptyReport().transitions);
+			});
+
+			it('should switch off `report.animations` counting when is set to `false`', () => {
+				expect(report.animations).toEqual(getEmptyReport().animations);
+			});
+		});
+
+		describe('functions', () => {
+			let report;
+
+			const options = {
+				functions: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.functions` counting when is set to `false`', () => {
+				expect(report.functions).toEqual(getEmptyReport().functions);
+			});
+		});
+
+		describe('filters', () => {
+			let report;
+
+			const options = {
+				filters: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.filters` counting when is set to `false`', () => {
+				expect(report.filters).toEqual(getEmptyReport().filters);
+			});
+		});
+
+		describe('gradients', () => {
+			let report;
+
+			const options = {
+				gradients: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.gradients` counting when is set to `false`', () => {
+				expect(report.gradients).toEqual(getEmptyReport().gradients);
+			});
+		});
+
+		describe('units', () => {
+			let report;
+
+			const options = {
+				units: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.units` counting when is set to `false`', () => {
+				expect(report.units).toEqual(getEmptyReport().units);
+			});
+		});
+
+		describe('variables', () => {
+			let report;
+
+			const options = {
+				variables: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.variables` counting when is set to `false`', () => {
+				expect(report.variables).toEqual(getEmptyReport().variables);
+			});
+		});
+
+		describe('dataUris', () => {
+			let report;
+
+			const options = {
+				dataUris: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.dataUris` counting when is set to `false`', () => {
+				expect(report.dataUris).toEqual(getEmptyReport().dataUris);
+			});
+		});
+
+		describe('browserHacks', () => {
+			let report;
+
+			const options = {
+				browserHacks: false,
+			};
+
+			beforeEach(() => {
+				report = scancss(src, options);
+			});
+
+			afterEach(() => {
+				report = null;
+			});
+
+			it('should switch off `report.browserHacks` counting when is set to `false`', () => {
+				expect(report.browserHacks).toEqual(getEmptyReport().browserHacks);
 			});
 		});
 	});
