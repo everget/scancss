@@ -117,7 +117,7 @@ Use this flag to fill `.comments` metric
 
 #### atRules
 
-Use this flag to fill `.atRules`, `.mediaQueries`, `.keyframes` metrics
+Use this flag to fill `.atRules`, `.mediaQueries`, `.keyframes`, `.imports` metrics
 
 * **_NOTE:_** Disabling this flag you will disable counting browser hacks in @supports and @media at-rules
 

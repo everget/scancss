@@ -143,6 +143,17 @@ describe('Module: scancss', () => {
 			});
 		});
 
+		describe('.imports', () => {
+			it('should be counted correctly', () => {
+				expect(report.imports).toEqual({
+					total: 0,
+					unique: 0,
+					usage: {},
+					urls: {},
+				});
+			});
+		});
+
 		describe('.mediaQueries', () => {
 			it('should be counted correctly', () => {
 				expect(report.mediaQueries).toEqual({

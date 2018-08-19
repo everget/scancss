@@ -109,6 +109,7 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.atRules) {
 			report.atRules.unknown.unique = Object.keys(report.atRules.unknown.usage).length;
+			report.imports.unique = Object.keys(report.imports.usage).length;
 			report.mediaQueries.unique = Object.keys(report.mediaQueries.usage).length;
 			report.mediaQueries.types.unique = Object.keys(report.mediaQueries.types.usage).length;
 			report.mediaQueries.features.unique = Object.keys(report.mediaQueries.features.usage).length;

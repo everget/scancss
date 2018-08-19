@@ -26,6 +26,12 @@ export function getEmptyReport() {
 			},
 			usage: {},
 		},
+		imports: {
+			total: 0,
+			unique: 0,
+			usage: {},
+			urls: {},
+		},
 		mediaQueries: {
 			total: 0,
 			unique: 0,

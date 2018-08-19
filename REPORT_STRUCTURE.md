@@ -3,6 +3,7 @@
 * [styleSheetSize](#stylesheetsize)
 * [comments](#comments)
 * [atRules](#atrules)
+* [imports](#imports)
 * [mediaQueries](#mediaqueries)
 * [keyframes](#keyframes)
 * [rules](#rules)
@@ -72,6 +73,18 @@
 	* **total** - `number`
 	* **unique** - `number`
 	* **usage** - `Record<string, number>`
+
+[Back to top](#report-structure)
+
+#### imports
+
+* **total** - `number`
+
+* **unique** - `number`
+
+* **usage** - `Record<string, number>`
+
+* **urls** - `Record<string, number>`
 
 [Back to top](#report-structure)
 

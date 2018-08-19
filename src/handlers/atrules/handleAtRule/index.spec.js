@@ -187,6 +187,40 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
+	describe('imports.total', () => {
+		it('should be counted correctly', () => {
+			expect(report.imports.total).toBe(4);
+		});
+	});
+
+	describe('imports.unique', () => {
+		it('should be counted correctly', () => {
+			expect(report.imports.unique).toBe(0);
+		});
+	});
+
+	describe('imports.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.imports.usage).toEqual({
+				'\'custom.css\'': 1,
+				'"common.css" screen': 1,
+				'url("fineprint.css") print': 1,
+				'url("bluish.css") speech': 1,
+			});
+		});
+	});
+
+	describe('imports.urls', () => {
+		it('should be counted correctly', () => {
+			expect(report.imports.urls).toEqual({
+				'custom.css': 1,
+				'common.css': 1,
+				'fineprint.css': 1,
+				'bluish.css': 1,
+			});
+		});
+	});
+
 	describe('mediaQueries.total', () => {
 		it('should be counted correctly', () => {
 			expect(report.mediaQueries.total).toBe(16);
