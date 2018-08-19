@@ -4,6 +4,7 @@ examples/
 scripts/
 src/
 
+*.log
 jest.config.js
 appveyor.yml
 codecov.yml
@@ -16,5 +17,10 @@ codecov.yml
 .eslintcache
 .editorconfig
 .gitignore
+.node_repl_history
+.yarn-integrity
+.idea
+.vscode
+.DS_Store
 package-lock.json
 yarn.lock

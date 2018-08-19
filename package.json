@@ -14,7 +14,6 @@
     "lint": "eslint --cache \"./src/**/*.js\"",
     "lint-staged": "lint-staged",
     "prepublish": "yarn build && yarn lint && yarn test",
-    "postpublish": "git push && git push --tags && yarn clean",
     "test": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/**/*.spec.js\"",
     "test:calculators": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/calculators/**/*.spec.js\"",
     "test:constants": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/constants/**/*.spec.js\"",
