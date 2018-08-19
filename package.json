@@ -1,6 +1,6 @@
 {
   "name": "scancss",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "description": "A robust CSS stylesheet statistics collector and analyzer",
   "main": "dist/index.js",
   "scripts": {
