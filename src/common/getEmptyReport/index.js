@@ -58,6 +58,7 @@ export function getEmptyReport() {
 			shortestStepsChainLength: Number.MAX_SAFE_INTEGER,
 			shortestStepsChainAnimation: null,
 			animatableProperties: [],
+			definedAnimations: [],
 		},
 		rules: {
 			total: 0,
@@ -271,6 +272,7 @@ export function getEmptyReport() {
 			total: 0,
 			unique: 0,
 			infinite: 0,
+			withoutDefinitions: [],
 			longestDuration: 0,
 			shortestDuration: Number.MAX_SAFE_INTEGER,
 			longestDelay: 0,

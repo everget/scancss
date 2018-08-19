@@ -163,6 +163,12 @@ describe('Module: handleTransitionsAndAnimations', () => {
 			});
 		});
 
+		describe('animations.withoutDefinitions', () => {
+			it('should be counted correctly', () => {
+				expect(report.animations.withoutDefinitions).toEqual([]);
+			});
+		});
+
 		describe('animations.longestDuration', () => {
 			it('should be counted correctly', () => {
 				expect(report.animations.longestDuration).toBe(3);

@@ -131,6 +131,8 @@
 
 * **animatableProperties** - `Array<string>`
 
+* **definedAnimations** - `Array<string>`
+
 [Back to top](#report-structure)
 
 #### rules
@@ -489,6 +491,8 @@
 * **usage** - `Record<string, number>` (**_NOTE:_** animation names usage)
 
 * **infinite** - `number`
+
+* **withoutDefinitions** - `Array<string>`
 
 * **longestDuration** - `number`
 

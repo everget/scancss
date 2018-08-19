@@ -52,4 +52,8 @@ export function handleKeyframes(atRule, report) {
 		report.keyframes.shortestStepsChain = stepsChain;
 		report.keyframes.shortestStepsChainAnimation = atRule.params;
 	}
+
+	if (report.keyframes.definedAnimations.includes(atRule.params) === false) {
+		report.keyframes.definedAnimations.push(atRule.params);
+	}
 }

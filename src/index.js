@@ -7,6 +7,7 @@ import { handleRule } from './handlers/handleRule';
 import { handleDeclaration } from './handlers/handleDeclaration';
 import { roundDivision } from './calculators/roundDivision';
 import { percentDifference } from './calculators/percentDifference';
+import { difference } from './converters/difference';
 import { getEmptyReport } from './common/getEmptyReport';
 import { parseCss } from './common/parseCss';
 
@@ -305,6 +306,10 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.transitionsAndAnimations) {
 			report.animations.unique = Object.keys(report.animations.usage).length;
+			report.animations.withoutDefinitions = difference(
+				Object.keys(report.animations.usage),
+				report.keyframes.definedAnimations
+			);
 		}
 
 		report.vendorPrefixes.unique = Object.keys(report.vendorPrefixes.usage).length;

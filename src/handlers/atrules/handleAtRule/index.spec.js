@@ -371,6 +371,15 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
+	describe('keyframes.definedAnimations', () => {
+		it('should be counted correctly', () => {
+			expect(report.keyframes.definedAnimations).toEqual([
+				'pulse',
+				'fade',
+			]);
+		});
+	});
+
 	describe('Handling @page pseudo-classes', () => {
 		it('should not be handled', () => {
 			expect(report.selectors.baseUsage.pseudoClass).toBe(0);

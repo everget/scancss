@@ -26,6 +26,7 @@ describe('Module: scancss', () => {
 			height: 40px;
 			font: message-box;
 			background-color: transparent;
+			animation: ease 1s fade-in;
 			color: #fff
 		}
 
@@ -97,8 +98,8 @@ describe('Module: scancss', () => {
 		describe('.styleSheetSize', () => {
 			it('should be counted correctly', () => {
 				expect(report.styleSheetSize).toEqual({
-					source: 979,
-					gzipSource: 479,
+					source: 1010,
+					gzipSource: 487,
 				});
 			});
 		});
@@ -113,8 +114,8 @@ describe('Module: scancss', () => {
 						shortest: 32,
 						average: 32,
 					},
-					sizeRatio: 0.03268641470888662,
-					sizeRatioPercent: '3.27%',
+					sizeRatio: 0.031683168316831684,
+					sizeRatioPercent: '3.17%',
 				});
 			});
 		});
@@ -196,6 +197,9 @@ describe('Module: scancss', () => {
 					shortestStepsChainAnimation: 'fade',
 					animatableProperties: [
 						'opacity',
+					],
+					definedAnimations: [
+						'fade',
 					],
 				});
 			});
@@ -301,8 +305,8 @@ describe('Module: scancss', () => {
 							[0, 1, 0],
 						],
 					},
-					sizeRatio: 0.1041879468845761,
-					sizeRatioPercent: '10.42%',
+					sizeRatio: 0.100990099009901,
+					sizeRatioPercent: '10.1%',
 					usage: {
 						'.selector': 3,
 						'::-moz-placeholder': 1,
@@ -317,19 +321,19 @@ describe('Module: scancss', () => {
 		describe('.declarations', () => {
 			it('should be counted correctly', () => {
 				expect(report.declarations).toEqual({
-					total: 19,
-					unique: 17,
-					uniqueRatio: 0.8947368421052632,
+					total: 20,
+					unique: 18,
+					uniqueRatio: 0.9,
 					important: 0,
-					averagePerRule: 1.9,
+					averagePerRule: 2,
 					length: {
-						total: 293,
+						total: 319,
 						longest: 32,
 						longestDeclaration: 'animation:infinite ease 1s fade',
-						average: 15.42,
+						average: 15.95,
 					},
-					sizeRatio: 0.2992849846782431,
-					sizeRatioPercent: '29.93%',
+					sizeRatio: 0.31584158415841584,
+					sizeRatioPercent: '31.58%',
 					inAtRules: {
 						'-webkit-keyframes': 2,
 						keyframes: 2,
@@ -344,6 +348,7 @@ describe('Module: scancss', () => {
 						'height:40px',
 						'font:message-box',
 						'background-color:transparent',
+						'animation:ease 1s fade-in',
 						'color:#fff',
 						'color:red',
 						'opacity:1',
@@ -361,9 +366,9 @@ describe('Module: scancss', () => {
 		describe('.properties', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties).toEqual({
-					total: 19,
+					total: 20,
 					unique: 11,
-					shorthands: 3,
+					shorthands: 4,
 					prefixed: 0,
 					unitless: 13,
 					resetsViaAll: 0,
@@ -396,7 +401,7 @@ describe('Module: scancss', () => {
 						},
 					},
 					usage: {
-						animation: 1,
+						animation: 2,
 						'background-color': 2,
 						border: 1,
 						color: 3,
@@ -636,8 +641,8 @@ describe('Module: scancss', () => {
 		describe('.animations', () => {
 			it('should be counted correctly', () => {
 				expect(report.animations).toEqual({
-					total: 1,
-					unique: 1,
+					total: 2,
+					unique: 2,
 					infinite: 1,
 					longestDuration: 1,
 					shortestDuration: 1,
@@ -645,9 +650,13 @@ describe('Module: scancss', () => {
 					shortestDelay: Number.MAX_SAFE_INTEGER,
 					usage: {
 						fade: 1,
+						'fade-in': 1,
 					},
+					withoutDefinitions: [
+						'fade-in',
+					],
 					timingFunctions: {
-						ease: 1,
+						ease: 2,
 					},
 					invalidTimingFunctions: {},
 				});
@@ -718,11 +727,11 @@ describe('Module: scancss', () => {
 		describe('.units', () => {
 			it('should be counted correctly', () => {
 				expect(report.units).toEqual({
-					total: 6,
+					total: 7,
 					unique: 2,
 					usage: {
 						px: 5,
-						s: 1,
+						s: 2,
 					},
 					excessive: {
 						total: 0,
