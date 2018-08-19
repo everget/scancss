@@ -206,11 +206,13 @@ describe('Module: scancss', () => {
 					total: 7,
 					unique: 5,
 					baseUsage: {
-						class: 3,
 						attribute: 3,
+						class: 3,
+						id: 0,
 						pseudoClass: 1,
 						pseudoElement: 1,
 						tag: 2,
+						universal: 0,
 					},
 					pseudoClassesUsage: {
 						':focus': 1,

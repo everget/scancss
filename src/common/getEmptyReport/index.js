@@ -61,7 +61,15 @@ export function getEmptyReport() {
 		selectors: {
 			total: 0,
 			unique: 0,
-			baseUsage: {},
+			baseUsage: {
+				attribute: 0,
+				class: 0,
+				id: 0,
+				pseudoClass: 0,
+				pseudoElement: 0,
+				tag: 0,
+				universal: 0,
+			},
 			pseudoClassesUsage: {},
 			pseudoElementsUsage: {},
 			attributesUsage: {},

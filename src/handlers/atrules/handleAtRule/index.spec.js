@@ -13,56 +13,59 @@ describe('Module: handleAtRule', () => {
 		@import url("fineprint.css") print;
 		@import url("bluish.css") speech;
 
+		@page {}
+		@page narrow {}
+		@page rotated {}
+		@page :first {}
+		@page index :blank {}
+
 		@media screen and (max-width: 479px) {
 			.selector {
-				max-width: none;
+				display: block;
 			}
 		}
 
 		@media only screen and (max-width: 767px) {
 			.selector {
 				display: block;
-				margin-top: 5px;
 			}
 		}
 
 		@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm) {
-			.selector {}
+			.selector {
+				display: block;
+			}
 		}
 
 		@media print {
-			.selector {}
+			.selector {
+				display: block;
+			}
 		}
 
 		@media only screen and (max-height: 440px), only screen and (max-width: 600px) {
 			.selector {
-				display: none!important;
+				display: block;
 			}
 		}
 
 		@media screen and (max-width: 767px) {
 			.selector {
-				display: none;
+				display: block;
 			}
 		}
 
-		@media screen and (min--moz-device-pixel-ratio: 0) {}
-
 		@media screen and (min-width: 992px) {}
-
 		@media screen and (min-width: 992px) {}
-
 		@media screen and (min-aspect-ratio: 16/9) {}
 
 		@media screen and (device-pixel-ratio: 4/3) {}
 		@media screen and (-webkit-device-pixel-ratio: 4/3) {}
+		@media screen and (min--moz-device-pixel-ratio: 0) {}
 
 		@supports (-webkit-appearance: none) {}
-
 		@supports (-moz-appearance: meterbar) {}
-
 		@supports (-moz-appearance: meterbar) and (all: initial) {}
-
 		@supports (display: table-cell) and (display: list-item) {}
 
 		@keyframes pulse {
@@ -123,13 +126,13 @@ describe('Module: handleAtRule', () => {
 
 	describe('atRules.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.total).toBe(24);
+			expect(report.atRules.total).toBe(29);
 		});
 	});
 
 	describe('atRules.empty', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.empty).toBe(12);
+			expect(report.atRules.empty).toBe(17);
 		});
 	});
 
@@ -167,6 +170,7 @@ describe('Module: handleAtRule', () => {
 				import: 4,
 				keyframes: 1,
 				media: 12,
+				page: 5,
 				supports: 4,
 				unknown: 1,
 			});
@@ -176,7 +180,7 @@ describe('Module: handleAtRule', () => {
 	describe('declarations.inAtRules', () => {
 		it('should be counted correctly', () => {
 			expect(report.declarations.inAtRules).toEqual({
-				media: 5,
+				media: 6,
 				keyframes: 3,
 				'-webkit-keyframes': 4,
 			});
@@ -330,6 +334,16 @@ describe('Module: handleAtRule', () => {
 				'transform',
 				'opacity',
 			]);
+		});
+	});
+
+	describe('Handling @page pseudo-classes', () => {
+		it('should not be handled', () => {
+			expect(report.selectors.baseUsage.pseudoClass).toBe(0);
+		});
+
+		it('should be counted correctly', () => {
+			expect(report.selectors.pseudoClassesUsage).toEqual({});
 		});
 	});
 
