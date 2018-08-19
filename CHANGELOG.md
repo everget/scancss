@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Corrected `selectors.unique` metric counting when `selectorsUsage` flag is `false`
 - Corrected `transition` and `animation` longhand handling
 - Corrected vendor-prefixed `transition-` and `animation-` properties handling
+- Corrected counting of vendor prefixes it `@supports` at-rule
 
 ## [1.3.2]
 

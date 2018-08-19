@@ -63,6 +63,8 @@ describe('Module: handleAtRule', () => {
 
 		@supports (-moz-appearance: meterbar) and (all: initial) {}
 
+		@supports (display: table-cell) and (display: list-item) {}
+
 		@keyframes pulse {
 			0% {
 				transform: scale(.8);
@@ -121,13 +123,13 @@ describe('Module: handleAtRule', () => {
 
 	describe('atRules.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.total).toBe(23);
+			expect(report.atRules.total).toBe(24);
 		});
 	});
 
 	describe('atRules.empty', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.empty).toBe(11);
+			expect(report.atRules.empty).toBe(12);
 		});
 	});
 
@@ -165,7 +167,7 @@ describe('Module: handleAtRule', () => {
 				import: 4,
 				keyframes: 1,
 				media: 12,
-				supports: 3,
+				supports: 4,
 				unknown: 1,
 			});
 		});
@@ -334,7 +336,7 @@ describe('Module: handleAtRule', () => {
 	describe('Handling vendor prefixes', () => {
 		describe('vendorPrefixes.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes.total).toBe(5);
+				expect(report.vendorPrefixes.total).toBe(8);
 			});
 		});
 
@@ -365,8 +367,8 @@ describe('Module: handleAtRule', () => {
 		describe('vendorPrefixes.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.vendorPrefixes.usage).toEqual({
-					'-moz-': 2,
-					'-webkit-': 3,
+					'-moz-': 4,
+					'-webkit-': 4,
 				});
 			});
 		});
