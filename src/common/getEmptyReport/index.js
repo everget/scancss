@@ -88,6 +88,7 @@ export function getEmptyReport() {
 			},
 			complex: 0,
 			maxPerRule: 0,
+			maxPerRuleList: [],
 			averagePerRule: 0,
 			length: {
 				total: 0,

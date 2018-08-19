@@ -4,7 +4,7 @@ import { handleRule } from '.';
 
 describe('Module: handleRule', () => {
 	const options = {
-		selectors: false,
+		selectors: true,
 	};
 
 	const src = `
@@ -77,6 +77,22 @@ describe('Module: handleRule', () => {
 	describe('rules.withoutTrailingSemicolon', () => {
 		it('should be counted correctly', () => {
 			expect(report.rules.withoutTrailingSemicolon).toBe(2);
+		});
+	});
+
+	describe('selectors.maxPerRule', () => {
+		it('should be counted correctly', () => {
+			expect(report.selectors.maxPerRule).toBe(3);
+		});
+	});
+
+	describe('selectors.maxPerRuleList', () => {
+		it('should be counted correctly', () => {
+			expect(report.selectors.maxPerRuleList).toEqual([
+				'.selector-1',
+				'.selector-2',
+				'.selector-3',
+			]);
 		});
 	});
 });

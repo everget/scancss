@@ -245,6 +245,10 @@ describe('Module: scancss', () => {
 					},
 					complex: 0,
 					maxPerRule: 2,
+					maxPerRuleList: [
+						'abbr[title]',
+						'abbr[data-original-title]',
+					],
 					averagePerRule: 0.7,
 					length: {
 						total: 102,

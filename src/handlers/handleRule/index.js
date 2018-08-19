@@ -22,6 +22,7 @@ export function handleRule(rule, report, options) {
 	) {
 		if (report.selectors.maxPerRule < rule.selectors.length) {
 			report.selectors.maxPerRule = rule.selectors.length;
+			report.selectors.maxPerRuleList = rule.selectors;
 		}
 
 		rule.selectors.forEach((selector) => {

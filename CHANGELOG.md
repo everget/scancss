@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `heights` metric
 - Added `heights` flag
 - Added `selectors.specificity.highest10` metric
+- Added `selectors.maxPerRuleList` metric
 
 ### Changed
 

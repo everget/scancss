@@ -177,6 +177,8 @@
 
 * **maxPerRule** - `number`
 
+* **maxPerRuleList** - `Array<string>`
+
 * **averagePerRule** - `number`
 
 * **length** - `Record<string, number | null>`
