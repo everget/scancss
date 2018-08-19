@@ -1,3 +1,4 @@
+import { trimExtraSpaces } from '../../converters/trimExtraSpaces';
 import { isKeyframeRuleSelector } from '../../predicates/isKeyframeRuleSelector';
 import { handleSelector } from '../handleSelector';
 
@@ -22,7 +23,7 @@ export function handleRule(rule, report, options) {
 	) {
 		if (report.selectors.maxPerRule < rule.selectors.length) {
 			report.selectors.maxPerRule = rule.selectors.length;
-			report.selectors.maxPerRuleList = rule.selectors;
+			report.selectors.maxPerRuleList = rule.selectors.map((selector) => trimExtraSpaces(selector));
 		}
 
 		rule.selectors.forEach((selector) => {
