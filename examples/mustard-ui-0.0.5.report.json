@@ -11,7 +11,8 @@
       "shortest": 46,
       "average": 54.5
     },
-    "sizeRatio": 0.0035759981627899347
+    "sizeRatio": 0.0035759981627899347,
+    "sizeRatioPercent": "0.36%"
   },
   "atRules": {
     "total": 24,
@@ -26,6 +27,12 @@
       "media": 22,
       "keyframes": 2
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 22,
@@ -76,22 +83,28 @@
     "animatableProperties": [
       "transform",
       "background-position"
+    ],
+    "definedAnimations": [
+      "bounce",
+      "move"
     ]
   },
   "rules": {
     "total": 370,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 370
   },
   "selectors": {
     "total": 439,
-    "unique": 0,
+    "unique": 402,
     "baseUsage": {
-      "universal": 7,
-      "tag": 160,
-      "pseudoElement": 29,
+      "attribute": 34,
       "class": 525,
+      "id": 0,
       "pseudoClass": 54,
-      "attribute": 34
+      "pseudoElement": 29,
+      "tag": 160,
+      "universal": 7
     },
     "pseudoClassesUsage": {
       ":last-child": 3,
@@ -108,6 +121,15 @@
       "::-ms-input-placeholder": 8,
       "::placeholder": 4
     },
+    "attributesUsage": {
+      "[type='button']": 6,
+      "[type='reset']": 6,
+      "[type='submit']": 6,
+      "[type=\"text\"]": 7,
+      "[type=\"password\"]": 7,
+      "[type=\"checkbox\"]": 1,
+      "[type=\"radio\"]": 1
+    },
     "combinators": {
       "total": 234,
       "adjacentSibling": 0,
@@ -117,6 +139,14 @@
     },
     "complex": 0,
     "maxPerRule": 6,
+    "maxPerRuleList": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6"
+    ],
     "averagePerRule": 1.19,
     "length": {
       "total": 7442,
@@ -136,14 +166,97 @@
         0
       ],
       "highestSelector": ".pricing-table .package.featured .package-name",
+      "highest10": [
+        {
+          "selector": ".pricing-table .package.featured .package-name",
+          "specificity": [
+            0,
+            4,
+            0
+          ]
+        },
+        {
+          "selector": "input[type='button']:disabled:hover",
+          "specificity": [
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "selector": "input[type='reset']:disabled:hover",
+          "specificity": [
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "selector": "input[type='submit']:disabled:hover",
+          "specificity": [
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "selector": ".pricing-table .package .features li",
+          "specificity": [
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "selector": ".tooltip:hover .tooltip-text",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form-control-group .form-control:last-of-type",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form-control-group .form-control.grow-1x",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form-control-group .form-control.grow-2x",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form-control-group .form-control.grow-3x",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        }
+      ],
       "average": [
         0,
-        1,
-        1
+        1.4,
+        0.43
       ],
       "graphData": []
     },
     "sizeRatio": 0.24415209474754765,
+    "sizeRatioPercent": "24.42%",
     "usage": {}
   },
   "declarations": {
@@ -159,6 +272,7 @@
       "average": 18.63
     },
     "sizeRatio": 0.5017551917588006,
+    "sizeRatioPercent": "50.18%",
     "inAtRules": {
       "media": 164,
       "keyframes": 5
@@ -324,6 +438,36 @@
       "5px": 12,
       "50%": 2,
       "16px": 1
+    }
+  },
+  "widths": {
+    "total": 11,
+    "unique": 6,
+    "usage": {
+      "auto": 1,
+      "100%": 5,
+      "32px": 1,
+      "12px": 1,
+      "26px": 2,
+      "36px": 1
+    }
+  },
+  "heights": {
+    "total": 16,
+    "unique": 12,
+    "usage": {
+      "40px": 1,
+      "48px": 1,
+      "30px": 1,
+      "100vh": 1,
+      "32px": 1,
+      "12px": 1,
+      "60px": 1,
+      "100%": 4,
+      "20px": 2,
+      "4px": 1,
+      "1px": 1,
+      "36px": 1
     }
   },
   "letterSpacings": {
@@ -542,6 +686,7 @@
     "total": 2,
     "unique": 2,
     "infinite": 2,
+    "withoutDefinitions": [],
     "longestDuration": 2,
     "shortestDuration": 2,
     "longestDelay": 2,
@@ -592,6 +737,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

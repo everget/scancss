@@ -35,6 +35,8 @@ A robust CSS stylesheet statistics collector and analyzer
 	* [zIndices](#zindices)
 	* [floats](#floats)
 	* [borderRadiuses](#borderradiuses)
+	* [widths](#widths)
+	* [heights](#heights)
 	* [letterSpacings](#letterspacings)
 	* [fonts](#fonts)
 	* [colors](#colors)
@@ -68,7 +70,7 @@ yarn add scancss --save
 
 ```js
 import scancss from 'scancss';
-// or const scancss = require('scancss').default;
+// or const scancss = require('scancss');
 
 const stylesheet = `
 	.selector {
@@ -117,7 +119,7 @@ Use this flag to fill `.comments` metric
 
 #### atRules
 
-Use this flag to fill `.atRules`, `.mediaQueries`, `.keyframes` metrics
+Use this flag to fill `.atRules`, `.mediaQueries`, `.keyframes`, `.imports` metrics
 
 * **_NOTE:_** Disabling this flag you will disable counting browser hacks in @supports and @media at-rules
 
@@ -142,6 +144,12 @@ Use this flag to fill `.selectors` metric
 #### selectorsUsage
 
 Use this flag to fill `.selectors.usage` metric
+
+* Default: `true`
+
+#### attributesUsage
+
+Use this flag to fill `.selectors.attributesUsage` metric
 
 * Default: `true`
 
@@ -218,6 +226,18 @@ Use this flag to fill `.floats` metric
 #### borderRadiuses
 
 Use this flag to fill `.borderRadiuses` metric
+
+* Default: `true`
+
+#### widths
+
+Use this flag to fill `.widths` metric
+
+* Default: `true`
+
+#### heights
+
+Use this flag to fill `.heights` metric
 
 * Default: `true`
 

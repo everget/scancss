@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handleTransitionsAndAnimations } from '.';
 
 describe('Module: handleTransitionsAndAnimations', () => {
@@ -25,6 +26,9 @@ describe('Module: handleTransitionsAndAnimations', () => {
 		}
 
 		.selector {
+			transition-property: background-color, opacity, -webkit-transform;
+			-webkit-transition-duration: 150ms;
+			transition-duration: 150ms;
 			transition: all 500ms ease;
 		}
 
@@ -66,29 +70,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			transitions: {
-				properties: {},
-				longestDuration: 0,
-				shortestDuration: Number.MAX_SAFE_INTEGER,
-				longestDelay: 0,
-				shortestDelay: Number.MAX_SAFE_INTEGER,
-				timingFunctions: {},
-				invalidTimingFunctions: {},
-			},
-			animations: {
-				total: 0,
-				unique: 0,
-				infinite: 0,
-				longestDuration: 0,
-				shortestDuration: Number.MAX_SAFE_INTEGER,
-				longestDelay: 0,
-				shortestDelay: Number.MAX_SAFE_INTEGER,
-				usage: {},
-				timingFunctions: {},
-				invalidTimingFunctions: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handleTransitionsAndAnimations(decl, report);
@@ -110,7 +92,9 @@ describe('Module: handleTransitionsAndAnimations', () => {
 					right: 1,
 					top: 1,
 					transform: 1,
-					'-webkit-transform': 1,
+					'-webkit-transform': 2,
+					'background-color': 1,
+					opacity: 1,
 				});
 			});
 		});
@@ -123,7 +107,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 
 		describe('transitions.shortestDuration', () => {
 			it('should be counted correctly', () => {
-				expect(report.transitions.shortestDuration).toBe(0.5);
+				expect(report.transitions.shortestDuration).toBe(0.15);
 			});
 		});
 
@@ -176,6 +160,12 @@ describe('Module: handleTransitionsAndAnimations', () => {
 		describe('animations.infinite', () => {
 			it('should be counted correctly', () => {
 				expect(report.animations.infinite).toBe(2);
+			});
+		});
+
+		describe('animations.withoutDefinitions', () => {
+			it('should be counted correctly', () => {
+				expect(report.animations.withoutDefinitions).toEqual([]);
 			});
 		});
 

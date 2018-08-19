@@ -1,10 +1,12 @@
-import { parseCss } from '../../converters/parseCss';
+import { getEmptyReport } from '../../common/getEmptyReport';
+import { parseCss } from '../../common/parseCss';
 import { handleSelector } from '.';
 
 describe('Module: handleSelector', () => {
 	const options = {
 		specificityGraph: false,
 		selectorsUsage: true,
+		attributesUsage: true,
 		selectorComplexityThreshold: 4,
 	};
 
@@ -23,12 +25,21 @@ describe('Module: handleSelector', () => {
 
 		li ~ li {}
 
-		p:first-line {}
-		p::first-line {}
-
 		*[rel=up] {}
 
 		a[src] {}
+
+		abbr[title],
+		abbr[data-original-title] {}
+
+		[bp~='vertical-center'] {}
+
+		[bp~='grid'][bp*='@'] {}
+
+		button::-moz-focus-inner,
+		[type="button"]::-moz-focus-inner,
+		[type="reset"]::-moz-focus-inner,
+		[type="submit"]::-moz-focus-inner {}
 
 		ul ol li .red {}
 
@@ -37,6 +48,9 @@ describe('Module: handleSelector', () => {
 		.foo {}
 
 		.foo .bar .baz {}
+
+		p:first-line {}
+		p::first-line {}
 
 		a:-webkit-any-link {}
 		a:-moz-any-link {}
@@ -57,50 +71,7 @@ describe('Module: handleSelector', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			selectors: {
-				total: 0,
-				unique: 0,
-				baseUsage: {},
-				pseudoClassesUsage: {},
-				pseudoElementsUsage: {},
-				combinators: {
-					total: 0,
-					adjacentSibling: 0,
-					child: 0,
-					descendant: 0,
-					generalSibling: 0,
-				},
-				complex: 0,
-				maxPerRule: 0,
-				averagePerRule: 0,
-				length: {
-					total: 0,
-					longest: 0,
-					longestSelector: null,
-					average: 0,
-				},
-				specificity: {
-					total: [0, 0, 0],
-					highest: [0, 0, 0],
-					highestSelector: null,
-					average: [0, 0, 0],
-					graphData: [],
-				},
-				sizeRatio: 0,
-				usage: {},
-			},
-			vendorPrefixes: {
-				total: 0,
-				unique: 0,
-				unknown: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkRules((rule) => {
 			rule.selectors.forEach((selector) => {
@@ -115,7 +86,7 @@ describe('Module: handleSelector', () => {
 
 	describe('selectors.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.selectors.total).toBe(22);
+			expect(report.selectors.total).toBe(30);
 		});
 	});
 
@@ -128,12 +99,12 @@ describe('Module: handleSelector', () => {
 	describe('selectors.baseUsage', () => {
 		it('should be counted correctly', () => {
 			expect(report.selectors.baseUsage).toEqual({
-				attribute: 2,
+				attribute: 10,
 				class: 9,
 				id: 4,
 				pseudoClass: 10,
-				pseudoElement: 2,
-				tag: 28,
+				pseudoElement: 6,
+				tag: 31,
 				universal: 3,
 			});
 		});
@@ -158,6 +129,7 @@ describe('Module: handleSelector', () => {
 		it('should be counted correctly', () => {
 			expect(report.selectors.pseudoElementsUsage).toEqual({
 				'::first-line': 2,
+				'::-moz-focus-inner': 4,
 			});
 		});
 	});
@@ -223,6 +195,14 @@ describe('Module: handleSelector', () => {
 				'ul #nav li .active a': 1,
 				'ul li': 1,
 				'ul ol li .red': 1,
+				'abbr[title]': 1,
+				'abbr[data-original-title]': 1,
+				'[bp~=\'vertical-center\']': 1,
+				'[bp~=\'grid\'][bp*=\'@\']': 1,
+				'button::-moz-focus-inner': 1,
+				'[type="button"]::-moz-focus-inner': 1,
+				'[type="reset"]::-moz-focus-inner': 1,
+				'[type="submit"]::-moz-focus-inner': 1,
 			});
 		});
 	});
@@ -230,7 +210,7 @@ describe('Module: handleSelector', () => {
 	describe('Handling lengths', () => {
 		describe('selectors.length.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.length.total).toBe(270);
+				expect(report.selectors.length.total).toBe(472);
 			});
 		});
 
@@ -256,7 +236,7 @@ describe('Module: handleSelector', () => {
 	describe('Handling specificity', () => {
 		describe('selectors.specificity.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.total).toEqual([4, 19, 30]);
+				expect(report.selectors.specificity.total).toEqual([4, 27, 37]);
 			});
 		});
 
@@ -268,13 +248,60 @@ describe('Module: handleSelector', () => {
 
 		describe('selectors.specificity.highest', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.highest).toEqual([2, 1, 3]);
+				expect(report.selectors.specificity.highest).toEqual([0, 0, 0]);
 			});
 		});
 
 		describe('selectors.specificity.highestSelector', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.highestSelector).toBe('* body #home div #warning p .message');
+				expect(report.selectors.specificity.highestSelector).toBe(null);
+			});
+		});
+
+		describe('selectors.specificity.highest10', () => {
+			it('should be counted correctly', () => {
+				expect(report.selectors.specificity.highest10).toEqual([
+					{
+						selector: '* body #home div #warning p .message',
+						specificity: [2, 1, 3],
+					},
+					{
+						selector: 'ul #nav li .active a',
+						specificity: [1, 1, 3],
+					},
+					{
+						selector: '#bar',
+						specificity: [1, 0, 0],
+					},
+					{
+						selector: 'h1:has(a:not(:has(:visited)))',
+						specificity: [0, 3, 2],
+					},
+					{
+						selector: 'a:not(:active):matches(:focus)',
+						specificity: [0, 3, 1],
+					},
+					{
+						selector: '.foo .bar .baz',
+						specificity: [0, 3, 0],
+					},
+					{
+						selector: 'li .red .level',
+						specificity: [0, 2, 1],
+					},
+					{
+						selector: '[bp~=\'grid\'][bp*=\'@\']',
+						specificity: [0, 2, 0],
+					},
+					{
+						selector: 'ul ol li .red',
+						specificity: [0, 1, 3],
+					},
+					{
+						selector: '[type=\"button\"]::-moz-focus-inner',
+						specificity: [0, 1, 1],
+					},
+				]);
 			});
 		});
 
@@ -288,7 +315,7 @@ describe('Module: handleSelector', () => {
 	describe('Handling vendor prefixes', () => {
 		describe('vendorPrefixes.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes.total).toBe(2);
+				expect(report.vendorPrefixes.total).toBe(6);
 			});
 		});
 
@@ -319,7 +346,7 @@ describe('Module: handleSelector', () => {
 		describe('vendorPrefixes.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.vendorPrefixes.usage).toEqual({
-					'-moz-': 1,
+					'-moz-': 5,
 					'-webkit-': 1,
 				});
 			});

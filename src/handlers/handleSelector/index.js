@@ -70,6 +70,10 @@ function countSelectors(selectors, report, options) {
 				}
 			} else {
 				countUsage(selector.type, report.selectors.baseUsage);
+
+				if (selector.type === 'attribute' && options.attributesUsage) {
+					countUsage(String(selector), report.selectors.attributesUsage);
+				}
 			}
 
 			const specificity = calculateSpecificity(selector);
@@ -79,16 +83,26 @@ function countSelectors(selectors, report, options) {
 				report.selectors.specificity.total,
 				specificity
 			);
-
-			if (options.specificityGraph) {
-				report.selectors.specificity.graphData.push(specificity);
-			}
 		}
 	});
 
-	if (compareSpecificities(report.selectors.specificity.highest, tmpSpecificity) === 1) {
-		report.selectors.specificity.highest = tmpSpecificity;
-		report.selectors.specificity.highestSelector = String(selectors);
+	if (options.specificityGraph) {
+		report.selectors.specificity.graphData.push(tmpSpecificity);
+	}
+
+	report.selectors.specificity.highest10.push({
+		selector: String(selectors),
+		specificity: tmpSpecificity,
+	});
+
+	report.selectors.specificity.highest10 = report
+		.selectors
+		.specificity
+		.highest10
+		.sort((a, b) => compareSpecificities(a.specificity, b.specificity));
+
+	if (report.selectors.specificity.highest10.length > 10) {
+		report.selectors.specificity.highest10.pop();
 	}
 
 	if (baseSelectorsWithoutCombinators > options.selectorComplexityThreshold) {
@@ -99,9 +113,7 @@ function countSelectors(selectors, report, options) {
 export function handleSelector(selector, report, options) {
 	report.selectors.total++;
 
-	if (options.selectorsUsage) {
-		countUsage(selector, report.selectors.usage);
-	}
+	countUsage(selector, report.selectors.usage);
 
 	const selectorByteLength = Buffer.byteLength(selector, 'utf8');
 	report.selectors.length.total += selectorByteLength;

@@ -11,7 +11,8 @@
       "shortest": 7,
       "average": 61.26
     },
-    "sizeRatio": 0.036587715467413365
+    "sizeRatio": 0.036587715467413365,
+    "sizeRatioPercent": "3.66%"
   },
   "atRules": {
     "total": 109,
@@ -28,6 +29,12 @@
       "page": 1,
       "keyframes": 4
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 188,
@@ -81,21 +88,28 @@
     "shortestStepsChainAnimation": "spin-cw-1turn",
     "animatableProperties": [
       "transform"
+    ],
+    "definedAnimations": [
+      "shake-7",
+      "spin-cw-1turn",
+      "wiggle-7deg"
     ]
   },
   "rules": {
     "total": 1518,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 1
   },
   "selectors": {
     "total": 2002,
-    "unique": 0,
+    "unique": 1592,
     "baseUsage": {
-      "class": 3435,
-      "tag": 539,
-      "pseudoClass": 288,
       "attribute": 165,
+      "class": 3435,
+      "id": 0,
+      "pseudoClass": 288,
       "pseudoElement": 112,
+      "tag": 539,
       "universal": 5
     },
     "pseudoClassesUsage": {
@@ -128,6 +142,49 @@
       "::placeholder": 3,
       "::-ms-expand": 1
     },
+    "attributesUsage": {
+      "[title]": 3,
+      "[controls]": 1,
+      "[type=\"button\"]": 4,
+      "[type=\"reset\"]": 4,
+      "[type=\"submit\"]": 4,
+      "[type=\"checkbox\"]": 1,
+      "[type=\"radio\"]": 1,
+      "[type=\"number\"]": 2,
+      "[type=\"search\"]": 3,
+      "[hidden]": 1,
+      "[data-whatinput='mouse']": 13,
+      "[href]": 1,
+      "[href^='javascript:']": 1,
+      "[href^='#']": 1,
+      "[disabled]": 74,
+      "[type='text']": 2,
+      "[type='password']": 2,
+      "[type='date']": 2,
+      "[type='datetime']": 2,
+      "[type='datetime-local']": 2,
+      "[type='month']": 2,
+      "[type='week']": 2,
+      "[type='email']": 2,
+      "[type='number']": 2,
+      "[type='search']": 3,
+      "[type='tel']": 2,
+      "[type='time']": 2,
+      "[type='url']": 2,
+      "[type='color']": 2,
+      "[rows]": 1,
+      "[readonly]": 2,
+      "[type='submit']": 1,
+      "[type='button']": 1,
+      "[type='file']": 2,
+      "[type='checkbox']": 4,
+      "[type='radio']": 4,
+      "[for]": 2,
+      "[multiple]": 1,
+      "[aria-expanded='true']": 2,
+      "[data-responsive-menu]": 1,
+      "[aria-selected='true']": 1
+    },
     "combinators": {
       "total": 1054,
       "adjacentSibling": 9,
@@ -137,6 +194,27 @@
     },
     "complex": 140,
     "maxPerRule": 19,
+    "maxPerRuleList": [
+      "div",
+      "dl",
+      "dt",
+      "dd",
+      "ul",
+      "ol",
+      "li",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "pre",
+      "form",
+      "p",
+      "blockquote",
+      "th",
+      "td"
+    ],
     "averagePerRule": 1.32,
     "length": {
       "total": 47386,
@@ -155,15 +233,98 @@
         5,
         1
       ],
-      "highestSelector": ".dropdown.menu.vertical > li.opens-left > .is-dropdown-submenu",
+      "highestSelector": ".dropdown.menu.medium-vertical > li.opens-right > .is-dropdown-submenu",
+      "highest10": [
+        {
+          "selector": ".dropdown.menu.medium-vertical > li.opens-right > .is-dropdown-submenu",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".dropdown.menu.medium-vertical > li.opens-left > .is-dropdown-submenu",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".dropdown.menu.vertical > li.opens-right > .is-dropdown-submenu",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".dropdown.menu.medium-horizontal > li.opens-left > .is-dropdown-submenu",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".dropdown.menu.medium-horizontal > li.opens-right > .is-dropdown-submenu",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".dropdown.menu.vertical > li.opens-left > .is-dropdown-submenu",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".dropdown.menu.large-horizontal > li.opens-left > .is-dropdown-submenu",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".dropdown.menu.large-horizontal > li.opens-right > .is-dropdown-submenu",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".dropdown.menu.large-vertical > li.opens-left > .is-dropdown-submenu",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".dropdown.menu.large-vertical > li.opens-right > .is-dropdown-submenu",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        }
+      ],
       "average": [
         0,
-        1,
-        1
+        1.93,
+        0.33
       ],
       "graphData": []
     },
     "sizeRatio": 0.3043260461890205,
+    "sizeRatioPercent": "30.43%",
     "usage": {}
   },
   "declarations": {
@@ -179,6 +340,7 @@
       "average": 20.06
     },
     "sizeRatio": 0.4215775682688109,
+    "sizeRatioPercent": "42.16%",
     "inAtRules": {
       "media": 888,
       "page": 1,
@@ -431,6 +593,147 @@
       "0": 24,
       "0 0 0 0": 5,
       "50%": 2
+    }
+  },
+  "widths": {
+    "total": 358,
+    "unique": 72,
+    "usage": {
+      "0": 22,
+      "100%": 43,
+      "auto": 23,
+      "8.33333%": 12,
+      "16.66667%": 15,
+      "25%": 15,
+      "33.33333%": 15,
+      "41.66667%": 12,
+      "50%": 16,
+      "58.33333%": 12,
+      "66.66667%": 12,
+      "75%": 12,
+      "83.33333%": 12,
+      "91.66667%": 12,
+      "calc(100% - 1.25rem)": 4,
+      "calc(100% - 1.875rem)": 6,
+      "calc(8.33333% - 1.25rem)": 1,
+      "calc(16.66667% - 1.25rem)": 3,
+      "calc(25% - 1.25rem)": 3,
+      "calc(33.33333% - 1.25rem)": 3,
+      "calc(41.66667% - 1.25rem)": 1,
+      "calc(50% - 1.25rem)": 3,
+      "calc(58.33333% - 1.25rem)": 1,
+      "calc(66.66667% - 1.25rem)": 1,
+      "calc(75% - 1.25rem)": 1,
+      "calc(83.33333% - 1.25rem)": 1,
+      "calc(91.66667% - 1.25rem)": 1,
+      "calc(8.33333% - 1.875rem)": 3,
+      "calc(16.66667% - 1.875rem)": 5,
+      "calc(25% - 1.875rem)": 5,
+      "calc(33.33333% - 1.875rem)": 5,
+      "calc(41.66667% - 1.875rem)": 3,
+      "calc(50% - 1.875rem)": 5,
+      "calc(58.33333% - 1.875rem)": 3,
+      "calc(66.66667% - 1.875rem)": 3,
+      "calc(75% - 1.875rem)": 3,
+      "calc(83.33333% - 1.875rem)": 3,
+      "calc(91.66667% - 1.875rem)": 3,
+      "20%": 3,
+      "14.28571%": 3,
+      "12.5%": 3,
+      "calc(20% - 1.25rem)": 2,
+      "calc(14.28571% - 1.25rem)": 2,
+      "calc(12.5% - 1.25rem)": 2,
+      "calc(20% - 1.875rem)": 2,
+      "calc(14.28571% - 1.875rem)": 2,
+      "calc(12.5% - 1.875rem)": 2,
+      "100vw": 3,
+      "40px": 1,
+      "1px": 2,
+      "20px": 2,
+      "300px": 1,
+      "100px": 2,
+      "200px": 1,
+      "400px": 1,
+      "250px": 2,
+      "inherit": 2,
+      "1.2rem": 1,
+      "0%": 1,
+      "600px": 1,
+      "30%": 1,
+      "90%": 1,
+      "1.4rem": 2,
+      "0.5rem": 2,
+      "4rem": 1,
+      "1.5rem": 1,
+      "3rem": 1,
+      "1rem": 1,
+      "3.5rem": 1,
+      "1.25rem": 1,
+      "5rem": 1,
+      "2rem": 1
+    }
+  },
+  "heights": {
+    "total": 246,
+    "unique": 57,
+    "usage": {
+      "0": 27,
+      "auto": 33,
+      "8.33333%": 3,
+      "16.66667%": 3,
+      "25%": 3,
+      "33.33333%": 3,
+      "41.66667%": 3,
+      "50%": 3,
+      "58.33333%": 3,
+      "66.66667%": 3,
+      "75%": 3,
+      "83.33333%": 3,
+      "91.66667%": 3,
+      "100%": 13,
+      "calc(100% - 1.25rem)": 4,
+      "calc(100% - 1.875rem)": 8,
+      "calc(8.33333% - 1.25rem)": 2,
+      "calc(16.66667% - 1.25rem)": 2,
+      "calc(25% - 1.25rem)": 2,
+      "calc(33.33333% - 1.25rem)": 2,
+      "calc(41.66667% - 1.25rem)": 2,
+      "calc(50% - 1.25rem)": 2,
+      "calc(58.33333% - 1.25rem)": 2,
+      "calc(66.66667% - 1.25rem)": 2,
+      "calc(75% - 1.25rem)": 2,
+      "calc(83.33333% - 1.25rem)": 2,
+      "calc(91.66667% - 1.25rem)": 2,
+      "calc(8.33333% - 1.875rem)": 6,
+      "calc(16.66667% - 1.875rem)": 6,
+      "calc(25% - 1.875rem)": 6,
+      "calc(33.33333% - 1.875rem)": 6,
+      "calc(41.66667% - 1.875rem)": 6,
+      "calc(50% - 1.875rem)": 6,
+      "calc(58.33333% - 1.875rem)": 6,
+      "calc(66.66667% - 1.875rem)": 6,
+      "calc(75% - 1.875rem)": 6,
+      "calc(83.33333% - 1.875rem)": 6,
+      "calc(91.66667% - 1.875rem)": 6,
+      "100vh": 5,
+      "calc(100vh + 1.25rem)": 1,
+      "calc(100vh + 1.875rem)": 4,
+      "2.4375rem": 2,
+      "40px": 1,
+      "1px": 2,
+      "16px": 2,
+      "2px": 2,
+      "250px": 2,
+      "1.2rem": 1,
+      "1rem": 2,
+      "0.5rem": 2,
+      "1.4rem": 2,
+      "12.5rem": 1,
+      "2rem": 3,
+      "1.5rem": 3,
+      "1.75rem": 2,
+      "1.25rem": 1,
+      "2.5rem": 2
     }
   },
   "letterSpacings": {
@@ -711,6 +1014,7 @@
     "total": 4,
     "unique": 3,
     "infinite": 1,
+    "withoutDefinitions": [],
     "longestDuration": 0.75,
     "shortestDuration": 0.25,
     "longestDelay": 0.7,
@@ -776,6 +1080,7 @@
       "average": 334
     },
     "sizeRatio": 0.002145040717239962,
+    "sizeRatioPercent": "0.21%",
     "usage": {
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg==": 1
     }

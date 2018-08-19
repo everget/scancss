@@ -1,9 +1,10 @@
-import { parseCss } from '../../converters/parseCss';
+import { getEmptyReport } from '../../common/getEmptyReport';
+import { parseCss } from '../../common/parseCss';
 import { handleRule } from '.';
 
 describe('Module: handleRule', () => {
 	const options = {
-		selectors: false,
+		selectors: true,
 	};
 
 	const src = `
@@ -30,7 +31,7 @@ describe('Module: handleRule', () => {
 			float: left;
 			border-radius: 1px 2px;
 			letter-spacing: .3px;
-			all: initial;
+			all: initial
 		}
 
 		.selector {
@@ -41,7 +42,7 @@ describe('Module: handleRule', () => {
 			float: right;
 			border-radius: 1px 2px 3px;
 			letter-spacing: 0.3em;
-			all: initial;
+			all: initial
 		}
 	`;
 
@@ -50,12 +51,7 @@ describe('Module: handleRule', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			rules: {
-				total: 0,
-				empty: 0,
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkRules((rule) => {
 			handleRule(rule, report, options);
@@ -75,6 +71,28 @@ describe('Module: handleRule', () => {
 	describe('rules.empty', () => {
 		it('should be counted correctly', () => {
 			expect(report.rules.empty).toBe(1);
+		});
+	});
+
+	describe('rules.withoutTrailingSemicolon', () => {
+		it('should be counted correctly', () => {
+			expect(report.rules.withoutTrailingSemicolon).toBe(2);
+		});
+	});
+
+	describe('selectors.maxPerRule', () => {
+		it('should be counted correctly', () => {
+			expect(report.selectors.maxPerRule).toBe(3);
+		});
+	});
+
+	describe('selectors.maxPerRuleList', () => {
+		it('should be counted correctly', () => {
+			expect(report.selectors.maxPerRuleList).toEqual([
+				'.selector-1',
+				'.selector-2',
+				'.selector-3',
+			]);
 		});
 	});
 });

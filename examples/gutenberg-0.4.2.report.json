@@ -11,7 +11,8 @@
       "shortest": 7,
       "average": 60.87
     },
-    "sizeRatio": 0.4575654704170708
+    "sizeRatio": 0.4575654704170708,
+    "sizeRatioPercent": "45.76%"
   },
   "atRules": {
     "total": 0,
@@ -23,6 +24,12 @@
       "usage": {}
     },
     "usage": {}
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 0,
@@ -49,22 +56,25 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 93,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 1
   },
   "selectors": {
     "total": 185,
-    "unique": 0,
+    "unique": 123,
     "baseUsage": {
-      "tag": 166,
-      "pseudoClass": 17,
       "attribute": 31,
+      "class": 7,
+      "id": 0,
+      "pseudoClass": 17,
       "pseudoElement": 27,
-      "universal": 4,
-      "class": 7
+      "tag": 166,
+      "universal": 4
     },
     "pseudoClassesUsage": {
       ":active": 1,
@@ -88,6 +98,21 @@
       "::first-letter": 4,
       "::first-line": 4
     },
+    "attributesUsage": {
+      "[title]": 7,
+      "[controls]": 1,
+      "[type=\"button\"]": 4,
+      "[type=\"reset\"]": 4,
+      "[type=\"submit\"]": 4,
+      "[type=\"checkbox\"]": 1,
+      "[type=\"radio\"]": 1,
+      "[type=\"number\"]": 2,
+      "[type=\"search\"]": 3,
+      "[hidden]": 1,
+      "[href^='http://']": 1,
+      "[href^='https://']": 1,
+      "[href^='ftp://']": 1
+    },
     "combinators": {
       "total": 10,
       "adjacentSibling": 3,
@@ -97,6 +122,19 @@
     },
     "complex": 0,
     "maxPerRule": 11,
+    "maxPerRuleList": [
+      "*",
+      "*:before",
+      "*:after",
+      "p:first-letter",
+      "div:first-letter",
+      "blockquote:first-letter",
+      "li:first-letter",
+      "p:first-line",
+      "div:first-line",
+      "blockquote:first-line",
+      "li:first-line"
+    ],
     "averagePerRule": 1.99,
     "length": {
       "total": 1697,
@@ -116,14 +154,97 @@
         2
       ],
       "highestSelector": "abbr[title].no-reformat:after",
+      "highest10": [
+        {
+          "selector": "abbr[title].no-reformat:after",
+          "specificity": [
+            0,
+            2,
+            2
+          ]
+        },
+        {
+          "selector": "acronym[title].no-reformat:after",
+          "specificity": [
+            0,
+            2,
+            2
+          ]
+        },
+        {
+          "selector": "[type=\"submit\"]:-moz-focusring",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[type=\"reset\"]:-moz-focusring",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "[type=\"button\"]:-moz-focusring",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": "blockquote ul:last-child",
+          "specificity": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "selector": "blockquote ol:last-child",
+          "specificity": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "selector": "a[href^='http://']:after",
+          "specificity": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "selector": "a[href^='https://']:after",
+          "specificity": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "selector": "a[href^='ftp://']:after",
+          "specificity": [
+            0,
+            1,
+            2
+          ]
+        }
+      ],
       "average": [
         0,
-        0.96,
-        1
+        0.29,
+        1.04
       ],
       "graphData": []
     },
     "sizeRatio": 0.13716456514710637,
+    "sizeRatioPercent": "13.72%",
     "usage": {}
   },
   "declarations": {
@@ -139,6 +260,7 @@
       "average": 20.02
     },
     "sizeRatio": 0.2734400258648561,
+    "sizeRatioPercent": "27.34%",
     "inAtRules": {},
     "list": []
   },
@@ -272,6 +394,19 @@
     "total": 0,
     "unique": 0,
     "usage": {}
+  },
+  "widths": {
+    "total": 0,
+    "unique": 0,
+    "usage": {}
+  },
+  "heights": {
+    "total": 4,
+    "unique": 2,
+    "usage": {
+      "0": 3,
+      "auto": 1
+    }
   },
   "letterSpacings": {
     "total": 0,
@@ -408,6 +543,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -444,6 +580,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

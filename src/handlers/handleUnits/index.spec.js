@@ -1,4 +1,5 @@
-import { parseCss } from '../../converters/parseCss';
+import { getEmptyReport } from '../../common/getEmptyReport';
+import { parseCss } from '../../common/parseCss';
 import { handleUnits } from '.';
 
 describe('Module: handleUnits', () => {
@@ -9,22 +10,7 @@ describe('Module: handleUnits', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			units: {
-				total: 0,
-				unique: 0,
-				usage: {},
-				excessive: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-			},
-			properties: {
-				negativeMargins: 0,
-				unitless: 0,
-			},
-		};
+		report = getEmptyReport();
 	});
 
 	afterEach(() => {

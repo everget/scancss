@@ -11,7 +11,8 @@
       "shortest": 76,
       "average": 76
     },
-    "sizeRatio": 0.0015594221930400525
+    "sizeRatio": 0.0015594221930400525,
+    "sizeRatioPercent": "0.16%"
   },
   "atRules": {
     "total": 22,
@@ -26,6 +27,16 @@
       "charset": 1,
       "import": 1,
       "media": 20
+    }
+  },
+  "imports": {
+    "total": 1,
+    "unique": 1,
+    "usage": {
+      "url(https://fonts.googleapis.com/css?family=Neucha|Patrick+Hand+SC)": 1
+    },
+    "urls": {
+      "https://fonts.googleapis.com/css?family=Neucha|Patrick+Hand+SC": 1
     }
   },
   "mediaQueries": {
@@ -69,21 +80,24 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 399,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 399
   },
   "selectors": {
     "total": 564,
-    "unique": 0,
+    "unique": 494,
     "baseUsage": {
-      "class": 477,
-      "tag": 367,
       "attribute": 99,
+      "class": 477,
+      "id": 0,
       "pseudoClass": 109,
       "pseudoElement": 46,
+      "tag": 367,
       "universal": 4
     },
     "pseudoClassesUsage": {
@@ -109,6 +123,34 @@
       "::after": 15,
       "::before": 22
     },
+    "attributesUsage": {
+      "[title]": 1,
+      "[controls]": 1,
+      "[type=reset]": 3,
+      "[type=submit]": 3,
+      "[type=button]": 28,
+      "[type=checkbox]": 5,
+      "[type=radio]": 5,
+      "[type=number]": 2,
+      "[type=search]": 3,
+      "[hidden]": 1,
+      "[id^=collapsible]": 5,
+      "[disabled]": 12,
+      "[popover-bottom]": 5,
+      "[popover-left]": 5,
+      "[popover-right]": 5,
+      "[popover-top]": 5,
+      "[id=tab1]": 1,
+      "[id=content1]": 1,
+      "[id=tab2]": 1,
+      "[id=content2]": 1,
+      "[id=tab3]": 1,
+      "[id=content3]": 1,
+      "[id=tab4]": 1,
+      "[id=content4]": 1,
+      "[id=tab5]": 1,
+      "[id=content5]": 1
+    },
     "combinators": {
       "total": 254,
       "adjacentSibling": 29,
@@ -118,6 +160,21 @@
     },
     "complex": 28,
     "maxPerRule": 13,
+    "maxPerRuleList": [
+      "a",
+      "button",
+      "input",
+      "option",
+      "p",
+      "select",
+      "table",
+      "tbody",
+      "td",
+      "textarea",
+      "th",
+      "thead",
+      "tr"
+    ],
     "averagePerRule": 1.41,
     "length": {
       "total": 9143,
@@ -137,14 +194,97 @@
         3
       ],
       "highestSelector": ".form-group .paper-check input[type=radio]:checked + span::before",
+      "highest10": [
+        {
+          "selector": ".form-group .paper-check input[type=radio]:checked + span::before",
+          "specificity": [
+            0,
+            4,
+            3
+          ]
+        },
+        {
+          "selector": "nav .collapsible input[id^=collapsible]:checked + button .bar2",
+          "specificity": [
+            0,
+            4,
+            3
+          ]
+        },
+        {
+          "selector": ".form-group .paper-radio input[type=checkbox]:checked + span::before",
+          "specificity": [
+            0,
+            4,
+            3
+          ]
+        },
+        {
+          "selector": ".form-group .paper-radio input[type=radio]:checked + span::before",
+          "specificity": [
+            0,
+            4,
+            3
+          ]
+        },
+        {
+          "selector": ".form-group .paper-check input[type=checkbox]:checked + span::before",
+          "specificity": [
+            0,
+            4,
+            3
+          ]
+        },
+        {
+          "selector": "nav .collapsible input[id^=collapsible]:checked + button .bar1",
+          "specificity": [
+            0,
+            4,
+            3
+          ]
+        },
+        {
+          "selector": "nav .collapsible input[id^=collapsible]:checked + button .bar3",
+          "specificity": [
+            0,
+            4,
+            3
+          ]
+        },
+        {
+          "selector": "nav .collapsible input[id^=collapsible]:checked ~ div.collapsible-body",
+          "specificity": [
+            0,
+            4,
+            3
+          ]
+        },
+        {
+          "selector": ".tabs input[id=tab1]:checked ~ div[id=content1]",
+          "specificity": [
+            0,
+            4,
+            2
+          ]
+        },
+        {
+          "selector": ".tabs input[id=tab2]:checked ~ div[id=content2]",
+          "specificity": [
+            0,
+            4,
+            2
+          ]
+        }
+      ],
       "average": [
         0,
-        0.99,
-        1
+        1.21,
+        0.73
       ],
       "graphData": []
     },
     "sizeRatio": 0.18760259356533157,
+    "sizeRatioPercent": "18.76%",
     "usage": {}
   },
   "declarations": {
@@ -160,6 +300,7 @@
       "average": 24.59
     },
     "sizeRatio": 0.5904464871963231,
+    "sizeRatioPercent": "59.04%",
     "inAtRules": {
       "media": 328
     },
@@ -388,6 +529,32 @@
       "15px 3px": 2
     }
   },
+  "widths": {
+    "total": 18,
+    "unique": 8,
+    "usage": {
+      "100%": 8,
+      "85%": 2,
+      "90%": 3,
+      "auto": 1,
+      "1px": 1,
+      "1rem": 1,
+      "1.1rem": 1,
+      "2rem": 1
+    }
+  },
+  "heights": {
+    "total": 8,
+    "unique": 6,
+    "usage": {
+      "0": 2,
+      "auto": 2,
+      "initial": 1,
+      "1px": 1,
+      "1rem": 1,
+      "1.1rem": 1
+    }
+  },
   "letterSpacings": {
     "total": 0,
     "unique": 0,
@@ -582,16 +749,16 @@
   },
   "transitions": {
     "properties": {
-      "all": 13,
-      "opacity": 3
+      "all": 52,
+      "opacity": 9
     },
     "longestDuration": 0.4,
     "shortestDuration": 0.2,
     "longestDelay": 0,
     "shortestDelay": 0,
     "timingFunctions": {
-      "ease": 9,
-      "ease-in-out": 6,
+      "ease": 36,
+      "ease-in-out": 24,
       "ease-out": 1
     },
     "invalidTimingFunctions": {}
@@ -600,6 +767,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -646,6 +814,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

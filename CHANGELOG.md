@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0]
+
+### Added
+- Added `rules.withoutTrailingSemicolon` metric
+- Added `comments.sizeRatioPercent` metric
+- Added `selectors.sizeRatioPercent` metric
+- Added `declarations.sizeRatioPercent` metric
+- Added `dataUris.sizeRatioPercent` metric
+- Added `selectors.attributesUsage` metric
+- Added `attributesUsage` flag
+- Added `imports` metric
+- Added `widths` metric
+- Added `widths` flag
+- Added `heights` metric
+- Added `heights` flag
+- Added `selectors.specificity.highest10` metric
+- Added `selectors.maxPerRuleList` metric
+- Added `keyframes.definedAnimations` metric
+- Added `animations.withoutDefinitions` metric
+
+### Changed
+
+### Fixed
+- Corrected `selectors.specificity.average` metric
+- Corrected `selectors.unique` metric counting when `selectorsUsage` flag is `false`
+- Corrected `transition` and `animation` longhand handling
+- Corrected vendor-prefixed `transition-` and `animation-` properties handling
+- Corrected counting of vendor prefixes it `@supports` at-rule
+- Corrected `declarations.inAtRules` counting when `declarations` flag is set to `false`
+
 ## [1.3.2]
 
 ### Fixed

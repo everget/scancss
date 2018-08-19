@@ -11,7 +11,8 @@
       "shortest": 179,
       "average": 179
     },
-    "sizeRatio": 0.0031790572940716797
+    "sizeRatio": 0.0031790572940716797,
+    "sizeRatioPercent": "0.32%"
   },
   "atRules": {
     "total": 4,
@@ -26,6 +27,12 @@
       "keyframes": 1,
       "font-face": 3
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 0,
@@ -56,20 +63,27 @@
     "shortestStepsChainAnimation": "a",
     "animatableProperties": [
       "transform"
+    ],
+    "definedAnimations": [
+      "a"
     ]
   },
   "rules": {
     "total": 1157,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 1177,
-    "unique": 0,
+    "unique": 1166,
     "baseUsage": {
+      "attribute": 0,
       "class": 1189,
-      "tag": 1,
+      "id": 0,
       "pseudoClass": 7,
-      "pseudoElement": 1111
+      "pseudoElement": 1111,
+      "tag": 1,
+      "universal": 0
     },
     "pseudoClassesUsage": {
       ":root": 5,
@@ -79,6 +93,7 @@
     "pseudoElementsUsage": {
       "::before": 1111
     },
+    "attributesUsage": {},
     "combinators": {
       "total": 6,
       "adjacentSibling": 0,
@@ -88,6 +103,13 @@
     },
     "complex": 0,
     "maxPerRule": 5,
+    "maxPerRuleList": [
+      ".fa",
+      ".fab",
+      ".fal",
+      ".far",
+      ".fas"
+    ],
     "averagePerRule": 1.02,
     "length": {
       "total": 23465,
@@ -107,14 +129,97 @@
         0
       ],
       "highestSelector": ".fa.fa-pull-left",
+      "highest10": [
+        {
+          "selector": ".fa.fa-pull-left",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".fa.fa-pull-right",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".fab.fa-pull-left",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".fal.fa-pull-left",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".far.fa-pull-left",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".fas.fa-pull-left",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".fab.fa-pull-right",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".fal.fa-pull-right",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".far.fa-pull-right",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "selector": ".fas.fa-pull-right",
+          "specificity": [
+            0,
+            2,
+            0
+          ]
+        }
+      ],
       "average": [
         0,
-        1,
-        1
+        1.02,
+        0.94
       ],
       "graphData": []
     },
     "sizeRatio": 0.41674066706922885,
+    "sizeRatioPercent": "41.67%",
     "usage": {}
   },
   "declarations": {
@@ -130,6 +235,7 @@
       "average": 16.35
     },
     "sizeRatio": 0.3482222143288459,
+    "sizeRatioPercent": "34.82%",
     "inAtRules": {
       "keyframes": 2
     },
@@ -246,6 +352,26 @@
       ".1em": 1
     }
   },
+  "widths": {
+    "total": 6,
+    "unique": 5,
+    "usage": {
+      "1.25em": 1,
+      "2em": 2,
+      "100%": 1,
+      "1px": 1,
+      "auto": 1
+    }
+  },
+  "heights": {
+    "total": 3,
+    "unique": 3,
+    "usage": {
+      "2em": 1,
+      "1px": 1,
+      "auto": 1
+    }
+  },
   "letterSpacings": {
     "total": 0,
     "unique": 0,
@@ -351,6 +477,7 @@
     "total": 2,
     "unique": 1,
     "infinite": 2,
+    "withoutDefinitions": [],
     "longestDuration": 2,
     "shortestDuration": 1,
     "longestDelay": 0,
@@ -397,6 +524,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

@@ -1,3 +1,4 @@
+import { trimExtraSpaces } from '../../converters/trimExtraSpaces';
 import { isKeyframeRuleSelector } from '../../predicates/isKeyframeRuleSelector';
 import { handleSelector } from '../handleSelector';
 
@@ -6,6 +7,10 @@ export function handleRule(rule, report, options) {
 
 	if (rule.nodes.length === 0) {
 		report.rules.empty++;
+	}
+
+	if (rule.raws.semicolon === false) {
+		report.rules.withoutTrailingSemicolon++;
 	}
 
 	/**
@@ -18,6 +23,7 @@ export function handleRule(rule, report, options) {
 	) {
 		if (report.selectors.maxPerRule < rule.selectors.length) {
 			report.selectors.maxPerRule = rule.selectors.length;
+			report.selectors.maxPerRuleList = rule.selectors.map((selector) => trimExtraSpaces(selector));
 		}
 
 		rule.selectors.forEach((selector) => {

@@ -11,7 +11,8 @@
       "shortest": 41,
       "average": 128
     },
-    "sizeRatio": 0.0014759977398784607
+    "sizeRatio": 0.0014759977398784607,
+    "sizeRatioPercent": "0.15%"
   },
   "atRules": {
     "total": 65,
@@ -30,6 +31,12 @@
       "supports": 5,
       "page": 1
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 56,
@@ -78,22 +85,27 @@
     "shortestStepsChainAnimation": "progress-bar-stripes",
     "animatableProperties": [
       "background-position"
+    ],
+    "definedAnimations": [
+      "progress-bar-stripes"
     ]
   },
   "rules": {
     "total": 1759,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 2644,
-    "unique": 0,
+    "unique": 2306,
     "baseUsage": {
+      "attribute": 128,
+      "class": 3579,
+      "id": 0,
       "pseudoClass": 799,
-      "universal": 6,
       "pseudoElement": 148,
       "tag": 310,
-      "attribute": 128,
-      "class": 3579
+      "universal": 6
     },
     "pseudoClassesUsage": {
       ":root": 2,
@@ -140,6 +152,34 @@
       "::-ms-fill-lower": 1,
       "::-ms-fill-upper": 1
     },
+    "attributesUsage": {
+      "[tabindex=\"-1\"]": 1,
+      "[title]": 2,
+      "[data-original-title]": 1,
+      "[href]": 20,
+      "[tabindex]": 4,
+      "[type=\"button\"]": 3,
+      "[type=\"reset\"]": 3,
+      "[type=\"submit\"]": 3,
+      "[type=\"radio\"]": 4,
+      "[type=\"checkbox\"]": 4,
+      "[type=\"date\"]": 1,
+      "[type=\"time\"]": 1,
+      "[type=\"datetime-local\"]": 1,
+      "[type=\"month\"]": 1,
+      "[type=\"number\"]": 2,
+      "[type=\"search\"]": 3,
+      "[hidden]": 1,
+      "[class*=\"col-\"]": 2,
+      "[readonly]": 1,
+      "[size]": 14,
+      "[multiple]": 14,
+      "[x-placement^=\"top\"]": 10,
+      "[x-placement^=\"right\"]": 10,
+      "[x-placement^=\"bottom\"]": 11,
+      "[x-placement^=\"left\"]": 10,
+      "[size=\"1\"]": 1
+    },
     "combinators": {
       "total": 879,
       "adjacentSibling": 44,
@@ -149,6 +189,78 @@
     },
     "complex": 142,
     "maxPerRule": 70,
+    "maxPerRuleList": [
+      ".col-1",
+      ".col-2",
+      ".col-3",
+      ".col-4",
+      ".col-5",
+      ".col-6",
+      ".col-7",
+      ".col-8",
+      ".col-9",
+      ".col-10",
+      ".col-11",
+      ".col-12",
+      ".col",
+      ".col-auto",
+      ".col-sm-1",
+      ".col-sm-2",
+      ".col-sm-3",
+      ".col-sm-4",
+      ".col-sm-5",
+      ".col-sm-6",
+      ".col-sm-7",
+      ".col-sm-8",
+      ".col-sm-9",
+      ".col-sm-10",
+      ".col-sm-11",
+      ".col-sm-12",
+      ".col-sm",
+      ".col-sm-auto",
+      ".col-md-1",
+      ".col-md-2",
+      ".col-md-3",
+      ".col-md-4",
+      ".col-md-5",
+      ".col-md-6",
+      ".col-md-7",
+      ".col-md-8",
+      ".col-md-9",
+      ".col-md-10",
+      ".col-md-11",
+      ".col-md-12",
+      ".col-md",
+      ".col-md-auto",
+      ".col-lg-1",
+      ".col-lg-2",
+      ".col-lg-3",
+      ".col-lg-4",
+      ".col-lg-5",
+      ".col-lg-6",
+      ".col-lg-7",
+      ".col-lg-8",
+      ".col-lg-9",
+      ".col-lg-10",
+      ".col-lg-11",
+      ".col-lg-12",
+      ".col-lg",
+      ".col-lg-auto",
+      ".col-xl-1",
+      ".col-xl-2",
+      ".col-xl-3",
+      ".col-xl-4",
+      ".col-xl-5",
+      ".col-xl-6",
+      ".col-xl-7",
+      ".col-xl-8",
+      ".col-xl-9",
+      ".col-xl-10",
+      ".col-xl-11",
+      ".col-xl-12",
+      ".col-xl",
+      ".col-xl-auto"
+    ],
     "averagePerRule": 1.5,
     "length": {
       "total": 55427,
@@ -168,14 +280,97 @@
         0
       ],
       "highestSelector": ".input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle)",
+      "highest10": [
+        {
+          "selector": ".input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle)",
+          "specificity": [
+            0,
+            6,
+            0
+          ]
+        },
+        {
+          "selector": ".card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-header",
+          "specificity": [
+            0,
+            6,
+            0
+          ]
+        },
+        {
+          "selector": ".card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-footer",
+          "specificity": [
+            0,
+            6,
+            0
+          ]
+        },
+        {
+          "selector": ".card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-top",
+          "specificity": [
+            0,
+            6,
+            0
+          ]
+        },
+        {
+          "selector": ".card-group > .card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom",
+          "specificity": [
+            0,
+            6,
+            0
+          ]
+        },
+        {
+          "selector": ".input-group-sm > .input-group-prepend > select.btn:not([size]):not([multiple])",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".input-group-lg > .input-group-prepend > select.btn:not([size]):not([multiple])",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".input-group-lg > .input-group-append > select.btn:not([size]):not([multiple])",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".was-validated .custom-control-input:valid:checked ~ .custom-control-label::before",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": ".was-validated .custom-control-input:valid:focus ~ .custom-control-label::before",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        }
+      ],
       "average": [
         0,
-        0.95,
-        1
+        1.62,
+        0.17
       ],
       "graphData": []
     },
     "sizeRatio": 0.31957080753220096,
+    "sizeRatioPercent": "31.96%",
     "usage": {}
   },
   "declarations": {
@@ -191,6 +386,7 @@
       "average": 22.86
     },
     "sizeRatio": 0.4801547491380404,
+    "sizeRatioPercent": "48.02%",
     "inAtRules": {
       "-ms-viewport": 1,
       "media": 1179,
@@ -468,6 +664,56 @@
       "calc(0.25rem - 1px)": 5,
       "10rem": 1,
       "calc(0.3rem - 1px)": 2
+    }
+  },
+  "widths": {
+    "total": 81,
+    "unique": 18,
+    "usage": {
+      "0": 5,
+      "device-width": 1,
+      "100%": 41,
+      "auto": 12,
+      "1%": 1,
+      "1rem": 7,
+      "1.5em": 1,
+      "50px": 1,
+      "0.8rem": 1,
+      "0.4rem": 2,
+      "0.5rem": 2,
+      "15%": 1,
+      "20px": 1,
+      "30px": 1,
+      "1px": 1,
+      "25%": 1,
+      "50%": 1,
+      "75%": 1
+    }
+  },
+  "heights": {
+    "total": 51,
+    "unique": 20,
+    "usage": {
+      "0": 8,
+      "auto": 6,
+      "calc(2.25rem + 2px)": 5,
+      "calc(1.8125rem + 2px)": 2,
+      "calc(2.875rem + 2px)": 2,
+      "1rem": 8,
+      "2.25rem": 1,
+      "0.5rem": 4,
+      "1.5em": 1,
+      "50px": 1,
+      "0.4rem": 1,
+      "0.8rem": 2,
+      "20px": 1,
+      "3px": 1,
+      "10px": 2,
+      "100%": 2,
+      "1px": 1,
+      "25%": 1,
+      "50%": 1,
+      "75%": 1
     }
   },
   "letterSpacings": {
@@ -914,7 +1160,7 @@
       "opacity": 2,
       "height": 1,
       "width": 1,
-      "transform": 4
+      "transform": 8
     },
     "longestDuration": 0.6,
     "shortestDuration": 0.15,
@@ -923,24 +1169,25 @@
     "timingFunctions": {
       "ease-in-out": 6,
       "linear": 1,
-      "ease": 4,
-      "ease-out": 2
+      "ease": 6,
+      "ease-out": 4
     },
     "invalidTimingFunctions": {}
   },
   "animations": {
-    "total": 1,
+    "total": 2,
     "unique": 1,
-    "infinite": 1,
+    "infinite": 2,
+    "withoutDefinitions": [],
     "longestDuration": 1,
     "shortestDuration": 1,
     "longestDelay": 0,
     "shortestDelay": 9007199254740991,
     "usage": {
-      "progress-bar-stripes": 1
+      "progress-bar-stripes": 2
     },
     "timingFunctions": {
-      "linear": 1
+      "linear": 2
     },
     "invalidTimingFunctions": {}
   },
@@ -982,6 +1229,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {
@@ -1038,7 +1286,7 @@
     }
   },
   "vendorPrefixes": {
-    "total": 500,
+    "total": 508,
     "unique": 4,
     "unknown": {
       "total": 0,
@@ -1046,7 +1294,7 @@
       "usage": {}
     },
     "usage": {
-      "-webkit-": 46,
+      "-webkit-": 54,
       "-ms-": 434,
       "-apple-": 3,
       "-moz-": 17

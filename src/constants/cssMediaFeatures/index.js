@@ -2,6 +2,7 @@
  * https://www.w3.org/TR/css3-mediaqueries/#mediafeatures
  * https://drafts.csswg.org/mediaqueries/#mq-features
  * https://drafts.csswg.org/mediaqueries/#mq-ranges
+ * https://drafts.csswg.org/mediaqueries/#descdef-media-update
  * https://developer.mozilla.org/ru/docs/Web/CSS/@media#Media_features
  * https://msdn.microsoft.com/en-us/windows/hh772370(v=vs.71)
  * https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariCSSRef/Articles/OtherStandardCSS3Features.html#//apple_ref/doc/uid/TP40007601-SW3
@@ -39,6 +40,7 @@ export const cssMediaFeatures = [
 	'overflow-inline',
 	'pointer',
 	'prefers-reduced-motion',
+	'prefers-reduced-transparency',
 	'range',
 	'resolution',
 	'scan',

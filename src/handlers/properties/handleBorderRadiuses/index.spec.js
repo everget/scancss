@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handleBorderRadiuses } from '.';
 
 describe('Module: handleBorderRadiuses', () => {
@@ -39,13 +40,7 @@ describe('Module: handleBorderRadiuses', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			borderRadiuses: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handleBorderRadiuses(decl, report);

@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handleDisplay } from '.';
 
 describe('Module: handleDisplay', () => {
@@ -185,13 +186,7 @@ describe('Module: handleDisplay', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			displays: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handleDisplay(decl, report);

@@ -11,7 +11,8 @@
       "shortest": 42,
       "average": 59.09
     },
-    "sizeRatio": 0.023505587097240807
+    "sizeRatio": 0.023505587097240807,
+    "sizeRatioPercent": "2.35%"
   },
   "atRules": {
     "total": 25,
@@ -27,6 +28,12 @@
       "media": 23,
       "keyframes": 1
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 23,
@@ -72,22 +79,27 @@
     "shortestStepsChainAnimation": "spinner-donut-anim",
     "animatableProperties": [
       "transform"
+    ],
+    "definedAnimations": [
+      "spinner-donut-anim"
     ]
   },
   "rules": {
     "total": 367,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 650,
-    "unique": 0,
+    "unique": 556,
     "baseUsage": {
-      "pseudoClass": 227,
-      "tag": 408,
-      "universal": 54,
       "attribute": 175,
+      "class": 521,
+      "id": 0,
+      "pseudoClass": 227,
       "pseudoElement": 42,
-      "class": 521
+      "tag": 408,
+      "universal": 54
     },
     "pseudoClassesUsage": {
       ":root": 15,
@@ -118,6 +130,37 @@
       "::-webkit-progress-bar": 1,
       "::-moz-progress-bar": 2
     },
+    "attributesUsage": {
+      "[title]": 1,
+      "[cite]": 1,
+      "[class^='col-sm-']": 1,
+      "[class^='col-sm-offset-']": 1,
+      "[class*='cols-sm-']": 1,
+      "[class^='col-md-']": 1,
+      "[class^='col-md-offset-']": 1,
+      "[class*='cols-md-']": 1,
+      "[class^='col-lg-']": 1,
+      "[class^='col-lg-offset-']": 1,
+      "[class*='cols-lg-']": 1,
+      "[type=\"number\"]": 3,
+      "[type=\"search\"]": 4,
+      "[type]": 1,
+      "[type=\"text\"]": 1,
+      "[type=\"email\"]": 1,
+      "[type=\"password\"]": 1,
+      "[type=\"url\"]": 1,
+      "[type=\"tel\"]": 1,
+      "[type=\"checkbox\"]": 24,
+      "[type=\"radio\"]": 6,
+      "[type=\"button\"]": 28,
+      "[type=\"submit\"]": 25,
+      "[type=\"reset\"]": 25,
+      "[readonly]": 3,
+      "[role=\"button\"]": 29,
+      "[disabled]": 6,
+      "[value=\"1000\"]": 2,
+      "[class^='icon-']": 3
+    },
     "combinators": {
       "total": 232,
       "adjacentSibling": 24,
@@ -127,6 +170,28 @@
     },
     "complex": 35,
     "maxPerRule": 20,
+    "maxPerRuleList": [
+      "button:hover",
+      "button:focus",
+      "[type=\"button\"]:hover",
+      "[type=\"button\"]:focus",
+      "[type=\"submit\"]:hover",
+      "[type=\"submit\"]:focus",
+      "[type=\"reset\"]:hover",
+      "[type=\"reset\"]:focus",
+      "a.button:hover",
+      "a.button:focus",
+      "label.button:hover",
+      "label.button:focus",
+      ".button:hover",
+      ".button:focus",
+      "a[role=\"button\"]:hover",
+      "a[role=\"button\"]:focus",
+      "label[role=\"button\"]:hover",
+      "label[role=\"button\"]:focus",
+      "[role=\"button\"]:hover",
+      "[role=\"button\"]:focus"
+    ],
     "averagePerRule": 1.77,
     "length": {
       "total": 11775,
@@ -146,14 +211,97 @@
         1
       ],
       "highestSelector": "input:not([type=\"button\"]):not([type=\"submit\"]):not([type=\"reset\"]):focus:invalid",
+      "highest10": [
+        {
+          "selector": "input:not([type=\"button\"]):not([type=\"submit\"]):not([type=\"reset\"]):focus:invalid",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": "[type=\"checkbox\"].modal + div .card .modal-close:hover",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": "[type=\"checkbox\"].modal:checked + div .card .modal-close",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": "[type=\"checkbox\"].modal + div .card .modal-close:focus",
+          "specificity": [
+            0,
+            5,
+            1
+          ]
+        },
+        {
+          "selector": "[type=\"checkbox\"].modal + div .card .modal-close:before",
+          "specificity": [
+            0,
+            4,
+            2
+          ]
+        },
+        {
+          "selector": ".collapse > :checked:last-of-type:not(:first-of-type) + label",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": "input:not([type=\"button\"]):not([type=\"submit\"]):not([type=\"reset\"])[readonly]",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": "[type=\"checkbox\"].modal + div .card .modal-close",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": "input:not([type=\"button\"]):not([type=\"submit\"]):not([type=\"reset\"]):focus",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        },
+        {
+          "selector": "input:not([type=\"button\"]):not([type=\"submit\"]):not([type=\"reset\"]):hover",
+          "specificity": [
+            0,
+            4,
+            1
+          ]
+        }
+      ],
       "average": [
         0,
-        0.96,
-        1
+        1.36,
+        0.69
       ],
       "graphData": []
     },
     "sizeRatio": 0.2129063754384696,
+    "sizeRatioPercent": "21.29%",
     "usage": {}
   },
   "declarations": {
@@ -169,6 +317,7 @@
       "average": 34.56
     },
     "sizeRatio": 0.6104400969153437,
+    "sizeRatioPercent": "61.04%",
     "inAtRules": {
       "media": 175,
       "keyframes": 2
@@ -362,6 +511,47 @@
       "50%": 2
     }
   },
+  "widths": {
+    "total": 28,
+    "unique": 13,
+    "usage": {
+      "100%": 6,
+      "auto": 2,
+      "calc(1rem + var(--universal-padding) / 2)": 1,
+      "0.5rem": 1,
+      "1px": 9,
+      "320px": 1,
+      "2rem": 1,
+      "100vw": 1,
+      "1.75rem": 1,
+      "calc(100% - 2 * var(--universal-margin))": 2,
+      "60%": 1,
+      "1.25rem": 1,
+      "1em": 1
+    }
+  },
+  "heights": {
+    "total": 29,
+    "unique": 16,
+    "usage": {
+      "auto": 3,
+      "0.0625rem": 1,
+      "200px": 1,
+      "calc(1rem + var(--universal-padding) / 2)": 1,
+      "0.5rem": 1,
+      "3.1875rem": 1,
+      "calc(3.1875rem + var(--universal-padding) / 2)": 1,
+      "100%": 3,
+      "1px": 9,
+      "100vh": 2,
+      "2rem": 1,
+      "1.75rem": 1,
+      "1.5rem": 1,
+      "0.75rem": 1,
+      "1.25rem": 1,
+      "1em": 1
+    }
+  },
   "letterSpacings": {
     "total": 0,
     "unique": 0,
@@ -500,6 +690,7 @@
     "total": 1,
     "unique": 1,
     "infinite": 1,
+    "withoutDefinitions": [],
     "longestDuration": 1.2,
     "shortestDuration": 1.2,
     "longestDelay": 0,
@@ -555,6 +746,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

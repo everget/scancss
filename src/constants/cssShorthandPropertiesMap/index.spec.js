@@ -1,10 +1,10 @@
 import { unique } from '../../converters/unique';
-import { cssShorthandProperties } from '.';
+import { cssShorthandPropertiesMap } from '.';
 
-describe('Module: cssShorthandProperties', () => {
+describe('Module: cssShorthandPropertiesMap', () => {
 	it('should have unique values in every section', () => {
 		Object
-			.values(cssShorthandProperties)
+			.values(cssShorthandPropertiesMap)
 			.forEach((props) => {
 				expect(unique(props).length).toBe(props.length);
 			});

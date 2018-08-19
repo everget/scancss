@@ -1,3 +1,4 @@
+import { getEmptyReport } from '../../common/getEmptyReport';
 import { handleVendorPrefix } from '.';
 
 describe('Module: handleVendorPrefix', () => {
@@ -40,18 +41,7 @@ describe('Module: handleVendorPrefix', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			vendorPrefixes: {
-				total: 0,
-				unique: 0,
-				unknown: {
-					total: 0,
-					unique: 0,
-					usage: {},
-				},
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		prefixedStrings.forEach((str) => {
 			handleVendorPrefix(str, report);

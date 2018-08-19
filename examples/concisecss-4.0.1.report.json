@@ -11,7 +11,8 @@
       "shortest": 7,
       "average": 80.33
     },
-    "sizeRatio": 0.013462935031562482
+    "sizeRatio": 0.013462935031562482,
+    "sizeRatioPercent": "1.35%"
   },
   "atRules": {
     "total": 7,
@@ -27,6 +28,12 @@
       "media": 5,
       "page": 1
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 5,
@@ -60,21 +67,25 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 191,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 335,
-    "unique": 0,
+    "unique": 234,
     "baseUsage": {
-      "tag": 296,
-      "pseudoClass": 34,
       "attribute": 115,
-      "universal": 7,
-      "pseudoElement": 35
+      "class": 0,
+      "id": 0,
+      "pseudoClass": 34,
+      "pseudoElement": 35,
+      "tag": 296,
+      "universal": 7
     },
     "pseudoClassesUsage": {
       ":not": 7,
@@ -106,6 +117,79 @@
       "::-ms-expand": 1,
       "::-ms-value": 1
     },
+    "attributesUsage": {
+      "[controls]": 1,
+      "[hidden]": 3,
+      "[title]": 2,
+      "[type=\"submit\"]": 14,
+      "[type=\"button\"]": 1,
+      "[type=\"reset\"]": 1,
+      "[type=\"checkbox\"]": 4,
+      "[type=\"radio\"]": 4,
+      "[type=\"search\"]": 1,
+      "[type=\"range\"]": 10,
+      "[disabled]": 6,
+      "[aria-busy=\"true\"]": 1,
+      "[aria-controls]": 1,
+      "[aria-disabled]": 1,
+      "[tabindex]": 1,
+      "[aria-hidden=\"false\"]": 2,
+      "[column]": 3,
+      "[type=\"file\"]": 2,
+      "[type=\"image\"]": 1,
+      "[multiple]": 1,
+      "[container]": 1,
+      "[grid]": 2,
+      "[grid~=\"no-gutters\"]": 2,
+      "[grid~=\"no-collapse\"]": 1,
+      "[grid~=\"wrap\"]": 1,
+      "[grid~=\"no-wrap\"]": 1,
+      "[grid~=\"wrap-reverse\"]": 1,
+      "[grid~=\"row\"]": 1,
+      "[grid~=\"row-reverse\"]": 1,
+      "[grid~=\"column\"]": 1,
+      "[grid~=\"column-reverse\"]": 1,
+      "[grid~=\"justify-start\"]": 1,
+      "[grid~=\"justify-end\"]": 1,
+      "[grid~=\"justify-center\"]": 1,
+      "[grid~=\"justify-between\"]": 1,
+      "[grid~=\"justify-around\"]": 1,
+      "[grid~=\"top\"]": 1,
+      "[grid~=\"center\"]": 1,
+      "[grid~=\"bottom\"]": 1,
+      "[grid~=\"baseline\"]": 1,
+      "[grid~=\"stretch\"]": 1,
+      "[column~=\"top\"]": 1,
+      "[column~=\"center\"]": 1,
+      "[column~=\"bottom\"]": 1,
+      "[column~=\"1\"]": 1,
+      "[column~=\"2\"]": 1,
+      "[column~=\"3\"]": 1,
+      "[column~=\"4\"]": 1,
+      "[column~=\"5\"]": 1,
+      "[column~=\"6\"]": 1,
+      "[column~=\"7\"]": 1,
+      "[column~=\"8\"]": 1,
+      "[column~=\"9\"]": 1,
+      "[column~=\"10\"]": 1,
+      "[column~=\"11\"]": 1,
+      "[column~=\"12\"]": 1,
+      "[column~=\"+1\"]": 1,
+      "[column~=\"+2\"]": 1,
+      "[column~=\"+3\"]": 1,
+      "[column~=\"+4\"]": 1,
+      "[column~=\"+5\"]": 1,
+      "[column~=\"+6\"]": 1,
+      "[column~=\"+7\"]": 1,
+      "[column~=\"+8\"]": 1,
+      "[column~=\"+9\"]": 1,
+      "[column~=\"+10\"]": 1,
+      "[column~=\"+11\"]": 1,
+      "[column~=\"+12\"]": 1,
+      "[href^=\"#\"]": 2,
+      "[href]": 2,
+      "[href^=\"javascript:\"]": 1
+    },
     "combinators": {
       "total": 51,
       "adjacentSibling": 9,
@@ -115,6 +199,22 @@
     },
     "complex": 1,
     "maxPerRule": 14,
+    "maxPerRuleList": [
+      "li",
+      "kbd",
+      "div",
+      "input",
+      "option",
+      "select",
+      "a",
+      "textarea",
+      "body",
+      "span",
+      "dd",
+      "code",
+      "label",
+      "[column]"
+    ],
     "averagePerRule": 1.75,
     "length": {
       "total": 3545,
@@ -134,14 +234,97 @@
         0
       ],
       "highestSelector": "[hidden][aria-hidden=\"false\"]:focus",
+      "highest10": [
+        {
+          "selector": "[hidden][aria-hidden=\"false\"]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": "a:visited[href]:after",
+          "specificity": [
+            0,
+            2,
+            2
+          ]
+        },
+        {
+          "selector": "input[type=\"submit\"]:active",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"submit\"]:focus",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[disabled][type=\"submit\"]",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input:not([type=\"submit\"])[disabled]",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"range\"]:focus",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=\"submit\"]:hover",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input:not([type=\"submit\"]):focus",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input:not([type=\"submit\"]):not([type=\"range\"])",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        }
+      ],
       "average": [
         0,
-        0.95,
-        1
+        0.42,
+        0.99
       ],
       "graphData": []
     },
     "sizeRatio": 0.1980336294061784,
+    "sizeRatioPercent": "19.8%",
     "usage": {}
   },
   "declarations": {
@@ -157,6 +340,7 @@
       "average": 20.51
     },
     "sizeRatio": 0.5018714038321882,
+    "sizeRatioPercent": "50.19%",
     "inAtRules": {
       "media": 112,
       "page": 1
@@ -338,6 +522,27 @@
       "50%": 3
     }
   },
+  "widths": {
+    "total": 11,
+    "unique": 3,
+    "usage": {
+      "100%": 5,
+      "0.75rem": 3,
+      "auto": 3
+    }
+  },
+  "heights": {
+    "total": 13,
+    "unique": 6,
+    "usage": {
+      "0": 1,
+      "1px": 1,
+      "auto": 4,
+      "0.3rem": 3,
+      "0.75rem": 3,
+      "2.25rem": 1
+    }
+  },
   "letterSpacings": {
     "total": 0,
     "unique": 0,
@@ -507,7 +712,7 @@
   },
   "transitions": {
     "properties": {
-      "background-color": 1
+      "background-color": 2
     },
     "longestDuration": 0.15,
     "shortestDuration": 0.15,
@@ -520,6 +725,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -558,6 +764,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

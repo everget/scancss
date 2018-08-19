@@ -3,6 +3,7 @@
 * [styleSheetSize](#stylesheetsize)
 * [comments](#comments)
 * [atRules](#atrules)
+* [imports](#imports)
 * [mediaQueries](#mediaqueries)
 * [keyframes](#keyframes)
 * [rules](#rules)
@@ -14,6 +15,8 @@
 * [zIndices](#zindices)
 * [floats](#floats)
 * [borderRadiuses](#borderradiuses)
+* [widths](#widths)
+* [heights](#heights)
 * [letterSpacings](#letterspacings)
 * [fontSizes](#fontsizes)
 * [lineHeights](#lineheights)
@@ -52,6 +55,8 @@
 
 * **sizeRatio** - `number`
 
+* **sizeRatioPercent** - `string | null`
+
 [Back to top](#report-structure)
 
 #### atRules
@@ -70,6 +75,18 @@
 	* **total** - `number`
 	* **unique** - `number`
 	* **usage** - `Record<string, number>`
+
+[Back to top](#report-structure)
+
+#### imports
+
+* **total** - `number`
+
+* **unique** - `number`
+
+* **usage** - `Record<string, number>`
+
+* **urls** - `Record<string, number>`
 
 [Back to top](#report-structure)
 
@@ -114,6 +131,8 @@
 
 * **animatableProperties** - `Array<string>`
 
+* **definedAnimations** - `Array<string>`
+
 [Back to top](#report-structure)
 
 #### rules
@@ -121,6 +140,8 @@
 * **total** - `number`
 
 * **empty** - `number`
+
+* **withoutTrailingSemicolon** - `number`
 
 [Back to top](#report-structure)
 
@@ -145,6 +166,8 @@
 
 * **pseudoElementsUsage** - `Record<string, number>`
 
+* **attributesUsage** - `Record<string, number>`
+
 * **combinators** - `Record<string, number>`
 	* **total** - `number`
 	* **adjacentSibling** - `number`
@@ -155,6 +178,8 @@
 * **complex** - `number`
 
 * **maxPerRule** - `number`
+
+* **maxPerRuleList** - `Array<string>`
 
 * **averagePerRule** - `number`
 
@@ -169,9 +194,12 @@
 	* **average** - `[number, number, number]`
 	* **highest** - `[number, number, number]`
 	* **highestSelector** - `string | null`
+	* **highest10** - `Array<Record<'selector' | 'specificity', string | [number, number, number]>`
 	* **graphData** - `Array<[number, number, number]>`
 
 * **sizeRatio** - `number`
+
+* **sizeRatioPercent** - `string | null`
 
 [Back to top](#report-structure)
 
@@ -194,6 +222,8 @@
 	* **average** - `number`
 
 * **sizeRatio** - `number`
+
+* **sizeRatioPercent** - `string | null`
 
 * **inAtRules** - `Record<string, number>`
 
@@ -279,6 +309,16 @@
 
 [Back to top](#report-structure)
 
+#### floats
+
+* **total** - `number`
+
+* **unique** - `number`
+
+* **usage** - `Record<string, number>`
+
+[Back to top](#report-structure)
+
 #### borderRadiuses
 
 * **total** - `number`
@@ -289,7 +329,17 @@
 
 [Back to top](#report-structure)
 
-#### floats
+#### widths
+
+* **total** - `number`
+
+* **unique** - `number`
+
+* **usage** - `Record<string, number>`
+
+[Back to top](#report-structure)
+
+#### heights
 
 * **total** - `number`
 
@@ -442,6 +492,8 @@
 
 * **infinite** - `number`
 
+* **withoutDefinitions** - `Array<string>`
+
 * **longestDuration** - `number`
 
 * **shortestDuration** - `number` (`Number.MAX_SAFE_INTEGER` if there are no animation durations in a stylesheet)
@@ -503,6 +555,8 @@
 	* **average** - `number`
 
 * **sizeRatio** - `number`
+
+* **sizeRatioPercent** - `string | null`
 
 [Back to top](#report-structure)
 

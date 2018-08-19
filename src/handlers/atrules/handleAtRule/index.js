@@ -48,7 +48,7 @@ export function handleAtRule(atRule, report, options) {
 	/**
 	 * @font-face descriptors are not declarations
 	 */
-	if (atRule.name !== 'font-face') {
+	if (atRule.name !== 'font-face' && options.declarations) {
 		atRule.walkDecls((decl) => {
 			countUsage(atRule.name, report.declarations.inAtRules);
 		});

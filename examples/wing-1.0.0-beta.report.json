@@ -11,7 +11,8 @@
       "shortest": 71,
       "average": 77.2
     },
-    "sizeRatio": 0.12763143392483192
+    "sizeRatio": 0.12763143392483192,
+    "sizeRatioPercent": "12.76%"
   },
   "atRules": {
     "total": 2,
@@ -25,6 +26,12 @@
     "usage": {
       "media": 2
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 2,
@@ -58,21 +65,25 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 108,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 177,
-    "unique": 0,
+    "unique": 153,
     "baseUsage": {
-      "universal": 1,
-      "tag": 94,
+      "attribute": 41,
       "class": 112,
+      "id": 0,
       "pseudoClass": 43,
-      "attribute": 41
+      "pseudoElement": 0,
+      "tag": 94,
+      "universal": 1
     },
     "pseudoClassesUsage": {
       ":last-child": 7,
@@ -81,6 +92,21 @@
       ":active": 3
     },
     "pseudoElementsUsage": {},
+    "attributesUsage": {
+      "[class^=\"col-\"]": 2,
+      "[class*=\" col-\"]": 3,
+      "[class^='col-']": 1,
+      "[type=text]": 3,
+      "[type=password]": 3,
+      "[type=email]": 3,
+      "[type=search]": 3,
+      "[type=number]": 3,
+      "[type=file]": 3,
+      "[type=tel]": 3,
+      "[type=url]": 3,
+      "[type=submit]": 8,
+      "[disabled]": 3
+    },
     "combinators": {
       "total": 35,
       "adjacentSibling": 0,
@@ -90,6 +116,18 @@
     },
     "complex": 0,
     "maxPerRule": 10,
+    "maxPerRuleList": [
+      "input[type=text]",
+      "input[type=password]",
+      "input[type=email]",
+      "input[type=search]",
+      "input[type=number]",
+      "input[type=file]",
+      "input[type=tel]",
+      "input[type=url]",
+      "select",
+      "textarea"
+    ],
     "averagePerRule": 1.64,
     "length": {
       "total": 2155,
@@ -108,15 +146,98 @@
         3,
         0
       ],
-      "highestSelector": ".row .col:last-child",
+      "highestSelector": ".button.outline:focus",
+      "highest10": [
+        {
+          "selector": ".button.outline:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".row [class*=\" col-\"]:last-child",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".row [class^=\"col-\"]:last-child",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".button.outline:hover",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": "[type=submit].outline:hover",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".row .col:last-child",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": "[type=submit].outline:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".nav .nav-item:last-child",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": "input[type=email]:hover",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        },
+        {
+          "selector": "input[type=search]:hover",
+          "specificity": [
+            0,
+            2,
+            1
+          ]
+        }
+      ],
       "average": [
         0,
-        1,
-        1
+        1.11,
+        0.53
       ],
       "graphData": []
     },
     "sizeRatio": 0.23751791028325803,
+    "sizeRatioPercent": "23.75%",
     "usage": {}
   },
   "declarations": {
@@ -132,6 +253,7 @@
       "average": 19.69
     },
     "sizeRatio": 0.4080238068995922,
+    "sizeRatioPercent": "40.8%",
     "inAtRules": {
       "media": 8
     },
@@ -253,6 +375,33 @@
     "unique": 1,
     "usage": {
       "2px": 7
+    }
+  },
+  "widths": {
+    "total": 18,
+    "unique": 13,
+    "usage": {
+      "80%": 1,
+      "100%": 6,
+      "8.333333333333332%": 1,
+      "16.666666666666664%": 1,
+      "25%": 1,
+      "33.33333333333333%": 1,
+      "41.66666666666667%": 1,
+      "50%": 1,
+      "58.333333333333336%": 1,
+      "66.66666666666666%": 1,
+      "75%": 1,
+      "83.33333333333334%": 1,
+      "91.66666666666666%": 1
+    }
+  },
+  "heights": {
+    "total": 3,
+    "unique": 2,
+    "usage": {
+      "45px": 2,
+      "auto": 1
     }
   },
   "letterSpacings": {
@@ -409,6 +558,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -443,6 +593,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

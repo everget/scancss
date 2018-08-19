@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handleZIndex } from '.';
 
 describe('Module: handleZIndex', () => {
@@ -53,14 +54,7 @@ describe('Module: handleZIndex', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			zIndices: {
-				total: 0,
-				unique: 0,
-				invalid: {},
-				usage: {},
-			},
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handleZIndex(decl, report);

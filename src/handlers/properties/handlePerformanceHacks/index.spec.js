@@ -1,4 +1,5 @@
-import { parseCss } from '../../../converters/parseCss';
+import { getEmptyReport } from '../../../common/getEmptyReport';
+import { parseCss } from '../../../common/parseCss';
 import { handlePerformanceHacks } from '.';
 
 describe('Module: handlePerformanceHacks', () => {
@@ -36,11 +37,7 @@ describe('Module: handlePerformanceHacks', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			properties: {
-				performanceHacks: {},
-			}
-		};
+		report = getEmptyReport();
 
 		cssRoot.walkDecls((decl) => {
 			handlePerformanceHacks(decl, report);

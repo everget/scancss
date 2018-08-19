@@ -14,6 +14,8 @@ import { handlePosition } from '../properties/handlePosition';
 import { handleZIndex } from '../properties/handleZIndex';
 import { handleFloat } from '../properties/handleFloat';
 import { handleBorderRadiuses } from '../properties/handleBorderRadiuses';
+import { handleWidth } from '../properties/handleWidth';
+import { handleHeight } from '../properties/handleHeight';
 import { handleLetterSpacing } from '../properties/handleLetterSpacing';
 import { handlePerformanceHacks } from '../properties/handlePerformanceHacks';
 import { handleFunctions } from '../handleFunctions';
@@ -134,6 +136,14 @@ export function handleDeclaration(decl, report, options) {
 		options.borderRadiuses
 	) {
 		handleBorderRadiuses(decl, report);
+	}
+
+	if (prop === 'width' && options.widths) {
+		handleWidth(decl, report);
+	}
+
+	if (prop === 'height' && options.heights) {
+		handleHeight(decl, report);
 	}
 
 	if (prop === 'letter-spacing' && options.letterSpacings) {

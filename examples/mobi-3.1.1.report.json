@@ -11,7 +11,8 @@
       "shortest": 36,
       "average": 40
     },
-    "sizeRatio": 0.005799623024503407
+    "sizeRatio": 0.005799623024503407,
+    "sizeRatioPercent": "0.58%"
   },
   "atRules": {
     "total": 5,
@@ -25,6 +26,12 @@
     "usage": {
       "media": 5
     }
+  },
+  "imports": {
+    "total": 0,
+    "unique": 0,
+    "usage": {},
+    "urls": {}
   },
   "mediaQueries": {
     "total": 5,
@@ -57,22 +64,25 @@
     "shortestStepsChain": null,
     "shortestStepsChainLength": 9007199254740991,
     "shortestStepsChainAnimation": null,
-    "animatableProperties": []
+    "animatableProperties": [],
+    "definedAnimations": []
   },
   "rules": {
     "total": 122,
-    "empty": 0
+    "empty": 0,
+    "withoutTrailingSemicolon": 0
   },
   "selectors": {
     "total": 271,
-    "unique": 0,
+    "unique": 192,
     "baseUsage": {
-      "tag": 117,
-      "universal": 1,
-      "pseudoElement": 4,
-      "pseudoClass": 23,
       "attribute": 46,
-      "class": 210
+      "class": 210,
+      "id": 0,
+      "pseudoClass": 23,
+      "pseudoElement": 4,
+      "tag": 117,
+      "universal": 1
     },
     "pseudoClassesUsage": {
       ":active": 4,
@@ -85,6 +95,35 @@
       "::before": 1,
       "::-webkit-file-upload-button": 2
     },
+    "attributesUsage": {
+      "[title]": 1,
+      "[controls]": 1,
+      "[role=button]": 2,
+      "[type=reset]": 1,
+      "[type=submit]": 1,
+      "[type=button]": 1,
+      "[type=search]": 3,
+      "[hidden]": 1,
+      "[disabled]": 4,
+      "[type=email]": 2,
+      "[type=number]": 2,
+      "[type=password]": 2,
+      "[type=tel]": 2,
+      "[type=text]": 2,
+      "[type=url]": 2,
+      "[type=date]": 2,
+      "[type=datetime-local]": 2,
+      "[type=month]": 2,
+      "[type=time]": 2,
+      "[type=week]": 2,
+      "[type=checkbox]": 1,
+      "[type=radio]": 1,
+      "[type=file]": 2,
+      "[type=range]": 2,
+      "[type=color]": 1,
+      "[type=image]": 1,
+      "[readonly]": 1
+    },
     "combinators": {
       "total": 88,
       "adjacentSibling": 0,
@@ -94,6 +133,20 @@
     },
     "complex": 0,
     "maxPerRule": 12,
+    "maxPerRuleList": [
+      ".flex-bottom",
+      ".flex-center",
+      ".flex-left",
+      ".flex-middle",
+      ".flex-right",
+      ".flex-top",
+      ".flex-vertical.flex-bottom",
+      ".flex-vertical.flex-center",
+      ".flex-vertical.flex-left",
+      ".flex-vertical.flex-middle",
+      ".flex-vertical.flex-right",
+      ".flex-vertical.flex-top"
+    ],
     "averagePerRule": 2.22,
     "length": {
       "total": 3401,
@@ -112,15 +165,98 @@
         3,
         0
       ],
-      "highestSelector": ".form [type=email]:focus",
+      "highestSelector": ".form [type=text]:focus",
+      "highest10": [
+        {
+          "selector": ".form [type=text]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form [type=tel]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form [type=number]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form [type=password]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form [type=search]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form [type=email]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form [type=url]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form [type=date]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form [type=datetime-local]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "selector": ".form [type=month]:focus",
+          "specificity": [
+            0,
+            3,
+            0
+          ]
+        }
+      ],
       "average": [
         0,
-        1,
-        1
+        1.03,
+        0.45
       ],
       "graphData": []
     },
     "sizeRatio": 0.2465564738292011,
+    "sizeRatioPercent": "24.66%",
     "usage": {}
   },
   "declarations": {
@@ -136,6 +272,7 @@
       "average": 22.53
     },
     "sizeRatio": 0.5129041612295201,
+    "sizeRatioPercent": "51.29%",
     "inAtRules": {
       "media": 23
     },
@@ -303,6 +440,20 @@
       "0.1875rem": 3
     }
   },
+  "widths": {
+    "total": 5,
+    "unique": 1,
+    "usage": {
+      "100%": 5
+    }
+  },
+  "heights": {
+    "total": 1,
+    "unique": 1,
+    "usage": {
+      "0": 1
+    }
+  },
   "letterSpacings": {
     "total": 0,
     "unique": 0,
@@ -456,6 +607,7 @@
     "total": 0,
     "unique": 0,
     "infinite": 0,
+    "withoutDefinitions": [],
     "longestDuration": 0,
     "shortestDuration": 9007199254740991,
     "longestDelay": 0,
@@ -490,6 +642,7 @@
       "average": 0
     },
     "sizeRatio": 0,
+    "sizeRatioPercent": "0%",
     "usage": {}
   },
   "units": {

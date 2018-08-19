@@ -1,18 +1,12 @@
-import { parseCss } from '../../converters/parseCss';
+import { getEmptyReport } from '../../common/getEmptyReport';
+import { parseCss } from '../../common/parseCss';
 import { handleVariables } from '.';
 
 describe('Module: handleVariables', () => {
 	let report;
 
 	beforeEach(() => {
-		report = {
-			variables: {
-				total: 0,
-				unique: 0,
-				usage: {},
-				valuesMap: {},
-			},
-		};
+		report = getEmptyReport();
 	});
 
 	afterEach(() => {
