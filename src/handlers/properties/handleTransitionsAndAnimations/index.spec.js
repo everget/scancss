@@ -26,6 +26,9 @@ describe('Module: handleTransitionsAndAnimations', () => {
 		}
 
 		.selector {
+			transition-property: background-color, opacity, -webkit-transform;
+			-webkit-transition-duration: 150ms;
+			transition-duration: 150ms;
 			transition: all 500ms ease;
 		}
 
@@ -89,7 +92,9 @@ describe('Module: handleTransitionsAndAnimations', () => {
 					right: 1,
 					top: 1,
 					transform: 1,
-					'-webkit-transform': 1,
+					'-webkit-transform': 2,
+					'background-color': 1,
+					opacity: 1,
 				});
 			});
 		});
@@ -102,7 +107,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 
 		describe('transitions.shortestDuration', () => {
 			it('should be counted correctly', () => {
-				expect(report.transitions.shortestDuration).toBe(0.5);
+				expect(report.transitions.shortestDuration).toBe(0.15);
 			});
 		});
 

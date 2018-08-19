@@ -3,11 +3,12 @@ import { expandShorthandProperty } from 'css-property-parser';
 
 import { cssNamedTimingFunctions } from '../../../constants/cssNamedTimingFunctions';
 import { cssExplicitDefaultingKeywords } from '../../../constants/cssExplicitDefaultingKeywords';
-import { rePrefixedString } from '../../../constants/rePrefixedString';
+import { reExistingVendorPrefix } from '../../../constants/reExistingVendorPrefix';
 import { reCubicBezier } from '../../../constants/reCubicBezier';
 import { countUsage } from '../../../calculators/countUsage';
 import { isNumber } from '../../../predicates/isNumber';
 import { isShorthandProperty } from '../../../predicates/isShorthandProperty';
+import { handleVendorPrefix } from '../../handleVendorPrefix';
 
 const reInfiniteKeyword = /\binfinite\b/g;
 
@@ -194,20 +195,34 @@ export function handleTransitionsAndAnimations(decl, report) {
 	const propValue = decl.value;
 
 	if (isShorthandProperty(prop)) {
-		let safePropValue = propValue;
+		const safePropValue = postcss.list
+			.comma(propValue)
+			.map((value) => {
+				// https://github.com/mahirshah/css-property-parser/issues/26
+				const cleanedValue = reCubicBezier.test(value)
+					? value.replace(reCubicBezier, '')
+					: value;
 
-		// https://github.com/mahirshah/css-property-parser/issues/27
-		if (rePrefixedString.test(safePropValue)) {
-			safePropValue = safePropValue.replace(rePrefixedString, '');
-		}
+				return postcss.list
+					.space(cleanedValue)
+					.map((valuePart) => {
+						// https://github.com/mahirshah/css-property-parser/issues/27
+						if (reExistingVendorPrefix.test(valuePart)) {
+							handleVendorPrefix(valuePart, report);
+							return valuePart.replace(reExistingVendorPrefix, '');
+						}
 
-		// https://github.com/mahirshah/css-property-parser/issues/26
-		if (reCubicBezier.test(safePropValue)) {
-			safePropValue = safePropValue.replace(reCubicBezier, '');
-		}
+						return valuePart;
+					})
+					.join(' ');
+			})
+			.join(', ');
 
 		try {
-			const longhand = expandShorthandProperty(prop, safePropValue);
+			const longhand = expandShorthandProperty(
+				postcss.vendor.unprefixed(prop),
+				safePropValue
+			);
 
 			if (prop.includes('animation')) {
 				handleAnimationLonghand(longhand, report);
