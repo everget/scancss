@@ -1,10 +1,10 @@
-import { cssShorthandProperties } from '../../constants/cssShorthandProperties';
+import { cssShorthandPropertiesMap } from '../../constants/cssShorthandPropertiesMap';
 import { isShorthandProperty } from '.';
 
 describe('Module: isShorthandProperty', () => {
 	describe('Positives', () => {
 		Object
-			.keys(cssShorthandProperties)
+			.keys(cssShorthandPropertiesMap)
 			.forEach((prop) => {
 				it(`should return 'true' for ${prop}`, () => {
 					expect(isShorthandProperty(prop)).toBe(true);
@@ -14,7 +14,7 @@ describe('Module: isShorthandProperty', () => {
 
 	describe('Negatives', () => {
 		Object
-			.values(cssShorthandProperties)
+			.values(cssShorthandPropertiesMap)
 			.reduce((acc, props) => acc.concat(props), [])
 			/* eslint-disable-next-line arrow-body-style */
 			.filter((prop) => {

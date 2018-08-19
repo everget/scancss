@@ -1,14 +1,14 @@
-import { cssShorthandProperties } from '../../constants/cssShorthandProperties';
+import { cssShorthandPropertiesMap } from '../../constants/cssShorthandPropertiesMap';
 import { rePrefixedString } from '../../constants/rePrefixedString';
 
 export function isShorthandProperty(property) {
 	if (rePrefixedString.test(property)) {
 		return Object
-			.keys(cssShorthandProperties)
+			.keys(cssShorthandPropertiesMap)
 			.includes(property.replace(rePrefixedString, ''));
 	}
 
 	return Object
-		.keys(cssShorthandProperties)
+		.keys(cssShorthandPropertiesMap)
 		.includes(property);
 }

@@ -3,7 +3,7 @@
  * https://www.w3.org/TR/CSS2/about.html#shorthand
  */
 
-export const cssShorthandProperties = {
+export const cssShorthandPropertiesMap = {
 	/**
 	 * CSS 2.1: https://www.w3.org/TR/CSS2/propidx.html
 	 */
@@ -236,6 +236,13 @@ export const cssShorthandProperties = {
 	overflow: [
 		'overflow-x',
 		'overflow-y',
+	],
+	/**
+	 * https://wicg.github.io/overscroll-behavior/
+	 */
+	'overscroll-behavior': [
+		'overscroll-behavior-x',
+		'overscroll-behavior-y',
 	],
 	/**
 	 * CSS Box Alignment Module Level 3: https://drafts.csswg.org/css-align-3/
