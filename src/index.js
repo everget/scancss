@@ -167,7 +167,7 @@ export default function scancss(src, options) {
 
 			report.selectors.unique = Object.keys(report.selectors.usage).length;
 
-			if (options.selectorsUsage === false) {
+			if (scancssOptions.selectorsUsage === false) {
 				report.selectors.usage = {};
 			}
 		}
