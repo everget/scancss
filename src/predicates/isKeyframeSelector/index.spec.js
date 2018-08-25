@@ -1,6 +1,6 @@
-import { isKeyframeRuleSelector } from '.';
+import { isKeyframeSelector } from '.';
 
-describe('Module: isKeyframeRuleSelector', () => {
+describe('Module: isKeyframeSelector', () => {
 	describe('Positives', () => {
 		const keyframeRuleSelectors = [
 			'from',
@@ -14,7 +14,7 @@ describe('Module: isKeyframeRuleSelector', () => {
 
 		keyframeRuleSelectors.forEach((selector) => {
 			it(`should return 'true' for ${selector}`, () => {
-				expect(isKeyframeRuleSelector(selector)).toBe(true);
+				expect(isKeyframeSelector(selector)).toBe(true);
 			});
 		});
 	});
@@ -35,7 +35,7 @@ describe('Module: isKeyframeRuleSelector', () => {
 
 		notKeyframeRuleSelectors.forEach((selector) => {
 			it(`should return 'false' for ${selector}`, () => {
-				expect(isKeyframeRuleSelector(selector)).toBe(false);
+				expect(isKeyframeSelector(selector)).toBe(false);
 			});
 		});
 	});
