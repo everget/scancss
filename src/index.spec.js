@@ -96,7 +96,7 @@ describe('Module: scancss', () => {
 
 		describe('.styleSheetSize', () => {
 			it('should be counted correctly', () => {
-				expect(report.styleSheetSize).toEqual({
+				expect(report.styleSheetSize).toStrictEqual({
 					source: 1010,
 					gzipSource: 487,
 				});
@@ -105,7 +105,7 @@ describe('Module: scancss', () => {
 
 		describe('.comments', () => {
 			it('should be counted correctly', () => {
-				expect(report.comments).toEqual({
+				expect(report.comments).toStrictEqual({
 					total: 1,
 					length: {
 						total: 32,
@@ -121,7 +121,7 @@ describe('Module: scancss', () => {
 
 		describe('.atRules', () => {
 			it('should be counted correctly', () => {
-				expect(report.atRules).toEqual({
+				expect(report.atRules).toStrictEqual({
 					total: 5,
 					empty: 1,
 					prefixed: 1,
@@ -145,7 +145,7 @@ describe('Module: scancss', () => {
 
 		describe('.imports', () => {
 			it('should be counted correctly', () => {
-				expect(report.imports).toEqual({
+				expect(report.imports).toStrictEqual({
 					total: 0,
 					unique: 0,
 					usage: {},
@@ -156,7 +156,7 @@ describe('Module: scancss', () => {
 
 		describe('.mediaQueries', () => {
 			it('should be counted correctly', () => {
-				expect(report.mediaQueries).toEqual({
+				expect(report.mediaQueries).toStrictEqual({
 					total: 1,
 					unique: 1,
 					onlyKeyword: 0,
@@ -184,7 +184,7 @@ describe('Module: scancss', () => {
 
 		describe('.keyframes', () => {
 			it('should be counted correctly', () => {
-				expect(report.keyframes).toEqual({
+				expect(report.keyframes).toStrictEqual({
 					stepsChains: {
 						'0% -> 10% -> 88% -> 100%': 2,
 					},
@@ -206,7 +206,7 @@ describe('Module: scancss', () => {
 
 		describe('.rules', () => {
 			it('should be counted correctly', () => {
-				expect(report.rules).toEqual({
+				expect(report.rules).toStrictEqual({
 					total: 10,
 					empty: 3,
 					withoutTrailingSemicolon: 4,
@@ -216,7 +216,7 @@ describe('Module: scancss', () => {
 
 		describe('.selectors', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors).toEqual({
+				expect(report.selectors).toStrictEqual({
 					total: 7,
 					unique: 5,
 					baseUsage: {
@@ -319,7 +319,7 @@ describe('Module: scancss', () => {
 
 		describe('.declarations', () => {
 			it('should be counted correctly', () => {
-				expect(report.declarations).toEqual({
+				expect(report.declarations).toStrictEqual({
 					total: 20,
 					unique: 18,
 					uniqueRatio: 0.9,
@@ -364,7 +364,7 @@ describe('Module: scancss', () => {
 
 		describe('.properties', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties).toEqual({
+				expect(report.properties).toStrictEqual({
 					total: 20,
 					unique: 11,
 					shorthands: 4,
@@ -418,7 +418,7 @@ describe('Module: scancss', () => {
 
 		describe('.displays', () => {
 			it('should be counted correctly', () => {
-				expect(report.displays).toEqual({
+				expect(report.displays).toStrictEqual({
 					total: 1,
 					unique: 1,
 					usage: {
@@ -430,7 +430,7 @@ describe('Module: scancss', () => {
 
 		describe('.positions', () => {
 			it('should be counted correctly', () => {
-				expect(report.positions).toEqual({
+				expect(report.positions).toStrictEqual({
 					total: 1,
 					unique: 1,
 					usage: {
@@ -442,7 +442,7 @@ describe('Module: scancss', () => {
 
 		describe('.zIndices', () => {
 			it('should be counted correctly', () => {
-				expect(report.zIndices).toEqual({
+				expect(report.zIndices).toStrictEqual({
 					total: 1,
 					unique: 1,
 					invalid: {
@@ -457,7 +457,7 @@ describe('Module: scancss', () => {
 
 		describe('.floats', () => {
 			it('should be counted correctly', () => {
-				expect(report.floats).toEqual({
+				expect(report.floats).toStrictEqual({
 					total: 0,
 					unique: 0,
 					usage: {},
@@ -467,7 +467,7 @@ describe('Module: scancss', () => {
 
 		describe('.borderRadiuses', () => {
 			it('should be counted correctly', () => {
-				expect(report.borderRadiuses).toEqual({
+				expect(report.borderRadiuses).toStrictEqual({
 					total: 0,
 					unique: 0,
 					usage: {},
@@ -477,7 +477,7 @@ describe('Module: scancss', () => {
 
 		describe('.widths', () => {
 			it('should be counted correctly', () => {
-				expect(report.widths).toEqual({
+				expect(report.widths).toStrictEqual({
 					total: 2,
 					unique: 2,
 					usage: {
@@ -490,7 +490,7 @@ describe('Module: scancss', () => {
 
 		describe('.heights', () => {
 			it('should be counted correctly', () => {
-				expect(report.heights).toEqual({
+				expect(report.heights).toStrictEqual({
 					total: 2,
 					unique: 2,
 					usage: {
@@ -503,7 +503,7 @@ describe('Module: scancss', () => {
 
 		describe('.letterSpacings', () => {
 			it('should be counted correctly', () => {
-				expect(report.letterSpacings).toEqual({
+				expect(report.letterSpacings).toStrictEqual({
 					total: 0,
 					unique: 0,
 					usage: {},
@@ -513,7 +513,7 @@ describe('Module: scancss', () => {
 
 		describe('.fontSizes', () => {
 			it('should be counted correctly', () => {
-				expect(report.fontSizes).toEqual({
+				expect(report.fontSizes).toStrictEqual({
 					total: 0,
 					unique: 0,
 					keywords: {
@@ -528,7 +528,7 @@ describe('Module: scancss', () => {
 
 		describe('.lineHeights', () => {
 			it('should be counted correctly', () => {
-				expect(report.lineHeights).toEqual({
+				expect(report.lineHeights).toStrictEqual({
 					total: 0,
 					unique: 0,
 					hardCoded: 0,
@@ -539,7 +539,7 @@ describe('Module: scancss', () => {
 
 		describe('.fontFamilies', () => {
 			it('should be counted correctly', () => {
-				expect(report.fontFamilies).toEqual({
+				expect(report.fontFamilies).toStrictEqual({
 					total: 0,
 					unique: 0,
 					generic: {},
@@ -555,7 +555,7 @@ describe('Module: scancss', () => {
 
 		describe('.colors', () => {
 			it('should be counted correctly', () => {
-				expect(report.colors).toEqual({
+				expect(report.colors).toStrictEqual({
 					total: 4,
 					unique: 4,
 					currentColorKeyword: 0,
@@ -579,7 +579,7 @@ describe('Module: scancss', () => {
 
 		describe('.backgroundColors', () => {
 			it('should be counted correctly', () => {
-				expect(report.backgroundColors).toEqual({
+				expect(report.backgroundColors).toStrictEqual({
 					total: 2,
 					unique: 2,
 					currentColorKeyword: 0,
@@ -599,7 +599,7 @@ describe('Module: scancss', () => {
 
 		describe('.allColors', () => {
 			it('should be counted correctly', () => {
-				expect(report.allColors).toEqual({
+				expect(report.allColors).toStrictEqual({
 					total: 6,
 					unique: 6,
 					currentColorKeyword: 0,
@@ -625,7 +625,7 @@ describe('Module: scancss', () => {
 
 		describe('.transitions', () => {
 			it('should be counted correctly', () => {
-				expect(report.transitions).toEqual({
+				expect(report.transitions).toStrictEqual({
 					properties: {},
 					longestDuration: 0,
 					shortestDuration: Number.MAX_SAFE_INTEGER,
@@ -639,7 +639,7 @@ describe('Module: scancss', () => {
 
 		describe('.animations', () => {
 			it('should be counted correctly', () => {
-				expect(report.animations).toEqual({
+				expect(report.animations).toStrictEqual({
 					total: 2,
 					unique: 2,
 					infinite: 1,
@@ -664,7 +664,7 @@ describe('Module: scancss', () => {
 
 		describe('.functions', () => {
 			it('should be counted correctly', () => {
-				expect(report.functions).toEqual({
+				expect(report.functions).toStrictEqual({
 					total: 0,
 					unique: 0,
 					prefixed: 0,
@@ -675,7 +675,7 @@ describe('Module: scancss', () => {
 
 		describe('.filters', () => {
 			it('should be counted correctly', () => {
-				expect(report.filters).toEqual({
+				expect(report.filters).toStrictEqual({
 					total: 0,
 					unique: 0,
 					usage: {},
@@ -685,7 +685,7 @@ describe('Module: scancss', () => {
 
 		describe('.gradients', () => {
 			it('should be counted correctly', () => {
-				expect(report.gradients).toEqual({
+				expect(report.gradients).toStrictEqual({
 					total: 0,
 					unique: 0,
 					usage: {},
@@ -695,7 +695,7 @@ describe('Module: scancss', () => {
 
 		describe('.dataUris', () => {
 			it('should be counted correctly', () => {
-				expect(report.dataUris).toEqual({
+				expect(report.dataUris).toStrictEqual({
 					total: 0,
 					unique: 0,
 					length: {
@@ -713,7 +713,7 @@ describe('Module: scancss', () => {
 
 		describe('.browserHacks', () => {
 			it('should be counted correctly', () => {
-				expect(report.browserHacks).toEqual({
+				expect(report.browserHacks).toStrictEqual({
 					total: 0,
 					usage: {
 						supports: {},
@@ -725,7 +725,7 @@ describe('Module: scancss', () => {
 
 		describe('.units', () => {
 			it('should be counted correctly', () => {
-				expect(report.units).toEqual({
+				expect(report.units).toStrictEqual({
 					total: 7,
 					unique: 2,
 					usage: {
@@ -743,7 +743,7 @@ describe('Module: scancss', () => {
 
 		describe('.variables', () => {
 			it('should be counted correctly', () => {
-				expect(report.variables).toEqual({
+				expect(report.variables).toStrictEqual({
 					total: 0,
 					unique: 0,
 					usage: {},
@@ -754,7 +754,7 @@ describe('Module: scancss', () => {
 
 		describe('.vendorPrefixes', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes).toEqual({
+				expect(report.vendorPrefixes).toStrictEqual({
 					total: 2,
 					unique: 2,
 					unknown: {
@@ -788,7 +788,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.stylesheetSize` counting when is set to `false`', () => {
-				expect(report.stylesheetSize).toEqual(getEmptyReport().stylesheetSize);
+				expect(report.stylesheetSize).toStrictEqual(getEmptyReport().stylesheetSize);
 			});
 		});
 
@@ -808,7 +808,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.comments` counting when is set to `false`', () => {
-				expect(report.comments).toEqual(getEmptyReport().comments);
+				expect(report.comments).toStrictEqual(getEmptyReport().comments);
 			});
 		});
 
@@ -828,19 +828,19 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.atRules` counting when is set to `false`', () => {
-				expect(report.atRules).toEqual(getEmptyReport().atRules);
+				expect(report.atRules).toStrictEqual(getEmptyReport().atRules);
 			});
 
 			it('should switch off `report.imports` counting when is set to `false`', () => {
-				expect(report.imports).toEqual(getEmptyReport().imports);
+				expect(report.imports).toStrictEqual(getEmptyReport().imports);
 			});
 
 			it('should switch off `report.mediaQueries` counting when is set to `false`', () => {
-				expect(report.mediaQueries).toEqual(getEmptyReport().mediaQueries);
+				expect(report.mediaQueries).toStrictEqual(getEmptyReport().mediaQueries);
 			});
 
 			it('should switch off `report.keyframes` counting when is set to `false`', () => {
-				expect(report.keyframes).toEqual(getEmptyReport().keyframes);
+				expect(report.keyframes).toStrictEqual(getEmptyReport().keyframes);
 			});
 		});
 
@@ -860,7 +860,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.rules` counting when is set to `false`', () => {
-				expect(report.rules).toEqual(getEmptyReport().rules);
+				expect(report.rules).toStrictEqual(getEmptyReport().rules);
 			});
 		});
 
@@ -880,7 +880,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.selectors` counting when is set to `false`', () => {
-				expect(report.selectors).toEqual(getEmptyReport().selectors);
+				expect(report.selectors).toStrictEqual(getEmptyReport().selectors);
 			});
 		});
 
@@ -900,7 +900,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.selectors.usage` counting when is set to `false`', () => {
-				expect(report.selectors.usage).toEqual(getEmptyReport().selectors.usage);
+				expect(report.selectors.usage).toStrictEqual(getEmptyReport().selectors.usage);
 			});
 		});
 
@@ -920,7 +920,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.selectors.attributesUsage` counting when is set to `false`', () => {
-				expect(report.selectors.attributesUsage).toEqual(getEmptyReport().selectors.attributesUsage);
+				expect(report.selectors.attributesUsage).toStrictEqual(getEmptyReport().selectors.attributesUsage);
 			});
 		});
 
@@ -940,7 +940,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.declarations` counting when is set to `false`', () => {
-				expect(report.declarations).toEqual(getEmptyReport().declarations);
+				expect(report.declarations).toStrictEqual(getEmptyReport().declarations);
 			});
 		});
 
@@ -960,7 +960,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.properties` counting when is set to `false`', () => {
-				expect(report.properties).toEqual(getEmptyReport().properties);
+				expect(report.properties).toStrictEqual(getEmptyReport().properties);
 			});
 		});
 
@@ -980,7 +980,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.properties.engineTriggerProperties` counting when is set to `false`', () => {
-				expect(report.properties.engineTriggerProperties).toEqual(getEmptyReport().properties.engineTriggerProperties);
+				expect(report.properties.engineTriggerProperties).toStrictEqual(getEmptyReport().properties.engineTriggerProperties);
 			});
 		});
 
@@ -1000,7 +1000,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.properties.performanceHacks` counting when is set to `false`', () => {
-				expect(report.properties.performanceHacks).toEqual(getEmptyReport().properties.performanceHacks);
+				expect(report.properties.performanceHacks).toStrictEqual(getEmptyReport().properties.performanceHacks);
 			});
 		});
 
@@ -1020,7 +1020,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.displays` counting when is set to `false`', () => {
-				expect(report.displays).toEqual(getEmptyReport().displays);
+				expect(report.displays).toStrictEqual(getEmptyReport().displays);
 			});
 		});
 
@@ -1040,7 +1040,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.positions` counting when is set to `false`', () => {
-				expect(report.positions).toEqual(getEmptyReport().positions);
+				expect(report.positions).toStrictEqual(getEmptyReport().positions);
 			});
 		});
 
@@ -1060,7 +1060,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.zIndices` counting when is set to `false`', () => {
-				expect(report.zIndices).toEqual(getEmptyReport().zIndices);
+				expect(report.zIndices).toStrictEqual(getEmptyReport().zIndices);
 			});
 		});
 
@@ -1080,7 +1080,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.floats` counting when is set to `false`', () => {
-				expect(report.floats).toEqual(getEmptyReport().floats);
+				expect(report.floats).toStrictEqual(getEmptyReport().floats);
 			});
 		});
 
@@ -1100,7 +1100,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.borderRadiuses` counting when is set to `false`', () => {
-				expect(report.borderRadiuses).toEqual(getEmptyReport().borderRadiuses);
+				expect(report.borderRadiuses).toStrictEqual(getEmptyReport().borderRadiuses);
 			});
 		});
 
@@ -1120,7 +1120,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.widths` counting when is set to `false`', () => {
-				expect(report.widths).toEqual(getEmptyReport().widths);
+				expect(report.widths).toStrictEqual(getEmptyReport().widths);
 			});
 		});
 
@@ -1140,7 +1140,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.heights` counting when is set to `false`', () => {
-				expect(report.heights).toEqual(getEmptyReport().heights);
+				expect(report.heights).toStrictEqual(getEmptyReport().heights);
 			});
 		});
 
@@ -1160,7 +1160,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.letterSpacings` counting when is set to `false`', () => {
-				expect(report.letterSpacings).toEqual(getEmptyReport().letterSpacings);
+				expect(report.letterSpacings).toStrictEqual(getEmptyReport().letterSpacings);
 			});
 		});
 
@@ -1180,15 +1180,15 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.fontSizes` counting when is set to `false`', () => {
-				expect(report.fontSizes).toEqual(getEmptyReport().fontSizes);
+				expect(report.fontSizes).toStrictEqual(getEmptyReport().fontSizes);
 			});
 
 			it('should switch off `report.lineHeights` counting when is set to `false`', () => {
-				expect(report.lineHeights).toEqual(getEmptyReport().lineHeights);
+				expect(report.lineHeights).toStrictEqual(getEmptyReport().lineHeights);
 			});
 
 			it('should switch off `report.fontFamilies` counting when is set to `false`', () => {
-				expect(report.fontFamilies).toEqual(getEmptyReport().fontFamilies);
+				expect(report.fontFamilies).toStrictEqual(getEmptyReport().fontFamilies);
 			});
 		});
 
@@ -1208,7 +1208,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.colors` counting when is set to `false`', () => {
-				expect(report.colors).toEqual(getEmptyReport().colors);
+				expect(report.colors).toStrictEqual(getEmptyReport().colors);
 			});
 		});
 
@@ -1228,7 +1228,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.backgroundColors` counting when is set to `false`', () => {
-				expect(report.backgroundColors).toEqual(getEmptyReport().backgroundColors);
+				expect(report.backgroundColors).toStrictEqual(getEmptyReport().backgroundColors);
 			});
 		});
 
@@ -1248,7 +1248,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.allColors` counting when is set to `false`', () => {
-				expect(report.allColors).toEqual(getEmptyReport().allColors);
+				expect(report.allColors).toStrictEqual(getEmptyReport().allColors);
 			});
 		});
 
@@ -1268,11 +1268,11 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.transitions` counting when is set to `false`', () => {
-				expect(report.transitions).toEqual(getEmptyReport().transitions);
+				expect(report.transitions).toStrictEqual(getEmptyReport().transitions);
 			});
 
 			it('should switch off `report.animations` counting when is set to `false`', () => {
-				expect(report.animations).toEqual(getEmptyReport().animations);
+				expect(report.animations).toStrictEqual(getEmptyReport().animations);
 			});
 		});
 
@@ -1292,7 +1292,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.functions` counting when is set to `false`', () => {
-				expect(report.functions).toEqual(getEmptyReport().functions);
+				expect(report.functions).toStrictEqual(getEmptyReport().functions);
 			});
 		});
 
@@ -1312,7 +1312,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.filters` counting when is set to `false`', () => {
-				expect(report.filters).toEqual(getEmptyReport().filters);
+				expect(report.filters).toStrictEqual(getEmptyReport().filters);
 			});
 		});
 
@@ -1332,7 +1332,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.gradients` counting when is set to `false`', () => {
-				expect(report.gradients).toEqual(getEmptyReport().gradients);
+				expect(report.gradients).toStrictEqual(getEmptyReport().gradients);
 			});
 		});
 
@@ -1352,7 +1352,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.units` counting when is set to `false`', () => {
-				expect(report.units).toEqual(getEmptyReport().units);
+				expect(report.units).toStrictEqual(getEmptyReport().units);
 			});
 		});
 
@@ -1372,7 +1372,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.variables` counting when is set to `false`', () => {
-				expect(report.variables).toEqual(getEmptyReport().variables);
+				expect(report.variables).toStrictEqual(getEmptyReport().variables);
 			});
 		});
 
@@ -1392,7 +1392,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.dataUris` counting when is set to `false`', () => {
-				expect(report.dataUris).toEqual(getEmptyReport().dataUris);
+				expect(report.dataUris).toStrictEqual(getEmptyReport().dataUris);
 			});
 		});
 
@@ -1412,7 +1412,7 @@ describe('Module: scancss', () => {
 			});
 
 			it('should switch off `report.browserHacks` counting when is set to `false`', () => {
-				expect(report.browserHacks).toEqual(getEmptyReport().browserHacks);
+				expect(report.browserHacks).toStrictEqual(getEmptyReport().browserHacks);
 			});
 		});
 	});

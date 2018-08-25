@@ -152,7 +152,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('properties.engineTriggers', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.engineTriggers).toEqual({
+				expect(report.properties.engineTriggers).toStrictEqual({
 					composite: {
 						blink: 5,
 						edgehtml: 5,
@@ -183,7 +183,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('properties.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.usage).toEqual({
+				expect(report.properties.usage).toStrictEqual({
 					content: 4,
 					display: 1,
 					position: 1,
@@ -215,7 +215,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('properties.explicitDefaultingKeywords.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.explicitDefaultingKeywords.usage).toEqual({
+				expect(report.properties.explicitDefaultingKeywords.usage).toStrictEqual({
 					inherit: 1,
 					initial: 1,
 					revert: 1,
@@ -240,7 +240,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('displays.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.displays.usage).toEqual({
+				expect(report.displays.usage).toStrictEqual({
 					flex: 1,
 				});
 			});
@@ -262,7 +262,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('positions.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.positions.usage).toEqual({
+				expect(report.positions.usage).toStrictEqual({
 					sticky: 1,
 				});
 			});
@@ -284,14 +284,14 @@ describe('Module: handleDeclaration', () => {
 
 		describe('zIndices.invalid', () => {
 			it('should be counted correctly', () => {
-				expect(report.zIndices.invalid).toEqual({});
+				expect(report.zIndices.invalid).toStrictEqual({});
 			});
 		});
 
 		describe('zIndices.usage', () => {
 			it('should be counted correctly', () => {
 				/* eslint-disable quote-props */
-				expect(report.zIndices.usage).toEqual({
+				expect(report.zIndices.usage).toStrictEqual({
 					'-1': 1,
 				});
 				/* eslint-enable quote-props */
@@ -314,7 +314,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('floats.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.floats.usage).toEqual({
+				expect(report.floats.usage).toStrictEqual({
 					none: 1,
 				});
 			});
@@ -336,7 +336,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('borderRadiuses.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.borderRadiuses.usage).toEqual({
+				expect(report.borderRadiuses.usage).toStrictEqual({
 					'1px 2px 3px 4px': 1,
 				});
 			});
@@ -358,7 +358,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('letterSpacings.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.letterSpacings.usage).toEqual({
+				expect(report.letterSpacings.usage).toStrictEqual({
 					'0.3em': 1,
 				});
 			});
@@ -392,13 +392,13 @@ describe('Module: handleDeclaration', () => {
 
 		describe('vendorPrefixes.unknown.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes.unknown.usage).toEqual({});
+				expect(report.vendorPrefixes.unknown.usage).toStrictEqual({});
 			});
 		});
 
 		describe('vendorPrefixes.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes.usage).toEqual({
+				expect(report.vendorPrefixes.usage).toStrictEqual({
 					'-moz-': 1,
 					'-ms-': 1,
 					'-o-': 1,

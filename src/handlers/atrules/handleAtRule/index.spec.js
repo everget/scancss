@@ -32,7 +32,7 @@ describe('Module: handleAtRule', () => {
 			}
 		}
 
-		@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm) {
+		@media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.0010dpcm) {
 			.selector {
 				display: block;
 			}
@@ -157,7 +157,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('atRules.unknown.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.unknown.usage).toEqual({
+			expect(report.atRules.unknown.usage).toStrictEqual({
 				unknown: 1,
 			});
 		});
@@ -165,7 +165,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('atRules.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.usage).toEqual({
+			expect(report.atRules.usage).toStrictEqual({
 				'-moz-document': 1,
 				'-webkit-keyframes': 1,
 				import: 4,
@@ -180,7 +180,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('declarations.inAtRules', () => {
 		it('should be counted correctly', () => {
-			expect(report.declarations.inAtRules).toEqual({
+			expect(report.declarations.inAtRules).toStrictEqual({
 				media: 6,
 				keyframes: 3,
 				'-webkit-keyframes': 4,
@@ -202,7 +202,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('imports.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.imports.usage).toEqual({
+			expect(report.imports.usage).toStrictEqual({
 				'\'custom.css\'': 1,
 				'"common.css" screen': 1,
 				'url("fineprint.css") print': 1,
@@ -213,7 +213,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('imports.urls', () => {
 		it('should be counted correctly', () => {
-			expect(report.imports.urls).toEqual({
+			expect(report.imports.urls).toStrictEqual({
 				'custom.css': 1,
 				'common.css': 1,
 				'fineprint.css': 1,
@@ -254,7 +254,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.types.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.types.usage).toEqual({
+			expect(report.mediaQueries.types.usage).toStrictEqual({
 				all: 1,
 				print: 2,
 				screen: 12,
@@ -283,7 +283,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.features.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.features.usage).toEqual({
+			expect(report.mediaQueries.features.usage).toStrictEqual({
 				'max-height': 1,
 				'max-width': 4,
 				'min-width': 2,
@@ -299,7 +299,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.usage).toEqual({
+			expect(report.mediaQueries.usage).toStrictEqual({
 				'all and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm)': 1,
 				'only screen and (max-height:440px)': 1,
 				'only screen and (max-width:600px)': 1,
@@ -320,7 +320,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('keyframes.stepsChains', () => {
 		it('should be counted correctly', () => {
-			expect(report.keyframes.stepsChains).toEqual({
+			expect(report.keyframes.stepsChains).toStrictEqual({
 				'0% -> 10% -> 33% -> 66% -> 88% -> 100%': 1,
 				'0% -> 50% -> 70% -> 100%': 1,
 			});
@@ -365,7 +365,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('keyframes.animatableProperties', () => {
 		it('should be counted correctly', () => {
-			expect(report.keyframes.animatableProperties).toEqual([
+			expect(report.keyframes.animatableProperties).toStrictEqual([
 				'transform',
 				'opacity',
 			]);
@@ -374,7 +374,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('keyframes.definedAnimations', () => {
 		it('should be counted correctly', () => {
-			expect(report.keyframes.definedAnimations).toEqual([
+			expect(report.keyframes.definedAnimations).toStrictEqual([
 				'pulse',
 				'fade',
 			]);
@@ -387,7 +387,7 @@ describe('Module: handleAtRule', () => {
 		});
 
 		it('should be counted correctly', () => {
-			expect(report.selectors.pseudoClassesUsage).toEqual({});
+			expect(report.selectors.pseudoClassesUsage).toStrictEqual({});
 		});
 	});
 
@@ -418,13 +418,13 @@ describe('Module: handleAtRule', () => {
 
 		describe('vendorPrefixes.unknown.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes.unknown.usage).toEqual({});
+				expect(report.vendorPrefixes.unknown.usage).toStrictEqual({});
 			});
 		});
 
 		describe('vendorPrefixes.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes.usage).toEqual({
+				expect(report.vendorPrefixes.usage).toStrictEqual({
 					'-moz-': 4,
 					'-webkit-': 4,
 				});

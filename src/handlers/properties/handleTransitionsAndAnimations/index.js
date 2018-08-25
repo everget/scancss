@@ -5,6 +5,7 @@ import { cssNamedTimingFunctions } from '../../../constants/cssNamedTimingFuncti
 import { cssExplicitDefaultingKeywords } from '../../../constants/cssExplicitDefaultingKeywords';
 import { reExistingVendorPrefix } from '../../../constants/reExistingVendorPrefix';
 import { reCubicBezier } from '../../../constants/reCubicBezier';
+import { reTime } from '../../../constants/reTime';
 import { countUsage } from '../../../calculators/countUsage';
 import { isNumber } from '../../../predicates/isNumber';
 import { isShorthandProperty } from '../../../predicates/isShorthandProperty';
@@ -43,8 +44,6 @@ function countNamedTimingFunctions(decl, report) {
 		});
 }
 
-const reValueWithDurationUnit = /^-?(\.?[0-9]+)(\.[0-9]+)?(ms|s)$/g;
-
 function countDurations(decl, report) {
 	const reportSection = decl.prop.includes('animation')
 		? report.animations
@@ -53,7 +52,7 @@ function countDurations(decl, report) {
 	postcss.list
 		.comma(decl.value)
 		.forEach((duration) => {
-			if (duration.match(reValueWithDurationUnit) !== null) {
+			if (duration.match(reTime) !== null) {
 				const parsedDurationInSeconds = duration.endsWith('ms')
 					? parseFloat(duration) / 1000
 					: parseFloat(duration);
@@ -83,7 +82,7 @@ function countDelays(decl, report) {
 	postcss.list
 		.comma(decl.value)
 		.forEach((delay) => {
-			if (delay.match(reValueWithDurationUnit) !== null) {
+			if (delay.match(reTime) !== null) {
 				const parsedDelayInSeconds = delay.endsWith('ms')
 					? parseFloat(delay) / 1000
 					: parseFloat(delay);

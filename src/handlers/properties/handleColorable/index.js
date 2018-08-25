@@ -9,7 +9,12 @@ import { reHslaColor } from '../../../constants/reHslaColor';
 import { reHwbColor } from '../../../constants/reHwbColor';
 import { countUsage } from '../../../calculators/countUsage';
 import { restoreFullHex } from '../../../converters/restoreFullHex';
+import { transformString } from '../../../converters/transformString';
 import { trimExtraSpaces } from '../../../converters/trimExtraSpaces';
+import { trimSpacesNearCommas } from '../../../converters/trimSpacesNearCommas';
+import { trimSpacesNearParentheses } from '../../../converters/trimSpacesNearParentheses';
+import { trimLeadingZeros } from '../../../converters/trimLeadingZeros';
+import { trimTrailingZeros } from '../../../converters/trimTrailingZeros';
 
 function countColorInSection(color, reportSection) {
 	reportSection.total++;
@@ -27,19 +32,19 @@ function countKeywordColors(prop, match, report, keyword, options) {
 	const reportSectionName = keyword + 'Keyword';
 
 	if (prop.startsWith('background') && options.backgroundColors) {
-		match.forEach((matchedKeyword) => {
+		match.forEach(() => {
 			countColorInSection(keyword, report.backgroundColors);
 			report.backgroundColors[reportSectionName]++;
 		});
 	} else if (prop.startsWith('background') === false && options.colors) {
-		match.forEach((matchedKeyword) => {
+		match.forEach(() => {
 			countColorInSection(keyword, report.colors);
 			report.colors[reportSectionName]++;
 		});
 	}
 
 	if (options.allColors) {
-		match.forEach((matchedKeyword) => {
+		match.forEach(() => {
 			if (options.allColors) {
 				countColorInSection(keyword, report.allColors);
 				report.allColors[reportSectionName]++;
@@ -48,6 +53,9 @@ function countKeywordColors(prop, match, report, keyword, options) {
 	}
 }
 
+/**
+ * https://www.w3.org/TR/CSS22/ui.html#system-colors
+ */
 function countNamedColors(prop, match, report, options) {
 	if (prop.startsWith('background') && options.backgroundColors) {
 		match.forEach((color) => {
@@ -82,7 +90,16 @@ function normalizeModelColor(color) {
 			: color.toLowerCase();
 	}
 
-	return trimExtraSpaces(color);
+	return transformString(
+		color,
+		[
+			trimExtraSpaces,
+			trimSpacesNearCommas,
+			trimSpacesNearParentheses,
+			trimTrailingZeros,
+			trimLeadingZeros,
+		]
+	);
 }
 
 function countColorModels(prop, match, report, model, options) {

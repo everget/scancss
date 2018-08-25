@@ -5,7 +5,13 @@ import { reCssMediaFeature } from '../../../constants/reCssMediaFeature';
 import { reCssMediaType } from '../../../constants/reCssMediaType';
 import { rePrefixedString } from '../../../constants/rePrefixedString';
 import { countUsage } from '../../../calculators/countUsage';
+import { transformString } from '../../../converters/transformString';
 import { trimExtraSpaces } from '../../../converters/trimExtraSpaces';
+import { trimSpacesNearColon } from '../../../converters/trimSpacesNearColon';
+import { trimSpacesNearCommas } from '../../../converters/trimSpacesNearCommas';
+import { trimSpacesNearParentheses } from '../../../converters/trimSpacesNearParentheses';
+import { trimTrailingZeros } from '../../../converters/trimTrailingZeros';
+import { trimLeadingZeros } from '../../../converters/trimLeadingZeros';
 import { handleVendorPrefix } from '../../handleVendorPrefix';
 
 const reOnlyKeyword = /\bonly\b/g;
@@ -18,7 +24,17 @@ export function handleMediaQueryParams(params, report, options) {
 		.forEach((mediaQuery) => {
 			report.mediaQueries.total++;
 
-			const cleanedMediaQuery = trimExtraSpaces(mediaQuery);
+			const cleanedMediaQuery = transformString(
+				mediaQuery,
+				[
+					trimExtraSpaces,
+					trimSpacesNearCommas,
+					trimSpacesNearParentheses,
+					trimSpacesNearColon,
+					trimTrailingZeros,
+					trimLeadingZeros,
+				]
+			);
 
 			if (reOnlyKeyword.test(cleanedMediaQuery)) {
 				report.mediaQueries.onlyKeyword += cleanedMediaQuery.match(reOnlyKeyword).length;

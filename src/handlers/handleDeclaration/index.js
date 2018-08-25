@@ -2,8 +2,13 @@ import { cssColorableProperties } from '../../constants/cssColorableProperties';
 import { reCssExplicitDefaultingKeyword } from '../../constants/reCssExplicitDefaultingKeyword';
 import { rePrefixedString } from '../../constants/rePrefixedString';
 import { isShorthandProperty } from '../../predicates/isShorthandProperty';
+import { isCustomProperty } from '../../predicates/isCustomProperty';
 import { countUsage } from '../../calculators/countUsage';
+import { transformString } from '../../converters/transformString';
 import { trimExtraSpaces } from '../../converters/trimExtraSpaces';
+import { trimSpacesNearColon } from '../../converters/trimSpacesNearColon';
+import { trimSpacesNearCommas } from '../../converters/trimSpacesNearCommas';
+import { trimSpacesNearParentheses } from '../../converters/trimSpacesNearParentheses';
 
 import { handleEngineTriggers } from '../properties/handleEngineTriggers';
 import { handleColorable } from '../properties/handleColorable';
@@ -30,13 +35,22 @@ const supportedCssFontProperties = [
 	'font-family',
 ];
 
+/* eslint-disable-next-line complexity */
 export function handleDeclaration(decl, report, options) {
 	report.declarations.total++;
 
 	const declarationByteLength = Buffer.byteLength(decl.toString(), 'utf8');
 	report.declarations.length.total += declarationByteLength;
 
-	const normalizedDecl = trimExtraSpaces(decl.toString());
+	const normalizedDecl = transformString(
+		decl.toString(),
+		[
+			trimExtraSpaces,
+			trimSpacesNearColon,
+			trimSpacesNearCommas,
+			trimSpacesNearParentheses,
+		]
+	);
 
 	if (report.declarations.length.longest < declarationByteLength) {
 		report.declarations.length.longest = declarationByteLength;
@@ -55,7 +69,7 @@ export function handleDeclaration(decl, report, options) {
 
 	if (options.properties) {
 		/** Count properties excluding variables */
-		if (prop.startsWith('--') === false) {
+		if (isCustomProperty(prop) === false) {
 			report.properties.total++;
 			countUsage(prop, report.properties.usage);
 		}
@@ -130,7 +144,7 @@ export function handleDeclaration(decl, report, options) {
 	}
 
 	if (
-		prop.startsWith('--') === false &&
+		isCustomProperty(prop) === false &&
 		prop.includes('border-') &&
 		prop.endsWith('-radius') &&
 		options.borderRadiuses

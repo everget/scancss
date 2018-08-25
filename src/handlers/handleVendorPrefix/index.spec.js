@@ -78,7 +78,7 @@ describe('Module: handleVendorPrefix', () => {
 
 	describe('vendorPrefixes.unknown.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.vendorPrefixes.unknown.usage).toEqual({
+			expect(report.vendorPrefixes.unknown.usage).toStrictEqual({
 				'-tada-': 1,
 				'-foo-': 1,
 				'-bar-': 1,
@@ -89,7 +89,7 @@ describe('Module: handleVendorPrefix', () => {
 
 	describe('vendorPrefixes.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.vendorPrefixes.usage).toEqual({
+			expect(report.vendorPrefixes.usage).toStrictEqual({
 				'-apple-': 1,
 				'-epub-': 3,
 				'-moz-': 8,

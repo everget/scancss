@@ -1,8 +1,7 @@
+import { rePercentage } from '../../../constants/rePercentage';
 import { countUsage } from '../../../calculators/countUsage';
 import { trimSpacesNearCommas } from '../../../converters/trimSpacesNearCommas';
 import { unique } from '../../../converters/unique';
-
-const reNumberPercentage = /^(?:[0-9]+\.)?[0-9]+%$/;
 
 export function handleKeyframes(atRule, report) {
 	const steps = [];
@@ -11,16 +10,16 @@ export function handleKeyframes(atRule, report) {
 		trimSpacesNearCommas(rule.selector)
 			.split(',')
 			.map((selector) => selector.trim())
-			.forEach((part) => {
-				if (part === 'from') {
+			.forEach((selector) => {
+				if (selector === 'from') {
 					steps.push(0);
 				}
 
-				if (reNumberPercentage.test(part)) {
-					steps.push(Number(part.slice(0, -1)));
+				if (rePercentage.test(selector)) {
+					steps.push(Number(selector.slice(0, -1)));
 				}
 
-				if (part === 'to') {
+				if (selector === 'to') {
 					steps.push(100);
 				}
 			});

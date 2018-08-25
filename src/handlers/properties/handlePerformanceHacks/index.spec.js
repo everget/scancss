@@ -50,7 +50,7 @@ describe('Module: handlePerformanceHacks', () => {
 
 	describe('properties.performanceHacks', () => {
 		it('should be counted correctly', () => {
-			expect(report.properties.performanceHacks).toEqual({
+			expect(report.properties.performanceHacks).toStrictEqual({
 				'rotateZ(360deg)': 1,
 				'translate3d(0,0,0)': 1,
 				'translateZ(0)': 1,

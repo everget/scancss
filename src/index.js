@@ -11,6 +11,7 @@ import { difference } from './converters/difference';
 import { getEmptyReport } from './common/getEmptyReport';
 import { parseCss } from './common/parseCss';
 
+/* eslint-disable-next-line complexity */
 export default function scancss(src, options) {
 	if (typeof src !== 'string') {
 		throw new TypeError('`scancss` expects a string');

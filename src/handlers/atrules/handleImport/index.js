@@ -1,7 +1,7 @@
 import { reCssUrlFunctionWithArg } from '../../../constants/reCssUrlFunctionWithArg';
 import { reCssFileName } from '../../../constants/reCssFileName';
 import { countUsage } from '../../../calculators/countUsage';
-import { trimExtraSpaces } from '../../../converters/trimExtraSpaces';
+import { trimQuotes } from '../../../converters/trimQuotes';
 import { handleMediaQueryParams } from '../handleMediaQueryParams';
 
 export function handleImport(atRule, report, options) {
@@ -14,9 +14,10 @@ export function handleImport(atRule, report, options) {
 		cleanedParams
 			.match(reCssUrlFunctionWithArg)
 			.forEach((func) => {
-				const url = trimExtraSpaces(func)
-					.replace(/^url\(['"]?/g, '')
-					.replace(/['"]?\)/g, '');
+				const url = func
+					.replace(/^url\(\s*['"]?\s*/g, '')
+					.replace(/\s*['"]?\s*\)/g, '')
+					.trim();
 
 				countUsage(url, report.imports.urls);
 			});
@@ -28,9 +29,7 @@ export function handleImport(atRule, report, options) {
 		cleanedParams
 			.match(reCssFileName)
 			.forEach((url) => {
-				const cleanedUrl = url
-					.replace(/['"]/g, '')
-					.replace(/['"]/g, '');
+				const cleanedUrl = trimQuotes(url).trim();
 
 				countUsage(cleanedUrl, report.imports.urls);
 			});

@@ -87,7 +87,7 @@ describe('Module: handleHeight', () => {
 
 	describe('heights.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.heights.usage).toEqual({
+			expect(report.heights.usage).toStrictEqual({
 				'300px': 1,
 				'25em': 1,
 				'75%': 1,

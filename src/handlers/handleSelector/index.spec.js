@@ -98,7 +98,7 @@ describe('Module: handleSelector', () => {
 
 	describe('selectors.baseUsage', () => {
 		it('should be counted correctly', () => {
-			expect(report.selectors.baseUsage).toEqual({
+			expect(report.selectors.baseUsage).toStrictEqual({
 				attribute: 10,
 				class: 9,
 				id: 4,
@@ -112,7 +112,7 @@ describe('Module: handleSelector', () => {
 
 	describe('selectors.pseudoClassesUsage', () => {
 		it('should be counted correctly', () => {
-			expect(report.selectors.pseudoClassesUsage).toEqual({
+			expect(report.selectors.pseudoClassesUsage).toStrictEqual({
 				':active': 1,
 				':focus': 1,
 				':has': 2,
@@ -127,7 +127,7 @@ describe('Module: handleSelector', () => {
 
 	describe('selectors.pseudoElementsUsage', () => {
 		it('should be counted correctly', () => {
-			expect(report.selectors.pseudoElementsUsage).toEqual({
+			expect(report.selectors.pseudoElementsUsage).toStrictEqual({
 				'::first-line': 2,
 				'::-moz-focus-inner': 4,
 			});
@@ -136,7 +136,7 @@ describe('Module: handleSelector', () => {
 
 	describe('selectors.combinators', () => {
 		it('should be counted correctly', () => {
-			expect(report.selectors.combinators).toEqual({
+			expect(report.selectors.combinators).toStrictEqual({
 				total: 21,
 				adjacentSibling: 1,
 				child: 1,
@@ -172,7 +172,7 @@ describe('Module: handleSelector', () => {
 
 	describe('selectors.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.selectors.usage).toEqual({
+			expect(report.selectors.usage).toStrictEqual({
 				'#bar': 1,
 				'*': 1,
 				'* body #home div #warning p .message': 1,
@@ -236,19 +236,19 @@ describe('Module: handleSelector', () => {
 	describe('Handling specificity', () => {
 		describe('selectors.specificity.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.total).toEqual([4, 27, 37]);
+				expect(report.selectors.specificity.total).toStrictEqual([4, 27, 37]);
 			});
 		});
 
 		describe('selectors.specificity.average', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.average).toEqual([0, 0, 0]);
+				expect(report.selectors.specificity.average).toStrictEqual([0, 0, 0]);
 			});
 		});
 
 		describe('selectors.specificity.highest', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.highest).toEqual([0, 0, 0]);
+				expect(report.selectors.specificity.highest).toStrictEqual([0, 0, 0]);
 			});
 		});
 
@@ -260,7 +260,7 @@ describe('Module: handleSelector', () => {
 
 		describe('selectors.specificity.highest10', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.highest10).toEqual([
+				expect(report.selectors.specificity.highest10).toStrictEqual([
 					{
 						selector: '* body #home div #warning p .message',
 						specificity: [2, 1, 3],
@@ -307,7 +307,7 @@ describe('Module: handleSelector', () => {
 
 		describe('selectors.specificity.graphData', () => {
 			it('should be counted correctly', () => {
-				expect(report.selectors.specificity.graphData).toEqual([]);
+				expect(report.selectors.specificity.graphData).toStrictEqual([]);
 			});
 		});
 	});
@@ -339,13 +339,13 @@ describe('Module: handleSelector', () => {
 
 		describe('vendorPrefixes.unknown.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes.unknown.usage).toEqual({});
+				expect(report.vendorPrefixes.unknown.usage).toStrictEqual({});
 			});
 		});
 
 		describe('vendorPrefixes.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes.usage).toEqual({
+				expect(report.vendorPrefixes.usage).toStrictEqual({
 					'-moz-': 5,
 					'-webkit-': 1,
 				});

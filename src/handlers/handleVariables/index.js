@@ -1,12 +1,13 @@
 import { reCssVariable } from '../../constants/reCssVariable';
 import { countUsage } from '../../calculators/countUsage';
+import { isCustomProperty } from '../../predicates/isCustomProperty';
 
-/** Handle case like `tv-transition--fade-in .35s ease forwards` */
+/** Handle cases like `tv-transition--fade-in .35s ease forwards` */
 const reCssVariableInWord = new RegExp('\\b' + reCssVariable.source, 'g');
 
 export function handleVariables(decl, report) {
 	if (
-		decl.prop.startsWith('--') &&
+		isCustomProperty(decl.prop) &&
 		reCssVariable.test(decl.prop)
 	) {
 		report.variables.valuesMap[decl.prop] = decl.value;

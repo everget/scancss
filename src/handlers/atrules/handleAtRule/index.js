@@ -14,30 +14,32 @@ export function handleAtRule(atRule, report, options) {
 		report.atRules.empty++;
 	}
 
-	countUsage(atRule.name, report.atRules.usage);
+	const lowerCasedAtRuleName = atRule.name.toLowerCase();
+
+	countUsage(lowerCasedAtRuleName, report.atRules.usage);
 
 	/** Count vendor prefixes in at-rules names */
-	if (rePrefixedString.test(atRule.name)) {
+	if (rePrefixedString.test(lowerCasedAtRuleName)) {
 		report.atRules.prefixed++;
-		handleVendorPrefix(atRule.name, report);
+		handleVendorPrefix(lowerCasedAtRuleName, report);
 	}
 
 	/** Count unknown at-rules */
-	const unprefixedAtRuleName = atRule.name.replace(rePrefixedString, '');
+	const unprefixedAtRuleName = lowerCasedAtRuleName.replace(rePrefixedString, '');
 	if (cssAtRules.includes(unprefixedAtRuleName) === false) {
 		report.atRules.unknown.total++;
-		countUsage(atRule.name, report.atRules.unknown.usage);
+		countUsage(lowerCasedAtRuleName, report.atRules.unknown.usage);
 	}
 
-	if (atRule.name === 'import') {
+	if (lowerCasedAtRuleName === 'import') {
 		handleImport(atRule, report, options);
 	}
 
-	if (atRule.name === 'supports') {
+	if (lowerCasedAtRuleName === 'supports') {
 		handleSupports(atRule, report, options);
 	}
 
-	if (atRule.name === 'media') {
+	if (lowerCasedAtRuleName === 'media') {
 		handleMediaQueryParams(atRule.params, report, options);
 	}
 
@@ -48,9 +50,9 @@ export function handleAtRule(atRule, report, options) {
 	/**
 	 * @font-face descriptors are not declarations
 	 */
-	if (atRule.name !== 'font-face' && options.declarations) {
-		atRule.walkDecls((decl) => {
-			countUsage(atRule.name, report.declarations.inAtRules);
+	if (lowerCasedAtRuleName !== 'font-face' && options.declarations) {
+		atRule.walkDecls(() => {
+			countUsage(lowerCasedAtRuleName, report.declarations.inAtRules);
 		});
 	}
 }

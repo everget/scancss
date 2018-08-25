@@ -282,7 +282,7 @@ describe('Module: handleColorable', () => {
 
 		describe('allColors.models', () => {
 			it('should be counted correctly', () => {
-				expect(report.allColors.models).toEqual({
+				expect(report.allColors.models).toStrictEqual({
 					hex: 30,
 					hexa: 30,
 					rgb: 15,
@@ -296,7 +296,7 @@ describe('Module: handleColorable', () => {
 
 		describe('allColors.named', () => {
 			it('should be counted correctly', () => {
-				expect(report.allColors.named).toEqual({
+				expect(report.allColors.named).toStrictEqual({
 					chartreuse: 1,
 					cornsilk: 1,
 					black: 1,
@@ -318,7 +318,7 @@ describe('Module: handleColorable', () => {
 
 		describe('allColors.system', () => {
 			it('should be counted correctly', () => {
-				expect(report.allColors.system).toEqual({
+				expect(report.allColors.system).toStrictEqual({
 					activecaption: 1,
 					appworkspace: 1,
 					background: 1,
@@ -340,7 +340,7 @@ describe('Module: handleColorable', () => {
 
 		describe('allColors.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.allColors.usage).toEqual({
+				expect(report.allColors.usage).toStrictEqual({
 					'#ffee88': 15,
 					'#eeeeee': 15,
 					'#ffffffff': 15,
@@ -363,10 +363,10 @@ describe('Module: handleColorable', () => {
 					firebrick: 1,
 					rebeccapurple: 1,
 					'rgb(1,2,3)': 15,
-					'rgba(1,2,3,0.4)': 15,
+					'rgba(1,2,3,.4)': 15,
 					'hsl(1deg,2%,3%)': 15,
-					'hsla(1deg,2%,3%,0.4)': 15,
-					'hwb(1deg,2%,3%,0.4)': 15,
+					'hsla(1deg,2%,3%,.4)': 15,
+					'hwb(1deg,2%,3%,.4)': 15,
 					activecaption: 1,
 					appworkspace: 1,
 					background: 1,
@@ -408,7 +408,7 @@ describe('Module: handleColorable', () => {
 
 		describe('colors.models', () => {
 			it('should be counted correctly', () => {
-				expect(report.colors.models).toEqual({
+				expect(report.colors.models).toStrictEqual({
 					hex: 26,
 					hexa: 26,
 					rgb: 13,
@@ -422,7 +422,7 @@ describe('Module: handleColorable', () => {
 
 		describe('colors.named', () => {
 			it('should be counted correctly', () => {
-				expect(report.colors.named).toEqual({
+				expect(report.colors.named).toStrictEqual({
 					chartreuse: 1,
 					cornsilk: 1,
 					crimson: 1,
@@ -442,7 +442,7 @@ describe('Module: handleColorable', () => {
 
 		describe('colors.system', () => {
 			it('should be counted correctly', () => {
-				expect(report.colors.system).toEqual({
+				expect(report.colors.system).toStrictEqual({
 					activecaption: 1,
 					appworkspace: 1,
 					background: 1,
@@ -462,7 +462,7 @@ describe('Module: handleColorable', () => {
 
 		describe('colors.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.colors.usage).toEqual({
+				expect(report.colors.usage).toStrictEqual({
 					'#ffee88': 13,
 					'#eeeeee': 13,
 					'#ffffffff': 13,
@@ -483,10 +483,10 @@ describe('Module: handleColorable', () => {
 					hotpink: 1,
 					rebeccapurple: 1,
 					'rgb(1,2,3)': 13,
-					'rgba(1,2,3,0.4)': 13,
+					'rgba(1,2,3,.4)': 13,
 					'hsl(1deg,2%,3%)': 13,
-					'hsla(1deg,2%,3%,0.4)': 13,
-					'hwb(1deg,2%,3%,0.4)': 13,
+					'hsla(1deg,2%,3%,.4)': 13,
+					'hwb(1deg,2%,3%,.4)': 13,
 					activecaption: 1,
 					appworkspace: 1,
 					background: 1,
@@ -526,7 +526,7 @@ describe('Module: handleColorable', () => {
 
 		describe('backgroundColors.models', () => {
 			it('should be counted correctly', () => {
-				expect(report.backgroundColors.models).toEqual({
+				expect(report.backgroundColors.models).toStrictEqual({
 					hex: 4,
 					hexa: 4,
 					rgb: 2,
@@ -540,7 +540,7 @@ describe('Module: handleColorable', () => {
 
 		describe('backgroundColors.named', () => {
 			it('should be counted correctly', () => {
-				expect(report.backgroundColors.named).toEqual({
+				expect(report.backgroundColors.named).toStrictEqual({
 					lightyellow: 1,
 					firebrick: 1,
 				});
@@ -549,7 +549,7 @@ describe('Module: handleColorable', () => {
 
 		describe('backgroundColors.system', () => {
 			it('should be counted correctly', () => {
-				expect(report.backgroundColors.system).toEqual({
+				expect(report.backgroundColors.system).toStrictEqual({
 					inactivecaption: 1,
 					inactivecaptiontext: 1,
 				});
@@ -558,7 +558,7 @@ describe('Module: handleColorable', () => {
 
 		describe('backgroundColors.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.backgroundColors.usage).toEqual({
+				expect(report.backgroundColors.usage).toStrictEqual({
 					'#ffee88': 2,
 					'#eeeeee': 2,
 					'#ffffffff': 2,
@@ -568,10 +568,10 @@ describe('Module: handleColorable', () => {
 					lightyellow: 1,
 					firebrick: 1,
 					'rgb(1,2,3)': 2,
-					'rgba(1,2,3,0.4)': 2,
+					'rgba(1,2,3,.4)': 2,
 					'hsl(1deg,2%,3%)': 2,
-					'hsla(1deg,2%,3%,0.4)': 2,
-					'hwb(1deg,2%,3%,0.4)': 2,
+					'hsla(1deg,2%,3%,.4)': 2,
+					'hwb(1deg,2%,3%,.4)': 2,
 					inactivecaption: 1,
 					inactivecaptiontext: 1,
 				});

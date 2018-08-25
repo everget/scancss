@@ -8,7 +8,13 @@ import { reCssUrlFunctionWithArg } from '../../constants/reCssUrlFunctionWithArg
 import { reImageDataUri } from '../../constants/reImageDataUri';
 import { rePrefixedString } from '../../constants/rePrefixedString';
 import { countUsage } from '../../calculators/countUsage';
+import { transformString } from '../../converters/transformString';
 import { trimExtraSpaces } from '../../converters/trimExtraSpaces';
+import { trimSpacesNearCommas } from '../../converters/trimSpacesNearCommas';
+import { trimSpacesNearParentheses } from '../../converters/trimSpacesNearParentheses';
+import { trimLeadingZeros } from '../../converters/trimLeadingZeros';
+import { trimTrailingZeros } from '../../converters/trimTrailingZeros';
+
 import { isValidCubicBezierArgs } from '../../predicates/isValidCubicBezierArgs';
 import { isValidFramesFunctionArgs } from '../../predicates/isValidFramesFunctionArgs';
 import { isValidStepsFunctionArgs } from '../../predicates/isValidStepsFunctionArgs';
@@ -17,19 +23,20 @@ import { handleVendorPrefix } from '../handleVendorPrefix';
 function countFunctions(decl, report, options) {
 	decl.value
 		.match(reCssFunction)
-		.map((func) => func.slice(0, func.indexOf('(')))
 		.forEach((func) => {
-			report.functions.total++;
-			countUsage(func, report.functions.usage);
+			const processedFunc = func.slice(0, func.indexOf('('));
 
-			if (rePrefixedString.test(func)) {
+			report.functions.total++;
+			countUsage(processedFunc, report.functions.usage);
+
+			if (rePrefixedString.test(processedFunc)) {
 				report.functions.prefixed++;
-				handleVendorPrefix(func, report);
+				handleVendorPrefix(processedFunc, report);
 			}
 
-			if (cssFilterFunctions.includes(func) && options.filters) {
+			if (cssFilterFunctions.includes(processedFunc) && options.filters) {
 				report.filters.total++;
-				countUsage(func, report.filters.usage);
+				countUsage(processedFunc, report.filters.usage);
 			}
 		});
 }
@@ -38,11 +45,17 @@ function countDataUris(decl, report) {
 	decl.value
 		.match(reCssUrlFunctionWithArg)
 		/* eslint-disable-next-line arrow-body-style */
-		.map((func) => {
-			return trimExtraSpaces(func)
-				.replace(/^url\(['"]?/g, '')
-				.replace(/['"]?\)/g, '');
-		})
+		.map((func) => transformString(
+			func
+				.replace(/^url\(\s*['"]?\s*/g, '')
+				.replace(/\s*['"]?\s*\)/g, '')
+				.replace(/(\/?>)\s*(<\/?)/g, '$1$2'),
+			[
+				trimExtraSpaces,
+				trimSpacesNearCommas,
+				trimSpacesNearParentheses,
+			]
+		))
 		.forEach((urlArg) => {
 			if (urlArg.match(reImageDataUri) !== null) {
 				report.dataUris.total++;
@@ -63,10 +76,20 @@ function countDataUris(decl, report) {
 function countGradients(decl, report) {
 	decl.value
 		.match(reCssGradient)
-		.map((func) => trimExtraSpaces(func))
 		.forEach((func) => {
+			const processedFunc = transformString(
+				func,
+				[
+					trimExtraSpaces,
+					trimSpacesNearCommas,
+					trimSpacesNearParentheses,
+					trimTrailingZeros,
+					trimLeadingZeros,
+				]
+			);
+
 			report.gradients.total++;
-			countUsage(func, report.gradients.usage);
+			countUsage(processedFunc, report.gradients.usage);
 		});
 }
 
@@ -78,7 +101,17 @@ function countCubicBeziers(decl, report) {
 	decl.value
 		.match(reCubicBezier)
 		.forEach((func) => {
-			const processedFunc = trimExtraSpaces(func);
+			const processedFunc = transformString(
+				func,
+				[
+					trimExtraSpaces,
+					trimSpacesNearCommas,
+					trimSpacesNearParentheses,
+					trimTrailingZeros,
+					trimLeadingZeros,
+				]
+			);
+
 			countUsage(processedFunc, reportSection.timingFunctions);
 
 			/**
@@ -99,7 +132,15 @@ function countStepsFunctions(decl, report) {
 	decl.value
 		.match(reCssStepsFunction)
 		.forEach((func) => {
-			const processedFunc = trimExtraSpaces(func);
+			const processedFunc = transformString(
+				func,
+				[
+					trimExtraSpaces,
+					trimSpacesNearCommas,
+					trimSpacesNearParentheses,
+				]
+			);
+
 			countUsage(processedFunc, reportSection.timingFunctions);
 
 			/**
@@ -120,7 +161,15 @@ function countFramesFunctions(decl, report) {
 	decl.value
 		.match(reCssFramesFunction)
 		.forEach((func) => {
-			const processedFunc = trimExtraSpaces(func);
+			const processedFunc = transformString(
+				func,
+				[
+					trimExtraSpaces,
+					trimSpacesNearCommas,
+					trimSpacesNearParentheses,
+				]
+			);
+
 			countUsage(processedFunc, reportSection.timingFunctions);
 
 			/**

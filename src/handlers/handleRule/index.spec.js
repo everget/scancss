@@ -88,7 +88,7 @@ describe('Module: handleRule', () => {
 
 	describe('selectors.maxPerRuleList', () => {
 		it('should be counted correctly', () => {
-			expect(report.selectors.maxPerRuleList).toEqual([
+			expect(report.selectors.maxPerRuleList).toStrictEqual([
 				'.selector-1',
 				'.selector-2',
 				'.selector-3',

@@ -115,7 +115,7 @@ describe('Module: handleUnits', () => {
 
 		describe('units.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.usage).toEqual({
+				expect(report.units.usage).toStrictEqual({
 					ch: 1,
 					cm: 1,
 					deg: 1,
@@ -155,7 +155,7 @@ describe('Module: handleUnits', () => {
 
 		describe('units.excessive.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.excessive.usage).toEqual({
+				expect(report.units.excessive.usage).toStrictEqual({
 					'0px': 6,
 					'0em': 1,
 					'0%': 1,
@@ -206,7 +206,7 @@ describe('Module: handleUnits', () => {
 
 		describe('units.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.usage).toEqual({});
+				expect(report.units.usage).toStrictEqual({});
 			});
 		});
 
@@ -224,7 +224,7 @@ describe('Module: handleUnits', () => {
 
 		describe('units.excessive.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.excessive.usage).toEqual({});
+				expect(report.units.excessive.usage).toStrictEqual({});
 			});
 		});
 
@@ -282,7 +282,7 @@ describe('Module: handleUnits', () => {
 
 		describe('units.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.usage).toEqual({});
+				expect(report.units.usage).toStrictEqual({});
 			});
 		});
 
@@ -300,7 +300,7 @@ describe('Module: handleUnits', () => {
 
 		describe('units.excessive.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.excessive.usage).toEqual({});
+				expect(report.units.excessive.usage).toStrictEqual({});
 			});
 		});
 

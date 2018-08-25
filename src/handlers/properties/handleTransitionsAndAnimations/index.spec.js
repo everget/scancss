@@ -84,7 +84,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 	describe('Handling transitions', () => {
 		describe('transitions.properties', () => {
 			it('should be counted correctly', () => {
-				expect(report.transitions.properties).toEqual({
+				expect(report.transitions.properties).toStrictEqual({
 					all: 1,
 					color: 1,
 					'margin-left': 1,
@@ -125,7 +125,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 
 		describe('transitions.timingFunctions', () => {
 			it('should be counted correctly', () => {
-				expect(report.transitions.timingFunctions).toEqual({
+				expect(report.transitions.timingFunctions).toStrictEqual({
 					ease: 3,
 					'ease-in': 1,
 					'ease-in-out': 1,
@@ -137,7 +137,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 
 		describe('transitions.invalidTimingFunctions', () => {
 			it('should be counted correctly', () => {
-				expect(report.transitions.invalidTimingFunctions).toEqual({
+				expect(report.transitions.invalidTimingFunctions).toStrictEqual({
 					'ease-out-quad': 1,
 				});
 			});
@@ -165,7 +165,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 
 		describe('animations.withoutDefinitions', () => {
 			it('should be counted correctly', () => {
-				expect(report.animations.withoutDefinitions).toEqual([]);
+				expect(report.animations.withoutDefinitions).toStrictEqual([]);
 			});
 		});
 
@@ -195,7 +195,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 
 		describe('animations.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.animations.usage).toEqual({
+				expect(report.animations.usage).toStrictEqual({
 					none: 1,
 					'heart-bit': 1,
 					'fade-in': 1,
@@ -206,7 +206,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 
 		describe('animations.timingFunctions', () => {
 			it('should be counted correctly', () => {
-				expect(report.animations.timingFunctions).toEqual({
+				expect(report.animations.timingFunctions).toStrictEqual({
 					ease: 1,
 					'ease-in': 2,
 				});
@@ -215,7 +215,7 @@ describe('Module: handleTransitionsAndAnimations', () => {
 
 		describe('animations.invalidTimingFunctions', () => {
 			it('should be counted correctly', () => {
-				expect(report.animations.invalidTimingFunctions).toEqual({
+				expect(report.animations.invalidTimingFunctions).toStrictEqual({
 					'ease-out-back': 1,
 				});
 			});

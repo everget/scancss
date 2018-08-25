@@ -211,7 +211,7 @@ describe('Module: handleDisplay', () => {
 
 	describe('displays.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.displays.usage).toEqual({
+			expect(report.displays.usage).toStrictEqual({
 				block: 1,
 				inline: 1,
 				'run-in': 1,

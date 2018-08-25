@@ -9,7 +9,7 @@ describe('Module: calculateSpecificity', () => {
 
 		const expectedReturn = [0, 0, 0];
 		it(`should return ${expectedReturn} by default`, () => {
-			expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+			expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 		});
 	});
 
@@ -21,7 +21,7 @@ describe('Module: calculateSpecificity', () => {
 
 		const expectedReturn = [1, 0, 0];
 		it(`should return ${expectedReturn}`, () => {
-			expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+			expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 		});
 	});
 
@@ -33,7 +33,7 @@ describe('Module: calculateSpecificity', () => {
 
 		const expectedReturn = [0, 1, 0];
 		it(`should return ${expectedReturn}`, () => {
-			expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+			expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 		});
 	});
 
@@ -45,7 +45,7 @@ describe('Module: calculateSpecificity', () => {
 
 		const expectedReturn = [0, 1, 0];
 		it(`should return ${expectedReturn}`, () => {
-			expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+			expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 		});
 	});
 
@@ -58,7 +58,7 @@ describe('Module: calculateSpecificity', () => {
 
 			const expectedReturn = [0, 1, 0];
 			it(`should return ${expectedReturn}`, () => {
-				expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+				expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 			});
 		});
 
@@ -70,7 +70,7 @@ describe('Module: calculateSpecificity', () => {
 
 			const expectedReturn = [0, 0, 0];
 			it(`should return ${expectedReturn}`, () => {
-				expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+				expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 			});
 		});
 
@@ -82,7 +82,7 @@ describe('Module: calculateSpecificity', () => {
 
 			const expectedReturn = [0, 0, 0];
 			it(`should return ${expectedReturn}`, () => {
-				expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+				expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 			});
 		});
 	});
@@ -96,7 +96,7 @@ describe('Module: calculateSpecificity', () => {
 
 			const expectedReturn = [0, 0, 1];
 			it(`should return ${expectedReturn}`, () => {
-				expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+				expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 			});
 		});
 
@@ -108,7 +108,7 @@ describe('Module: calculateSpecificity', () => {
 
 			const expectedReturn = [0, 0, 1];
 			it(`should return ${expectedReturn}`, () => {
-				expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+				expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 			});
 		});
 	});
@@ -121,7 +121,7 @@ describe('Module: calculateSpecificity', () => {
 
 		const expectedReturn = [0, 0, 1];
 		it(`should return ${expectedReturn}`, () => {
-			expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+			expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 		});
 	});
 
@@ -133,7 +133,7 @@ describe('Module: calculateSpecificity', () => {
 
 		const expectedReturn = [0, 0, 0];
 		it(`should return ${expectedReturn}`, () => {
-			expect(calculateSpecificity(selector)).toEqual(expectedReturn);
+			expect(calculateSpecificity(selector)).toStrictEqual(expectedReturn);
 		});
 	});
 });

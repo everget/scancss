@@ -17,6 +17,28 @@ function selectorsProcessor(selectors) {
 
 const selectorParser = parser(selectorsProcessor);
 
+function handlePseudoSelector(selectorObj, report) {
+	const pseudoName = selectorObj.value.replace(reLeadingColons, '');
+
+	if (rePrefixedString.test(pseudoName)) {
+		handleVendorPrefix(pseudoName, report);
+	}
+
+	if (cssPseudoElements.some((name) => pseudoName === name)) {
+		countUsage('pseudoElement', report.selectors.baseUsage);
+		countUsage(
+			selectorObj.value.replace(reLeadingColons, '::'),
+			report.selectors.pseudoElementsUsage
+		);
+	} else if (cssPseudoClasses.some((name) => pseudoName === name)) {
+		countUsage('pseudoClass', report.selectors.baseUsage);
+		countUsage(
+			selectorObj.value.replace(reLeadingColons, ':'),
+			report.selectors.pseudoClassesUsage
+		);
+	}
+}
+
 const combinatorsMap = {
 	'+': 'adjacentSibling',
 	'>': 'child',
@@ -49,25 +71,7 @@ function countSelectors(selectors, report, options) {
 			baseSelectorsWithoutCombinators++;
 
 			if (selector.type === 'pseudo') {
-				const pseudoName = selector.value.replace(reLeadingColons, '');
-
-				if (rePrefixedString.test(pseudoName)) {
-					handleVendorPrefix(pseudoName, report);
-				}
-
-				if (cssPseudoElements.some((name) => pseudoName === name)) {
-					countUsage('pseudoElement', report.selectors.baseUsage);
-					countUsage(
-						selector.value.replace(reLeadingColons, '::'),
-						report.selectors.pseudoElementsUsage
-					);
-				} else if (cssPseudoClasses.some((name) => pseudoName === name)) {
-					countUsage('pseudoClass', report.selectors.baseUsage);
-					countUsage(
-						selector.value.replace(reLeadingColons, ':'),
-						report.selectors.pseudoClassesUsage
-					);
-				}
+				handlePseudoSelector(selector, report);
 			} else {
 				countUsage(selector.type, report.selectors.baseUsage);
 

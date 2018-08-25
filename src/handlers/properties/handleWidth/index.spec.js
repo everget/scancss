@@ -87,7 +87,7 @@ describe('Module: handleWidth', () => {
 
 	describe('widths.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.widths.usage).toEqual({
+			expect(report.widths.usage).toStrictEqual({
 				'300px': 1,
 				'25em': 1,
 				'75%': 1,
