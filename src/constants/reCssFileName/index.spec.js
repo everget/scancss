@@ -20,7 +20,7 @@ describe('Module: reCssFileName', () => {
 			const expected = ['\"navigation.css\"', '\'printstyle.css\'', 'bluish.css'];
 
 			it('should match filenames from string', () => {
-				expect(str.match(reCssFileName)).toEqual(expected);
+				expect(str.match(reCssFileName)).toStrictEqual(expected);
 			});
 		});
 	});

@@ -2,7 +2,7 @@ import { addSpacesNearCommas } from '../../converters/addSpacesNearCommas';
 import { addSpacesNearParentheses } from '../../converters/addSpacesNearParentheses';
 import { addUnitToFirstArgument } from '../../converters/addUnitToFirstArgument';
 import { trimSpacesNearCommas } from '../../converters/trimSpacesNearCommas';
-import { trimLeadingZero } from '../../converters/trimLeadingZero';
+import { trimLeadingZeros } from '../../converters/trimLeadingZeros';
 import { reHslaColor } from '.';
 
 describe('Module: reHslaColor', () => {
@@ -20,7 +20,7 @@ describe('Module: reHslaColor', () => {
 				.reduce((acc, color) => {
 					acc.push(
 						color,
-						trimLeadingZero(color),
+						trimLeadingZeros(color),
 						color.replace(/0\.0+/g, '').replace(/\)/g, '%)'),
 						addSpacesNearParentheses(color),
 						addSpacesNearCommas(color),

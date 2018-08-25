@@ -33,7 +33,7 @@ describe('Module: reCssFunction', () => {
 			];
 
 			suites.forEach((suite) => {
-				expect(suite.str.match(reCssFunction)).toEqual(suite.expected);
+				expect(suite.str.match(reCssFunction)).toStrictEqual(suite.expected);
 			});
 		});
 	});

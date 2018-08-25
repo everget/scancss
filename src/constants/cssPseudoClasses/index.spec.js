@@ -9,6 +9,6 @@ describe('Module: cssPseudoClasses', () => {
 	});
 
 	it('should not have intersections with `cssPseudoElements`', () => {
-		expect(intersection(cssPseudoClasses, cssPseudoElements)).toEqual([]);
+		expect(intersection(cssPseudoClasses, cssPseudoElements)).toStrictEqual([]);
 	});
 });

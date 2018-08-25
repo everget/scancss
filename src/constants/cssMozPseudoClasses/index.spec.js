@@ -9,6 +9,6 @@ describe('Module: cssMozPseudoClasses', () => {
 	});
 
 	it('should not have intersections with `cssMozPseudoElements`', () => {
-		expect(intersection(cssMozPseudoClasses, cssMozPseudoElements)).toEqual([]);
+		expect(intersection(cssMozPseudoClasses, cssMozPseudoElements)).toStrictEqual([]);
 	});
 });

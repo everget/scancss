@@ -2,7 +2,7 @@ import { addSpacesNearParentheses } from '../../converters/addSpacesNearParenthe
 import { addSpacesNearCommas } from '../../converters/addSpacesNearCommas';
 import { trimSpacesNearCommas } from '../../converters/trimSpacesNearCommas';
 import { addUnitToFirstArgument } from '../../converters/addUnitToFirstArgument';
-import { trimLeadingZero } from '../../converters/trimLeadingZero';
+import { trimLeadingZeros } from '../../converters/trimLeadingZeros';
 import { trimIntegerPart } from '../../converters/trimIntegerPart';
 import { reHwbColor } from '.';
 
@@ -84,7 +84,7 @@ describe('Module: reHwbColor', () => {
 				.reduce((acc, color) => {
 					acc.push(
 						color,
-						trimLeadingZero(color),
+						trimLeadingZeros(color),
 						trimIntegerPart(color).replace(/\)/g, '%)'),
 						addSpacesNearParentheses(color),
 						addSpacesNearCommas(color),
@@ -118,7 +118,7 @@ describe('Module: reHwbColor', () => {
 				.reduce((acc, color) => {
 					acc.push(
 						color,
-						trimLeadingZero(color),
+						trimLeadingZeros(color),
 						trimIntegerPart(color).replace(/\)/g, '%)'),
 						addSpacesNearParentheses(color),
 						addUnitToFirstArgument(color, 'deg'),
