@@ -1,12 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const scancss = require('../../dist/index');
+const timeNow = require('./timeNow');
 const walkDir = require('./walkDir');
-
-function timeNow() {
-	const hrtime = process.hrtime();
-	return ((hrtime[0] * 1e6 + hrtime[1] / 1e3) / 1e3);
-}
 
 module.exports = function scan(dir) {
 	function fileHandler(file) {
