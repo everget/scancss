@@ -1,9 +1,5 @@
 import { reNumberString } from '../../constants/reNumberString';
 
-/**
- * https://drafts.csswg.org/css-color/#the-hsl-notation
- */
-
 const reNumberStringSource = reNumberString.source.slice(1, -1);
 
 export function addUnitToFirstArgument(str, unit) {

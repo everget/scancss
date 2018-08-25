@@ -40,7 +40,7 @@ describe('Module: mergeSpecificities', () => {
 
 	suites.forEach((suite) => {
 		it(`should correctly merge arrays: ${JSON.stringify(suite.arrays)}`, () => {
-			expect(mergeSpecificities(...suite.arrays)).toEqual(suite.expected);
+			expect(mergeSpecificities(...suite.arrays)).toStrictEqual(suite.expected);
 		});
 	});
 });

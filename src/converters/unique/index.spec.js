@@ -31,6 +31,6 @@ describe('Module: unique', () => {
 			'',
 		];
 
-		expect(unique(array)).toEqual(uniqueArray);
+		expect(unique(array)).toStrictEqual(uniqueArray);
 	});
 });
