@@ -16,7 +16,6 @@
     "lint": "eslint --cache \"./src/**/*.js\"",
     "lint-staged": "lint-staged",
     "test": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/**/*.spec.js\"",
-    "test:memleaks": "node --max-old-space-size=4096 ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/**/*.spec.js\" --detectLeaks",
     "test:calculators": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/calculators/**/*.spec.js\"",
     "test:constants": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/constants/**/*.spec.js\"",
     "test:regexes": "node --max-old-space-size=4096 --trace-deprecation ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/constants/re*/*.spec.js\"",
@@ -73,14 +72,13 @@
     "coveralls": "^3.0.2",
     "eslint": "^5.0.1",
     "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jest": "^21.17.0",
+    "eslint-plugin-jest": "^21.22.0",
     "eslint-plugin-unicorn": "^5.0.0",
     "istanbul": "^0.4.5",
     "jest": "^23.1.0",
     "jest-cli": "^23.1.0",
     "lint-staged": "^7.2.0",
     "pre-commit": "^1.2.2",
-    "rimraf": "^2.6.2",
-    "weak": "^1.0.1"
+    "rimraf": "^2.6.2"
   }
 }
