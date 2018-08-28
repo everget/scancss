@@ -8,7 +8,7 @@
     "build": "rimraf ./dist && babel ./src -d ./dist --ignore spec.js",
     "scan:examples": "yarn build && node ./scripts/scanExamples.js",
     "perf:require": "yarn build && node ./scripts/perfRequire.js",
-    "clean": "rimraf ./dist ./coverage",
+    "cleanup": "rimraf ./dist ./coverage",
     "cover": "yarn cover:clean && yarn cover:all && yarn cover:report",
     "cover:clean": "rimraf coverage",
     "cover:all": "node --max-old-space-size=4096 ./node_modules/jest-cli/bin/jest --testMatch \"<rootDir>/src/**/*.spec.js\" --coverage",
