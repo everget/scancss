@@ -14,6 +14,8 @@ A robust CSS stylesheet statistics collector and analyzer
 
 1. [Usage](#usage)
 
+1. [Report Structure](#report-structure)
+
 1. [Examples](#examples)
 
 1. [Options](#options)
@@ -50,8 +52,6 @@ A robust CSS stylesheet statistics collector and analyzer
 	* [variables](#variables)
 	* [dataUris](#datauris)
 	* [browserHacks](#browserhacks)
-
-1. [Report Structure](#report-structure)
 
 1. [License](#license)
 
@@ -92,8 +92,24 @@ const stylesheet = `
 	}
 `;
 
-const report = scancss(stylesheet, {});
+// Switching off some metrics
+const report = scancss(
+	stylesheet,
+	{
+		atRules: false,
+		selectorsUsage: false,
+		dataUris: false,
+	}
+);
 ```
+
+**_NOTE:_** Without provided options object `scancss` will use defaults. See available [Options](#options).
+
+[Back to top](#table-of-contents)
+
+## Report Structure
+
+See [Report Structure](https://github.com/everget/scancss/tree/master/REPORT_STRUCTURE.md) for more details.
 
 [Back to top](#table-of-contents)
 
@@ -320,12 +336,6 @@ Use this flag to fill `.dataUris` metric
 Use this flag to fill `.browserHacks` metric
 
 * Default: `true`
-
-[Back to top](#table-of-contents)
-
-## Report Structure
-
-See [Report Structure](https://github.com/everget/scancss/tree/master/REPORT_STRUCTURE.md) for more details.
 
 [Back to top](#table-of-contents)
 
