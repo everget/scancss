@@ -414,7 +414,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
     "models": {
-      "hex": 5
+      "hex": 5,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -431,7 +437,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 1,
     "models": {
-      "hex": 3
+      "hex": 3,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -447,7 +459,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 1,
     "models": {
-      "hex": 8
+      "hex": 8,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},

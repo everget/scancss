@@ -19,6 +19,7 @@ describe('Module: isValidStepsFunctionArgs', () => {
 
 	describe('Negatives', () => {
 		const invalidStepsFunctions = [
+			'steps(1, 2, end)',
 			'steps(2.0, end)',
 			'steps(2.0,end)',
 			'steps(-3, start)',
@@ -27,7 +28,10 @@ describe('Module: isValidStepsFunctionArgs', () => {
 			'steps(0,end)',
 			'steps(0, foo)',
 			'steps(0,foo)',
+			'steps(1, foo)',
+			'steps(1,foo)',
 			'steps(0,)',
+			'steps(0)',
 		];
 
 		invalidStepsFunctions.forEach((func) => {

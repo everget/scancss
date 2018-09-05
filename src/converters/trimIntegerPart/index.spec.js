@@ -10,6 +10,14 @@ describe('Module: trimIntegerPart', () => {
 			str: '0.001, 0.01, 0.1',
 			expected: '001, 01, 1',
 		},
+		{
+			str: '11.001 24.01 10.1',
+			expected: '001 01 1',
+		},
+		{
+			str: '11.001, 24.01, 10.1',
+			expected: '001, 01, 1',
+		},
 	];
 
 	suites.forEach((suite) => {

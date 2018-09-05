@@ -48,7 +48,7 @@ describe('Module: intersection', () => {
 
 	suites.forEach((suite) => {
 		it(`should correctly find intersection of arrays: ${JSON.stringify(suite.arrays)}`, () => {
-			expect(intersection(...suite.arrays)).toEqual(suite.expected);
+			expect(intersection(...suite.arrays)).toStrictEqual(suite.expected);
 		});
 	});
 });

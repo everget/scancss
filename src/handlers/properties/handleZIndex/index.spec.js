@@ -79,7 +79,7 @@ describe('Module: handleZIndex', () => {
 
 	describe('zIndices.invalid', () => {
 		it('should be counted correctly', () => {
-			expect(report.zIndices.invalid).toEqual({
+			expect(report.zIndices.invalid).toStrictEqual({
 				xxx: 1,
 			});
 		});
@@ -88,7 +88,7 @@ describe('Module: handleZIndex', () => {
 	describe('zIndices.usage', () => {
 		it('should be counted correctly', () => {
 			/* eslint-disable quote-props */
-			expect(report.zIndices.usage).toEqual({
+			expect(report.zIndices.usage).toStrictEqual({
 				'-1': 1,
 				'1': 1,
 				'100': 1,

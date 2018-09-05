@@ -1,175 +1,200 @@
+import { default as parser } from 'postcss-values-parser';
+
 import { cssFilterFunctions } from '../../constants/cssFilterFunctions';
-import { reCssFunction } from '../../constants/reCssFunction';
-import { reCssGradient } from '../../constants/reCssGradient';
-import { reCubicBezier } from '../../constants/reCubicBezier';
-import { reCssFramesFunction } from '../../constants/reCssFramesFunction';
-import { reCssStepsFunction } from '../../constants/reCssStepsFunction';
-import { reCssUrlFunctionWithArg } from '../../constants/reCssUrlFunctionWithArg';
+import { reCssGradientFunctionName } from '../../constants/reCssGradientFunctionName';
 import { reImageDataUri } from '../../constants/reImageDataUri';
 import { rePrefixedString } from '../../constants/rePrefixedString';
 import { countUsage } from '../../calculators/countUsage';
+import { transformString } from '../../converters/transformString';
 import { trimExtraSpaces } from '../../converters/trimExtraSpaces';
+import { trimSpacesNearCommas } from '../../converters/trimSpacesNearCommas';
+import { trimSpacesNearParentheses } from '../../converters/trimSpacesNearParentheses';
+import { trimLeadingZeros } from '../../converters/trimLeadingZeros';
+import { trimTrailingZeros } from '../../converters/trimTrailingZeros';
+
+import { isSafeAst } from '../../predicates/isSafeAst';
 import { isValidCubicBezierArgs } from '../../predicates/isValidCubicBezierArgs';
 import { isValidFramesFunctionArgs } from '../../predicates/isValidFramesFunctionArgs';
 import { isValidStepsFunctionArgs } from '../../predicates/isValidStepsFunctionArgs';
 import { handleVendorPrefix } from '../handleVendorPrefix';
 
-function countFunctions(decl, report, options) {
-	decl.value
-		.match(reCssFunction)
-		.map((func) => func.slice(0, func.indexOf('(')))
-		.forEach((func) => {
-			report.functions.total++;
-			countUsage(func, report.functions.usage);
+function countFunction(func, report) {
+	report.functions.total++;
+	countUsage(func, report.functions.usage);
 
-			if (rePrefixedString.test(func)) {
-				report.functions.prefixed++;
-				handleVendorPrefix(func, report);
-			}
-
-			if (cssFilterFunctions.includes(func) && options.filters) {
-				report.filters.total++;
-				countUsage(func, report.filters.usage);
-			}
-		});
+	if (rePrefixedString.test(func)) {
+		report.functions.prefixed++;
+		handleVendorPrefix(func, report);
+	}
 }
 
-function countDataUris(decl, report) {
-	decl.value
-		.match(reCssUrlFunctionWithArg)
-		/* eslint-disable-next-line arrow-body-style */
-		.map((func) => {
-			return trimExtraSpaces(func)
-				.replace(/^url\(['"]?/g, '')
-				.replace(/['"]?\)/g, '');
-		})
-		.forEach((urlArg) => {
-			if (urlArg.match(reImageDataUri) !== null) {
-				report.dataUris.total++;
-
-				const dataUriByteLength = Buffer.byteLength(urlArg, 'utf8');
-				report.dataUris.length.total += dataUriByteLength;
-
-				if (report.dataUris.length.longest < dataUriByteLength) {
-					report.dataUris.length.longest = dataUriByteLength;
-					report.dataUris.length.longestDataUri = urlArg;
-				}
-
-				countUsage(urlArg, report.dataUris.usage);
-			}
-		});
+function countFilter(funcWithArgs, report) {
+	report.filters.total++;
+	countUsage(funcWithArgs, report.filters.usage);
 }
 
-function countGradients(decl, report) {
-	decl.value
-		.match(reCssGradient)
-		.map((func) => trimExtraSpaces(func))
-		.forEach((func) => {
-			report.gradients.total++;
-			countUsage(func, report.gradients.usage);
-		});
+function countDataUri(funcWithArgs, report) {
+	const processedFunc = transformString(
+		funcWithArgs,
+		[
+			trimExtraSpaces,
+			trimSpacesNearCommas,
+			trimSpacesNearParentheses,
+		]
+	);
+
+	const urlArg = processedFunc
+		.replace(/^url\(\s*['"]?\s*/g, '')
+		.replace(/\s*['"]?\s*\)/g, '')
+		.replace(/(\/?>)\s*(<\/?)/g, '$1$2');
+
+
+	if (urlArg.match(reImageDataUri) !== null) {
+		report.dataUris.total++;
+
+		const dataUriByteLength = Buffer.byteLength(urlArg, 'utf8');
+		report.dataUris.length.total += dataUriByteLength;
+
+		if (report.dataUris.length.longest < dataUriByteLength) {
+			report.dataUris.length.longest = dataUriByteLength;
+			report.dataUris.length.longestDataUri = urlArg;
+		}
+
+		countUsage(urlArg, report.dataUris.usage);
+	}
 }
 
-function countCubicBeziers(decl, report) {
-	const reportSection = decl.prop.includes('animation')
+function countGradient(funcWithArgs, report) {
+	report.gradients.total++;
+	countUsage(funcWithArgs, report.gradients.usage);
+}
+
+function countCubicBezier(funcWithArgs, prop, report) {
+	const reportSection = prop.includes('animation')
 		? report.animations
 		: report.transitions;
 
-	decl.value
-		.match(reCubicBezier)
-		.forEach((func) => {
-			const processedFunc = trimExtraSpaces(func);
-			countUsage(processedFunc, reportSection.timingFunctions);
+	countUsage(funcWithArgs, reportSection.timingFunctions);
 
-			/**
-			 * Count invalid cubic beziers
-			 * https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Examples
-			 */
-			if (isValidCubicBezierArgs(processedFunc) === false) {
-				countUsage(processedFunc, reportSection.invalidTimingFunctions);
-			}
-		});
+	const processedFunc = transformString(
+		funcWithArgs,
+		[
+			trimExtraSpaces,
+			trimSpacesNearCommas,
+			trimSpacesNearParentheses,
+			trimTrailingZeros,
+			trimLeadingZeros,
+		]
+	);
+
+	/**
+	 * Count invalid cubic beziers
+	 * https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Examples
+	 */
+	if (isValidCubicBezierArgs(processedFunc) === false) {
+		countUsage(funcWithArgs, reportSection.invalidTimingFunctions);
+	}
 }
 
-function countStepsFunctions(decl, report) {
-	const reportSection = decl.prop.includes('animation')
+function countStepsFunction(funcWithArgs, prop, report) {
+	const reportSection = prop.includes('animation')
 		? report.animations
 		: report.transitions;
 
-	decl.value
-		.match(reCssStepsFunction)
-		.forEach((func) => {
-			const processedFunc = trimExtraSpaces(func);
-			countUsage(processedFunc, reportSection.timingFunctions);
+	countUsage(funcWithArgs, reportSection.timingFunctions);
 
-			/**
-			 * Count invalid cubic beziers
-			 * https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Examples
-			 */
-			if (isValidStepsFunctionArgs(processedFunc) === false) {
-				countUsage(processedFunc, reportSection.invalidTimingFunctions);
-			}
-		});
+	const processedFunc = transformString(
+		funcWithArgs,
+		[
+			trimExtraSpaces,
+			trimSpacesNearCommas,
+			trimSpacesNearParentheses,
+		]
+	);
+
+	/**
+	 * Count invalid cubic beziers
+	 * https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Examples
+	 */
+	if (isValidStepsFunctionArgs(processedFunc) === false) {
+		countUsage(funcWithArgs, reportSection.invalidTimingFunctions);
+	}
 }
 
-function countFramesFunctions(decl, report) {
-	const reportSection = decl.prop.includes('animation')
+function countFramesFunction(funcWithArgs, prop, report) {
+	const reportSection = prop.includes('animation')
 		? report.animations
 		: report.transitions;
 
-	decl.value
-		.match(reCssFramesFunction)
-		.forEach((func) => {
-			const processedFunc = trimExtraSpaces(func);
-			countUsage(processedFunc, reportSection.timingFunctions);
+	countUsage(funcWithArgs, reportSection.timingFunctions);
 
-			/**
-			 * Count invalid cubic beziers
-			 * https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Examples
-			 */
-			if (isValidFramesFunctionArgs(processedFunc) === false) {
-				countUsage(processedFunc, reportSection.invalidTimingFunctions);
+	const processedFunc = transformString(
+		funcWithArgs,
+		[
+			trimExtraSpaces,
+			trimSpacesNearCommas,
+			trimSpacesNearParentheses,
+		]
+	);
+
+	/**
+	 * Count invalid cubic beziers
+	 * https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Examples
+	 */
+	if (isValidFramesFunctionArgs(processedFunc) === false) {
+		countUsage(funcWithArgs, reportSection.invalidTimingFunctions);
+	}
+}
+
+function walkFunctionNodes(nodes, decl, report, options) {
+	/* eslint-disable-next-line complexity */
+	nodes.forEach((node) => {
+		if (node.type === 'func') {
+			const funcName = node.value.toLowerCase();
+			const funcWithArgs = node.toString().trim();
+
+			countFunction(funcName, report);
+
+			if (cssFilterFunctions.includes(funcName) && options.filters) {
+				countFilter(funcWithArgs, report);
 			}
-		});
+
+			if (funcName.match(reCssGradientFunctionName) !== null && options.gradients) {
+				countGradient(funcWithArgs, report);
+			}
+
+			if (funcName === 'cubic-bezier' && options.transitionsAndAnimations) {
+				countCubicBezier(funcWithArgs, decl.prop, report);
+			}
+
+			if (funcName === 'steps' && options.transitionsAndAnimations) {
+				countStepsFunction(funcWithArgs, decl.prop, report);
+			}
+
+			if (funcName === 'frames' && options.transitionsAndAnimations) {
+				countFramesFunction(funcWithArgs, decl.prop, report);
+			}
+
+			if (funcName === 'url' && options.dataUris) {
+				countDataUri(funcWithArgs, report);
+			}
+
+			if (Array.isArray(node.nodes)) {
+				walkFunctionNodes(node.nodes, decl, report, options);
+			}
+		}
+	});
 }
 
 export function handleFunctions(decl, report, options) {
-	if (reCssFunction.test(decl.value)) {
-		countFunctions(decl, report, options);
+	try {
+		const ast = parser(decl.value).parse();
 
-		if (
-			reCssUrlFunctionWithArg.test(decl.value) &&
-			options.dataUris
-		) {
-			countDataUris(decl, report);
+		if (isSafeAst(ast)) {
+			walkFunctionNodes(ast.nodes[0].nodes, decl, report, options);
 		}
-
-		if (
-			reCssGradient.test(decl.value) &&
-			options.gradients
-		) {
-			countGradients(decl, report);
-		}
-
-		if (
-			reCubicBezier.test(decl.value) &&
-			options.transitionsAndAnimations
-		) {
-			countCubicBeziers(decl, report);
-		}
-
-		if (
-			reCssStepsFunction.test(decl.value) &&
-			options.transitionsAndAnimations
-		) {
-			countStepsFunctions(decl, report);
-		}
-
-		if (
-			reCssFramesFunction.test(decl.value) &&
-			options.transitionsAndAnimations
-		) {
-			countFramesFunctions(decl, report);
-		}
+	} catch (err) {
+		/* eslint-disable-next-line no-console */
+		console.log(`'postcss-values-parser' module error\n${err}`);
 	}
 }

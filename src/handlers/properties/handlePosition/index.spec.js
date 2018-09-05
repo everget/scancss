@@ -71,7 +71,7 @@ describe('Module: handlePosition', () => {
 
 	describe('positions.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.positions.usage).toEqual({
+			expect(report.positions.usage).toStrictEqual({
 				static: 1,
 				relative: 1,
 				absolute: 1,

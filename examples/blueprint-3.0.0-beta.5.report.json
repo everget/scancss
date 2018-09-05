@@ -673,7 +673,15 @@
     "unique": 0,
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
-    "models": {},
+    "models": {
+      "hex": 0,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
+    },
     "named": {},
     "system": {},
     "usage": {}
@@ -683,7 +691,15 @@
     "unique": 0,
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
-    "models": {},
+    "models": {
+      "hex": 0,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
+    },
     "named": {},
     "system": {},
     "usage": {}
@@ -693,7 +709,15 @@
     "unique": 0,
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
-    "models": {},
+    "models": {
+      "hex": 0,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
+    },
     "named": {},
     "system": {},
     "usage": {}

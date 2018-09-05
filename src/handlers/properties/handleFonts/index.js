@@ -6,7 +6,11 @@ import { cssSystemFonts } from '../../../constants/cssSystemFonts';
 import { cssFontSizeKeywords } from '../../../constants/cssFontSizeKeywords';
 import { reExistingVendorPrefix } from '../../../constants/reExistingVendorPrefix';
 import { countUsage } from '../../../calculators/countUsage';
+import { transformString } from '../../../converters/transformString';
 import { trimExtraSpaces } from '../../../converters/trimExtraSpaces';
+import { trimSpacesNearCommas } from '../../../converters/trimSpacesNearCommas';
+import { trimSpacesNearParentheses } from '../../../converters/trimSpacesNearParentheses';
+import { trimQuotes } from '../../../converters/trimQuotes';
 import { handleVendorPrefix } from '../../handleVendorPrefix';
 import { isNumber } from '../../../predicates/isNumber';
 
@@ -34,7 +38,7 @@ function countFontFamilies(propValue, report) {
 	const familiesList = postcss.list.comma(propValue);
 
 	familiesList
-		.map((family) => family.trim().replace(/['"]/g, '').trim())
+		.map((family) => trimQuotes(family).trim())
 		.forEach((family) => {
 			report.fontFamilies.total++;
 
@@ -55,7 +59,14 @@ function countFontFamilies(propValue, report) {
 }
 
 export function handleFonts(decl, report) {
-	const cleanedValue = trimExtraSpaces(decl.value);
+	const cleanedValue = transformString(
+		decl.value,
+		[
+			trimExtraSpaces,
+			trimSpacesNearCommas,
+			trimSpacesNearParentheses,
+		]
+	);
 
 	if (decl.prop === 'font') {
 		// http://nicolasgallagher.com/another-css-image-replacement-technique/
@@ -72,21 +83,21 @@ export function handleFonts(decl, report) {
 
 		if (typeof fontLonghand['font-size'] === 'string') {
 			countFontSizes(
-				trimExtraSpaces(fontLonghand['font-size']),
+				fontLonghand['font-size'].trim(),
 				report
 			);
 		}
 
 		if (typeof fontLonghand['line-height'] === 'string') {
 			countLineHeights(
-				trimExtraSpaces(fontLonghand['line-height']),
+				fontLonghand['line-height'].trim(),
 				report
 			);
 		}
 
 		if (typeof fontLonghand['font-family'] === 'string') {
 			countFontFamilies(
-				trimExtraSpaces(fontLonghand['font-family']),
+				fontLonghand['font-family'].trim(),
 				report
 			);
 		}

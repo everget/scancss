@@ -48,7 +48,7 @@ describe('Module: compareSpecificities', () => {
 
 	suites.forEach((suite) => {
 		it(`should correctly compare arrays: ${JSON.stringify(suite.arrays)}`, () => {
-			expect(compareSpecificities(...suite.arrays)).toEqual(suite.expected);
+			expect(compareSpecificities(...suite.arrays)).toStrictEqual(suite.expected);
 		});
 	});
 });

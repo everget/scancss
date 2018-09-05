@@ -1,9 +1,17 @@
+import { default as parser } from 'postcss-values-parser';
+
 import { cssColorableProperties } from '../../constants/cssColorableProperties';
-import { reCssExplicitDefaultingKeyword } from '../../constants/reCssExplicitDefaultingKeyword';
+import { cssExplicitDefaultingKeywords } from '../../constants/cssExplicitDefaultingKeywords';
 import { rePrefixedString } from '../../constants/rePrefixedString';
+import { isSafeAst } from '../../predicates/isSafeAst';
 import { isShorthandProperty } from '../../predicates/isShorthandProperty';
+import { isCustomProperty } from '../../predicates/isCustomProperty';
 import { countUsage } from '../../calculators/countUsage';
+import { transformString } from '../../converters/transformString';
 import { trimExtraSpaces } from '../../converters/trimExtraSpaces';
+import { trimSpacesNearColon } from '../../converters/trimSpacesNearColon';
+import { trimSpacesNearCommas } from '../../converters/trimSpacesNearCommas';
+import { trimSpacesNearParentheses } from '../../converters/trimSpacesNearParentheses';
 
 import { handleEngineTriggers } from '../properties/handleEngineTriggers';
 import { handleColorable } from '../properties/handleColorable';
@@ -30,13 +38,22 @@ const supportedCssFontProperties = [
 	'font-family',
 ];
 
+/* eslint-disable-next-line complexity */
 export function handleDeclaration(decl, report, options) {
 	report.declarations.total++;
 
 	const declarationByteLength = Buffer.byteLength(decl.toString(), 'utf8');
 	report.declarations.length.total += declarationByteLength;
 
-	const normalizedDecl = trimExtraSpaces(decl.toString());
+	const normalizedDecl = transformString(
+		decl.toString(),
+		[
+			trimExtraSpaces,
+			trimSpacesNearColon,
+			trimSpacesNearCommas,
+			trimSpacesNearParentheses,
+		]
+	);
 
 	if (report.declarations.length.longest < declarationByteLength) {
 		report.declarations.length.longest = declarationByteLength;
@@ -55,7 +72,7 @@ export function handleDeclaration(decl, report, options) {
 
 	if (options.properties) {
 		/** Count properties excluding variables */
-		if (prop.startsWith('--') === false) {
+		if (isCustomProperty(prop) === false) {
 			report.properties.total++;
 			countUsage(prop, report.properties.usage);
 		}
@@ -71,13 +88,23 @@ export function handleDeclaration(decl, report, options) {
 			report.properties.shorthands++;
 		}
 
-		if (reCssExplicitDefaultingKeyword.test(decl.value)) {
-			decl.value
-				.match(reCssExplicitDefaultingKeyword)
-				.forEach((match) => {
-					report.properties.explicitDefaultingKeywords.total++;
-					countUsage(match, report.properties.explicitDefaultingKeywords.usage);
-				});
+		try {
+			const ast = parser(decl.value).parse();
+
+			if (isSafeAst(ast)) {
+				ast.nodes[0].nodes
+					.forEach((node) => {
+						const lowerCasedValue = node.value;
+
+						if (node.type === 'word' && cssExplicitDefaultingKeywords.includes(lowerCasedValue)) {
+							report.properties.explicitDefaultingKeywords.total++;
+							countUsage(lowerCasedValue, report.properties.explicitDefaultingKeywords.usage);
+						}
+					});
+			}
+		} catch (err) {
+			/* eslint-disable-next-line no-console */
+			console.log(`'postcss-values-parser' module error\n${err}`);
 		}
 
 		if (options.engineTriggerProperties) {
@@ -130,7 +157,7 @@ export function handleDeclaration(decl, report, options) {
 	}
 
 	if (
-		prop.startsWith('--') === false &&
+		isCustomProperty(prop) === false &&
 		prop.includes('border-') &&
 		prop.endsWith('-radius') &&
 		options.borderRadiuses

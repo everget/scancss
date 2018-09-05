@@ -132,7 +132,7 @@ describe('Module: handleFonts', () => {
 		describe('fontSizes.usage', () => {
 			it('should be counted correctly', () => {
 				/* eslint-disable quote-props */
-				expect(report.fontSizes.usage).toEqual({
+				expect(report.fontSizes.usage).toStrictEqual({
 					'0': 1,
 					'1.96875rem': 1,
 					'10px': 1,
@@ -170,7 +170,7 @@ describe('Module: handleFonts', () => {
 
 		describe('fontSizes.keywords.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.fontSizes.keywords.usage).toEqual({
+				expect(report.fontSizes.keywords.usage).toStrictEqual({
 					large: 1,
 					larger: 1,
 					medium: 1,
@@ -207,7 +207,7 @@ describe('Module: handleFonts', () => {
 		describe('lineHeights.usage', () => {
 			it('should be counted correctly', () => {
 				/* eslint-disable quote-props */
-				expect(report.lineHeights.usage).toEqual({
+				expect(report.lineHeights.usage).toStrictEqual({
 					'0': 2,
 					'.1': 1,
 					'1.15': 1,
@@ -238,7 +238,7 @@ describe('Module: handleFonts', () => {
 
 		describe('fontFamilies.system', () => {
 			it('should be counted correctly', () => {
-				expect(report.fontFamilies.system).toEqual({
+				expect(report.fontFamilies.system).toStrictEqual({
 					'message-box': 1,
 					'status-bar': 1,
 				});
@@ -247,7 +247,7 @@ describe('Module: handleFonts', () => {
 
 		describe('fontFamilies.generic', () => {
 			it('should be counted correctly', () => {
-				expect(report.fontFamilies.generic).toEqual({
+				expect(report.fontFamilies.generic).toStrictEqual({
 					'sans-serif': 4,
 					monospace: 1,
 				});
@@ -268,7 +268,7 @@ describe('Module: handleFonts', () => {
 
 		describe('fontFamilies.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.fontFamilies.usage).toEqual({
+				expect(report.fontFamilies.usage).toStrictEqual({
 					'-apple-system': 1,
 					'Apple Color Emoji': 1,
 					Arial: 4,
@@ -302,7 +302,7 @@ describe('Module: handleFonts', () => {
 
 		describe('vendorPrefixes.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.vendorPrefixes.usage).toEqual({
+				expect(report.vendorPrefixes.usage).toStrictEqual({
 					'-apple-': 1,
 				});
 			});

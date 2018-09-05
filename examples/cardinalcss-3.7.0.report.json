@@ -1043,7 +1043,12 @@
     "transparentKeyword": 0,
     "models": {
       "hex": 50,
-      "rgba": 6
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 6,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -1056,8 +1061,8 @@
       "#777777": 6,
       "#dedede": 23,
       "#ffffff": 2,
-      "rgba(0,0,0,0.15)": 4,
-      "rgba(0,0,0,0.25)": 2,
+      "rgba(0,0,0,.15)": 4,
+      "rgba(0,0,0,.25)": 2,
       "#1fa3ec": 1
     }
   },
@@ -1067,7 +1072,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 3,
     "models": {
-      "hex": 16
+      "hex": 16,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -1093,7 +1104,12 @@
     "transparentKeyword": 3,
     "models": {
       "hex": 66,
-      "rgba": 6
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 6,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -1111,10 +1127,10 @@
       "#dedede": 24,
       "#f8f8f8": 5,
       "#efefef": 2,
-      "rgba(0,0,0,0.15)": 4,
+      "rgba(0,0,0,.15)": 4,
       "#e3e3e3": 1,
       "#d9d9d9": 1,
-      "rgba(0,0,0,0.25)": 2,
+      "rgba(0,0,0,.25)": 2,
       "#1fa3ec": 2,
       "#32abee": 1,
       "#1399e3": 1

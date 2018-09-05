@@ -9,6 +9,6 @@ describe('Module: cssWebkitPseudoClasses', () => {
 	});
 
 	it('should not have intersections with `cssWebkitPseudoElements`', () => {
-		expect(intersection(cssWebkitPseudoClasses, cssWebkitPseudoElements)).toEqual([]);
+		expect(intersection(cssWebkitPseudoClasses, cssWebkitPseudoElements)).toStrictEqual([]);
 	});
 });

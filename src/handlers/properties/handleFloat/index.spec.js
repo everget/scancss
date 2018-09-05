@@ -51,7 +51,7 @@ describe('Module: handleFloat', () => {
 
 	describe('floats.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.floats.usage).toEqual({
+			expect(report.floats.usage).toStrictEqual({
 				left: 1,
 				right: 1,
 				none: 1,

@@ -59,7 +59,7 @@ describe('Module: handleLetterSpacing', () => {
 
 	describe('letterSpacings.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.letterSpacings.usage).toEqual({
+			expect(report.letterSpacings.usage).toStrictEqual({
 				normal: 1,
 				'.3px': 1,
 				'0.3em': 1,

@@ -65,7 +65,7 @@ describe('Module: handleBorderRadiuses', () => {
 
 	describe('borderRadiuses.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.borderRadiuses.usage).toEqual({
+			expect(report.borderRadiuses.usage).toStrictEqual({
 				'1px': 1,
 				'2px': 1,
 				'3px': 1,

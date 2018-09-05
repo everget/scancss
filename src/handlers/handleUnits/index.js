@@ -1,53 +1,23 @@
+import { default as parser } from 'postcss-values-parser';
+
+import { cssUnits } from '../../constants/cssUnits';
 import { cssUnitsThatAllowZeroWithoutUnit } from '../../constants/cssUnitsThatAllowZeroWithoutUnit';
-import { reNumberString } from '../../constants/reNumberString';
-import { reNumberWithCssUnit } from '../../constants/reNumberWithCssUnit';
-import { reCssUrlFunctionWithArg } from '../../constants/reCssUrlFunctionWithArg';
 import { countUsage } from '../../calculators/countUsage';
+import { isSafeAst } from '../../predicates/isSafeAst';
 
-const reAllowedLeadingSymbols = /(^|[(,\s])\s*/g;
-const reNumberWithCssUnitWithAllowedLeadingSymbols = new RegExp(
-	reAllowedLeadingSymbols.source + reNumberWithCssUnit.source,
-	'g'
-);
+function walkNodes(nodes, decl, report, options) {
+	nodes.forEach((node) => {
+		if (node.type === 'number' && node.unit !== '') {
+			const unit = node.unit.toLowerCase();
+			const valueWithUnit = node.value + unit;
 
-const reNumberStringSource = reNumberString.source.slice(1, -1);
-const reNumberStringGlobal = new RegExp(reNumberStringSource, 'g');
-
-const excludedUnitlessProps = [
-	'animation-name',
-	'background-image',
-	'content',
-	'font-family',
-];
-
-export function handleUnits(decl, report, options) {
-	if (excludedUnitlessProps.includes(decl.prop) && options.properties) {
-		report.properties.unitless++;
-		return;
-	}
-
-	/** Need to prevent units matching from data URIs in `url` function */
-	const safedDeclValue = decl.prop === 'background' && reCssUrlFunctionWithArg.test(decl.value)
-		? decl.value.replace(reCssUrlFunctionWithArg, '')
-		: decl.value;
-
-	if (reNumberWithCssUnitWithAllowedLeadingSymbols.test(safedDeclValue)) {
-		safedDeclValue
-			.match(reNumberWithCssUnitWithAllowedLeadingSymbols)
-			/* eslint-disable-next-line arrow-body-style */
-			.map((match) => {
-				return match
-					.replace(reAllowedLeadingSymbols, '')
-					.replace(/\(/g, '')
-					.replace(/,/g, '');
-			})
-			.forEach((match) => {
+			if (cssUnits.includes(unit)) {
 				report.units.total++;
 
 				/** Count negative margins */
 				if (
 					decl.prop.startsWith('margin') &&
-					match.startsWith('-') &&
+					node.value.startsWith('-') &&
 					options.properties
 				) {
 					report.properties.negativeMargins++;
@@ -55,17 +25,38 @@ export function handleUnits(decl, report, options) {
 
 				/** Count excessive units, i.e. `0px` */
 				if (
-					parseFloat(match) === 0 &&
-					cssUnitsThatAllowZeroWithoutUnit.some((unit) => match.endsWith(unit))
+					parseFloat(node.value) === 0 &&
+					cssUnitsThatAllowZeroWithoutUnit.includes(unit)
 				) {
 					report.units.excessive.total++;
-					countUsage(match, report.units.excessive.usage);
+					countUsage(valueWithUnit, report.units.excessive.usage);
 				}
 
-				const unit = match.replace(reNumberStringGlobal, '');
 				countUsage(unit, report.units.usage);
-			});
-	} else if (options.properties) {
+			}
+		}
+
+		if (node.type === 'func' && Array.isArray(node.nodes)) {
+			walkNodes(node.nodes, decl, report, options);
+		}
+	});
+}
+
+export function handleUnits(decl, report, options) {
+	const currentUnitsTotal = report.units.total;
+
+	try {
+		const ast = parser(decl.value).parse();
+
+		if (isSafeAst(ast)) {
+			walkNodes(ast.nodes[0].nodes, decl, report, options);
+		}
+	} catch (err) {
+		/* eslint-disable-next-line no-console */
+		console.log(`'postcss-values-parser' module error\n${err}`);
+	}
+
+	if (currentUnitsTotal === report.units.total && options.properties) {
 		report.properties.unitless++;
 	}
 }

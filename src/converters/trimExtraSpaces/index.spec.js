@@ -8,7 +8,7 @@ describe('Module: trimExtraSpaces', () => {
 		},
 		{
 			str: ' foo , bar , baz ',
-			expected: 'foo,bar,baz',
+			expected: 'foo , bar , baz',
 		},
 		{
 			str: '  foo  ',
@@ -16,31 +16,31 @@ describe('Module: trimExtraSpaces', () => {
 		},
 		{
 			str: 'foo,  bar,  baz',
-			expected: 'foo,bar,baz',
+			expected: 'foo, bar, baz',
 		},
 		{
 			str: '  foo,  bar,  baz  ',
-			expected: 'foo,bar,baz',
+			expected: 'foo, bar, baz',
 		},
 		{
 			str: '   foo   ,   bar   ,   baz   ',
-			expected: 'foo,bar,baz',
+			expected: 'foo , bar , baz',
 		},
 		{
-			str: 'foo,\nbar,\nbaz',
-			expected: 'foo,bar,baz',
+			str: 'foo,\n\nbar,\n\nbaz',
+			expected: 'foo, bar, baz',
 		},
 		{
 			str: '   foo   \n,   \nbar   ,   baz\n   ',
-			expected: 'foo,bar,baz',
+			expected: 'foo , bar , baz',
 		},
 		{
 			str: 'cubic-bezier(  .47  ,   0   ,   .745   ,  .715  )',
-			expected: 'cubic-bezier(.47,0,.745,.715)',
+			expected: 'cubic-bezier( .47 , 0 , .745 , .715 )',
 		},
 		{
-			str: '@media screen and (min-width:   992px   ) {}',
-			expected: '@media screen and (min-width:992px) {}',
+			str: '@media  screen  and  (   min-width:   992px   ) {}',
+			expected: '@media screen and ( min-width: 992px ) {}',
 		},
 	];
 

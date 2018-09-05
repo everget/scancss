@@ -69,7 +69,7 @@ describe('Module: difference', () => {
 
 	suites.forEach((suite) => {
 		it(`should correctly find difference of arrays: ${JSON.stringify(suite.arrays)}`, () => {
-			expect(difference(...suite.arrays)).toEqual(suite.expected);
+			expect(difference(...suite.arrays)).toStrictEqual(suite.expected);
 		});
 	});
 });

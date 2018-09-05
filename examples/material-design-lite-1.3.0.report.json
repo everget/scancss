@@ -351,7 +351,9 @@
     "negativeMargins": 3,
     "anonymousReplacedElements": 22,
     "performanceHacks": {
-      "will-change": 5
+      "will-change: box-shadow": 1,
+      "will-change: background-color": 1,
+      "will-change: transform": 3
     },
     "explicitDefaultingKeywords": {
       "total": 10,
@@ -801,9 +803,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 6,
     "models": {
-      "rgba": 117,
       "hex": 5,
-      "rgb": 329
+      "hexa": 0,
+      "rgb": 329,
+      "rgba": 117,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {
       "gray": 1,
@@ -811,7 +817,7 @@
     },
     "system": {},
     "usage": {
-      "rgba(0,0,0,0.87)": 7,
+      "rgba(0,0,0,.87)": 7,
       "#cccccc": 1,
       "#000000": 2,
       "#999999": 1,
@@ -1074,20 +1080,20 @@
       "rgb(0,0,0)": 4,
       "rgb(255,255,255)": 15,
       "gray": 1,
-      "rgba(0,0,0,0.14)": 18,
-      "rgba(0,0,0,0.2)": 18,
-      "rgba(0,0,0,0.12)": 27,
-      "rgba(0,0,0,0.18)": 2,
-      "rgba(0,0,0,0.36)": 2,
-      "rgba(0,0,0,0.24)": 1,
-      "rgba(0,0,0,0.26)": 19,
-      "rgba(0,0,0,0.1)": 6,
-      "rgba(0,0,0,0.54)": 10,
-      "rgba(63,81,181,0.26)": 4,
+      "rgba(0,0,0,.14)": 18,
+      "rgba(0,0,0,.2)": 18,
+      "rgba(0,0,0,.12)": 27,
+      "rgba(0,0,0,.18)": 2,
+      "rgba(0,0,0,.36)": 2,
+      "rgba(0,0,0,.24)": 1,
+      "rgba(0,0,0,.26)": 19,
+      "rgba(0,0,0,.1)": 6,
+      "rgba(0,0,0,.54)": 10,
+      "rgba(63,81,181,.26)": 4,
       "white": 3,
       "#757575": 1,
-      "rgba(0,0,0,0.5)": 1,
-      "rgba(255,255,255,0.6)": 1
+      "rgba(0,0,0,.5)": 1,
+      "rgba(255,255,255,.6)": 1
     }
   },
   "backgroundColors": {
@@ -1097,8 +1103,12 @@
     "transparentKeyword": 44,
     "models": {
       "hex": 9,
+      "hexa": 0,
       "rgb": 349,
-      "rgba": 58
+      "rgba": 58,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -1363,23 +1373,23 @@
       "rgb(38,50,56)": 1,
       "rgb(0,0,0)": 2,
       "rgb(255,255,255)": 11,
-      "rgba(255,255,255,0.2)": 1,
-      "rgba(158,158,158,0.20)": 3,
-      "rgba(0,0,0,0.12)": 12,
-      "rgba(158,158,158,0.40)": 5,
-      "rgba(0,0,0,0.1)": 2,
-      "rgba(63,81,181,0.26)": 5,
-      "rgba(0,0,0,0.26)": 20,
+      "rgba(255,255,255,.2)": 1,
+      "rgba(158,158,158,.2)": 3,
+      "rgba(0,0,0,.12)": 12,
+      "rgba(158,158,158,.4)": 5,
+      "rgba(0,0,0,.1)": 2,
+      "rgba(63,81,181,.26)": 5,
+      "rgba(0,0,0,.26)": 20,
       "#dedede": 1,
       "#d6d6d6": 1,
       "#e0e0e0": 1,
       "#eeeeee": 1,
-      "rgba(255,255,255,0.7)": 4,
-      "rgba(255,255,255,0.9)": 2,
-      "rgba(0,0,0,0.5)": 2,
+      "rgba(255,255,255,.7)": 4,
+      "rgba(255,255,255,.9)": 2,
+      "rgba(0,0,0,.5)": 2,
       "#323232": 1,
-      "rgba(63,81,181,0.5)": 1,
-      "rgba(97,97,97,0.9)": 1
+      "rgba(63,81,181,.5)": 1,
+      "rgba(97,97,97,.9)": 1
     }
   },
   "allColors": {
@@ -1388,9 +1398,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 50,
     "models": {
-      "rgba": 175,
       "hex": 14,
-      "rgb": 678
+      "hexa": 0,
+      "rgb": 678,
+      "rgba": 175,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {
       "gray": 1,
@@ -1398,7 +1412,7 @@
     },
     "system": {},
     "usage": {
-      "rgba(0,0,0,0.87)": 7,
+      "rgba(0,0,0,.87)": 7,
       "#b3d4fc": 2,
       "#cccccc": 2,
       "#000000": 2,
@@ -1662,33 +1676,33 @@
       "rgb(38,50,56)": 2,
       "rgb(0,0,0)": 6,
       "rgb(255,255,255)": 26,
-      "rgba(255,255,255,0.2)": 1,
+      "rgba(255,255,255,.2)": 1,
       "gray": 1,
-      "rgba(158,158,158,0.20)": 3,
-      "rgba(0,0,0,0.12)": 39,
-      "rgba(158,158,158,0.40)": 5,
-      "rgba(0,0,0,0.14)": 18,
-      "rgba(0,0,0,0.2)": 18,
-      "rgba(0,0,0,0.18)": 2,
-      "rgba(0,0,0,0.36)": 2,
-      "rgba(0,0,0,0.24)": 1,
-      "rgba(0,0,0,0.26)": 39,
-      "rgba(0,0,0,0.1)": 8,
-      "rgba(0,0,0,0.54)": 10,
-      "rgba(63,81,181,0.26)": 9,
+      "rgba(158,158,158,.2)": 3,
+      "rgba(0,0,0,.12)": 39,
+      "rgba(158,158,158,.4)": 5,
+      "rgba(0,0,0,.14)": 18,
+      "rgba(0,0,0,.2)": 18,
+      "rgba(0,0,0,.18)": 2,
+      "rgba(0,0,0,.36)": 2,
+      "rgba(0,0,0,.24)": 1,
+      "rgba(0,0,0,.26)": 39,
+      "rgba(0,0,0,.1)": 8,
+      "rgba(0,0,0,.54)": 10,
+      "rgba(63,81,181,.26)": 9,
       "#dedede": 1,
       "#d6d6d6": 1,
       "#e0e0e0": 1,
       "#eeeeee": 1,
       "white": 3,
-      "rgba(255,255,255,0.7)": 4,
-      "rgba(255,255,255,0.9)": 2,
+      "rgba(255,255,255,.7)": 4,
+      "rgba(255,255,255,.9)": 2,
       "#757575": 1,
-      "rgba(0,0,0,0.5)": 3,
-      "rgba(255,255,255,0.6)": 1,
+      "rgba(0,0,0,.5)": 3,
+      "rgba(255,255,255,.6)": 1,
       "#323232": 1,
-      "rgba(63,81,181,0.5)": 1,
-      "rgba(97,97,97,0.9)": 1
+      "rgba(63,81,181,.5)": 1,
+      "rgba(97,97,97,.9)": 1
     }
   },
   "transitions": {
@@ -1713,9 +1727,9 @@
     "longestDelay": 0,
     "shortestDelay": 9007199254740991,
     "timingFunctions": {
-      "cubic-bezier(0,0,0.2,1)": 18,
-      "cubic-bezier(0.4,0,0.2,1)": 48,
-      "cubic-bezier(0.4,0,1,1)": 8,
+      "cubic-bezier(0, 0, 0.2, 1)": 18,
+      "cubic-bezier(0.4, 0, 0.2, 1)": 48,
+      "cubic-bezier(0.4, 0, 1, 1)": 8,
       "step-end": 1
     },
     "invalidTimingFunctions": {}
@@ -1745,9 +1759,9 @@
     },
     "timingFunctions": {
       "linear": 4,
-      "cubic-bezier(0.4,0,0.4,1)": 4,
-      "cubic-bezier(0.4,0,0.2,1)": 20,
-      "cubic-bezier(0,0,0.2,1)": 2
+      "cubic-bezier(0.4, 0, 0.4, 1)": 4,
+      "cubic-bezier(0.4, 0, 0.2, 1)": 20,
+      "cubic-bezier(0, 0, 0.2, 1)": 2
     },
     "invalidTimingFunctions": {}
   },
@@ -1766,7 +1780,7 @@
       "url": 6,
       "scale": 41,
       "linear-gradient": 9,
-      "translateX": 6,
+      "translatex": 6,
       "calc": 68,
       "radial-gradient": 5,
       "rotate": 64
@@ -1778,20 +1792,21 @@
     "usage": {}
   },
   "gradients": {
-    "total": 17,
-    "unique": 11,
+    "total": 20,
+    "unique": 12,
     "usage": {
-      "-webkit-radial-gradient(circle,white,black)": 6,
-      "linear-gradient(to right,rgba(255,255,255,0.7),rgba(255,255,255,0.7)),linear-gradient(to right,rgb(63,81,181),rgb(63,81,181))": 2,
-      "linear-gradient(to right,rgba(255,255,255,0.9),rgba(255,255,255,0.9)),linear-gradient(to right,rgb(63,81,181),rgb(63,81,181))": 1,
-      "linear-gradient(to right,transparent,transparent 16px,rgb(63,81,181) 16px,rgb(63,81,181) 0)": 1,
-      "linear-gradient(to left,transparent,transparent 16px,rgba(0,0,0,0.26) 16px,rgba(0,0,0,0.26) 0)": 1,
-      "radial-gradient(circle closest-side,rgb(63,81,181) 0%,rgb(63,81,181) 37.5%,rgba(63,81,181,0.26) 37.5%,rgba(63,81,181,0.26) 100%)": 1,
-      "radial-gradient(circle closest-side,transparent 0%,transparent 66.67%,rgba(0,0,0,0.26) 66.67%,rgba(0,0,0,0.26) 100%)": 1,
-      "radial-gradient(circle closest-side,rgba(0,0,0,0.12) 0%,rgba(0,0,0,0.12) 25%,rgba(0,0,0,0.26) 25%,rgba(0,0,0,0.26) 37.5%,rgba(0,0,0,0.12) 37.5%,rgba(0,0,0,0.12) 100%)": 1,
-      "radial-gradient(circle closest-side,transparent 0%,transparent 77.78%,rgba(0,0,0,0.26) 77.78%,rgba(0,0,0,0.26) 100%)": 1,
-      "radial-gradient(circle closest-side,transparent 0%,transparent 50%,rgba(0,0,0,0.26) 50%,rgba(0,0,0,0.26) 100%)": 1,
-      "linear-gradient(to right,transparent,transparent 25px,rgba(0,0,0,0.26) 25px,rgba(0,0,0,0.26) 0)": 1
+      "-webkit-radial-gradient(circle, white, black)": 6,
+      "linear-gradient(to right, rgba(255,255,255, 0.7), rgba(255,255,255, 0.7))": 2,
+      "linear-gradient(to right, rgb(63,81,181), rgb(63,81,181))": 3,
+      "linear-gradient(to right, rgba(255,255,255, 0.9), rgba(255,255,255, 0.9))": 1,
+      "linear-gradient(to right, transparent, transparent 16px, rgb(63,81,181) 16px, rgb(63,81,181) 0)": 1,
+      "linear-gradient(to left, transparent, transparent 16px, rgba(0,0,0, 0.26) 16px, rgba(0,0,0, 0.26) 0)": 1,
+      "radial-gradient(circle closest-side, rgb(63,81,181) 0%, rgb(63,81,181) 37.5%, rgba(63,81,181, 0.26) 37.5%, rgba(63,81,181, 0.26) 100%)": 1,
+      "radial-gradient(circle closest-side, transparent 0%, transparent 66.67%, rgba(0,0,0, 0.26) 66.67%, rgba(0,0,0, 0.26) 100%)": 1,
+      "radial-gradient(circle closest-side, rgba(0,0,0, 0.12) 0%, rgba(0,0,0, 0.12) 25%, rgba(0,0,0, 0.26) 25%, rgba(0,0,0, 0.26) 37.5%, rgba(0,0,0, 0.12) 37.5%, rgba(0,0,0, 0.12) 100%)": 1,
+      "radial-gradient(circle closest-side, transparent 0%, transparent 77.78%, rgba(0,0,0, 0.26) 77.78%, rgba(0,0,0, 0.26) 100%)": 1,
+      "radial-gradient(circle closest-side, transparent 0%, transparent 50%, rgba(0,0,0, 0.26) 50%, rgba(0,0,0, 0.26) 100%)": 1,
+      "linear-gradient(to right, transparent, transparent 25px, rgba(0,0,0, 0.26) 25px, rgba(0,0,0, 0.26) 0)": 1
     }
   },
   "dataUris": {

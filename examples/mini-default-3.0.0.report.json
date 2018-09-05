@@ -630,7 +630,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 1,
     "models": {
-      "hex": 2
+      "hex": 2,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -645,7 +651,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 3,
     "models": {
-      "hex": 2
+      "hex": 2,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -661,7 +673,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 4,
     "models": {
-      "hex": 4
+      "hex": 4,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -716,7 +734,7 @@
       "rect": 10,
       "inset": 24,
       "translate": 1,
-      "translateX": 1,
+      "translatex": 1,
       "rotate": 2,
       "invert": 4,
       "url": 20
@@ -724,16 +742,17 @@
   },
   "filters": {
     "total": 4,
-    "unique": 1,
+    "unique": 2,
     "usage": {
-      "invert": 4
+      "invert(25%)": 2,
+      "invert(100%)": 2
     }
   },
   "gradients": {
     "total": 1,
     "unique": 1,
     "usage": {
-      "linear-gradient(to right,transparent,var(--border-color) 20%,var(--border-color) 80%,transparent)": 1
+      "linear-gradient(to right, transparent, var(--border-color) 20%, var(--border-color) 80%, transparent)": 1
     }
   },
   "dataUris": {

@@ -1,15 +1,18 @@
 import postcss from 'postcss';
+import { default as parser } from 'postcss-values-parser';
 import { expandShorthandProperty } from 'css-property-parser';
 
 import { cssNamedTimingFunctions } from '../../../constants/cssNamedTimingFunctions';
 import { cssExplicitDefaultingKeywords } from '../../../constants/cssExplicitDefaultingKeywords';
 import { reExistingVendorPrefix } from '../../../constants/reExistingVendorPrefix';
-import { reCubicBezier } from '../../../constants/reCubicBezier';
+import { reTime } from '../../../constants/reTime';
 import { countUsage } from '../../../calculators/countUsage';
 import { isNumber } from '../../../predicates/isNumber';
 import { isShorthandProperty } from '../../../predicates/isShorthandProperty';
+import { isSafeAst } from '../../../predicates/isSafeAst';
 import { handleVendorPrefix } from '../../handleVendorPrefix';
 
+const reCubicBezier = /cubic-bezier\(.+?\)/g;
 const reInfiniteKeyword = /\binfinite\b/g;
 
 function countInfiniteAnimations(propValue, report) {
@@ -19,31 +22,30 @@ function countInfiniteAnimations(propValue, report) {
 }
 
 function countNamedTimingFunctions(decl, report) {
-	const reportSection = decl.prop.includes('animation')
-		? report.animations
-		: report.transitions;
+	const ast = parser(decl.value).parse();
 
-	postcss.list
-		.comma(decl.value)
-		.forEach((func) => {
-			if (
-				func.startsWith('cubic-bezier(') === false &&
-				func.startsWith('frames(') === false &&
-				func.startsWith('steps(') === false
-			) {
-				if (
-					cssNamedTimingFunctions.includes(func) ||
-					cssExplicitDefaultingKeywords.includes(func)
-				) {
-					countUsage(func, reportSection.timingFunctions);
-				} else {
-					countUsage(func, reportSection.invalidTimingFunctions);
+	if (isSafeAst(ast)) {
+		const reportSection = decl.prop.includes('animation')
+			? report.animations
+			: report.transitions;
+
+		ast.nodes[0].nodes
+			.forEach((node) => {
+				if (node.type === 'word') {
+					const keyword = node.value;
+
+					if (
+						cssNamedTimingFunctions.includes(keyword) ||
+						cssExplicitDefaultingKeywords.includes(keyword)
+					) {
+						countUsage(keyword, reportSection.timingFunctions);
+					} else {
+						countUsage(keyword, reportSection.invalidTimingFunctions);
+					}
 				}
-			}
-		});
+			});
+	}
 }
-
-const reValueWithDurationUnit = /^-?(\.?[0-9]+)(\.[0-9]+)?(ms|s)$/g;
 
 function countDurations(decl, report) {
 	const reportSection = decl.prop.includes('animation')
@@ -53,7 +55,7 @@ function countDurations(decl, report) {
 	postcss.list
 		.comma(decl.value)
 		.forEach((duration) => {
-			if (duration.match(reValueWithDurationUnit) !== null) {
+			if (duration.match(reTime) !== null) {
 				const parsedDurationInSeconds = duration.endsWith('ms')
 					? parseFloat(duration) / 1000
 					: parseFloat(duration);
@@ -83,7 +85,7 @@ function countDelays(decl, report) {
 	postcss.list
 		.comma(decl.value)
 		.forEach((delay) => {
-			if (delay.match(reValueWithDurationUnit) !== null) {
+			if (delay.match(reTime) !== null) {
 				const parsedDelayInSeconds = delay.endsWith('ms')
 					? parseFloat(delay) / 1000
 					: parseFloat(delay);

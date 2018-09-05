@@ -328,11 +328,10 @@
     "anonymousReplacedElements": 18,
     "performanceHacks": {},
     "explicitDefaultingKeywords": {
-      "total": 13,
-      "unique": 2,
+      "total": 12,
+      "unique": 1,
       "usage": {
-        "inherit": 12,
-        "initial": 1
+        "inherit": 12
       }
     },
     "engineTriggers": {
@@ -695,7 +694,12 @@
     "transparentKeyword": 7,
     "models": {
       "hex": 148,
-      "rgba": 15
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 15,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {
       "white": 1
@@ -754,7 +758,12 @@
     "transparentKeyword": 5,
     "models": {
       "hex": 78,
-      "rgba": 7
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 7,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -795,7 +804,12 @@
     "transparentKeyword": 12,
     "models": {
       "hex": 226,
-      "rgba": 22
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 22,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {
       "white": 1
@@ -904,13 +918,13 @@
     "usage": {
       "rgba": 22,
       "url": 1,
-      "translateY": 5,
+      "translatey": 5,
       "rect": 2,
       "rotate": 4,
       "translate": 22,
       "attr": 5,
       "scale": 2,
-      "translateX": 2
+      "translatex": 2
     }
   },
   "filters": {

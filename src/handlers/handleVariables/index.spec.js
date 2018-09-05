@@ -129,7 +129,7 @@ describe('Module: handleVariables', () => {
 
 		describe('variables.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.variables.usage).toEqual({
+				expect(report.variables.usage).toStrictEqual({
 					'--alert-color': 2,
 					'--bgcolour': 2,
 					'--bqindents': 2,
@@ -146,7 +146,7 @@ describe('Module: handleVariables', () => {
 
 		describe('variables.valuesMap', () => {
 			it('should be counted correctly', () => {
-				expect(report.variables.valuesMap).toEqual({
+				expect(report.variables.valuesMap).toStrictEqual({
 					'--COLOR': 'red',
 					'--alert-color': '#ff6f69',
 					'--bgcolour': '#ffffd0',
@@ -195,13 +195,13 @@ describe('Module: handleVariables', () => {
 
 		describe('variables.usage', () => {
 			it('should be counted correctly', () => {
-				expect(report.variables.usage).toEqual({});
+				expect(report.variables.usage).toStrictEqual({});
 			});
 		});
 
 		describe('variables.valuesMap', () => {
 			it('should be counted correctly', () => {
-				expect(report.variables.valuesMap).toEqual({});
+				expect(report.variables.valuesMap).toStrictEqual({});
 			});
 		});
 	});
