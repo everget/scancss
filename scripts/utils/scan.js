@@ -20,7 +20,7 @@ module.exports = function scan(dir) {
 		);
 
 		fs.writeFileSync(
-			file.slice(0, -3) + 'report.json',
+			file.replace(/css$/, '') + 'report.json',
 			JSON.stringify(scanResult, null, 2),
 		);
 
