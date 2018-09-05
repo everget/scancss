@@ -59,7 +59,8 @@
     "lodash.isplainobject": "^4.0.6",
     "postcss": "^6.0.22",
     "postcss-safe-parser": "^3.0.1",
-    "postcss-selector-parser": "^5.0.0-rc.3"
+    "postcss-selector-parser": "^5.0.0-rc.3",
+    "postcss-values-parser": "^1.5.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
