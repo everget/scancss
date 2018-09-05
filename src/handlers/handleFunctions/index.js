@@ -187,9 +187,14 @@ function walkFunctionNodes(nodes, decl, report, options) {
 }
 
 export function handleFunctions(decl, report, options) {
-	const ast = parser(decl.value).parse();
+	try {
+		const ast = parser(decl.value).parse();
 
-	if (isSafeAst(ast)) {
-		walkFunctionNodes(ast.nodes[0].nodes, decl, report, options);
+		if (isSafeAst(ast)) {
+			walkFunctionNodes(ast.nodes[0].nodes, decl, report, options);
+		}
+	} catch (err) {
+		/* eslint-disable-next-line no-console */
+		console.log(`'postcss-values-parser' module error\n${err}`);
 	}
 }

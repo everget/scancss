@@ -29,11 +29,20 @@ function walkNodes(nodes, decl, report) {
 }
 
 export function handlePerformanceHacks(decl, report) {
-	const ast = parser(decl.value).parse();
+	if (decl.prop.endsWith('transform')) {
+		try {
+			const ast = parser(decl.value).parse();
 
-	if (decl.prop.endsWith('transform') && isSafeAst(ast)) {
-		walkNodes(ast.nodes[0].nodes, decl, report);
-	} else if (decl.prop === 'will-change') {
+			if (isSafeAst(ast)) {
+				walkNodes(ast.nodes[0].nodes, decl, report);
+			}
+		} catch (err) {
+			/* eslint-disable-next-line no-console */
+			console.log(`'postcss-values-parser' module error\n${err}`);
+		}
+	}
+
+	if (decl.prop === 'will-change') {
 		countUsage(String(decl), report.properties.performanceHacks);
 	} else if (decl.prop === 'contain' && decl.value.trim() !== 'none') {
 		countUsage(String(decl), report.properties.performanceHacks);

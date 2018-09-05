@@ -43,11 +43,17 @@ function walkNodes(nodes, decl, report, options) {
 }
 
 export function handleUnits(decl, report, options) {
-	const ast = parser(decl.value).parse();
-
 	const currentUnitsTotal = report.units.total;
-	if (isSafeAst(ast)) {
-		walkNodes(ast.nodes[0].nodes, decl, report, options);
+
+	try {
+		const ast = parser(decl.value).parse();
+
+		if (isSafeAst(ast)) {
+			walkNodes(ast.nodes[0].nodes, decl, report, options);
+		}
+	} catch (err) {
+		/* eslint-disable-next-line no-console */
+		console.log(`'postcss-values-parser' module error\n${err}`);
 	}
 
 	if (currentUnitsTotal === report.units.total && options.properties) {

@@ -88,18 +88,23 @@ export function handleDeclaration(decl, report, options) {
 			report.properties.shorthands++;
 		}
 
-		const ast = parser(decl.value).parse();
+		try {
+			const ast = parser(decl.value).parse();
 
-		if (isSafeAst(ast)) {
-			ast.nodes[0].nodes
-				.forEach((node) => {
-					const lowerCasedValue = node.value;
+			if (isSafeAst(ast)) {
+				ast.nodes[0].nodes
+					.forEach((node) => {
+						const lowerCasedValue = node.value;
 
-					if (node.type === 'word' && cssExplicitDefaultingKeywords.includes(lowerCasedValue)) {
-						report.properties.explicitDefaultingKeywords.total++;
-						countUsage(lowerCasedValue, report.properties.explicitDefaultingKeywords.usage);
-					}
-				});
+						if (node.type === 'word' && cssExplicitDefaultingKeywords.includes(lowerCasedValue)) {
+							report.properties.explicitDefaultingKeywords.total++;
+							countUsage(lowerCasedValue, report.properties.explicitDefaultingKeywords.usage);
+						}
+					});
+			}
+		} catch (err) {
+			/* eslint-disable-next-line no-console */
+			console.log(`'postcss-values-parser' module error\n${err}`);
 		}
 
 		if (options.engineTriggerProperties) {
