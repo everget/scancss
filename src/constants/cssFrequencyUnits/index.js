@@ -3,6 +3,6 @@
  */
 
 export const cssFrequencyUnits = [
-	'Hz',
-	'kHz',
+	'khz',
+	'hz',
 ];

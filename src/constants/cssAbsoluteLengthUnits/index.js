@@ -11,5 +11,5 @@ export const cssAbsoluteLengthUnits = [
 	'pc',
 	'pt',
 	'px',
-	'Q',
+	'q',
 ];
