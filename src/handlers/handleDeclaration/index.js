@@ -1,6 +1,9 @@
+import { default as parser } from 'postcss-values-parser';
+
 import { cssColorableProperties } from '../../constants/cssColorableProperties';
-import { reCssExplicitDefaultingKeyword } from '../../constants/reCssExplicitDefaultingKeyword';
+import { cssExplicitDefaultingKeywords } from '../../constants/cssExplicitDefaultingKeywords';
 import { rePrefixedString } from '../../constants/rePrefixedString';
+import { isSafeAst } from '../../predicates/isSafeAst';
 import { isShorthandProperty } from '../../predicates/isShorthandProperty';
 import { isCustomProperty } from '../../predicates/isCustomProperty';
 import { countUsage } from '../../calculators/countUsage';
@@ -85,12 +88,17 @@ export function handleDeclaration(decl, report, options) {
 			report.properties.shorthands++;
 		}
 
-		if (reCssExplicitDefaultingKeyword.test(decl.value)) {
-			decl.value
-				.match(reCssExplicitDefaultingKeyword)
-				.forEach((match) => {
-					report.properties.explicitDefaultingKeywords.total++;
-					countUsage(match, report.properties.explicitDefaultingKeywords.usage);
+		const ast = parser(decl.value).parse();
+
+		if (isSafeAst(ast)) {
+			ast.nodes[0].nodes
+				.forEach((node) => {
+					const lowerCasedValue = node.value;
+
+					if (node.type === 'word' && cssExplicitDefaultingKeywords.includes(lowerCasedValue)) {
+						report.properties.explicitDefaultingKeywords.total++;
+						countUsage(lowerCasedValue, report.properties.explicitDefaultingKeywords.usage);
+					}
 				});
 		}
 

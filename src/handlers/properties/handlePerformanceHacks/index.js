@@ -1,30 +1,41 @@
-import { reCss3dPerformanceHack } from '../../../constants/reCss3dPerformanceHack';
+import { default as parser } from 'postcss-values-parser';
+
 import { countUsage } from '../../../calculators/countUsage';
-import { transformString } from '../../../converters/transformString';
-import { trimExtraSpaces } from '../../../converters/trimExtraSpaces';
-import { trimSpacesNearCommas } from '../../../converters/trimSpacesNearCommas';
-import { trimSpacesNearParentheses } from '../../../converters/trimSpacesNearParentheses';
+import { isSafeAst } from '../../../predicates/isSafeAst';
+
+const reTranslate3dHack = /translate3d\(\s*0\s*,\s*0\s*,\s*0\s*\)/i;
+const reTranslateZHack = /translateZ\(\s*0\s*\)/i;
+const reRotateZHack = /rotateZ\(\s*(360deg|400grad|1turn|6\.2832rad)\s*\)/i;
+
+function walkNodes(nodes, decl, report) {
+	nodes.forEach((node) => {
+		if (node.type === 'func') {
+			const wholeFunc = String(node);
+			const wholeDecl = String(decl);
+
+			if (reTranslate3dHack.test(wholeFunc)) {
+				countUsage(wholeDecl, report.properties.performanceHacks);
+			}
+
+			if (reTranslateZHack.test(wholeFunc)) {
+				countUsage(wholeDecl, report.properties.performanceHacks);
+			}
+
+			if (reRotateZHack.test(wholeFunc)) {
+				countUsage(wholeDecl, report.properties.performanceHacks);
+			}
+		}
+	});
+}
 
 export function handlePerformanceHacks(decl, report) {
-	if (
-		decl.prop.endsWith('transform') &&
-		reCss3dPerformanceHack.test(decl.value)
-	) {
-		decl.value
-			.match(reCss3dPerformanceHack)
-			.forEach((hack) => {
-				const normalizedHack = transformString(
-					hack,
-					[
-						trimExtraSpaces,
-						trimSpacesNearCommas,
-						trimSpacesNearParentheses,
-					]
-				);
+	const ast = parser(decl.value).parse();
 
-				countUsage(normalizedHack, report.properties.performanceHacks);
-			});
+	if (decl.prop.endsWith('transform') && isSafeAst(ast)) {
+		walkNodes(ast.nodes[0].nodes, decl, report);
 	} else if (decl.prop === 'will-change') {
-		countUsage(decl.prop, report.properties.performanceHacks);
+		countUsage(String(decl), report.properties.performanceHacks);
+	} else if (decl.prop === 'contain' && decl.value.trim() !== 'none') {
+		countUsage(String(decl), report.properties.performanceHacks);
 	}
 }

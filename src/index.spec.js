@@ -562,6 +562,12 @@ describe('Module: scancss', () => {
 					transparentKeyword: 0,
 					models: {
 						hex: 3,
+						hexa: 0,
+						rgb: 0,
+						rgba: 0,
+						hsl: 0,
+						hsla: 0,
+						hwb: 0,
 					},
 					named: {
 						red: 1,
@@ -586,6 +592,12 @@ describe('Module: scancss', () => {
 					transparentKeyword: 1,
 					models: {
 						hex: 1,
+						hexa: 0,
+						rgb: 0,
+						rgba: 0,
+						hsl: 0,
+						hsla: 0,
+						hwb: 0,
 					},
 					named: {},
 					system: {},
@@ -606,6 +618,12 @@ describe('Module: scancss', () => {
 					transparentKeyword: 1,
 					models: {
 						hex: 4,
+						hexa: 0,
+						rgb: 0,
+						rgba: 0,
+						hsl: 0,
+						hsla: 0,
+						hwb: 0,
 					},
 					named: {
 						red: 1,

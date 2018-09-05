@@ -243,6 +243,14 @@ describe('Module: handleColorable', () => {
 			background-color: InactiveCaptionText;
 			color: InfoBackground;
 		}
+
+		.selector {
+			background-image: linear-gradient(90deg, #fff 0, #445566);
+			background-image: linear-gradient(90deg, transparent 0, #445566);
+			background-image: repeating-linear-gradient(90deg, rgb(37, 39, 51) 0, rgba(37, 39, 51, .99) 85%, #445566);
+			background-image: radial-gradient(circle, #fff 100%, #000 0);
+			background-image: repeating-radial-gradient(circle at 4% -18%, #445566, #445566 47%, #fff);
+		}
 	`;
 
 	const cssRoot = parseCss(src);
@@ -264,7 +272,7 @@ describe('Module: handleColorable', () => {
 	describe('Handling all colors', () => {
 		describe('allColors.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.allColors.total).toBe(195);
+				expect(report.allColors.total).toBe(207);
 			});
 		});
 
@@ -276,17 +284,17 @@ describe('Module: handleColorable', () => {
 
 		describe('allColors.transparentKeyword', () => {
 			it('should be counted correctly', () => {
-				expect(report.allColors.transparentKeyword).toBe(15);
+				expect(report.allColors.transparentKeyword).toBe(16);
 			});
 		});
 
 		describe('allColors.models', () => {
 			it('should be counted correctly', () => {
 				expect(report.allColors.models).toStrictEqual({
-					hex: 30,
+					hex: 39,
 					hexa: 30,
-					rgb: 15,
-					rgba: 15,
+					rgb: 16,
+					rgba: 16,
 					hsl: 15,
 					hsla: 15,
 					hwb: 15,
@@ -345,8 +353,11 @@ describe('Module: handleColorable', () => {
 					'#eeeeee': 15,
 					'#ffffffff': 15,
 					'#11223344': 15,
+					'#ffffff': 3,
+					'#445566': 5,
+					'#000000': 1,
 					currentColor: 15,
-					transparent: 15,
+					transparent: 16,
 					chartreuse: 1,
 					cornsilk: 1,
 					black: 1,
@@ -363,7 +374,9 @@ describe('Module: handleColorable', () => {
 					firebrick: 1,
 					rebeccapurple: 1,
 					'rgb(1,2,3)': 15,
+					'rgb(37,39,51)': 1,
 					'rgba(1,2,3,.4)': 15,
+					'rgba(37,39,51,.99)': 1,
 					'hsl(1deg,2%,3%)': 15,
 					'hsla(1deg,2%,3%,.4)': 15,
 					'hwb(1deg,2%,3%,.4)': 15,
@@ -508,7 +521,7 @@ describe('Module: handleColorable', () => {
 	describe('Handling background colors', () => {
 		describe('backgroundColors.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.backgroundColors.total).toBe(26);
+				expect(report.backgroundColors.total).toBe(38);
 			});
 		});
 
@@ -520,17 +533,17 @@ describe('Module: handleColorable', () => {
 
 		describe('backgroundColors.transparentKeyword', () => {
 			it('should be counted correctly', () => {
-				expect(report.backgroundColors.transparentKeyword).toBe(2);
+				expect(report.backgroundColors.transparentKeyword).toBe(3);
 			});
 		});
 
 		describe('backgroundColors.models', () => {
 			it('should be counted correctly', () => {
 				expect(report.backgroundColors.models).toStrictEqual({
-					hex: 4,
+					hex: 13,
 					hexa: 4,
-					rgb: 2,
-					rgba: 2,
+					rgb: 3,
+					rgba: 3,
 					hsl: 2,
 					hsla: 2,
 					hwb: 2,
@@ -563,12 +576,17 @@ describe('Module: handleColorable', () => {
 					'#eeeeee': 2,
 					'#ffffffff': 2,
 					'#11223344': 2,
+					'#ffffff': 3,
+					'#445566': 5,
+					'#000000': 1,
 					currentColor: 2,
-					transparent: 2,
+					transparent: 3,
 					lightyellow: 1,
 					firebrick: 1,
 					'rgb(1,2,3)': 2,
+					'rgb(37,39,51)': 1,
 					'rgba(1,2,3,.4)': 2,
+					'rgba(37,39,51,.99)': 1,
 					'hsl(1deg,2%,3%)': 2,
 					'hsla(1deg,2%,3%,.4)': 2,
 					'hwb(1deg,2%,3%,.4)': 2,

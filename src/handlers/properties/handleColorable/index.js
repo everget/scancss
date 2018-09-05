@@ -1,12 +1,8 @@
-import { reCssNamedColor } from '../../../constants/reCssNamedColor';
-import { reCssSystemColor } from '../../../constants/reCssSystemColor';
-import { reHexColor } from '../../../constants/reHexColor';
-import { reHexaColor } from '../../../constants/reHexaColor';
-import { reRgbColor } from '../../../constants/reRgbColor';
-import { reRgbaColor } from '../../../constants/reRgbaColor';
-import { reHslColor } from '../../../constants/reHslColor';
-import { reHslaColor } from '../../../constants/reHslaColor';
-import { reHwbColor } from '../../../constants/reHwbColor';
+import { default as parser } from 'postcss-values-parser';
+
+import { cssColorNamesMap } from '../../../constants/cssColorNamesMap';
+import { cssSystemColors } from '../../../constants/cssSystemColors';
+import { cssColorFunctions } from '../../../constants/cssColorFunctions';
 import { countUsage } from '../../../calculators/countUsage';
 import { restoreFullHex } from '../../../converters/restoreFullHex';
 import { transformString } from '../../../converters/transformString';
@@ -15,79 +11,56 @@ import { trimSpacesNearCommas } from '../../../converters/trimSpacesNearCommas';
 import { trimSpacesNearParentheses } from '../../../converters/trimSpacesNearParentheses';
 import { trimLeadingZeros } from '../../../converters/trimLeadingZeros';
 import { trimTrailingZeros } from '../../../converters/trimTrailingZeros';
+import { isSafeAst } from '../../../predicates/isSafeAst';
+
+const cssColorNames = Object.keys(cssColorNamesMap);
+const lowercasedCssSystemColors = cssSystemColors.map((color) => color.toLowerCase());
 
 function countColorInSection(color, reportSection) {
 	reportSection.total++;
 	countUsage(color, reportSection.usage);
 }
 
-/**
- * https://www.w3.org/TR/css-color-3/#currentcolor
- * https://www.w3.org/TR/css-color-4/#currentcolor-color
- */
-const reCurrentColor = /\bcurrentcolor\b/gi;
-const reTransparentColor = /\btransparent\b/gi;
-
-function countKeywordColors(prop, match, report, keyword, options) {
-	const reportSectionName = keyword + 'Keyword';
+function countKeywordColor(prop, color, report, options) {
+	const reportSectionName = color + 'Keyword';
 
 	if (prop.startsWith('background') && options.backgroundColors) {
-		match.forEach(() => {
-			countColorInSection(keyword, report.backgroundColors);
-			report.backgroundColors[reportSectionName]++;
-		});
+		countColorInSection(color, report.backgroundColors);
+		report.backgroundColors[reportSectionName]++;
 	} else if (prop.startsWith('background') === false && options.colors) {
-		match.forEach(() => {
-			countColorInSection(keyword, report.colors);
-			report.colors[reportSectionName]++;
-		});
+		countColorInSection(color, report.colors);
+		report.colors[reportSectionName]++;
 	}
 
 	if (options.allColors) {
-		match.forEach(() => {
-			if (options.allColors) {
-				countColorInSection(keyword, report.allColors);
-				report.allColors[reportSectionName]++;
-			}
-		});
+		countColorInSection(color, report.allColors);
+		report.allColors[reportSectionName]++;
 	}
 }
 
 /**
  * https://www.w3.org/TR/CSS22/ui.html#system-colors
  */
-function countNamedColors(prop, match, report, options) {
+function countNamedColor(prop, color, report, options) {
 	if (prop.startsWith('background') && options.backgroundColors) {
-		match.forEach((color) => {
-			const lowerCasedColor = color.toLowerCase();
-
-			countColorInSection(lowerCasedColor, report.backgroundColors);
-			countUsage(lowerCasedColor, report.backgroundColors.named);
-		});
+		countColorInSection(color, report.backgroundColors);
+		countUsage(color, report.backgroundColors.named);
 	} else if (prop.startsWith('background') === false && options.colors) {
-		match.forEach((color) => {
-			const lowerCasedColor = color.toLowerCase();
-
-			countColorInSection(lowerCasedColor, report.colors);
-			countUsage(lowerCasedColor, report.colors.named);
-		});
+		countColorInSection(color, report.colors);
+		countUsage(color, report.colors.named);
 	}
 
 	if (options.allColors) {
-		match.forEach((color) => {
-			const lowerCasedColor = color.toLowerCase();
-
-			countColorInSection(lowerCasedColor, report.allColors);
-			countUsage(lowerCasedColor, report.allColors.named);
-		});
+		countColorInSection(color, report.allColors);
+		countUsage(color, report.allColors.named);
 	}
 }
 
 function normalizeModelColor(color) {
 	if (color.startsWith('#')) {
 		return color.length === 4 || color.length === 5
-			? restoreFullHex(color).toLowerCase()
-			: color.toLowerCase();
+			? restoreFullHex(color)
+			: color;
 	}
 
 	return transformString(
@@ -102,169 +75,136 @@ function normalizeModelColor(color) {
 	);
 }
 
-function countColorModels(prop, match, report, model, options) {
+function countColorModel(prop, color, report, model, options) {
+	const normalizedColor = normalizeModelColor(color);
+
 	if (prop.startsWith('background') && options.backgroundColors) {
-		match.forEach((color) => {
-			const normalizedColor = normalizeModelColor(color);
-
-			countColorInSection(normalizedColor, report.backgroundColors);
-			countUsage(model, report.backgroundColors.models);
-		});
+		countColorInSection(normalizedColor, report.backgroundColors);
+		countUsage(model, report.backgroundColors.models);
 	} else if (prop.startsWith('background') === false && options.colors) {
-		match.forEach((color) => {
-			const normalizedColor = normalizeModelColor(color);
-
-			countColorInSection(normalizedColor, report.colors);
-			countUsage(model, report.colors.models);
-		});
+		countColorInSection(normalizedColor, report.colors);
+		countUsage(model, report.colors.models);
 	}
 
 	if (options.allColors) {
-		match.forEach((color) => {
-			const normalizedColor = normalizeModelColor(color);
-
-			countColorInSection(normalizedColor, report.allColors);
-			countUsage(model, report.allColors.models);
-		});
+		countColorInSection(normalizedColor, report.allColors);
+		countUsage(model, report.allColors.models);
 	}
 }
 
-function countSystemColors(prop, match, report, options) {
+function countSystemColor(prop, color, report, options) {
 	if (prop.startsWith('background') && options.backgroundColors) {
-		match.forEach((color) => {
-			const lowerCasedColor = color.toLowerCase();
-
-			countColorInSection(lowerCasedColor, report.backgroundColors);
-			countUsage(lowerCasedColor, report.backgroundColors.system);
-		});
+		countColorInSection(color, report.backgroundColors);
+		countUsage(color, report.backgroundColors.system);
 	} else if (prop.startsWith('background') === false && options.colors) {
-		match.forEach((color) => {
-			const lowerCasedColor = color.toLowerCase();
-
-			countColorInSection(lowerCasedColor, report.colors);
-			countUsage(lowerCasedColor, report.colors.system);
-		});
+		countColorInSection(color, report.colors);
+		countUsage(color, report.colors.system);
 	}
 
 	if (options.allColors) {
-		match.forEach((color) => {
-			const lowerCasedColor = color.toLowerCase();
-
-			countColorInSection(lowerCasedColor, report.allColors);
-			countUsage(lowerCasedColor, report.allColors.system);
-		});
+		countColorInSection(color, report.allColors);
+		countUsage(color, report.allColors.system);
 	}
+}
+
+function walkNodes(nodes, decl, report, options) {
+	nodes.forEach((node) => {
+		const lowerCasedValue = node.value.toLowerCase();
+
+		if (node.type === 'word') {
+			if (cssColorNames.includes(lowerCasedValue)) {
+				countNamedColor(
+					decl.prop,
+					lowerCasedValue,
+					report,
+					options
+				);
+
+				return;
+			}
+
+			if (lowerCasedValue === 'transparent') {
+				countKeywordColor(
+					decl.prop,
+					'transparent',
+					report,
+					options
+				);
+
+				return;
+			}
+
+			if (lowerCasedValue === 'currentcolor') {
+				countKeywordColor(
+					decl.prop,
+					'currentColor',
+					report,
+					options
+				);
+
+				return;
+			}
+
+			if (lowerCasedValue.startsWith('#')) {
+				if (lowerCasedValue.length === 4 || lowerCasedValue.length === 7) {
+					countColorModel(
+						decl.prop,
+						lowerCasedValue,
+						report,
+						'hex',
+						options
+					);
+
+					return;
+				}
+
+				if (lowerCasedValue.length === 5 || lowerCasedValue.length === 9) {
+					countColorModel(
+						decl.prop,
+						lowerCasedValue,
+						report,
+						'hexa',
+						options
+					);
+
+					return;
+				}
+			}
+
+			if (lowercasedCssSystemColors.includes(lowerCasedValue)) {
+				countSystemColor(
+					decl.prop,
+					lowerCasedValue,
+					report,
+					options
+				);
+
+				return;
+			}
+		}
+
+		if (node.type === 'func') {
+			if (cssColorFunctions.includes(lowerCasedValue)) {
+				countColorModel(
+					decl.prop,
+					node.toString(),
+					report,
+					lowerCasedValue,
+					options
+				);
+			}
+
+			if (Array.isArray(node.nodes)) {
+				walkNodes(node.nodes, decl, report, options);
+			}
+		}
+	});
 }
 
 export function handleColorable(decl, report, options) {
-	const prop = decl.prop;
-	const propValue = decl.value;
+	const ast = parser(decl.value).parse();
 
-	if (reCurrentColor.test(propValue)) {
-		countKeywordColors(
-			prop,
-			propValue.match(reCurrentColor),
-			report,
-			'currentColor',
-			options
-		);
-	}
-
-	if (reTransparentColor.test(propValue)) {
-		countKeywordColors(
-			prop,
-			propValue.match(reTransparentColor),
-			report,
-			'transparent',
-			options
-		);
-	}
-
-	if (reCssNamedColor.test(propValue)) {
-		countNamedColors(
-			prop,
-			propValue.match(reCssNamedColor),
-			report,
-			options
-		);
-	}
-
-	if (reHexColor.test(propValue)) {
-		countColorModels(
-			prop,
-			propValue.match(reHexColor),
-			report,
-			'hex',
-			options
-		);
-	}
-
-	if (reHexaColor.test(propValue)) {
-		countColorModels(
-			prop,
-			propValue.match(reHexaColor),
-			report,
-			'hexa',
-			options
-		);
-	}
-
-	if (reRgbColor.test(propValue)) {
-		countColorModels(
-			prop,
-			propValue.match(reRgbColor),
-			report,
-			'rgb',
-			options
-		);
-	}
-
-	if (reRgbaColor.test(propValue)) {
-		countColorModels(
-			prop,
-			propValue.match(reRgbaColor),
-			report,
-			'rgba',
-			options
-		);
-	}
-
-	if (reHslColor.test(propValue)) {
-		countColorModels(
-			prop,
-			propValue.match(reHslColor),
-			report,
-			'hsl',
-			options
-		);
-	}
-
-	if (reHslaColor.test(propValue)) {
-		countColorModels(
-			prop,
-			propValue.match(reHslaColor),
-			report,
-			'hsla',
-			options
-		);
-	}
-
-	if (reHwbColor.test(propValue)) {
-		countColorModels(
-			prop,
-			propValue.match(reHwbColor),
-			report,
-			'hwb',
-			options
-		);
-	}
-
-	if (reCssSystemColor.test(propValue)) {
-		countSystemColors(
-			prop,
-			propValue.match(reCssSystemColor),
-			report,
-			options
-		);
+	if (isSafeAst(ast)) {
+		walkNodes(ast.nodes[0].nodes, decl, report, options);
 	}
 }

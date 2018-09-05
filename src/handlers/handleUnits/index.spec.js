@@ -89,7 +89,7 @@ describe('Module: handleUnits', () => {
 			}
 
 			.selector {
-				voice-pitch: -230Hz absolute;
+				voice-pitch: -230hz absolute;
 			}
 		`;
 
@@ -122,7 +122,7 @@ describe('Module: handleUnits', () => {
 					em: 10,
 					ex: 1,
 					fr: 4,
-					Hz: 2,
+					hz: 2,
 					in: 1,
 					mm: 1,
 					ms: 1,
