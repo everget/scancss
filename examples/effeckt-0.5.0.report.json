@@ -433,8 +433,23 @@
     "negativeMargins": 14,
     "anonymousReplacedElements": 16,
     "performanceHacks": {
-      "translateZ(0)": 24,
-      "translate3d(0,0,0)": 20
+      "-webkit-transform: translateZ(0)": 1,
+      "transform: translateZ(0)": 1,
+      "-webkit-transform: translate3d(0, 0, 0)": 10,
+      "transform: translate3d(0, 0, 0)": 10,
+      "-webkit-transform: translateZ(0) rotateY(0deg)": 2,
+      "transform: translateZ(0) rotateY(0deg)": 2,
+      "-webkit-transform: translateZ(0) translateX(0) rotate(0deg)": 1,
+      "transform: translateZ(0) translateX(0) rotate(0deg)": 1,
+      "-webkit-transform: translate3D(0, 0, 0)": 2,
+      "-ms-transform: translate3D(0, 0, 0)": 2,
+      "transform: translate3D(0, 0, 0)": 2,
+      "-webkit-transform: translateZ(0) translateX(0)": 2,
+      "transform: translateZ(0) translateX(0)": 2,
+      "-webkit-transform: translateZ(0) translateX(0%)": 2,
+      "transform: translateZ(0) translateX(0%)": 2,
+      "-webkit-transform: translateZ(0) translateY(0%)": 4,
+      "transform: translateZ(0) translateY(0%)": 4
     },
     "explicitDefaultingKeywords": {
       "total": 0,
@@ -670,7 +685,12 @@
     "transparentKeyword": 16,
     "models": {
       "hex": 10,
-      "rgba": 1
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 1,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {
       "white": 1,
@@ -684,7 +704,7 @@
       "transparent": 16,
       "#e6e6e6": 2,
       "#666666": 2,
-      "rgba(0,0,0,0.2)": 1,
+      "rgba(0,0,0,.2)": 1,
       "#cccccc": 4
     }
   },
@@ -695,7 +715,12 @@
     "transparentKeyword": 0,
     "models": {
       "hex": 8,
-      "rgba": 1
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 1,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {
       "black": 1
@@ -703,7 +728,7 @@
     "system": {},
     "usage": {
       "#000000": 4,
-      "rgba(0,0,0,0.2)": 1,
+      "rgba(0,0,0,.2)": 1,
       "black": 1,
       "#ffffff": 2,
       "#333333": 1,
@@ -717,7 +742,12 @@
     "transparentKeyword": 16,
     "models": {
       "hex": 18,
-      "rgba": 2
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 2,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {
       "black": 5,
@@ -726,7 +756,7 @@
     "system": {},
     "usage": {
       "#000000": 4,
-      "rgba(0,0,0,0.2)": 2,
+      "rgba(0,0,0,.2)": 2,
       "#cacaca": 2,
       "black": 5,
       "white": 1,
@@ -751,17 +781,17 @@
     "longestDelay": 2.875,
     "shortestDelay": 0,
     "timingFunctions": {
-      "cubic-bezier(0.175,0.885,0.32,1.275)": 1,
+      "cubic-bezier(0.175, 0.885, 0.32, 1.275)": 1,
       "ease": 19,
       "linear": 1,
-      "cubic-bezier(0.26,0.86,0.44,0.985)": 1,
-      "cubic-bezier(0.39,0.575,0.565,1)": 1,
+      "cubic-bezier(0.26, 0.86, 0.44, 0.985)": 1,
+      "cubic-bezier(0.39, 0.575, 0.565, 1)": 1,
       "ease-in-out": 3,
-      "cubic-bezier(0.4,0,0,1.5)": 1,
+      "cubic-bezier(0.4, 0, 0, 1.5)": 1,
       "ease-out": 7,
       "ease-in": 3,
-      "cubic-bezier(0.09,0.68,0,0.99)": 2,
-      "cubic-bezier(0.16,0.86,0.33,0.97)": 4
+      "cubic-bezier(0.09, 0.68, 0, 0.99)": 2,
+      "cubic-bezier(0.16, 0.86, 0.33, 0.97)": 4
     },
     "invalidTimingFunctions": {}
   },
@@ -842,7 +872,7 @@
     },
     "timingFunctions": {
       "ease": 82,
-      "cubic-bezier(0.4,0,0,1.5)": 2,
+      "cubic-bezier(0.4, 0, 0, 1.5)": 2,
       "ease-in": 8,
       "ease-out": 6,
       "ease-in-out": 40
@@ -850,7 +880,7 @@
     "invalidTimingFunctions": {}
   },
   "functions": {
-    "total": 1540,
+    "total": 1546,
     "unique": 17,
     "prefixed": 0,
     "usage": {
@@ -858,16 +888,16 @@
       "cubic-bezier": 12,
       "scale": 181,
       "translate": 39,
-      "translateY": 276,
-      "translateX": 442,
+      "translatey": 276,
+      "translatex": 442,
       "attr": 3,
-      "rotateX": 118,
+      "rotatex": 118,
       "rotate": 81,
       "perspective": 72,
-      "rotateY": 82,
-      "rotateZ": 52,
-      "translateZ": 124,
-      "translate3d": 46,
+      "rotatey": 82,
+      "rotatez": 52,
+      "translatez": 124,
+      "translate3d": 52,
       "blur": 4,
       "rgba": 2,
       "scale3d": 4
@@ -877,7 +907,7 @@
     "total": 4,
     "unique": 1,
     "usage": {
-      "blur": 4
+      "blur(3px)": 4
     }
   },
   "gradients": {

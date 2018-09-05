@@ -348,7 +348,8 @@
     "negativeMargins": 0,
     "anonymousReplacedElements": 0,
     "performanceHacks": {
-      "translate3d(0,0,0)": 128
+      "-webkit-transform: translate3d(0, 0, 0)": 64,
+      "transform: translate3d(0, 0, 0)": 64
     },
     "explicitDefaultingKeywords": {
       "total": 0,
@@ -467,7 +468,15 @@
     "unique": 0,
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
-    "models": {},
+    "models": {
+      "hex": 0,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
+    },
     "named": {},
     "system": {},
     "usage": {}
@@ -477,7 +486,15 @@
     "unique": 0,
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
-    "models": {},
+    "models": {
+      "hex": 0,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
+    },
     "named": {},
     "system": {},
     "usage": {}
@@ -487,7 +504,15 @@
     "unique": 0,
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
-    "models": {},
+    "models": {
+      "hex": 0,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
+    },
     "named": {},
     "system": {},
     "usage": {}
@@ -590,13 +615,13 @@
       "slideOutUp": 1
     },
     "timingFunctions": {
-      "cubic-bezier(0.215,0.61,0.355,1)": 24,
-      "cubic-bezier(0.755,0.05,0.855,0.06)": 8,
+      "cubic-bezier(0.215, 0.61, 0.355, 1)": 24,
+      "cubic-bezier(0.755, 0.05, 0.855, 0.06)": 8,
       "ease-in-out": 7,
       "ease-out": 5,
       "ease-in": 15,
-      "cubic-bezier(0.55,0.055,0.675,0.19)": 24,
-      "cubic-bezier(0.175,0.885,0.32,1)": 24
+      "cubic-bezier(0.55, 0.055, 0.675, 0.19)": 24,
+      "cubic-bezier(0.175, 0.885, 0.32, 1)": 24
     },
     "invalidTimingFunctions": {}
   },
@@ -608,11 +633,11 @@
       "cubic-bezier": 80,
       "translate3d": 460,
       "scale3d": 164,
-      "translateX": 24,
-      "rotateY": 16,
+      "translatex": 24,
+      "rotatey": 16,
       "rotate3d": 168,
-      "skewX": 44,
-      "skewY": 28,
+      "skewx": 44,
+      "skewy": 28,
       "perspective": 84,
       "scale": 16,
       "rotate": 12

@@ -358,7 +358,7 @@
     "negativeMargins": 36,
     "anonymousReplacedElements": 40,
     "performanceHacks": {
-      "translate3d(0,0,0)": 2
+      "transform: translate3d(0, 0, 0)": 2
     },
     "explicitDefaultingKeywords": {
       "total": 26,
@@ -824,7 +824,12 @@
     "transparentKeyword": 65,
     "models": {
       "hex": 238,
-      "rgba": 10
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 10,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {
       "black": 1
@@ -853,13 +858,13 @@
       "#805700": 4,
       "#cc4b37": 16,
       "#67251a": 4,
-      "rgba(10,10,10,0.1)": 1,
+      "rgba(10,10,10,.1)": 1,
       "#e6e6e6": 8,
-      "rgba(10,10,10,0.25)": 5,
-      "rgba(10,10,10,0.7)": 2,
+      "rgba(10,10,10,.25)": 5,
+      "rgba(10,10,10,.7)": 2,
       "#f1f1f1": 2,
-      "rgba(10,10,10,0.2)": 1,
-      "rgba(23,121,186,0.5)": 1
+      "rgba(10,10,10,.2)": 1,
+      "rgba(23,121,186,.5)": 1
     }
   },
   "backgroundColors": {
@@ -869,7 +874,12 @@
     "transparentKeyword": 11,
     "models": {
       "hex": 113,
-      "rgba": 4
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 4,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {
       "white": 1
@@ -901,9 +911,9 @@
       "#cacaca": 5,
       "#0a0a0a": 3,
       "#8a8a8a": 3,
-      "rgba(254,254,254,0.25)": 1,
-      "rgba(10,10,10,0.5)": 2,
-      "rgba(10,10,10,0.45)": 1,
+      "rgba(254,254,254,.25)": 1,
+      "rgba(10,10,10,.5)": 2,
+      "rgba(10,10,10,.45)": 1,
       "#f8f8f8": 1,
       "#f1f1f1": 2,
       "#f3f3f3": 1,
@@ -919,7 +929,12 @@
     "transparentKeyword": 76,
     "models": {
       "hex": 351,
-      "rgba": 14
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 14,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {
       "black": 1,
@@ -957,27 +972,27 @@
       "#157539": 4,
       "#805700": 4,
       "#67251a": 4,
-      "rgba(10,10,10,0.1)": 1,
+      "rgba(10,10,10,.1)": 1,
       "#f9ecea": 1,
-      "rgba(10,10,10,0.25)": 5,
+      "rgba(10,10,10,.25)": 5,
       "white": 1,
       "#d7ecfa": 1,
       "#eaeaea": 1,
       "#e1faea": 1,
       "#fff3d9": 1,
       "#f7e4e1": 1,
-      "rgba(254,254,254,0.25)": 1,
-      "rgba(10,10,10,0.7)": 2,
-      "rgba(10,10,10,0.5)": 2,
-      "rgba(10,10,10,0.45)": 1,
+      "rgba(254,254,254,.25)": 1,
+      "rgba(10,10,10,.7)": 2,
+      "rgba(10,10,10,.5)": 2,
+      "rgba(10,10,10,.45)": 1,
       "#f1f1f1": 4,
       "#f8f8f8": 1,
       "#f3f3f3": 1,
       "#ececec": 2,
       "#f9f9f9": 1,
       "#1673b1": 1,
-      "rgba(10,10,10,0.2)": 1,
-      "rgba(23,121,186,0.5)": 1
+      "rgba(10,10,10,.2)": 1,
+      "rgba(23,121,186,.5)": 1
     }
   },
   "transitions": {
@@ -1004,9 +1019,9 @@
       "ease": 7,
       "inherit": 2,
       "ease-in": 1,
-      "cubic-bezier(0.485,0.155,0.24,1.245)": 1,
-      "cubic-bezier(0.485,0.155,0.515,0.845)": 1,
-      "cubic-bezier(0.76,-0.245,0.24,1.245)": 1
+      "cubic-bezier(0.485, 0.155, 0.24, 1.245)": 1,
+      "cubic-bezier(0.485, 0.155, 0.515, 0.845)": 1,
+      "cubic-bezier(0.76, -0.245, 0.24, 1.245)": 1
     },
     "invalidTimingFunctions": {}
   },
@@ -1030,9 +1045,9 @@
       "ease-in": 1,
       "ease-out": 1,
       "ease-in-out": 1,
-      "cubic-bezier(0.485,0.155,0.24,1.245)": 1,
-      "cubic-bezier(0.485,0.155,0.515,0.845)": 1,
-      "cubic-bezier(0.76,-0.245,0.24,1.245)": 1
+      "cubic-bezier(0.485, 0.155, 0.24, 1.245)": 1,
+      "cubic-bezier(0.485, 0.155, 0.515, 0.845)": 1,
+      "cubic-bezier(0.76, -0.245, 0.24, 1.245)": 1
     },
     "invalidTimingFunctions": {}
   },
@@ -1046,17 +1061,17 @@
       "rgba": 14,
       "url": 2,
       "rotate": 37,
-      "scaleY": 2,
+      "scaley": 2,
       "rect": 2,
       "inset": 4,
-      "translateX": 40,
+      "translatex": 40,
       "translate": 18,
-      "translateY": 38,
+      "translatey": 38,
       "scale": 18,
       "translate3d": 2,
       "perspective": 24,
-      "rotateX": 6,
-      "rotateY": 6,
+      "rotatex": 6,
+      "rotatey": 6,
       "cubic-bezier": 6
     }
   },

@@ -406,7 +406,15 @@
     "unique": 1,
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
-    "models": {},
+    "models": {
+      "hex": 0,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
+    },
     "named": {},
     "system": {
       "buttontext": 1
@@ -420,7 +428,15 @@
     "unique": 1,
     "currentColorKeyword": 0,
     "transparentKeyword": 1,
-    "models": {},
+    "models": {
+      "hex": 0,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
+    },
     "named": {},
     "system": {},
     "usage": {
@@ -432,7 +448,15 @@
     "unique": 2,
     "currentColorKeyword": 0,
     "transparentKeyword": 1,
-    "models": {},
+    "models": {
+      "hex": 0,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
+    },
     "named": {},
     "system": {
       "buttontext": 1

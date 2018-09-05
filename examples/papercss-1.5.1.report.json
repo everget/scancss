@@ -311,12 +311,12 @@
     "unique": 105,
     "shorthands": 420,
     "prefixed": 282,
-    "unitless": 537,
+    "unitless": 535,
     "resetsViaAll": 0,
     "negativeMargins": 5,
     "anonymousReplacedElements": 13,
     "performanceHacks": {
-      "will-change": 1
+      "will-change: transform": 1
     },
     "explicitDefaultingKeywords": {
       "total": 10,
@@ -629,7 +629,12 @@
     "transparentKeyword": 1,
     "models": {
       "hex": 103,
-      "rgba": 17
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 17,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {
@@ -657,13 +662,18 @@
     }
   },
   "backgroundColors": {
-    "total": 78,
+    "total": 76,
     "unique": 27,
     "currentColorKeyword": 0,
     "transparentKeyword": 17,
     "models": {
-      "hex": 57,
-      "rgba": 4
+      "hex": 55,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 4,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -682,7 +692,7 @@
       "#fafafa": 1,
       "rgba(204,204,204,.03)": 1,
       "#868e96": 2,
-      "#0071de": 11,
+      "#0071de": 9,
       "#86a361": 1,
       "#ddcd45": 1,
       "#a7342d": 1,
@@ -698,13 +708,18 @@
     }
   },
   "allColors": {
-    "total": 200,
+    "total": 198,
     "unique": 34,
     "currentColorKeyword": 0,
     "transparentKeyword": 18,
     "models": {
-      "hex": 160,
-      "rgba": 21
+      "hex": 158,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 21,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {
@@ -713,7 +728,7 @@
     "usage": {
       "#41403e": 39,
       "#c1c0bd": 9,
-      "#0071de": 25,
+      "#0071de": 23,
       "#deefff": 4,
       "#86a361": 8,
       "#d0dbc2": 4,
@@ -777,7 +792,7 @@
     "invalidTimingFunctions": {}
   },
   "functions": {
-    "total": 75,
+    "total": 77,
     "unique": 9,
     "prefixed": 0,
     "usage": {
@@ -786,8 +801,8 @@
       "linear-gradient": 8,
       "url": 2,
       "translate": 7,
-      "translateX": 5,
-      "translateY": 5,
+      "translatex": 5,
+      "translatey": 7,
       "rotate": 7,
       "attr": 4
     }
@@ -798,10 +813,13 @@
     "usage": {}
   },
   "gradients": {
-    "total": 2,
-    "unique": 1,
+    "total": 8,
+    "unique": 4,
     "usage": {
-      "linear-gradient(5deg,transparent 65%,#0071de 80%,transparent 90%),linear-gradient(165deg,transparent 5%,#0071de 15%,transparent 25%),linear-gradient(165deg,transparent 45%,#0071de 55%,transparent 65%),linear-gradient(15deg,transparent 25%,#0071de 35%,transparent 50%)": 2
+      "linear-gradient(5deg,transparent 65%,#0071de 80%,transparent 90%)": 2,
+      "linear-gradient(165deg,transparent 5%,#0071de 15%,transparent 25%)": 2,
+      "linear-gradient(165deg,transparent 45%,#0071de 55%,transparent 65%)": 2,
+      "linear-gradient(15deg,transparent 25%,#0071de 35%,transparent 50%)": 2
     }
   },
   "dataUris": {
@@ -818,17 +836,17 @@
     "usage": {}
   },
   "units": {
-    "total": 841,
+    "total": 873,
     "unique": 8,
     "usage": {
-      "%": 303,
+      "%": 327,
       "em": 16,
       "px": 282,
       "rem": 110,
       "ms": 60,
       "s": 62,
-      "vh": 1,
-      "deg": 7
+      "deg": 15,
+      "vh": 1
     },
     "excessive": {
       "total": 0,

@@ -430,7 +430,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
     "models": {
-      "hex": 2
+      "hex": 2,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -444,7 +450,15 @@
     "unique": 0,
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
-    "models": {},
+    "models": {
+      "hex": 0,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
+    },
     "named": {},
     "system": {},
     "usage": {}
@@ -455,7 +469,13 @@
     "currentColorKeyword": 0,
     "transparentKeyword": 0,
     "models": {
-      "hex": 2
+      "hex": 2,
+      "hexa": 0,
+      "rgb": 0,
+      "rgba": 0,
+      "hsl": 0,
+      "hsla": 0,
+      "hwb": 0
     },
     "named": {},
     "system": {},
@@ -498,8 +518,8 @@
     "usage": {
       "steps": 1,
       "rotate": 5,
-      "scaleX": 1,
-      "scaleY": 1,
+      "scalex": 1,
+      "scaley": 1,
       "scale": 1,
       "rect": 1
     }
