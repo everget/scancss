@@ -209,9 +209,6 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.properties) {
 			report.properties.unique = Object.keys(report.properties.usage).length;
-			report.properties.explicitDefaultingKeywords.unique = Object.keys(
-				report.properties.explicitDefaultingKeywords.usage
-			).length;
 		}
 
 		if (scancssOptions.displays) {

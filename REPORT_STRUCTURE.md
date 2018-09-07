@@ -255,10 +255,13 @@
 
 * **autoKeyword** - `number`
 
-* **explicitDefaultingKeywords** - `Record<string, any>`
-	* **total** - `number`
-	* **unique** - `number`
-	* **usage** - `Record<string, number>`
+* **inheritKeyword** - `number`
+
+* **initialKeyword** - `number`
+
+* **revertKeyword** - `number`
+
+* **unsetKeyword** - `number`
 
 * **engineTriggers** - `Record<'composite' | 'layout' | 'paint', any>`
 	* **composite** - `Record<string, number>`

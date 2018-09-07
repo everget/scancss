@@ -11,6 +11,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `properties.autoKeyword` metric
 
 ### Changed
+- Reorganized `properties.explicitDefaultingKeywords` to:
+```
+properties {
+	inheritKeyword,
+	initialKeyword,
+	revertKeyword,
+	unsetKeyword,
+}
+```
 
 ### Fixed
 

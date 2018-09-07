@@ -97,8 +97,8 @@ export function handleDeclaration(decl, report, options) {
 						const nodeValue = node.value.toLowerCase();
 
 						if (node.type === 'word' && cssExplicitDefaultingKeywords.includes(nodeValue)) {
-							report.properties.explicitDefaultingKeywords.total++;
-							countUsage(nodeValue, report.properties.explicitDefaultingKeywords.usage);
+							const keyword = nodeValue + 'Keyword';
+							report.properties[keyword]++;
 						}
 
 						if (node.type === 'word' && nodeValue === 'auto') {

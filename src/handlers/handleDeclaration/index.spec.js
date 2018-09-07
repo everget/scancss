@@ -209,26 +209,27 @@ describe('Module: handleDeclaration', () => {
 			});
 		});
 
-		describe('properties.explicitDefaultingKeywords.total', () => {
+		describe('properties.inheritKeyword', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.explicitDefaultingKeywords.total).toBe(4);
+				expect(report.properties.inheritKeyword).toBe(1);
 			});
 		});
 
-		describe('properties.explicitDefaultingKeywords.unique', () => {
+		describe('properties.initialKeyword', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.explicitDefaultingKeywords.unique).toBe(0);
+				expect(report.properties.initialKeyword).toBe(1);
 			});
 		});
 
-		describe('properties.explicitDefaultingKeywords.usage', () => {
+		describe('properties.revertKeyword', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.explicitDefaultingKeywords.usage).toStrictEqual({
-					inherit: 1,
-					initial: 1,
-					revert: 1,
-					unset: 1,
-				});
+				expect(report.properties.revertKeyword).toBe(1);
+			});
+		});
+
+		describe('properties.unsetKeyword', () => {
+			it('should be counted correctly', () => {
+				expect(report.properties.unsetKeyword).toBe(1);
 			});
 		});
 	});

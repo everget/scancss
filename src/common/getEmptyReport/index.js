@@ -137,11 +137,10 @@ export function getEmptyReport() {
 			anonymousReplacedElements: 0,
 			performanceHacks: {},
 			autoKeyword: 0,
-			explicitDefaultingKeywords: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
+			inheritKeyword: 0,
+			initialKeyword: 0,
+			revertKeyword: 0,
+			unsetKeyword: 0,
 			engineTriggers: {
 				composite: {
 					blink: 0,
