@@ -29,6 +29,7 @@ describe('Module: handleDeclaration', () => {
 			display: flex !important;
 			position: sticky;
 			z-index: -1;
+			margin: 0 auto;
 			float: none;
 			border-radius: 1px 2px 3px 4px;
 			letter-spacing: 0.3em;
@@ -78,7 +79,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling declarations', () => {
 		describe('declarations.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.declarations.total).toBe(19);
+				expect(report.declarations.total).toBe(20);
 			});
 		});
 
@@ -96,7 +97,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('declarations.length.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.declarations.length.total).toBe(452);
+				expect(report.declarations.length.total).toBe(466);
 			});
 		});
 
@@ -122,7 +123,7 @@ describe('Module: handleDeclaration', () => {
 	describe('Handling properties', () => {
 		describe('properties.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.total).toBe(19);
+				expect(report.properties.total).toBe(20);
 			});
 		});
 
@@ -134,7 +135,7 @@ describe('Module: handleDeclaration', () => {
 
 		describe('properties.shorthands', () => {
 			it('should be counted correctly', () => {
-				expect(report.properties.shorthands).toBe(6);
+				expect(report.properties.shorthands).toBe(7);
 			});
 		});
 
@@ -189,6 +190,7 @@ describe('Module: handleDeclaration', () => {
 					position: 1,
 					'z-index': 1,
 					float: 1,
+					margin: 1,
 					'border-radius': 1,
 					'letter-spacing': 1,
 					all: 4,
@@ -198,6 +200,12 @@ describe('Module: handleDeclaration', () => {
 					'-webkit-transition': 1,
 					transition: 1,
 				});
+			});
+		});
+
+		describe('properties.autoKeyword', () => {
+			it('should be counted correctly', () => {
+				expect(report.properties.autoKeyword).toBe(1);
 			});
 		});
 

@@ -253,6 +253,8 @@
 
 * **performanceHacks** - `Record<string, number>`
 
+* **autoKeyword** - `number`
+
 * **explicitDefaultingKeywords** - `Record<string, any>`
 	* **total** - `number`
 	* **unique** - `number`

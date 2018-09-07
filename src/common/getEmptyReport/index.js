@@ -136,6 +136,7 @@ export function getEmptyReport() {
 			negativeMargins: 0,
 			anonymousReplacedElements: 0,
 			performanceHacks: {},
+			autoKeyword: 0,
 			explicitDefaultingKeywords: {
 				total: 0,
 				unique: 0,

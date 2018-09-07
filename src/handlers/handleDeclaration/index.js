@@ -94,11 +94,15 @@ export function handleDeclaration(decl, report, options) {
 			if (isSafeAst(ast)) {
 				ast.nodes[0].nodes
 					.forEach((node) => {
-						const lowerCasedValue = node.value;
+						const nodeValue = node.value.toLowerCase();
 
-						if (node.type === 'word' && cssExplicitDefaultingKeywords.includes(lowerCasedValue)) {
+						if (node.type === 'word' && cssExplicitDefaultingKeywords.includes(nodeValue)) {
 							report.properties.explicitDefaultingKeywords.total++;
-							countUsage(lowerCasedValue, report.properties.explicitDefaultingKeywords.usage);
+							countUsage(nodeValue, report.properties.explicitDefaultingKeywords.usage);
+						}
+
+						if (node.type === 'word' && nodeValue === 'auto') {
+							report.properties.autoKeyword++;
 						}
 					});
 			}

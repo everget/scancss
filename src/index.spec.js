@@ -15,6 +15,7 @@ describe('Module: scancss', () => {
 			display: inline-block;
 			position: fixed;
 			z-index: '';
+			margin: 0 auto;
 			border: 1px solid #123123;
 			width: 40px;
 			height: 40px;
@@ -97,8 +98,8 @@ describe('Module: scancss', () => {
 		describe('.styleSheetSize', () => {
 			it('should be counted correctly', () => {
 				expect(report.styleSheetSize).toStrictEqual({
-					source: 1010,
-					gzipSource: 487,
+					source: 1029,
+					gzipSource: 499,
 				});
 			});
 		});
@@ -113,8 +114,8 @@ describe('Module: scancss', () => {
 						shortest: 32,
 						average: 32,
 					},
-					sizeRatio: 0.031683168316831684,
-					sizeRatioPercent: '3.17%',
+					sizeRatio: 0.031098153547133137,
+					sizeRatioPercent: '3.11%',
 				});
 			});
 		});
@@ -304,8 +305,8 @@ describe('Module: scancss', () => {
 							[0, 1, 0],
 						],
 					},
-					sizeRatio: 0.100990099009901,
-					sizeRatioPercent: '10.1%',
+					sizeRatio: 0.09912536443148688,
+					sizeRatioPercent: '9.91%',
 					usage: {
 						'.selector': 3,
 						'::-moz-placeholder': 1,
@@ -320,19 +321,19 @@ describe('Module: scancss', () => {
 		describe('.declarations', () => {
 			it('should be counted correctly', () => {
 				expect(report.declarations).toStrictEqual({
-					total: 20,
-					unique: 18,
-					uniqueRatio: 0.9,
+					total: 21,
+					unique: 19,
+					uniqueRatio: 0.9047619047619048,
 					important: 0,
-					averagePerRule: 2,
+					averagePerRule: 2.1,
 					length: {
-						total: 319,
+						total: 333,
 						longest: 32,
 						longestDeclaration: 'animation:infinite ease 1s fade',
-						average: 15.95,
+						average: 15.86,
 					},
-					sizeRatio: 0.31584158415841584,
-					sizeRatioPercent: '31.58%',
+					sizeRatio: 0.3236151603498542,
+					sizeRatioPercent: '32.36%',
 					inAtRules: {
 						'-webkit-keyframes': 2,
 						keyframes: 2,
@@ -342,6 +343,7 @@ describe('Module: scancss', () => {
 						'display:inline-block',
 						'position:fixed',
 						'z-index:\'\'',
+						'margin:0 auto',
 						'border:1px solid #123123',
 						'width:40px',
 						'height:40px',
@@ -365,15 +367,16 @@ describe('Module: scancss', () => {
 		describe('.properties', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties).toStrictEqual({
-					total: 20,
-					unique: 11,
-					shorthands: 4,
+					total: 21,
+					unique: 12,
+					shorthands: 5,
 					prefixed: 0,
-					unitless: 13,
+					unitless: 14,
 					resetsViaAll: 0,
 					negativeMargins: 0,
 					anonymousReplacedElements: 0,
 					performanceHacks: {},
+					autoKeyword: 1,
 					explicitDefaultingKeywords: {
 						total: 0,
 						unique: 0,
@@ -402,6 +405,7 @@ describe('Module: scancss', () => {
 					usage: {
 						animation: 2,
 						'background-color': 2,
+						margin: 1,
 						border: 1,
 						color: 3,
 						display: 1,
