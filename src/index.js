@@ -117,6 +117,7 @@ export default function scancss(src, options) {
 			report.mediaQueries.unique = Object.keys(report.mediaQueries.usage).length;
 			report.mediaQueries.types.unique = Object.keys(report.mediaQueries.types.usage).length;
 			report.mediaQueries.features.unique = Object.keys(report.mediaQueries.features.usage).length;
+			report.mediaQueries.features.deprecated.unique = Object.keys(report.mediaQueries.features.deprecated.usage).length;
 		}
 
 		if (scancssOptions.selectors) {

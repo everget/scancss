@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added `properties.autoKeyword` metric
+- Added `mediaQueries.features.deprecated` metric
 
 ### Changed
 - Reorganized `properties.explicitDefaultingKeywords` to:

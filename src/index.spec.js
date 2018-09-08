@@ -172,6 +172,11 @@ describe('Module: scancss', () => {
 						total: 1,
 						unique: 1,
 						prefixed: 0,
+						deprecated: {
+							total: 0,
+							unique: 0,
+							usage: {},
+						},
 						usage: {
 							'max-width': 1,
 						},

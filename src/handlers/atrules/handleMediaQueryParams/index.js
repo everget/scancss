@@ -12,6 +12,7 @@ import { trimSpacesNearCommas } from '../../../converters/trimSpacesNearCommas';
 import { trimSpacesNearParentheses } from '../../../converters/trimSpacesNearParentheses';
 import { trimTrailingZeros } from '../../../converters/trimTrailingZeros';
 import { trimLeadingZeros } from '../../../converters/trimLeadingZeros';
+import { isDeprecatedMediaFeature } from '../../../predicates/isDeprecatedMediaFeature';
 import { handleVendorPrefix } from '../../handleVendorPrefix';
 
 const reOnlyKeyword = /\bonly\b/g;
@@ -59,6 +60,11 @@ export function handleMediaQueryParams(params, report, options) {
 						} else if (rePrefixedString.test(feature)) {
 							report.mediaQueries.features.prefixed++;
 							handleVendorPrefix(feature, report);
+						}
+
+						if (isDeprecatedMediaFeature(feature)) {
+							report.mediaQueries.features.deprecated.total++;
+							countUsage(feature, report.mediaQueries.features.deprecated.usage);
 						}
 
 						report.mediaQueries.features.total++;

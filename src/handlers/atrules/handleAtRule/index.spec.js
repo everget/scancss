@@ -59,10 +59,16 @@ describe('Module: handleAtRule', () => {
 		@media screen and (min-width: 992px) {}
 		@media screen and (min-width: 992px) {}
 		@media screen and (min-aspect-ratio: 16/9) {}
-
 		@media screen and (device-pixel-ratio: 4/3) {}
 		@media screen and (-webkit-device-pixel-ratio: 4/3) {}
 		@media screen and (min--moz-device-pixel-ratio: 0) {}
+
+		@media screen and (device-aspect-ratio: 16/9) {}
+		@media screen and (device-width: 320px) {}
+		@media screen and (device-height: 640px) {}
+		@media screen and (min-device-aspect-ratio: 16/9) {}
+		@media screen and (min-device-width: 320px) {}
+		@media screen and (min-device-height: 640px) {}
 
 		@supports (-webkit-appearance: none) {}
 		@supports (-moz-appearance: meterbar) {}
@@ -127,13 +133,13 @@ describe('Module: handleAtRule', () => {
 
 	describe('atRules.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.total).toBe(29);
+			expect(report.atRules.total).toBe(35);
 		});
 	});
 
 	describe('atRules.empty', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.empty).toBe(17);
+			expect(report.atRules.empty).toBe(23);
 		});
 	});
 
@@ -170,7 +176,7 @@ describe('Module: handleAtRule', () => {
 				'-webkit-keyframes': 1,
 				import: 4,
 				keyframes: 1,
-				media: 12,
+				media: 18,
 				page: 5,
 				supports: 4,
 				unknown: 1,
@@ -224,7 +230,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.total).toBe(16);
+			expect(report.mediaQueries.total).toBe(22);
 		});
 	});
 
@@ -242,7 +248,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.types.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.types.total).toBe(16);
+			expect(report.mediaQueries.types.total).toBe(22);
 		});
 	});
 
@@ -257,7 +263,7 @@ describe('Module: handleAtRule', () => {
 			expect(report.mediaQueries.types.usage).toStrictEqual({
 				all: 1,
 				print: 2,
-				screen: 12,
+				screen: 18,
 				speech: 1,
 			});
 		});
@@ -265,7 +271,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.features.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.features.total).toBe(13);
+			expect(report.mediaQueries.features.total).toBe(19);
 		});
 	});
 
@@ -281,6 +287,31 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
+	describe('mediaQueries.features.deprecated.total', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.features.deprecated.total).toBe(6);
+		});
+	});
+
+	describe('mediaQueries.features.deprecated.unique', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.features.deprecated.unique).toBe(0);
+		});
+	});
+
+	describe('mediaQueries.features.deprecated.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.features.deprecated.usage).toStrictEqual({
+				'device-aspect-ratio': 1,
+				'device-width': 1,
+				'device-height': 1,
+				'min-device-aspect-ratio': 1,
+				'min-device-width': 1,
+				'min-device-height': 1,
+			});
+		});
+	});
+
 	describe('mediaQueries.features.usage', () => {
 		it('should be counted correctly', () => {
 			expect(report.mediaQueries.features.usage).toStrictEqual({
@@ -293,6 +324,12 @@ describe('Module: handleAtRule', () => {
 				'-webkit-min-device-pixel-ratio': 1,
 				'-webkit-device-pixel-ratio': 1,
 				'device-pixel-ratio': 1,
+				'device-aspect-ratio': 1,
+				'device-width': 1,
+				'device-height': 1,
+				'min-device-aspect-ratio': 1,
+				'min-device-width': 1,
+				'min-device-height': 1,
 			});
 		});
 	});
@@ -313,6 +350,12 @@ describe('Module: handleAtRule', () => {
 				'screen and (min-aspect-ratio:16/9)': 1,
 				'screen and (-webkit-device-pixel-ratio:4/3)': 1,
 				'screen and (device-pixel-ratio:4/3)': 1,
+				'screen and (device-aspect-ratio:16/9)': 1,
+				'screen and (device-width:320px)': 1,
+				'screen and (device-height:640px)': 1,
+				'screen and (min-device-aspect-ratio:16/9)': 1,
+				'screen and (min-device-width:320px)': 1,
+				'screen and (min-device-height:640px)': 1,
 				speech: 1,
 			});
 		});

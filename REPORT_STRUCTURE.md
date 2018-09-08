@@ -109,6 +109,10 @@
 	* **total** - `number`
 	* **unique** - `number`
 	* **prefixed** - `number`
+	* **deprecated** - `Record<string, any>`
+		* **total** - `number`
+		* **unique** - `number`
+		* **usage** - `Record<string, number>`
 	* **usage** - `Record<string, number>`
 
 [Back to top](#report-structure)
