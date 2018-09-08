@@ -26,6 +26,8 @@ properties {
 ```
 
 ### Fixed
+- Corrected handling of declarations in at-rules
+- Added counting of functions in at-rules params and declarations
 
 ## [1.4.2]
 

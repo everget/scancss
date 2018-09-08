@@ -698,10 +698,12 @@ describe('Module: scancss', () => {
 		describe('.functions', () => {
 			it('should be counted correctly', () => {
 				expect(report.functions).toStrictEqual({
-					total: 0,
-					unique: 0,
+					total: 2,
+					unique: 1,
 					prefixed: 0,
-					usage: {},
+					usage: {
+						url: 2,
+					},
 				});
 			});
 		});

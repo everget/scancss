@@ -6,6 +6,7 @@ describe('Module: handleAtRule', () => {
 	const options = {
 		browserHacks: true,
 		declarations: true,
+		functions: true,
 	};
 
 	const src = `
@@ -19,6 +20,23 @@ describe('Module: handleAtRule', () => {
 		@page rotated {}
 		@page :first {}
 		@page index :blank {}
+
+		@document url(http://www.w3.org/),
+			url-prefix(http://www.w3.org/Style/),
+			domain(mozilla.org),
+			media-document(video),
+			regexp("https:.*") {
+			body {
+				color: purple;
+				background: yellow;
+			}
+		}
+
+		@font-face {
+			font-family: 'Open Sans';
+			src: url('/fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+				url('/fonts/OpenSans-Regular-webfont.woff') format('woff');
+		}
 
 		@media aural {}
 		@media projection {}
@@ -137,7 +155,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('atRules.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.total).toBe(38);
+			expect(report.atRules.total).toBe(40);
 		});
 	});
 
@@ -178,6 +196,8 @@ describe('Module: handleAtRule', () => {
 			expect(report.atRules.usage).toStrictEqual({
 				'-moz-document': 1,
 				'-webkit-keyframes': 1,
+				document: 1,
+				'font-face': 1,
 				import: 4,
 				keyframes: 1,
 				media: 21,
@@ -191,6 +211,7 @@ describe('Module: handleAtRule', () => {
 	describe('declarations.inAtRules', () => {
 		it('should be counted correctly', () => {
 			expect(report.declarations.inAtRules).toStrictEqual({
+				document: 2,
 				media: 6,
 				keyframes: 3,
 				'-webkit-keyframes': 4,
@@ -463,6 +484,38 @@ describe('Module: handleAtRule', () => {
 
 		it('should be counted correctly', () => {
 			expect(report.selectors.pseudoClassesUsage).toStrictEqual({});
+		});
+	});
+
+	describe('Handling functions in at-rules', () => {
+		describe('functions.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.functions.total).toBe(10);
+			});
+		});
+
+		describe('functions.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.functions.unique).toBe(0);
+			});
+		});
+
+		describe('functions.prefixed', () => {
+			it('should be counted correctly', () => {
+				expect(report.functions.prefixed).toBe(0);
+			});
+		});
+
+		describe('functions.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.functions.usage).toStrictEqual({
+					url: 5,
+					'url-prefix': 2,
+					domain: 1,
+					'media-document': 1,
+					regexp: 1,
+				});
+			});
 		});
 	});
 

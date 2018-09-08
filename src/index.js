@@ -1,6 +1,7 @@
 import { default as gzipSize } from 'gzip-size';
 import isPlainObject from 'lodash.isplainobject';
 
+import { isAtRuleDeclaration } from './predicates/isAtRuleDeclaration';
 import { handleComment } from './handlers/handleComment';
 import { handleAtRule } from './handlers/atrules/handleAtRule';
 import { handleRule } from './handlers/handleRule';
@@ -82,13 +83,13 @@ export default function scancss(src, options) {
 			}
 
 			/**
-			 * @font-face descriptors are not declarations
+			 * Some at-rules have special `descriptors` which are not declarations
 			 */
-			if (
-				node.type === 'decl' &&
-				node.parent.name !== 'font-face' &&
-				scancssOptions.declarations
-			) {
+			if (node.type === 'decl' && scancssOptions.declarations) {
+				if (node.parent.type === 'atrule' && isAtRuleDeclaration(node.parent.name, node) === false) {
+					return;
+				}
+
 				handleDeclaration(node, report, scancssOptions);
 			}
 		});
