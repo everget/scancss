@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added `mediaQueries.types.deprecated` metric
 - Added `properties.uniqueRatio` metric
 - Added `properties.shorthandsRatio` metric
+- Added `atRules.descriptors` metric
 
 ### Changed
 - Reorganized `properties.explicitDefaultingKeywords` to:

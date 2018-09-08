@@ -24,6 +24,11 @@ export function getEmptyReport() {
 				unique: 0,
 				usage: {},
 			},
+			descriptors: {
+				total: 0,
+				unique: 0,
+				usage: {},
+			},
 			usage: {},
 		},
 		imports: {

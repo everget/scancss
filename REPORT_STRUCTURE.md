@@ -76,6 +76,11 @@
 	* **unique** - `number`
 	* **usage** - `Record<string, number>`
 
+* **descriptors** - `Record<string, any>`
+	* **total** - `number`
+	* **unique** - `number`
+	* **usage** - `Record<string, number>`
+
 [Back to top](#report-structure)
 
 #### imports

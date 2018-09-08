@@ -38,6 +38,12 @@ describe('Module: handleAtRule', () => {
 				url('/fonts/OpenSans-Regular-webfont.woff') format('woff');
 		}
 
+		@counter-style symbol-example {
+			system: cyclic;
+			symbols: "\\1F34E" "\\1F34F";
+			suffix: " ";
+		}
+
 		@media aural {}
 		@media projection {}
 		@media tty {}
@@ -155,7 +161,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('atRules.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.total).toBe(40);
+			expect(report.atRules.total).toBe(41);
 		});
 	});
 
@@ -191,30 +197,44 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
+	describe('atRules.descriptors.total', () => {
+		it('should be counted correctly', () => {
+			expect(report.atRules.descriptors.total).toBe(5);
+		});
+	});
+
+	describe('atRules.descriptors.unique', () => {
+		it('should be counted correctly', () => {
+			expect(report.atRules.descriptors.unique).toBe(0);
+		});
+	});
+
+	describe('atRules.descriptors.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.atRules.descriptors.usage).toStrictEqual({
+				'font-family': 1,
+				src: 1,
+				suffix: 1,
+				symbols: 1,
+				system: 1,
+			});
+		});
+	});
+
 	describe('atRules.usage', () => {
 		it('should be counted correctly', () => {
 			expect(report.atRules.usage).toStrictEqual({
 				'-moz-document': 1,
-				'-webkit-keyframes': 1,
+				'counter-style': 1,
 				document: 1,
 				'font-face': 1,
 				import: 4,
+				'-webkit-keyframes': 1,
 				keyframes: 1,
 				media: 21,
 				page: 5,
 				supports: 4,
 				unknown: 1,
-			});
-		});
-	});
-
-	describe('declarations.inAtRules', () => {
-		it('should be counted correctly', () => {
-			expect(report.declarations.inAtRules).toStrictEqual({
-				document: 2,
-				media: 6,
-				keyframes: 3,
-				'-webkit-keyframes': 4,
 			});
 		});
 	});
@@ -484,6 +504,19 @@ describe('Module: handleAtRule', () => {
 
 		it('should be counted correctly', () => {
 			expect(report.selectors.pseudoClassesUsage).toStrictEqual({});
+		});
+	});
+
+	describe('Handling declarations in at-rules', () => {
+		describe('declarations.inAtRules', () => {
+			it('should be counted correctly', () => {
+				expect(report.declarations.inAtRules).toStrictEqual({
+					document: 2,
+					media: 6,
+					keyframes: 3,
+					'-webkit-keyframes': 4,
+				});
+			});
 		});
 	});
 

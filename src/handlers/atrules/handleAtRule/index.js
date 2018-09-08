@@ -8,6 +8,7 @@ import { handleKeyframes } from '../handleKeyframes';
 import { handleMediaQueryParams } from '../handleMediaQueryParams';
 import { handleSupports } from '../handleSupports';
 import { handleAtRuleFunctions } from '../handleAtRuleFunctions';
+import { handleAtRuleDescriptor } from '../handleAtRuleDescriptor';
 
 /* eslint-disable-next-line complexity */
 export function handleAtRule(atRule, report, options) {
@@ -69,6 +70,7 @@ export function handleAtRule(atRule, report, options) {
 	if (options.declarations) {
 		atRule.walkDecls((decl) => {
 			if (isAtRuleDeclaration(unprefixedAtRuleName, decl) === false) {
+				handleAtRuleDescriptor(decl, report);
 				return;
 			}
 

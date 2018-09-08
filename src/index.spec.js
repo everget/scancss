@@ -133,6 +133,14 @@ describe('Module: scancss', () => {
 							foobar: 1,
 						},
 					},
+					descriptors: {
+						total: 2,
+						unique: 2,
+						usage: {
+							'font-family': 1,
+							src: 1,
+						},
+					},
 					usage: {
 						'-webkit-keyframes': 1,
 						'font-face': 1,

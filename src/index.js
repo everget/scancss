@@ -86,7 +86,10 @@ export default function scancss(src, options) {
 			 * Some at-rules have special `descriptors` which are not declarations
 			 */
 			if (node.type === 'decl' && scancssOptions.declarations) {
-				if (node.parent.type === 'atrule' && isAtRuleDeclaration(node.parent.name, node) === false) {
+				if (
+					node.parent.type === 'atrule' &&
+					isAtRuleDeclaration(node.parent.name, node) === false
+				) {
 					return;
 				}
 
@@ -114,6 +117,7 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.atRules) {
 			report.atRules.unknown.unique = Object.keys(report.atRules.unknown.usage).length;
+			report.atRules.descriptors.unique = Object.keys(report.atRules.descriptors.usage).length;
 			report.imports.unique = Object.keys(report.imports.usage).length;
 			report.mediaQueries.unique = Object.keys(report.mediaQueries.usage).length;
 			report.mediaQueries.types.unique = Object.keys(report.mediaQueries.types.usage).length;
