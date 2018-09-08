@@ -103,6 +103,10 @@
 * **types** - `Record<string, any>`
 	* **total** - `number`
 	* **unique** - `number`
+	* **deprecated** - `Record<string, any>`
+		* **total** - `number`
+		* **unique** - `number`
+		* **usage** - `Record<string, number>`
 	* **usage** - `Record<string, number>`
 
 * **features** - `Record<string, any>`

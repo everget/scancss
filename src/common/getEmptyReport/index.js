@@ -39,6 +39,11 @@ export function getEmptyReport() {
 			types: {
 				total: 0,
 				unique: 0,
+				deprecated: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 			features: {

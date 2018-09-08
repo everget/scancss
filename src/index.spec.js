@@ -164,6 +164,11 @@ describe('Module: scancss', () => {
 					types: {
 						total: 1,
 						unique: 1,
+						deprecated: {
+							total: 0,
+							unique: 0,
+							usage: {},
+						},
 						usage: {
 							screen: 1,
 						},

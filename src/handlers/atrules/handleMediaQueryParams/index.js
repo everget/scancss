@@ -1,6 +1,7 @@
 import postcss from 'postcss';
 
 import { cssBrowserHacks } from '../../../constants/cssBrowserHacks';
+import { cssDeprecatedMediaTypes } from '../../../constants/cssDeprecatedMediaTypes';
 import { reCssMediaFeature } from '../../../constants/reCssMediaFeature';
 import { reCssMediaType } from '../../../constants/reCssMediaType';
 import { rePrefixedString } from '../../../constants/rePrefixedString';
@@ -47,6 +48,11 @@ export function handleMediaQueryParams(params, report, options) {
 					.forEach((type) => {
 						report.mediaQueries.types.total++;
 						countUsage(type, report.mediaQueries.types.usage);
+
+						if (cssDeprecatedMediaTypes.includes(type)) {
+							report.mediaQueries.types.deprecated.total++;
+							countUsage(type, report.mediaQueries.types.deprecated.usage);
+						}
 					});
 			}
 

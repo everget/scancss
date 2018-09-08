@@ -20,6 +20,10 @@ describe('Module: handleAtRule', () => {
 		@page :first {}
 		@page index :blank {}
 
+		@media aural {}
+		@media projection {}
+		@media tty {}
+
 		@media screen and (max-width: 479px) {
 			.selector {
 				display: block;
@@ -133,13 +137,13 @@ describe('Module: handleAtRule', () => {
 
 	describe('atRules.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.total).toBe(35);
+			expect(report.atRules.total).toBe(38);
 		});
 	});
 
 	describe('atRules.empty', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.empty).toBe(23);
+			expect(report.atRules.empty).toBe(26);
 		});
 	});
 
@@ -176,7 +180,7 @@ describe('Module: handleAtRule', () => {
 				'-webkit-keyframes': 1,
 				import: 4,
 				keyframes: 1,
-				media: 18,
+				media: 21,
 				page: 5,
 				supports: 4,
 				unknown: 1,
@@ -230,7 +234,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.total).toBe(22);
+			expect(report.mediaQueries.total).toBe(25);
 		});
 	});
 
@@ -248,7 +252,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.types.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.types.total).toBe(22);
+			expect(report.mediaQueries.types.total).toBe(25);
 		});
 	});
 
@@ -258,13 +262,38 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
+	describe('mediaQueries.types.deprecated.total', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.types.deprecated.total).toBe(3);
+		});
+	});
+
+	describe('mediaQueries.types.deprecated.unique', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.types.deprecated.unique).toBe(0);
+		});
+	});
+
+	describe('mediaQueries.types.deprecated.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.types.deprecated.usage).toStrictEqual({
+				aural: 1,
+				projection: 1,
+				tty: 1,
+			});
+		});
+	});
+
 	describe('mediaQueries.types.usage', () => {
 		it('should be counted correctly', () => {
 			expect(report.mediaQueries.types.usage).toStrictEqual({
 				all: 1,
+				aural: 1,
 				print: 2,
+				projection: 1,
 				screen: 18,
 				speech: 1,
+				tty: 1,
 			});
 		});
 	});
@@ -337,12 +366,16 @@ describe('Module: handleAtRule', () => {
 	describe('mediaQueries.usage', () => {
 		it('should be counted correctly', () => {
 			expect(report.mediaQueries.usage).toStrictEqual({
+				aural: 1,
+				print: 2,
+				projection: 1,
+				screen: 1,
+				speech: 1,
+				tty: 1,
 				'all and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm)': 1,
 				'only screen and (max-height:440px)': 1,
 				'only screen and (max-width:600px)': 1,
 				'only screen and (max-width:767px)': 1,
-				print: 2,
-				screen: 1,
 				'screen and (max-width:479px)': 1,
 				'screen and (max-width:767px)': 1,
 				'screen and (min-width:992px)': 2,
@@ -356,7 +389,6 @@ describe('Module: handleAtRule', () => {
 				'screen and (min-device-aspect-ratio:16/9)': 1,
 				'screen and (min-device-width:320px)': 1,
 				'screen and (min-device-height:640px)': 1,
-				speech: 1,
 			});
 		});
 	});
