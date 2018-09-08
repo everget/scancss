@@ -6,6 +6,7 @@ export function handleAtRuleFunctions(value, report) {
 	try {
 		const ast = parser(value).parse();
 
+		/* istanbul ignore else */
 		if (isSafeAst(ast)) {
 			ast.nodes[0]
 				.nodes
@@ -22,6 +23,7 @@ export function handleAtRuleFunctions(value, report) {
 				});
 		}
 	} catch (err) {
+		/* istanbul ignore next */
 		/* eslint-disable-next-line no-console */
 		console.log(`'postcss-values-parser' module error\n${err}`);
 	}

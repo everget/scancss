@@ -10,9 +10,12 @@ export function handleEngineTriggers(prop, report) {
 				if (engineTriggers[engine].layout === true) {
 					report.properties.engineTriggers.layout[engine]++;
 				}
+
 				if (engineTriggers[engine].paint === true) {
 					report.properties.engineTriggers.paint[engine]++;
 				}
+
+				/* istanbul ignore else */
 				if (engineTriggers[engine].composite === true) {
 					report.properties.engineTriggers.composite[engine]++;
 				}

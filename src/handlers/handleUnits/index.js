@@ -11,6 +11,7 @@ function walkNodes(nodes, decl, report, options) {
 			const unit = node.unit.toLowerCase();
 			const valueWithUnit = node.value + unit;
 
+			/* istanbul ignore else */
 			if (cssUnits.includes(unit)) {
 				report.units.total++;
 
@@ -36,6 +37,7 @@ function walkNodes(nodes, decl, report, options) {
 			}
 		}
 
+		/* istanbul ignore else */
 		if (node.type === 'func' && Array.isArray(node.nodes)) {
 			walkNodes(node.nodes, decl, report, options);
 		}
@@ -48,10 +50,12 @@ export function handleUnits(decl, report, options) {
 	try {
 		const ast = parser(decl.value).parse();
 
+		/* istanbul ignore else */
 		if (isSafeAst(ast)) {
 			walkNodes(ast.nodes[0].nodes, decl, report, options);
 		}
 	} catch (err) {
+		/* istanbul ignore next */
 		/* eslint-disable-next-line no-console */
 		console.log(`'postcss-values-parser' module error\n${err}`);
 	}

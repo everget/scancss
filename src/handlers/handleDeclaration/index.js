@@ -72,6 +72,7 @@ export function handleDeclaration(decl, report, options) {
 
 	if (options.properties) {
 		/** Count properties excluding variables */
+		/* istanbul ignore else */
 		if (isCustomProperty(prop) === false) {
 			report.properties.total++;
 			countUsage(prop, report.properties.usage);
@@ -91,6 +92,7 @@ export function handleDeclaration(decl, report, options) {
 		try {
 			const ast = parser(decl.value).parse();
 
+			/* istanbul ignore else */
 			if (isSafeAst(ast)) {
 				ast.nodes[0].nodes
 					.forEach((node) => {
@@ -107,6 +109,7 @@ export function handleDeclaration(decl, report, options) {
 					});
 			}
 		} catch (err) {
+			/* istanbul ignore next */
 			/* eslint-disable-next-line no-console */
 			console.log(`'postcss-values-parser' module error\n${err}`);
 		}
