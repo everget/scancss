@@ -780,6 +780,11 @@ describe('Module: scancss', () => {
 						unique: 0,
 						usage: {},
 					},
+					unknown: {
+						total: 0,
+						unique: 0,
+						usage: {},
+					},
 				});
 			});
 		});

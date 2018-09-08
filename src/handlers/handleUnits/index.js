@@ -11,10 +11,10 @@ function walkNodes(nodes, decl, report, options) {
 			const unit = node.unit.toLowerCase();
 			const valueWithUnit = node.value + unit;
 
-			/* istanbul ignore else */
-			if (cssUnits.includes(unit)) {
-				report.units.total++;
+			report.units.total++;
+			countUsage(unit, report.units.usage);
 
+			if (cssUnits.includes(unit)) {
 				/** Count negative margins */
 				if (
 					decl.prop.startsWith('margin') &&
@@ -32,8 +32,9 @@ function walkNodes(nodes, decl, report, options) {
 					report.units.excessive.total++;
 					countUsage(valueWithUnit, report.units.excessive.usage);
 				}
-
-				countUsage(unit, report.units.usage);
+			} else {
+				report.units.unknown.total++;
+				countUsage(unit, report.units.unknown.usage);
 			}
 		}
 

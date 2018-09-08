@@ -281,6 +281,7 @@ export default function scancss(src, options) {
 		if (scancssOptions.units) {
 			report.units.unique = Object.keys(report.units.usage).length;
 			report.units.excessive.unique = Object.keys(report.units.excessive.usage).length;
+			report.units.unknown.unique = Object.keys(report.units.unknown.usage).length;
 		}
 
 		if (scancssOptions.variables) {

@@ -595,6 +595,11 @@
 	* **unique** - `number`
 	* **usage** - `Record<string, number>`
 
+* **unknown** - `Record<string, any>`
+	* **total** - `number`
+	* **unique** - `number`
+	* **usage** - `Record<string, number>`
+
 [Back to top](#report-structure)
 
 #### variables

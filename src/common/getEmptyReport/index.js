@@ -354,12 +354,17 @@ export function getEmptyReport() {
 		units: {
 			total: 0,
 			unique: 0,
-			usage: {},
 			excessive: {
 				total: 0,
 				unique: 0,
 				usage: {},
 			},
+			unknown: {
+				total: 0,
+				unique: 0,
+				usage: {},
+			},
+			usage: {},
 		},
 		variables: {
 			total: 0,
