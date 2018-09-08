@@ -211,6 +211,16 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.properties) {
 			report.properties.unique = Object.keys(report.properties.usage).length;
+
+			report.properties.uniqueRatio = roundDivision(
+				report.properties.unique,
+				report.properties.total
+			);
+
+			report.properties.shorthandsRatio = roundDivision(
+				report.properties.shorthands,
+				report.properties.total
+			);
 		}
 
 		if (scancssOptions.displays) {

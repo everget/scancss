@@ -139,7 +139,9 @@ export function getEmptyReport() {
 		properties: {
 			total: 0,
 			unique: 0,
+			uniqueRatio: 0,
 			shorthands: 0,
+			shorthandsRatio: 0,
 			prefixed: 0,
 			unitless: 0,
 			resetsViaAll: 0,

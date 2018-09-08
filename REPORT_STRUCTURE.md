@@ -245,9 +245,13 @@
 
 * **unique** - `number`
 
+* **uniqueRatio** - `number`
+
 * **usage** - `Record<string, number>`
 
 * **shorthands** - `number`
+
+* **shorthandsRatio** - `number`
 
 * **prefixed** - `number`
 

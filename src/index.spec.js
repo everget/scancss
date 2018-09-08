@@ -379,7 +379,9 @@ describe('Module: scancss', () => {
 				expect(report.properties).toStrictEqual({
 					total: 21,
 					unique: 12,
+					uniqueRatio: 0.5714285714285714,
 					shorthands: 5,
+					shorthandsRatio: 0.23809523809523808,
 					prefixed: 0,
 					unitless: 14,
 					resetsViaAll: 0,

@@ -133,9 +133,21 @@ describe('Module: handleDeclaration', () => {
 			});
 		});
 
+		describe('properties.uniqueRatio', () => {
+			it('should be counted correctly', () => {
+				expect(report.properties.uniqueRatio).toBe(0);
+			});
+		});
+
 		describe('properties.shorthands', () => {
 			it('should be counted correctly', () => {
 				expect(report.properties.shorthands).toBe(7);
+			});
+		});
+
+		describe('properties.shorthandsRatio', () => {
+			it('should be counted correctly', () => {
+				expect(report.properties.shorthandsRatio).toBe(0);
 			});
 		});
 
