@@ -22,7 +22,7 @@ export default function scancss(src, options) {
 		const scancssOptions = Object.assign(
 			{},
 			{
-				stylesheetSize: true,
+				size: true,
 				comments: true,
 				atRules: true,
 				rules: true,
@@ -64,9 +64,9 @@ export default function scancss(src, options) {
 
 		const report = getEmptyReport();
 
-		if (scancssOptions.stylesheetSize) {
-			report.styleSheetSize.source = Buffer.byteLength(src, 'utf8');
-			report.styleSheetSize.gzipSource = gzipSize.sync(src);
+		if (scancssOptions.size) {
+			report.size.source = Buffer.byteLength(src, 'utf8');
+			report.size.gzipSource = gzipSize.sync(src);
 		}
 
 		cssRoot.walk((node) => {
@@ -100,11 +100,11 @@ export default function scancss(src, options) {
 		if (scancssOptions.comments) {
 			report.comments.sizeRatio = roundDivision(
 				report.comments.length.total,
-				report.styleSheetSize.source
+				report.size.source
 			);
 
 			report.comments.sizeRatioPercent = percentDifference(
-				report.styleSheetSize.source,
+				report.size.source,
 				report.comments.length.total
 			);
 
@@ -129,11 +129,11 @@ export default function scancss(src, options) {
 		if (scancssOptions.selectors) {
 			report.selectors.sizeRatio = roundDivision(
 				report.selectors.length.total,
-				report.styleSheetSize.source
+				report.size.source
 			);
 
 			report.selectors.sizeRatioPercent = percentDifference(
-				report.styleSheetSize.source,
+				report.size.source,
 				report.selectors.length.total
 			);
 
@@ -205,11 +205,11 @@ export default function scancss(src, options) {
 
 			report.declarations.sizeRatio = roundDivision(
 				report.declarations.length.total,
-				report.styleSheetSize.source
+				report.size.source
 			);
 
 			report.declarations.sizeRatioPercent = percentDifference(
-				report.styleSheetSize.source,
+				report.size.source,
 				report.declarations.length.total
 			);
 		}
@@ -298,11 +298,11 @@ export default function scancss(src, options) {
 
 			report.dataUris.sizeRatio = roundDivision(
 				report.dataUris.length.total,
-				report.styleSheetSize.source
+				report.size.source
 			);
 
 			report.dataUris.sizeRatioPercent = percentDifference(
-				report.styleSheetSize.source,
+				report.size.source,
 				report.dataUris.length.total
 			);
 		}

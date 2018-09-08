@@ -1,6 +1,6 @@
 ## Report Structure
 
-* [styleSheetSize](#stylesheetsize)
+* [size](#size)
 * [comments](#comments)
 * [atRules](#atrules)
 * [imports](#imports)
@@ -35,7 +35,7 @@
 * [vendorPrefixes](#vendorprefixes)
 * [browserHacks](#browserhacks)
 
-#### styleSheetSize
+#### size
 
 * **source** - `number`
 

@@ -1,6 +1,6 @@
 export function getEmptyReport() {
 	return {
-		styleSheetSize: {
+		size: {
 			source: 0,
 			gzipSource: 0,
 		},

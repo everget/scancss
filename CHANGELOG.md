@@ -25,6 +25,8 @@ properties {
 	unsetKeyword,
 }
 ```
+- Renamed `.styleSheetSize` metric to `.size`
+- Renamed `stylesheetSize` flag to `size`
 
 ### Fixed
 - Corrected handling of declarations in at-rules

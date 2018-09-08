@@ -19,7 +19,7 @@ A robust CSS stylesheet statistics collector and analyzer
 1. [Examples](#examples)
 
 1. [Options](#options)
-	* [stylesheetSize](#stylesheetsize)
+	* [size](#size)
 	* [comments](#comments)
 	* [atRules](#atrules)
 	* [rules](#rules)
@@ -121,9 +121,9 @@ See [examples](https://github.com/everget/scancss/tree/master/examples) folder w
 
 ## Options
 
-#### stylesheetSize
+#### size
 
-Use this flag to fill `.styleSheetSize` metric
+Use this flag to fill `.size` metric
 
 * Default: `true`
 

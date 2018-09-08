@@ -95,9 +95,9 @@ describe('Module: scancss', () => {
 			report = null;
 		});
 
-		describe('.styleSheetSize', () => {
+		describe('.size', () => {
 			it('should be counted correctly', () => {
-				expect(report.styleSheetSize).toStrictEqual({
+				expect(report.size).toStrictEqual({
 					source: 1029,
 					gzipSource: 499,
 				});
