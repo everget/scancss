@@ -1,5 +1,5 @@
 {
-  "styleSheetSize": {
+  "size": {
     "source": 167695,
     "gzipSource": 22606
   },
@@ -22,6 +22,16 @@
       "total": 0,
       "unique": 0,
       "usage": {}
+    },
+    "descriptors": {
+      "total": 5,
+      "unique": 4,
+      "usage": {
+        "font-family": 1,
+        "font-style": 1,
+        "font-weight": 1,
+        "src": 2
+      }
     },
     "usage": {
       "charset": 1,
@@ -48,6 +58,11 @@
     "types": {
       "total": 28,
       "unique": 2,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "screen": 27,
         "print": 1
@@ -57,6 +72,11 @@
       "total": 29,
       "unique": 2,
       "prefixed": 0,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "max-width": 27,
         "min-width": 2
@@ -596,20 +616,20 @@
   "properties": {
     "total": 2569,
     "unique": 104,
+    "uniqueRatio": 0.04048267808485792,
     "shorthands": 410,
+    "shorthandsRatio": 0.15959517321915143,
     "prefixed": 214,
     "unitless": 1412,
     "resetsViaAll": 0,
     "negativeMargins": 339,
     "anonymousReplacedElements": 302,
     "performanceHacks": {},
-    "explicitDefaultingKeywords": {
-      "total": 289,
-      "unique": 1,
-      "usage": {
-        "inherit": 289
-      }
-    },
+    "autoKeyword": 37,
+    "inheritKeyword": 289,
+    "initialKeyword": 0,
+    "revertKeyword": 0,
+    "unsetKeyword": 0,
     "engineTriggers": {
       "composite": {
         "blink": 1692,
@@ -1315,12 +1335,12 @@
     "invalidTimingFunctions": {}
   },
   "functions": {
-    "total": 214,
+    "total": 219,
     "unique": 9,
     "prefixed": 84,
     "usage": {
+      "url": 33,
       "attr": 3,
-      "url": 28,
       "-webkit-gradient": 28,
       "color-stop": 56,
       "-moz-linear-gradient": 28,
@@ -1470,14 +1490,6 @@
   "units": {
     "total": 1411,
     "unique": 6,
-    "usage": {
-      "%": 719,
-      "em": 16,
-      "px": 581,
-      "rem": 30,
-      "cm": 1,
-      "s": 64
-    },
     "excessive": {
       "total": 63,
       "unique": 2,
@@ -1485,6 +1497,19 @@
         "0%": 57,
         "0px": 6
       }
+    },
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
+    "usage": {
+      "%": 719,
+      "em": 16,
+      "px": 581,
+      "rem": 30,
+      "cm": 1,
+      "s": 64
     }
   },
   "variables": {

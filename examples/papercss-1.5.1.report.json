@@ -1,5 +1,5 @@
 {
-  "styleSheetSize": {
+  "size": {
     "source": 48736,
     "gzipSource": 8355
   },
@@ -19,6 +19,11 @@
     "empty": 0,
     "prefixed": 0,
     "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
+    "descriptors": {
       "total": 0,
       "unique": 0,
       "usage": {}
@@ -46,6 +51,11 @@
     "types": {
       "total": 20,
       "unique": 1,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "screen": 20
       }
@@ -54,6 +64,11 @@
       "total": 20,
       "unique": 2,
       "prefixed": 0,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "max-width": 14,
         "min-width": 6
@@ -309,7 +324,9 @@
   "properties": {
     "total": 1170,
     "unique": 105,
+    "uniqueRatio": 0.08974358974358974,
     "shorthands": 420,
+    "shorthandsRatio": 0.358974358974359,
     "prefixed": 282,
     "unitless": 535,
     "resetsViaAll": 0,
@@ -318,14 +335,11 @@
     "performanceHacks": {
       "will-change: transform": 1
     },
-    "explicitDefaultingKeywords": {
-      "total": 10,
-      "unique": 2,
-      "usage": {
-        "inherit": 6,
-        "initial": 4
-      }
-    },
+    "autoKeyword": 13,
+    "inheritKeyword": 6,
+    "initialKeyword": 4,
+    "revertKeyword": 0,
+    "unsetKeyword": 0,
     "engineTriggers": {
       "composite": {
         "blink": 633,
@@ -792,14 +806,14 @@
     "invalidTimingFunctions": {}
   },
   "functions": {
-    "total": 77,
+    "total": 78,
     "unique": 9,
     "prefixed": 0,
     "usage": {
+      "url": 3,
       "rgba": 25,
       "translate3d": 12,
       "linear-gradient": 8,
-      "url": 2,
       "translate": 7,
       "translatex": 5,
       "translatey": 7,
@@ -838,6 +852,16 @@
   "units": {
     "total": 873,
     "unique": 8,
+    "excessive": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "%": 327,
       "em": 16,
@@ -847,11 +871,6 @@
       "s": 62,
       "deg": 15,
       "vh": 1
-    },
-    "excessive": {
-      "total": 0,
-      "unique": 0,
-      "usage": {}
     }
   },
   "variables": {

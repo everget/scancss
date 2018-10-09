@@ -1,5 +1,5 @@
 {
-  "styleSheetSize": {
+  "size": {
     "source": 190278,
     "gzipSource": 23198
   },
@@ -23,6 +23,11 @@
       "unique": 0,
       "usage": {}
     },
+    "descriptors": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-keyframes": 1,
       "keyframes": 1,
@@ -42,6 +47,11 @@
     "types": {
       "total": 197,
       "unique": 2,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "screen": 170,
         "print": 27
@@ -51,6 +61,11 @@
       "total": 203,
       "unique": 2,
       "prefixed": 0,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "max-width": 88,
         "min-width": 115
@@ -323,21 +338,20 @@
   "properties": {
     "total": 3472,
     "unique": 111,
+    "uniqueRatio": 0.03197004608294931,
     "shorthands": 659,
+    "shorthandsRatio": 0.18980414746543778,
     "prefixed": 43,
     "unitless": 2372,
     "resetsViaAll": 0,
     "negativeMargins": 35,
     "anonymousReplacedElements": 10,
     "performanceHacks": {},
-    "explicitDefaultingKeywords": {
-      "total": 23,
-      "unique": 2,
-      "usage": {
-        "inherit": 20,
-        "initial": 3
-      }
-    },
+    "autoKeyword": 33,
+    "inheritKeyword": 20,
+    "initialKeyword": 3,
+    "revertKeyword": 0,
+    "unsetKeyword": 0,
     "engineTriggers": {
       "composite": {
         "blink": 2753,
@@ -1114,6 +1128,20 @@
   "units": {
     "total": 1278,
     "unique": 8,
+    "excessive": {
+      "total": 25,
+      "unique": 3,
+      "usage": {
+        "0deg": 4,
+        "0rem": 1,
+        "0%": 20
+      }
+    },
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "deg": 40,
       "px": 255,
@@ -1123,15 +1151,6 @@
       "ms": 4,
       "vh": 6,
       "vw": 1
-    },
-    "excessive": {
-      "total": 25,
-      "unique": 3,
-      "usage": {
-        "0deg": 4,
-        "0rem": 1,
-        "0%": 20
-      }
     }
   },
   "variables": {
