@@ -129,6 +129,7 @@ export function handleSelector(selector, report, options) {
 
 	selectorParser.processSync(selector);
 
+	/* istanbul ignore else */
 	if (processedSelectors !== null) {
 		countSelectors(processedSelectors, report, options);
 	}

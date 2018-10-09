@@ -48,13 +48,14 @@ function countDataUri(funcWithArgs, report) {
 		.replace(/\s*['"]?\s*\)/g, '')
 		.replace(/(\/?>)\s*(<\/?)/g, '$1$2');
 
-
+	/* istanbul ignore else */
 	if (urlArg.match(reImageDataUri) !== null) {
 		report.dataUris.total++;
 
 		const dataUriByteLength = Buffer.byteLength(urlArg, 'utf8');
 		report.dataUris.length.total += dataUriByteLength;
 
+		/* istanbul ignore else */
 		if (report.dataUris.length.longest < dataUriByteLength) {
 			report.dataUris.length.longest = dataUriByteLength;
 			report.dataUris.length.longestDataUri = urlArg;
@@ -179,6 +180,7 @@ function walkFunctionNodes(nodes, decl, report, options) {
 				countDataUri(funcWithArgs, report);
 			}
 
+			/* istanbul ignore else */
 			if (Array.isArray(node.nodes)) {
 				walkFunctionNodes(node.nodes, decl, report, options);
 			}
@@ -190,10 +192,12 @@ export function handleFunctions(decl, report, options) {
 	try {
 		const ast = parser(decl.value).parse();
 
+		/* istanbul ignore else */
 		if (isSafeAst(ast)) {
 			walkFunctionNodes(ast.nodes[0].nodes, decl, report, options);
 		}
 	} catch (err) {
+		/* istanbul ignore next */
 		/* eslint-disable-next-line no-console */
 		console.log(`'postcss-values-parser' module error\n${err}`);
 	}

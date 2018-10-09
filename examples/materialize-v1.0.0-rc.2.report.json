@@ -1,5 +1,5 @@
 {
-  "styleSheetSize": {
+  "size": {
     "source": 179229,
     "gzipSource": 26010
   },
@@ -23,6 +23,11 @@
       "unique": 0,
       "usage": {}
     },
+    "descriptors": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 60,
       "-webkit-keyframes": 12,
@@ -42,6 +47,11 @@
     "types": {
       "total": 60,
       "unique": 1,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "screen": 60
       }
@@ -50,6 +60,11 @@
       "total": 63,
       "unique": 2,
       "prefixed": 0,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "max-width": 20,
         "min-width": 43
@@ -424,7 +439,9 @@
   "properties": {
     "total": 3516,
     "unique": 136,
+    "uniqueRatio": 0.038680318543799774,
     "shorthands": 567,
+    "shorthandsRatio": 0.1612627986348123,
     "prefixed": 339,
     "unitless": 2244,
     "resetsViaAll": 0,
@@ -441,14 +458,11 @@
       "will-change: bottom, opacity": 1,
       "will-change: transform": 1
     },
-    "explicitDefaultingKeywords": {
-      "total": 33,
-      "unique": 2,
-      "usage": {
-        "inherit": 31,
-        "initial": 2
-      }
-    },
+    "autoKeyword": 199,
+    "inheritKeyword": 31,
+    "initialKeyword": 2,
+    "revertKeyword": 0,
+    "unsetKeyword": 0,
     "engineTriggers": {
       "composite": {
         "blink": 2641,
@@ -2073,6 +2087,19 @@
   "units": {
     "total": 1598,
     "unique": 8,
+    "excessive": {
+      "total": 20,
+      "unique": 2,
+      "usage": {
+        "0px": 12,
+        "0%": 8
+      }
+    },
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "%": 458,
       "em": 16,
@@ -2082,14 +2109,6 @@
       "deg": 61,
       "vh": 1,
       "ms": 39
-    },
-    "excessive": {
-      "total": 20,
-      "unique": 2,
-      "usage": {
-        "0px": 12,
-        "0%": 8
-      }
     }
   },
   "variables": {

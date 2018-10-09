@@ -1,6 +1,6 @@
 export function getEmptyReport() {
 	return {
-		styleSheetSize: {
+		size: {
 			source: 0,
 			gzipSource: 0,
 		},
@@ -24,6 +24,11 @@ export function getEmptyReport() {
 				unique: 0,
 				usage: {},
 			},
+			descriptors: {
+				total: 0,
+				unique: 0,
+				usage: {},
+			},
 			usage: {},
 		},
 		imports: {
@@ -39,12 +44,22 @@ export function getEmptyReport() {
 			types: {
 				total: 0,
 				unique: 0,
+				deprecated: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 			features: {
 				total: 0,
 				unique: 0,
 				prefixed: 0,
+				deprecated: {
+					total: 0,
+					unique: 0,
+					usage: {},
+				},
 				usage: {},
 			},
 			usage: {},
@@ -129,18 +144,20 @@ export function getEmptyReport() {
 		properties: {
 			total: 0,
 			unique: 0,
+			uniqueRatio: 0,
 			shorthands: 0,
+			shorthandsRatio: 0,
 			prefixed: 0,
 			unitless: 0,
 			resetsViaAll: 0,
 			negativeMargins: 0,
 			anonymousReplacedElements: 0,
 			performanceHacks: {},
-			explicitDefaultingKeywords: {
-				total: 0,
-				unique: 0,
-				usage: {},
-			},
+			autoKeyword: 0,
+			inheritKeyword: 0,
+			initialKeyword: 0,
+			revertKeyword: 0,
+			unsetKeyword: 0,
 			engineTriggers: {
 				composite: {
 					blink: 0,
@@ -337,12 +354,17 @@ export function getEmptyReport() {
 		units: {
 			total: 0,
 			unique: 0,
-			usage: {},
 			excessive: {
 				total: 0,
 				unique: 0,
 				usage: {},
 			},
+			unknown: {
+				total: 0,
+				unique: 0,
+				usage: {},
+			},
+			usage: {},
 		},
 		variables: {
 			total: 0,

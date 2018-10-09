@@ -9,6 +9,7 @@ const reRotateZHack = /rotateZ\(\s*(360deg|400grad|1turn|6\.2832rad)\s*\)/i;
 
 function walkNodes(nodes, decl, report) {
 	nodes.forEach((node) => {
+		/* istanbul ignore else */
 		if (node.type === 'func') {
 			const wholeFunc = String(node);
 			const wholeDecl = String(decl);
@@ -33,10 +34,12 @@ export function handlePerformanceHacks(decl, report) {
 		try {
 			const ast = parser(decl.value).parse();
 
+			/* istanbul ignore else */
 			if (isSafeAst(ast)) {
 				walkNodes(ast.nodes[0].nodes, decl, report);
 			}
 		} catch (err) {
+			/* istanbul ignore next */
 			/* eslint-disable-next-line no-console */
 			console.log(`'postcss-values-parser' module error\n${err}`);
 		}

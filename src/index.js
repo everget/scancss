@@ -1,6 +1,7 @@
 import { default as gzipSize } from 'gzip-size';
 import isPlainObject from 'lodash.isplainobject';
 
+import { isAtRuleDeclaration } from './predicates/isAtRuleDeclaration';
 import { handleComment } from './handlers/handleComment';
 import { handleAtRule } from './handlers/atrules/handleAtRule';
 import { handleRule } from './handlers/handleRule';
@@ -21,7 +22,7 @@ export default function scancss(src, options) {
 		const scancssOptions = Object.assign(
 			{},
 			{
-				stylesheetSize: true,
+				size: true,
 				comments: true,
 				atRules: true,
 				rules: true,
@@ -63,9 +64,9 @@ export default function scancss(src, options) {
 
 		const report = getEmptyReport();
 
-		if (scancssOptions.stylesheetSize) {
-			report.styleSheetSize.source = Buffer.byteLength(src, 'utf8');
-			report.styleSheetSize.gzipSource = gzipSize.sync(src);
+		if (scancssOptions.size) {
+			report.size.source = Buffer.byteLength(src, 'utf8');
+			report.size.gzipSource = gzipSize.sync(src);
 		}
 
 		cssRoot.walk((node) => {
@@ -82,13 +83,16 @@ export default function scancss(src, options) {
 			}
 
 			/**
-			 * @font-face descriptors are not declarations
+			 * Some at-rules have special `descriptors` which are not declarations
 			 */
-			if (
-				node.type === 'decl' &&
-				node.parent.name !== 'font-face' &&
-				scancssOptions.declarations
-			) {
+			if (node.type === 'decl' && scancssOptions.declarations) {
+				if (
+					node.parent.type === 'atrule' &&
+					isAtRuleDeclaration(node.parent.name, node) === false
+				) {
+					return;
+				}
+
 				handleDeclaration(node, report, scancssOptions);
 			}
 		});
@@ -96,11 +100,11 @@ export default function scancss(src, options) {
 		if (scancssOptions.comments) {
 			report.comments.sizeRatio = roundDivision(
 				report.comments.length.total,
-				report.styleSheetSize.source
+				report.size.source
 			);
 
 			report.comments.sizeRatioPercent = percentDifference(
-				report.styleSheetSize.source,
+				report.size.source,
 				report.comments.length.total
 			);
 
@@ -113,20 +117,23 @@ export default function scancss(src, options) {
 
 		if (scancssOptions.atRules) {
 			report.atRules.unknown.unique = Object.keys(report.atRules.unknown.usage).length;
+			report.atRules.descriptors.unique = Object.keys(report.atRules.descriptors.usage).length;
 			report.imports.unique = Object.keys(report.imports.usage).length;
 			report.mediaQueries.unique = Object.keys(report.mediaQueries.usage).length;
 			report.mediaQueries.types.unique = Object.keys(report.mediaQueries.types.usage).length;
+			report.mediaQueries.types.deprecated.unique = Object.keys(report.mediaQueries.types.deprecated.usage).length;
 			report.mediaQueries.features.unique = Object.keys(report.mediaQueries.features.usage).length;
+			report.mediaQueries.features.deprecated.unique = Object.keys(report.mediaQueries.features.deprecated.usage).length;
 		}
 
 		if (scancssOptions.selectors) {
 			report.selectors.sizeRatio = roundDivision(
 				report.selectors.length.total,
-				report.styleSheetSize.source
+				report.size.source
 			);
 
 			report.selectors.sizeRatioPercent = percentDifference(
-				report.styleSheetSize.source,
+				report.size.source,
 				report.selectors.length.total
 			);
 
@@ -198,20 +205,27 @@ export default function scancss(src, options) {
 
 			report.declarations.sizeRatio = roundDivision(
 				report.declarations.length.total,
-				report.styleSheetSize.source
+				report.size.source
 			);
 
 			report.declarations.sizeRatioPercent = percentDifference(
-				report.styleSheetSize.source,
+				report.size.source,
 				report.declarations.length.total
 			);
 		}
 
 		if (scancssOptions.properties) {
 			report.properties.unique = Object.keys(report.properties.usage).length;
-			report.properties.explicitDefaultingKeywords.unique = Object.keys(
-				report.properties.explicitDefaultingKeywords.usage
-			).length;
+
+			report.properties.uniqueRatio = roundDivision(
+				report.properties.unique,
+				report.properties.total
+			);
+
+			report.properties.shorthandsRatio = roundDivision(
+				report.properties.shorthands,
+				report.properties.total
+			);
 		}
 
 		if (scancssOptions.displays) {
@@ -267,6 +281,7 @@ export default function scancss(src, options) {
 		if (scancssOptions.units) {
 			report.units.unique = Object.keys(report.units.usage).length;
 			report.units.excessive.unique = Object.keys(report.units.excessive.usage).length;
+			report.units.unknown.unique = Object.keys(report.units.unknown.usage).length;
 		}
 
 		if (scancssOptions.variables) {
@@ -284,11 +299,11 @@ export default function scancss(src, options) {
 
 			report.dataUris.sizeRatio = roundDivision(
 				report.dataUris.length.total,
-				report.styleSheetSize.source
+				report.size.source
 			);
 
 			report.dataUris.sizeRatioPercent = percentDifference(
-				report.styleSheetSize.source,
+				report.size.source,
 				report.dataUris.length.total
 			);
 		}

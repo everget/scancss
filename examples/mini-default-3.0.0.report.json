@@ -1,5 +1,5 @@
 {
-  "styleSheetSize": {
+  "size": {
     "source": 55306,
     "gzipSource": 9067
   },
@@ -23,6 +23,11 @@
       "unique": 0,
       "usage": {}
     },
+    "descriptors": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "charset": 1,
       "media": 23,
@@ -42,6 +47,11 @@
     "types": {
       "total": 23,
       "unique": 1,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "screen": 23
       }
@@ -50,6 +60,11 @@
       "total": 25,
       "unique": 2,
       "prefixed": 0,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "min-width": 15,
         "max-width": 10
@@ -327,20 +342,20 @@
   "properties": {
     "total": 872,
     "unique": 83,
+    "uniqueRatio": 0.09518348623853211,
     "shorthands": 290,
+    "shorthandsRatio": 0.33256880733944955,
     "prefixed": 23,
     "unitless": 653,
     "resetsViaAll": 0,
     "negativeMargins": 10,
     "anonymousReplacedElements": 12,
     "performanceHacks": {},
-    "explicitDefaultingKeywords": {
-      "total": 3,
-      "unique": 1,
-      "usage": {
-        "initial": 3
-      }
-    },
+    "autoKeyword": 25,
+    "inheritKeyword": 0,
+    "initialKeyword": 3,
+    "revertKeyword": 0,
+    "unsetKeyword": 0,
     "engineTriggers": {
       "composite": {
         "blink": 533,
@@ -771,16 +786,6 @@
   "units": {
     "total": 330,
     "unique": 8,
-    "usage": {
-      "rem": 84,
-      "px": 40,
-      "em": 15,
-      "%": 176,
-      "s": 9,
-      "vh": 3,
-      "vw": 1,
-      "deg": 2
-    },
     "excessive": {
       "total": 11,
       "unique": 4,
@@ -790,6 +795,21 @@
         "0%": 5,
         "0deg": 1
       }
+    },
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
+    "usage": {
+      "rem": 84,
+      "px": 40,
+      "em": 15,
+      "%": 176,
+      "s": 9,
+      "vh": 3,
+      "vw": 1,
+      "deg": 2
     }
   },
   "variables": {

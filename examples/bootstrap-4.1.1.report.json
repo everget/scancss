@@ -1,5 +1,5 @@
 {
-  "styleSheetSize": {
+  "size": {
     "source": 173442,
     "gzipSource": 22649
   },
@@ -23,6 +23,14 @@
       "unique": 0,
       "usage": {}
     },
+    "descriptors": {
+      "total": 2,
+      "unique": 2,
+      "usage": {
+        "width": 1,
+        "size": 1
+      }
+    },
     "usage": {
       "-ms-viewport": 1,
       "media": 56,
@@ -45,6 +53,11 @@
     "types": {
       "total": 9,
       "unique": 2,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "screen": 7,
         "print": 2
@@ -54,6 +67,11 @@
       "total": 54,
       "unique": 3,
       "prefixed": 0,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "min-width": 39,
         "max-width": 8,
@@ -374,35 +392,35 @@
     "usage": {}
   },
   "declarations": {
-    "total": 3643,
-    "unique": 1127,
-    "uniqueRatio": 0.3093604172385397,
+    "total": 3641,
+    "unique": 1125,
+    "uniqueRatio": 0.30898104916231806,
     "important": 889,
     "averagePerRule": 2.07,
     "length": {
-      "total": 83279,
+      "total": 83252,
       "longest": 267,
       "longestDeclaration": "background-image:url(\"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E\")",
-      "average": 22.86
+      "average": 22.87
     },
-    "sizeRatio": 0.4801547491380404,
-    "sizeRatioPercent": "48.02%",
+    "sizeRatio": 0.4799990775014126,
+    "sizeRatioPercent": "48%",
     "inAtRules": {
-      "-ms-viewport": 1,
       "media": 1179,
       "-webkit-keyframes": 2,
       "keyframes": 2,
-      "supports": 12,
-      "page": 1
+      "supports": 12
     },
     "list": []
   },
   "properties": {
-    "total": 3615,
-    "unique": 147,
+    "total": 3613,
+    "unique": 146,
+    "uniqueRatio": 0.04040963188486023,
     "shorthands": 685,
+    "shorthandsRatio": 0.18959313589814558,
     "prefixed": 463,
-    "unitless": 2494,
+    "unitless": 2492,
     "resetsViaAll": 0,
     "negativeMargins": 28,
     "anonymousReplacedElements": 20,
@@ -410,31 +428,29 @@
       "-webkit-transform: translate3d(0, 0, 0)": 2,
       "transform: translate3d(0, 0, 0)": 2
     },
-    "explicitDefaultingKeywords": {
-      "total": 26,
-      "unique": 1,
-      "usage": {
-        "inherit": 26
-      }
-    },
+    "autoKeyword": 123,
+    "inheritKeyword": 26,
+    "initialKeyword": 0,
+    "revertKeyword": 0,
+    "unsetKeyword": 0,
     "engineTriggers": {
       "composite": {
-        "blink": 2557,
-        "edgehtml": 2557,
-        "gecko": 2557,
-        "webkit": 2528
+        "blink": 2556,
+        "edgehtml": 2556,
+        "gecko": 2556,
+        "webkit": 2527
       },
       "layout": {
-        "blink": 1812,
-        "edgehtml": 1900,
-        "gecko": 1792,
-        "webkit": 2528
+        "blink": 1811,
+        "edgehtml": 1899,
+        "gecko": 1791,
+        "webkit": 2527
       },
       "paint": {
-        "blink": 2524,
-        "edgehtml": 2549,
-        "gecko": 2431,
-        "webkit": 2528
+        "blink": 2523,
+        "edgehtml": 2548,
+        "gecko": 2430,
+        "webkit": 2527
       }
     },
     "usage": {
@@ -445,7 +461,6 @@
       "-ms-text-size-adjust": 1,
       "-ms-overflow-style": 7,
       "-webkit-tap-highlight-color": 1,
-      "width": 81,
       "display": 236,
       "margin": 50,
       "font-size": 55,
@@ -481,6 +496,7 @@
       "resize": 1,
       "min-width": 5,
       "border": 42,
+      "width": 80,
       "max-width": 86,
       "white-space": 15,
       "outline-offset": 1,
@@ -583,8 +599,7 @@
       "text-overflow": 1,
       "visibility": 2,
       "page-break-inside": 2,
-      "page-break-after": 1,
-      "size": 1
+      "page-break-after": 1
     }
   },
   "displays": {
@@ -668,11 +683,10 @@
     }
   },
   "widths": {
-    "total": 81,
-    "unique": 18,
+    "total": 80,
+    "unique": 17,
     "usage": {
       "0": 5,
-      "device-width": 1,
       "100%": 41,
       "auto": 12,
       "1%": 1,
@@ -1250,6 +1264,18 @@
   "units": {
     "total": 1261,
     "unique": 6,
+    "excessive": {
+      "total": 4,
+      "unique": 1,
+      "usage": {
+        "0%": 4
+      }
+    },
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "px": 158,
       "%": 363,
@@ -1257,13 +1283,6 @@
       "em": 32,
       "s": 20,
       "deg": 1
-    },
-    "excessive": {
-      "total": 4,
-      "unique": 1,
-      "usage": {
-        "0%": 4
-      }
     }
   },
   "variables": {

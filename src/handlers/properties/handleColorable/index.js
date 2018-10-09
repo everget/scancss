@@ -32,6 +32,7 @@ function countKeywordColor(prop, color, report, options) {
 		report.colors[reportSectionName]++;
 	}
 
+	/* istanbul ignore else */
 	if (options.allColors) {
 		countColorInSection(color, report.allColors);
 		report.allColors[reportSectionName]++;
@@ -158,6 +159,7 @@ function walkNodes(nodes, decl, report, options) {
 					return;
 				}
 
+				/* istanbul ignore else */
 				if (lowerCasedValue.length === 5 || lowerCasedValue.length === 9) {
 					countColorModel(
 						decl.prop,
@@ -194,6 +196,7 @@ function walkNodes(nodes, decl, report, options) {
 				);
 			}
 
+			/* istanbul ignore else */
 			if (Array.isArray(node.nodes)) {
 				walkNodes(node.nodes, decl, report, options);
 			}
@@ -204,6 +207,7 @@ function walkNodes(nodes, decl, report, options) {
 export function handleColorable(decl, report, options) {
 	const ast = parser(decl.value).parse();
 
+	/* istanbul ignore else */
 	if (isSafeAst(ast)) {
 		walkNodes(ast.nodes[0].nodes, decl, report, options);
 	}

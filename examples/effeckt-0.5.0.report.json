@@ -1,5 +1,5 @@
 {
-  "styleSheetSize": {
+  "size": {
     "source": 154118,
     "gzipSource": 15912
   },
@@ -23,6 +23,11 @@
       "unique": 0,
       "usage": {}
     },
+    "descriptors": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "-webkit-keyframes": 64,
       "keyframes": 64,
@@ -42,6 +47,11 @@
     "types": {
       "total": 1,
       "unique": 1,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "screen": 1
       }
@@ -50,6 +60,11 @@
       "total": 1,
       "unique": 1,
       "prefixed": 1,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "-webkit-min-device-pixel-ratio": 1
       }
@@ -426,7 +441,9 @@
   "properties": {
     "total": 2760,
     "unique": 82,
+    "uniqueRatio": 0.029710144927536233,
     "shorthands": 320,
+    "shorthandsRatio": 0.11594202898550725,
     "prefixed": 946,
     "unitless": 1208,
     "resetsViaAll": 0,
@@ -451,11 +468,11 @@
       "-webkit-transform: translateZ(0) translateY(0%)": 4,
       "transform: translateZ(0) translateY(0%)": 4
     },
-    "explicitDefaultingKeywords": {
-      "total": 0,
-      "unique": 0,
-      "usage": {}
-    },
+    "autoKeyword": 20,
+    "inheritKeyword": 0,
+    "initialKeyword": 0,
+    "revertKeyword": 0,
+    "unsetKeyword": 0,
     "engineTriggers": {
       "composite": {
         "blink": 1462,
@@ -934,15 +951,6 @@
   "units": {
     "total": 1981,
     "unique": 7,
-    "usage": {
-      "px": 462,
-      "%": 802,
-      "ms": 322,
-      "em": 3,
-      "rem": 37,
-      "deg": 321,
-      "s": 34
-    },
     "excessive": {
       "total": 292,
       "unique": 3,
@@ -951,6 +959,20 @@
         "0deg": 56,
         "0px": 58
       }
+    },
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
+    "usage": {
+      "px": 462,
+      "%": 802,
+      "ms": 322,
+      "em": 3,
+      "rem": 37,
+      "deg": 321,
+      "s": 34
     }
   },
   "variables": {

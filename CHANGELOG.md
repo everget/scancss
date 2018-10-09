@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0]
+
+### Added
+- Added `properties.autoKeyword` metric
+- Added `mediaQueries.features.deprecated` metric
+- Added `mediaQueries.types.deprecated` metric
+- Added `properties.uniqueRatio` metric
+- Added `properties.shorthandsRatio` metric
+- Added `atRules.descriptors` metric
+- Added `units.unknown` metric
+
+### Changed
+- Reorganized `properties.explicitDefaultingKeywords` to:
+```
+properties {
+	inheritKeyword,
+	initialKeyword,
+	revertKeyword,
+	unsetKeyword,
+}
+```
+- Renamed `.styleSheetSize` metric to `.size`
+- Renamed `stylesheetSize` flag to `size`
+
+### Fixed
+- Corrected handling of declarations in at-rules
+- Added counting of functions in at-rules params and declarations
+
 ## [1.4.2]
 
 ### Fixed

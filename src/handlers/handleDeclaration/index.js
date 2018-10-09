@@ -72,6 +72,7 @@ export function handleDeclaration(decl, report, options) {
 
 	if (options.properties) {
 		/** Count properties excluding variables */
+		/* istanbul ignore else */
 		if (isCustomProperty(prop) === false) {
 			report.properties.total++;
 			countUsage(prop, report.properties.usage);
@@ -91,18 +92,24 @@ export function handleDeclaration(decl, report, options) {
 		try {
 			const ast = parser(decl.value).parse();
 
+			/* istanbul ignore else */
 			if (isSafeAst(ast)) {
 				ast.nodes[0].nodes
 					.forEach((node) => {
-						const lowerCasedValue = node.value;
+						const nodeValue = node.value.toLowerCase();
 
-						if (node.type === 'word' && cssExplicitDefaultingKeywords.includes(lowerCasedValue)) {
-							report.properties.explicitDefaultingKeywords.total++;
-							countUsage(lowerCasedValue, report.properties.explicitDefaultingKeywords.usage);
+						if (node.type === 'word' && cssExplicitDefaultingKeywords.includes(nodeValue)) {
+							const keyword = nodeValue + 'Keyword';
+							report.properties[keyword]++;
+						}
+
+						if (node.type === 'word' && nodeValue === 'auto') {
+							report.properties.autoKeyword++;
 						}
 					});
 			}
 		} catch (err) {
+			/* istanbul ignore next */
 			/* eslint-disable-next-line no-console */
 			console.log(`'postcss-values-parser' module error\n${err}`);
 		}

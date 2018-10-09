@@ -1,6 +1,6 @@
 ## Report Structure
 
-* [styleSheetSize](#stylesheetsize)
+* [size](#size)
 * [comments](#comments)
 * [atRules](#atrules)
 * [imports](#imports)
@@ -35,7 +35,7 @@
 * [vendorPrefixes](#vendorprefixes)
 * [browserHacks](#browserhacks)
 
-#### styleSheetSize
+#### size
 
 * **source** - `number`
 
@@ -76,6 +76,11 @@
 	* **unique** - `number`
 	* **usage** - `Record<string, number>`
 
+* **descriptors** - `Record<string, any>`
+	* **total** - `number`
+	* **unique** - `number`
+	* **usage** - `Record<string, number>`
+
 [Back to top](#report-structure)
 
 #### imports
@@ -103,12 +108,20 @@
 * **types** - `Record<string, any>`
 	* **total** - `number`
 	* **unique** - `number`
+	* **deprecated** - `Record<string, any>`
+		* **total** - `number`
+		* **unique** - `number`
+		* **usage** - `Record<string, number>`
 	* **usage** - `Record<string, number>`
 
 * **features** - `Record<string, any>`
 	* **total** - `number`
 	* **unique** - `number`
 	* **prefixed** - `number`
+	* **deprecated** - `Record<string, any>`
+		* **total** - `number`
+		* **unique** - `number`
+		* **usage** - `Record<string, number>`
 	* **usage** - `Record<string, number>`
 
 [Back to top](#report-structure)
@@ -237,9 +250,13 @@
 
 * **unique** - `number`
 
+* **uniqueRatio** - `number`
+
 * **usage** - `Record<string, number>`
 
 * **shorthands** - `number`
+
+* **shorthandsRatio** - `number`
 
 * **prefixed** - `number`
 
@@ -253,10 +270,15 @@
 
 * **performanceHacks** - `Record<string, number>`
 
-* **explicitDefaultingKeywords** - `Record<string, any>`
-	* **total** - `number`
-	* **unique** - `number`
-	* **usage** - `Record<string, number>`
+* **autoKeyword** - `number`
+
+* **inheritKeyword** - `number`
+
+* **initialKeyword** - `number`
+
+* **revertKeyword** - `number`
+
+* **unsetKeyword** - `number`
 
 * **engineTriggers** - `Record<'composite' | 'layout' | 'paint', any>`
 	* **composite** - `Record<string, number>`
@@ -569,6 +591,11 @@
 * **usage** - `Record<string, number>`
 
 * **excessive** - `Record<string, any>`
+	* **total** - `number`
+	* **unique** - `number`
+	* **usage** - `Record<string, number>`
+
+* **unknown** - `Record<string, any>`
 	* **total** - `number`
 	* **unique** - `number`
 	* **usage** - `Record<string, number>`

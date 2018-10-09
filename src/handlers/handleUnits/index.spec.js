@@ -91,6 +91,12 @@ describe('Module: handleUnits', () => {
 			.selector {
 				voice-pitch: -230hz absolute;
 			}
+
+			.selector {
+				width: 666km;
+				height: 2410m;
+				transition-delay: 1h;
+			}
 		`;
 
 		const cssRoot = parseCss(src);
@@ -103,7 +109,7 @@ describe('Module: handleUnits', () => {
 
 		describe('units.total', () => {
 			it('should be counted correctly', () => {
-				expect(report.units.total).toBe(73);
+				expect(report.units.total).toBe(76);
 			});
 		});
 
@@ -137,6 +143,9 @@ describe('Module: handleUnits', () => {
 					vmax: 1,
 					vmin: 1,
 					'%': 11,
+					km: 1,
+					m: 1,
+					h: 1,
 				});
 			});
 		});
@@ -159,6 +168,28 @@ describe('Module: handleUnits', () => {
 					'0px': 6,
 					'0em': 1,
 					'0%': 1,
+				});
+			});
+		});
+
+		describe('units.unknown.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.unknown.total).toBe(3);
+			});
+		});
+
+		describe('units.unknown.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.unknown.unique).toBe(0);
+			});
+		});
+
+		describe('units.unknown.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.unknown.usage).toStrictEqual({
+					km: 1,
+					m: 1,
+					h: 1,
 				});
 			});
 		});
@@ -225,6 +256,24 @@ describe('Module: handleUnits', () => {
 		describe('units.excessive.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.units.excessive.usage).toStrictEqual({});
+			});
+		});
+
+		describe('units.unknown.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.unknown.total).toBe(0);
+			});
+		});
+
+		describe('units.unknown.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.unknown.unique).toBe(0);
+			});
+		});
+
+		describe('units.unknown.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.unknown.usage).toStrictEqual({});
 			});
 		});
 
@@ -301,6 +350,24 @@ describe('Module: handleUnits', () => {
 		describe('units.excessive.usage', () => {
 			it('should be counted correctly', () => {
 				expect(report.units.excessive.usage).toStrictEqual({});
+			});
+		});
+
+		describe('units.unknown.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.unknown.total).toBe(0);
+			});
+		});
+
+		describe('units.unknown.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.unknown.unique).toBe(0);
+			});
+		});
+
+		describe('units.unknown.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.units.unknown.usage).toStrictEqual({});
 			});
 		});
 

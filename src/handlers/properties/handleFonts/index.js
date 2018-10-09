@@ -81,6 +81,7 @@ export function handleFonts(decl, report) {
 
 		const fontLonghand = expandShorthandProperty(decl.prop, cleanedValue);
 
+		/* istanbul ignore else */
 		if (typeof fontLonghand['font-size'] === 'string') {
 			countFontSizes(
 				fontLonghand['font-size'].trim(),
@@ -88,6 +89,7 @@ export function handleFonts(decl, report) {
 			);
 		}
 
+		/* istanbul ignore else */
 		if (typeof fontLonghand['line-height'] === 'string') {
 			countLineHeights(
 				fontLonghand['line-height'].trim(),
@@ -95,6 +97,7 @@ export function handleFonts(decl, report) {
 			);
 		}
 
+		/* istanbul ignore else */
 		if (typeof fontLonghand['font-family'] === 'string') {
 			countFontFamilies(
 				fontLonghand['font-family'].trim(),

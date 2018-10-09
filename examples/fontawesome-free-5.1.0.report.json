@@ -1,5 +1,5 @@
 {
-  "styleSheetSize": {
+  "size": {
     "source": 56306,
     "gzipSource": 10127
   },
@@ -23,6 +23,16 @@
       "unique": 0,
       "usage": {}
     },
+    "descriptors": {
+      "total": 15,
+      "unique": 4,
+      "usage": {
+        "font-family": 3,
+        "font-style": 3,
+        "font-weight": 3,
+        "src": 6
+      }
+    },
     "usage": {
       "keyframes": 1,
       "font-face": 3
@@ -41,12 +51,22 @@
     "types": {
       "total": 0,
       "unique": 0,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {}
     },
     "features": {
       "total": 0,
       "unique": 0,
       "prefixed": 0,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {}
     },
     "usage": {}
@@ -244,20 +264,20 @@
   "properties": {
     "total": 1199,
     "unique": 34,
+    "uniqueRatio": 0.02835696413678065,
     "shorthands": 12,
+    "shorthandsRatio": 0.010008340283569641,
     "prefixed": 8,
     "unitless": 1160,
     "resetsViaAll": 0,
     "negativeMargins": 1,
     "anonymousReplacedElements": 1111,
     "performanceHacks": {},
-    "explicitDefaultingKeywords": {
-      "total": 2,
-      "unique": 1,
-      "usage": {
-        "inherit": 2
-      }
-    },
+    "autoKeyword": 4,
+    "inheritKeyword": 2,
+    "initialKeyword": 0,
+    "revertKeyword": 0,
+    "unsetKeyword": 0,
     "engineTriggers": {
       "composite": {
         "blink": 68,
@@ -512,8 +532,8 @@
     "invalidTimingFunctions": {}
   },
   "functions": {
-    "total": 10,
-    "unique": 6,
+    "total": 28,
+    "unique": 7,
     "prefixed": 0,
     "usage": {
       "steps": 1,
@@ -521,7 +541,8 @@
       "scalex": 1,
       "scaley": 1,
       "scale": 1,
-      "rect": 1
+      "rect": 1,
+      "url": 18
     }
   },
   "filters": {
@@ -550,6 +571,18 @@
   "units": {
     "total": 41,
     "unique": 6,
+    "excessive": {
+      "total": 1,
+      "unique": 1,
+      "usage": {
+        "0deg": 1
+      }
+    },
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "em": 30,
       "s": 2,
@@ -557,13 +590,6 @@
       "turn": 1,
       "%": 1,
       "px": 3
-    },
-    "excessive": {
-      "total": 1,
-      "unique": 1,
-      "usage": {
-        "0deg": 1
-      }
     }
   },
   "variables": {

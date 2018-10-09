@@ -1,5 +1,5 @@
 {
-  "styleSheetSize": {
+  "size": {
     "source": 861908,
     "gzipSource": 122723
   },
@@ -22,6 +22,19 @@
       "total": 0,
       "unique": 0,
       "usage": {}
+    },
+    "descriptors": {
+      "total": 40,
+      "unique": 7,
+      "usage": {
+        "font-family": 8,
+        "src": 11,
+        "font-style": 6,
+        "font-weight": 6,
+        "font-variant": 3,
+        "text-decoration": 3,
+        "text-transform": 3
+      }
     },
     "usage": {
       "import": 1,
@@ -48,6 +61,11 @@
     "types": {
       "total": 86,
       "unique": 2,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "screen": 85,
         "all": 1
@@ -57,6 +75,11 @@
       "total": 101,
       "unique": 3,
       "prefixed": 1,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "max-width": 49,
         "min-width": 51,
@@ -964,7 +987,9 @@
   "properties": {
     "total": 12569,
     "unique": 167,
+    "uniqueRatio": 0.013286657649773251,
     "shorthands": 2339,
+    "shorthandsRatio": 0.18609276792107565,
     "prefixed": 1585,
     "unitless": 7203,
     "resetsViaAll": 0,
@@ -979,13 +1004,11 @@
       "-webkit-transform: translate3d(0, 0, 0)": 9,
       "transform: translate3d(0, 0, 0)": 9
     },
-    "explicitDefaultingKeywords": {
-      "total": 54,
-      "unique": 1,
-      "usage": {
-        "inherit": 54
-      }
-    },
+    "autoKeyword": 385,
+    "inheritKeyword": 54,
+    "initialKeyword": 0,
+    "revertKeyword": 0,
+    "unsetKeyword": 0,
     "engineTriggers": {
       "composite": {
         "blink": 7532,
@@ -2617,10 +2640,11 @@
     "invalidTimingFunctions": {}
   },
   "functions": {
-    "total": 2118,
+    "total": 2146,
     "unique": 28,
     "prefixed": 18,
     "usage": {
+      "url": 31,
       "rgba": 886,
       "calc": 70,
       "rotate": 124,
@@ -2628,7 +2652,6 @@
       "scale": 128,
       "attr": 5,
       "translatex": 124,
-      "url": 3,
       "-webkit-gradient": 8,
       "from": 8,
       "to": 8,
@@ -2693,17 +2716,6 @@
   "units": {
     "total": 10432,
     "unique": 9,
-    "usage": {
-      "%": 1008,
-      "em": 2605,
-      "px": 5175,
-      "rem": 820,
-      "s": 463,
-      "deg": 282,
-      "ms": 76,
-      "vh": 2,
-      "vw": 1
-    },
     "excessive": {
       "total": 4721,
       "unique": 5,
@@ -2714,6 +2726,22 @@
         "0%": 158,
         "0rem": 35
       }
+    },
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
+    "usage": {
+      "%": 1008,
+      "em": 2605,
+      "px": 5175,
+      "rem": 820,
+      "s": 463,
+      "deg": 282,
+      "ms": 76,
+      "vh": 2,
+      "vw": 1
     }
   },
   "variables": {

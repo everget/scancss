@@ -1,12 +1,16 @@
 import { cssAtRules } from '../../../constants/cssAtRules';
 import { rePrefixedString } from '../../../constants/rePrefixedString';
 import { countUsage } from '../../../calculators/countUsage';
+import { isAtRuleDeclaration } from '../../../predicates/isAtRuleDeclaration';
 import { handleVendorPrefix } from '../../handleVendorPrefix';
 import { handleImport } from '../handleImport';
 import { handleKeyframes } from '../handleKeyframes';
 import { handleMediaQueryParams } from '../handleMediaQueryParams';
 import { handleSupports } from '../handleSupports';
+import { handleAtRuleFunctions } from '../handleAtRuleFunctions';
+import { handleAtRuleDescriptor } from '../handleAtRuleDescriptor';
 
+/* eslint-disable-next-line complexity */
 export function handleAtRule(atRule, report, options) {
 	report.atRules.total++;
 
@@ -14,32 +18,32 @@ export function handleAtRule(atRule, report, options) {
 		report.atRules.empty++;
 	}
 
-	const lowerCasedAtRuleName = atRule.name.toLowerCase();
+	const atRuleName = atRule.name.toLowerCase();
 
-	countUsage(lowerCasedAtRuleName, report.atRules.usage);
+	countUsage(atRuleName, report.atRules.usage);
 
 	/** Count vendor prefixes in at-rules names */
-	if (rePrefixedString.test(lowerCasedAtRuleName)) {
+	if (rePrefixedString.test(atRuleName)) {
 		report.atRules.prefixed++;
-		handleVendorPrefix(lowerCasedAtRuleName, report);
+		handleVendorPrefix(atRuleName, report);
 	}
 
 	/** Count unknown at-rules */
-	const unprefixedAtRuleName = lowerCasedAtRuleName.replace(rePrefixedString, '');
+	const unprefixedAtRuleName = atRuleName.replace(rePrefixedString, '');
 	if (cssAtRules.includes(unprefixedAtRuleName) === false) {
 		report.atRules.unknown.total++;
-		countUsage(lowerCasedAtRuleName, report.atRules.unknown.usage);
+		countUsage(atRuleName, report.atRules.unknown.usage);
 	}
 
-	if (lowerCasedAtRuleName === 'import') {
+	if (atRuleName === 'import') {
 		handleImport(atRule, report, options);
 	}
 
-	if (lowerCasedAtRuleName === 'supports') {
+	if (atRuleName === 'supports') {
 		handleSupports(atRule, report, options);
 	}
 
-	if (lowerCasedAtRuleName === 'media') {
+	if (atRuleName === 'media') {
 		handleMediaQueryParams(atRule.params, report, options);
 	}
 
@@ -47,12 +51,30 @@ export function handleAtRule(atRule, report, options) {
 		handleKeyframes(atRule, report);
 	}
 
-	/**
-	 * @font-face descriptors are not declarations
-	 */
-	if (lowerCasedAtRuleName !== 'font-face' && options.declarations) {
-		atRule.walkDecls(() => {
-			countUsage(lowerCasedAtRuleName, report.declarations.inAtRules);
+	if (options.functions) {
+		if (
+			unprefixedAtRuleName === 'document' ||
+			unprefixedAtRuleName === 'import' ||
+			unprefixedAtRuleName === 'namespace'
+		) {
+			handleAtRuleFunctions(atRule.params, report);
+		}
+
+		if (unprefixedAtRuleName === 'font-face') {
+			atRule.walkDecls((decl) => {
+				handleAtRuleFunctions(decl.value, report);
+			});
+		}
+	}
+
+	if (options.declarations) {
+		atRule.walkDecls((decl) => {
+			if (isAtRuleDeclaration(unprefixedAtRuleName, decl) === false) {
+				handleAtRuleDescriptor(decl, report);
+				return;
+			}
+
+			countUsage(atRuleName, report.declarations.inAtRules);
 		});
 	}
 }

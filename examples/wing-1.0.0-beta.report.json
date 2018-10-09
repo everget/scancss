@@ -1,5 +1,5 @@
 {
-  "styleSheetSize": {
+  "size": {
     "source": 9073,
     "gzipSource": 2171
   },
@@ -23,6 +23,11 @@
       "unique": 0,
       "usage": {}
     },
+    "descriptors": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "media": 2
     }
@@ -40,6 +45,11 @@
     "types": {
       "total": 1,
       "unique": 1,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "screen": 1
       }
@@ -48,6 +58,11 @@
       "total": 2,
       "unique": 1,
       "prefixed": 0,
+      "deprecated": {
+        "total": 0,
+        "unique": 0,
+        "usage": {}
+      },
       "usage": {
         "max-width": 2
       }
@@ -262,18 +277,20 @@
   "properties": {
     "total": 188,
     "unique": 44,
+    "uniqueRatio": 0.23404255319148937,
     "shorthands": 44,
+    "shorthandsRatio": 0.23404255319148937,
     "prefixed": 0,
     "unitless": 101,
     "resetsViaAll": 0,
     "negativeMargins": 0,
     "anonymousReplacedElements": 0,
     "performanceHacks": {},
-    "explicitDefaultingKeywords": {
-      "total": 0,
-      "unique": 0,
-      "usage": {}
-    },
+    "autoKeyword": 2,
+    "inheritKeyword": 0,
+    "initialKeyword": 0,
+    "revertKeyword": 0,
+    "unsetKeyword": 0,
     "engineTriggers": {
       "composite": {
         "blink": 145,
@@ -617,16 +634,21 @@
   "units": {
     "total": 88,
     "unique": 4,
+    "excessive": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
+    "unknown": {
+      "total": 0,
+      "unique": 0,
+      "usage": {}
+    },
     "usage": {
       "px": 64,
       "%": 19,
       "s": 3,
       "vh": 2
-    },
-    "excessive": {
-      "total": 0,
-      "unique": 0,
-      "usage": {}
     }
   },
   "variables": {

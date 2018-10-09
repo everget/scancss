@@ -24,6 +24,7 @@ function countInfiniteAnimations(propValue, report) {
 function countNamedTimingFunctions(decl, report) {
 	const ast = parser(decl.value).parse();
 
+	/* istanbul ignore else */
 	if (isSafeAst(ast)) {
 		const reportSection = decl.prop.includes('animation')
 			? report.animations
@@ -55,6 +56,7 @@ function countDurations(decl, report) {
 	postcss.list
 		.comma(decl.value)
 		.forEach((duration) => {
+			/* istanbul ignore else */
 			if (duration.match(reTime) !== null) {
 				const parsedDurationInSeconds = duration.endsWith('ms')
 					? parseFloat(duration) / 1000
@@ -85,6 +87,7 @@ function countDelays(decl, report) {
 	postcss.list
 		.comma(decl.value)
 		.forEach((delay) => {
+			/* istanbul ignore else */
 			if (delay.match(reTime) !== null) {
 				const parsedDelayInSeconds = delay.endsWith('ms')
 					? parseFloat(delay) / 1000
@@ -123,14 +126,17 @@ function countAnimationNames(propValue, report) {
 }
 
 function handleAnimationLonghand(longhand, report) {
+	/* istanbul ignore else */
 	if (typeof longhand['animation-iteration-count'] === 'string') {
 		countInfiniteAnimations(longhand['animation-iteration-count'], report);
 	}
 
+	/* istanbul ignore else */
 	if (typeof longhand['animation-name'] === 'string') {
 		countAnimationNames(longhand['animation-name'], report);
 	}
 
+	/* istanbul ignore else */
 	if (typeof longhand['animation-timing-function'] === 'string') {
 		const decl = {
 			prop: 'animation-timing-function',
@@ -140,6 +146,7 @@ function handleAnimationLonghand(longhand, report) {
 		countNamedTimingFunctions(decl, report);
 	}
 
+	/* istanbul ignore else */
 	if (typeof longhand['animation-duration'] === 'string') {
 		const decl = {
 			prop: 'animation-duration',
@@ -149,6 +156,7 @@ function handleAnimationLonghand(longhand, report) {
 		countDurations(decl, report);
 	}
 
+	/* istanbul ignore else */
 	if (typeof longhand['animation-delay'] === 'string') {
 		const decl = {
 			prop: 'animation-delay',
@@ -160,6 +168,7 @@ function handleAnimationLonghand(longhand, report) {
 }
 
 function handleTransitionLonghand(longhand, report) {
+	/* istanbul ignore else */
 	if (typeof longhand['transition-timing-function'] === 'string') {
 		const decl = {
 			prop: 'transition-timing-function',
@@ -169,6 +178,7 @@ function handleTransitionLonghand(longhand, report) {
 		countNamedTimingFunctions(decl, report);
 	}
 
+	/* istanbul ignore else */
 	if (typeof longhand['transition-duration'] === 'string') {
 		const decl = {
 			prop: 'transition-duration',
@@ -178,6 +188,7 @@ function handleTransitionLonghand(longhand, report) {
 		countDurations(decl, report);
 	}
 
+	/* istanbul ignore else */
 	if (typeof longhand['transition-delay'] === 'string') {
 		const decl = {
 			prop: 'transition-delay',
@@ -187,6 +198,7 @@ function handleTransitionLonghand(longhand, report) {
 		countDelays(decl, report);
 	}
 
+	/* istanbul ignore else */
 	if (typeof longhand['transition-property'] === 'string') {
 		countTransitionablePropeties(longhand['transition-property'], report);
 	}
@@ -209,6 +221,7 @@ export function handleTransitionsAndAnimations(decl, report) {
 					.space(cleanedValue)
 					.map((valuePart) => {
 						// https://github.com/mahirshah/css-property-parser/issues/27
+						/* istanbul ignore else */
 						if (reExistingVendorPrefix.test(valuePart)) {
 							handleVendorPrefix(valuePart, report);
 							return valuePart.replace(reExistingVendorPrefix, '');
@@ -234,6 +247,7 @@ export function handleTransitionsAndAnimations(decl, report) {
 				handleTransitionLonghand(longhand, report);
 			}
 		} catch (err) {
+			/* istanbul ignore next */
 			/* eslint-disable-next-line no-console */
 			console.log(`'css-property-parser' module error\n${err}`);
 		}

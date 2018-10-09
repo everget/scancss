@@ -1,6 +1,7 @@
 import postcss from 'postcss';
 
 import { cssBrowserHacks } from '../../../constants/cssBrowserHacks';
+import { cssDeprecatedMediaTypes } from '../../../constants/cssDeprecatedMediaTypes';
 import { reCssMediaFeature } from '../../../constants/reCssMediaFeature';
 import { reCssMediaType } from '../../../constants/reCssMediaType';
 import { rePrefixedString } from '../../../constants/rePrefixedString';
@@ -12,6 +13,7 @@ import { trimSpacesNearCommas } from '../../../converters/trimSpacesNearCommas';
 import { trimSpacesNearParentheses } from '../../../converters/trimSpacesNearParentheses';
 import { trimTrailingZeros } from '../../../converters/trimTrailingZeros';
 import { trimLeadingZeros } from '../../../converters/trimLeadingZeros';
+import { isDeprecatedMediaFeature } from '../../../predicates/isDeprecatedMediaFeature';
 import { handleVendorPrefix } from '../../handleVendorPrefix';
 
 const reOnlyKeyword = /\bonly\b/g;
@@ -46,6 +48,11 @@ export function handleMediaQueryParams(params, report, options) {
 					.forEach((type) => {
 						report.mediaQueries.types.total++;
 						countUsage(type, report.mediaQueries.types.usage);
+
+						if (cssDeprecatedMediaTypes.includes(type)) {
+							report.mediaQueries.types.deprecated.total++;
+							countUsage(type, report.mediaQueries.types.deprecated.usage);
+						}
 					});
 			}
 
@@ -59,6 +66,11 @@ export function handleMediaQueryParams(params, report, options) {
 						} else if (rePrefixedString.test(feature)) {
 							report.mediaQueries.features.prefixed++;
 							handleVendorPrefix(feature, report);
+						}
+
+						if (isDeprecatedMediaFeature(feature)) {
+							report.mediaQueries.features.deprecated.total++;
+							countUsage(feature, report.mediaQueries.features.deprecated.usage);
 						}
 
 						report.mediaQueries.features.total++;

@@ -6,6 +6,7 @@ describe('Module: handleAtRule', () => {
 	const options = {
 		browserHacks: true,
 		declarations: true,
+		functions: true,
 	};
 
 	const src = `
@@ -19,6 +20,33 @@ describe('Module: handleAtRule', () => {
 		@page rotated {}
 		@page :first {}
 		@page index :blank {}
+
+		@document url(http://www.w3.org/),
+			url-prefix(http://www.w3.org/Style/),
+			domain(mozilla.org),
+			media-document(video),
+			regexp("https:.*") {
+			body {
+				color: purple;
+				background: yellow;
+			}
+		}
+
+		@font-face {
+			font-family: 'Open Sans';
+			src: url('/fonts/OpenSans-Regular-webfont.woff2') format('woff2'),
+				url('/fonts/OpenSans-Regular-webfont.woff') format('woff');
+		}
+
+		@counter-style symbol-example {
+			system: cyclic;
+			symbols: "\\1F34E" "\\1F34F";
+			suffix: " ";
+		}
+
+		@media aural {}
+		@media projection {}
+		@media tty {}
 
 		@media screen and (max-width: 479px) {
 			.selector {
@@ -59,10 +87,16 @@ describe('Module: handleAtRule', () => {
 		@media screen and (min-width: 992px) {}
 		@media screen and (min-width: 992px) {}
 		@media screen and (min-aspect-ratio: 16/9) {}
-
 		@media screen and (device-pixel-ratio: 4/3) {}
 		@media screen and (-webkit-device-pixel-ratio: 4/3) {}
 		@media screen and (min--moz-device-pixel-ratio: 0) {}
+
+		@media screen and (device-aspect-ratio: 16/9) {}
+		@media screen and (device-width: 320px) {}
+		@media screen and (device-height: 640px) {}
+		@media screen and (min-device-aspect-ratio: 16/9) {}
+		@media screen and (min-device-width: 320px) {}
+		@media screen and (min-device-height: 640px) {}
 
 		@supports (-webkit-appearance: none) {}
 		@supports (-moz-appearance: meterbar) {}
@@ -127,13 +161,13 @@ describe('Module: handleAtRule', () => {
 
 	describe('atRules.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.total).toBe(29);
+			expect(report.atRules.total).toBe(41);
 		});
 	});
 
 	describe('atRules.empty', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.empty).toBe(17);
+			expect(report.atRules.empty).toBe(26);
 		});
 	});
 
@@ -163,27 +197,44 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
-	describe('atRules.usage', () => {
+	describe('atRules.descriptors.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.atRules.usage).toStrictEqual({
-				'-moz-document': 1,
-				'-webkit-keyframes': 1,
-				import: 4,
-				keyframes: 1,
-				media: 12,
-				page: 5,
-				supports: 4,
-				unknown: 1,
+			expect(report.atRules.descriptors.total).toBe(5);
+		});
+	});
+
+	describe('atRules.descriptors.unique', () => {
+		it('should be counted correctly', () => {
+			expect(report.atRules.descriptors.unique).toBe(0);
+		});
+	});
+
+	describe('atRules.descriptors.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.atRules.descriptors.usage).toStrictEqual({
+				'font-family': 1,
+				src: 1,
+				suffix: 1,
+				symbols: 1,
+				system: 1,
 			});
 		});
 	});
 
-	describe('declarations.inAtRules', () => {
+	describe('atRules.usage', () => {
 		it('should be counted correctly', () => {
-			expect(report.declarations.inAtRules).toStrictEqual({
-				media: 6,
-				keyframes: 3,
-				'-webkit-keyframes': 4,
+			expect(report.atRules.usage).toStrictEqual({
+				'-moz-document': 1,
+				'counter-style': 1,
+				document: 1,
+				'font-face': 1,
+				import: 4,
+				'-webkit-keyframes': 1,
+				keyframes: 1,
+				media: 21,
+				page: 5,
+				supports: 4,
+				unknown: 1,
 			});
 		});
 	});
@@ -224,7 +275,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.total).toBe(16);
+			expect(report.mediaQueries.total).toBe(25);
 		});
 	});
 
@@ -242,7 +293,7 @@ describe('Module: handleAtRule', () => {
 
 	describe('mediaQueries.types.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.types.total).toBe(16);
+			expect(report.mediaQueries.types.total).toBe(25);
 		});
 	});
 
@@ -252,20 +303,45 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
+	describe('mediaQueries.types.deprecated.total', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.types.deprecated.total).toBe(3);
+		});
+	});
+
+	describe('mediaQueries.types.deprecated.unique', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.types.deprecated.unique).toBe(0);
+		});
+	});
+
+	describe('mediaQueries.types.deprecated.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.types.deprecated.usage).toStrictEqual({
+				aural: 1,
+				projection: 1,
+				tty: 1,
+			});
+		});
+	});
+
 	describe('mediaQueries.types.usage', () => {
 		it('should be counted correctly', () => {
 			expect(report.mediaQueries.types.usage).toStrictEqual({
 				all: 1,
+				aural: 1,
 				print: 2,
-				screen: 12,
+				projection: 1,
+				screen: 18,
 				speech: 1,
+				tty: 1,
 			});
 		});
 	});
 
 	describe('mediaQueries.features.total', () => {
 		it('should be counted correctly', () => {
-			expect(report.mediaQueries.features.total).toBe(13);
+			expect(report.mediaQueries.features.total).toBe(19);
 		});
 	});
 
@@ -281,6 +357,31 @@ describe('Module: handleAtRule', () => {
 		});
 	});
 
+	describe('mediaQueries.features.deprecated.total', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.features.deprecated.total).toBe(6);
+		});
+	});
+
+	describe('mediaQueries.features.deprecated.unique', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.features.deprecated.unique).toBe(0);
+		});
+	});
+
+	describe('mediaQueries.features.deprecated.usage', () => {
+		it('should be counted correctly', () => {
+			expect(report.mediaQueries.features.deprecated.usage).toStrictEqual({
+				'device-aspect-ratio': 1,
+				'device-width': 1,
+				'device-height': 1,
+				'min-device-aspect-ratio': 1,
+				'min-device-width': 1,
+				'min-device-height': 1,
+			});
+		});
+	});
+
 	describe('mediaQueries.features.usage', () => {
 		it('should be counted correctly', () => {
 			expect(report.mediaQueries.features.usage).toStrictEqual({
@@ -293,6 +394,12 @@ describe('Module: handleAtRule', () => {
 				'-webkit-min-device-pixel-ratio': 1,
 				'-webkit-device-pixel-ratio': 1,
 				'device-pixel-ratio': 1,
+				'device-aspect-ratio': 1,
+				'device-width': 1,
+				'device-height': 1,
+				'min-device-aspect-ratio': 1,
+				'min-device-width': 1,
+				'min-device-height': 1,
 			});
 		});
 	});
@@ -300,12 +407,16 @@ describe('Module: handleAtRule', () => {
 	describe('mediaQueries.usage', () => {
 		it('should be counted correctly', () => {
 			expect(report.mediaQueries.usage).toStrictEqual({
+				aural: 1,
+				print: 2,
+				projection: 1,
+				screen: 1,
+				speech: 1,
+				tty: 1,
 				'all and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm)': 1,
 				'only screen and (max-height:440px)': 1,
 				'only screen and (max-width:600px)': 1,
 				'only screen and (max-width:767px)': 1,
-				print: 2,
-				screen: 1,
 				'screen and (max-width:479px)': 1,
 				'screen and (max-width:767px)': 1,
 				'screen and (min-width:992px)': 2,
@@ -313,7 +424,12 @@ describe('Module: handleAtRule', () => {
 				'screen and (min-aspect-ratio:16/9)': 1,
 				'screen and (-webkit-device-pixel-ratio:4/3)': 1,
 				'screen and (device-pixel-ratio:4/3)': 1,
-				speech: 1,
+				'screen and (device-aspect-ratio:16/9)': 1,
+				'screen and (device-width:320px)': 1,
+				'screen and (device-height:640px)': 1,
+				'screen and (min-device-aspect-ratio:16/9)': 1,
+				'screen and (min-device-width:320px)': 1,
+				'screen and (min-device-height:640px)': 1,
 			});
 		});
 	});
@@ -388,6 +504,51 @@ describe('Module: handleAtRule', () => {
 
 		it('should be counted correctly', () => {
 			expect(report.selectors.pseudoClassesUsage).toStrictEqual({});
+		});
+	});
+
+	describe('Handling declarations in at-rules', () => {
+		describe('declarations.inAtRules', () => {
+			it('should be counted correctly', () => {
+				expect(report.declarations.inAtRules).toStrictEqual({
+					document: 2,
+					media: 6,
+					keyframes: 3,
+					'-webkit-keyframes': 4,
+				});
+			});
+		});
+	});
+
+	describe('Handling functions in at-rules', () => {
+		describe('functions.total', () => {
+			it('should be counted correctly', () => {
+				expect(report.functions.total).toBe(10);
+			});
+		});
+
+		describe('functions.unique', () => {
+			it('should be counted correctly', () => {
+				expect(report.functions.unique).toBe(0);
+			});
+		});
+
+		describe('functions.prefixed', () => {
+			it('should be counted correctly', () => {
+				expect(report.functions.prefixed).toBe(0);
+			});
+		});
+
+		describe('functions.usage', () => {
+			it('should be counted correctly', () => {
+				expect(report.functions.usage).toStrictEqual({
+					url: 5,
+					'url-prefix': 2,
+					domain: 1,
+					'media-document': 1,
+					regexp: 1,
+				});
+			});
 		});
 	});
 
