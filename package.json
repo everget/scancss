@@ -71,7 +71,7 @@
     "clear-require": "^2.0.0",
     "codecov.io": "^0.1.6",
     "coveralls": "^3.0.2",
-    "eslint": "^5.0.1",
+    "eslint": "^9.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jest": "^21.22.0",
     "eslint-plugin-unicorn": "^5.0.0",
