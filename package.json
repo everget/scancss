@@ -65,7 +65,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-jest": "^23.0.1",
+    "babel-jest": "^29.0.0",
     "babel-plugin-add-module-exports": "^0.3.0",
     "babel-preset-env": "^1.7.0",
     "clear-require": "^2.0.0",
@@ -76,8 +76,8 @@
     "eslint-plugin-jest": "^21.22.0",
     "eslint-plugin-unicorn": "^5.0.0",
     "istanbul": "^0.4.5",
-    "jest": "^23.1.0",
-    "jest-cli": "^23.1.0",
+    "jest": "^29.0.0",
+    "jest-cli": "^29.0.0",
     "lint-staged": "^7.2.0",
     "pre-commit": "^1.2.2",
     "rimraf": "^2.6.2"
