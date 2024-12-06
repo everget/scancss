@@ -74,7 +74,7 @@
     "eslint": "^5.0.1",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jest": "^21.22.0",
-    "eslint-plugin-unicorn": "^5.0.0",
+    "eslint-plugin-unicorn": "^56.0.0",
     "istanbul": "^0.4.5",
     "jest": "^23.1.0",
     "jest-cli": "^23.1.0",
