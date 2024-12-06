@@ -1131,9 +1131,10 @@ clean-regexp@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.5"
 
-clear-require@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/clear-require/-/clear-require-2.0.0.tgz#aa01f5c35589326bd55e9869eabda48f86447deb"
+clear-require@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/clear-require/-/clear-require-3.0.0.tgz#5c33a5e5b41be6d535e7311d82f3b42fe84eff5e"
+  integrity sha512-uXOIRihTeiHb+cbpHqPXW3SIkJRJqH18ug37MfVb5Bhe8ab4sDvvh3rV1w4Vq9xkPpjdVL3m83eZnphc2k1ecA==
   dependencies:
     caller-path "^2.0.0"
     resolve-from "^2.0.0"
